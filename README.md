@@ -24,6 +24,7 @@ Since the first stage of the road map is buffing characters, the mod will feel r
 3. New content - In the relatively distant future, I'll try to add new content in form of red portals (similar to how vanilla ubers work). The reason for this is because modding new zones manually in d2r is almost impossible due to the lack of tools to leverage the exposed data (I'm not entirely sure how it all works, but as far as I know, all objects, walls, obstacles etc. within a level are exported as a json file with various properties and you have to modify each object individually, so until a new tool that manipulates those jsons is created, making custom levels like the ones found in median xl for example will be a tremendous effort not worth of anyone's time).
 
    Item changes, additions, new cube recipes - I have plans for new and cool items (and perhaps super rare unique items that you can't normally obtain through Ancient's gift stone, but only from drops), but I'm not sure when I'll get on with this. New unique charms are also planned and will probably drop from new ubers. I will add new cube recipes as I see fit, but no cube recipes are planned as of now.
+
    Bug fixes - This will be an ongoing process. I will fix bugs as I find them. It's possible some bugs will never be fixed (mostly due to my lack of modding knowledge or perhaps engine limitations).
 
 ## Contact me
