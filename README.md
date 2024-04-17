@@ -1,6 +1,9 @@
 # Discord Server
 ## https://discord.gg/XfFmAYZAbA
 
+# Current Release Changelog
+https://docs.google.com/document/d/1c6jxXBuQm_jPK9v9GVN3-rElHx7YO9HZCyGvF6WRABc/edit
+
 # Eastern Sun Resurrected
 Eastern Sun Resurrected is an individual effort to extend the port that tireheb and bonesy made for the classic eastern sun mod (this is a fork from bonesy's repository). This enhancement will be long term and will include almost everything: skill reworks, class rebalance, increased difficulty, new content, new recipes etc.
 
