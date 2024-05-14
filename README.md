@@ -12,9 +12,20 @@ This eastern sun version will be a long, ongoing project and I'll probably be th
 # Installation Guide
 You need to download D2Launch for the best experience, which can be found here: https://www.d2rmodding.com/modtools
 
-After the previous step, you need to create a **Mods** folder within the Diablo II Resurrected folder. In the Mods folder, extract the archive that you downloaded from this repository (Code -> Download Zip).
+Note: For those who already have installed this mod manually, before proceeding check out the extremely important section.
 
-**Very important** - You need to rename the extracted folder to Eastern Sun (from Eastern Sun-main, probably) so it matches the Eastern Sun.mpq child folder. This is a limitation and there's nothing I can do about it.
+Once you have installed D2Launch, click on download new mod and choose Eastern Sun Resurrected from the dropdown then press Install Mod. Once the mod is installed, click on Home on the left menu to refresh D2launch, Eastern Sun Resurrected should appear as a mod choice in the home dropdown. Press play mod and enjoy.
+
+When new updates are released, you'll be able to click on Check for Mod Updates and this will update the mod automatically.
+
+## EXTREMELY IMPORTANT
+For those who installed this mod previously to the D2Launch integration, you'll have to change the saves file folder (since the folder name was changed to not interfere with the base Eastern Sun).
+
+Go to Local Disk (Windows installation folder, usually C) -> Users -> <Your Username> -> Saved Games -> Diablo 2 Resurrected -> mods
+Copy the Eastern Sun save folder from inside and paste it in an external location (just to be save).
+After installing Eastern Sun Resurrected through D2Launch, go to the save folder and paste the content from the old folder you just exported into the new Eastern_Sun_Resurrected folder.
+
+You only have to do this once. PM me on discord for any questions.
 
 # Disclaimer
 Since this is an ongoing beta and since I have limited experience with modding diablo 2, I strongly suggest you use the periodic Auto-Backup Characters option from D2Launch (Options -> QoL Options), such that if I release a broken version, you can always recover corrupted save files.
