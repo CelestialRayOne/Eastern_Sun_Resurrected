@@ -1,25 +1,20 @@
 {
     "dependencies": {
-        "particles": [],
+        "particles": [
+            {
+                "path": "data/hd/vfx/particles/missiles/missile_balanced_axe/vfx_misslebalancedaxe.particles"
+            }
+        ],
         "models": [
             {
-                "path": "data/hd/items/weapon/axe/axe/axe.model"
+                "path": "data/hd/items/weapon/axe/balanced_axe/balanced_axe.model"
             }
         ],
         "skeletons": [],
         "animations": [],
         "textures": [
             {
-                "path": "data/hd/items/weapon/axe/axe/weapon_axe_ALB.texture"
-            },
-            {
-                "path": "data/hd/items/weapon/axe/axe/weapon_axe_mask.texture"
-            },
-            {
-                "path": "data/hd/items/weapon/axe/axe/weapon_axe_NRM.texture"
-            },
-            {
-                "path": "data/hd/items/weapon/axe/axe/weapon_axe_ORM.texture"
+                "path": "data/hd/items/weapon/axe/balanced_axe/weapon_balanced_axe_ORM.texture"
             }
         ],
         "physics": [],
@@ -29,12 +24,12 @@
         "other": []
     },
     "type": "UnitDefinition",
-    "name": "axemissile",
+    "name": "balanced_axe_missile",
     "entities": [
         {
             "type": "Entity",
             "name": "entity_root",
-            "id": 2001416447,
+            "id": 715073609,
             "components": [
                 {
                     "type": "UnitRootComponent",
@@ -56,20 +51,14 @@
         },
         {
             "type": "Entity",
-            "name": "entity_vfx",
-            "id": 2873517495,
+            "name": "entity_vfx1",
+            "id": 1247517398,
             "components": [
                 {
-                    "type": "ModelDefinitionComponent",
-                    "name": "entity_vfx_ModelDefinition",
-                    "filename": "data/hd/items/weapon/axe/axe/axe.model",
-                    "visibleLayers": 1,
-                    "lightMask": 19,
-                    "shadowMask": 3,
-                    "ghostShadows": false,
-                    "floorModel": false,
-                    "terrainBlendEnableYUpBlend": false,
-                    "terrainBlendMode": 1
+                    "type": "VfxDefinitionComponent",
+                    "name": "component_vfx1",
+                    "filename": "data/hd/vfx/particles/missiles/missile_balanced_axe/vfx_misslebalancedaxe.particles",
+                    "hardKillOnDestroy": true
                 },
                 {
                     "type": "TransformDefinitionComponent",
@@ -86,9 +75,9 @@
                         "w": 1.0
                     },
                     "scale": {
-                        "x": 1.25,
-                        "y": 1.25,
-                        "z": 1.25
+                        "x": 1.0,
+                        "y": 1.0,
+                        "z": 1.0
                     },
                     "inheritOnlyPosition": false
                 }
