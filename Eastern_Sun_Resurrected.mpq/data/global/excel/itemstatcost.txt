@@ -3,7 +3,7 @@ strength	0	1		11			1	0	10			1	1		125	55		7	32	8	32																67	19		ModStr1
 energy	1			11			1	0	10			1	1		100	55		7	32	7	32			8			maxmana										61	19		ModStr1d	ModStr1d		1	19		Moditem2allattrib	Moditem2allattrib				0
 dexterity	2	1		11			1	0	10			1	1		125	55		7	32	7	32																65	19		ModStr1b	ModStr1b		1	19		Moditem2allattrib	Moditem2allattrib				0
 vitality	3			11			1	0	10			1	1		100	55		7	32	7	32			9			maxhp	maxstamina									63	19		ModStr1c	ModStr1c		1	19		Moditem2allattrib	Moditem2allattrib				0
-statpts	4			9			1	0	10																																										0
+statpts	4			9	`		1	0	10																																										0
 newskills	5			9			1	0	8																																										0
 hitpoints	6			32			1	0	21								8													1	maxhp																				0
 maxhp	7			32			1	0	21		1	1	1		56	20	8	8	32	11	150																59	19		ModStr1u	ModStr1u										0
@@ -15,11 +15,11 @@ level	12			9			1	0	7																																										0
 experience	13			32			1	0	32																																										0
 gold	14			32			1	0	25																																										0
 goldbank	15			32			1	0	25																																										0
-item_armor_percent	16		1	11											47	20		9	0	9	0			13			armorclass										74	19		Modstr2v	Modstr2v										0
+item_armor_percent	16		1	11											47	20		9	0	9	0			13			armorclass	item_armorpercent_perlevel	item_armor_perlevel								74	19		Modstr2v	Modstr2v										0
 item_maxdamage_percent	17		1	12											45	20		9	11	9	11			13			maxdamage	secondary_maxdamage	item_throw_maxdamage			1					129	19		ModStr2j	ModStr2j										0
 item_mindamage_percent	18		1	12											45	20		9	11	9	11			13			mindamage	secondary_mindamage	item_throw_mindamage			1					130	19		ModStr2k	ModStr2k										0
 tohit	19		1	16											15	10		10		10												1					115	19		ModStr1h	ModStr1h										0
-toblock	20		1	10											89	204		6	0	6	0																134	19		ModStr3g	ModStr3g										0
+toblock	20		1	10											89	204		8	50	8	50																134	19		ModStr3g	ModStr3g										0
 mindamage	21		1	16											122	25		8	0	8	0											1					127	19		ModStr1g	ModStr1g										0
 maxdamage	22		1	16											94	16		9	0	9	0											1					126	19		ModStr1f	ModStr1f										0
 secondary_mindamage	23		1	16											97	15		8	0	8	0											1					124	19		ModStr1g	ModStr1g										0
@@ -35,7 +35,7 @@ armorclass_vs_missile	32		1	16											11	5		8	0	10	0																69	19		Mo
 armorclass_vs_hth	33		1	16											13	7		8	0	10	0																70	19		ModStr6b	ModStr6b										0
 normal_damage_reduction	34		1	10											188	200		6	0	6	0																22	19		ModStr2u	ModStr2u									2	0
 magic_damage_reduction	35		1	10											397	340		6	0	6	0																21	19		ModStr2t	ModStr2t									2	0
-damageresist	36		1	9											152	68		8	0	9	200																22	29		ModStr2uPercent	ModStr2uPercentNegative									2	0
+damageresist	36		1	9											152	68		8	0	9	200																22	29		ModStr2uPercent	ModStr2uPercent									2	0
 magicresist	37		1	9											164	68		8	0	9	200																41	19		ModStr1m	ModStr1m									2	0
 maxmagicresist	38		1	9											1091	409		5	0	5	10																46	19		ModStr5x	ModStr5x									2	0
 fireresist	39		1	9											43	20		8	0	9	200																36	19		ModStr1j	ModStr1j		2	19		strModAllResistances	strModAllResistances				0
@@ -47,17 +47,17 @@ maxcoldresist	44		1	9											584	256		5	0	5	0																44	19		ModStr5v	
 poisonresist	45		1	9											43	20		8	0	9	200																34	19		ModStr1n	ModStr1n		2	19		strModAllResistances	strModAllResistances				0
 maxpoisonresist	46		1	9											526	256		5	0	5	10																45	19		ModStr5y	ModStr5y										0
 damageaura	47		1	16																																															0
-firemindam	48		1	16											11	10		11	0	11	0											1					102	19		ModStr1p	ModStr1p										0
-firemaxdam	49		1	16											19	10		12	0	13	0											1					101	19		ModStr1o	ModStr1o										0
-lightmindam	50		1	16											12	10		11	0	8	0											1					99	19		ModStr1r	ModStr1r										0
-lightmaxdam	51		1	16											17	10		12	0	14	0											1					98	19		ModStr1q	ModStr1q										0
-magicmindam	52		1	16											196	20		11	0	11	0											1					104	19		strModMagicDamage	strModMagicDamage										0
-magicmaxdam	53		1	16											183	20		12	0	13	0											1					103	19		strModMagicDamage	strModMagicDamage										0
-coldmindam	54		1	16											451	512		11	0	11	0											1					96	19		ModStr1t	ModStr1t										0
-coldmaxdam	55		1	16											128	340		12	0	13	0											1					95	19		ModStr1s	ModStr1s										0
-coldlength	56		1	16											77	4		8	0	8	0											1																			0
-poisonmindam	57		1	19											12	28		9	0	16	0											1					92	19		ModStr4i	ModStr4i										0
-poisonmaxdam	58		1	19											11	34		9	0	17	0											1					91	19		ModStr4h	ModStr4h										0
+firemindam	48		1	16											11	10		11	0	11	0											1					102	19		ModStr1p	ModStr1p									2	0
+firemaxdam	49		1	16											19	10		12	0	13	0											1					101	19		ModStr1o	ModStr1o									2	0
+lightmindam	50		1	16											12	10		11	0	8	0											1					99	19		ModStr1r	ModStr1r									2	0
+lightmaxdam	51		1	16											17	10		12	0	14	0											1					98	19		ModStr1q	ModStr1q									2	0
+magicmindam	52		1	16											196	20		11	0	11	0											1					104	19		strModMagicDamage	strModMagicDamage									2	0
+magicmaxdam	53		1	16											183	20		12	0	13	0											1					103	19		strModMagicDamage	strModMagicDamage									2	0
+coldmindam	54		1	16											451	512		11	0	11	0											1					96	19		ModStr1t	ModStr1t									2	0
+coldmaxdam	55		1	16											128	340		12	0	13	0											1					95	19		ModStr1s	ModStr1s									2	0
+coldlength	56		1	16											77	4		8	0	8	0											1																		2	0
+poisonmindam	57		1	19											12	28		9	0	16	0											1					92	19		ModStr4i	ModStr4i									2	0
+poisonmaxdam	58		1	19											11	34		9	0	17	0											1					91	19		ModStr4h	ModStr4h									2	0
 poisonlength	59		1	16											0	4		8	0	9	0											1																			0
 lifedrainmindam	60		1	16											1044	341		7	0	7	0											1					88	19		ModStr2z	ModStr2z									2	0
 lifedrainmaxdam	61		1	16																												1																			0
@@ -332,10 +332,10 @@ passive_fire_mastery	329		1	12											1117	415		8	0	9	50																88	19
 passive_ltng_mastery	330		1	12											1054	408		8	0	9	50																88	19		ModitemdamLtngsk	ModitemdamLtngsk									2	0
 passive_cold_mastery	331		1	12											1295	379		8	0	9	50																88	19		ModitemdamColdsk	ModitemdamColdsk									2	0
 passive_pois_mastery	332		1	12											978	394		8	0	9	50																88	19		ModitemdamPoissk	ModitemdamPoissk									2	0
-passive_fire_pierce	333		1	9												2578		8	0	8	0																88	19		Moditemenresfiresk	Moditemenresfiresk									2	0
-passive_ltng_pierce	334		1	9												2493		8	0	8	0																88	19		Moditemenresltngsk	Moditemenresltngsk									2	0
-passive_cold_pierce	335		1	9												1984		8	0	8	0																88	19		Moditemenrescoldsk	Moditemenrescoldsk									2	0
-passive_pois_pierce	336		1	9												2345		8	0	8	0																88	19		Moditemenrespoissk	Moditemenrespoissk									2	0
+passive_fire_pierce	333		1	9												2578		8	0	8	0																88	19		Moditemenresfiresk	Moditemenresfiresk		4	19		strModPierceResAll	strModPierceResAll			2	0
+passive_ltng_pierce	334		1	9												2493		8	0	8	0																88	19		Moditemenresltngsk	Moditemenresltngsk		4	19		strModPierceResAll	strModPierceResAll			2	0
+passive_cold_pierce	335		1	9												1984		8	0	8	0																88	19		Moditemenrescoldsk	Moditemenrescoldsk		4	19		strModPierceResAll	strModPierceResAll			2	0
+passive_pois_pierce	336		1	9												2345		8	0	8	0																88	19		Moditemenrespoissk	Moditemenrespoissk		4	19		strModPierceResAll	strModPierceResAll			2	0
 passive_critical_strike	337		1	9														8	0	8	0																													2	0
 passive_dodge	338		1	9														7	0	8	0																													2	0
 passive_avoid	339		1	9														7	0	8	0																													2	0
