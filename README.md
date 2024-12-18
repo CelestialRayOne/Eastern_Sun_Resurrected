@@ -1,8 +1,6 @@
 # Discord Server
 ## https://discord.gg/XfFmAYZAbA
-
-# Current Release Changelog
-https://docs.google.com/document/d/1c6jxXBuQm_jPK9v9GVN3-rElHx7YO9HZCyGvF6WRABc/edit
+You will find a lot of useful information on the discord server, including a beginner's guide as well as I'll be able to answer your questions.
 
 # Eastern Sun Resurrected
 Eastern Sun Resurrected is an individual effort to extend the port that tireheb and bonesy made for the classic eastern sun mod (this is a fork from bonesy's repository). This enhancement will be long term and will include almost everything: skill reworks, class rebalance, increased difficulty, new content, new recipes etc.
@@ -15,6 +13,9 @@ You need to download D2Launch for the best experience, which can be found here: 
 Once you have installed D2Launch, click on download new mod and choose Eastern Sun Resurrected from the dropdown then press Install Mod. Once the mod is installed, click on Home on the left menu to refresh D2launch, Eastern Sun Resurrected should appear as a mod choice in the home dropdown. Press play mod and enjoy.
 
 When new updates are released, you'll be able to click on Check for Mod Updates and this will update the mod automatically.
+
+# Changelogs
+You can view changelogs [here](https://celestialrayone.github.io/Eastern_Sun_Resurrected/docs/index.html). This is also a link to the mod's documentation.
 
 # Disclaimer
 Since this is an ongoing beta and since I have limited experience with modding diablo 2, I strongly suggest you use the periodic Auto-Backup Characters option from D2Launch (Options -> QoL Options), such that if I release a broken version, you can always recover corrupted save files.
