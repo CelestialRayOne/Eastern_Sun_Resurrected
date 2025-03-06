@@ -1,0 +1,344 @@
+{
+    "dependencies": {
+        "particles": [
+            {
+                "path": "data/hd/vfx/particles/character/npc/tyrael1/vfx_tyrael_lights.particles"
+            }
+        ],
+        "models": [
+            {
+                "path": "data/hd/character/npc/tyrael1/torso.model"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/Wing_Shell.model"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/wings.model"
+            }
+        ],
+        "skeletons": [
+            {
+                "path": "data/hd/character/npc/tyrael1/skeleton/tyrael1.skeleton"
+            }
+        ],
+        "animations": [],
+        "textures": [
+            {
+                "path": "data/hd/character/common/common_alb.texture"
+            },
+            {
+                "path": "data/hd/character/common/common_nrm.texture"
+            },
+            {
+                "path": "data/hd/character/common/common_orm.texture"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/textures/tyrel_body_alb.texture"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/textures/tyrel_body_nrm.texture"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/textures/tyrel_body_orm.texture"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/textures/tyrel_head_alb.texture"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/textures/tyrel_head_nrm.texture"
+            },
+            {
+                "path": "data/hd/character/npc/tyrael1/textures/tyrel_head_orm.texture"
+            },
+            {
+                "path": "data/hd/vfx/Library/PopcornFXCore/Materials/DefaultTextures/White.texture"
+            }
+        ],
+        "physics": [],
+        "json": [
+            {
+                "path": "data/hd/character/npc/tyrael1/tyrael1_state_machine.json"
+            }
+        ],
+        "variantdata": [],
+        "objecteffects": [
+            {
+                "path": "data/hd/vfx/particles/character/npc/tyrael1/vfx_tyrael_wings.particles",
+                "dependency": ""
+            },
+            {
+                "path": "data/hd/vfx/particles/character/npc/tyrael1/vfx_tyrael_wings_shell.particles",
+                "dependency": ""
+            }
+        ],
+        "other": []
+    },
+    "type": "UnitDefinition",
+    "name": "tyrael1",
+    "entities": [
+        {
+            "type": "Entity",
+            "name": "entity_root",
+            "id": 2451354604,
+            "components": [
+                {
+                    "type": "UnitRootComponent",
+                    "name": "component_root",
+                    "state_machine_filename": "data/hd/character/npc/tyrael1/tyrael1_state_machine.json",
+                    "doNotInheritRotation": true,
+                    "rotationOverride": {
+                        "x": 0.0,
+                        "y": 0.3826834,
+                        "z": 0.0,
+                        "w": 0.9238795
+                    },
+                    "doNotUseHDHeight": false,
+                    "hideAllMeshWhenInOpenedMode": false,
+                    "onCreateEventName": "",
+                    "animations": []
+                },
+                {
+                    "type": "SkeletonDefinitionComponent",
+                    "name": "component_skeleton",
+                    "filename": "data/hd/character/npc/tyrael1/skeleton/tyrael1.skeleton"
+                },
+                {
+                    "type": "AimLayersComponent",
+                    "name": "entity_root_AimLayers",
+                    "aimLayers": [
+                        {
+                            "type": "AimLayerSetup",
+                            "name": "entity_root_AimLayers_aimLayers_0",
+                            "layerName": "Aim_Head",
+                            "yawAnimationState": "HeadAimLayer_Yaw",
+                            "yawOutOfRangeBehavior": 2,
+                            "yawAngleOffset": 0.0,
+                            "pitchAnimationState": "HeadAimLayer_Pitch",
+                            "pitchOutOfRangeBehavior": 0,
+                            "pitchAngleOffset": 0.0,
+                            "aimLocationTrackName": "aim_location",
+                            "aimDampingFactor": 0.15,
+                            "aimTarget": 1
+                        }
+                    ]
+                },
+                {
+                    "type": "LookAtAnimationControlComponent",
+                    "name": "entity_root_LookAtAnimationControl",
+                    "controlOverrides": [],
+                    "aimLayerName": "Aim_Head",
+                    "blendInTime": 0.25,
+                    "blendOutTime": 0.25
+                },
+                {
+                    "type": "TransformDefinitionComponent",
+                    "name": "entity_torso_TransformDefinition",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 0.8,
+                        "y": 0.8,
+                        "z": 0.8
+                    },
+                    "inheritOnlyPosition": true
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_torso",
+            "id": 3323521188,
+            "components": [
+                {
+                    "type": "UnitPartComponent",
+                    "name": "component_part_torso",
+                    "part": "torso",
+                    "variant": "lit"
+                },
+                {
+                    "type": "ModelDefinitionComponent",
+                    "name": "component_model_torso",
+                    "filename": "data/hd/character/npc/tyrael1/torso.model",
+                    "visibleLayers": 1,
+                    "lightMask": 19,
+                    "shadowMask": 3,
+                    "ghostShadows": false,
+                    "floorModel": false,
+                    "terrainBlendEnableYUpBlend": false,
+                    "terrainBlendMode": 1
+                },
+                {
+                    "type": "TransformDefinitionComponent",
+                    "name": "entity_torso_TransformDefinition",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 0.8,
+                        "y": 0.8,
+                        "z": 0.8
+                    },
+                    "inheritOnlyPosition": true
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_wings",
+            "id": 1654210594,
+            "components": [
+                {
+                    "type": "ModelDefinitionComponent",
+                    "name": "entity_wings_ModelDefinition",
+                    "filename": "data/hd/character/npc/tyrael1/wings.model",
+                    "visibleLayers": 1073741824,
+                    "lightMask": 19,
+                    "shadowMask": 3,
+                    "ghostShadows": false,
+                    "floorModel": false,
+                    "terrainBlendEnableYUpBlend": false,
+                    "terrainBlendMode": 1
+                },
+                {
+                    "type": "UnitPartComponent",
+                    "name": "entity_wings_UnitPart",
+                    "part": "torso",
+                    "variant": "lit"
+                },
+                {
+                    "type": "ObjectEffectDefinitionComponent",
+                    "name": "entity_wings_ObjectEffectDefinition",
+                    "filename": "data/hd/vfx/particles/character/npc/tyrael1/vfx_tyrael_wings.particles"
+                },
+                {
+                    "type": "TransformDefinitionComponent",
+                    "name": "entity_wings_TransformDefinition",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 0.8,
+                        "y": 0.8,
+                        "z": 0.8
+                    },
+                    "inheritOnlyPosition": true
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_wings_shell",
+            "id": 2343070520,
+            "components": [
+                {
+                    "type": "ModelDefinitionComponent",
+                    "name": "entity_wings_shell_ModelDefinition001",
+                    "filename": "data/hd/character/npc/tyrael1/Wing_Shell.model",
+                    "visibleLayers": 1073741824,
+                    "lightMask": 19,
+                    "shadowMask": 3,
+                    "ghostShadows": false,
+                    "floorModel": false,
+                    "terrainBlendEnableYUpBlend": false,
+                    "terrainBlendMode": 1
+                },
+                {
+                    "type": "UnitPartComponent",
+                    "name": "entity_wings_shell_UnitPart001",
+                    "part": "torso",
+                    "variant": "lit"
+                },
+                {
+                    "type": "TransformDefinitionComponent",
+                    "name": "entity_wings_shell_TransformDefinition001",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 0.8,
+                        "y": 0.8,
+                        "z": 0.8
+                    },
+                    "inheritOnlyPosition": true
+                },
+                {
+                    "type": "ObjectEffectDefinitionComponent",
+                    "name": "entity_wings_shell_ObjectEffectDefinition001",
+                    "filename": "data/hd/vfx/particles/character/npc/tyrael1/vfx_tyrael_wings_shell.particles"
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_vfx_lights",
+            "id": 1338750443,
+            "components": [
+                {
+                    "type": "VfxDefinitionComponent",
+                    "name": "entity_vfx_lights_VfxDefinition",
+                    "filename": "data/hd/vfx/particles/character/npc/tyrael1/vfx_tyrael_lights.particles",
+                    "hardKillOnDestroy": false
+                },
+                {
+                    "type": "TransformDefinitionComponent",
+                    "name": "entity_vfx_lights_TransformDefinition",
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "orientation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0,
+                        "w": 1.0
+                    },
+                    "scale": {
+                        "x": 0.8,
+                        "y": 0.8,
+                        "z": 0.8
+                    },
+                    "inheritOnlyPosition": false
+                },
+                {
+                    "type": "EntityAttachmentDefinitionComponent",
+                    "name": "entity_vfx_lights_EntityAttachmentDefinition",
+                    "targetbone": "root"
+                }
+            ]
+        }
+    ]
+}
