@@ -25,12 +25,12 @@ Since this is an ongoing beta and since I have limited experience with modding d
    The characters are mostly done, but this will be an ongoing process of continuous skill balance and fixes to keep the game fresh and fair.
 ### Difficulty overhaul - DONE
    The difficulty has been overhauled. Small changes may come along the way, but there's nothing major planned for the campaign.
-### New content
-   I started working on an endgame system that will be based off creating portals to different new and exotic zones (similar to maps in path of exile, for example, but less complicated due to engine limitations). This update will also include **mythical** uniques, a series of new items that will drop only from maps and other very hard content. Those uniques will be designed to be build defining and very strong.
-### Item changes, additions, new cube recipes
-   This is an ongoing process. Unique items and runewords have already been overhauled. Set items aren't planned to change since they fit the niche of good power spikes for lower level characters or characters that don't have endgame gear.
+### New content - DONE
+   The new endgame system is complete. There are several new zones that can be accessed through map items that drop from endgame enemies. The new maps include several new bosses with unique mechanics, you can find a new series of mythical uniques with build defining properties and new cube regents as well.
 ### Bug fixes
    This will be an ongoing process. I will fix bugs as I find them. It's possible some bugs will never be fixed (mostly due to my lack of modding knowledge or perhaps engine limitations).
-
+### What now?
+   I will continue to rework skills, add new content, new items, new recipes etc.
+   
 ## Contact me
 Reach me on discord (celestialrayss) for any questions, suggestions, criticism.
