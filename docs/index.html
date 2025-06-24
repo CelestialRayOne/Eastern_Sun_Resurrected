@@ -14,7 +14,64 @@
         line-height: 1.6;
     }
 
+    @media (min-width: 601px) and (max-width: 800px) {
+        .navbar-link-container {
+            justify-content: space-evenly !important;
+            width: 40% !important;
+        }
+        .navbar-link {
+            font-size: 14px !important;
+        }
+        .content-text {
+            font-size: 14px !important;
+        }
+        .main-description {
+            font-size: 14px;
+            padding-top: calc(100px + 10vw) !important;
+            padding-bottom: calc(90px + 10vw) !important;
+            margin-top: -50px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .navbar-link-container {
+            width: 50% !important;
+            justify-content: space-evenly !important;
+        }
+        .navbar-link {
+            font-size: 12px !important;
+        }
+        .navbar img {
+            display: none;
+        }
+        .content-text {
+            font-size: 16px !important;
+        }
+        .main-description {
+            font-size: 16px;
+            padding-top: calc(40px + 40vw) !important;
+            padding-bottom: calc(30px + 35vw) !important;
+            margin-top: -50px !important;
+        }
+    }
+
     @media (max-width: 1150px) {
+        .navbar {
+            margin-left: -5% !important;
+            margin-right: -5% !important;
+        }
+
+        .navbar-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            padding-left: 5px;
+            padding-right: 5px;
+            text-overflow: ellipsis;
+        }
+
         .inverse {
             flex-direction: column-reverse !important;
         }
@@ -35,13 +92,14 @@
     }
 </style>
 
-<body style="color: #afafaf; background:url('./images/front-page/background.png') no-repeat center center fixed;"
+<body
+    style="color: #afafaf; background:url('./images/front-page/background.png') no-repeat center center fixed; background-size: cover;"
     vlink="#706850" link="#928A70">
     <div style="
         width: 90%;
         margin: 0px auto;
     ">
-        <div style="
+        <div class="navbar" style="
             display: flex;
             justify-content: space-between;
             margin-top: 100px;
@@ -55,15 +113,17 @@
             font-family: MedievalSharp, cursive;
             font-size: 22px;
         ">
-            <div style="
+            <div class="navbar-link-container" style="
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 43%;
                 justify-content: space-around;
                 padding-left: 8vw;">
-                <a href="installation_guide.html" style="color: #cee7ff; text-decoration: none;">Installation Guide</a>
-                <a href="./changelogs.html" style="color: #cee7ff; text-decoration: none;">Documentation</a>
+                <a class="navbar-link" href="installation_guide.html"
+                    style="color: #cee7ff; text-decoration: none;">Installation Guide</a>
+                <a class="navbar-link" href="./changelogs.html"
+                    style="color: #cee7ff; text-decoration: none;">Documentation</a>
             </div>
             <img src="./images/front-page/esr-logo.png" style="
                 position: absolute;
@@ -74,30 +134,30 @@
                 pointer-events: none;
                 width: 15%;
             " />
-            <div style="
+            <div class="navbar-link-container" style="
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 43%;
                 justify-content: space-around;
                 padding-right: 8vw;">
-                <a href="https://discord.com/invite/XfFmAYZAbA" target="_blank"
+                <a class="navbar-link" href="https://discord.com/invite/XfFmAYZAbA" target="_blank"
                     style="color: #cee7ff; text-decoration: none;">Discord Server</a>
-                <a href="#special-thanks" style="color: #cee7ff; text-decoration: none;">Special Thanks</a>
+                <a class="navbar-link" href="#special-thanks" style="color: #cee7ff; text-decoration: none;">Special
+                    Thanks</a>
             </div>
         </div>
-        <div style="
+        <div class="main-description" style="
             position: relative;
             width: 100%;
             box-sizing: border-box;
             background: url('./images/front-page/content-box-main.png') no-repeat center center;
             background-size: 100% 100%;
-            padding-top: calc(140px + 5vw);
-            padding-bottom: calc(120px + 5vw);
-            padding-left: 3vw;
-            padding-right: 3vw;
+            padding-top: calc(50px + 10vw);
+            padding-bottom: calc(40px + 10vw);
+            padding-left: 5vw;
+            padding-right: 5vw;
             font-family: MedievalSharp, cursive;
-            font-size: clamp(16px, 2vw, 24px);
             color: #cee7ff;
             text-align: center;
             line-height: 1.6;
@@ -118,9 +178,7 @@
             margin-top: -50px;
             margin-bottom: 50px;
         ">
-            <iframe width="1280" height="720"
-                src="https://www.youtube.com/embed/nbCeQaFtso4"
-                title="Gameplay Video"
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/nbCeQaFtso4" title="Gameplay Video"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
@@ -151,11 +209,17 @@
                 text-align: center;
             ">
                 <h2>Rebalanced Skill System</h2>
-                Nearly all skills in the mod have been redesigned to provide unique functionality, improved scaling, and
-                stronger endgame viability. Redundant or underused abilities were replaced or reworked to introduce new
-                mechanics or simply to make them better compared to their legacy counterparts. Several abilities feature
-                unique mechanics that alter how they're used in combat. The goal is to make every skill feel purposeful
-                and competitive.
+                <div class="content-text">
+                    Nearly all skills in the mod have been redesigned to provide unique
+                    functionality, improved scaling, and
+                    stronger endgame viability. Redundant or underused abilities were replaced or reworked to introduce
+                    new
+                    mechanics or simply to make them better compared to their legacy counterparts. Several abilities
+                    feature
+                    unique mechanics that alter how they're used in combat. The goal is to make every skill feel
+                    purposeful
+                    and competitive.
+                </div>
             </div>
             <div style="
                 display: flex;
@@ -217,10 +281,15 @@
             text-align: center;
             ">
                 <h2>Overhauled Campaign Difficulty</h2>
-                Most monsters in the game have been rebalanced or redesigned to provide a more challenging and engaging
-                experience throughout the campaign. Enemy stats, AI behavior, and skill usage were reworked to provide a
-                more challenging experience. The endgame features entirely new enemies with custom abilities that are
-                significantly tougher than campaign monsters.
+                <div class="content-text">
+                    Most monsters in the game have been rebalanced or redesigned to provide a more challenging and
+                    engaging
+                    experience throughout the campaign. Enemy stats, AI behavior, and skill usage were reworked to
+                    provide a
+                    more challenging experience. The endgame features entirely new enemies with custom abilities that
+                    are
+                    significantly tougher than campaign monsters.
+                </div>
             </div>
         </div>
         <div class="content-section" style="
@@ -248,10 +317,14 @@
                 line-height: 30px;
             ">
                 <h2>New Endgame System</h2>
-                The endgame revolves around a map-based system that provides extensive replayability. Maps are
-                consumable items that open high-level zones with randomized layouts and increasing difficulty. Each tier
-                offers incresingly better rewards as well as increasingly harder boss fights, some of which drop special
-                rewards. The system provides a repeatable endgame grind to obtain the new level 110 cap.
+                <div class="content-text">
+                    The endgame revolves around a map-based system that provides extensive replayability. Maps are
+                    consumable items that open high-level zones with randomized layouts and increasing difficulty. Each
+                    tier
+                    offers incresingly better rewards as well as increasingly harder boss fights, some of which drop
+                    special
+                    rewards. The system provides a repeatable endgame grind to obtain the new level 110 cap.
+                </div>
             </div>
             <div style="
             display: flex;
@@ -312,10 +385,13 @@
                 line-height: 30px;
             ">
                 <h2>Mythical Uniques</h2>
-                Mythical Uniques are a new tier of powerful endgame items designed to redefine builds and introduce
-                entirely new playstyles. Each item comes with exclusive affixes or mechanics not found on any other
-                gear, often altering skill behavior, scaling, or core character interactions. Unlike standard uniques,
-                these items are extremely rare and can drop exclusively from the new endgame maps.
+                <div class="content-text">
+                    Mythical Uniques are a new tier of powerful endgame items designed to redefine builds and introduce
+                    entirely new playstyles. Each item comes with exclusive affixes or mechanics not found on any other
+                    gear, often altering skill behavior, scaling, or core character interactions. Unlike standard
+                    uniques,
+                    these items are extremely rare and can drop exclusively from the new endgame maps.
+                </div>
             </div>
         </div>
         <div class="content-section" style="
@@ -343,10 +419,14 @@
                 line-height: 30px;
             ">
                 <h2>Ascendancies</h2>
-                The Ascendancy system introduces powerful subclass specializations that fundamentally change how each
-                class is played and itemized. After completing specific challenges, players can choose one of several
-                ascendancies, each offering unique bonuses. Ascendancies are designed to extend build diversity,
-                allowing players to tailor their characters around specific stats and/or mechanics.
+                <div class="content-text">
+                    The Ascendancy system introduces powerful subclass specializations that fundamentally change how
+                    each
+                    class is played and itemized. After completing specific challenges, players can choose one of
+                    several
+                    ascendancies, each offering unique bonuses. Ascendancies are designed to extend build diversity,
+                    allowing players to tailor their characters around specific stats and/or mechanics.
+                </div>
             </div>
             <div style="
                 display: flex;
@@ -407,10 +487,15 @@
                 line-height: 30px;
             ">
                 <h2>Crafting System</h2>
-                Eastern Sun Resurrected features one of the most complex crafting systems found in an ARPG with hundreds
-                of unique recipes. Most recipes are repeatable and can be combined, allowing players to refine, upgrade,
-                or entirely transform items across multiple steps. The system includes forging, rerolling, adding new
-                affixes, socket control, "dragon stoning" and many more.
+                <div class="content-text">
+                    Eastern Sun Resurrected features one of the most complex crafting systems found in an ARPG with
+                    hundreds
+                    of unique recipes. Most recipes are repeatable and can be combined, allowing players to refine,
+                    upgrade,
+                    or entirely transform items across multiple steps. The system includes forging, rerolling, adding
+                    new
+                    affixes, socket control, "dragon stoning" and many more.
+                </div>
             </div>
         </div>
         <div class="content-section" style="
@@ -438,11 +523,14 @@
                 line-height: 30px;
             ">
                 <h2>New Crossbow Mechanics</h2>
-                In classic Diablo II, crossbows were largely inferior to bows in both speed and versatility. In Eastern
-                Sun Resurrected, crossbows have been fundamentally reworked. All crossbows now feature a base reload
-                time that can be lowered with attack speed, during which you cannot attack. To compensate, crossbows
-                deal significantly higher damage per shot. This bonus damage applies to elemental as well as
-                physical attacks.
+                <div class="content-text">
+                    In classic Diablo II, crossbows were largely inferior to bows in both speed and versatility. In
+                    Eastern
+                    Sun Resurrected, crossbows have been fundamentally reworked. All crossbows now feature a base reload
+                    time that can be lowered with attack speed, during which you cannot attack. To compensate, crossbows
+                    deal significantly higher damage per shot. This bonus damage applies to elemental as well as
+                    physical attacks.
+                </div>
             </div>
             <div style="
                 display: flex;
@@ -476,7 +564,7 @@
             line-height: 1.6;
             margin-top: -100px;
         ">
-            <div style="font-family: MedievalSharp, cursive; font-size: 20px; color: #cee7ff" id="special-thanks">
+            <div class="main-description" style="font-family: MedievalSharp, cursive; font-size: 16px; color: #cee7ff" id="special-thanks">
                 This mod would not exist without the invaluable contributions of the following amazing individuals and
                 communities
                 <ul style="list-style-type: none; padding-left: 0;">
@@ -484,7 +572,8 @@
                     <li>@rlf_unique - for the database generation tool</li>
                     <li>Phrozen Keep community - for the never ending help</li>
                     <li>Bonesy - for all the help during development, right from inception</li>
-                    <li>Supporters - if you want to support this mod, <a href="https://coff.ee/celestialray" target="_blank" style="color: #cee7ff;">click here</a></li>
+                    <li>Supporters - if you want to support this mod, <a href="https://coff.ee/celestialray"
+                            target="_blank" style="color: #cee7ff;">click here</a></li>
                     <li>You - for playing this mod and providing feedback and reporting bugs</li>
                     <li></li>
                 </ul>
