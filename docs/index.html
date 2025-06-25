@@ -14,44 +14,46 @@
         line-height: 1.6;
     }
 
-    @media (min-width: 601px) and (max-width: 800px) {
-        .navbar-link-container {
-            justify-content: space-evenly !important;
-            width: 40% !important;
-        }
-        .navbar-link {
-            font-size: 14px !important;
-        }
-        .content-text {
-            font-size: 14px !important;
-        }
-        .main-description {
-            font-size: 14px;
-            padding-top: calc(100px + 10vw) !important;
-            padding-bottom: calc(90px + 10vw) !important;
-            margin-top: -50px;
-        }
-    }
-
     @media (max-width: 600px) {
         .navbar-link-container {
             width: 50% !important;
             justify-content: space-evenly !important;
         }
+
         .navbar-link {
             font-size: 12px !important;
         }
-        .navbar img {
+
+        .navbar .logo {
             display: none;
         }
+
+
         .content-text {
             font-size: 16px !important;
         }
+
         .main-description {
-            font-size: 16px;
-            padding-top: calc(40px + 40vw) !important;
-            padding-bottom: calc(30px + 35vw) !important;
-            margin-top: -50px !important;
+            font-size: 16px !important;
+            padding: 60px 0px !important;
+        }
+
+        .thank-you-description {
+            padding: 100px 20px !important;
+        }
+    }
+
+    @media (min-width: 601px) and (max-width: 800px) {
+        .navbar-link-container {
+            width: 40% !important;
+        }
+
+        .navbar-link {
+            font-size: 14px !important;
+        }
+
+        .content-text {
+            font-size: 14px !important;
         }
     }
 
@@ -89,6 +91,10 @@
         .content-section .showcase {
             padding-top: 0 !important;
         }
+
+        .main-description {
+            font-size: 16px !important;
+        }
     }
 </style>
 
@@ -106,14 +112,17 @@
             margin-left: auto;
             margin-right: auto;
             position: relative;
-            background: url('./images/front-page/navbar.png') no-repeat center center;
-            background-size: 100% 100%;
-            aspect-ratio: 10 / 1;
-            max-height: 170px;
             font-family: MedievalSharp, cursive;
             font-size: 22px;
+            margin-bottom: 60px;
+            position: relative;
+            height: calc(40px + 5vw);
         ">
+            <img src="./images/front-page/navbar.png"
+                style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: 1;" />
             <div class="navbar-link-container" style="
+                position: relative;
+                z-index: 2;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -125,7 +134,7 @@
                 <a class="navbar-link" href="./changelogs.html"
                     style="color: #cee7ff; text-decoration: none;">Documentation</a>
             </div>
-            <img src="./images/front-page/esr-logo.png" style="
+            <img class="logo" src="./images/front-page/esr-logo.png" style="
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -135,6 +144,8 @@
                 width: 15%;
             " />
             <div class="navbar-link-container" style="
+                position: relative;
+                z-index: 2;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -151,24 +162,28 @@
             position: relative;
             width: 100%;
             box-sizing: border-box;
-            background: url('./images/front-page/content-box-main.png') no-repeat center center;
-            background-size: 100% 100%;
-            padding-top: calc(50px + 10vw);
-            padding-bottom: calc(40px + 10vw);
-            padding-left: 5vw;
-            padding-right: 5vw;
+            font-size: 20px;
             font-family: MedievalSharp, cursive;
             color: #cee7ff;
             text-align: center;
             line-height: 1.6;
+            margin-bottom: 100px;
         ">
-            Eastern Sun Resurrected is a complete reimagining of Diablo II Resurrected, built upon the foundation of the
-            classic Eastern Sun mod and expanded far beyond. Explore a world where every item has been overhauled, most
-            skills have been rebalanced or replaced with custom ones, and the campaign has been redesigned to be more
-            engaging. Push past level 99 into a complex endgame filled with brutal uber encounters, brand new items, and
-            progression up to level 110. Delve into an extremely complex crafting system with new reagents, powerful
-            anointments, and risky corruptions. Finally, shape your build by ascending into one of 15 unique ascendancy
-            classes, each offering distinct playstyles and itemization paths.
+            <img style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"
+                src="./images/front-page/content-box-main.png" />
+            <div style="position: relative; z-index: 2; padding: 80px 30px;">Eastern Sun Resurrected is a complete
+                reimagining of Diablo II Resurrected, built
+                upon the foundation of the
+                classic Eastern Sun mod and expanded far beyond. Explore a world where every item has been overhauled,
+                most
+                skills have been rebalanced or replaced with custom ones, and the campaign has been redesigned to be
+                more
+                engaging. Push past level 99 into a complex endgame filled with brutal uber encounters, brand new items,
+                and
+                progression up to level 110. Delve into an extremely complex crafting system with new reagents, powerful
+                anointments, and risky corruptions. Finally, shape your build by ascending into one of 15 unique
+                ascendancy
+                classes, each offering distinct playstyles and itemization paths.</div>
         </div>
         <div style="
             display: flex;
@@ -551,23 +566,20 @@
             position: relative;
             width: 100%;
             box-sizing: border-box;
-            background: url('./images/front-page/content-box-main.png') no-repeat center center;
-            background-size: 100% 100%;
-            padding-top: calc(90px + 5vw);
-            padding-bottom: calc(60px + 5vw);
-            padding-left: 3vw;
-            padding-right: 3vw;
             font-family: MedievalSharp, cursive;
-            font-size: clamp(16px, 2vw, 24px);
             color: #cee7ff;
             text-align: center;
             line-height: 1.6;
-            margin-top: -100px;
         ">
-            <div class="main-description" style="font-family: MedievalSharp, cursive; font-size: 16px; color: #cee7ff" id="special-thanks">
-                This mod would not exist without the invaluable contributions of the following amazing individuals and
-                communities
-                <ul style="list-style-type: none; padding-left: 0;">
+            <img style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"
+                src="./images/front-page/content-box-main.png" />
+            <div class="thank-you-description"
+                style="position: relative; z-index: 2; font-family: MedievalSharp, cursive; font-size: 16px; color: #cee7ff; padding: 60px 20px"
+                id="special-thanks">
+                <p>This mod would not exist without the invaluable contributions of the following amazing individuals
+                    and
+                    communities</p>
+                <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
                     <li>Tireheb - for porting the base mod to diablo 2 resurrected</li>
                     <li>@rlf_unique - for the database generation tool</li>
                     <li>Phrozen Keep community - for the never ending help</li>
@@ -575,7 +587,6 @@
                     <li>Supporters - if you want to support this mod, <a href="https://coff.ee/celestialray"
                             target="_blank" style="color: #cee7ff;">click here</a></li>
                     <li>You - for playing this mod and providing feedback and reporting bugs</li>
-                    <li></li>
                 </ul>
             </div>
         </div>
