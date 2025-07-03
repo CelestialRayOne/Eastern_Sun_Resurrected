@@ -1,3 +1,6 @@
+# Official Website
+## https://celestialrayone.github.io/Eastern_Sun_Resurrected/docs/
+
 # Discord Server
 ## https://discord.gg/XfFmAYZAbA
 You will find a lot of useful information on the discord server, including a beginner's guide as well as I'll be able to answer your questions.
