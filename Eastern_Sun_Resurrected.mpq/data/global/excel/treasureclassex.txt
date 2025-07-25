@@ -1,7 +1,7 @@
 Treasure Class	group	level	Picks	Unique	Set	Rare	Magic	NoDrop	Item1	Prob1	Item2	Prob2	Item3	Prob3	Item4	Prob4	Item5	Prob5	Item6	Prob6	Item7	Prob7	Item8	Prob8	Item9	Prob9	Item10	Prob10	*ItemProbSum	*ItemProbTotal	*TreasureClassDropChance	ladder	noAlwaysSpawn	*eol
 Gold			1						"gld,mul=1024"	1																								0
 Nothing			0																															0
-Ammo			1						aq2	1	cq2	1																						0
+Ammo			1						aq2	1	cq2	1	Nothing	2																				0
 Misc 0			1						key	6	tsc	4	isc	4	vps	1	yps	2	wms	1														0
 Misc 1			1						key	6	tsc	4	isc	4	vps	1	yps	2	wms	1														0
 Misc 2			1						key	6	tsc	4	isc	4	vps	1	yps	2	wms	1														0
@@ -28,13 +28,15 @@ Act 3 (H) Junk			1					25	Potion 7	8	Ammo	3																						0
 Act 4 (H) Junk			1					25	Potion 7	8	Ammo	3																						0
 Act 5 (H) Junk			1					25	Potion 7	8	Ammo	3																						0
 Class Rings			1						srn	1	brg	1	nrn	1	prn	1	drn	1	zrn	1	arn	1												0
-Rings			1						rin	2	Class Rings	1																						0
+Rings			1						rin	2	Class Rings	1	Nothing	3																				0
 Class Amulets			1						sam	1	bam	1	nam	1	pam	1	dam	1	zam	1	aam	1												0
-Amulets			1						amu	2	Class Amulets	1																						0
+Amulets			1						amu	2	Class Amulets	1	Nothing	3																				0
+Jewels			1						jew	1	Nothing	1																						0
 Pandemonium Key A			1	1024				20	pk1	20																								0
 Pandemonium Key B			1	1024				20	pk2	20																								0
 Pandemonium Key C			1	1024				20	pk3	20																								0
 Worldstone Shards			1					20	wss	1	Nothing	20																						0
+Regular Charms			1						cx1	1	cx2	1	cx3	1	Nothing	3																		0
 Unique Charm 1			1	1024					The Perfect Cell	6	Yello Jello	6	Lothar's Will	6	Deviant Cell	4																		0
 Unique Charm 2			1	1024					The Perfect Cell	6	Yello Jello	6	Lothar's Will	6	Gheed's Fortune	5	Deviant Cell	4	Vlad Tepe's Sustenance	1	Something Wicked	1	The Unknown Hero	1										0
 Unique Charm Small			1	1024					The Perfect Cell	6	Vlad Tepe's Sustenance	1																						0
@@ -44,7 +46,7 @@ DDD4			-4						ddd	1	ddd	1	ddd	1	ddd	1																		0
 DDD3			-3						ddd	1	ddd	1	ddd	1																				0
 DDD2			-2						ddd	1	ddd	1																						0
 DDD1			-1						ddd	64	DDD2	16	DDD3	8	DDD4	4	DDD5	2	DDD6	1														0
-Jewelry A			1						Rings	72	Amulets	48	jew	36	ppp	9	cx1	24	cx2	24	cx3	24	DDD1	18	sdo	1								0
+Jewelry A			1						Rings	72	Amulets	48	Jewels	36	ppp	9	Regular Charms	72	DDD1	18	sdo	1												0
 Jewelry B			1						Jewelry A	129	Unique Charm 1	1																						0
 Jewelry C			1						Jewelry A	129	Unique Charm 2	1																						0
 Chipped Gem			1						gcv	1	gcy	1	gcb	1	gcg	1	gcr	1	gcw	1	skc	1	gck	1										0
@@ -73,6 +75,7 @@ Runes 13			1						r37	20	r38	18	r39	16	27l	8	28l	6	Runes 12	2880														0
 Runes 14			1						r40	18	r41	16	r42	14	29l	8	30l	6	Runes 13	3360														0
 Runes 15			1						r43	16	r44	14	r45	12	31l	8	32l	6	Runes 14	3840														0
 Runes 16			1						r50	24	r46	30	33l	18	um8	1	um9	1	Runes 15	12960														0
+Charm JP			6						cx1	1	cx2	1	cx3	1																				0
 Rune JP (Norm)			-6						Runes 6	6																								0
 Rune JP (NM)			-6						Runes 11	6																								0
 Rune JP (H)			-6						Runes 16	6																								0
@@ -212,21 +215,21 @@ Sets05			1	0	1024				Splanet	1	Saanna	1	Salora	1	Skrakerage	1	Smerlin	1	Slich	1	
 Sets06			1	0	1024				Swaves	1	Salaziel	1	Ssascha	1	Sdarkshade	1	Snature	1	Snupraptor	1	Slancelot	1	Sraistlin	1			Sbarbnm	1	Sets05	100				0
 Sets07			1	0	1024				Sshepherd	1	Snoir	1	Sihsan	1	Shurja	1	Sjaheira	1	Slimdul	1	Sgriffith	1	Sjade	1			Sdeserth	1	Sets06	125				0
 Sets08			1	0	1024				Stass	1	Smilea	1	Sborik	1	Ssarevok	1	Snatrule	1	Sbrotherhood	1	Sdarien	1	Sarion	1			Sbarbh	1	Sets07	150				0
-Act 1 UGood			1						Act 1 Good	240	Sets01	1	Rune JP (Norm)	2	Coupon JP (Norm)	2																		0
-Act 2 UGood			1						Act 2 Good	240	Sets01	1	Rune JP (Norm)	2	Coupon JP (Norm)	2																		0
-Act 3 UGood			1						Act 3 Good	240	Sets02	1	Rune JP (Norm)	2	Coupon JP (Norm)	2																		0
-Act 4 UGood			1						Act 4 Good	240	Sets03	1	Rune JP (Norm)	2	Coupon JP (Norm)	2																		0
-Act 5 UGood			1						Act 5 Good	240	Sets03	1	Rune JP (Norm)	2	Coupon JP (Norm)	2																		0
-Act 1 (N) UGood			1						Act 1 (N) Good	240	Sets04	1	Rune JP (NM)	2	Coupon JP (NM)	2																		0
-Act 2 (N) UGood			1						Act 2 (N) Good	240	Sets04	1	Rune JP (NM)	2	Coupon JP (NM)	2																		0
-Act 3 (N) UGood			1						Act 3 (N) Good	240	Sets04	1	Rune JP (NM)	2	Coupon JP (NM)	2																		0
-Act 4 (N) UGood			1						Act 4 (N) Good	240	Sets05	1	Rune JP (NM)	2	Coupon JP (NM)	2																		0
-Act 5 (N) UGood			1						Act 5 (N) Good	240	Sets05	1	Rune JP (NM)	2	Coupon JP (NM)	2																		0
-Act 1 (H) UGood			1						Act 1 (H) Good	240	Sets05	1	Rune JP (H)	2	Coupon JP (H)	2																		0
-Act 2 (H) UGood			1						Act 2 (H) Good	240	Sets06	1	Rune JP (H)	2	Coupon JP (H)	2																		0
-Act 3 (H) UGood			1						Act 3 (H) Good	240	Sets06	1	Rune JP (H)	2	Coupon JP (H)	2																		0
-Act 4 (H) UGood			1						Act 4 (H) Good	240	Sets07	1	Rune JP (H)	2	Coupon JP (H)	2																		0
-Act 5 (H) UGood			1						Act 5 (H) Good	240	Sets08	1	Rune JP (H)	2	Coupon JP (H)	2																		0
+Act 1 UGood			1						Act 1 Good	240	Sets01	1	Rune JP (Norm)	2	Coupon JP (Norm)	2	Charm JP	2																0
+Act 2 UGood			1						Act 2 Good	240	Sets01	1	Rune JP (Norm)	2	Coupon JP (Norm)	2	Charm JP	2																0
+Act 3 UGood			1						Act 3 Good	240	Sets02	1	Rune JP (Norm)	2	Coupon JP (Norm)	2	Charm JP	2																0
+Act 4 UGood			1						Act 4 Good	240	Sets03	1	Rune JP (Norm)	2	Coupon JP (Norm)	2	Charm JP	2																0
+Act 5 UGood			1						Act 5 Good	240	Sets03	1	Rune JP (Norm)	2	Coupon JP (Norm)	2	Charm JP	2																0
+Act 1 (N) UGood			1						Act 1 (N) Good	240	Sets04	1	Rune JP (NM)	2	Coupon JP (NM)	2	Charm JP	2																0
+Act 2 (N) UGood			1						Act 2 (N) Good	240	Sets04	1	Rune JP (NM)	2	Coupon JP (NM)	2	Charm JP	2																0
+Act 3 (N) UGood			1						Act 3 (N) Good	240	Sets04	1	Rune JP (NM)	2	Coupon JP (NM)	2	Charm JP	2																0
+Act 4 (N) UGood			1						Act 4 (N) Good	240	Sets05	1	Rune JP (NM)	2	Coupon JP (NM)	2	Charm JP	2																0
+Act 5 (N) UGood			1						Act 5 (N) Good	240	Sets05	1	Rune JP (NM)	2	Coupon JP (NM)	2	Charm JP	2																0
+Act 1 (H) UGood			1						Act 1 (H) Good	240	Sets05	1	Rune JP (H)	2	Coupon JP (H)	2	Charm JP	2																0
+Act 2 (H) UGood			1						Act 2 (H) Good	240	Sets06	1	Rune JP (H)	2	Coupon JP (H)	2	Charm JP	2																0
+Act 3 (H) UGood			1						Act 3 (H) Good	240	Sets06	1	Rune JP (H)	2	Coupon JP (H)	2	Charm JP	2																0
+Act 4 (H) UGood			1						Act 4 (H) Good	240	Sets07	1	Rune JP (H)	2	Coupon JP (H)	2	Charm JP	2																0
+Act 5 (H) UGood			1						Act 5 (H) Good	240	Sets08	1	Rune JP (H)	2	Coupon JP (H)	2	Charm JP	2																0
 Act 1 Equip A	1	0	1						weap3	200	armo3	200	Act 1 Coupon C	5															405					0
 Act 1 Equip B	1	5	1						weap3	60	armo3	60	weap6	140	armo6	140	Act 2 Coupon A	5											405					0
 Act 1 Equip C	1	9	1						weap3	20	armo3	10	weap6	60	armo6	30	weap9	140	armo9	70	weap12	20	armo12	10	Act 2 Coupon B	4			364					0
@@ -317,48 +320,48 @@ Act 4 (H) Chest C	6	82	4					100	Gold	5	Act 4 (H) Equip B	22	Act 4 (H) Junk	15	A
 Act 5 (H) Chest A	6	83	4					100	Gold	5	Act 5 (H) Equip A	22	Act 5 (H) Junk	15	Act 5 (H) Good	5																		0
 Act 5 (H) Chest B	6	84	4					100	Gold	5	Act 5 (H) Equip B	22	Act 5 (H) Junk	15	Act 5 (H) Good	5																		0
 Act 5 (H) Chest C	6	85	4					100	Gold	5	Act 5 (H) Equip C	22	Act 5 (H) Junk	15	Act 5 (H) Good	5																		0
-A1A	7	0	1					60	Gold	9	Act 1 Equip A	42	Act 1 Good	9	Nothing	30																		0
-A1B	7	5	1					60	Gold	9	Act 1 Equip B	42	Act 1 Good	9	Nothing	30																		0
-A1C	7	9	1					60	Gold	9	Act 1 Equip C	42	Act 1 Good	9	Nothing	30																		0
-A2A	7	12	1					60	Gold	9	Act 2 Equip A	42	Act 2 Good	9	Nothing	30																		0
-A2B	7	15	1					60	Gold	9	Act 2 Equip B	42	Act 2 Good	9	Nothing	30																		0
-A2C	7	18	1					60	Gold	9	Act 2 Equip C	42	Act 3 Good	9	Nothing	30																		0
-A3A	7	20	1					60	Gold	9	Act 3 Equip A	42	Act 3 Good	9	Nothing	30																		0
-A3B	7	22	1					60	Gold	9	Act 3 Equip B	42	Act 3 Good	9	Nothing	30																		0
-A3C	7	24	1					60	Gold	9	Act 3 Equip C	42	Act 3 Good	9	Nothing	30																		0
-A4A	7	26	1					60	Gold	9	Act 4 Equip A	42	Act 4 Good	9	Nothing	30																		0
-A4B	7	29	1					60	Gold	9	Act 4 Equip B	42	Act 4 Good	9	Nothing	30																		0
-A5A	7	32	1					60	Gold	9	Act 5 Equip A	42	Act 5 Good	9	Nothing	30																		0
-A5B	7	34	1					60	Gold	9	Act 5 Equip B	42	Act 5 Good	9	Nothing	30																		0
-A5C	7	36	1					60	Gold	9	Act 5 Equip C	42	Act 5 Good	9	Nothing	30																		0
-A1A (N)	7	38	1					60	Gold	9	Act 1 (N) Equip A	42	Act 1 (N) Good	9	Nothing	30																		0
-A1B (N)	7	40	1					60	Gold	9	Act 1 (N) Equip B	42	Act 1 (N) Good	9	Nothing	30																		0
-A1C (N)	7	41	1					60	Gold	9	Act 1 (N) Equip B	42	Act 1 (N) Good	9	Nothing	30																		0
-A2A (N)	7	42	1					60	Gold	9	Act 2 (N) Equip A	42	Act 2 (N) Good	9	Nothing	30																		0
-A2B (N)	7	44	1					60	Gold	9	Act 2 (N) Equip B	42	Act 2 (N) Good	9	Nothing	30																		0
-A2C (N)	7	45	1					60	Gold	9	Act 2 (N) Equip B	42	Act 2 (N) Good	9	Nothing	30																		0
-A3A (N)	7	46	1					60	Gold	9	Act 3 (N) Equip A	42	Act 3 (N) Good	9	Nothing	30																		0
-A3B (N)	7	48	1					60	Gold	9	Act 3 (N) Equip B	42	Act 3 (N) Good	9	Nothing	30																		0
-A3C (N)	7	50	1					60	Gold	9	Act 3 (N) Equip B	42	Act 3 (N) Good	9	Nothing	30																		0
-A4A (N)	7	51	1					60	Gold	9	Act 4 (N) Equip A	42	Act 4 (N) Good	9	Nothing	30																		0
-A4B (N)	7	54	1					60	Gold	9	Act 4 (N) Equip B	42	Act 4 (N) Good	9	Nothing	30																		0
-A5A (N)	7	57	1					60	Gold	9	Act 5 (N) Equip A	42	Act 5 (N) Good	9	Nothing	30																		0
-A5B (N)	7	60	1					60	Gold	9	Act 5 (N) Equip B	42	Act 5 (N) Good	9	Nothing	30																		0
-A5C (N)	7	62	1					60	Gold	9	Act 5 (N) Equip C	42	Act 5 (N) Good	9	Nothing	30																		0
-A1A (H)	7	63	1					60	Gold	9	Act 1 (H) Equip A	42	Act 1 (H) Good	9	Nothing	30																		0
-A1B (H)	7	66	1					60	Gold	9	Act 1 (H) Equip B	42	Act 1 (H) Good	9	Nothing	30																		0
-A1C (H)	7	68	1					60	Gold	9	Act 1 (H) Equip B	42	Act 1 (H) Good	9	Nothing	30																		0
-A2A (H)	7	69	1					60	Gold	9	Act 2 (H) Equip A	42	Act 2 (H) Good	9	Nothing	30																		0
-A2B (H)	7	71	1					60	Gold	9	Act 2 (H) Equip B	42	Act 2 (H) Good	9	Nothing	30																		0
-A2C (H)	7	73	1					60	Gold	9	Act 2 (H) Equip B	42	Act 2 (H) Good	9	Nothing	30																		0
-A3A (H)	7	74	1					60	Gold	9	Act 3 (H) Equip A	42	Act 3 (H) Good	9	Nothing	30																		0
-A3B (H)	7	76	1					60	Gold	9	Act 3 (H) Equip B	42	Act 3 (H) Good	9	Nothing	30																		0
-A3C (H)	7	77	1					60	Gold	9	Act 3 (H) Equip B	42	Act 3 (H) Good	9	Nothing	30																		0
-A4A (H)	7	79	1					60	Gold	9	Act 4 (H) Equip A	42	Act 4 (H) Good	9	Nothing	30																		0
-A4B (H)	7	80	1					60	Gold	9	Act 4 (H) Equip B	42	Act 4 (H) Good	9	Nothing	30																		0
-A5A (H)	7	82	1					60	Gold	9	Act 5 (H) Equip A	42	Act 5 (H) Good	9	Nothing	30																		0
-A5B (H)	7	83	1					60	Gold	9	Act 5 (H) Equip B	42	Act 5 (H) Good	9	Nothing	30																		0
-A5C (H)	7	85	1					60	Gold	9	Act 5 (H) Equip C	42	Act 5 (H) Good	9	Nothing	30																		0
+A1A	7	0	1					60	Gold	9	Act 1 Equip A	42	Act 1 Good	10	Nothing	45																		0
+A1B	7	5	1					60	Gold	9	Act 1 Equip B	42	Act 1 Good	10	Nothing	45																		0
+A1C	7	9	1					60	Gold	9	Act 1 Equip C	42	Act 1 Good	10	Nothing	45																		0
+A2A	7	12	1					60	Gold	9	Act 2 Equip A	42	Act 2 Good	10	Nothing	45																		0
+A2B	7	15	1					60	Gold	9	Act 2 Equip B	42	Act 2 Good	10	Nothing	45																		0
+A2C	7	18	1					60	Gold	9	Act 2 Equip C	42	Act 3 Good	10	Nothing	45																		0
+A3A	7	20	1					60	Gold	9	Act 3 Equip A	42	Act 3 Good	10	Nothing	45																		0
+A3B	7	22	1					60	Gold	9	Act 3 Equip B	42	Act 3 Good	10	Nothing	45																		0
+A3C	7	24	1					60	Gold	9	Act 3 Equip C	42	Act 3 Good	10	Nothing	45																		0
+A4A	7	26	1					60	Gold	9	Act 4 Equip A	42	Act 4 Good	10	Nothing	45																		0
+A4B	7	29	1					60	Gold	9	Act 4 Equip B	42	Act 4 Good	10	Nothing	45																		0
+A5A	7	32	1					60	Gold	9	Act 5 Equip A	42	Act 5 Good	10	Nothing	45																		0
+A5B	7	34	1					60	Gold	9	Act 5 Equip B	42	Act 5 Good	10	Nothing	45																		0
+A5C	7	36	1					60	Gold	9	Act 5 Equip C	42	Act 5 Good	10	Nothing	45																		0
+A1A (N)	7	38	1					60	Gold	9	Act 1 (N) Equip A	42	Act 1 (N) Good	10	Nothing	45																		0
+A1B (N)	7	40	1					60	Gold	9	Act 1 (N) Equip B	42	Act 1 (N) Good	10	Nothing	45																		0
+A1C (N)	7	41	1					60	Gold	9	Act 1 (N) Equip B	42	Act 1 (N) Good	10	Nothing	45																		0
+A2A (N)	7	42	1					60	Gold	9	Act 2 (N) Equip A	42	Act 2 (N) Good	10	Nothing	45																		0
+A2B (N)	7	44	1					60	Gold	9	Act 2 (N) Equip B	42	Act 2 (N) Good	10	Nothing	45																		0
+A2C (N)	7	45	1					60	Gold	9	Act 2 (N) Equip B	42	Act 2 (N) Good	10	Nothing	45																		0
+A3A (N)	7	46	1					60	Gold	9	Act 3 (N) Equip A	42	Act 3 (N) Good	10	Nothing	45																		0
+A3B (N)	7	48	1					60	Gold	9	Act 3 (N) Equip B	42	Act 3 (N) Good	10	Nothing	45																		0
+A3C (N)	7	50	1					60	Gold	9	Act 3 (N) Equip B	42	Act 3 (N) Good	10	Nothing	45																		0
+A4A (N)	7	51	1					60	Gold	9	Act 4 (N) Equip A	42	Act 4 (N) Good	10	Nothing	45																		0
+A4B (N)	7	54	1					60	Gold	9	Act 4 (N) Equip B	42	Act 4 (N) Good	10	Nothing	45																		0
+A5A (N)	7	57	1					60	Gold	9	Act 5 (N) Equip A	42	Act 5 (N) Good	10	Nothing	45																		0
+A5B (N)	7	60	1					60	Gold	9	Act 5 (N) Equip B	42	Act 5 (N) Good	10	Nothing	45																		0
+A5C (N)	7	62	1					60	Gold	9	Act 5 (N) Equip C	42	Act 5 (N) Good	10	Nothing	45																		0
+A1A (H)	7	63	1					60	Gold	9	Act 1 (H) Equip A	42	Act 1 (H) Good	10	Nothing	45																		0
+A1B (H)	7	66	1					60	Gold	9	Act 1 (H) Equip B	42	Act 1 (H) Good	10	Nothing	45																		0
+A1C (H)	7	68	1					60	Gold	9	Act 1 (H) Equip B	42	Act 1 (H) Good	10	Nothing	45																		0
+A2A (H)	7	69	1					60	Gold	9	Act 2 (H) Equip A	42	Act 2 (H) Good	10	Nothing	45																		0
+A2B (H)	7	71	1					60	Gold	9	Act 2 (H) Equip B	42	Act 2 (H) Good	10	Nothing	45																		0
+A2C (H)	7	73	1					60	Gold	9	Act 2 (H) Equip B	42	Act 2 (H) Good	10	Nothing	45																		0
+A3A (H)	7	74	1					60	Gold	9	Act 3 (H) Equip A	42	Act 3 (H) Good	10	Nothing	45																		0
+A3B (H)	7	76	1					60	Gold	9	Act 3 (H) Equip B	42	Act 3 (H) Good	10	Nothing	45																		0
+A3C (H)	7	77	1					60	Gold	9	Act 3 (H) Equip B	42	Act 3 (H) Good	10	Nothing	45																		0
+A4A (H)	7	79	1					60	Gold	9	Act 4 (H) Equip A	42	Act 4 (H) Good	10	Nothing	45																		0
+A4B (H)	7	80	1					60	Gold	9	Act 4 (H) Equip B	42	Act 4 (H) Good	10	Nothing	45																		0
+A5A (H)	7	82	1					60	Gold	9	Act 5 (H) Equip A	42	Act 5 (H) Good	10	Nothing	45																		0
+A5B (H)	7	83	1					60	Gold	9	Act 5 (H) Equip B	42	Act 5 (H) Good	10	Nothing	45																		0
+A5C (H)	7	85	1					60	Gold	9	Act 5 (H) Equip C	42	Act 5 (H) Good	10	Nothing	45																		0
 Cpot 1	12	0	2					1	Potion 1	1																								0
 Cpot 2	12	12	2					1	Potion 2	1																								0
 Cpot 3	12	20	2					1	Potion 3	1																								0
@@ -1451,262 +1454,6 @@ Uber Izual			1	1024				0	mbr	1																								0
 Uber Diablo			1	1024				0	ht1	1																								0
 Uber Baal			1	1024				0	ht2	1																								0
 Uber Mephisto			1	1024				0	ht3	1																								0
-Act 1 Magic A	4	0	1						tsc	2	isc	4	mp1	6																				0
-Act 1 Magic B	4	5	1						tsc	2	isc	4	mp1	4	mp2	2																		0
-Act 1 Magic C	4	9	1						tsc	2	isc	4	mp1	2	mp2	4																		0
-Act 2 Magic A	4	12	1						tsc	2	isc	4	mp1	1	mp2	4	mp3	1																0
-Act 2 Magic B	4	15	1						tsc	2	isc	4	mp1	1	mp2	3	mp3	2																0
-Act 2 Magic C	4	18	1						tsc	2	isc	4	mp2	2	mp3	3	mp4	1																0
-Act 3 Magic A	4	20	1						tsc	2	isc	4	mp3	4	mp4	2																		0
-Act 3 Magic B	4	22	1						tsc	2	isc	4	mp3	3	mp4	3																		0
-Act 3 Magic C	4	24	1						tsc	2	isc	4	mp3	2	mp4	3	mp5	1																0
-Act 4 Magic A	4	26	1						tsc	2	isc	4	mp3	1	mp4	4	mp5	1																0
-Act 4 Magic B	4	29	1						tsc	2	isc	4	mp4	4	mp5	2																		0
-Act 5 Magic A	4	32	1						tsc	2	isc	4	mp4	3	mp5	3																		0
-Act 5 Magic B	4	34	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 Magic C	4	36	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 1 (N) Magic A	4	38	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 1 (N) Magic B	4	40	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 2 (N) Magic A	4	42	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 2 (N) Magic B	4	44	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 3 (N) Magic A	4	46	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 3 (N) Magic B	4	48	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 4 (N) Magic A	4	51	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 4 (N) Magic B	4	54	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 (N) Magic A	4	57	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 (N) Magic B	4	60	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 (N) Magic C	4	63	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 1 (H) Magic A	4	66	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 1 (H) Magic B	4	69	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 2 (H) Magic A	4	71	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 2 (H) Magic B	4	73	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 3 (H) Magic A	4	75	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 3 (H) Magic B	4	77	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 4 (H) Magic A	4	79	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 4 (H) Magic B	4	80	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 (H) Magic A	4	82	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 (H) Magic B	4	83	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 5 (H) Magic C	4	85	1						tsc	2	isc	4	mp4	2	mp5	4																		0
-Act 1 Melee A	2	0	1						mele3	7	armo3	7																						0
-Act 1 Melee B	2	5	1						mele3	3	armo3	3	mele6	7	armo6	7																		0
-Act 1 Melee C	2	9	1						mele3	2	armo3	1	mele6	6	armo6	3	mele9	14	armo9	7	mele12	2	armo12	1										0
-Act 2 Melee A	2	12	1						mele6	2	armo6	1	mele9	6	armo9	3	mele12	14	armo12	7	mele15	2	armo15	1	Act 1 Melee C	30			36	66	0.4545			0
-Act 2 Melee B	2	15	1						mele9	2	armo9	1	mele12	6	armo12	3	mele15	14	armo15	7	mele18	2	armo18	1	Act 2 Melee A	60			36	96	0.625			0
-Act 2 Melee C	2	18	1						mele12	2	armo12	1	mele15	6	armo15	3	mele18	14	armo18	7	mele21	2	armo21	1	Act 2 Melee B	90			36	126	0.7143			0
-Act 3 Melee A	2	20	1						mele15	2	armo15	1	mele18	6	armo18	3	mele21	14	armo21	7	mele24	2	armo24	1	Act 2 Melee C	120			36	156	0.7692			0
-Act 3 Melee B	2	22	1						mele18	2	armo18	1	mele21	6	armo21	3	mele24	14	armo24	7	mele27	2	armo27	1	Act 3 Melee A	150			36	186	0.8065			0
-Act 3 Melee C	2	24	1						mele21	2	armo21	1	mele24	6	armo24	3	mele27	14	armo27	7	mele30	2	armo30	1	Act 3 Melee B	180			36	216	0.8333			0
-Act 4 Melee A	2	26	1						mele24	2	armo24	1	mele27	6	armo27	3	mele30	14	armo30	4	mele33	2	armo33	1	Act 3 Melee C	210			33	243	0.8642			0
-Act 4 Melee B	2	29	1						mele27	2	armo27	1	mele30	6	armo30	3	mele33	14	armo33	3	mele36	2	armo36	1	Act 4 Melee A	260			32	292	0.8904			0
-Act 5 Melee A	2	32	1						mele27	2	armo27	1	mele30	6	armo30	3	mele33	14	armo33	3	mele36	7	armo36	5	Act 4 Melee B	400			41	441	0.907			0
-Act 5 Melee B	2	34	1						mele30	2	armo30	1	mele33	6	armo33	2	mele36	14	armo36	7	mele39	2	armo39	1	Act 5 Melee A	489			35	524	0.9332			0
-Act 5 Melee C	2	36	1						mele30	2	armo30	1	mele33	6	armo33	2	mele36	14	armo36	7	mele39	2	armo39	1	Act 5 Melee B	629			35	664	0.9473			0
-Act 1 (N) Melee A	2	38	1						weap33	2	armo33	1	weap36	6	armo36	3	weap39	14	armo39	7	weap42	2	armo42	1	Act 5 Melee C	769			36	805	0.9553			0
-Act 1 (N) Melee B	2	40	1						weap36	2	armo36	1	weap39	6	armo39	3	weap42	14	armo42	7	weap45	2	armo45	1	Act 1 (N) Melee A	935			36	971	0.9629			0
-Act 2 (N) Melee A	2	42	1						weap36	2	armo36	1	weap39	6	armo39	3	weap42	14	armo42	7	weap45	6	armo45	3	Act 1 (N) Melee B	1148			42	1190	0.9647			0
-Act 2 (N) Melee B	2	44	1						weap39	2	armo39	1	weap42	6	armo42	3	weap45	14	armo45	7	weap48	2	armo48	1	Act 2 (N) Melee A	1020			36	1056	0.9659			0
-Act 3 (N) Melee A	2	46	1						weap42	2	armo42	1	weap45	6	armo45	3	weap48	14	armo48	7	weap51	2	armo51	1	Act 2 (N) Melee B	1063			36	1099	0.9672			0
-Act 3 (N) Melee B	2	48	1						weap45	2	armo45	1	weap48	6	armo48	3	weap51	14	armo51	7	weap54	2	armo54	1	Act 3 (N) Melee A	1105			36	1141	0.9684			0
-Act 4 (N) Melee A	2	51	1						weap45	2	armo45	1	weap48	6	armo48	3	weap51	14	armo51	7	weap54	6	armo54	3	Act 3 (N) Melee B	1339			42	1381	0.9696			0
-Act 4 (N) Melee B	2	54	1						weap48	2	armo48	1	weap51	6	armo51	3	weap54	14	armo54	7	weap57	2	armo57	1	Act 4 (N) Melee A	1190			36	1226	0.9706			0
-Act 5 (N) Melee A	2	57	1						weap51	2	armo51	1	weap54	6	armo54	3	weap57	14	armo57	7	weap60	2	armo60	1	Act 4 (N) Melee B	1275			36	1311	0.9725			0
-Act 5 (N) Melee B	2	60	1						weap51	2	armo51	1	weap54	6	armo54	3	weap57	14	armo57	7	weap60	6	armo60	3	Act 5 (N) Melee A	1743			42	1785	0.9765			0
-Act 5 (N) Melee C	2	63	1						weap54	2	armo54	1	weap57	6	armo57	3	weap60	14	armo60	7	weap63	2	armo63	1	Act 5 (N) Melee B	1530			36	1566	0.977			0
-Act 1 (H) Melee A	2	66	1						weap54	2	armo54	1	weap57	6	armo57	3	weap60	14	armo60	7	weap63	6	armo63	3	Act 5 (N) Melee C	1781			42	1823	0.977			0
-Act 1 (H) Melee B	2	68	1						weap57	2	armo57	1	weap60	6	armo60	3	weap63	14	armo63	7	weap66	2	armo66	1	Act 1 (H) Melee A	1530			36	1566	0.977			0
-Act 2 (H) Melee A	2	71	1						weap60	2	armo60	1	weap63	6	armo63	3	weap66	14	armo66	7	weap69	2	armo69	1	Act 1 (H) Melee B	1530			36	1566	0.977			0
-Act 2 (H) Melee B	2	73	1						weap63	2	armo63	1	weap66	6	armo66	3	weap69	14	armo69	7	weap72	2	armo72	1	Act 2 (H) Melee A	1530			36	1566	0.977			0
-Act 3 (H) Melee A	2	75	1						weap63	2	armo63	1	weap66	6	armo66	3	weap69	14	armo69	7	weap72	6	armo72	3	Act 2 (H) Melee B	1781			42	1823	0.977			0
-Act 3 (H) Melee B	2	77	1						weap66	2	armo66	1	weap69	6	armo69	3	weap72	14	armo72	7	weap75	2	armo75	1	Act 3 (H) Melee A	1530			36	1566	0.977			0
-Act 4 (H) Melee A	2	79	1						weap69	2	armo69	1	weap72	6	armo72	3	weap75	14	armo75	7	weap78	2	armo78	1	Act 3 (H) Melee B	1530			36	1566	0.977			0
-Act 4 (H) Melee B	2	80	1						weap72	2	armo72	1	weap75	6	armo75	3	weap78	14	armo78	7	weap81	2	armo81	1	Act 4 (H) Melee A	1530			36	1566	0.977			0
-Act 5 (H) Melee A	2	81	1						weap75	2	armo75	1	weap78	6	armo78	3	weap81	14	armo81	7	weap84	2	armo84	1	Act 4 (H) Melee B	1530			36	1566	0.977			0
-Act 5 (H) Melee B	2	83	1						weap78	2	armo78	1	weap81	6	armo81	3	weap84	14	armo84	7	weap87	2	armo87	1	Act 5 (H) Melee A	1530			36	1566	0.977			0
-Act 5 (H) Melee C	2	85	1						weap81	2	armo81	1	weap84	6	armo84	3	weap87	14	armo87	7	weap87	1	armo87	1	Act 5 (H) Melee B	1530			35	1565	0.9776			0
-Act 1 Bow A	3	0	1						bow3	36																								0
-Act 1 Bow B	3	5	1						bow3	20	bow6	16																						0
-Act 1 Bow C	3	9	1						bow3	10	bow6	16	bow9	10																				0
-Act 2 Bow A	3	12	1						bow3	3	bow6	15	bow9	15	bow12	3																		0
-Act 2 Bow B	3	15	1						bow3	1	bow6	7	bow9	20	bow12	7	bow15	1																0
-Act 2 Bow C	3	18	1						bow3	1	bow6	3	bow9	14	bow12	14	bow15	3	bow18	1														0
-Act 3 Bow A	3	20	1						bow3	1	bow6	3	bow9	6	bow12	12	bow15	6	bow18	3	bow21	1												0
-Act 3 Bow B	3	22	1						bow3	1	bow6	3	bow9	6	bow12	8	bow15	8	bow18	6	bow21	3	bow24	1										0
-Act 3 Bow C	3	24	1						bow3	1	bow6	2	bow9	5	bow12	7	bow15	8	bow18	7	bow21	4	bow24	2										0
-Act 4 Bow A	3	26	1						bow6	1	bow9	3	bow12	6	bow15	8	bow18	8	bow21	6	bow24	3	bow27	1	Act 3 Bow C	110			36	146	0.7534			0
-Act 4 Bow B	3	29	1						bow6	1	bow9	2	bow12	5	bow15	7	bow18	8	bow21	7	bow24	4	bow27	2	Act 4 Bow A	180			36	216	0.8333			0
-Act 5 Bow A	3	32	1						bow9	1	bow12	3	bow15	6	bow18	8	bow21	8	bow24	6	bow27	3	bow30	1	Act 4 Bow B	270			36	306	0.8824			0
-Act 5 Bow B	3	34	1						bow9	1	bow12	2	bow15	5	bow18	7	bow21	8	bow24	7	bow27	4	bow30	2	Act 5 Bow A	380			36	416	0.9135			0
-Act 5 Bow C	3	36	1						bow9	1	bow12	2	bow15	5	bow18	7	bow21	8	bow24	7	bow27	4	bow30	2	Act 5 Bow B	500			36	536	0.9328			0
-Act 1 (N) Bow A	3	38	1						bow12	1	bow15	2	bow18	5	bow21	7	bow24	8	bow27	7	bow30	4	bow33	2	Act 5 Bow C	630			36	666	0.9459			0
-Act 1 (N) Bow B	3	40	1						bow15	1	bow18	2	bow21	5	bow24	7	bow27	8	bow30	7	bow33	4	bow36	2	Act 1 (N) Bow A	770			36	806	0.9553			0
-Act 2 (N) Bow A	3	42	1						bow18	1	bow21	2	bow24	5	bow27	7	bow30	8	bow33	7	bow36	4	bow39	2	Act 1 (N) Bow B	920			36	956	0.9623			0
-Act 2 (N) Bow B	3	44	1						bow21	1	bow24	2	bow27	5	bow30	7	bow33	8	bow36	7	bow39	4	bow42	2	Act 2 (N) Bow A	1070			36	1106	0.9675			0
-Act 3 (N) Bow A	3	46	1						bow24	1	bow27	2	bow30	5	bow33	7	bow36	8	bow39	7	bow42	4	bow45	2	Act 2 (N) Bow B	1220			36	1256	0.9713			0
-Act 3 (N) Bow B	3	48	1						bow27	1	bow30	2	bow33	5	bow36	7	bow39	8	bow42	7	bow45	4	bow48	2	Act 3 (N) Bow A	1370			36	1406	0.9744			0
-Act 4 (N) Bow A	3	51	1						bow30	1	bow33	2	bow36	5	bow39	7	bow42	8	bow45	7	bow48	4	bow51	2	Act 3 (N) Bow B	1520			36	1556	0.9769			0
-Act 4 (N) Bow B	3	54	1						bow33	1	bow36	2	bow39	5	bow42	7	bow45	8	bow48	7	bow51	4	bow54	2	Act 4 (N) Bow A	1670			36	1706	0.9789			0
-Act 5 (N) Bow A	3	57	1						bow36	1	bow39	2	bow42	5	bow45	7	bow48	8	bow51	7	bow54	4	bow57	2	Act 4 (N) Bow B	1820			36	1856	0.9806			0
-Act 5 (N) Bow B	3	60	1						bow39	1	bow42	2	bow45	5	bow48	7	bow51	8	bow54	7	bow57	4	bow60	2	Act 5 (N) Bow A	1970			36	2006	0.9821			0
-Act 5 (N) Bow C	3	63	1						bow42	1	bow45	2	bow48	5	bow51	7	bow54	8	bow57	7	bow60	4	bow63	2	Act 5 (N) Bow B	2120			36	2156	0.9833			0
-Act 1 (H) Bow A	3	66	1						bow45	1	bow48	2	bow51	5	bow54	7	bow57	8	bow60	7	bow63	4	bow66	2	Act 5 (N) Bow C	2270			36	2306	0.9844			0
-Act 1 (H) Bow B	3	69	1						bow48	1	bow51	2	bow54	5	bow57	7	bow60	8	bow63	7	bow66	4	bow69	2	Act 1 (H) Bow A	2270			36	2306	0.9844			0
-Act 2 (H) Bow A	3	71	1						bow51	1	bow54	2	bow57	5	bow60	7	bow63	8	bow66	7	bow69	4	bow72	2	Act 1 (H) Bow B	2270			36	2306	0.9844			0
-Act 2 (H) Bow B	3	73	1						bow54	1	bow57	2	bow60	5	bow63	7	bow66	8	bow69	7	bow72	4	bow75	2	Act 2 (H) Bow A	2270			36	2306	0.9844			0
-Act 3 (H) Bow A	3	75	1						bow57	1	bow60	2	bow63	5	bow66	7	bow69	8	bow72	7	bow75	4	bow78	2	Act 2 (H) Bow B	2270			36	2306	0.9844			0
-Act 3 (H) Bow B	3	77	1						bow60	1	bow63	2	bow66	5	bow69	7	bow72	8	bow75	7	bow78	4	bow81	2	Act 3 (H) Bow A	2270			36	2306	0.9844			0
-Act 4 (H) Bow A	3	79	1						bow63	1	bow66	2	bow69	5	bow72	7	bow75	8	bow78	7	bow81	4	bow84	2	Act 3 (H) Bow B	2270			36	2306	0.9844			0
-Act 4 (H) Bow B	3	80	1						bow66	1	bow69	2	bow72	5	bow75	7	bow78	8	bow81	7	bow84	2	bow84	1	Act 4 (H) Bow A	2080			33	2113	0.9844			0
-Act 5 (H) Bow A	3	82	1						bow69	1	bow72	2	bow75	5	bow78	7	bow81	8	bow84	7	bow87	2	bow87	1	Act 4 (H) Bow B	2080			33	2113	0.9844			0
-Act 5 (H) Bow B	3	83	1						bow72	1	bow75	2	bow78	5	bow81	7	bow84	8	bow87	7	bow87	2	bow87	1	Act 5 (H) Bow A	2080			33	2113	0.9844			0
-Act 5 (H) Bow C	3	85	1						bow75	1	bow78	2	bow81	5	bow84	7	bow87	8	bow87	1	bow87	1	bow87	1	Act 5 (H) Bow B	1655			26	1681	0.9845			0
-Act 1 Cast A	8	0	1					100	gld	18	Act 1 Equip A	15	Act 1 Junk	18	Act 1 Good	2	Act 1 Magic A	7																0
-Act 1 Cast B	8	5	1					100	gld	18	Act 1 Equip B	15	Act 1 Junk	18	Act 1 Good	2	Act 1 Magic B	7																0
-Act 1 Cast C	8	9	1					100	gld	18	Act 1 Equip C	15	Act 1 Junk	18	Act 1 Good	2	Act 1 Magic C	7																0
-Act 2 Cast A	8	12	1					100	gld	18	Act 2 Equip A	15	Act 2 Junk	18	Act 2 Good	2	Act 2 Magic A	7																0
-Act 2 Cast B	8	15	1					100	gld	18	Act 2 Equip B	15	Act 2 Junk	18	Act 2 Good	2	Act 2 Magic B	7																0
-Act 2 Cast C	8	18	1					100	gld	18	Act 2 Equip C	15	Act 2 Junk	18	Act 3 Good	2	Act 2 Magic C	7																0
-Act 3 Cast A	8	20	1					100	gld	18	Act 3 Equip A	15	Act 3 Junk	18	Act 3 Good	2	Act 3 Magic A	7																0
-Act 3 Cast B	8	22	1					100	gld	18	Act 3 Equip B	15	Act 3 Junk	18	Act 3 Good	2	Act 3 Magic B	7																0
-Act 3 Cast C	8	24	1					100	gld	18	Act 3 Equip C	15	Act 3 Junk	18	Act 3 Good	2	Act 3 Magic C	7																0
-Act 4 Cast A	8	26	1					100	gld	18	Act 4 Equip A	15	Act 4 Junk	18	Act 4 Good	2	Act 4 Magic A	7																0
-Act 4 Cast B	8	29	1					100	gld	18	Act 4 Equip B	15	Act 4 Junk	18	Act 4 Good	2	Act 4 Magic B	7																0
-Act 5 Cast A	8	32	1					100	gld	18	Act 5 Equip A	15	Act 5 Junk	18	Act 5 Good	2	Act 5 Magic A	7																0
-Act 5 Cast B	8	34	1					100	gld	18	Act 5 Equip B	15	Act 5 Junk	18	Act 5 Good	2	Act 5 Magic B	7																0
-Act 5 Cast C	8	36	1					100	gld	18	Act 5 Equip C	15	Act 5 Junk	18	Act 5 Good	2	Act 5 Magic C	7																0
-Act 1 (N) Cast A	8	38	1					100	gld	18	Act 1 (N) Equip A	15	Act 1 (N) Junk	18	Act 1 (N) Good	2	Act 1 (N) Magic A	7																0
-Act 1 (N) Cast B	8	40	1					100	gld	18	Act 1 (N) Equip B	15	Act 1 (N) Junk	18	Act 1 (N) Good	2	Act 1 (N) Magic B	7																0
-Act 1 (N) Cast C	8	41	1					100	gld	18	Act 1 (N) Equip B	15	Act 1 (N) Junk	18	Act 1 (N) Good	2	Act 1 (N) Magic B	7																0
-Act 2 (N) Cast A	8	42	1					100	gld	18	Act 2 (N) Equip A	15	Act 2 (N) Junk	18	Act 2 (N) Good	2	Act 2 (N) Magic A	7																0
-Act 2 (N) Cast B	8	44	1					100	gld	18	Act 2 (N) Equip B	15	Act 2 (N) Junk	18	Act 2 (N) Good	2	Act 2 (N) Magic B	7																0
-Act 2 (N) Cast C	8	45	1					100	gld	18	Act 2 (N) Equip B	15	Act 2 (N) Junk	18	Act 2 (N) Good	2	Act 2 (N) Magic B	7																0
-Act 3 (N) Cast A	8	46	1					100	gld	18	Act 3 (N) Equip A	15	Act 3 (N) Junk	18	Act 3 (N) Good	2	Act 3 (N) Magic A	7																0
-Act 3 (N) Cast B	8	48	1					100	gld	18	Act 3 (N) Equip B	15	Act 3 (N) Junk	18	Act 3 (N) Good	2	Act 3 (N) Magic B	7																0
-Act 3 (N) Cast C	8	50	1					100	gld	18	Act 3 (N) Equip B	15	Act 3 (N) Junk	18	Act 3 (N) Good	2	Act 3 (N) Magic B	7																0
-Act 4 (N) Cast A	8	51	1					100	gld	18	Act 4 (N) Equip A	15	Act 4 (N) Junk	18	Act 4 (N) Good	2	Act 4 (N) Magic A	7																0
-Act 4 (N) Cast B	8	54	1					100	gld	18	Act 4 (N) Equip B	15	Act 4 (N) Junk	18	Act 4 (N) Good	2	Act 4 (N) Magic B	7																0
-Act 5 (N) Cast A	8	57	1					100	gld	18	Act 5 (N) Equip A	15	Act 5 (N) Junk	18	Act 5 (N) Good	2	Act 5 (N) Magic A	7																0
-Act 5 (N) Cast B	8	60	1					100	gld	18	Act 5 (N) Equip B	15	Act 5 (N) Junk	18	Act 5 (N) Good	2	Act 5 (N) Magic B	7																0
-Act 5 (N) Cast C	8	62	1					100	gld	18	Act 5 (N) Equip C	15	Act 5 (N) Junk	18	Act 5 (N) Good	2	Act 5 (N) Magic B	7																0
-Act 1 (H) Cast A	8	63	1					100	gld	18	Act 1 (H) Equip A	15	Act 1 (H) Junk	18	Act 1 (H) Good	2	Act 1 (H) Magic A	7																0
-Act 1 (H) Cast B	8	66	1					100	gld	18	Act 1 (H) Equip B	15	Act 1 (H) Junk	18	Act 1 (H) Good	2	Act 1 (H) Magic B	7																0
-Act 1 (H) Cast C	8	68	1					100	gld	18	Act 1 (H) Equip B	15	Act 1 (H) Junk	18	Act 1 (H) Good	2	Act 1 (H) Magic B	7																0
-Act 2 (H) Cast A	8	69	1					100	gld	18	Act 2 (H) Equip A	15	Act 1 (H) Junk	18	Act 2 (H) Good	2	Act 2 (H) Magic A	7																0
-Act 2 (H) Cast B	8	71	1					100	gld	18	Act 2 (H) Equip B	15	Act 1 (H) Junk	18	Act 2 (H) Good	2	Act 2 (H) Magic B	7																0
-Act 2 (H) Cast C	8	72	1					100	gld	18	Act 2 (H) Equip B	15	Act 1 (H) Junk	18	Act 2 (H) Good	2	Act 2 (H) Magic B	7																0
-Act 3 (H) Cast A	8	74	1					100	gld	18	Act 3 (H) Equip A	15	Act 1 (H) Junk	18	Act 3 (H) Good	2	Act 3 (H) Magic A	7																0
-Act 3 (H) Cast B	8	75	1					100	gld	18	Act 3 (H) Equip B	15	Act 1 (H) Junk	18	Act 3 (H) Good	2	Act 3 (H) Magic B	7																0
-Act 3 (H) Cast C	8	77	1					100	gld	18	Act 3 (H) Equip B	15	Act 1 (H) Junk	18	Act 3 (H) Good	2	Act 3 (H) Magic B	7																0
-Act 4 (H) Cast A	8	78	1					100	gld	18	Act 4 (H) Equip A	15	Act 1 (H) Junk	18	Act 4 (H) Good	2	Act 4 (H) Magic A	7																0
-Act 4 (H) Cast B	8	80	1					100	gld	18	Act 4 (H) Equip B	15	Act 1 (H) Junk	18	Act 4 (H) Good	2	Act 4 (H) Magic B	7																0
-Act 5 (H) Cast A	8	81	1					100	gld	18	Act 5 (H) Equip A	15	Act 1 (H) Junk	18	Act 5 (H) Good	2	Act 5 (H) Magic A	7																0
-Act 5 (H) Cast B	8	83	1					100	gld	18	Act 5 (H) Equip B	15	Act 1 (H) Junk	18	Act 5 (H) Good	2	Act 5 (H) Magic B	7																0
-Act 5 (H) Cast C	8	85	1					100	gld	18	Act 5 (H) Equip C	15	Act 1 (H) Junk	18	Act 5 (H) Good	2	Act 5 (H) Magic B	7																0
-Act 1 Miss A	9	0	1					100	gld	18	Act 1 Equip A	13	Act 1 Junk	18	Act 1 Good	2	Act 1 Bow A	6	Ammo	3														0
-Act 1 Miss B	9	5	1					100	gld	18	Act 1 Equip B	13	Act 1 Junk	18	Act 1 Good	2	Act 1 Bow B	6	Ammo	3														0
-Act 1 Miss C	9	9	1					100	gld	18	Act 1 Equip C	13	Act 1 Junk	18	Act 1 Good	2	Act 1 Bow C	6	Ammo	3														0
-Act 2 Miss A	9	12	1					100	gld	18	Act 2 Equip A	13	Act 2 Junk	18	Act 2 Good	2	Act 2 Bow A	6	Ammo	3														0
-Act 2 Miss B	9	15	1					100	gld	18	Act 2 Equip B	13	Act 2 Junk	18	Act 2 Good	2	Act 2 Bow B	6	Ammo	3														0
-Act 2 Miss C	9	18	1					100	gld	18	Act 2 Equip C	13	Act 2 Junk	18	Act 3 Good	2	Act 2 Bow C	6	Ammo	3														0
-Act 3 Miss A	9	20	1					100	gld	18	Act 3 Equip A	13	Act 3 Junk	18	Act 3 Good	2	Act 3 Bow A	6	Ammo	3														0
-Act 3 Miss B	9	22	1					100	gld	18	Act 3 Equip B	13	Act 3 Junk	18	Act 3 Good	2	Act 3 Bow B	6	Ammo	3														0
-Act 3 Miss C	9	24	1					100	gld	18	Act 3 Equip C	13	Act 3 Junk	18	Act 3 Good	2	Act 3 Bow C	6	Ammo	3														0
-Act 4 Miss A	9	26	1					100	gld	18	Act 4 Equip A	13	Act 4 Junk	18	Act 4 Good	2	Act 4 Bow A	6	Ammo	3														0
-Act 4 Miss B	9	29	1					100	gld	18	Act 4 Equip B	13	Act 4 Junk	18	Act 4 Good	2	Act 4 Bow B	6	Ammo	3														0
-Act 5 Miss A	9	32	1					100	gld	18	Act 5 Equip A	13	Act 5 Junk	18	Act 5 Good	2	Act 5 Bow A	6	Ammo	3														0
-Act 5 Miss B	9	34	1					100	gld	18	Act 5 Equip B	13	Act 5 Junk	18	Act 5 Good	2	Act 5 Bow B	6	Ammo	3														0
-Act 5 Miss C	9	36	1					100	gld	18	Act 5 Equip C	13	Act 5 Junk	18	Act 5 Good	2	Act 5 Bow B	6	Ammo	3														0
-Act 1 (N) Miss A	9	38	1					100	gld	18	Act 1 (N) Equip A	13	Act 1 (N) Junk	18	Act 1 (N) Good	2	Act 1 (N) Bow A	6	Ammo	3														0
-Act 1 (N) Miss B	9	40	1					100	gld	18	Act 1 (N) Equip B	13	Act 1 (N) Junk	18	Act 1 (N) Good	2	Act 1 (N) Bow B	6	Ammo	3														0
-Act 1 (N) Miss C	9	41	1					100	gld	18	Act 1 (N) Equip B	13	Act 1 (N) Junk	18	Act 1 (N) Good	2	Act 1 (N) Bow B	6	Ammo	3														0
-Act 2 (N) Miss A	9	42	1					100	gld	18	Act 2 (N) Equip A	13	Act 2 (N) Junk	18	Act 2 (N) Good	2	Act 2 (N) Bow A	6	Ammo	3														0
-Act 2 (N) Miss B	9	44	1					100	gld	18	Act 2 (N) Equip B	13	Act 2 (N) Junk	18	Act 2 (N) Good	2	Act 2 (N) Bow B	6	Ammo	3														0
-Act 2 (N) Miss C	9	45	1					100	gld	18	Act 2 (N) Equip B	13	Act 2 (N) Junk	18	Act 2 (N) Good	2	Act 2 (N) Bow B	6	Ammo	3														0
-Act 3 (N) Miss A	9	46	1					100	gld	18	Act 3 (N) Equip A	13	Act 3 (N) Junk	18	Act 3 (N) Good	2	Act 3 (N) Bow A	6	Ammo	3														0
-Act 3 (N) Miss B	9	48	1					100	gld	18	Act 3 (N) Equip B	13	Act 3 (N) Junk	18	Act 3 (N) Good	2	Act 3 (N) Bow B	6	Ammo	3														0
-Act 3 (N) Miss C	9	50	1					100	gld	18	Act 3 (N) Equip B	13	Act 3 (N) Junk	18	Act 3 (N) Good	2	Act 3 (N) Bow B	6	Ammo	3														0
-Act 4 (N) Miss A	9	51	1					100	gld	18	Act 4 (N) Equip A	13	Act 4 (N) Junk	18	Act 4 (N) Good	2	Act 4 (N) Bow A	6	Ammo	3														0
-Act 4 (N) Miss B	9	54	1					100	gld	18	Act 4 (N) Equip B	13	Act 4 (N) Junk	18	Act 4 (N) Good	2	Act 4 (N) Bow B	6	Ammo	3														0
-Act 5 (N) Miss A	9	57	1					100	gld	18	Act 5 (N) Equip A	13	Act 5 (N) Junk	18	Act 5 (N) Good	2	Act 5 (N) Bow A	6	Ammo	3														0
-Act 5 (N) Miss B	9	60	1					100	gld	18	Act 5 (N) Equip B	13	Act 5 (N) Junk	18	Act 5 (N) Good	2	Act 5 (N) Bow B	6	Ammo	3														0
-Act 5 (N) Miss C	9	62	1					100	gld	18	Act 5 (N) Equip C	13	Act 5 (N) Junk	18	Act 5 (N) Good	2	Act 5 (N) Bow B	6	Ammo	3														0
-Act 1 (H) Miss A	9	63	1					100	gld	18	Act 1 (H) Equip A	13	Act 1 (H) Junk	18	Act 1 (H) Good	2	Act 1 (H) Bow A	6	Ammo	3														0
-Act 1 (H) Miss B	9	66	1					100	gld	18	Act 1 (H) Equip B	13	Act 1 (H) Junk	18	Act 1 (H) Good	2	Act 1 (H) Bow B	6	Ammo	3														0
-Act 1 (H) Miss C	9	68	1					100	gld	18	Act 1 (H) Equip B	13	Act 1 (H) Junk	18	Act 1 (H) Good	2	Act 1 (H) Bow B	6	Ammo	3														0
-Act 2 (H) Miss A	9	69	1					100	gld	18	Act 2 (H) Equip A	13	Act 1 (H) Junk	18	Act 2 (H) Good	2	Act 2 (H) Bow A	6	Ammo	3														0
-Act 2 (H) Miss B	9	71	1					100	gld	18	Act 2 (H) Equip B	13	Act 1 (H) Junk	18	Act 2 (H) Good	2	Act 2 (H) Bow B	6	Ammo	3														0
-Act 2 (H) Miss C	9	72	1					100	gld	18	Act 2 (H) Equip B	13	Act 1 (H) Junk	18	Act 2 (H) Good	2	Act 2 (H) Bow B	6	Ammo	3														0
-Act 3 (H) Miss A	9	74	1					100	gld	18	Act 3 (H) Equip A	13	Act 1 (H) Junk	18	Act 3 (H) Good	2	Act 3 (H) Bow A	6	Ammo	3														0
-Act 3 (H) Miss B	9	75	1					100	gld	18	Act 3 (H) Equip B	13	Act 1 (H) Junk	18	Act 3 (H) Good	2	Act 3 (H) Bow B	6	Ammo	3														0
-Act 3 (H) Miss C	9	77	1					100	gld	18	Act 3 (H) Equip B	13	Act 1 (H) Junk	18	Act 3 (H) Good	2	Act 3 (H) Bow B	6	Ammo	3														0
-Act 4 (H) Miss A	9	78	1					100	gld	18	Act 4 (H) Equip A	13	Act 1 (H) Junk	18	Act 4 (H) Good	2	Act 4 (H) Bow A	6	Ammo	3														0
-Act 4 (H) Miss B	9	80	1					100	gld	18	Act 4 (H) Equip B	13	Act 1 (H) Junk	18	Act 4 (H) Good	2	Act 4 (H) Bow B	6	Ammo	3														0
-Act 5 (H) Miss A	9	81	1					100	gld	18	Act 5 (H) Equip A	13	Act 1 (H) Junk	18	Act 5 (H) Good	2	Act 5 (H) Bow A	6	Ammo	3														0
-Act 5 (H) Miss B	9	83	1					100	gld	18	Act 5 (H) Equip B	13	Act 1 (H) Junk	18	Act 5 (H) Good	2	Act 5 (H) Bow B	6	Ammo	3														0
-Act 5 (H) Miss C	9	85	1					100	gld	18	Act 5 (H) Equip C	13	Act 1 (H) Junk	18	Act 5 (H) Good	2	Act 5 (H) Bow B	6	Ammo	3														0
-Act 1 Wraith A	10	0	1					75	Act 1 Good	4	Act 1 Magic A	25																						0
-Act 1 Wraith B	10	5	1					75	Act 1 Good	4	Act 1 Magic B	25																						0
-Act 1 Wraith C	10	9	1					75	Act 1 Good	4	Act 1 Magic C	25																						0
-Act 2 Wraith A	10	12	1					75	Act 2 Good	4	Act 2 Magic A	25																						0
-Act 2 Wraith B	10	15	1					75	Act 2 Good	4	Act 2 Magic B	25																						0
-Act 2 Wraith C	10	18	1					75	Act 3 Good	4	Act 2 Magic C	25																						0
-Act 3 Wraith A	10	20	1					75	Act 3 Good	4	Act 3 Magic A	25																						0
-Act 3 Wraith B	10	22	1					75	Act 3 Good	4	Act 3 Magic B	25																						0
-Act 3 Wraith C	10	24	1					75	Act 3 Good	4	Act 3 Magic C	25																						0
-Act 4 Wraith A	10	26	1					75	Act 4 Good	4	Act 4 Magic A	25																						0
-Act 4 Wraith B	10	29	1					75	Act 4 Good	4	Act 4 Magic B	25																						0
-Act 5 Wraith A	10	32	1					75	Act 5 Good	4	Act 5 Magic A	25																						0
-Act 5 Wraith B	10	34	1					75	Act 5 Good	4	Act 5 Magic B	25																						0
-Act 5 Wraith C	10	36	1					75	Act 5 Good	4	Act 5 Magic C	25																						0
-Act 1 (N) Wraith A	10	38	1					75	Act 1 (N) Good	4	Act 1 (N) Magic A	25																						0
-Act 1 (N) Wraith B	10	40	1					75	Act 1 (N) Good	4	Act 1 (N) Magic B	25																						0
-Act 1 (N) Wraith C	10	41	1					75	Act 1 (N) Good	4	Act 1 (N) Magic B	25																						0
-Act 2 (N) Wraith A	10	42	1					75	Act 2 (N) Good	4	Act 2 (N) Magic A	25																						0
-Act 2 (N) Wraith B	10	44	1					75	Act 2 (N) Good	4	Act 2 (N) Magic B	25																						0
-Act 2 (N) Wraith C	10	45	1					75	Act 2 (N) Good	4	Act 2 (N) Magic B	25																						0
-Act 3 (N) Wraith A	10	46	1					75	Act 3 (N) Good	4	Act 3 (N) Magic A	25																						0
-Act 3 (N) Wraith B	10	48	1					75	Act 3 (N) Good	4	Act 3 (N) Magic B	25																						0
-Act 3 (N) Wraith C	10	50	1					75	Act 3 (N) Good	4	Act 3 (N) Magic B	25																						0
-Act 4 (N) Wraith A	10	51	1					75	Act 4 (N) Good	4	Act 4 (N) Magic A	25																						0
-Act 4 (N) Wraith B	10	54	1					75	Act 4 (N) Good	4	Act 4 (N) Magic B	25																						0
-Act 5 (N) Wraith A	10	57	1					75	Act 5 (N) Good	4	Act 5 (N) Magic A	25																						0
-Act 5 (N) Wraith B	10	60	1					75	Act 5 (N) Good	4	Act 5 (N) Magic B	25																						0
-Act 5 (N) Wraith C	10	62	1					75	Act 5 (N) Good	4	Act 5 (N) Magic C	25																						0
-Act 1 (H) Wraith A	10	63	1					75	Act 1 (H) Good	4	Act 1 (H) Magic A	25																						0
-Act 1 (H) Wraith B	10	66	1					75	Act 1 (H) Good	4	Act 1 (H) Magic B	25																						0
-Act 1 (H) Wraith C	10	68	1					75	Act 1 (H) Good	4	Act 1 (H) Magic B	25																						0
-Act 2 (H) Wraith A	10	69	1					75	Act 2 (H) Good	4	Act 2 (H) Magic A	25																						0
-Act 2 (H) Wraith B	10	71	1					75	Act 2 (H) Good	4	Act 2 (H) Magic B	25																						0
-Act 2 (H) Wraith C	10	72	1					75	Act 2 (H) Good	4	Act 2 (H) Magic B	25																						0
-Act 3 (H) Wraith A	10	74	1					75	Act 3 (H) Good	4	Act 3 (H) Magic A	25																						0
-Act 3 (H) Wraith B	10	75	1					75	Act 3 (H) Good	4	Act 3 (H) Magic B	25																						0
-Act 3 (H) Wraith C	10	77	1					75	Act 3 (H) Good	4	Act 3 (H) Magic B	25																						0
-Act 4 (H) Wraith A	10	78	1					75	Act 4 (H) Good	4	Act 4 (H) Magic A	25																						0
-Act 4 (H) Wraith B	10	80	1					75	Act 4 (H) Good	4	Act 4 (H) Magic B	25																						0
-Act 5 (H) Wraith A	10	81	1					75	Act 5 (H) Good	4	Act 5 (H) Magic A	25																						0
-Act 5 (H) Wraith B	10	83	1					75	Act 5 (H) Good	4	Act 5 (H) Magic B	25																						0
-Act 5 (H) Wraith C	10	85	1					75	Act 5 (H) Good	4	Act 5 (H) Magic C	25																						0
-Quill 1	16	0	1					125	gld	19	Act 1 Junk	19																						0
-Quill 2	16	4	1					125	gld	19	Act 1 Junk	19																						0
-Quill 3	16	8	1					125	gld	19	Act 1 Junk	19	Act 1 Good	1																				0
-Quill 4	16	12	1					125	gld	19	Act 1 Junk	19	Act 1 Good	1																				0
-Quill 5	16	20	1					125	gld	19	Act 3 Junk	19	Act 3 Good	1																				0
-Quill 1 (N)	16	32	1					125	gld	19	Act 1 (N) Junk	19																						0
-Quill 2 (N)	16	35	1					125	gld	19	Act 1 (N) Junk	19	Act 1 (N) Good	1																				0
-Quill 3 (N)	16	38	1					125	gld	19	Act 1 (N) Junk	19	Act 1 (N) Good	1																				0
-Quill 4 (N)	16	40	1					125	gld	19	Act 1 (N) Junk	19	Act 1 (N) Good	1																				0
-Quill 5 (N)	16	46	1					125	gld	19	Act 3 (N) Junk	19	Act 3 (N) Good	1																				0
-Quill 1 (H)	16	60	1					125	gld	19	Act 1 (H) Junk	19																						0
-Quill 2 (H)	16	62	1					125	gld	19	Act 1 (H) Junk	19	Act 1 (H) Good	3																				0
-Quill 3 (H)	16	65	1					125	gld	19	Act 1 (H) Junk	19	Act 1 (H) Good	3																				0
-Quill 4 (H)	16	68	1					125	gld	19	Act 1 (H) Junk	19	Act 1 (H) Good	3																				0
-Quill 5 (H)	16	85	1					125	gld	19	Act 3 (H) Junk	19	Act 3 (H) Good	3																				0
-Swarm 1	17	0	1					125	Potion 2	12	Misc 1	6	Act 2 Good	1	Act 2 Magic A	6																		0
-Swarm 2	17	20	1					125	Potion 3	12	Misc 2	6	Act 3 Good	1	Act 3 Magic A	6																		0
-Swarm 1 (N)	17	40	1					125	Potion 6	12	Misc 2	6	Act 2 (N) Good	1	Act 2 (N) Magic A	6																		0
-Swarm 2 (N)	17	46	1					125	Potion 6	12	Misc 2	6	Act 3 (N) Good	1	Act 3 (N) Magic A	6																		0
-Swarm 1 (H)	17	68	1					125	Potion 6	12	Misc 2	6	Act 2 (H) Good	1	Act 2 (H) Magic A	6																		0
-Swarm 2 (H)	17	74	1					125	Potion 6	12	Misc 2	6	Act 3 (H) Good	1	Act 3 (H) Magic A	6																		0
-Sunder Charms			1					23899	Cold Rupture	30	Flame Rift	30	Crack of the Heavens	20	Rotting Fissure	12	Bone Break	6	Black Cleft	3													1	0
 Act 1 Cpot A	12	0	2					0	Hpotion 1	1																								0
 Act 1 Cpot B	12	5	2					0	Hpotion 1	1																								0
 Act 1 Cpot C	12	9	2					0	Hpotion 1	1																								0
@@ -1884,74 +1631,12 @@ Clone Champ (N) Desecrated			-3					0	Worldstone Shards	1	Endgame Maps Tier 1 Ca
 Uber Izual Desecrated			-3					0	Worldstone Shards	1	Endgame Maps Tier 1 Campaign	1	Uber Izual	1																				0
 Uber Andariel Desecrated			-3					0	Worldstone Shards	1	Endgame Maps Tier 1 Campaign	1	Uber Andariel	1																				0
 Uber Duriel Desecrated			-3					0	Worldstone Shards	1	Endgame Maps Tier 1 Campaign	1	Uber Duriel	1																				0
-Act 1 H2H A	7	0	1					100	gld	21	Act 1 Equip A	16	Act 1 Junk	21	Act 1 Good	2																		0
-Act 1 H2H B	7	5	1					100	gld	21	Act 1 Equip B	16	Act 1 Junk	21	Act 1 Good	2																		0
-Act 1 H2H C	7	9	1					100	gld	21	Act 1 Equip C	16	Act 1 Junk	21	Act 1 Good	2																		0
-Act 2 H2H A	7	12	1					100	gld	21	Act 2 Equip A	16	Act 2 Junk	21	Act 2 Good	2																		0
-Act 2 H2H B	7	15	1					100	gld	21	Act 2 Equip B	16	Act 2 Junk	21	Act 2 Good	2																		0
-Act 2 H2H C	7	18	1					100	gld	21	Act 2 Equip C	16	Act 2 Junk	21	Act 3 Good	2																		0
-Act 3 H2H A	7	20	1					100	gld	21	Act 3 Equip A	16	Act 3 Junk	21	Act 3 Good	2																		0
-Act 3 H2H B	7	22	1					100	gld	21	Act 3 Equip B	16	Act 3 Junk	21	Act 3 Good	2																		0
-Act 3 H2H C	7	24	1					100	gld	21	Act 3 Equip C	16	Act 3 Junk	21	Act 3 Good	2																		0
-Act 4 H2H A	7	26	1					100	gld	21	Act 4 Equip A	16	Act 4 Junk	21	Act 4 Good	2																		0
-Act 4 H2H B	7	29	1					100	gld	21	Act 4 Equip B	16	Act 4 Junk	21	Act 4 Good	2																		0
-Act 5 H2H A	7	32	1					100	gld	21	Act 5 Equip A	16	Act 5 Junk	21	Act 5 Good	2																		0
-Act 5 H2H B	7	34	1					100	gld	21	Act 5 Equip B	16	Act 5 Junk	21	Act 5 Good	2																		0
-Act 5 H2H C	7	36	1					100	gld	21	Act 5 Equip C	16	Act 5 Junk	21	Act 5 Good	2																		0
-Act 1 (N) H2H A	7	38	1					100	gld	21	Act 1 (N) Equip A	16	Act 1 (N) Junk	21	Act 1 (N) Good	2																		0
-Act 1 (N) H2H B	7	40	1					100	gld	21	Act 1 (N) Equip B	16	Act 1 (N) Junk	21	Act 1 (N) Good	2																		0
-Act 1 (N) H2H C	7	41	1					100	gld	21	Act 1 (N) Equip B	16	Act 1 (N) Junk	21	Act 1 (N) Good	2																		0
-Act 2 (N) H2H A	7	42	1					100	gld	21	Act 2 (N) Equip A	16	Act 2 (N) Junk	21	Act 2 (N) Good	2																		0
-Act 2 (N) H2H B	7	44	1					100	gld	21	Act 2 (N) Equip B	16	Act 2 (N) Junk	21	Act 2 (N) Good	2																		0
-Act 2 (N) H2H C	7	45	1					100	gld	21	Act 2 (N) Equip B	16	Act 2 (N) Junk	21	Act 2 (N) Good	2																		0
-Act 3 (N) H2H A	7	46	1					100	gld	21	Act 3 (N) Equip A	16	Act 3 (N) Junk	21	Act 3 (N) Good	2																		0
-Act 3 (N) H2H B	7	48	1					100	gld	21	Act 3 (N) Equip B	16	Act 3 (N) Junk	21	Act 3 (N) Good	2																		0
-Act 3 (N) H2H C	7	50	1					100	gld	21	Act 3 (N) Equip B	16	Act 3 (N) Junk	21	Act 3 (N) Good	2																		0
-Act 4 (N) H2H A	7	51	1					100	gld	21	Act 4 (N) Equip A	16	Act 4 (N) Junk	21	Act 4 (N) Good	2																		0
-Act 4 (N) H2H B	7	54	1					100	gld	21	Act 4 (N) Equip B	16	Act 4 (N) Junk	21	Act 4 (N) Good	2																		0
-Act 5 (N) H2H A	7	57	1					100	gld	21	Act 5 (N) Equip A	16	Act 5 (N) Junk	21	Act 5 (N) Good	2																		0
-Act 5 (N) H2H B	7	60	1					100	gld	21	Act 5 (N) Equip B	16	Act 5 (N) Junk	21	Act 5 (N) Good	2																		0
-Act 5 (N) H2H C	7	62	1					100	gld	21	Act 5 (N) Equip C	16	Act 5 (N) Junk	21	Act 5 (N) Good	2																		0
-Act 1 (H) H2H A	7	63	1					100	gld	21	Act 1 (H) Equip A	16	Act 1 (H) Junk	21	Act 1 (H) Good	2																		0
-Act 1 (H) H2H B	7	66	1					100	gld	21	Act 1 (H) Equip B	16	Act 1 (H) Junk	21	Act 1 (H) Good	2																		0
-Act 1 (H) H2H C	7	68	1					100	gld	21	Act 1 (H) Equip B	16	Act 1 (H) Junk	21	Act 1 (H) Good	2																		0
-Act 2 (H) H2H A	7	69	1					100	gld	21	Act 2 (H) Equip A	16	Act 1 (H) Junk	21	Act 2 (H) Good	2																		0
-Act 2 (H) H2H B	7	71	1					100	gld	21	Act 2 (H) Equip B	16	Act 1 (H) Junk	21	Act 2 (H) Good	2																		0
-Act 2 (H) H2H C	7	73	1					100	gld	21	Act 2 (H) Equip B	16	Act 1 (H) Junk	21	Act 2 (H) Good	2																		0
-Act 3 (H) H2H A	7	74	1					100	gld	21	Act 3 (H) Equip A	16	Act 1 (H) Junk	21	Act 3 (H) Good	2																		0
-Act 3 (H) H2H B	7	76	1					100	gld	21	Act 3 (H) Equip B	16	Act 1 (H) Junk	21	Act 3 (H) Good	2																		0
-Act 3 (H) H2H C	7	77	1					100	gld	21	Act 3 (H) Equip B	16	Act 1 (H) Junk	21	Act 3 (H) Good	2																		0
-Act 4 (H) H2H A	7	79	1					100	gld	21	Act 4 (H) Equip A	16	Act 1 (H) Junk	21	Act 4 (H) Good	2																		0
-Act 4 (H) H2H B	7	80	1					100	gld	21	Act 4 (H) Equip B	16	Act 1 (H) Junk	21	Act 4 (H) Good	2																		0
-Act 5 (H) H2H A	7	82	1					100	gld	21	Act 5 (H) Equip A	16	Act 1 (H) Junk	21	Act 5 (H) Good	2																		0
-Act 5 (H) H2H B	7	83	1					100	gld	21	Act 5 (H) Equip B	16	Act 1 (H) Junk	21	Act 5 (H) Good	2																		0
-Act 5 (H) H2H C	7	85	1					100	gld	21	Act 5 (H) Equip C	16	Act 1 (H) Junk	21	Act 5 (H) Good	2																		0
 Act 5 Set Workshop			1		683			900	Act 5 Equip C	93	Act 5 UGood	7	Ore	2	hrt	10																		0
 Act 5 Set Workshop (N)			1		683			900	Act 5 (N) Equip C	93	Act 5 (N) UGood	7	Ore	2	hrt	10																		0
 Act 5 Set Workshop (H)			1		683			900	Act 5 (H) Equip C	93	Act 5 (H) UGood	7	Ore	2	hrt	10																		0
 Act 5 Cow Bases			1					800	weap30	20	armo30	10	weap33	60	armo33	30	weap36	140	armo36	70	weap39	60	armo39	30	Act 5 Equip B	3276	Ore	5						0
 Act 5 Cow Bases (N)			1					800	weap54	20	armo54	10	weap57	60	armo57	30	weap60	140	armo60	70	weap63	20	armo63	10	Act 5 (N) Equip B	8852	Ore	5						0
 Act 5 Cow Bases (H)			1					800	weap81	20	armo81	10	weap84	60	armo84	30	weap87	140	armo87	70	Act 5 (H) Equip B	14368	Ore	5										0
-Charm JP			-6						cx1	3	cx2	2	cx3	1																				0
-A5C Charm Bias			1					500	A5C	1000	cx1	5	cx2	5	Act 5 Junk	50	hrt	12	cx3	5	Ore	5	Charm JP	3										0
-A5C Charm Bias (N)			1					500	A5C (N)	1000	cx1	5	cx2	5	Act 5 (N) Junk	50	hrt	12	cx3	5	Ore	5	Charm JP	3										0
-A5C Charm Bias (H)			1					500	A5C (H)	1000	cx1	5	cx2	5	Act 5 (H) Junk	50	hrt	12	cx3	5	Ore	5	Charm JP	3										0
-Ring Ammy Jewel			1						Rings	2	Amulets	2	jew	1																				0
-Ring Ammy Bias			1			150	250	1200	Ring Ammy Jewel	250	ppp	9	DDD1	18	sdo	1	Act 5 Citem C	600	hrt	15														0
-Ring Ammy Bias (N)			1			150	250	1200	Ring Ammy Jewel	250	Unique Charm 1	3	ppp	9	DDD1	18	sdo	1	Act 5 (N) Citem C	600	hrt	15												0
-Ring Ammy Bias (H)			1			150	250	1200	Ring Ammy Jewel	250	Unique Charm 2	3	ppp	9	DDD1	18	sdo	1	Act 5 (H) Citem C	600	hrt	15												0
-Cow RuneBias			1					2000	Runes 5	10	Rune JP (Norm)	1	A5C	1500	Act 5 Junk	600	Ore	2	"gld,mul=1536"	70	zzz	20												0
-Cow RuneBias (N)			1					2000	Runes 10	10	Rune JP (NM)	1	A5C (N)	1500	Act 5 (N) Junk	600	Ore	2	"gld,mul=1536"	70	zzz	20								~0.25% for rune per mob				0
-Cow RuneBias (H)			1					2000	Runes 15	10	Rune JP (H)	1	A5C (H)	1500	Act 5 (H) Junk	600	Ore	2	"gld,mul=1536"	70	zzz	20												0
-Act 5 Rare Bias			1			683	250	1000	Act 5 Equip C	186	Act 5 UGood	14	Ore	2	hrt	5																		0
-Act 5 Rare Bias (N)			1			683	250	1000	Act 5 (N) Equip C	186	Act 5 (N) UGood	14	yyy	1	Ore	2	hrt	5																0
-Act 5 Rare Bias (H)			1			683	250	1000	Act 5 (H) Equip C	186	Act 5 (H) UGood	14	yyy	1	Ore	2	hrt	5																0
-Act 5 Uniq Bias			1	683				1400	Act 5 Equip C	186	Act 5 UGood	14	Ore	2	hrt	5																		0
-Act 5 Uniq Bias (N)			1	683				1400	Act 5 (N) Equip C	186	Act 5 (N) UGood	14	yyy	1	Ore	2	hrt	5																0
-Act 5 Uniq Bias (H)			1	683				1400	Act 5 (H) Equip C	186	Act 5 (H) UGood	14	yyy	1	Ore	2	hrt	5																0
-A5C Gold Bias			1					1200	A5C	2700	Act 5 Junk	768	Ore	3	fkn	70	"gld,mul=3072"	1000	hrt	10														0
-A5C Gold Bias (N)			1					1200	A5C (N)	2700	Act 5 (N) Junk	768	Ore	3	fkn	70	"gld,mul=3072"	1000	hrt	10														0
-A5C Gold Bias (H)			1					1200	A5C (H)	2700	Act 5 (H) Junk	768	Ore	3	fkn	70	"gld,mul=3072"	1000	hrt	10														0
 Ore Special			1						Uni Ore 12	1	Uni Ore 13	1	Uni Ore 15	1	Uni Ore 14	1	Nothing	1																0
 Ore Special2			1						Uni Ore 13	1	Uni Ore 14	1	Uni Ore 12	1	Uni Ore 15	1	Nothing	1																0
 Ore Special3			1						Uni Ore 14	1	Uni Ore 15	1	Uni Ore 13	1	Uni Ore 12	1	Nothing	1																0
@@ -1997,7 +1682,7 @@ Endgame Map Equip 13	20	84	1						weap78	20	armo78	10	weap81	60	armo81	30	weap84
 Endgame Map Equip 14	20	85	1						weap81	20	armo81	10	weap84	60	armo84	30	weap87	140	armo87	70	weap90	60	armo90	30	Act 5 (H) Coupon C	7	Endgame Map Equip 13	15216	334					0
 Endgame Map Equip 15	20	88	1						weap84	20	armo84	10	weap87	60	armo87	30	weap90	140	armo90	70	weap93	60	armo93	30	Act 5 (H) Coupon C	8	Endgame Map Equip 14	15640	334					0
 Endgame Map Equip 16	20	91	1						weap87	20	armo87	10	weap90	60	armo90	30	weap93	140	armo93	70	weap96	60	armo96	30	Act 5 (H) Coupon C	9	Endgame Map Equip 15	16064	334					0
-Endgame Map Equip 17	20	94	1						weap90	20	armo90	10	weap93	60	armo93	30	weap96	140	armo96	70	Act 5 (H) Coupon C	10	Endgame Map Equip 16	16488					334					0
+Endgame Map Equip 17	20	94	1						weap90	20	armo90	10	weap93	60	armo93	30	weap96	140	armo96	70	Act 5 (H) Coupon C	30	Endgame Map Equip 16	16488	Nothing	4207			354					0
 Endgame Map Guaranteed Mythical			4						weap96	14	armo96	4	mam	2	Act 5 (H) Coupon C	60																		0
 Endgame Maps Tier 2 No Downgrade			1						z05	1	z06	1	z07	1	z08	1																		0
 Endgame Maps Tier 3 No Downgrade			1						z09	1	z10	1	z11	1	z12	1																		0
@@ -2010,18 +1695,18 @@ Endgame Maps Tier 4			1					6	z13	1	z14	1	z15	1	z16	1	Endgame Maps Tier 3	6					
 Endgame Maps Tier 5			1					6	z17	2	z18	2	Endgame Maps Tier 4	6																				0
 Endgame Maps Organ Drops Leftover			1						jaw	1	brz	1	hrt	1																				0
 Endgame Maps Organ Drops			2						spe	1	scz	1	sol	1	qll	1	fng	1	flg	1	tal	1	hrn	1	eyz	1	Endgame Maps Organ Drops Leftover	3						0
-Endgame Maps Rings			1						rin	8	Class Rings	4																						0
-Endgame Maps Amulets			1						amu	8	Class Amulets	4	mam	1																				0
-Endgame Maps Ringamu			1						Endgame Maps Rings	72	Endgame Maps Amulets	48	jew	36	ppp	9	cx1	24	cx2	24	cx3	24	DDD1	18	sdo	1								0
+Endgame Maps Rings			1						rin	2	Class Rings	1	Nothing	3																				0
+Endgame Maps Amulets			1						amu	8	Class Amulets	4	mam	3	Nothing	15																		0
+Endgame Maps Ringamu			1						Endgame Maps Rings	72	Endgame Maps Amulets	48	Jewels	36	ppp	9	Regular Charms	72	DDD1	18	sdo	1												0
 Endgame Maps Jewelry			1						Endgame Maps Ringamu	129	Unique Charm 2	1																						0
 Endgame Maps Valuable			1						Endgame Maps Jewelry	73	Blemished Gem	4	Perfect Gem	5	Runes 16	12																		0
 Endgame Maps Base			1					90	Gold	10	Endgame Map Equip 17	42	Endgame Maps Valuable	8																				0
 Endgame Maps Junk			1					25	Potion 7	8	Ammo	4																						0
-Endgame Map Bias 1	21	100	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 1	15	Nothing	600						0
-Endgame Map Bias 2	21	102	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 2	14	Nothing	600						0
-Endgame Map Bias 3	21	104	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 3	13	Nothing	600						0
-Endgame Map Bias 4	21	106	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 4	11	Nothing	600						0
-Endgame Map Bias 5	21	108	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 5	9	Nothing	600						0
+Endgame Map Bias 1	21	100	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 1	15	Nothing	300						0
+Endgame Map Bias 2	21	102	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 2	14	Nothing	300						0
+Endgame Map Bias 3	21	104	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 3	13	Nothing	300						0
+Endgame Map Bias 4	21	106	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 4	11	Nothing	300						0
+Endgame Map Bias 5	21	108	1					1200	Endgame Maps Base	3840	Endgame Maps Junk	768	Ore Special	10	Ore Special2	10	Ore Special3	10	Runes 16	10	"gld,mul=1024"	25	Endgame Maps Organ Drops	20	Endgame Maps Tier 5	9	Nothing	300						0
 Endgame Map Citem 1			1	768	768	870	1024	0	"gld,mul=1536"	120	Endgame Map Equip 17	72	Endgame Maps Valuable	6	Endgame Maps Tier 1	8																		0
 Endgame Map Citem 2			1	768	768	870	1024	0	"gld,mul=1536"	120	Endgame Map Equip 17	72	Endgame Maps Valuable	6	Endgame Maps Tier 2	8																		0
 Endgame Map Citem 3			1	768	768	870	1024	0	"gld,mul=1536"	120	Endgame Map Equip 17	72	Endgame Maps Valuable	6	Endgame Maps Tier 3	7																		0
