@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Official Website
-=======
-# Main Website
->>>>>>> 3.5
 ## https://celestialrayone.github.io/Eastern_Sun_Resurrected/docs/
 
 # Discord Server
@@ -10,13 +6,9 @@
 You will find a lot of useful information on the discord server, including a beginner's guide as well as I'll be able to answer your questions.
 
 # Eastern Sun Resurrected
-<<<<<<< HEAD
-Eastern Sun Resurrected is an individual effort to extend the port that tireheb and bonesy made for the classic eastern sun mod (this is a fork from bonesy's repository). This enhancement will be long term and will include almost everything: skill reworks, class rebalance, increased difficulty, new content, new recipes etc.
+Eastern Sun Resurrected is an individual effort to extend the port that tireheb and bonesy made for the classic eastern sun mod. This enhancement will be long term and will include almost everything: skill reworks, class rebalance, increased difficulty, new content, new recipes etc.
 
 There is no end in sight for the support of this mod unless announced otherwise.
-=======
-Eastern Sun Resurrected is an individual effort to extend the port that tireheb and bonesy made for the classic eastern sun mod (this is a fork from bonesy's repository). This is a long term project and it includes almost everything: skill reworks, class rebalance, increased difficulty, new content, new recipes, new endgame system, new uber encounters etc.
->>>>>>> 3.5
 
 # Installation Guide
 You need to download D2Launch for the best experience, which can be found here: https://www.d2rmodding.com/modtools
