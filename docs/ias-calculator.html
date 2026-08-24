@@ -52,6 +52,8 @@ select:focus,input:focus{outline:2px solid var(--azure);outline-offset:1px;borde
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{opacity:.35}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .hint{font-size:11px;color:var(--faint);margin-top:5px;line-height:1.45}
+.hint code{font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+
 .chk{display:flex;align-items:center;gap:7px;margin-top:9px;font-size:12px;color:var(--dim);cursor:pointer}
 .chk input{width:auto;margin:0;accent-color:var(--azure)}
 .chk span{color:var(--faint)}
@@ -151,17 +153,38 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         <select id="wep2"></select>
         <div class="hint" id="wep2hint"></div>
       </div>
-      <div class="field">
-        <label for="ias">Increased attack speed <span style="color:var(--faint)">item_fasterattackrate</span></label>
+      <div class="field" id="wrap-ias">
+        <label for="ias">Increased attack speed <span style="color:var(--faint)">all gear</span></label>
         <input id="ias" type="number" value="0" min="-1000" max="9999" step="1">
+        <div class="hint" id="hint-ias">Everything you wear, weapon included. Pooled and diminished together.</div>
       </div>
-      <div class="field">
-        <label for="ar">Base attack speed <span style="color:var(--faint)">attackrate</span></label>
+      <div class="field" id="wrap-wias">
+        <label for="wias">Increased attack speed <span style="color:var(--faint)">on the weapon</span></label>
+        <input id="wias" type="number" value="0" min="-1000" max="9999" step="1">
+        <div class="hint" id="hint-wias">Whirlwind counts nothing else &mdash; not rings, armour, auras or buffs.</div>
+      </div>
+      <div class="field" id="wrap-oias">
+        <label for="oias">Increased attack speed <span style="color:var(--faint)">on the off hand</span></label>
+        <input id="oias" type="number" value="0" min="-1000" max="9999" step="1">
+        <div class="hint">Averaged with the main hand &mdash; the engine toggles each weapon's stats on and off.</div>
+      </div>
+      <div class="field" id="wrap-mar">
+        <label for="mar">Base attack speed <span style="color:var(--faint)">on the weapon</span></label>
+        <input id="mar" type="number" value="0" min="-1000" max="9999" step="1">
+        <div class="hint" id="hint-mar">Base attack speed granted by the weapon itself. Its bracketed speed is already counted.</div>
+      </div>
+      <div class="field" id="wrap-oar">
+        <label for="oar">Base attack speed <span style="color:var(--faint)">on the off hand</span></label>
+        <input id="oar" type="number" value="0" min="-1000" max="9999" step="1">
+        <div class="hint">Averaged with the main hand, like the speed modifiers.</div>
+      </div>
+      <div class="field" id="wrap-ar">
+        <label for="ar">Base attack speed <span style="color:var(--faint)">skills and buffs</span></label>
         <input id="ar" type="number" value="0" min="-1000" max="9999" step="1">
-        <div class="hint">Skill and buff speed, and slows as negatives.</div>
+        <div class="hint" id="hint-ar">Skills, buffs and auras. Slows count as negatives.</div>
       </div>
       <div class="field">
-        <label for="fcr">Faster cast rate <span style="color:var(--faint)">item_fastercastrate</span></label>
+        <label for="fcr">Faster cast rate</label>
         <input id="fcr" type="number" value="0" min="-1000" max="500" step="1">
         <div class="hint">Caps at 500. Past that the animation runs no faster.</div>
       </div>
@@ -170,6 +193,8 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         <div class="rrow"><span class="rk">Animation</span><span class="rv" id="ro-anim">—</span></div>
         <div class="rrow"><span class="rk">Base frames</span><span class="rv" id="ro-fpd">—</span></div>
         <div class="rrow"><span class="rk">Weapon speed modifier</span><span class="rv" id="ro-wsm">—</span></div>
+        <div class="rrow"><span class="rk">Total increased attack speed</span><span class="rv" id="ro-total">—</span></div>
+        <div class="rrow"><span class="rk">Flat speed</span><span class="rv" id="ro-flat">—</span></div>
         <div class="rrow"><span class="rk">Effective IAS</span><span class="rv" id="ro-eias">—</span></div>
       </div>
     </div>
@@ -183,7 +208,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         <div class="aps"><div class="n" id="atk-aps">—</div><div class="l" id="atk-lbl2">attacks / sec</div></div>
       </div>
       <table>
-        <thead><tr><th>IAS needed</th><th>Frames <span style="text-transform:none;letter-spacing:0">(vs one)</span></th><th>Attacks / sec</th><th>From here</th></tr></thead>
+        <thead><tr><th id="th-atk">IAS needed</th><th>Frames <span style="text-transform:none;letter-spacing:0">(vs one)</span></th><th>Attacks / sec</th><th>From here</th></tr></thead>
         <tbody id="atk-body"></tbody>
       </table>
       <div class="note" id="atk-note"></div>
@@ -209,9 +234,22 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   Gear speed is subject to diminishing returns before anything else happens:
   <code>effective = floor(120 × IAS ÷ (120 + IAS))</code>.
   Base attack speed and the weapon speed modifier are then added at full value:
-  <code>EIAS = effective + attackrate − WSM</code>, clamped so the resulting rate stays between 15% and 175%.
-  The animation then runs at <code>rate = floor(AnimationSpeed × (100 + EIAS) ÷ 100)</code> and takes
+   clamped so the resulting rate stays between 15% and 175% — or 250% while shapeshifted.
+  The animation then runs at <code>rate = floor(AnimationSpeed × (100 + total) ÷ 100)</code> and takes
   <code>ceil(256 × BaseFrames ÷ rate) − 1</code> frames. Casting is the same shape with its own ceiling: <code>rate = min(120 &times; FCR &divide; (FCR + 120) + 100, 196)</code>, then <code>animSpeed = rate &times; AnimationSpeed &divide; 100</code>. That ceiling is what makes <b>500 the highest faster cast rate worth carrying</b> — beyond it the rate stops climbing. Vanilla sets it at 175, which would stop you at 200. The 175 ceiling is reached at exactly 200 FCR, so nothing above that changes anything.</p>
+  <p><b style="color:var(--dim)">Whirlwind reads different numbers.</b> Every other skill pools your whole character:
+  all increased attack speed together, diminished, then base attack speed added flat. Whirlwind instead reads increased attack speed and base attack speed from the weapon's own properties and nowhere else, and does not diminish either of them. Speed from rings, armour, auras, buffs and curses simply does not reach it.
+  Every other skill reads the <b>unit's aggregate</b>, which already contains the weapon's increased attack speed
+  along with everything else you wear — no skill singles the weapon out, so only the total matters. That is why the
+  input above changes rather than multiplying: pick Whirlwind and it asks for the weapon's figure, pick anything else
+  and it asks for your total. Increased attack speed and base attack speed are interchangeable for
+  Whirlwind: it adds the two together with no distinction, so a weapon that grants base attack speed is worth
+  exactly as much as one granting the same amount of increased attack speed.</p>
+  <p><b style="color:var(--dim)">Wereforms.</b> Shapeshifting does not give you the form's own frame count.
+  The engine rescales the rate by the ratio of the form's frames to your human ones, and that factor cancels
+  against the form's frames, so <b>your breakpoints are the human ones for the weapon you are holding</b>. What
+  shapeshifting really buys is a higher ceiling: the speed clamp rises from 175 to 250, so attack speed keeps paying
+  well past the point it stops mattering unshifted.</p>
   <p><b style="color:var(--dim)">Skills that break the rule.</b>
   <b style="color:var(--dim)">Whirlwind</b> ignores the formula above entirely. It measures only the weapon's own
   speed, undiminished, as <code>units = FramesPerDirection × 256 ÷ floor(AnimationSpeed × (100 + speed) ÷ 100)</code>,
@@ -349,10 +387,17 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   function animFor(sk){
     var f = form(), c = cls(), w = weapon();
     if (SEQ[sk])
-      return { seq:SEQ[sk], fpd:SEQ[sk].steps, spd:256, af:0,
+      return { seq:SEQ[sk], fpd:SEQ[sk].steps, spd:256, af:0, shifted:!!f,
                label:c.n + ' \u00b7 ' + SEQ[sk].steps + '-step sequence' };
-    if (f && (sk === 'standard' || sk === 'ww'))
-      return { fpd:f.a1[0], spd:f.a1[1], af:f.a1[2], label:f.n + ' attack' };
+    if (f && sk === 'ww')
+      return { fpd:f.a1[0], spd:f.a1[1], af:f.a1[2], shifted:true, label:f.n + ' attack' };
+    if (f){
+      // shapeshifted: the rescale at 20B1D6 multiplies by FPD_form / FPD_human, which
+      // cancels the form's own frame count. The timing is the human weapon animation.
+      var hb = c.a1[wclassOf(w, false)] || c.a1['hth'];
+      return { fpd:hb[0], spd:hb[1], af:hb[2], shifted:true,
+               label:f.n + ' \u00b7 ' + wclassOf(w, false).toUpperCase() + ' timing' };
+    }
     var a1 = c.a1[wclassOf(w, sk === 'ww')] || c.a1['hth'];
     if (sk === 'kick'){
       var k = c.kk || a1;
@@ -370,16 +415,25 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
              label:c.n + ' \u00b7 ' + wclassOf(w, sk === 'ww').toUpperCase() };
   }
 
+  // Frenzy and charge-ups: evaluate each hand in full, then average, because the
+  // diminishing curve is not linear and cannot be applied to a pre-averaged total
+  function dualFrames(anim, offIas, mIas, oIas, flatOff, mAr, oAr, wsmM, wsmO){
+    var h1 = clampEias(diminish(offIas + mIas) + flatOff + mAr - wsmM, anim.shifted);
+    var h2 = clampEias(diminish(offIas + oIas) + flatOff + oAr - wsmO, anim.shifted);
+    var e  = Math.floor((h1 + h2) / 2) - SEQ_PENALTY;
+    var r  = rateOf(256, clampEias(e, anim.shifted));
+    return r <= 0 ? null : Math.max(1, Math.ceil(256 * anim.seq.steps / r) - 1);
+  }
   function skillFrames(sk, anim, gearIas, flat, wsm){
     if (anim.seq){
-      // sequences advance at a base rate of 256, scaled by the same EIAS
-      var es = clampEias(diminish(gearIas) + flat - wsm);
+      // sequences run in anim mode 18, which takes the flat -30 at 20B122
+      var es = clampEias(diminish(gearIas) + flat - wsm - SEQ_PENALTY, anim.shifted);
       var rs = rateOf(256, es);
       return rs <= 0 ? null : Math.max(1, Math.ceil(256 * anim.seq.steps / rs) - 1);
     }
-    if (sk === 'ww')
+    if (sk === 'ww')   // 100 + IAS + attackrate, both from the item, undiminished
       return wwFrames(wwUnits(anim.fpd, anim.spd, gearIas + flat - wsm));
-    var e = clampEias(diminish(gearIas) + flat - wsm);
+    var e = clampEias(diminish(gearIas) + flat - wsm, anim.shifted);
     if (sk === 'strafe'){
       // the shot restarts the animation at af*(100-Param6)/100 and it plays
       // through to the end, so a repeat replays FramesPerDirection minus that
@@ -455,7 +509,19 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   // ---------- draw ------------------------------------------------------
   function update(){
     var sk = skill(), c = cls(), f = form(), w = weapon();
-    var ias = +$('ias').value || 0, ar = +$('ar').value || 0;
+    var ias  = +$('ias').value  || 0;   // total gear IAS, weapon included
+    var wias = +$('wias').value || 0;   // IAS on the weapon alone
+    var ar   = +$('ar').value   || 0;   // skills, buffs, auras (player side)
+    var mar  = +$('mar').value  || 0;   // attackrate affix on the main weapon
+    var oar  = +$('oar').value  || 0;   // attackrate affix on the off hand
+    var oias = +$('oias').value || 0;   // IAS on the off hand
+    var isWW = (sk === 'ww');
+    var dualNow = dualActive(sk);
+    var splitHands = dualNow && averagesHands(sk);
+    // sub_140209630 toggles each weapon's whole stat block on and off, so with two
+    // weapons EVERY weapon-borne stat is averaged: IAS, attackrate and the WSM alike
+    var atkStat = isWW ? wias : ias;
+    var atkFlat = isWW ? mar  : (ar + (splitHands ? Math.floor((mar + oar) / 2) : mar));
     var fcr = Math.min(+$('fcr').value || 0, FCR_MAX);
     var wsm = effWsm(sk), i;
 
@@ -475,7 +541,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
     if (sk === 'ww')
       note = '<b>Whirlwind reads speed from the weapon only.</b> Off-weapon speed does nothing, ' +
              'and what does count is not subject to diminishing returns. Two-handers are measured on ' +
-             'their one-handed animation.' +
+             'their one-handed animation. The two speed boxes mean the weapon\u2019s own values here.' +
              (weapon() && offhand()
                ? ' <b>Dual wielding lands two hits per interval rather than shortening it</b> \u2014 ' +
                  'both weapons swing on the same tick, and the second one needs its own target in range, ' +
@@ -491,6 +557,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
       note = 'Laying a trap plays the throw animation and scales with attack speed.';
     else if (anim && anim.seq)
       note = '<b>This skill runs a fixed sequence compiled into the game, not a plain animation.</b> ' +
+             'Sequences run in animation mode 18, which the engine docks a flat <b>30</b> speed. ' +
              anim.seq.note + ' Frame counts below are for the whole cycle' +
              (anim.seq.hits > 1 ? ', which lands ' + anim.seq.hits + ' hits.' : '.');
 
@@ -499,9 +566,21 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
       $('ro-anim').textContent = '\u2014';
       render('atk-body','atk-note', null, ias, 'IAS', 'No animation for this class.');
     } else {
-      var cur  = skillFrames(sk, anim, ias, ar, wsm);
-      var eRaw = sk === 'ww' ? (ias + ar - wsm) : (diminish(ias) + ar - wsm);
-      var e    = sk === 'ww' ? eRaw : clampEias(eRaw);
+      var cur  = splitHands && anim.seq
+        ? dualFrames(anim, ias, wias, oias, ar, mar, oar, wsmOf(w), wsmOf(offhand()))
+        : skillFrames(sk, anim, atkStat, atkFlat, wsm);
+      if (splitHands && anim.seq){
+        var rows = [], prevF = null;
+        for (var q = 0; q <= 2000; q++){
+          var fq = dualFrames(anim, ias, q, oias, ar, mar, oar, wsmOf(w), wsmOf(offhand()));
+          if (fq === null) continue;
+          if (prevF === null || fq < prevF){ rows.push({ stat:q, f:fq }); prevF = fq; }
+        }
+        anim.__rows = rows;
+      } else anim.__rows = null;
+      var eRaw = isWW ? (atkStat + atkFlat - wsm)
+                      : (diminish(atkStat) + atkFlat - wsm - (anim.seq ? SEQ_PENALTY : 0));
+      var e    = isWW ? eRaw : clampEias(eRaw, anim.shifted);
       $('ro-anim').textContent = anim.label;
       $('ro-fpd').textContent  = anim.fpd + ' @ ' + anim.spd + (anim.af ? '  (hits f' + anim.af + ')' : '');
       $('ro-wsm').textContent  = (wsm > 0 ? '+' : '') + wsm;
@@ -519,7 +598,10 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
       $('atk-lbl').textContent = (anim.seq && hits > 1) ? 'frames per cycle'
                                : (sk === 'ww') ? 'frames between hits' : 'frames per attack';
       $('atk-lbl2').textContent = hits > 1 ? 'hits / sec' : 'attacks / sec';
-      render('atk-body','atk-note', ladder(sk, anim, ar, wsm), ias, 'IAS', note, hits, wwDual);
+      render('atk-body','atk-note', anim.__rows || ladder(sk, anim, atkFlat, wsm),
+             splitHands && anim.seq ? wias : atkStat,
+             isWW ? 'weapon IAS' : (splitHands && anim.seq ? 'main-hand IAS' : 'IAS'),
+             note, hits, wwDual);
     }
 
     var ca = f ? { fpd:f.sc[0], spd:f.sc[1] } : { fpd:c.sc[0], spd:c.sc[1] };
@@ -531,6 +613,27 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
       (f ? 'Casting from a form uses the form\u2019s own animation. '
          : 'Every class shares this cast animation, so this table is the same for all of them outside a form. ')
       + capNote);
+
+    // show only the boxes the selected skill actually reads
+    $('wrap-ias').style.display  = isWW ? 'none' : '';
+    $('wrap-wias').style.display = isWW ? '' : 'none';
+    $('wrap-ar').style.display   = isWW ? 'none' : '';
+    $('wrap-oar').style.display  = splitHands ? '' : 'none';
+    $('wrap-oias').style.display = splitHands ? '' : 'none';
+    $('hint-ias').innerHTML = splitHands
+      ? 'Everything <b>except</b> the two weapons \u2014 rings, armour, helm, gloves.'
+      : 'Everything you wear, weapon included. Pooled and diminished together.';
+    $('hint-mar').innerHTML = isWW
+      ? 'Counts exactly like the box above \u2014 Whirlwind adds the two together with no distinction.'
+      : 'Base attack speed granted by the weapon itself. Its bracketed speed is already counted.';
+    $('th-atk').textContent = isWW ? 'Weapon IAS needed'
+                            : splitHands ? 'Main-hand IAS needed' : 'IAS needed';
+    $('hint-wias').innerHTML =
+      'Whirlwind counts nothing else \u2014 not rings, armour, auras or buffs. Undiminished, so a weapon\u2019s '
+      + 'base attack speed is worth the same as its increased attack speed and belongs here too.';
+    $('ro-total').textContent = isWW ? wias + '  (weapon only)' : String(ias);
+    $('ro-flat').textContent = (atkFlat > 0 ? '+' : '') + atkFlat +
+      ((dualNow && averagesHands(sk) && mar !== oar) ? '  (hands averaged)' : '');
 
     fillOffhand();
     var skillDual = usesOffhand(sk);
@@ -551,7 +654,8 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
                           : 'Adds a second hit per interval. Speed still comes from one weapon.';
 
     $('formhint').textContent = f
-      ? 'Attacks and casts both use the ' + f.n.toLowerCase() + ' animation. Your weapon still contributes its speed modifier.'
+      ? 'Attack timing comes from your weapon\u2019s human animation \u2014 the form\u2019s own frame count cancels out '
+        + 'of the engine\u2019s rescale. Shapeshifted also raises the speed ceiling from 175 to 250.'
       : '';
   }
 
@@ -595,7 +699,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
     if (s2.selectedIndex < 0) s2.value = '';
   }
 
-  ['cls','form','skill','wep','wep2','ias','ar','fcr'].forEach(function(id){
+  ['cls','form','skill','wep','wep2','ias','wias','oias','ar','mar','oar','fcr'].forEach(function(id){
     $(id).addEventListener('input', update);
     $(id).addEventListener('change', update);
   });
