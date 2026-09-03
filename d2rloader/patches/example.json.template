@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "name": "Example Memory Patches",
+  "description": "Example memory patches for D2RLoader.",
+  "patches": [
+    {
+      "description": "Replace these bytes.",
+      "op": "bytes",
+      "rva": "0x00123456",
+      "expected": "48 89 5C 24 08",
+      "bytes": "90 90 90 90 90"
+    },
+    {
+      "description": "Replace this range with NOPs.",
+      "op": "nop",
+      "rva": "0x00123470",
+      "size": 6,
+      "expected": "0F 85 12 34 00 00"
+    },
+    {
+      "description": "Write a 32-bit value.",
+      "op": "write-u32",
+      "rva": "0x00123490",
+      "value": "0x00000001",
+      "expected": "00 00 00 00"
+    },
+    {
+      "description": "Replace this code with a jump to another RVA.",
+      "op": "jmp-rel32",
+      "rva": "0x001234A0",
+      "targetRva": "0x00123500",
+      "size": 6,
+      "expected": "0F 85 5A 00 00 00"
+    },
+    {
+      "description": "Make this call go to another RVA.",
+      "op": "call-rel32",
+      "rva": "0x001234B0",
+      "targetRva": "0x00123600",
+      "expected": "E8 78 56 34 12"
+    }
+  ]
+}

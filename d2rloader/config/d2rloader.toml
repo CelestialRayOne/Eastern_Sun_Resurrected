@@ -1,0 +1,260 @@
+#==============================================================================
+# D2RCore settings
+#
+# Core game features.
+# Active mods can override these.
+#==============================================================================
+
+[d2rcore.game_rules]
+# Use the Aura Enchanted rules from version 3.1 or 3.2.
+# "3.1" Bind Demon pets: Might, Holy Fire, Blessed Aim, Holy Freeze, Conviction, Fanaticism, or Holy Shock.
+# "3.2" Bind Demon pets: Concentration, Vigor, Thorns, Holy Freeze, or Fanaticism.
+aura_enchanted_selection = "3.1"
+
+# Choose the Cursed proc rule used when Bind Demon converts a monster.
+# "3.1" converted Cursed demons use MonUMod row 34: 75% chance to cast Amplify Damage.
+# "3.2" converted Cursed demons use MonUMod row 35: 5% chance to cast Amplify Damage.
+bind_demon_curse_selection = "3.1"
+
+[d2rcore.automap]
+# Show the current area name on the automap.
+show_area_name = true
+
+# Show the game version on the automap.
+show_game_version = false
+
+# Show the current difficulty on the automap.
+show_game_difficulty = true
+
+# Show the native IP address for LAN and Direct Join games.
+# Listed games always keep the resolved host address private.
+show_game_ip_address = true
+
+# Show the native game type, such as EXPANSION, on the automap.
+show_game_type_expansion = false
+
+# Show the advertised Game ID below the current game name on the automap.
+show_game_id = true
+
+# Show D2RLoader or the active mod name after the native automap details.
+show_current_mod = true
+
+[d2rcore.items]
+# Show socket counts on normal and superior items on the ground.
+show_ground_sockets = true
+
+# Set the maximum number of floor item labels shown at once.
+# 32 is vanilla. The maximum is 128.
+floor_item_display_limit = 64
+
+# Show item levels on weapons, armor, rings, amulets, charms, and jewels.
+display_item_levels = false
+
+# Hold Ctrl or the controller’s right trigger to see the possible stat rolls for an item.
+item_stat_ranges = true
+
+# Show the highest number of sockets each item can have.
+maximum_sockets = true
+
+[d2rcore.player]
+# Allow the built-in stat and skill reset shortcut.
+# Alt + click stat points to use it.
+# This does not add extra Akara respecs.
+enable_respec = false
+
+# Keep the Toggle Renderer keybind available while playing a RotW character.
+always_enable_rotw_legacy_graphics_keybind = false
+
+[d2rcore.stash]
+# Add more shared stash tabs after the vanilla tabs.
+# The maximum is 995 additional tabs (1,000 total in RotW).
+add_shared_tabs = 995
+
+# Set the material stack limit for the advanced stash.
+# 99 is vanilla. The maximum is 255.
+set_materials_limit = 255
+
+#==============================================================================
+# D2RLoader settings
+#
+# Global loader settings.
+# Mods cannot override these.
+#==============================================================================
+
+[d2rloader]
+# Launch this mod automatically.
+# Example: default_mod = "My Mod"
+default_mod = ""
+
+# Add game arguments every time D2RLoader launches the game.
+# Example: launch_arguments = "-w -txt"
+# Use default_mod above for mods. -mod is not allowed here.
+launch_arguments = "-txt"
+
+# Skip the title screen.
+skip_title_screen = false
+
+# Show the Multiplayer button next to Play.
+# Useful for mods that replace or hide the normal main menu.
+show_tcpip_button = false
+
+# Check d2rloader.net for a newer D2RLoader release.
+check_for_updates = true
+
+# Generate a new map layout each time you load an offline character.
+# Turn this off to keep each character's current map layout.
+always_generate_new_maps = false
+
+# Set the in-game text/UI language.
+# Leave empty to use the game's normal language setting.
+# Valid locales:
+#   enUS = English
+#   deDE = German
+#   esES = Spanish (Spain)
+#   frFR = French
+#   itIT = Italian
+#   koKR = Korean
+#   plPL = Polish
+#   ruRU = Russian
+#   zhCN = Chinese (Simplified)
+#   zhTW = Chinese (Traditional)
+#   esMX = Spanish (Latin America)
+#   jaJP = Japanese
+#   ptBR = Portuguese (Brazil)
+text_locale = ""
+
+# Set the in-game audio language.
+# Leave empty to use the game's normal language setting.
+audio_locale = ""
+
+#==============================================================================
+# Backups
+#
+# Backups are saved in:
+# "<user>\Saved Games\Diablo II Resurrected\D2RLoader Backups"
+#==============================================================================
+
+[d2rloader.backups]
+
+# Back up an offline character before its first save in each play session.
+# To restore a backup, close the game and copy the files back manually.
+enabled = true
+
+# Keep this many backups for each character and shared stash.
+# Valid range: 1 to 100.
+retained_sessions = 10
+
+# Back up the matching softcore or hardcore shared stash with each character.
+# Shared stash backups are kept separately from character backups.
+shared_stashes = true
+
+#==============================================================================
+# Advanced settings
+#
+# Global loader settings.
+# These usually should be left alone.
+#==============================================================================
+
+[d2rloader.advanced]
+
+# TCP port used for both hosting and joining TCP/IP games.
+# Players joining a non-default port must configure the same value.
+game_port = 4000
+
+# Automatically request a temporary matching TCP port mapping from the router.
+# Hosting still works for LAN or manual port forwarding when this is disabled.
+automatic_port_mapping = true
+
+# Check from outside your network whether the configured game port is reachable.
+hosting_check = true
+
+# Allow global D2RLoader plugins and patches to load while a mod is active.
+# These come from the game's shared D2RLoader folders:
+# "<game>\d2rloader\plugins"
+# "<game>\d2rloader\patches"
+allow_global_extensions = true
+
+# Allow D2RLoader plugins and patches included with the active mod.
+# These come from the mod's own D2RLoader folders:
+# "<game>\mods\<mod>\d2rloader\plugins"
+# "<game>\mods\<mod>\d2rloader\patches"
+allow_mod_extensions = true
+
+# Write a diagnostic minidump with crash reports.
+# Enable only when reporting a reproducible crash or when asked by a developer.
+write_crash_dumps = true
+
+#==============================================================================
+# Developer settings
+#
+# For mod authors and developers.
+#==============================================================================
+
+[d2rloader.developer]
+
+# Enable the developer console.
+# Press Ctrl + ` in-game to open it.
+# Type debug_mode to enable debug tools.
+# You can also launch with -debug_mode to start in debug mode.
+enable_console = true
+
+# Show a dialog when D2RLoader captures an assert.
+# Recommended for mod creators while testing.
+# Set false to hide assert dialogs.
+assert_dialog_mode = false
+
+[d2rloader.developer.logs]
+
+# Enable developer logging.
+# This controls all log categories below.
+enabled = true
+
+# Log all of Blizzard's built-in diagnostic messages.
+# Can get noisy, can be useful while developing a mod though.
+native_blizzard = false
+
+# Log JSON resource loading.
+json_resources = false
+
+# Log widget panel creation.
+widget_panels = false
+
+# Log Excel/TXT data table loading and successful per-table compilation rows.
+excel_files = true
+
+# Normal logs summarize successful TXT-to-BIN compilation by source.
+# Log successful BIN compatibility checks and detailed compiler output.
+bin_validation = false
+
+# Log TrueType/OpenType font loading.
+fonts = false
+
+# Log UI sprite loading.
+sprites = false
+
+# Log TCP/IP chat and system messages.
+chat_messages = false
+
+# Log model instance creation.
+models = false
+
+# Log plugin and memory-patch discovery paths, filenames, ids, API versions, and flags.
+extension_details = false
+
+# Log saved-character environment detection, compatibility badges, and sidecar writes.
+character_environment = false
+
+# Log archive/mod-overlay mounting details and embedded/MPQ resource manifests.
+archive_mounts = false
+
+# Log startup decisions for fetching required CASC data.
+# Useful when D2RLoader is preparing or validating game data at startup.
+# Very noisy. Enable only when troubleshooting startup data issues.
+casc_fetch_decisions = false
+
+# Log detailed CASC file loading diagnostics.
+# Useful when D2RLoader cannot find or open files that appear in CASCView.
+# Native archive-open logs are written to d2rloader/logs/archive_file_opens.log.
+# Other CASC diagnostics are written to d2rloader.log.
+# Very noisy. Enable only while troubleshooting missing files.
+casc_files = false
