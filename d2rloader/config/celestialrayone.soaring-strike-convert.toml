@@ -1,0 +1,33 @@
+# Soaring Strike Conversion
+#
+# Adds a new missiles.txt pSrvDmgFunc. It is D2RLoader's DamageSoaringStrike
+# (pSrvDmgFunc 16) with one change: the return-trip pull is gone, and
+# DmgCalc1 converts physical damage to elemental exactly like pSrvDmgFunc 1.
+#
+# What the function does every time the missile damages a unit, in order:
+#
+#   1. ORs the missile's HitFlags and ResultFlags columns into the hit.
+#
+#   2. First hit of the missile only: fires unit event 15 (hextrigger) with
+#      the missile's owner as the source and the struck unit as the target.
+#      The once-per-missile mark is set on that first hit even when the
+#      owner no longer exists, so the event can never fire later.
+#
+#   3. Only when dParam1 is not 0: once per missile, a player owner's weapon
+#      gets the game's missile durability roll, the same call pSrvDmgFunc 16
+#      makes. Skipped for copies created by Mirrored Blades. If the owner has
+#      no weapon at that moment, it is tried again on the next hit.
+#
+#   4. Every hit, outbound and return: DmgCalc1 percent of the physical
+#      damage is moved to the element named in the missile's EType column.
+#      This runs the game's own pSrvDmgFunc 1 code, so the math is identical.
+#      Blank, 0 or negative converts nothing; above 100 converts all of it.
+#
+# Removed compared to pSrvDmgFunc 16: the return-trip pull roll.
+
+[soaring-strike-convert]
+
+# pSrvDmgFunc number the function is installed under. Put the same number in
+# the pSrvDmgFunc column of every missile that should use it. Must be a free
+# slot from 1 to 30; the plugin refuses to load if the slot is already taken.
+slot = 18

@@ -1,0 +1,117 @@
+# Attack Rating
+#
+# Replaces the attack rating versus defense formula that decides whether an
+# attack hits. Every attacker and defender uses it: players, hirelings and
+# monsters. Both hit-chance lines on the Character Screen use it too:
+#   Average chance to hit       you against a monster type
+#   Average chance to hit you   that monster type against you
+# The Character Screen runs the same formula as the hit roll, so it shows
+# the chance the roll really uses.
+#
+# The [missiles] section fixes a vanilla bug that strips a skill's attack
+# rating bonus from player missiles.
+#
+# Open attack-rating-curve.html in a browser to see the curve, try values
+# and copy them back into this file.
+#
+# How a hit chance is worked out:
+#   1. r = attacker attack rating / defender defense
+#   2. the curve below turns r into a whole percent
+#   3. optional vanilla level scaling
+#   4. the result is kept between min_chance and max_chance
+#   5. the game rolls 0 to 99, and the attack hits when the roll is lower
+#
+# Vanilla D2R is exactly this formula with:
+#   pivot_ratio 1, steepness 1, tail 2, late_tail 0,
+#   level_scaling true, min_chance 5, max_chance 95
+
+[attack_rating]
+
+# Master switch.
+enabled = true
+
+# Use the formula for the server-side hit roll.
+apply_to_combat = true
+
+# Use the formula on the Character Screen.
+apply_to_character_screen = true
+
+[curve]
+
+# The curve is exactly 50% when attack rating is pivot_ratio times defense.
+# Below that point it falls away like a sigmoid, above it climbs like a tail:
+#
+#   below the pivot   100 * r^steepness / (r^steepness + pivot_ratio^steepness)
+#   above the pivot   50 + 50 * (r - pivot_ratio) / ((r - pivot_ratio) + tail)
+#
+# The default curve, as whole percents before min_chance and max_chance:
+#   r        1   2   3   4   5   6   8  10  20  30  40  50  60  80 100 104
+#   chance   0   1   7  24  50  62  75  81  91  94  96  97  98  99  99 100
+
+# Ratio where the chance is 50%. Greater than 0.
+pivot_ratio = 5.0
+
+# How hard the chance falls away below the pivot. Greater than 0.
+# 1 is gentle, as in vanilla. 5 punishes low attack rating hard.
+steepness = 5.0
+
+# How slowly the chance climbs toward 100% above the pivot. Greater than 0.
+# Smaller values climb faster. Vanilla is 2.
+tail = 3.0
+
+# Optional second tail for high ratios. It is blended in smoothly between
+# blend_start_ratio and blend_end_ratio, and past blend_end_ratio only
+# late_tail is used. 0 turns it off. Equal start and end switch at once.
+late_tail = 1.0
+blend_start_ratio = 30.0
+blend_end_ratio = 100.0
+
+# Any chance at or above this percent becomes 100%. 50 to 100.
+# 100 turns it off: the tails approach 100% but never reach it.
+snap_to_100_at = 99.5
+
+[chance]
+
+# Limits for the final chance, whole percents from 0 to 100.
+# Vanilla is 5 and 95. 0 and 100 leave the curve untouched.
+min_chance = 5
+max_chance = 95
+
+# Vanilla level scaling, applied before the limits:
+#   chance = 2 * chance * attacker level / (attacker level + defender level)
+level_scaling = false
+
+[character_screen]
+
+# Average chance to hit: use the attack rating the hit roll uses. Removes
+# the class ToHitFactor the screen counts twice, and adds attack rating
+# against demons and undead, -% target defense, ignore target defense and
+# attack rating against the monster's type, all for the monster shown.
+server_accurate_attack_rating = true
+
+# Average chance to hit: once you hit a monster type, use the defense that
+# hit rolled against. That includes auras, curses, champion and unique
+# bonuses, and the halved -% target defense against superuniques, uniques
+# and hirelings. Needs apply_to_combat.
+live_monster_defense = true
+
+# Average chance to hit you: once a monster type rolls to hit you, use the
+# attack rating it rolled with. Needs apply_to_combat.
+live_monster_attack_rating = true
+
+# Skip two reductions the Character Screen makes on its own in Nightmare
+# and Hell: monster defense times 10/12 and monster attack rating times
+# 10/15. The hit roll does not make them.
+skip_client_fudge = true
+
+[missiles]
+
+# Vanilla bug fix. A skill's ToHit, LevToHit and ToHitCalc give players an
+# attack rating percent, but a missile only receives it when the game creates
+# it through CreateSkillMissile. Missiles that skill functions create
+# themselves, such as Multiple Shot's (srvdofunc 8), roll to hit with no
+# skill bonus, even though the Character Screen includes it.
+# When on, every player missile gets its skill's ToHit as it is created,
+# the same value CreateSkillMissile would give it. Missiles that never roll
+# to hit are unaffected. Monsters and hirelings keep the vanilla behaviour.
+skill_attack_rating_on_missiles = true

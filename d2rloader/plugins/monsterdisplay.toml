@@ -1,0 +1,99 @@
+# Monster Display
+# Restart the game after changing these options.
+
+[monster-display]
+
+# -----------------------------------------------------------------------------
+# Display options
+# -----------------------------------------------------------------------------
+show-monster-hp = true
+show-monster-level = true
+show-resistances = true
+
+# Separates Aura Enchanted from the unique-property row and displays the active
+# aura skill name and final level on its own gold row. Skill names follow the
+# current game language automatically.
+# Examples:
+#   Korean : 오라 강화 (광신 Lv.13)
+#   English: Aura Enchanted (Fanaticism Lv.13)
+# A Herald with two active auras can show both names and levels, separated by /.
+# Set to false to keep Aura Enchanted in the original unique-property row.
+show-aura-skill-and-level = true
+
+# -----------------------------------------------------------------------------
+# Resistance template
+# -----------------------------------------------------------------------------
+# Reorder, omit, or repeat placeholders. Literal text is displayed as written.
+# Available: {fire} {lightning} {cold} {poison} {magic} {physical}
+# {color:ID} changes the color of following literal text such as P:, /, |, or •.
+# Resistance values keep the individual colors configured below.
+resistance-template = "{fire}{color:0} • {lightning}{color:0} • {cold}{color:0} • {poison}{color:0} • {magic}{color:0} • {physical}"
+# Minimum effective resistance shown by Monster Display.
+# Keep -100 for normal game behavior. When ResistanceFloor changes [monsters],
+# set this to the same minimum_resistance value (for example -1000).
+# Values greater than -100 are invalid and fall back to -100.
+
+minimum-displayed-resistance = -100
+
+# Default color for literal text without a preceding {color:ID} directive.
+resistance-separator-color = 0
+
+# Individual resistance value colors.
+resistance-fire-color = 1
+resistance-lightning-color = 9
+resistance-cold-color = 3
+resistance-poison-color = 2
+resistance-magic-color = 8
+resistance-physical-color = 4
+
+# D2R inline color IDs (decimal or hexadecimal, valid range 0 through 38).
+#  0 White         1 Red           2 BrightGreen   3 Blue
+#  4 Gold          5 DarkGray      6 Black         7 PaleGold
+#  8 Orange        9 Yellow       10 DarkGreen    11 Purple
+# 12 Green        13 LightGray    14 DullGold     15 YellowGreen
+# 16 Amber        17 ForestGreen  18 Indigo       19 LimeGreen
+# 20 Khaki        21 Silver       22 SoftWhite    23 GrayWhite
+# 24 BlueGray     25 Teal         26 Goldenrod    27 Charcoal
+# 28 BrightGold   29 Violet       30 Beige        31 Cyan
+# 32 Pink         33 Lavender     34 LeafGreen    35 PaleYellow
+# 36 SoftRed      37 SkyBlue      38 RedOrange
+
+# -----------------------------------------------------------------------------
+# Ready-to-copy resistance template examples
+# Remove the leading # from ONE example and replace resistance-template above.
+# -----------------------------------------------------------------------------
+# Original order, spaces only:
+# resistance-template = "{fire} {lightning} {cold} {poison} {magic} {physical}"
+# Physical first, slash separators:
+# resistance-template = "{physical} / {fire} / {lightning} / {cold} / {poison} / {magic}"
+# Physical and magic first, pipe separators:
+# resistance-template = "{physical} | {magic} | {fire} | {lightning} | {cold} | {poison}"
+# Compact four-element row with white middle dots:
+# resistance-template = "{fire}{color:0} • {lightning}{color:0} • {cold}{color:0} • {poison}"
+# Gold labels and white slash separators:
+# resistance-template = "{color:4}P:{physical}{color:0} / {color:4}F:{fire}{color:0} / {color:4}L:{lightning}{color:0} / {color:4}C:{cold}"
+# Element-colored custom labels, including longer words:
+# resistance-template = "{color:1}Fire:{fire}{color:0} {color:9}Lightning:{lightning}{color:0} {color:3}Cold:{cold}"
+# Separators with different colors: blue dot, red dot, bright-green dot:
+# resistance-template = "{fire}{color:3} • {lightning}{color:1} • {cold}{color:2} • {poison}"
+
+# -----------------------------------------------------------------------------
+# JSON layout reference
+# -----------------------------------------------------------------------------
+# Widget names:
+#   Name / HPValue / LevelValue                         = PC top display
+#   HPValueScreen / LevelValueScreen                    = controller top display
+#   HPValueTarget / LevelValueTarget                    = controller target display
+#   ResistanceRowCompact / ResistanceRowNormal          = resistance row
+#   AuraCompact / AuraNormal                             = separate aura row
+#   ResistanceRowExpand                                  = resistance below Unique + Aura
+#   Additional                                           = vanilla immunity text
+#   AdditionalExpand                                     = immunity below Unique + Aura
+# Aura layout states:
+#   No Unique + Aura : AuraCompact -> ResistanceRowNormal -> Additional
+#   Unique + Aura    : Unique -> AuraNormal -> ResistanceRowExpand
+#                      -> AdditionalExpand
+# Layout files:
+#   data/global/ui/layouts/hudmonsterhealthhd.json
+#   data/global/ui/layouts/controller/hudmonsterhealthhd.json
+#   data/global/ui/layouts/controller/pc/hudmonsterhealthhd.json

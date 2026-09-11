@@ -1,0 +1,151 @@
+# =============================================================================
+#  Hex Debuff Installer
+# =============================================================================
+#
+#  Two changes to auraeventfunc 36 (WarApplyHexDebuff), the function every
+#  hex skill uses to put its debuff on the unit it hits:
+#
+#   1. Param1 is registered as an event function on the hexed unit for EVERY
+#      auratargetstate, not only for hexpurgedebuff.
+#   2. Those event registrations remember which unit cast the hex. Without
+#      that, auraeventfunc 33 (SkillActivateSubskill) can never cast anything
+#      from a hex, so a hex cannot trigger a real skill of your own.
+#
+#  This file
+#  ---------
+#  D2RLoader reads it from
+#      <scope>/d2rloader/config/celestialrayone.hex-debuff-installer.toml
+#  If it is missing, the plugin runs with the defaults below.
+#
+#  Built against D2R 3.3
+#  (module 140000000.D2RLoader.exe, md5 baf085b077a4f9605bfddd977cfd9207).
+#  On any other build the byte checks fail and the plugin logs an error
+#  instead of patching or hooking. Check d2rloader/logs/celestialrayone.hex-debuff-installer.log.
+#
+#  What the stock engine does
+#  --------------------------
+#  auraeventfunc 36 (WarApplyHexDebuff, RVA 51FDA0) runs when a hex skill
+#  hits. It puts the skill's auratargetstate on the unit that was hit, for
+#  calc1 frames, and stores calc3 as that state's charge count.
+#
+#  Only when that state is 217 (hexpurgedebuff, hardcoded: the compare at
+#  RVA 51FFB6 and the jne at RVA 51FFC3) does it go one step further: it
+#  registers the skill's Param1 as an event function on the hexed unit, for
+#  three events:
+#      damagedbymissile, damagedinmelee, hextrigger
+#  Stock Hex Purge uses Param1 = 39 (WarApplyPurgeExplosion), which deals Hex
+#  Purge's own damage around the hexed unit and spends a charge.
+#
+#  Those registrations carry NO installer. RVA 438470 passes a literal 0 to
+#  the event registrar at RVA 438230, so every node it creates stores
+#  installer unit type 6, id -1, which is not a unit.
+#
+#  Why that breaks auraeventfunc 33
+#  --------------------------------
+#  auraeventfunc 33 (RVA 42F300) reads its parameters from the hex skill's
+#  row. It checks aurastatcalc4 by whether the column holds a formula
+#  (RVA 42F3A9), not by what the formula evaluates to. When it does, the
+#  caster is replaced with the unit found from the node's installer. Type 6
+#  finds nothing, so the function returns (RVA 42F3CE) before the chance roll
+#  and before the cast, on every hit, whatever the rest of the row says.
+#
+#  What this plugin does
+#  ---------------------
+#  any_target_state NOPs the jne at RVA 51FFC3, so the registration runs for
+#  whatever auratargetstate the skill uses. Nothing else in that branch
+#  depends on the state: it reads Param1, builds the three events and
+#  registers them with the skill's own state.
+#
+#  record_installer hands the event registrar the hex caster as the
+#  installer, for the registrations auraeventfunc 36 makes (group 1, the hex
+#  skill's own id, no installer given). The engine then stores the caster's
+#  unit type and id on each node through its own code.
+#
+#  What does NOT change:
+#   - Param1 = 39 (the stock explosion) behaves exactly as before. That
+#     function never reads the installer.
+#   - Every event registration made outside auraeventfunc 36 passes through
+#     the registrar hook unchanged.
+#
+#  Param1 on every skill that uses auraeventfunc 36
+#  ------------------------------------------------
+#  With any_target_state on, Param1 is read as an auraeventfunc index on
+#  EVERY skill that uses auraeventfunc 36, not only on the hexpurgedebuff one:
+#   - Empty or 0 registers nothing. The registrar loop skips the whole call
+#     when the first function is <= 0.
+#   - 1 to 40 registers that auraeventfunc on the hexed unit for
+#     damagedbymissile, damagedinmelee and hextrigger.
+#   - Above 40 registers nothing. The registrar rejects any index > 40.
+#  So a hex whose Param1 holds something else (a formula parameter, for
+#  example) now registers that number as an event function. Check every
+#  auraeventfunc 36 row before turning this on.
+#
+#  Setting up a hex that casts a skill
+#  -----------------------------------
+#  On the hex skill's row, i.e. the row that uses auraeventfunc 36 (every
+#  column below is read by auraeventfunc 33 from that row):
+#
+#    Param1          33
+#    aurastatcalc1   Chance. Fires when a 0..99 roll is <= this value, so
+#                    N gives N+1 percent and 99 or more is always.
+#    aurastatcalc2   0 skips the weapon check. Above 0, the caster must meet
+#                    passiveitype / passivereqweaponcount.
+#    aurastatcalc3   1. Swaps the units so the hexed unit is the target.
+#    aurastatcalc4   1. Makes the hex caster the caster. This is the branch
+#                    this plugin makes work.
+#    sumskill1       The skill to cast.
+#    sumsk1calc      Its level, evaluated with the hex skill's level.
+#    aurastat1..4    Leave empty. auraeventfunc 36 writes aurastatcalcN as
+#                    stats on the hexed unit when aurastatN is set, and
+#                    skips the slot when it is empty, so the four calcs
+#                    above can only double as 33's parameters on a hex
+#                    that uses no aurastat in those four slots.
+#
+#  With that row, whenever the hexed unit takes melee or missile damage from
+#  anyone, the hex caster casts sumskill1 at it. Missile hits work too: the
+#  caster comes from the installer, not from the unit that dealt the damage.
+#
+#  Things auraeventfunc 33 still requires, which this plugin does not change:
+#   - The hex caster must still exist, and must have the hex skill as its own
+#     skill (the lookup at RVA 33DCD0 asks for owner guid -1).
+#   - The cast goes through the item-proc executor with its item-effect flag
+#     off, so the cast skill runs its srvdofunc (and srvmissile). ItemEffect
+#     is not used on this path.
+#   - Unlike 39, 33 never spends charges or removes the state. calc3 is still
+#     written to the state but 33 never reads it, so the hex keeps triggering
+#     for its whole calc1 duration.
+#
+#  Loop hazard: the cast skill's own damage to the hexed unit fires
+#  damagedinmelee / damagedbymissile on it again, which triggers another
+#  cast. Soft-hit damage (ResultFlags 32) does not fire those events. Stock
+#  Hex Purge and Sigil Death Explosion both carry ResultFlags 32.
+#
+# =============================================================================
+
+["celestialrayone.hex-debuff-installer"]
+
+# -----------------------------------------------------------------------------
+# any_target_state
+# -----------------------------------------------------------------------------
+# true NOPs the hexpurgedebuff gate (the jne at RVA 51FFC3), so auraeventfunc
+# 36 registers Param1 for every auratargetstate. See "Param1 on every skill
+# that uses auraeventfunc 36" above before turning this on.
+#
+# false leaves the gate in place: only a hex whose auratargetstate is
+# hexpurgedebuff (state 217) registers Param1, as in stock.
+#
+# Default: true
+any_target_state = true
+
+# -----------------------------------------------------------------------------
+# record_installer
+# -----------------------------------------------------------------------------
+# true installs two inline hooks, auraeventfunc 36 (RVA 51FDA0) and the event
+# registrar (RVA 438230), so the event nodes auraeventfunc 36 registers
+# record the hex caster as their installer.
+#
+# false leaves both functions unhooked, which is stock behaviour: hex event
+# nodes store no installer and auraeventfunc 33 cannot cast from a hex.
+#
+# Default: true
+record_installer = true

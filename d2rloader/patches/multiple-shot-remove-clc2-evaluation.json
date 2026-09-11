@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Multiple Shot: calc2 no longer sets the missile activation frame",
+  "description": "Makes the Multiple Shot family (skills.txt srvdofunc=8 and its client mirror cltdofunc=17) stop feeding skills.txt calc2 into the spawned missile's activation frame. Both stores are removed, so the activation-frame slot keeps the 0 it was initialised with. Frees calc2 for other uses such as srvstfunc=39.",
+  "patches": [
+    {
+      "description": "Server, srvdofunc=8 spread-fire routine at RVA 0x557840. Removes 'mov [rbp-0x5C], eax' - the store of the calc2 evaluation result (skill record +404) into the activation-frame field (params+0x54) of the local missile-spawn params struct. The struct is zeroed at RVA 0x557A81, before this store.",
+      "op": "nop",
+      "rva": "0x557AB4",
+      "expected": "89 45 A4",
+      "size": 3
+    },
+    {
+      "description": "Client, AmaDoMultipleShot (cltdofunc=17) at RVA 0x2AF010. Removes 'mov [rbp-0x35], eax' - the same calc2 result (skill record +404) being stored into params+0x54. The struct is zeroed at RVA 0x2AF26F, before this store.",
+      "op": "nop",
+      "rva": "0x2AF28F",
+      "expected": "89 45 CB",
+      "size": 3
+    }
+  ]
+}

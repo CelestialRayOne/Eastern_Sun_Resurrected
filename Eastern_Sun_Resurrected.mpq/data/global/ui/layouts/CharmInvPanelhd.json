@@ -1,0 +1,80 @@
+{
+    "type": "Panel",
+    "name": "charm-inv/CharmInvPanel",
+    "fields": {
+        "priority": 10,
+        "rect": "$LeftPanelRect",
+        "anchor": "$LeftPanelAnchor"
+    },
+    "children": [
+        {
+            "type": "ClickCatcherWidget",
+            "name": "charm-inv/LeftClickCatcher",
+            "fields": {
+                "rect": { "x": -236, "y": -205, "width": 740, "height": 2160 }
+            }
+        },
+        {
+            "type": "ImageWidget",
+            "name": "charm-inv/LeftBorderImage",
+            "fields": {
+                "rect": "$LeftSideRectImbuePanel",
+                "filename": "$LeftSideSprite"
+            }
+        },
+        {
+            "type": "ClickCatcherWidget",
+            "name": "charm-inv/PanelClickCatcher",
+            "fields": {
+                "rect": "$PanelClickCatcherRect"
+            }
+        },
+        {
+            "type": "ImageWidget",
+            "name": "charm-inv/Background",
+            "fields": {
+                "rect": { "x": 0, "y": 0, "width": 1162, "height": 1507 },
+                "filename": "d2rloader/charm-inv/charminv_bg"
+            }
+        },
+        {
+            "type": "ImageWidget",
+            "name": "charm-inv/LeftHinge",
+            "fields": {
+                "rect": "$LeftHingeRect",
+                "filename": "$LeftHingeSprite"
+            }
+        },
+        {
+            "type": "TextBoxWidget",
+            "name": "charm-inv/Title",
+            "fields": {
+                "rect": "$InGamePanelTitleRect",
+                "style": "$StyleTitleBlock",
+                "text": "@CharmInvPanelTitle"
+            }
+        },
+        {
+            "type": "ButtonWidget",
+            "name": "charm-inv/CloseButton",
+            "fields": {
+                "rect": { "x": 1075, "y": 9 },
+                "filename": "PANEL\\closebtn_4x",
+                "hoveredFrame": 3,
+                "tooltipString": "@strClose",
+                "sound": "cursor_close_window_hd",
+                "onClickMessage": "PanelManager:ClosePanel:charm-inv/CharmInvPanel"
+            }
+        },
+        {
+            "type": "InventoryGridWidget",
+            "name": "charm-inv/InventoryGrid",
+            "fields": {
+                "rect": { "x": 91, "y": 1035 },
+                "cellCount": { "x": 8, "y": 8 },
+                "cellSize": "$ItemCellSize",
+                "gemSocketFilename": "PANEL\\gemsocket"
+            }
+        }
+    ]
+}

@@ -1,0 +1,137 @@
+{
+    "dependencies": {
+        "particles": [
+            {
+                "path": "data/hd/vfx/particles/objects/vfx_only/town_portal/vfx_town_portal_NewStuff_NewRed.particles"
+            }
+        ],
+        "models": [
+            {
+                "path": "data/hd/objects/vfx_only/portal_permanent/model/head.model"
+            },
+            {
+                "path": "data/hd/objects/vfx_only/portal_permanent/model/torso.model"
+            },
+            {
+                "path": "data/hd/vfx/meshes/fx_mesh_portalSphere_convex_long_hole_vertexalpha_smaller_redux_2.model"
+            }
+        ],
+        "skeletons": [
+            {
+                "path": "data/hd/objects/vfx_only/portal_permanent/skeleton/portal_permanent.skeleton"
+            }
+        ],
+        "animations": [],
+        "textures": [
+            {
+                "path": "data/hd/vfx/textures/gradient/T_FX_linearGradient_test_v1.texture"
+            }
+        ],
+        "physics": [],
+        "json": [
+            {
+                "path": "data/hd/objects/vfx_only/portal_permanent/portal_permanent_state_machine.json"
+            }
+        ],
+        "variantdata": [],
+        "objecteffects": [],
+        "other": []
+    },
+    "type": "UnitDefinition",
+    "name": "portal_permanent",
+    "entities": [
+        {
+            "type": "Entity",
+            "name": "entity_root",
+            "id": 308099761,
+            "components": [
+                {
+                    "type": "UnitRootComponent",
+                    "name": "component_root",
+                    "state_machine_filename": "data/hd/objects/vfx_only/portal_permanent/portal_permanent_state_machine.json",
+                    "doNotInheritRotation": false,
+                    "rotationOverride": {
+                        "x": 0.0,
+                        "y": 0.3826834,
+                        "z": 0.0,
+                        "w": 0.9238795
+                    },
+                    "doNotUseHDHeight": false,
+                    "hideAllMeshWhenInOpenedMode": false,
+                    "onCreateEventName": "",
+                    "animations": []
+                },
+                {
+                    "type": "SkeletonDefinitionComponent",
+                    "name": "component_skeleton",
+                    "filename": "data/hd/objects/vfx_only/portal_permanent/skeleton/portal_permanent.skeleton",
+                    "enableWeaponAttachInertialization": false
+                },
+                {
+                    "type": "VfxDefinitionComponent",
+                    "name": "entity_root_VfxDefinition",
+                    "filename": "data/hd/vfx/particles/objects/vfx_only/town_portal/vfx_town_portal_NewStuff_NewRed.particles",
+                    "hardKillOnDestroy": true
+                },
+                {
+                    "type": "MountableObjectComponent",
+                    "name": "portal_permanent_MountableObjectComponent",
+                    "mountId": -896109135,
+                    "mountRadius": 10.0
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_head",
+            "id": 3747743225,
+            "components": [
+                {
+                    "type": "UnitPartComponent",
+                    "name": "component_part_head",
+                    "part": "head",
+                    "variant": "lit"
+                },
+                {
+                    "type": "ModelDefinitionComponent",
+                    "name": "component_model_head",
+                    "filename": "data/hd/objects/vfx_only/portal_permanent/model/head.model",
+                    "visibleLayers": 1,
+                    "lightMask": 19,
+                    "shadowMask": 3,
+                    "ghostShadows": false,
+                    "floorModel": false,
+                    "terrainBlendEnableYUpBlend": false,
+                    "terrainBlendMode": 1,
+                    "hardKillOnDestroy": true
+                }
+            ]
+        },
+        {
+            "type": "Entity",
+            "name": "entity_torso",
+            "id": 840477502,
+            "components": [
+                {
+                    "type": "UnitPartComponent",
+                    "name": "component_part_torso",
+                    "part": "torso",
+                    "variant": "lit"
+                },
+                {
+                    "type": "ModelDefinitionComponent",
+                    "name": "component_model_torso",
+                    "filename": "data/hd/objects/vfx_only/portal_permanent/model/torso.model",
+                    "visibleLayers": 1,
+                    "lightMask": 19,
+                    "shadowMask": 3,
+                    "ghostShadows": false,
+                    "floorModel": false,
+                    "terrainBlendEnableYUpBlend": false,
+                    "terrainBlendMode": 1,
+                    "hardKillOnDestroy": true
+                }
+            ]
+        }
+    ]
+}

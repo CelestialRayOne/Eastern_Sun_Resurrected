@@ -1,0 +1,41 @@
+# Dodge Avoid Evade Cap
+#
+# Caps the chance to dodge, avoid and evade at a hard percent, 75 by default.
+#
+#   passive_dodge  stat 338  melee attacks, while not walking or running
+#   passive_avoid  stat 339  missiles, while not walking or running
+#   passive_evade  stat 340  melee and missiles, while walking or running
+#
+# Every defender is covered: players, hirelings and monsters.
+#
+# The game rolls each chance as a random number from 0 to 99 against the
+# stat, so a total of 100 or more already succeeds every time. With the cap
+# at 75, any total above 75 plays exactly like 75.
+#
+# Two things are capped, and each can be switched off on its own:
+#   gameplay  the server-side roll itself
+#   display   the value shown in the Advanced Stats panel
+# Keep both on so the panel never shows a chance the roll will not honour.
+#
+# Only the value read at those sites is capped. The stat itself, on the
+# character and on items, is left untouched.
+
+[dodge_avoid_evade_cap]
+
+# Master switch.
+enabled = true
+
+# Maximum chance in percent, 0 to 100. 75 is the original ESR cap.
+# 100 plays the same as vanilla, since the roll never goes above 99.
+cap_percent = 75
+
+# Optional per-stat overrides, 0 to 100. -1 means inherit cap_percent.
+dodge_cap_percent = -1
+avoid_cap_percent = -1
+evade_cap_percent = -1
+
+# Cap the server-side roll.
+cap_gameplay = true
+
+# Cap the value shown in the Advanced Stats panel.
+cap_display = true

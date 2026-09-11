@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "name": "Warlock hardcoded skill id repoints (war -> ESR)",
+  "description": "Five confirmed hardcoded warlock skill references in D2R 3.3.93847. Bind Demon 382->691 (two sites in sub_140531790, the minion summon path: HighestLevelSkill gate and the bind call). Echoing Strike 388->676 and Mirrored Blades 392->692 (three sites in sub_1404C2830, the client skill notification path). NOT a complete set: SKILLS_GetSkillById has 117 call sites and HighestLevelSkill 103, and only these two functions have been audited.",
+  "patches": [
+    {
+      "description": "Bind Demon 382->691 : arg to HighestLevelSkill @0x531814",
+      "op": "bytes",
+      "rva": "0x00531808",
+      "expected": "BA 7E 01 00 00",
+      "bytes": "BA B3 02 00 00"
+    },
+    {
+      "description": "Bind Demon 382->691 : arg to sub_14051E0F0 (the bind call)",
+      "op": "bytes",
+      "rva": "0x00531A25",
+      "expected": "41 B9 7E 01 00 00",
+      "bytes": "41 B9 B3 02 00 00"
+    },
+    {
+      "description": "Echoing Strike 388->676 : the compare",
+      "op": "bytes",
+      "rva": "0x004C28FD",
+      "expected": "3D 84 01 00 00",
+      "bytes": "3D A4 02 00 00"
+    },
+    {
+      "description": "Mirrored Blades delta +4 -> +16 (692-676)",
+      "op": "bytes",
+      "rva": "0x004C2904",
+      "expected": "8D 50 04",
+      "bytes": "8D 50 10"
+    },
+    {
+      "description": "Mirrored Blades 392->692 : arg to sub_14047F330 (packet)",
+      "op": "bytes",
+      "rva": "0x004C292B",
+      "expected": "41 B8 88 01 00 00",
+      "bytes": "41 B8 B4 02 00 00"
+    }
+  ]
+}

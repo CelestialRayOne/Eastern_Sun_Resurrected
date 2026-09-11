@@ -1,0 +1,62 @@
+# Monster Display
+# Restart the game after changing these options.
+
+[monster-display]
+
+# Display options
+show-monster-hp = true
+show-monster-level = true
+show-resistances = true
+show-aura-skill-and-level = true
+
+# Aura details are displayed on their own row below the unique-property row.
+# Skill names use the current in-game language automatically.
+# Examples:
+#   Aura Enchanted (Fanaticism Lv.13)
+#   오라 강화 (광신 Lv.13)
+# Heralds can show both their normal aura and their additional Herald aura.
+# Required top-HUD JSON widget names:
+#   AuraCompact / AuraNormal
+#   ResistanceRowExpand / AdditionalExpand
+
+# Resistance row
+# Reorder, omit, or repeat placeholders:
+#   {fire} {lightning} {cold} {poison} {magic} {physical}
+# Literal text is displayed as written. {color:ID} changes the color of
+# following literal text; resistance values keep their element colors.
+resistance-template = "{fire} {lightning} {cold} {poison} {magic} {physical}"
+
+# Minimum effective resistance shown by Monster Display.
+# Keep -100 for normal game behavior. When ResistanceFloor changes [monsters],
+# set this to the same minimum_resistance value (for example -1000).
+# Values greater than -100 are invalid and fall back to -100.
+minimum-displayed-resistance = -100
+
+# Resistance colors
+resistance-fire-color = 0x01
+resistance-lightning-color = 0x09
+resistance-cold-color = 0x03
+resistance-poison-color = 0x02
+resistance-magic-color = 0x08
+resistance-physical-color = 0x04
+# Default color for literal text without a preceding {color:ID} directive.
+resistance-separator-color = 0x04
+
+# D2R inline color IDs (decimal or hexadecimal, valid range 0 through 38):
+#   0 White         1 Red           2 BrightGreen   3 Blue
+#   4 Gold          5 DarkGray      6 Black         7 PaleGold
+#   8 Orange        9 Yellow       10 DarkGreen    11 Purple
+#  12 Green        13 LightGray    14 DullGold     15 YellowGreen
+#  16 Amber        17 ForestGreen  18 Indigo       19 LimeGreen
+#  20 Khaki        21 Silver       22 SoftWhite    23 GrayWhite
+#  24 BlueGray     25 Teal         26 Goldenrod    27 Charcoal
+#  28 BrightGold   29 Violet       30 Beige        31 Cyan
+#  32 Pink         33 Lavender     34 LeafGreen    35 PaleYellow
+#  36 SoftRed      37 SkyBlue      38 RedOrange
+
+# Ready-to-copy resistance-template examples:
+# resistance-template = "{physical} / {fire} / {lightning} / {cold} / {poison} / {magic}"
+# resistance-template = "{physical} | {magic} | {fire} | {lightning} | {cold} | {poison}"
+# resistance-template = "{fire} • {lightning} • {cold} • {poison}"
+# resistance-template = "{color:4}P:{physical}{color:0} / {color:1}F:{fire}{color:0} / {color:9}L:{lightning}{color:0} / {color:3}C:{cold}"
+# resistance-template = "{fire}{color:3} • {lightning}{color:1} • {cold}{color:2} • {poison}"

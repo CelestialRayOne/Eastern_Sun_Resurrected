@@ -1,0 +1,27 @@
+# Lightning Fury Caster Priority
+#
+# A Lightning Fury style hit sends its bolt at the caster instead of at a
+# random enemy when the hit fires exactly bolt_count bolts, the skill's
+# skills.txt aurafilter has aurafilter_bit set, and the caster is inside the
+# skill's range. Otherwise the stock enemy search runs untouched.
+
+[lf-caster-priority]
+
+# Master switch. false leaves both hooks installed but inert.
+enabled = true
+
+# Mirror the server behaviour on the client so the visual bolt matches.
+# Only turn this off to isolate a client side problem.
+hook_client = true
+
+# skills.txt aurafilter bit that marks a skill as caster-priority.
+# Decimal or 0x hex. Default is bit 30, the bit the 2.4 patches used.
+aurafilter_bit = 0x40000000
+
+# Bolt count the hit must have for its bolt to be redirected.
+# 1 means only single-bolt hits are affected, which is the 2.4 behaviour.
+bolt_count = 1
+
+# Require the caster to be within the skill's range of the impact point.
+# false redirects the bolt no matter how far away the caster is.
+require_caster_in_range = true

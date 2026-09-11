@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "psrvdofunc 39 - persistent pull",
+  "description": "Removes the 'disable the pull result flag after the first tick' behaviour from missiles.txt pSrvDoFunc 39 (MissileDoAbyss) in Diablo II: Resurrected 3.3.93847. Handler is sub_1404576B0, reached only through the pSrvDoFunc table (off_142390E80 + 39*8 = 0x142390FB8, verified to hold 0x140457B0... 0x1404576B0), so nothing else in the engine is affected. Applies to every missile row using pSrvDoFunc 39.",
+  "patches": [
+    {
+      "description": "Keep the pull ResultFlags bit alive on every tick instead of only the first. sub_1404576B0 builds the damage packet with sub_140465420, then ORs the missile record's HitFlags (dword +208) into packet+0 and ResultFlags (word +212) into packet+4. It then reads the missile's flags with sub_1403BB080: on the first tick bit 4 is absent so it takes the else branch and marks the missile via sub_1403BD3D0(missile, flags|4); on every later tick bit 4 is present and it executes 'mov eax,0FFBFh' / 'and word [rsp+74h],ax', clearing ResultFlags bit 0x40 - the pull. NOPping just the 'and' leaves the bit set for the whole lifetime. The 'mov eax,0FFBFh' at 0x45786F is left in place: eax is dead there, overwritten by the very next call (sub_1403BB260 at 0x457893), so it costs one wasted load and nothing else. The 'ticked' marker is still set on the first tick and is now simply unused by this function. Side effect, and the intended one: the pull-centering call sub_14034A040 at 0x4578C4 is gated on that same 0x40 bit, so the pull now re-centres on the missile every tick rather than once.",
+      "op": "nop",
+      "rva": "0x00457874",
+      "size": 5,
+      "expected": "66 21 44 24 74"
+    }
+  ]
+}

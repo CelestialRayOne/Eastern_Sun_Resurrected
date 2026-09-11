@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Apocalypse / srvdofunc 163 - do not touch the target state",
+  "description": "For srvdofunc 163 (WarDoApocalypse) in Diablo II: Resurrected 3.3.93847. Handler sub_140520A00, per-target callback sub_14051E4B0 (single code xref from 0x520C11). SUPERSEDES the previous three-patch version of this file: the 0x51E5EC aurastat-loop jmp, the 0x51E72B 53-byte nop and the 0x51E562 duration byte are all unnecessary now and must be removed. Reason: the code at 0x51E72B was never what cleared the debuff. sub_140433D20 clears it, on the way in. It looks up any existing statlist for the state, compares the node's skill id and level against the request, and when they differ it calls sub_1402F7920 + sub_1402F4180 to unlink and free that node before building its own. The bolts' node is built by sub_140566640, whose create path calls sub_1402F7300 / sub_1402F72F0 / sub_1402F7A50 and never sets a skill id or level, so those read back as 0 and never match apocalypse's request. WARNING: this patches the handler, not the skill row, so it applies to every skills.txt row using srvdofunc 163.",
+  "patches": [
+    {
+      "description": "Make srvdofunc 163 ignore auratargetstate entirely so its damage tick neither creates, replaces nor removes a state on the target. sub_14051E4B0 loads auratargetstate from skill record word +162 at 0x51E4F7 into r14d, mirrors it to the stack at 0x51E4FF, and gates its whole state block on 'test r14w,r14w / jle 0x51E6BB'. Replacing the load with 'mov r14d,-1' (6 bytes) plus a 2-byte nop keeps the instruction length and makes that branch always taken, so sub_140433D20 is never called and the bolts' node survives untouched. The tail lookup at 0x51E705 then runs with -1: sub_1402F5940 is a plain linked-list walk comparing *(dword*)(node+32) against the id, with no array indexing, so it simply finds nothing and returns 0, which also skips the removal block at 0x51E72B and its identity assert. -1 rather than 0 on purpose, since sub_1402F5940 asserts on a state id of 0. Damage, targeting and the sub_140349020 block at 0x51E767 are all downstream of this and unchanged. TRADE-OFF: apocalypse also stops applying its own aurastat1 (skill record word +116 with calc dword +136) to the target for the duration of the damage calc, since that stat was written onto the node this patch no longer creates. aurastat2-6 (words 118-126, calcs 140-156) were already disabled by the previous version of this file. If that stat matters, put it on the debuff bolt's skill instead, where sub_140574480 applies aurastat1-6 when the bolt's psrvhitfunc lands.",
+      "op": "bytes",
+      "rva": "0x0051E4F7",
+      "expected": "44 0F BF B0 A2 00 00 00",
+      "bytes": "41 BE FF FF FF FF 66 90"
+    }
+  ]
+}

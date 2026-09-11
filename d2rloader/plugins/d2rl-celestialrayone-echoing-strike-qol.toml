@@ -1,0 +1,108 @@
+# =============================================================================
+#  Soaring Strike Return Trip
+# =============================================================================
+#
+#  Changes the boomerang return trip for missiles whose missiles.txt
+#  pSrvHitFunc column is 34 (HitSoaringStrike, server side). Nothing else in
+#  the game is affected: every other missile, skill and hit function is
+#  untouched.
+#
+#  This file
+#  ---------
+#  D2RLoader writes it to
+#      <scope>/d2rloader/config/celestialrayone.soaring-strike.toml
+#  the first time the plugin loads, from a copy embedded in the DLL. After
+#  that it is never overwritten, so your edits survive plugin updates. Delete
+#  it to get the defaults back.
+#
+#  Built against D2R 3.3
+#  (module 140000000.D2RLoader.exe, md5 baf085b077a4f9605bfddd977cfd9207).
+#  On any other build the byte checks below fail and the plugin logs an error
+#  instead of patching. Check d2rloader/logs/celestialrayone.soaring-strike.log.
+#
+#  What the stock engine does
+#  --------------------------
+#  pSrvHitFunc 34 lives at RVA 460180 and drives the boomerang: outbound the
+#  missile always pierces, and when it reaches its lifetime or hits a wall the
+#  state machine at RVA 3BA560 turns it around, caps the return path, and
+#  hands back "return trip started". Slot 34 then gives the missile a fresh
+#  cast id, which is what resets next-hit delays.
+#
+#  Two things it does NOT do, which this plugin adds:
+#
+#   1. It never touches the LastCollide slot. That slot lives in the missile
+#      data at [pMissile+0x10] as a unit type at +0x20 and a unit id at +0x24.
+#      It holds ONE pair, the most recent target, not a list. So if the
+#      missile pierced A then B then C on the way out, only C is still stamped
+#      and only C is blocked on the way back. C is normally whatever you were
+#      aiming at, which is why it looks like the return trip cannot hit
+#      anything it already touched.
+#
+#   2. It clamps the return distance to 50 before working out how long the
+#      missile lives on the way home:
+#          frames = (min(distance, 50) << 16) / (16 * abs(velocity))
+#      Anything further away than 50 gets the same short return flight as
+#      something at exactly 50, so a long throw dies before it gets home.
+#
+# =============================================================================
+
+["celestialrayone.soaring-strike"]
+
+# -----------------------------------------------------------------------------
+# return_trip_rehit
+# -----------------------------------------------------------------------------
+# Installs an inline hook on pSrvHitFunc 34 (RVA 460180). When the function
+# reports that the return trip has just started, the LastCollide slot is
+# re-stamped so the last monster hit outbound becomes a legal target again.
+#
+# false leaves slot 34 completely unhooked.
+#
+# Default: true
+return_trip_rehit = true
+
+# -----------------------------------------------------------------------------
+# reseed_with_owner
+# -----------------------------------------------------------------------------
+# How the LastCollide slot is reset. Only read when return_trip_rehit is true.
+#
+#   true   Re-stamp the slot with the missile's owner. This is exactly the
+#          value missile creation seeds it with, so the missile keeps the same
+#          owner protection it had on the way out. Since the return trip flies
+#          straight back at the caster, that protection is worth keeping.
+#
+#   false  Clear the slot outright (the engine writes id = -1, which nothing
+#          can match). Every monster becomes eligible, and so does the caster.
+#          Only pick this if you actually want a boomerang that can come back
+#          and hit its own thrower.
+#
+# Default: true
+reseed_with_owner = true
+
+# -----------------------------------------------------------------------------
+# return_path_cap
+# -----------------------------------------------------------------------------
+# Replaces the literal 50 in `mov edi, 32h` at RVA 3BA6B1, the distance clamp
+# used to work out the return flight time.
+#
+#   50      Stock behaviour. The plugin detects this and skips the patch
+#           entirely rather than writing the same byte back.
+#   32767   Effectively uncapped. Far beyond any distance reachable inside a
+#           level, so the clamp never engages.
+#
+# Valid range is 1 to 32767. The upper limit is a hard engine constraint, not
+# a safety margin: the clamped value is fed through `shl edi, 10h`, so
+# anything above 32767 overflows into a negative and the missile expires the
+# instant it turns around. Values outside the range are rejected and the
+# patch is skipped, with a line in the log.
+#
+# Caveat for very slow missiles: with the cap raised, a long return path
+# divided by a small velocity can push the computed lifetime past 32767
+# frames. The engine saturates the lifetime word there but writes the raw
+# countdown as a float, so the two disagree and the missile outlives its
+# recorded range. That divergence already exists in stock at the 50 cap for a
+# slow enough missile; a longer path just makes it easier to reach. If a
+# boomerang seems to hang around forever, lower this value rather than raising
+# the missile's velocity.
+#
+# Default: 32767
+return_path_cap = 32767

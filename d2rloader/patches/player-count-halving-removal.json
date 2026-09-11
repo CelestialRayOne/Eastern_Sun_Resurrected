@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Full Players Count For Drops",
+  "description": "Removes the party-averaging that halves the effective player count used for Treasure Class NoDrop scaling. Vanilla computes nPlayerCount = (playerCount - partyMembers) / 2 + partyMembers inside the TC walker sub_1404404F0, so a solo character on /players 8 is scaled as 4 players. NOPing the single 'sar eax,1' leaves (playerCount - partyMembers) + partyMembers = playerCount, so the setting applies at face value. Party play is unaffected: when partyMembers equals playerCount the averaging was already a no-op.",
+  "patches": [
+    {
+      "description": "sub_1404404F0 +0x5AC: NOP the 'sar eax,1' that halves (playerCount - partyMembers) before partyMembers is added back. Original 2 bytes D1 F8. The preceding cdq / sub eax,edx rounding fixup is deliberately left intact so EDX behaviour downstream is byte-for-byte unchanged.",
+      "op": "nop",
+      "rva": "0x440A9C",
+      "expected": "D1 F8",
+      "size": 2
+    }
+  ]
+}

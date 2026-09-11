@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "psrvhitfunc 52 - warcry debuff on enemies, stats from owner",
+  "description": "Replaces the body of missile hit function 52 with an enemy-targeting warcry applier whose stat formulas are evaluated against the missile owner instead of the unit hit. 3.3 rebuild of the 2.4 'SrvHit21 enemy debuff clone of SrvHit18' body.",
+  "patches": [
+    {
+      "description": "Overwrite sub_140461690 (psrvhitfunc table slot 52, RVA 2391030 + 52*8) with: pOwner = SUNIT_GetOwner(490300); bail 1 if none; skip if SUNIT_AreUnitsAligned(48E4D0) is true (inverted vs srvhit18, so allies and the caster are skipped); then SKILLS_ApplyWarcryStats(566640)(pGame, pTarget, pOwner, MISSILE_GetSkill(3BC450), MISSILE_GetLevel(3BB470)). State comes from the skill's aurastate (+160); auralencalc and aurastat1-6/aurastatcalc1-6 are evaluated on the OWNER. Original 13-byte prologue is preserved so the existing .pdata unwind record stays valid; the remaining 299 bytes of the old 8-direction sub-missile spawner are left in place as unreachable dead code.",
+      "op": "bytes",
+      "rva": "0x461690",
+      "expected": "40 53 56 57 41 56 48 81 EC D8 00 00 00 48 8B 05 24 9C 56 02 48 33 C4 48 89 84 24 C0 00 00 00 48 8B DA 4C 8B F1 48 8B CB 48 8D 15 71 96 8B 01 41 B8 3C 16 00 00 E8 96 81 EE FF 41 0F B6 8E 06 01 00 00 8B D0 E8 67 49 D0 FF 48 8B F8 48 85 C0 0F 84 35 01 00 00 66 83 78 46 00 0F 8C 2A 01 00 00 48 8B D3 49 8B CE E8 05 EC 02 00 48 85 C0 0F 84 16 01 00 00 0F 57 C0 48 89 AC 24 10 01 00 00 33 C9",
+      "bytes": "40 53 56 57 41 56 48 81 EC D8 00 00 00 4C 89 C7 49 89 D6 48 89 CE 48 89 F1 4C 89 F2 E8 4F EC 02 00 48 89 C3 48 85 C0 74 46 48 85 FF 74 3D 49 89 F8 48 89 DA 48 89 F1 E8 04 CE 02 00 85 C0 75 2B 4C 89 F1 E8 78 AD F5 FF 89 44 24 40 4C 89 F1 E8 8C 9D F5 FF 89 44 24 20 44 8B 4C 24 40 49 89 D8 48 89 FA 48 89 F1 E8 45 4F 10 00 31 C0 EB 05 B8 01 00 00 00 48 81 C4 D8 00 00 00 41 5E 5F 5E 5B C3"
+    }
+  ]
+}

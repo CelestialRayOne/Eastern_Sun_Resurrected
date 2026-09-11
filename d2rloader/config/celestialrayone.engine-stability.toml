@@ -1,0 +1,50 @@
+# Engine Stability - crash guards for Diablo II: Resurrected
+#
+# Nothing in this plugin changes gameplay, balance or presentation. Every
+# switch below turns one guard on or off, and a guard is only ever the
+# difference between a hard crash and a normal frame. Turning a guard off
+# restores stock (crashing) behaviour.
+#
+# Safety: the plugin verifies the original bytes at every hook site before it
+# installs anything. On a game build it does not recognise it installs nothing
+# no matter what this file says, logs loudly, and stays loaded so the
+# `engine-stability` console command can tell you why.
+#
+# This file lives at <scope>\d2rloader\config\celestialrayone.engine-stability.toml
+# and is created with these defaults on first run. Delete it to get them back.
+# Changes are read at plugin load, so restart the game after editing.
+#
+# Type `engine-stability` in the console to see which guards are actually live.
+
+
+[engine-stability]
+
+# Master switch for the whole plugin.
+#   true  - guards are installed as configured in [guards] below.
+#   false - the DLL stays loaded and the console command still answers, but no
+#           hook is installed at all. Use this to rule the plugin out while
+#           chasing a crash without having to move the DLL out of the folder.
+# Default: true
+enabled = true
+
+
+[guards]
+
+# Client unit-by-id hash lookup, tombstoned unit id.
+# Site: RVA 0009F270, the shared bottom of the client's unit-by-id lookup.
+#
+# What goes wrong without it: freeing a unit stamps a tombstone on the block
+# (unit id -1) and returns it to the pool, so every later resolution of that
+# owner arrives at the lookup with id -1. That masks to bucket 0x7F and the
+# walk follows whatever that slot happens to hold, which is where the dangling
+# chain node is. Reliable repro: a summon dies while the missiles from its own
+# on-death proc are still in flight.
+#
+# What the guard does: an id of -1 is never a live unit, so it answers "not
+# found" without walking the chain. Returning null is this function's own
+# not-found result, so every call site already handles it.
+#
+# Cost when on: one compare against -1 per lookup. The hot path (any live unit
+# id) touches nothing else.
+# Default: true
+client_unit_lookup_tombstone = true

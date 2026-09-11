@@ -1,0 +1,27 @@
+# Magic Find Soft Tail
+#
+# Vanilla:  MagicFind = 100 + dim * MF / (MF + dim)
+# Patched:  MagicFind = 100 + dim * MF / (MF + dim) + MF * tail / 100
+#
+# dim is 250 for unique, 500 for set, 600 for rare. The vanilla term
+# converges, so past a point extra MF is worth nothing; the tail is an
+# unbounded trickle that keeps rewarding MF without removing the curve.
+#
+# Only unique, set and rare have diminishing returns in the first place.
+# Magic quality already gets the full value of MF, and superior and
+# normal never look at MF at all, so neither is affected here.
+
+[magic_find_soft_tail]
+
+# Master switch.
+enabled = true
+
+# Percent of raw MF added on top of the vanilla curve.
+# 10 keeps 10% of all your MF forever, which is the original port.
+# 0 reproduces vanilla exactly.
+tail_percent = 10
+
+# Optional per-quality overrides. -1 means inherit tail_percent.
+tail_percent_unique = -1
+tail_percent_set = -1
+tail_percent_rare = -1
