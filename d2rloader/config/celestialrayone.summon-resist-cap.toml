@@ -1,0 +1,89 @@
+# ============================================================================
+# Summon Resist Cap
+# ============================================================================
+#
+# WHAT IT DOES
+# Allied monsters resolve their resistances through the exact same
+# capped branch the engine already runs for players:
+#
+#   cap        = 75 + the unit's per-element max-resist stat
+#   hard cap   = 95            (never exceeded, same ceiling players have)
+#   physical   = 50            (damageresist, when no max-resist stat applies)
+#   floor      = -100
+#   final      = min(resistance, cap)
+#
+# Without this plugin they skip that whole block, so a summon can pass 100% and
+# become outright invincible to that damage type.
+#
+# The nightmare/hell difficulty penalty is never applied to them. Players keep
+# it. This is not a setting, it falls out of where the patch sits (see below).
+#
+# The 75 base, the 95 ceiling and the 50 physical cap are the game's own
+# immediates and are shared with players by design, so they are not settings
+# here. Changing them would change them for players too.
+#
+# HOW IT WORKS
+# Inside SUNITDMG_ApplyResistancesAndAbsorb (RVA 0x4523E0) a single flag at
+# ctx+0x24 is read exactly twice and gates two things: the difficulty penalty
+# at 0x452468, then the entire capping block at 0x45249C.
+#
+# The plugin replaces five bytes at 0x45249C only:
+#
+#   39 6E 24    cmp dword ptr [rsi+24h], ebp
+#   75 57       jnz 0x4524F8
+#
+# with a jmp rel32 into a relay page allocated within reach. The relay saves the
+# flags and every volatile register, asks the plugin whether to cap, and then
+# jumps either to 0x4524A1 (run the engine's capping block) or to 0x4524F8
+# (exactly what the original jnz did). No engine constant is patched.
+#
+# Because the patch sits after the penalty gate, the penalty has already been
+# skipped by the time the relay runs.
+#
+# COMPATIBILITY
+# The function entry at 0x4523E0 is deliberately left pristine. Plugins that
+# hook that entry, monsterdisplay among them, verify its first 18 bytes and
+# refuse to load if anything has detoured it. Patching the gate instead of the
+# entry lets both run at the same time. The patched range is 0x45249C through
+# 0x4524A0, which also does not overlap Ruff's resistance-floor sites at
+# 0x4524C4 and 0x4524E7.
+#
+# WHICH MONSTERS GET CAPPED
+# Every monster whose monstats.txt Align column is 1. The column is a single
+# byte at monstats record + 0x87, located in the column parser at sub_14039DB30
+# and confirmed in game: an allied row reads 1 there while ordinary monsters
+# read 0. Nothing has to be listed by hand.
+#
+# extra_monster_ids exists for rows you want capped even though their Align is
+# not 1. Leave it empty unless you have such a case.
+#
+# summon-resist-probe lists every monstats row that reached the resistance
+# resolver, with its AI id, its Align byte, its hit count, and whether it is
+# being capped. Use it to check a specific summon is being picked up.
+#
+# CONSOLE
+#   summon-resist-cap       settings, patch state and counters
+#   summon-resist-probe     monstats rows seen at the resolver
+#
+# ============================================================================
+
+# File format version. Leave this value unchanged.
+config_version = 4
+
+# Master switch. false loads without patching anything.
+enabled = true
+
+
+[allies]
+# Cap every monster whose monstats.txt Align column is 1. This is the mechanism;
+# turning it off leaves only extra_monster_ids.
+use_align_column = true
+
+# Extra monstats rows to cap regardless of their Align value. One line, any
+# separators: [357, 358] and 357 358 both parse. Up to 256 entries.
+extra_monster_ids = []
+
+
+# Lets D2RLoader verify that multiplayer peers use matching settings.
+[d2rl]
+match = true

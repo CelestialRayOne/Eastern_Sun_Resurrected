@@ -1,0 +1,127 @@
+# =============================================================================
+#  Armageddon as Aura            plugin id: celestialrayone.armageddon-aura
+#  Target: D2R 3.3 (D2RLoader image)                      Role: Server
+# =============================================================================
+#
+#  WHAT IS BROKEN IN THE STOCK GAME
+#
+#  Armageddon is written as a CAST skill. Before its server handler does
+#  anything at all it asks the engine "is this unit casting me right now?".
+#  It answers that by reading the unit's "skill currently being used" pointer
+#  and comparing that skill's id against its own. If they do not match it
+#  returns immediately and does nothing.
+#
+#  That gate is correct for a normal cast. It is fatal for an aura, because
+#  none of the paths that drive an aura ever fill that pointer in:
+#
+#    * An item_aura grant (itemstatcost 151) re-fires the skill on a timer.
+#      The engine calls the skill handler with its "item cast" argument set,
+#      and on that path it skips the whole block that would have resolved
+#      and installed the used skill.
+#    * The periodic re-fire that keeps a learned aura alive does the same.
+#    * So does the re-fire that happens when you respawn.
+#
+#  The handler is therefore called on schedule, bails at its own first line,
+#  and never creates the aura state or schedules the periodic event that
+#  makes Armageddon actually rain. What you see in game is:
+#
+#    * The aura does nothing, or only works right after you manually cast it.
+#    * It dies permanently on death, because the state is torn down when you
+#      die and nothing ever bootstraps it again.
+#    * When it is forced to run some other way, it runs with no owner
+#      context, so anything its calcs read about the owner is garbage.
+#
+#  WHAT THIS PLUGIN DOES
+#
+#  It wraps the Armageddon server handler. On entry it reads the unit's
+#  "skill currently being used" pointer and takes one of two paths:
+#
+#    * REAL CAST. The pointer already names this skill. The plugin steps
+#      aside entirely and the stock handler runs untouched. Nothing about a
+#      normal cast changes in any way.
+#
+#    * BORROWED CONTEXT. The pointer is empty or names a different skill.
+#      The plugin looks this skill up on the unit's own skill list, lends it
+#      to the engine as the used skill for the duration of exactly one call,
+#      runs the stock handler, and then puts the previous value back. The
+#      handler now passes its own gate and performs its full, ordinary
+#      bootstrap: it creates the aura state, schedules the periodic event,
+#      and stores the random seed that the active-state handler consumes on
+#      every tick.
+#
+#  Because the skill is borrowed from the unit's real skill list rather than
+#  faked, the aura runs with a proper owner context. That is what makes owner
+#  stats and the real skill level readable inside its calcs, and it is why
+#  the aura comes back by itself after you die instead of needing a re-equip.
+#
+#  IT ALSO FIXES THE LEAP / WHIRLWIND FREEZE
+#
+#  The stock handler sets the unit's "a skill action was taken this frame"
+#  flag the moment it gets past its gate. The per-frame animation code reads
+#  that flag and, when it is set, does not advance the unit's current
+#  sequence. That is harmless for a one-off cast, which happens once.
+#
+#  It is not harmless for an aura. The aura ticks every few frames and re-sets
+#  the flag each time, so a player who is mid-leap or mid-whirlwind is frozen
+#  in place for as long as the aura is running.
+#
+#  On the borrowed-context path only, this plugin puts that flag back exactly
+#  the way it found it once the handler returns. If the flag was already set
+#  because the player genuinely acted on that frame, it stays set. Real casts
+#  never reach this code and keep the flag exactly as the game intended.
+#
+#  WHAT YOU NEED IN YOUR TXT FILES
+#
+#    * skills.txt: srvdofunc = 124 on the skill, and aura = 1.
+#    * The skill must be GRANTED to the unit, normally as an oskill, so that
+#      it exists on the unit's skill list. That is the skill the plugin
+#      lends. With no grant there is nothing to lend and the plugin steps
+#      aside, leaving the stock (broken) behaviour.
+#    * Do NOT also apply the aurastate from a property. The handler creates
+#      that state itself now, and a second property-applied copy of the same
+#      state fights with it.
+#    * states.txt: leave the aurastate's srvactivefunc alone. That is what
+#      drives the per-tick Armageddon behaviour, and it only ever runs
+#      because this plugin got the state created in the first place.
+#
+#  NOTE FOR 3.3: the srvdofunc 124 handler is shared by Armageddon AND
+#  Hurricane. With an empty skill list below, both are covered.
+#
+# =============================================================================
+
+
+# Master switch. Set to false to unload the fix and leave the game stock.
+enabled = true
+
+
+[skills]
+# Which skills the fix applies to, listed by their skills.txt *Id.
+#
+# Leave the list EMPTY to apply it to every skill that uses srvdofunc 124.
+# That is the recommended setting and matches the behaviour of the original
+# byte patch this plugin replaces.
+#
+# Fill it in only if you want to scope the fix. Because srvdofunc 124 is
+# shared with Hurricane in 3.3, an empty list covers Hurricane too.
+#
+# Example:  ids = [ 249, 1305 ]
+ids = []
+
+
+[sequence]
+# Restore the "skill action taken this frame" flag to whatever it was before
+# the handler ran, on the borrowed-context path only. This is the leap /
+# whirlwind freeze fix described above.
+#
+# Leave this on. Turn it off only to prove that some other patch is causing a
+# sequence stall, because turning it off brings the freeze back.
+restore_action_flag = true
+
+
+[diagnostics]
+# Writes a short burst of lines to the plugin log covering the first few
+# jumpstarts, then goes quiet so it cannot spam a per-frame path.
+#
+# Running counters are always available from the in-game console command
+# "armageddon-aura", whether this is on or off.
+enabled = false

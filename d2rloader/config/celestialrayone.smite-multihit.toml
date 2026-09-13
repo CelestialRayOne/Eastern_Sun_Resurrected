@@ -1,0 +1,97 @@
+# Smite
+#
+# Three independent Smite features. Each can be turned off on its own and
+# a disabled feature installs nothing at all. Features 2 and 3 are display
+# only and change no damage.
+#
+# Console: smite
+
+# =====================================================================
+# 1. Multi-hit
+# =====================================================================
+#
+# One Smite cast lands N times instead of once. Every hit runs the full
+# Smite path, so each one applies damage, drains durability and fires the
+# melee events domeleeattack and attackedinmelee. That is the point of the
+# feature: N hits means N on-strike procs, N life and mana steal events and
+# N crushing blow / open wounds rolls, not one hit multiplied.
+#
+# N is a skills.txt formula on the Smite row, evaluated per cast against
+# the caster at that cast's skill level. It can reference stats and other
+# calc columns like any other skill formula. Leave the column blank and
+# Smite behaves exactly as it does in vanilla.
+#
+# This covers every skill whose skills.txt srvdofunc is 150, not just the
+# Smite row, and it covers Smite however it is reached, including a Charge
+# that chains into it.
+#
+# Each hit rolls its own damage between the shield's min and max, rather
+# than one roll replayed N times. The average is the same. If a hit does
+# not connect the remaining hits are dropped instead of being applied to a
+# corpse, and a Smite cast from inside a Smite hit takes its single
+# vanilla hit so a Smite-on-striking proc cannot multiply itself.
+
+[multi_hit]
+
+multi_hit_enabled = true
+
+# Which skills.txt calc column holds the hit count. 5 through 10.
+#
+# calc1 and calc2 are already used by Smite itself: the engine reads calc1
+# as the damage percent applied to the shield damage and calc2 as flat
+# bonus damage, and calc4 feeds the elemental damage when the etype column
+# is set. calc3 is free but is left out of range here so the choice stays
+# clear of everything Smite already reads.
+#
+# Record offsets these map to, for reference:
+#   calc5 416   calc6 420   calc7 424   calc8 428   calc9 432   calc10 436
+calc_field = 5
+
+# Safety ceiling on the evaluated hit count. This is not a balance knob:
+# it exists so a formula that goes wrong cannot stall the server thread in
+# a runaway loop. Raise it if a build legitimately needs more hits.
+max_hits = 100
+
+# =====================================================================
+# 2. Holy Shield display fix
+# =====================================================================
+#
+# Smite's damage line adds the Holy Shield skill's bonus damage while the
+# aura is up, but it hardcodes vanilla skill 117. The server side reads
+# that bonus off the live state and so follows whatever skill actually
+# cast it, which means a mod that replaces Holy Shield with its own skill
+# shows the bonus as zero while the real damage includes it.
+#
+# The state the display tests for stays 101, the Holy Shield state. That
+# is deliberate: the server keys off state 101 too, so a replacement Holy
+# Shield has to apply state 101 through its skills.txt aurastate column
+# either way.
+
+[holy_shield_display]
+
+holy_shield_enabled = true
+
+# The skill whose bonus damage the Smite line should read. 117 is vanilla
+# Holy Shield, which makes this fix a no-op.
+holy_shield_skill_id = 546
+
+# =====================================================================
+# 3. item_normaldamage display fix
+# =====================================================================
+#
+# item_normaldamage, the "adds X damage" stat, applies to Smite's real
+# damage but the vanilla line leaves it out, so gear that raises Smite
+# noticeably does not move the number on the sheet.
+#
+# The stat is folded into the shield damage at the point the display reads
+# it, which sends it through the same scaling the shield damage already
+# gets: the skill's own per-level bonus, the shield's strength and
+# dexterity bonuses, damagepercent, and the min and max damage percent
+# stats. That is the treatment the real damage calculation gives it.
+
+[item_normaldamage_display]
+
+item_normaldamage_enabled = true
+
+# itemstatcost.txt id of the stat to fold in. 111 is item_normaldamage.
+item_normaldamage_stat_id = 111

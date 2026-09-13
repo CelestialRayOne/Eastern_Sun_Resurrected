@@ -1,0 +1,59 @@
+# Charge impact
+#
+# Port of the 2.4 ESR charge patches. When Charge connects, the skill
+# spawns a number of missiles through the target and then runs an impact
+# skill once. The missile itself is the skill's srvmissilea row (or
+# srvmissilea/b/c when the skill is progressive), the same one the engine
+# would pick for a normal cast.
+#
+# Every *_calc key names a skills.txt calc column and accepts 1 to 10.
+
+[charge-impact]
+
+# Master switch. false leaves both hooks installed but inert. The two calc
+# redirects below are applied at load and are not affected by this key.
+enabled = true
+
+# --- missiles ------------------------------------------------------------
+
+# Spawn missiles on impact at all.
+missiles_enabled = true
+
+# skills.txt calc column of the CHARGING skill that gives the number of
+# missiles. It is a full formula field, so skill('x'.blvl) and the rest of
+# the usual syntax work. An empty column, or a result below 1, spawns one
+# missile. 2.4 used calc1.
+# Careful: calc1 is also the charge's own damage formula unless damage_calc
+# below moves it, so pointing the count at a free column is usually the
+# cleaner setup.
+missile_count_calc = 1
+
+# Only spawn when the unit the charge connected with is a monster. This is
+# the 2.4 cave's own filter. false also fires on players and mercenaries.
+missiles_monsters_only = true
+
+# Upper bound on the missiles one impact may spawn, as a guard against a
+# runaway formula. 0 means no clamp, which is what 2.4 did.
+max_missiles = 0
+
+# --- calc columns the Charge handler reads -------------------------------
+
+# Column the charge reads for its own damage. Vanilla is 1; leaving it at 1
+# writes nothing to the binary.
+damage_calc = 1
+
+# Column the charge reads for the elemental damage conversion percentage.
+# Vanilla is 4. ESR shipped 5 on 2.4, which is the default here; setting it
+# back to 4 leaves the instruction untouched.
+conversion_calc = 5
+
+# --- impact skill --------------------------------------------------------
+
+# Run a second skill on the charging unit when the charge connects.
+impact_skill_enabled = true
+
+# skills.txt Id of that skill. It runs at the charge's own skill level,
+# through the server handler its own srvdofunc column names, so retuning
+# the row keeps working. 2.4 hardcoded skill 525 on srvdofunc 150 (Smite).
+# -1 disables it.
+impact_skill_id = 525

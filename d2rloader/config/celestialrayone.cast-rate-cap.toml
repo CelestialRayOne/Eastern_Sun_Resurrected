@@ -1,0 +1,67 @@
+# Cast Rate Cap - move the point where faster cast rate stops paying
+#
+# Vanilla stops the cast animation rate at 175 percent. The engine's own
+# diminishing-return curve reaches 175 at exactly 200 faster cast rate, so
+# every point of FCR past 200 does nothing at all. That ceiling is a single
+# number in the executable, and this plugin sets it from the cap you want.
+#
+# Safety: the plugin verifies the original bytes at the patch site before it
+# writes anything. On a game build it does not recognise it writes nothing no
+# matter what this file says, logs loudly, and stays loaded so the
+# `cast-rate-cap` console command can tell you why.
+#
+# This file lives at <scope>\d2rloader\config\celestialrayone.cast-rate-cap.toml
+# and is created with these defaults on first run. Delete it to get them back.
+# Changes are read at plugin load, so restart the game after editing.
+
+
+[cast-rate-cap]
+
+# Master switch.
+#   true  - the cap below is applied.
+#   false - the DLL stays loaded and the console command still answers, but
+#           nothing is written. Vanilla behaviour.
+# Default: true
+enabled = true
+
+# The faster cast rate value at which FCR stops paying, in the same points you
+# see on the character screen.
+#
+# 200 is the vanilla cap, so the default changes nothing: install the plugin,
+# leave this alone, and the game behaves exactly as it did. Raise it to let FCR
+# keep paying further.
+#
+# How it works: the engine turns your FCR into an animation-rate bonus with
+#
+#     effective = 120 * FCR / (FCR + 120)
+#     rate      = 100 + effective, stopped at a ceiling
+#
+# and the ceiling is what this plugin writes. It is set to the rate the curve
+# itself produces at your cap, so the cap lands exactly where you asked:
+#
+#     cap     20    50   100   150   200   300   400   500   600  1000  2000
+#     rate   117   135   154   166   175   185   192   196   200   207   213
+#
+# The curve is asymptotic, so the ceiling can never pass 219 however large a
+# cap you set. It arrives there at 14280 and anything higher is the same thing.
+# Accepted range is 0 to 100000; a value outside it is ignored and the vanilla
+# 200 is used instead.
+#
+# Worth knowing before you pick a number: cast speed is measured in whole
+# frames, so a higher cap only buys something when it crosses a frame boundary.
+# The frames per cast are
+#
+#     frames = ceil(256 * FramesPerDirection / (AnimationSpeed * rate / 100)) - 1
+#
+# For a 14 frame cast animation at the usual AnimationSpeed of 256, vanilla's
+# 200 cap gives 7 frames and nothing under a 600 cap improves on it, because
+# 600 is where the rate finally reaches 200. A 16 frame animation gets 9 frames
+# at the vanilla cap, 8 at a 400 cap and 7 at a 600 cap. Setting 500 when your
+# casters run 14 frame animations buys nothing, so check the animation length
+# you actually care about rather than picking a large round number.
+#
+# Scope: this is the cast rate only. Attack speed, block rate, hit recovery and
+# run speed have their own separate ceilings and are not touched. Monsters cast
+# through the same code, so a monster carrying FCR gets the same cap.
+# Default: 200
+fcr_cap = 500

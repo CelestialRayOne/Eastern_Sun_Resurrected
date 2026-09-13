@@ -1,0 +1,125 @@
+# Whirlwind - Whirlwind rework for Diablo II: Resurrected 3.3
+#
+# Four parts, each behind its own switch:
+#   [ctc_while_uninterruptible]  item procs (chance to cast) fire while the
+#                                caster is Uninterruptible, optionally filtered
+#   [proc_start_fix]             a proc no longer takes over the caster's skill
+#                                and animation on the client (the stuck
+#                                Whirlwind after a Corpse Explosion proc)
+#   [dual_wield_same_target]     both dual-wielded weapons may strike the same
+#                                target in one Whirlwind hit
+#   [cyclone]                    Whirlwind follows the cursor for as long as
+#                                the button is held, and only that long
+#
+# Safety: the plugin verifies the original bytes of every site it touches, and
+# of every game function it calls, before it installs anything. On a game build
+# it does not recognise, the affected part installs nothing, the reason is
+# logged, and the plugin stays loaded so the `whirlwind` console command can
+# tell you what happened.
+#
+# This file lives at <scope>\d2rloader\config\celestialrayone.whirlwind.toml
+# and is created with these defaults on first run. Delete it to get them back.
+# Changes are read at plugin load, so restart the game after editing.
+
+
+[whirlwind]
+
+# Master switch for the whole plugin.
+#   true  - the parts below are installed as configured.
+#   false - the DLL stays loaded and the console command still answers, but
+#           nothing is installed.
+# Default: true
+enabled = true
+
+
+[ctc_while_uninterruptible]
+
+# Vanilla refuses every item proc while the caster is in the Uninterruptible
+# state (Whirlwind, and any other skill that sets it). With this on, procs
+# fire. This is global: it applies to every Uninterruptible caster, not only
+# Whirlwind.
+# Sites: RVA 00589736 (unit-target procs) and RVA 0058986B (position procs).
+# Default: true
+enabled = true
+
+# Chance, in percent, that a proc which already passed its own roll is let
+# through while the caster is Uninterruptible. 100 lets every such proc
+# through. 0 blocks them all. Values above 100 count as 100.
+# Default: 100
+chance_percent = 100
+
+# Skill ids allowed to proc while the caster is Uninterruptible. Any skill not
+# in the list is blocked while Uninterruptible. An empty list means no filter:
+# every skill is allowed (the chance above still applies).
+# Example: allowed_skills = [ 56, 59, 64 ]
+# Default: []
+allowed_skills = []
+
+
+[proc_start_fix]
+
+# Some procs run the full client skill start. That start writes the proc skill
+# into the caster's used-skill slot and switches the caster's animation to the
+# proc's mode, which the server never does for a proc. A Whirlwind in progress
+# then loses its client-side owner, never gets cleaned up, and every later
+# Whirlwind is refused. With this on, a proc keeps the caster's used skill and
+# animation mode exactly as they were.
+# Sites: RVA 0023123A, 002184FE, 00218586, 00231334 (client).
+# Default: true
+enabled = true
+
+
+[dual_wield_same_target]
+
+# When dual wielding, Whirlwind swings both weapons each hit. Vanilla makes the
+# second weapon look for the next target after the one the first weapon just
+# struck, so with two or more enemies in range the weapons never strike the
+# same enemy. With this on, the second weapon may strike the same enemy (or the
+# next one if the first swing killed it). Rotation across enemies from one hit
+# to the next is unchanged.
+# Site: RVA 005694B7 (server).
+# Default: true
+enabled = true
+
+
+[cyclone]
+
+# Whirlwind follows the cursor while the button is held and ends when it is
+# released. A single click gives a Whirlwind that lasts only the grace window
+# below. Holding the button never ends the Whirlwind by itself: when the
+# character reaches the point it was heading for it keeps spinning until the
+# cursor gives it somewhere new to go.
+# Default: true
+enabled = true
+
+# How long, in milliseconds, Whirlwind keeps going after the last held-button
+# update. This is what "released" means: once the button is up, updates stop,
+# and the Whirlwind ends this long after the last one. Movement stops at that
+# moment; the spin animation finishes its current turn, like a vanilla
+# Whirlwind ending. Keep it short. Too short can end a held Whirlwind during a
+# frame hitch.
+# Default: 120
+hold_grace_ms = 120
+
+# What to do when the cursor is on or very close to the character.
+#   "keep_heading"  - keep moving in the last direction the cursor gave.
+#   "spin_in_place" - stop moving and spin until the cursor moves away.
+# Default: "keep_heading"
+near_cursor = "keep_heading"
+
+# How close, in subtiles, counts as "very close" for near_cursor.
+# Default: 3
+near_cursor_radius = 3
+
+# While the button is held, Whirlwind pays its normal cost again every this
+# many game frames (25 frames is one second). Mana skills pay mana, skills cast
+# from charges use a charge. If the cost cannot be paid, Whirlwind ends. 0
+# turns the recurring cost off, so only the first cast pays.
+# Default: 25
+mana_interval_frames = 25
+
+# Vanilla Whirlwind turns into a normal attack when it is aimed at a target
+# that is already in melee range. With this on, Whirlwind always spins.
+# Sites: RVA 0056A4E1 (server), RVA 00230B20 (client).
+# Default: true
+spin_at_melee_targets = true

@@ -1,0 +1,48 @@
+# Progressive Stack Calc
+#
+# Lets a skills.txt calc column decide, per skill and per level, whether a
+# progressive (charge-up) skill fires every stage it has built up or only
+# the final one. Vanilla decides that with the boolean prgstack column,
+# which is fixed for the whole row.
+#
+# Rule the engine ends up with:
+#
+#     stack the lower stages  <=>  prgstack = 1  OR  <calc column> > 0
+#
+# A row that already has prgstack = 1 is untouched and never reaches this
+# code. On every other row the calc column decides, so a blank or
+# zero-valued column is exactly vanilla.
+
+[prgstack_calc]
+
+# Master switch. false installs nothing at all.
+enabled = true
+
+# Which skills.txt calc column carries the formula. 1 to 10.
+#
+#   Site     skills.txt calc<n>, read off the skill the charge belongs to,
+#            evaluated with that skill's id and level, so the usual clc
+#            and lvl terms all work.
+#   Meaning  greater than 0 stacks, 0 or less or blank does not.
+#   Scope    only rows the progressive release path actually runs on, that
+#            is rows with progressive = 1 and a valid aurastate.
+#   Trap     do not pick a column the skill's own srvprgfunc or cltprgfunc
+#            already reads, or the two uses will fight over it. calc3 is
+#            the one the 2.4 build used and is free on the charge-up rows.
+#   Cost     one formula evaluation per progressive release, and none at
+#            all when the column is blank.
+#   Default  3
+calc_column = 3
+
+# The two halves can be switched independently, but they are meant to be
+# kept in step: the server half decides which srvprgfunc stages actually
+# fire, the client half decides which cltprgfunc stages are drawn. Turning
+# on only one gives visuals without effects, or effects without visuals.
+#
+#   Site     server sub_14056C3E0 at 0x56C797, srvprgfunc1..3
+#   Default  true
+server = true
+
+#   Site     client sub_140216380 at 0x2165F2, cltprgfunc1..3
+#   Default  true
+client = true
