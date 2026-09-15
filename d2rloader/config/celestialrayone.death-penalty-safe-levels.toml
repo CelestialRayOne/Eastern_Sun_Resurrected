@@ -1,0 +1,54 @@
+# Death Penalty Safe Levels
+#
+# Dying inside one of the levels listed below costs nothing: the death
+# penalty is skipped entirely for that death. Every other level keeps the
+# vanilla penalty, and nothing else about dying changes: the corpse, the
+# dropped items, the walk back and the town respawn all behave normally.
+#
+# Two separate things are skipped, each with its own switch:
+#
+#   experience  the death experience loss. Vanilla takes
+#               DeathExpPenalty percent (difficultylevels.txt) of the
+#               experience span of your current level, and never lets you
+#               fall below the start of that level.
+#               Protected by default.
+#   gold        the death gold loss. Vanilla takes 20 percent of carried
+#               plus stashed gold, capped at character level * 500.
+#               NOT protected by default, so you still pay it.
+#
+# Being killed by another player already costs no experience in vanilla,
+# so this plugin changes nothing about PvP deaths.
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+
+[death_penalty_safe_levels]
+
+# Master switch. false installs nothing at all.
+enabled = true
+
+# The levels that are safe to die in, as Levels.txt Id values, 0 to 1023.
+# An empty list means this plugin does nothing, which is the default.
+# The list may be written on one line or spread over several, and may
+# carry # comments:
+#
+#   protected_levels = [141, 146, 149]
+#
+#   protected_levels = [
+#     141,   # my boss arena
+#     146,
+#   ]
+#
+# For reference, the levels the ESR 2.4 patch protected were:
+#   141, 146, 149, 154, 159, 162, 175, 180, 181, 184,
+#   190, 197, 198, 199, 202, 203, 206, 211, 213
+protected_levels = [141, 146, 149, 154, 159, 162, 175, 180, 181, 184, 190, 197, 198, 199, 202, 203, 206, 211, 213]
+
+# Skip the experience loss in those levels.
+protect_experience = true
+
+# Skip the gold loss in those levels. Off by default: a safe level is
+# about not losing progress, and gold is not progress. The original ESR
+# 2.4 patch replaced the whole penalty function and so skipped gold as
+# well, so set this to true to reproduce that exactly.
+protect_gold = false

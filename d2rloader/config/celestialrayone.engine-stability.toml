@@ -1,5 +1,5 @@
 # =============================================================================
-# Engine Stability 0.9.5
+# Engine Stability 0.9.6
 # Crash guards and vanilla engine fixes for Diablo II: Resurrected.
 #
 # Built against 3.3.93847. Also covers 3.2.92777 and Steam 3.3.93787, which
@@ -364,3 +364,39 @@ resocket_stat_inflation = true
 #   Cost:     One state check per cast attempt.
 # Default: true
 blood_mana_cast_gate = true
+
+# Monster AI never resuming after a skill-applied freeze.
+#   Site:     RVA 00436240, the generic state-removal callback that skills,
+#             auras and curses install on every state they apply with a
+#             duration.
+#   Bug:      A monster's AI runs on a timed event, and each time that event
+#             fires it is what arranges the next one. The monster event
+#             dispatcher refuses to deliver events to a frozen unit, and it
+#             drops them rather than rescheduling them, so the first AI think
+#             that lands during a freeze destroys the heartbeat. Cold damage
+#             gets away with it because the cold path re-arms the AI twice,
+#             once when the freeze goes on and once when it expires. A freeze
+#             applied through a skill or an aura gets neither: the callback
+#             above clears the state, refreshes the animation rate and
+#             refreshes passives, and never touches the AI. The monster thaws
+#             into a perfectly valid idle mode and stands there for good.
+#             Reloading the area makes it act exactly once, then hang again.
+#   Fix:      Once the generic callback has finished, a live monster whose
+#             expiring state is freeze is handed to the engine's own freeze
+#             thaw, the routine the engine already runs at the end of a
+#             cold-damage freeze. That re-arms the AI at the monster's own
+#             MonStats AIdel delay. Nothing is reimplemented and no timing is
+#             invented: a skill freeze now ends the way a cold freeze ends.
+#   Also changes: nothing for cold-damage freeze. Those states carry the cold
+#             thaw as their own callback and never reach this one.
+#   Scope:    The freeze state on monsters, and only when it expires through
+#             the generic callback. Every other state, and every player, is
+#             passed straight through.
+#   Note:     Dead and dying monsters are excluded on purpose. A state expiry
+#             event is not cancelled when a unit dies, so the callback still
+#             fires on a corpse, and arming the AI on a corpse stands it back
+#             up. Vanilla avoids that only through States.txt monstaydeath on
+#             the freeze row; this fix does not rely on that column being set.
+#   Cost:     One compare per expiring state.
+# Default: true
+skill_freeze_ai_resume = true

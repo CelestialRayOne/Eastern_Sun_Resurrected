@@ -1,0 +1,78 @@
+# Crushing Blow
+# Crushing Blow removes a share of the target's CURRENT life on hit. This file
+# scales that share per target class. Every value is a percentage of what the
+# same hit would have removed in vanilla Diablo II, so 100 keeps a class
+# exactly as the game shipped it and 25 makes Crushing Blow four times weaker
+# against it.
+#
+# The classes do not stack. A monster is matched once, in this order:
+#   mercenary -> act_boss -> super_unique -> unique -> champion -> minion
+#   -> monster. Player characters are handled separately.
+#
+# Vanilla share of current life per class, melee hit, single player game:
+#   monster       25 %      champion      25 %
+#   unique        25 %      super_unique  12.5 %
+#   act_boss      12.5 %    minion        25 %
+#   mercenary     10 %      player        10 %
+
+# File format version. Leave this value unchanged.
+config_version = 1
+
+# Turn the whole plugin off without removing the DLL.
+enabled = true
+
+[targets]
+# Ordinary enemies with no rarity flag.
+# 50 -> 12.5 % of current life.
+monster = 50
+
+# Blue champion monsters. Vanilla treats them as ordinary monsters.
+# 50 -> 12.5 % of current life.
+champion = 50
+
+# Random yellow-name pack leaders. Vanilla treats them as ordinary monsters.
+# 50 -> 12.5 % of current life.
+unique = 25
+
+# Named boss monsters such as Rakanishu, Pindleskin or The Countess.
+# 16 -> 2 % of current life.
+super_unique = 16
+
+# Anything flagged boss in monstats.txt, which is the act bosses.
+# 16 -> 2 % of current life.
+act_boss = 16
+
+# Minions that spawned alongside a unique or champion pack leader.
+# 50 -> 12.5 % of current life.
+minion = 50
+
+# Hirelings, yours and anyone else's.
+# 50 -> 5 % of current life.
+mercenary = 50
+
+# Player characters, which is what matters in PvP.
+# 50 -> 5 % of current life.
+player = 50
+
+[attack]
+# Crushing Blow rolled from a missile or thrown hit, as a percentage of the
+# melee result against the same target. Vanilla halves it, which is 50. Set
+# 100 to make ranged Crushing Blow as strong as melee.
+ranged = 100
+
+# Behaviour that is deliberately left native:
+#   - The /players setting still divides Crushing Blow further against
+#     monsters, exactly as it does in vanilla.
+#   - Physical damage reduction on the target still reduces the result.
+#
+# Other notes:
+#   - A value of 0 disables Crushing Blow against that class completely: no
+#     life loss, no overlay, no kill credit.
+#   - Values above 100 are allowed and make Crushing Blow stronger than
+#     vanilla.
+#   - One decimal place is accepted, for example 12.5.
+#   - Type crushing-blow in the console to print the active table.
+
+# Lets D2RLoader verify that multiplayer peers use matching settings.
+[d2rl]
+match = true

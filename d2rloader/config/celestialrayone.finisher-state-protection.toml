@@ -1,0 +1,48 @@
+# celestialrayone.finisher-state-protection
+#
+# Finisher state protection: stops chosen states from being torn off a unit
+# when a progressive/finisher skill spends its last charge.
+#
+# The problem it solves
+#   A skill with progressive charges (skills.txt decquant, aurastate and the
+#   aurastat columns) loses one charge per server tick. When the count hits
+#   zero the engine expires the state: it drops the state's stat list from the
+#   unit and tells the client to clear the overlay. ESR has a few states that
+#   carry a permanent overlay or a control stat and must not be removed by
+#   that discharge.
+#
+# What the plugin changes
+#   Only the expire step, and only for the state ids listed below. A listed
+#   state takes the same exit the engine uses when a charge still remains: the
+#   "a state survived this tick" flag is set and neither expire call runs.
+#   Everything else - the charge subtraction, the stat refresh, the aura stat
+#   calc path, every state id not listed - is untouched stock code.
+#
+#   Setting that flag is what keeps the client overlay on screen. Without it
+#   the server keeps the state but the caller runs its bitmap merge and refresh,
+#   and the client is told to drop the overlay.
+#
+# Where it hooks
+#   sub_14056BFE0, the per-state charge helper called from the state walk
+#   sub_14056C3E0. The hook is the 7 bytes at RVA 0x56C15C, the entry of the
+#   expire block. The relay code lives in a page the plugin allocates, not in
+#   D2R's own code, so nothing in the game image is overwritten beyond that
+#   one jump, and no skills.txt column can dispatch into it by accident.
+#
+#   The plugin verifies the exact bytes of every site it depends on before it
+#   touches anything. On a D2R build that does not match it installs nothing
+#   and says so in its log and in the "finisherstates" console command.
+#
+# Port of the ESR 2.4 patch pair "Protect states 208/223/234/250 from finisher
+# teardown" (hook 35623C + cave 19E7D0) to D2R 3.3.
+
+[celestialrayone.finisher-state-protection]
+
+# Master switch.
+enabled = true
+
+# State ids (the *ID column of states.txt) that must survive the discharge.
+# Up to 16 ids. Order does not matter. An empty list installs nothing.
+#
+#   208  223  234  250   <- the four ESR states the 2.4 patch protected
+states = [208, 223, 234, 250]

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Resistance Floor -1000 (Character Screen display)",
+  "description": "Client-side display only. The character sheet clamps the Fire / Lightning / Cold / Poison values it prints to a minimum of -100 in its own loop (0x1414E6E70), independently of the gameplay clamp, so with the gameplay floor at -1000 the panel would still read '-100' for a player below that. This lowers the display floor to match. Optional: drop it in only if players in your build can reach negative resistances past -100. It has no effect on damage.",
+  "patches": [
+    {
+      "description": "Character-sheet resistance loop, shared clamp for all five resist rows (magic has no text field, the other four print). 'mov eax,-100; mov edi,ecx; cmp r15d,eax; cmovg eax,r15d; cmp eax,ecx; cmovl edi,eax' - eax is preloaded with the display floor and is also the cmp threshold, same single-immediate property as the gameplay sites. Upper bound (min(75+maxresist, 95), the B9 5F 00 00 00 just before it) is untouched. Full witness from 0x14E728C: 8D 4F 4B 83 F9 5F 7C 05 B9 5F 00 00 00 B8 9C FF FF FF.",
+      "op": "bytes",
+      "rva": "0x14E7299",
+      "expected": "B8 9C FF FF FF",
+      "bytes": "B8 18 FC FF FF"
+    }
+  ]
+}

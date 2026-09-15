@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Summons: no monlvl.txt attack rating or defense",
+  "description": "Removes the two monlvl.txt stat additions that the shared summon stat setter applies to every pet on creation. With this applied, a summon's attack rating and defense come only from its own monstats.txt row and from the summoning skill's aurastat/passivestat columns, so the numbers you author are the numbers the pet has. Applies to every summon in the mod. Verified against the D2R 3.3 D2RLoader image.",
+  "patches": [
+    {
+      "description": "Skip the monlvl.txt AC column add (stat 31, armorclass). Call to the add-stat helper, void, four register arguments, no stack arguments, so removing it is stack neutral and nothing downstream reads its result.",
+      "op": "nop",
+      "rva": "0x55FD15",
+      "expected": "E8 D6 37 D9 FF",
+      "size": 5
+    },
+    {
+      "description": "Skip the monlvl.txt TH column add (stat 19, tohit). This is the one responsible for summons carrying five figure attack rating at high level.",
+      "op": "nop",
+      "rva": "0x55FD2C",
+      "expected": "E8 BF 37 D9 FF",
+      "size": 5
+    }
+  ]
+}

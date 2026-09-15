@@ -1,0 +1,45 @@
+# Skill SrcDam from Calc
+#
+# Makes skills.txt "SrcDam" come from one of the skills.txt formula columns
+# instead of the fixed number in the SrcDam cell.
+#
+# HOW TO USE IT
+#   Put a formula in the chosen calc column of any skills.txt row. Every time
+#   that skill starts, the formula is evaluated in the caster's context and the
+#   result is used as that skill's SrcDam (percent of weapon damage, 128 = 100%).
+#   Leave the column blank and nothing changes: the row keeps whatever static
+#   number is in its SrcDam cell. A formula that evaluates to 0 or less is also
+#   ignored, so you can gate it on a condition and fall back to the static value.
+#
+#   The result is clamped to 255, because SrcDam is a single byte in the game's
+#   compiled skills table. 255 is about 199% weapon damage.
+#
+# WHICH COLUMN TO PICK
+#   calc1 through calc10 all exist and all accept a formula.
+#   calc1 to calc6 are also read by hardcoded skill functions on some skills
+#   (Static Field's server function reads calc1 and calc2, for example), so a
+#   skill that uses them for its own behaviour will fight over the cell.
+#   calc7 to calc10 are not read by anything hardcoded, so use one of those
+#   unless you have a reason not to.
+
+[srcdam]
+
+# Master switch. false leaves the game completely untouched.
+enabled = true
+
+# Which skills.txt column holds the SrcDam formula. 1 to 10 = calc1 to calc10.
+calc_column = 10
+
+# Missiles only read skills.txt SrcDam when the missile's own missiles.txt
+# "SrcDamage" cell is filled in. A blank cell there means "throw the skill's
+# SrcDam away", which silently kills the formula on most missile skills.
+# true removes that condition so the skill's SrcDam always reaches the missile.
+#
+# This does not touch the other branch, where missiles.txt SrcDamage is itself
+# the damage source (missiles with no Skill and no MissileSkill flag). Those
+# behave exactly as before either way.
+ungate_missiles = true
+
+# Writes one log line per skill start that actually changed a SrcDam byte.
+# Useful once, noisy forever. Leave it false for normal play.
+log_applied = false

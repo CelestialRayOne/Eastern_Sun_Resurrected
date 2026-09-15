@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Resistance Floor -1000",
+  "description": "Lowers D2R's hardcoded minimum resistance from -100 to -1000 for all elements and all unit types. A target at -1000 resist takes 1100% of that damage type (multiplier = (100 - resist) / 100). Lower clamp only: the physical cap operand at 0x4524D6 (50) and the elemental ceiling at 0x4524DE (95) are untouched. 3.3.93847 / D2RLoader image space. Port of the 2.4 single-site patch at 3250DE, which the 3.3 compiler split into two branches of SUNITDMG_ApplyResistancesAndAbsorb (0x4523E0).",
+  "patches": [
+    {
+      "description": "Uncapped negative-resistance path. Reached when the accumulated resist is <= 0, i.e. this is the clamp that actually does the work. 'mov ecx,-100; cmp ebx,ecx; cmovg ecx,ebx' with ebx = accumulated resist: ecx is preloaded with the floor and cmovg keeps it unless the real resist is greater (less negative), so any resist <= -100 returns exactly -100. The imm32 is BOTH the returned floor AND the cmp threshold (cmp reads ecx), so moving this single immediate moves the floor with no discontinuity. Full witness at this RVA: B9 9C FF FF FF 3B D9 0F 4F CB EB 51.",
+      "op": "bytes",
+      "rva": "0x4524C4",
+      "expected": "B9 9C FF FF FF",
+      "bytes": "B9 18 FC FF FF"
+    },
+    {
+      "description": "Capped resistance path, same 'mov ecx,-100; cmp ebx,ecx; cmovg ecx,ebx' shape, followed by the min() against the max-resist cap in eax. In retail this site is only reachable with resist > 0 (its other entry, the 0x452489 branch, is dead because 0x140092A10 always returns 0), so the floor here is currently inert; patched anyway so the two sites cannot disagree. Full witness at this RVA: B9 9C FF FF FF 3B D9 0F 4F CB 8B D8.",
+      "op": "bytes",
+      "rva": "0x4524E7",
+      "expected": "B9 9C FF FF FF",
+      "bytes": "B9 18 FC FF FF"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+# celestialrayone.damage-overflow-fix.toml
+#
+# Damage Overflow Fix for Diablo II: Resurrected 3.3
+# Port of the Eastern Sun Resurrected 2.4 damage overflow patch set.
+#
+# WHAT IS BROKEN IN THE GAME
+#
+# Almost everywhere D2R scales a damage value by a percentage it runs
+#     result = value + value * percent / 100
+# through a branch chain that picks a 32-bit multiply whenever both operands
+# look "small" (value <= 0x100000 and percent <= 0x10000). Above roughly
+# 21 million in 256ths the product passes INT32_MAX, wraps negative, and the
+# negative delta is added straight back into the damage component. Everything
+# downstream then clamps negative damage to zero, which is why an overflowing
+# hit in 3.3 deals nothing at all instead of a wrapped-but-large number.
+#
+# The same applies to the SrcDam / SrcDamage scaling, which uses / 128
+# instead of / 100.
+#
+# WHAT THIS PLUGIN DOES
+#
+# Each site listed below is replaced with a jump into a generated stub that
+# performs the identical computation in 64-bit and saturates to the int32
+# range, then rejoins the original code at its convergence point.
+#
+# Important detail: at most of these sites the game's own next instruction is
+# "value = value + edx". Saturating the DELTA there is not enough, because the
+# game's 32-bit add of base + saturated delta wraps again. The stubs therefore
+# compute the full 64-bit sum, saturate THAT, and hand back the delta that
+# lands the game's add exactly on the saturated total. The effective ceiling
+# is INT32_MAX in 256ths, which is 8,388,607 displayed per component.
+# For values that never overflowed the result is bit-identical to vanilla.
+# The plugin refuses to patch any site whose bytes do not match the expected
+# 3.3 sequence, so a game update makes it skip rather than corrupt.
+#
+# HOW TO TEST ONE SITE AT A TIME
+#
+# Set only_sites to a single id, for example:
+#     only_sites = ["roller_min"]
+# only_sites overrides every group switch below. Leave it empty to use the
+# group switches. Use skip_sites to exclude individual ids instead.
+# Type "dmgoverflow" in the console to list every site and its state.
+
+
+# Verify and log every site but write nothing. Use this first after a patch.
+dry_run = false
+
+# One log line per patched site in the plugin log.
+log_each_site = true
+
+# Exact list of site ids to patch. Empty means "use the group switches".
+only_sites = []
+
+# Site ids to exclude when using the group switches.
+skip_sites = []
+
+
+# --------------------------------------------------------------------------
+# GROUPS
+# --------------------------------------------------------------------------
+
+# skills.txt formula evaluator (2 sites).
+# The multiply and power opcodes of the bytecode evaluator that runs every
+# calc column. Affects both the character screen numbers and the server-side
+# values, so a formula like calc1*calc2 no longer wraps.
+#   eval_mul  0xA23B39
+#   eval_pow  0xA23DB0
+formula_evaluator = true
+
+# skills.txt EMin / EMax scaling (4 sites).
+# Elemental damage from a skill, scaled either by the EDmgSymPerCalc formula
+# column or by the unit's elemental damage percent stat.
+#   skill_emin_formula  0x338881
+#   skill_emin_stat     0x338943
+#   skill_emax_formula  0x3383DE
+#   skill_emax_stat     0x338498
+skill_elemental = true
+
+# Min/max physical damage roller (2 sites).
+# The shared routine that applies enhanced damage percent to weapon min and
+# max damage and then rolls between them. This is the one that used to cap
+# Smite in 2.4, and it feeds every physical hit.
+#   roller_min  0x45021A    roller_max  0x4502A6
+# roller_tail_sum 0x45034A and roller_tail_range 0x450359 close the tail,
+# where it still did  result = incoming + minTotal  then  + roll  then
+# if (result < 0) result = 0, so a saturated min made it return ZERO.
+damage_roller = true
+
+# Missile damage struct, elemental percent applicator (10 sites).
+# Ten copies of the same scaling, one per elemental damage component of a
+# missile: fire, lightning, magic, cold and poison, min and max each.
+# This is the most likely cause of bow and missile hits dealing zero.
+#   missile_elem_01 .. missile_elem_10   0x3C0ADC .. 0x3C121A
+missile_elemental = true
+
+# missiles.txt EMin / EMax scaling in the missile damage initialiser (2 sites).
+#   missile_init_emin  0x3BFBE1
+#   missile_init_emax  0x3BFCA4
+missile_init_elemental = true
+
+# SrcDam / SrcDamage weapon damage scaling, divide by 128 (3 sites).
+# skills.txt SrcDam and missiles.txt SrcDamage scale the weapon's min and max
+# damage before anything else touches it. This is the 2.4 "trap damage
+# overflow" fix.
+#   srcdam_skill_minmax  0x3C01E8
+#   srcdam_missile_min   0x3C0342
+#   srcdam_missile_max   0x3C035E
+srcdam_scaling = true
+
+# skills.txt MinDam / MaxDam scaling (2 sites).
+# Physical damage from a skill, scaled by the physical damage percent.
+#   skill_min_phys_cluster  0x33870E
+#   skill_max_phys_cluster  0x33827E
+skill_physical = true
+
+# missiles.txt damage getters (4 sites).
+# The four per-missile getters that read MinDamage, MaxDamage, EMin and EMax
+# and scale them by the matching damage percent before the missile damage
+# struct is built.
+#   missile_min_phys  0x3BBC80    missile_max_phys  0x3BB860
+#   missile_emin      0x3BBE90    missile_emax      0x3BBA70
+missile_getters = true
+
+# Server damage builder, SrcDam scaling, divide by 128 (8 sites).
+# The server-side damage builder rescales every damage component by the
+# skill's SrcDam after the components are rolled, and the damage bonus
+# helper does the same to the rolled physical damage. All of them multiply
+# in 32 bits first.
+#   fill_srcdam_1  0x44C44F   fire        fill_srcdam_5  0x44C7DB   flat bonus 1
+#   fill_srcdam_2  0x44C4C9   lightning   fill_srcdam_6  0x44C856   flat bonus 2
+#   fill_srcdam_3  0x44C541   cold        fill_srcdam_7  0x44C8CD   flat bonus 3
+#   fill_srcdam_4  0x44C5B7   magic       bonus_srcdam_tail 0x44D970 physical
+server_srcdam = true
+
+# Item elemental damage added into the missile damage struct (8 sites).
+# Each "+ N-M fire damage" style stat is shifted into 256ths and added to the
+# running component with a 32-bit shift and a 32-bit add. Both wrap. This is
+# what makes a component arrive already negative at the percent scaling, which
+# is why the elemental damage then reads as zero however good the later math is.
+#   elem_accum_01 0x3C08CC fire min      elem_accum_05 0x3C0924 magic min
+#   elem_accum_02 0x3C08E2 fire max      elem_accum_06 0x3C093A magic max
+#   elem_accum_03 0x3C08F8 lightning min elem_accum_07 0x3C0950 cold min
+#   elem_accum_04 0x3C090E lightning max elem_accum_08 0x3C0966 cold max
+elem_accumulate = true
+
+# itemstatcost op processor, percent layers (2 sites).
+# HIGHEST BLAST RADIUS GROUP. This sits under EVERY stat in the game, not just
+# damage. sub_1402F8AD0 applies each stat's op slots, and ops 1 and 11 are the
+# percent layers: op 11 is the character-wide multiplier that masteries and the
+# total damage percents use. Both the multiply and the accumulate into the
+# running total were 32-bit, which is how a damage stat can come back from the
+# stat getter already negative, before any damage code touches it.
+#
+# In 2.4 the elemental damage stats were hardcoded and never went through this
+# function, which is why saturation in the damage pipeline alone was enough
+# there and is not enough here.
+#
+# Turn this group off on its own first if anything unrelated to damage starts
+# behaving oddly.
+# ops_sum_init / ops_sublist_sum / ops_sum_finish are the base total itself: the
+# op processor sums a stat across every equipped item and sub-list with a 32-bit
+# add before any op runs. These three MUST be enabled or disabled together. The
+# loop is widened to 64-bit at the top, accumulates with no clamp, and saturates
+# exactly once after the last source. Clamping inside the loop is wrong: the
+# original relies on wrap-around so that an intermediate overflow and a later
+# negative contribution cancel, and a mid-loop clamp destroys that.
+#   ops_sum_init      0x2F8B83
+#   ops_sublist_sum   0x2F8BD2
+#   ops_sum_finish    0x2F8BE7
+#   ops_percent_op1   0x2F8D2B
+#   ops_percent_op11  0x2F96DA
+stat_ops = true
+
+# Melee damage builder, elemental stat to 256ths conversion (21 sites).
+# sub_14044C030 does  value = stat << 8  in 32-bit, then  cmp reg, 8 / jge.
+# A total above 8,388,607 shifts past INT32_MAX, lands negative, fails that
+# test, and the element is dropped from the hit entirely.
+melee_elemental = true
+
+# Melee physical damage builder (7 sites).
+# sub_14044D710: the weapon min/max shift into 256ths, item_normaldamage (111,
+# Damage +) added to BOTH min and max, the two assembled sums, the max = min+256
+# fallback, and the strength/dexterity bonus percents. Weapon pair is chosen
+# earlier: 21/22 one-handed, 23/24 two-handed-in-both-hands.
+melee_physical = true
+
+# Missile physical damage builder (5 sites).
+# sub_1403BF9B0, a separate routine: the weapon min/max shift, the bare-handed
+# pair, and the fold of missiles.txt MinDamage with the SrcDamage-scaled weapon
+# damage into the missile damage struct. Stat set by weapon kind: 159/160
+# throwing, 23/24 two-handed, else 21/22. These sites record for  trace.
+missile_physical = true
+
+# SrcDamage-gated sites (4). THIS GROUP IS MISSILE-ONLY BY CONSTRUCTION.
+# Melee always calls the damage builder with SrcDam = 128, and every SrcDam
+# multiply in the chain is skipped by an equality test rather than scaled by 1:
+#   sub_14044D710  14044D969  cmp al,0x80 / je 14044D9C6   (returns untouched)
+#   sub_14044C030  the v10==0x80 branch assigns directly, no imul at all
+# Missiles pass the skill's SrcDam, so all of it runs. That is the whole reason
+# melee and missile behave differently on identical damage numbers.
+#
+#   srcdam_missile_scale 0x3C1302  sub_1403C12F0 scaled SEVENTEEN damage struct
+#     fields with  field * SrcDamage / 128  in 32-bit and no branch chain at
+#     all. The entire body between the SrcDamage != 128 gate and the return is
+#     replaced by one table-driven loop doing the same arithmetic in 64-bit with
+#     int32 saturation, preserving the original truncate-toward-zero rounding
+#     (cdq / and edx,7Fh / add / sar 7 widened to 64-bit).
+#   deadly_strike_double 0x44C3C8  physical component *= 2, 32-bit
+#   srcdam_poison        0x44CA54  the one fill_srcdam site missing from the
+#     original seven, poison into packet+0x38
+#   crit_double          0x588A8B  critical strike doubles all six components
+#     (physical, fire, lightning, magic, cold, poison) in 32-bit
+missile_srcdam = true
+
+# Stat write watch (1 site, read only, changes no behaviour).
+# Records per stat id 48-58 the largest and smallest absolute value written,
+# the TYPE OF UNIT the statlist belongs to, and who wrote it.
+#     dmgoverflow stats / dmgoverflow reset
+stat_write_watch = true
+
+
+# --------------------------------------------------------------------------
+# DEBUGGING
+# --------------------------------------------------------------------------
+#
+# Every stub records the four numbers it worked with into a per-site slot.
+# In game, the console command reads them back:
+#
+#   dmgoverflow          which sites are active, disabled or byte-mismatched
+#   dmgoverflow trace    the last damage / percent / raw 64-bit result /
+#                        applied value seen at each site, in 256ths
+#   dmgoverflow verify   asks D2RLoader's diagnostics service who owns each
+#                        patched range. "UNTRACKED" means something outside
+#                        D2RLoader changed those bytes; a different plugin id
+#                        means someone else patched the same place.
+#
+# Nothing extra needs enabling for that, the recording is always on and costs
+# four stores per damage calculation.
+
