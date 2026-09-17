@@ -45,13 +45,21 @@
                 "filename": "$LeftHingeSprite"
             }
         },
+                        {
+            "type": "ImageWidget", "name": "background",
+            "fields": {
+                        "rect": { "x": -235, "y": -205 },
+                        "filename": "PANEL\\docking_bar\\sidepanelleftorg"
+                    }
+
+            },
         {
             "type": "TextBoxWidget",
             "name": "charm-inv/Title",
             "fields": {
                 "rect": "$InGamePanelTitleRect",
                 "style": "$StyleTitleBlock",
-                "text": "@CharmInvPanelTitle"
+                "text": "@charm-inv:CharmInvPanelTitle"
             }
         },
         {
@@ -61,7 +69,7 @@
                 "rect": { "x": 1075, "y": 9 },
                 "filename": "PANEL\\closebtn_4x",
                 "hoveredFrame": 3,
-                "tooltipString": "@strClose",
+                "tooltipString": "@d2r:strClose",
                 "sound": "cursor_close_window_hd",
                 "onClickMessage": "PanelManager:ClosePanel:charm-inv/CharmInvPanel"
             }
@@ -70,7 +78,7 @@
             "type": "InventoryGridWidget",
             "name": "charm-inv/InventoryGrid",
             "fields": {
-                "rect": { "x": 91, "y": 1035 },
+                "rect": { "x": 189, "y": 643 },
                 "cellCount": { "x": 8, "y": 8 },
                 "cellSize": "$ItemCellSize",
                 "gemSocketFilename": "PANEL\\gemsocket"

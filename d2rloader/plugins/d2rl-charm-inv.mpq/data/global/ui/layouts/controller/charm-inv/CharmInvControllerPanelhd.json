@@ -1,0 +1,40 @@
+{
+    "type": "Panel",
+    "name": "charm-inv/CharmInvControllerPanel",
+    "fields": {
+        "priority": 10,
+        "rect": "$ConsoleLeftPanelRect",
+        "anchor": "$LeftPanelAnchor"
+    },
+    "children": [
+        {
+            "type": "ClickCatcherWidget",
+            "name": "charm-inv/PanelClickCatcher",
+            "fields": {
+                "rect": { "x": 0, "y": 0, "width": 0, "height": 0 },
+                "fitToParent": true
+            }
+        },
+        {
+            "type": "ImageWidget",
+            "name": "charm-inv/Background",
+            "fields": {
+                "rect": { "x": 0, "y": 0, "width": 1305, "height": 1409 },
+                "filename": "d2rloader/charm-inv/charminv_controller_bg"
+            }
+        },
+        {
+            "type": "InventoryGridWidget",
+            "name": "charm-inv/InventoryGrid",
+            "fields": {
+                "rect": { "x": 261, "y": 501 },
+                "cellCount": { "x": 8, "y": 8 },
+                "cellSize": "$ItemCellSize",
+                "gemSocketFilename": "PANEL\\gemsocket",
+                "navigation": {
+                    "right": { "panelBoundary": true }
+                }
+            }
+        }
+    ]
+}

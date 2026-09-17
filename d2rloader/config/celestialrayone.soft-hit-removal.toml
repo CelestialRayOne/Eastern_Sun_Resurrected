@@ -1,0 +1,50 @@
+# Soft Hit Removal
+#
+# A "soft hit" is damage marked with result flag 0x20. It still hurts, but the
+# game treats it as silent: when it kills, the kill and killed events do not
+# fire. The killer gets no kill credit, the kill counter does not move, and
+# "on kill" item and skill procs do not trigger. The same flag also silences
+# the damage events of that hit.
+#
+# D2R forces that flag onto the damage sources below, on top of whatever the
+# skills.txt ResultFlags column says. Each switch removes it from one source,
+# so kills made by that source count like any other kill. The first four
+# switches are the ESR 2.4 memory patches, ported to D2R 3.3.
+#
+# If a switch finds its change already in place (for example a leftover JSON
+# patch), it leaves it alone and says so in the log and in the console command.
+#
+# Console command: softhit (shows what is applied)
+# Changes take effect the next time the game starts.
+
+[soft_hit_removal]
+
+# Master switch. false leaves every source stock.
+enabled = true
+
+# Every skill whose skills.txt srvdofunc is 66 (Holy Fire and Holy Shock in
+# vanilla). The aura's damage keeps the row's ResultFlags value, without the
+# soft hit flag added on top.
+holy_fire_and_holy_shock = true
+
+# Every skill whose skills.txt srvdofunc is 81 (Holy Freeze in vanilla).
+# Same change.
+holy_freeze = true
+
+# Event function 4, skills.txt auraeventfunc 4 (Iron Maiden in vanilla).
+# The reflected damage keeps the curse row's ResultFlags value, without the
+# soft hit flag added on top.
+iron_maiden = true
+
+# Event function 6: itemstatcost itemeventfunc 6 (item_attackertakesdamage in
+# vanilla) and skills.txt auraeventfunc 6. This is the ESR 2.4
+# "Thorns (aura + item stat)" patch. Stock marks this damage with flags 0x4021;
+# the switch writes 0x0001, a plain successful hit, the same value the 2.4
+# patch wrote. That also clears 0x4000, which only changes how the struck unit
+# reacts to the hit and does not affect events.
+attacker_takes_damage = true
+
+# The percent reflect of itemstatcost thorns_percent (stat 131), and of stat
+# 208, which runs the same code. This path was NOT part of the ESR 2.4 patch
+# set, so it is off by default. Same change as attacker_takes_damage.
+thorns_percent = false

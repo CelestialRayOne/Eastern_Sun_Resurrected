@@ -1,0 +1,32 @@
+# Max Life One
+#
+# Adds a configurable itemstatcost stat. While a player or monster has that
+# stat, its maximum life is 1 and nothing can raise or lower it. Damage still
+# kills it.
+#
+# In game:
+# - Gaining the stat is a maximum life change like any other: the unit keeps
+#   its life percentage, so a unit at full life ends at 1 of 1 and a wounded
+#   unit ends below 1 life.
+# - Losing the stat changes maximum life back the same way, so a unit at
+#   1 of 1 returns to full life.
+# - While the stat is present, items, level ups, Battle Orders, vitality and
+#   life penalties do not change maximum life, and potions, healing, leech and
+#   regeneration stop at 1 life.
+#
+# Data requirement, itemstatcost.txt, the row for stat_id:
+# - fCallback must be 1. Without it the game never reports the stat appearing
+#   or disappearing, so current life would not drop to 1. The plugin checks
+#   the row every time the tables load, and stays off (with an error in its
+#   log) while a data set has the row without fCallback.
+#
+# Console command: maxlifeone (state, table check, hooks, counters).
+
+[max_life_one]
+
+# Master switch.
+enabled = true
+
+# itemstatcost.txt id of the stat. Any non-zero value on a player or monster
+# applies the rule. 6 (hitpoints) and 7 (maxhp) are refused.
+stat_id = 512

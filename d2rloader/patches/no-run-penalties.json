@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "Disable Run Defense and Block Penalties",
+  "description": "Prevents running from bypassing defense or reducing block chance, and keeps defense visible on the character sheet.",
+  "patches": [
+    {
+      "description": "Do not force attacks to hit a running player",
+      "op": "write-u8",
+      "rva": "0x44B7E1",
+      "value": "0xFF",
+      "expected": "03"
+    },
+    {
+      "description": "Do not divide block chance by three while moving",
+      "op": "write-u8",
+      "rva": "0x44B9B9",
+      "value": "0xEB",
+      "expected": "74"
+    },
+    {
+      "description": "Keep defense visible on the character sheet while running",
+      "op": "write-u8",
+      "rva": "0x14E5F3E",
+      "value": "0xFF",
+      "expected": "03"
+    }
+  ]
+}

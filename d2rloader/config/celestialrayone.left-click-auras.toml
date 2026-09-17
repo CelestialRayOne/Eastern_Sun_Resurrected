@@ -1,0 +1,98 @@
+# celestialrayone.left-click-auras
+#
+# Left Click Auras
+#   An aura on the left mouse button runs the same way an aura on the right
+#   mouse button does, and both can be active at the same time.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.0 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+#
+# Data requirement
+#   The game only lets a skill onto the left button when its skills.txt row
+#   has leftskill = 1. Aura rows that should work on the left need it.
+#
+# Compatibility
+#   Do not install together with yin's "Aura In Either Skill Slot (Single
+#   Active Aura)" patch. It changes the same game code for a different design
+#   (one aura at a time), and the byte checks of whichever loads second fail.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# left_slot_auras
+#
+# The problem
+#   The game starts an aura only when it goes on the right mouse button. The
+#   left button only records the selection, so an aura there never runs.
+#
+# What changes
+#   Putting an aura on the left button starts it the way the right button
+#   does: aura state, real skill level, a timer of its own. The left and right
+#   auras keep separate timers, so two auras run side by side.
+#
+#   The left aura stops, and its state and bonuses are removed, when
+#     - another skill goes on the left button,
+#     - the aura is no longer on the left button for any other reason (an item
+#       or weapon swap took the skill away, the game reset the button),
+#     - its timer finds the aura invalid (the skill is gone, its state was
+#       taken over).
+#
+#   Selecting the same aura again keeps it running. After a resurrect, a
+#   weapon swap back or entering a game, the game selects the left skill again
+#   and the aura starts if it is not running.
+#
+#   When the left and right auras share an aura state, stopping one of them
+#   leaves the state to the other.
+#
+# Where
+#   skill assignment     call at 0x438AEF, where 0x438A70 selects the left
+#                        skill
+#   aura start           call at 0x43B8FD, arms the left aura's own timer
+#   right aura removal   calls at 0x438C02 and 0x438C33, keep a state the left
+#                        aura still uses
+#   aura timer           0x437460, stops a left aura that left the button
+#   aura timer failure   0x432450, removes the state and bonuses
+left_slot_auras = true
+
+# -----------------------------------------------------------------------------
+# single_emanation
+#
+# The problem
+#   With the same aura on both buttons, both timers perform it and it
+#   emanates twice as often.
+#
+# What changes
+#   While the right button holds the same aura and its timer runs, the left
+#   timer keeps itself alive without performing, so the aura emanates once.
+#   If the right button changes, the left timer performs again on its own.
+#
+# Where
+#   call at 0x4377BC in the aura timer
+#
+# Needs left_slot_auras.
+single_emanation = true
+
+# -----------------------------------------------------------------------------
+# move_only_clicks
+#
+# The problem
+#   With an aura on the left button, left clicking a monster does nothing. The
+#   click is treated as a cast of the aura on that monster, and auras cannot
+#   be cast.
+#
+# What changes
+#   A left click on a monster walks or runs toward it, the same way a click on
+#   the ground moves you. Clicks on anything else (NPCs, other players, items,
+#   objects, exits) do what they do with no usable skill on the button: talk,
+#   interact, pick up, use. Shift clicks and the right button are unchanged.
+#
+# Where
+#   call at 0x102753 in the client's world click handler (0x102490)
+move_only_clicks = true
+
+# Writes a line to the plugin log for the first 64 aura starts, stops and
+# skipped emanations. Keep false for normal play. The console command
+# "leftclickauras" always shows what is installed and the counters.
+diagnostics = false

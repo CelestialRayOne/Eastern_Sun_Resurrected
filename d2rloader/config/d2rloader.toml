@@ -190,6 +190,9 @@ write_crash_dumps = true
 # For mod authors and developers.
 #==============================================================================
 
+# Stop global plugins and patches from loading.
+# Mod plugins and patches are still controlled by allow_mod_extensions.
+# suppress_global_extensions = false
 [d2rloader.developer]
 
 # Enable the developer console.
@@ -258,3 +261,32 @@ casc_fetch_decisions = false
 # Other CASC diagnostics are written to d2rloader.log.
 # Very noisy. Enable only while troubleshooting missing files.
 casc_files = false
+
+[d2rcore.fonts]
+# Register custom fonts for this mod.
+# Names become D2WinFontFace values.
+# Paths are relative to data/hd/ui/fonts.
+# Fonts placed directly in data/hd/ui/fonts are also registered by filename.
+# MyFont = "MyFont.ttf"
+
+[d2rcore.save_format]
+# Choose how this mod saves characters and shared stashes.
+# "retail" is the default. It uses D2R's normal save format.
+# "extended" can save the higher IDs used by larger mod tables:
+# - SetItems, UniqueItems and ItemStatCost: IDs 0 to 32767.
+# - MagicPrefix, MagicSuffix, AutoMagic, RarePrefix and RareSuffix:
+#   up to 32768 rows per table.
+# - Item skill bonuses, auras, charges and chance-to-cast effects:
+#   skill IDs 0 to 32767. Skill level limits still apply.
+#
+# Extended character saves can be up to 1 MiB (1,048,576 bytes).
+# D2R without D2RLoader cannot load extended characters (.d2s)
+# or shared stashes (.d2i). Keep this setting on "extended" to load
+# them in D2RLoader. Switching to "retail" does not convert these saves.
+# mode = "retail"
+
+[d2rloader.plugins]
+# Activate enabled plugins in this order. Use each plugin's stable id, not its DLL name.
+# "*" keeps every unlisted plugin in the normal mod-then-global order at that position.
+# Without "*", unlisted plugins activate after the listed ids.
+# load_order = ["d2rl-charm-inv", "*", "other-plugin-id"]

@@ -1,9 +1,10 @@
 # =============================================================================
-# Engine Stability 0.9.6
+# Engine Stability 0.10.0
 # Crash guards and vanilla engine fixes for Diablo II: Resurrected.
 #
-# Built against 3.3.93847. Also covers 3.2.92777 and Steam 3.3.93787, which
-# share an executable identity for patching purposes.
+# Built against D2RLoader 1.3.0: Diablo II: Resurrected 3.3 inside
+# D2RLoader.exe, plus D2RCore.dll for three of the entries below. Those three
+# are verified the same way but do not appear in D2RLoader's own diagnostics.
 # =============================================================================
 #
 # TWO KINDS OF ENTRY, AND THE DIFFERENCE MATTERS
@@ -78,70 +79,26 @@ enabled = true
 # Default: true
 client_unit_lookup_tombstone = true
 
-# Oversized transmute command.
-#   Site:     RVA 000ED120, the client's CCMD_TRANSMUTE (32) builder.
-#   Symptom:  The builder writes an 8 byte header plus 5 bytes per cube item,
-#             then hands the command to a sender that copies it into three
-#             fixed 512 byte buffers with no length check anywhere. Transmuting
-#             a cube holding more than 100 items overruns all three. The item
-#             count also travels as a single byte, so past 256 items the
-#             builder overruns its own stack frame too. The overrun corrupts
-#             adjacent memory rather than faulting on the spot, so the crash
-#             usually lands somewhere unrelated, often during teardown.
-#   Guard:    Counts the items and drops the transmute if the command would not
-#             fit in 512 bytes. Nothing is sent, the cube is untouched, play
-#             continues.
-#   Scope:    No legitimate recipe takes anywhere near 100 inputs, so in
-#             practice this only fires on a misclick against a cube being used
-#             as bulk storage.
-#   Cost:     One subtraction and one compare per transmute.
-# Default: true
-transmute_command_overflow = true
-
-# Oversized item-displace command.
-#   Site:     RVA 000EC580, the client's CCMD_DISPLACEITEMS (34) builder.
-#   Symptom:  The same overflow as the transmute guard, on the path that moves
-#             a container and its contents. A 10 byte header plus 7 bytes per
-#             item passes 512 bytes at 72 items. Dropping a cube full of loot
-#             on the ground is the usual way there.
-#   Guard:    Counts the items and drops the command if it would not fit. The
-#             item stays where it was.
-#   Cost:     One subtraction and one compare per displace.
-# Default: true
-item_displace_command_overflow = true
-
-# Oversized quick-move item-displace command.
-#   Site:     RVA 000ECB40, the client's CCMD_QUICKDISPLACEITEMS (96) builder.
-#   Symptom:  Same bug and same command layout as the entry above, on the
-#             quick-move path (ctrl-click, controller quick-move) rather than
-#             the drag path. Its header is 25 bytes, so it passes 512 bytes at
-#             70 items.
-#   Guard:    Same count and refuse.
-#   Scope:    PRECAUTIONARY. The overflow is real and the arithmetic is the
-#             same, but unlike the two above this one has not been observed
-#             crashing in the wild. It has its own switch so it can be turned
-#             off alone.
-# Default: true
-item_quick_displace_command_overflow = true
-
 # Life stolen per hit paid to an already dead player.
-#   Site:     RVA 00583A70, the life-drain handler. That is ItemEventFunc slot
-#             28, the slot both the itemeventfunc columns of ItemStatCost.txt
-#             and the auraeventfunc columns of Skills.txt index.
+#   Site:     D2RCore.dll, the entry of its shared leech routine, which
+#             ItemEventFunc 28 calls in D2RLoader 1.3.0. That is the slot both
+#             the itemeventfunc columns of ItemStatCost.txt and the
+#             auraeventfunc columns of Skills.txt index.
 #   Symptom:  When a player dies the engine commits life to 0, then spends the
 #             whole death animation in the dying and dead modes before the
 #             corpse-spawn pass finishes. A leeching hit landing in that window
-#             runs the drain handler against the corpse, which writes life
+#             runs the leech routine against the corpse, which writes life
 #             straight back into the life stat. That life is cashed in at the
 #             animation-complete transition and the player revives in place:
 #             server has them dead, client has them alive, and only Save and
 #             Exit clears it. Auras that keep spawning leeching missiles after
 #             their caster dies hit this constantly.
-#   Guard:    If the unit about to be paid is a player in a death animation,
-#             the handler returns without writing life and without scheduling
-#             its follow-up event. That is the handler's own do-nothing return,
-#             which its five other early exits already use. Living players,
-#             monsters and hirelings leech exactly as before.
+#   Guard:    If the unit about to be paid life per hit is a player in a
+#             death animation, the routine returns without writing life and
+#             without scheduling its follow-up event. That is the routine's own
+#             do-nothing return, which its other early exits already use.
+#             Living players, monsters, hirelings and mana leech are exactly as
+#             before.
 #   Cost:     Two struct reads and up to three compares per leeching hit.
 # Default: true
 lifesteal_while_dead = true
@@ -163,7 +120,8 @@ lifesteal_while_dead = true
 automap_blob_length_truncation = true
 
 # Event handler recursion.
-#   Site:     RVA 00588267, in the server's unit event dispatcher.
+#   Site:     D2RCore.dll, inside DispatchWideEffects, the server's unit event
+#             dispatcher in D2RLoader 1.3.0.
 #   Symptom:  A handler can raise its own event on the same unit before it
 #             returns, and the dispatcher then runs that handler again while
 #             the first run is still going, with nothing limiting the depth.
@@ -180,37 +138,6 @@ automap_blob_length_truncation = true
 #   Cost:     One bit test per handler whose event matches.
 # Default: true
 event_handler_recursion = true
-
-# Blood mana charged to a unit whose state has no stat list node.
-#   Site:     RVA 00584E80, the server routine that charges a skill to life
-#             while States.txt blood_mana, state 114, is up.
-#   Symptom:  Two different structures answer "is state 114 on". The check that
-#             routes a cast into this routine reads the state BITMAP; the
-#             routine itself looks up the state's stat list NODE, and nothing
-#             keeps the two in step. When the bitmap says yes and no node
-#             carries the state, the routine passes the null node straight into
-#             a reader that dereferences it. Hard crash, access violation on
-#             address 28h, with the whole cast on the stack. The same routine
-#             null-checks that identical lookup at both of its other two uses.
-#             It also drops the state by freeing that node without clearing the
-#             bitmap, so once either of its "blood mana ends here" paths has
-#             run, the unit is left in exactly the state that crashes.
-#   Guard:    The lookup is null-checked, as it already is elsewhere in the same
-#             routine. With no node there is no granting skill to read a cost
-#             threshold from and no node to expire, so that block is skipped.
-#             The life check and the payment itself are unchanged. The
-#             SkillsTxt record fetched from the node's skill id is null-checked
-#             too, before the read that would fault on it.
-#   Also changes: nothing while a node exists. With a node and a valid record
-#             the routine is identical to stock, down to the life it charges
-#             and the order it calls things in.
-#   Note:     This matters far more with blood_mana_cast_gate on, because that
-#             is what lets a cast reach this routine when mana is short. It
-#             does not make blood mana actually end: the bitmap and the node
-#             still drift apart, which is a separate decision.
-#   Cost:     Two compares per blood mana payment.
-# Default: true
-blood_mana_missing_state_node = true
 
 
 # =============================================================================
@@ -234,8 +161,8 @@ blood_mana_missing_state_node = true
 skill_attack_rating_on_missiles = true
 
 # Durability loss forcing a full gear refresh.
-#   Site:     RVA 001C77C6, in the client's item stat update handler (server
-#             message 62).
+#   Site:     D2RCore.dll, in the client's item stat update handler (server
+#             message 62), ReceiveWideItemStatPacket in D2RLoader 1.3.0.
 #   Bug:      Every time a hit costs an item a point of durability, the server
 #             sends the new value and the client answers that one number by
 #             tearing down and re-applying the stats of every equipped item and
@@ -280,7 +207,7 @@ durability_tick_gear_refresh = true
 frozen_orb_burst_on_wall = true
 
 # Skill description line printed when both of its numbers are zero.
-#   Site:     RVA 0089AD0, inside the SkillDesc.txt descline 75 handler.
+#   Site:     RVA 00289AD0, inside the SkillDesc.txt descline 75 handler.
 #   Bug:      A skill tooltip is built one line at a time, each line naming a
 #             descline function, a text key and the two calc expressions
 #             desccalca and desccalcb. Descline 75 prints "<text>: <a>-<b>",

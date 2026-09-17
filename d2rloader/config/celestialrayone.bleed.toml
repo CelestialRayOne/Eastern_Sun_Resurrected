@@ -1,0 +1,71 @@
+# Bleed
+#
+# Physical hits make the target bleed: it loses life every frame for a
+# while, the way poison drains life. The item tooltip shows the three bleed
+# stats as one line. Port of the ESR D2R 2.4 bleed system; the damage and
+# how it is dealt are unchanged from 2.4.
+#
+# How a hit applies bleed
+#   1. The hit must still deal physical damage after the target's damage
+#      reduction and absorb.
+#   2. The attacker needs min_damage_stat above 0 and length_stat above 0.
+#      Each of the three stats is read as the attacker's total from every
+#      source (items, charms, states and so on).
+#   3. A percent is rolled from min_damage_stat to max_damage_stat, both
+#      included. If max is below min, min is used.
+#   4. The length is averaged: the total length is divided by the number of
+#      separate stat sources on the attacker that carry a length. Two items
+#      with 100 frames each give an average of 100, not 200.
+#   5. The bleed deals physical damage x percent / 100 in total, spread
+#      evenly over the averaged length. Per frame that is
+#      physical x percent / (100 x averaged length), rounded down.
+#      Example: 100 physical, 100 percent, 100 frames drains 1 life per
+#      frame for 4 seconds.
+#   6. The target gets state_id for the averaged length, carrying negative
+#      life regeneration (stat 74) equal to that per-frame amount.
+#      A stronger bleed replaces a weaker one, an equal one only refreshes
+#      the duration, a weaker one is ignored. Bleed and poison stack.
+#
+# Stat ids and state ids are itemstatcost.txt and states.txt row ids,
+# 0 to 32767.
+#
+# Console command: bleed (status and counters)
+
+[bleed]
+
+# Master switch for bleed on hit.
+enabled = true
+
+# Lowest bleed percent of the hit's physical damage.
+min_damage_stat = 435
+
+# Highest bleed percent of the hit's physical damage.
+max_damage_stat = 436
+
+# Bleed length in frames, 25 frames per second.
+length_stat = 437
+
+# states.txt row the bleed is attached to. 2.4 used 62 (openwounds).
+# Point it at a new row to give bleed its own state, so it no longer
+# shares a state with Open Wounds on the same target. Use a row that is
+# not flagged as a curse, like openwounds: curse rows take the game's
+# curse rules, which shorten the duration and can refuse the state.
+state_id = 62
+
+[tooltip]
+
+# Master switch for the composed tooltip line.
+enabled = true
+
+# String key of the tooltip line. The text receives three whole numbers
+# in this order: min percent, max percent, length in seconds (length / 25).
+# Write them as %d, like the game's poison damage line.
+#
+# The line appears where the min stat's own line would be. While both min
+# and max are above 0 on the item, the max and length stats show no line
+# of their own; otherwise every stat shows its normal description.
+# The stats need their itemstatcost.txt description setup from 2.4: the
+# game only lists stats that have a description, and descpriority decides
+# where the line appears. Stat ids 17 to 59 are the game's own damage lines
+# and never get the composed line.
+string_key = "strModBleedDamageRange"

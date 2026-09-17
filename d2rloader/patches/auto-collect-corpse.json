@@ -1,0 +1,21 @@
+﻿{
+  "version": 1,
+  "name": "Auto-Collect Player Corpse",
+  "description": "Player deaths no longer create a corpse, so equipped items, belt contents and carried gold stay on the character and it respawns fully geared. The experience and gold death penalties still apply. NOPs both call sites of the corpse builder sub_14042C110, which has no other callers.",
+  "patches": [
+    {
+      "description": "Dead-mode start sub_14042A5E0 (player mode table 0x141D18FB0, slot 17): removes call sub_14042C110. Return value unused; the next call at 0x42A699 sets up its own arguments.",
+      "op": "nop",
+      "rva": "0x42A689",
+      "expected": "E8 82 1A 00 00",
+      "size": 5
+    },
+    {
+      "description": "End-of-mode handler sub_14042DE40, death-animation-finished branch (mode 0), reached from the per-frame mode dispatcher sub_14042DBD0: removes call sub_14042C110. Return value unused; the next call at 0x42E25E sets up its own arguments.",
+      "op": "nop",
+      "rva": "0x42E24E",
+      "expected": "E8 BD DE FF FF",
+      "size": 5
+    }
+  ]
+}

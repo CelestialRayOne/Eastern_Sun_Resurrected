@@ -1,0 +1,40 @@
+# Poison Immunity
+#
+# Any player or monster that has the state below is immune to poison.
+# ESR repurposes states.txt state 25 (the old fetishaura row) as
+# poisonimmunity, so 25 is the default. Set state_id to whichever
+# states.txt state should grant the immunity.
+#
+# Two parts, each can be switched off on its own:
+#
+#   block_poison_state
+#     The poisoned state is never applied to an immune unit, so there is
+#     no poison damage over time.
+#
+#   exclude_poison_from_hit_damage
+#     The poison part of a hit no longer counts toward the life that hit
+#     removes. Poison over time cannot kill a player, but the hit that
+#     applies the poison is ordinary damage and can, which is how a player
+#     at 1 life still died. Physical, fire, lightning, cold and magic damage
+#     from the same hit still land.
+#
+# Keep both on for full immunity, the same as the ESR 2.4 patches.
+#
+# A unit that gains the state while already poisoned keeps that poison
+# until it runs out.
+#
+# Console command: poisonimmunity (status and counters)
+
+[poison_immunity]
+
+# Master switch.
+enabled = true
+
+# states.txt state that grants poison immunity, 0 to 32767.
+state_id = 25
+
+# Never apply the poisoned state to an immune unit.
+block_poison_state = true
+
+# Leave poison out of the life an immune unit loses from a hit.
+exclude_poison_from_hit_damage = true

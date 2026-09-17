@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "Monsters scale off area level on Normal",
+  "description": "Normal difficulty takes monster level from levels.txt (MonLvl / MonLvlEx, Normal column) like Nightmare and Hell do, instead of the monstats.txt Level column. Port of the 2.4 patch at 33F5B4. In 3.3 the Normal skip in the monster attribute init sub_140543B50 tests a register that also holds the hireling exclusion, so a plain NOP of that jump also sends hirelings down the area-level path, which Nightmare and Hell never do; that path asserts (eLevelId > 0, LvlTbls.cpp:284) for any unit initialised without a room. This patch drops only the difficulty half of the gate and keeps hirelings excluded. Nightmare and Hell decisions are identical to stock. Classic games and the monstats.txt flag exclusions are untouched. Do not load together with yin's monsters-use-area-level-on-normal.json.",
+  "patches": [
+    {
+      "description": "Difficulty clamp + hireling check. r15d is computed exactly as stock (min(difficulty, 2), forced to 0 for hirelings via MONSTERS_GetHirelingTypeId 0x3AF240), rewritten compactly so the hireling result is also saved with setne byte [rsp+0x3A]. That byte is the unused third byte of the local game-type copy at [rsp+0x38]; nothing else in the function reads it. rcx/edx for the following call at 0x543C9A are loaded as before, the call to 0x3AF240 is re-encoded at its new address.",
+      "op": "bytes",
+      "rva": "0x543C6A",
+      "expected": "45 84 E4 74 14 41 80 FC 02 72 06 44 8D 7F 02 EB 0B 45 8B FC 45 84 E4 75 03 44 8B FF 48 8B CE E8 B2 B5 E6 FF 85 C0 41 8B D6 48 8B CD 44 0F 45 FF",
+      "bytes": "44 8D 7F 02 41 80 FC 02 45 0F 42 FC 48 89 F1 E8 C2 B5 E6 FF 85 C0 0F 95 44 24 3A 44 0F 45 FF 44 89 F2 48 89 E9 90 90 90 90 90 90 90 90 90 90 90"
+    },
+    {
+      "description": "Game-type load widened to movzx edx, word [rsp+0x39]: dl is still the classic byte (classic check at 0x543D2D and the MonLvlEx selector at 0x543D90 unchanged), dh now carries the saved hireling flag.",
+      "op": "bytes",
+      "rva": "0x543D18",
+      "expected": "0F B6 54 24 39",
+      "bytes": "0F B7 54 24 39"
+    },
+    {
+      "description": "Area-level gate: test r15d,r15d / je 0x543D50 (skipped Normal AND hirelings) becomes test dh,dh / jne 0x543D50 / nop (skips hirelings only).",
+      "op": "bytes",
+      "rva": "0x543D32",
+      "expected": "45 85 FF 74 19",
+      "bytes": "84 F6 75 1A 90"
+    }
+  ]
+}

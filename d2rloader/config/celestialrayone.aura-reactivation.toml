@@ -1,0 +1,65 @@
+# celestialrayone.aura-reactivation
+#
+# Aura Reactivation
+#   1. An item or a charm can carry more than one item_aura stat, and every
+#      one of those auras stays active.
+#   2. Auras from items you still carry come back after you resurrect.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.0 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# multi_aura_per_item
+#
+# The problem
+#   Every item aura runs on its own periodic event, and that event remembers
+#   which item granted the aura and which skill it casts. When the game starts,
+#   refreshes or stops one of those events it deletes by item only, so the
+#   events of every other aura on the same item go with it. Equipping the item,
+#   a weapon swap, a gear refresh or the aura's own tick was enough to leave
+#   the item with a single working aura.
+#
+#   Monster property auras (monprop, hireling auras) have no item at all. The
+#   game gives them item 0, and it treats 0 as "every item aura on this unit",
+#   so one monprop aura tick removed every item aura on a hireling.
+#
+# What changes
+#   Those deletes now remove only the event of the aura they are about: the
+#   same item and the same skill. When an aura starts, how often it ticks, what
+#   it applies and when it stops are all unchanged.
+#
+# Where
+#   aura start     call at 0x581A20 inside the aura activation (0x581970)
+#   aura tick      calls at 0x4373EE and 0x437444 in the item aura event
+#   aura stop      0x581AE0, replaced by an exact copy with the fixed delete
+#   gear refresh   the D2RCore call that keeps an aura's timing through an
+#                  item refresh (D2RCore.dll 1.3.0, checked byte for byte)
+multi_aura_per_item = true
+
+# -----------------------------------------------------------------------------
+# restore_after_resurrect
+#
+# The problem
+#   Dying deletes every aura event on the player. Equipped gear goes to the
+#   corpse and starts its auras again when the corpse is picked up. Charms stay
+#   in the inventory, their stats never change, and nothing starts their auras
+#   again.
+#
+# What changes
+#   Right after a successful resurrect, every item still active on the player
+#   (charms, the charm inventory page, any other item that stayed on the
+#   character) starts its item_aura events again through the game's own aura
+#   activation, one per aura. Auras that already have an event are left alone.
+#
+#   This is the whole fix for charm auras: zone changes do not delete aura
+#   events, the only loss there was the gear refresh fixed above.
+restore_after_resurrect = true
+
+# Writes a line to the plugin log for the first 64 auras kept or restored.
+# Keep false for normal play. The console command "aurareactivation" always
+# shows what is installed and the counters.
+diagnostics = true
