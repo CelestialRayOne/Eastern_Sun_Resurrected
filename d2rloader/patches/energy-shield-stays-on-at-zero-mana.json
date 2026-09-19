@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Energy Shield stays on at 0 mana",
+  "description": "Stops the Energy Shield aura event handler from removing its own aurastate when mana reaches zero. Same fix yin ships as energy-shield-not-disable-on-zero-mana; verified byte for byte against the D2RLoader 1.3.0 image (D2R 3.3) before shipping.",
+  "patches": [
+    {
+      "description": "Turns the jg at RVA 0x552734 into an unconditional jmp so the zero-mana state-removal block is always skipped. Site: auraeventfunc table 0x238E5C0, entry 24 = 0x238E680 -> 0x552060, the Energy Shield absorb handler (2.4 SorApplyEnergyShield sub_140381B10). Table indexing cross-checked against Ruff's named neighbours: 15 OpenWounds 0x584170, 16 CrushingBlow 0x583150, 19 Slow 0x5849D0, 20 SkillOnAttackHitKill 0x583B30, 21 SkillOnGetHit 0x5837F0, 28 lifesteal 0x583A70. The handler reads mana (stat 8) at 0x552236, evaluates calc1 at record +400 (absorb percent) and calc2 at +404 (mana per damage), clamps each of four damage slots to 16*mana/calc2 so absorption can never exceed what mana pays for, writes the remaining mana back at 0x55264F, then reaches 'test ebx,ebx' at 0x552732 with ebx = the mana that was just stored. The jg at 0x552734 (7F 4C) skips to 0x552782 when mana is left; falling through runs the removal block at 0x552736 to 0x552781, which has TWO exits: the state node is found by 0x2F5940 and expired with 0x2F7920 then freed with 0x2F4180, or, when no node is found, the else path clears the state bit with StatsSetState 0x3354C0 at 0x55277D. Forcing the branch skips both exits and lands on 'mov eax,1' at 0x552782, the same return value the removal block produces, so no register the following code reads is left unset. This is the whole-block skip rather than the older 2.4 approach of NOPing the three calls: that one left the else-branch state-bit clear live, which cleared Energy Shield's tracking bit while the state node stayed alive and produced rare crashes. Behaviour at zero mana: the absorb clamp evaluates to zero, so the shield absorbs nothing and damage lands in full, but the state is kept and absorption resumes by itself as mana regenerates.",
+      "op": "write-u8",
+      "rva": "0x552734",
+      "expected": "7F",
+      "value": "0xEB"
+    }
+  ]
+}

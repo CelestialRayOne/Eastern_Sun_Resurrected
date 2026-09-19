@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Passivestats apply on zero-mana units (hirelings)",
+  "description": "Port of the 2.4 patch at 384502 to D2R 3.3 (D2RLoader 1.3.0 image). Makes the passivestat gate in srvdofunc 65 use 'mana >= cost' like the aurastat gate, instead of 'mana > cost', so a zero-cost aura on a zero-mana unit applies its passivestats.",
+  "patches": [
+    {
+      "description": "Changes jle to jl at RVA 0x563FE7 in srvdofunc 65 (table 0x238EA00, entry 65 = 0x238EC08 -> 0x563D90, 2.4 sub_1403842B0). The function reads the mana cost at 0x563E0E and current mana (stat 8) at 0x563E24. Its aurastat block is gated at 0x563EAE by 'UNITS_GetUnitType(unit) != 0 || mana >= cost', so any non-player passes unconditionally. Its passivestat block is gated by three tests: the state node at 'cmp qword [rbp+8],0' / jz (0x563FD9, 0x563FDE), the mana test 'cmp esi,r15d' / jle (0x563FE4, 0x563FE7) where esi is current mana and r15d the mana cost, and 'cmp word [r14+0B4h],0' / jg (0x563FED, 0x563FF6) on the skill record's passive state at +180. All three jump to 0x5640B2, skipping the 14-slot passivestat loop that reads ids at record +186 and calcs at +216. Because the mana test is strict, a zero-cost aura on a zero-mana unit passes the aurastat gate and fails this one, which is why aurastats reach a hireling and passivestats never do. Only the opcode byte at 0x563FE8 changes, 8E -> 8C; the rel32 0xC5 and the target 0x5640B2 are unchanged, and the other two gates are untouched. Note: the IDA decompiler attributes the mana condition to 0x563FF6, which is actually the following jg on the passive state; the instruction starts here were taken from the raw bytes.",
+      "op": "bytes",
+      "rva": "0x563FE7",
+      "expected": "0F 8E C5 00 00 00",
+      "bytes": "0F 8C C5 00 00 00"
+    }
+  ]
+}

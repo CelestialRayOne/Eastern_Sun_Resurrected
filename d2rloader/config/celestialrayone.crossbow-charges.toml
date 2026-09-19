@@ -1,0 +1,89 @@
+# Crossbow Charges
+#
+# Crossbow skills fire from a pool of bolts instead of sharing one cooldown.
+#
+# What counts as a crossbow skill
+#   A skill whose skills.txt `globaldelay` works out above 0 while the player
+#   holds a crossbow, meaning a weapon of one of the itemtypes.txt types listed
+#   in crossbow_item_types. Every other skill keeps the normal cooldowns.
+#
+# How the bolts work
+#   - The pool starts full when you enter a game and is not saved.
+#   - Casting a crossbow skill spends one bolt, however many projectiles it
+#     fires. A skill's own `localdelay` still applies on top.
+#   - Each spent bolt reloads for the `globaldelay` frames of the skill that
+#     spent it. Bolts come back one at a time, in the order they were spent.
+#   - With no bolts left, crossbow skills cannot be cast.
+#   - Maximum bolts is default_max_bolts plus the max bolts stat, at least 1.
+#   - The pool keeps reloading whatever weapon is held. Maximum bolts is only
+#     read while a crossbow is equipped; otherwise the last crossbow value is
+#     kept. A lower maximum drops the extra bolts. A higher maximum refills one
+#     bolt at a time with the last reload time, so swapping weapons can never
+#     refill anything.
+#   - Casts triggered by items (chance to cast) never spend bolts.
+#
+# Damage bonus
+#   Hits from crossbow skills, and from everything those hits trigger (chance
+#   to cast on attack, on striking and on kill, and what those trigger in
+#   turn), deal (100 + damage_base + damage stat) percent of their final
+#   damage, after resistances and absorbs. Physical, fire, burn, lightning,
+#   cold, magic and poison scale. Crushing blow, open wounds and bleed do not.
+#   Chance to cast when struck is never counted as a crossbow hit.
+#
+# Attack speed
+#   Crossbow attacks (A1, A2 and S1 to S4 animations) always take exactly
+#   default_attack_frames plus the attack frames stat, whatever IAS or skill
+#   attack speed the player has. Negative stat values make attacks faster. A
+#   total of 0 or less leaves the game's normal speed. Sequence skills such as
+#   Strafe keep the game's normal speed.
+#
+# Skill buttons
+#   Crossbow skills show the bolts left in the button's number box, 0 included.
+#   While any bolt is reloading, the shadow image on the button clocks down the
+#   bolt that comes back next, over that bolt's own reload time, then restarts
+#   for the one after it. It goes away when the pool is full. At 0 bolts the button keeps its normal colour; the
+#   shadow is the only sign.
+#   The shadow is an ImageWidget child of the skill button, named as below, in
+#   hudpanelhd.json and controller/hudpanelhd.json. A button without that
+#   child still shows the number.
+#
+# Console command: crossbowcharges (status and counters)
+
+[crossbow_charges]
+
+# Master switch.
+enabled = true
+
+# itemtypes.txt codes that count as crossbows. Child types count too.
+crossbow_item_types = ["xbow"]
+
+# Bolts every crossbow user has. The max bolts stat adds to it.
+default_max_bolts = 3
+
+# Frames every crossbow attack takes. The attack frames stat adds to it.
+default_attack_frames = 5
+
+# itemstatcost.txt rows.
+#   max bolts:     bolts added to default_max_bolts.
+#   current bolts: written by this plugin, read only for everything else.
+#   damage:        percent added to the crossbow damage bonus.
+#   attack frames: frames added to default_attack_frames.
+max_bolts_stat_id = 513
+current_bolts_stat_id = 514
+damage_stat_id = 515
+attack_frames_stat_id = 517
+
+# Percent always added to the bonus, before the damage stat.
+# 25 with a +50 item gives 175% damage.
+damage_base = 25
+
+# Name of the shadow ImageWidget inside each skill button.
+sweep_widget_name = "CrossbowSweep"
+
+# Frames in the shadow sprite. Frame 0 is the full shadow.
+sweep_frames = 64
+
+# Shadow colour (red, green, blue, 0 to 255) and opacity (percent, 0 is
+# invisible, 100 is solid). The sprite itself is plain white; these set it.
+shadow_color = [128, 128, 128]
+shadow_opacity = 50

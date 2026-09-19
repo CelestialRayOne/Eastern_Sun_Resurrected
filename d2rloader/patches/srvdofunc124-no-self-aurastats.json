@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Suppress aurastat self-application in srvdofunc=124",
+  "description": "Port of the 2.4 patch at 363A17 to D2R 3.3 (D2RLoader 1.3.0 image). Stops the srvdofunc=124 handler from writing the skill's six aurastat/aurastatcalc pairs onto the unit carrying the aura, while leaving the aurastate registration, the periodic event scheduling and the enemy-side debuff path untouched.",
+  "patches": [
+    {
+      "description": "NOPs the call to SKILLS_ApplyAuraStats (0x574480) at RVA 0x576060, inside the srvdofunc=124 handler (0x575DE0, srvdofunc table 0x238EA00 + 124*8 = 0x238EDE0; shared by Armageddon and Hurricane). Register context at the call: rcx = rsi = the unit the aura is applied to, rdx = rbx = the state node created for it a few instructions earlier, r8 = rdi = the SkillsTxt record, r9d = r14d = skill id, [rsp+20h] = r13d = skill level. 0x574480 walks six slots at record +116 (aurastat ids) / +136 (aurastatcalc), evaluates each through 0x3B5160 and writes the result with SetWideListStat (mirroring stat 68 onto 69), so on the item_aura + oskill delivery path these six stats were landing on the wearer as a self-buff. The debuff payload still reaches enemies: the psrvhitfunc=21 missile path applies it through a SEPARATE call to 0x574480 at RVA 0x45E792 (inside 0x45E610), which reads auratargetstate at record +162 and builds the state on the victim; that call site is not touched. Left fully intact in this handler: the aurastate state-node creation and attach at 0x575FC2-0x576012 (0x2F7300 create, 0x2F72F0 set state id, 0x2F7A50 callback 0x436240, AttachWideStatList, 0x3354C0 state bit), the periodic event scheduling at 0x576042 / 0x5760FA / 0x576124, and the stat 350 / 351 skill-id and level bookkeeping at 0x57607E and 0x57609C plus the stat 202 write at 0x5760C2. 0x574480 returns void and every volatile register is reloaded before the next call (ecx, r8d, r9d, rdx at 0x576065-0x57607B), so nothing downstream consumes a value the call would have produced; the preceding mov rdx,rbx / mov rcx,rsi and the [rsp+20h] store become dead but harmless. Original instruction: E8 1B E4 FF FF = call 0x574480 (rel32 0xFFFFE41B, 0x576065 - 0x1BE5). SCOPE: this is the call SITE, not the shared callee, which has 24 call sites in this build; only this one sits inside the srvdofunc=124 handler. That handler is shared by every skill routed through srvdofunc=124, so no such skill applies aurastats to its carrier any more.",
+      "op": "nop",
+      "rva": "0x576060",
+      "expected": "E8 1B E4 FF FF",
+      "size": 5
+    }
+  ]
+}

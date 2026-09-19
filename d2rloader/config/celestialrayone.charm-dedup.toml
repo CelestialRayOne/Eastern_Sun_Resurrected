@@ -1,0 +1,60 @@
+# celestialrayone.charm-dedup
+#
+# Charm Dedup
+#   Groups of charms of which only one can be active at a time. Every other
+#   charm of the group stays where it is, gives no bonuses (no stats, skills
+#   or auras) and gets the red background of an item you cannot use. As soon
+#   as the active charm leaves, another charm of the group becomes active.
+#
+#   Charms are matched by item code, the "code" column of misc.txt (armor.txt
+#   and weapons.txt codes work too). Class ids are never used, so adding or
+#   removing rows in the txt files cannot break a group.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.0 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# groups
+#
+# A list of groups. Each group is a list of item codes, and at most one charm
+# whose code is in the group is active at a time.
+#
+#   ["e30"]                  one code: e30 charms dedup against each other
+#   ["c11", "c12", "c13"]    several codes: every c11, c12 and c13 charm
+#                            dedups against all of the others
+#
+# Which charm is the active one
+#   1. A charm that is already active stays active. Picking up, buying or
+#      moving in another charm of the same group never switches it off.
+#   2. When none of them is active (entering the game, or the active one was
+#      moved out, dropped or sold), the one with the lowest unit id becomes
+#      active. Items that load with the character come first, in save order,
+#      then items obtained later in the game, in the order they appeared.
+#
+# Only charms that would work on their own count. A charm in the stash, in
+# the cube, on the cursor, in a page where Charm Inventory disables charms
+# (allow_inventory_charms), or whose requirements you do not meet never
+# blocks another charm.
+#
+# Codes have 1 to 4 characters. A code may appear in one group only.
+# Up to 64 groups, 64 codes per group and 256 codes in total.
+groups = [
+    ["c11", "c12"],
+]
+
+# -----------------------------------------------------------------------------
+# red_background
+#
+# Draws the charms switched off by a group with the red background of an item
+# whose requirements are not met. false keeps the dedup but draws them
+# normally.
+red_background = true
+
+# Writes a line to the plugin log for the first 64 charms switched off.
+# Keep false for normal play. The console command "charmdedup" always shows
+# the settings, what is installed and the counters.
+diagnostics = false

@@ -1,0 +1,70 @@
+# celestialrayone.item-quantity
+#
+# Item Quantity
+#   A stat on whoever gets the kill adds extra picks to the monster's OWN
+#   treasure class, so the monster drops more of what it already drops. No
+#   treasure class is swapped and no new item list is introduced.
+#
+#   The stat is an ordinary itemstatcost stat. Put it on gear, on a charm, or
+#   on a passive skill through passivestat/passivecalc, the same way magic
+#   find is granted.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.0 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# stat_id
+#
+# The itemstatcost row the bonus is read from. The stat must exist in
+# itemstatcost.txt or nothing is ever added.
+stat_id = 426
+
+# -----------------------------------------------------------------------------
+# percent
+#
+# true  : the stat is a PERCENT chance of one extra pick.
+#         40 gives a 40 percent chance of one extra item, 100 gives one
+#         guaranteed, 150 gives one guaranteed plus a 50 percent chance of a
+#         second, 250 gives two guaranteed plus 50 percent of a third.
+# false : the stat is a flat number of extra picks. 3 always adds 3.
+#
+# The chance is decided from the monster's own drop seed, not from the game
+# RNG, so it never consumes a roll and never shifts any other drop. The same
+# monster in the same game always decides the same way.
+percent = true
+
+# -----------------------------------------------------------------------------
+# exclude_prime_evils
+#
+# true keeps prime evils (the primeevil flag in monstats.txt) out of it, so
+# boss drops stay exactly as the treasure class describes them.
+exclude_prime_evils = true
+
+# -----------------------------------------------------------------------------
+# credit_minion_owner
+#
+# When a summon, a hireling or any other minion lands the kill, the game hands
+# the drop code the MINION, not the player. true resolves its owner and reads
+# the stat off the owner, the same way the game credits the owner's magic find
+# on those kills. false means minion kills get no bonus at all.
+#
+# A minion whose owner cannot be resolved, or whose owner is not a player,
+# never gets a bonus either way.
+credit_minion_owner = true
+
+# -----------------------------------------------------------------------------
+# max_bonus_picks
+#
+# An upper limit on the extra picks a single drop can gain. 0 means no limit.
+# Note the game still caps how many items one monster can drop, so a very
+# large bonus is clipped there regardless.
+max_bonus_picks = 0
+
+# Writes a line to the plugin log for the first 64 drops that gain picks.
+# Keep false for normal play. The console command "itemquantity" always shows
+# the settings, what is installed and the counters.
+diagnostics = false

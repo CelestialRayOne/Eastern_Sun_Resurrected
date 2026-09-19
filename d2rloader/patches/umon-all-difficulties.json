@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Umon on all difficulties",
+  "description": "levels.txt umon1-25 feed champion and unique picks on Nightmare and Hell too, not only Normal.",
+  "patches": [
+    {
+      "description": "MONSTERCHOOSE_GetPresetMonsterId 0x419E80: remove the jnz after cmp byte [pGame+104h],0 so bSpawnUMon=1 always picks from umon.",
+      "op": "nop",
+      "rva": "0x419EB7",
+      "size": 2,
+      "expected": "75 37"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# Evil Urn Blocklist
+#
+# Keeps the monster types listed below from being spawned by evil urns
+# (objects.txt OperateFn 68, IceCaveEvilUrn in Act 5).
+#
+# How an urn picks: when its objects.txt Parm7 roll succeeds, the urn walks
+# the monster types the game rolled for its level from levels.txt, and spawns
+# the FIRST one that has a walk mode (monstats2.txt mWL) as a boss pack.
+#
+# A blocked type is passed over exactly like a type that cannot walk: the urn
+# moves on to the next type, so a boss pack still spawns from whatever else
+# the level holds. When every type in the level is blocked or cannot walk,
+# the urn spawns nothing, the same as vanilla.
+#
+# Only urn spawns change. Blocked monsters still spawn everywhere else.
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: evilurn (status, blocked ids and counters)
+
+[evil_urn_blocklist]
+
+# Master switch. false installs nothing at all.
+enabled = true
+
+# The monsters an urn must never spawn, as monstats.txt hcIdx values,
+# 0 to 32767. An empty list, [], blocks nothing and installs no hook.
+# The list may be written on one line or spread over several, and may
+# carry # comments:
+#
+#   blocked_monster_ids = [1121, 1122]
+#
+#   blocked_monster_ids = [
+#     1121,   # corruptedzakarumarcher
+#     1122,
+#   ]
+#
+# The default is the list the ESR 2.4 patch blocked.
+blocked_monster_ids = [
+    1121,   # corruptedzakarumarcher
+    1122,   # corruptedzakarumpriest
+    1123,   # corruptedzakarumtrickster
+    1124,   # corruptedzakarumfanatic
+    1125,   # corruptedzakarumvenomancer
+]

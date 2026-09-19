@@ -1,0 +1,36 @@
+# Holy Freeze Damage
+#
+# Holy Freeze deals its cold damage to every monster its aura pulses over,
+# including the ones monstats.txt marks as unchillable. A monster is unchillable
+# when its ColdEffect column for the current difficulty is 0 or higher, which is
+# what prime evils ship with, and vanilla drops such a target at the top of the
+# aura's per-target callback: no aura state, no slow, no damage, no shatter.
+#
+# With this plugin those monsters take the full pulse damage through the normal
+# resist math, and nothing else. The slow stays gated by ColdEffect, because the
+# aura state block is skipped for them. Monsters with a negative ColdEffect are
+# untouched and keep the full vanilla treatment: state, slow, damage, shatter.
+#
+# Cold-immune targets (cold resist 100 or higher) still take 0. That is the
+# resist, not the gate, and it is how Holy Fire already behaves against fire
+# immunes.
+#
+# This is the D2R 3.3 port of the ESR 2.4 memory patch set (gate retarget at
+# 3886CB, shatter-gate hook at 38886F, cave at 36AD70). It patches two sites in
+# the Holy Freeze per-target callback at 0x561480 and nothing else.
+#
+# Console command: holyfreeze (status and counters)
+
+[holy_freeze]
+
+# Master switch. False leaves the game completely vanilla.
+enabled = true
+
+# Keep the engine invariant that an unchillable monster never gets the shatter
+# state (states.txt 107, the 20% roll at the end of the callback).
+#
+# true   an unchillable monster takes the damage only. This matches the ESR 2.4
+#        patch set and is the recommended setting.
+# false  an unchillable monster also rolls for shatter like any other target.
+#        Only the first patch site is installed and no hook page is allocated.
+suppress_shatter = true
