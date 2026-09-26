@@ -1,0 +1,28 @@
+# Spelldesc Decimals
+#
+# Item tooltips (weapons.txt, armor.txt, misc.txt) can print a spelldesc line:
+# spelldescstr with a number from calc1. The formulas only work in whole
+# numbers, so this plugin lets that string ask for a number with decimals.
+#
+# How to use it:
+#   In the string that spelldescstr points to, write %.1f, %.2f or %.3f where
+#   the number goes. calc1 then gives the number in tenths, hundredths or
+#   thousandths, and the tooltip shows it with that many decimals.
+#   Strings that use %d are left exactly as before.
+#
+# Example, reload time in seconds (a frame is 0.04 seconds):
+#   calc1  = skill('Attack'.clc6)*4
+#   string = Reload Time: %.2f
+#   72 frames shows as 2.88
+# For one decimal: calc1 = skill('Attack'.clc6)*2/5 shows 2.8 (cut off),
+#   or (skill('Attack'.clc6)*2+2)/5 shows 2.9 (rounded).
+#
+# spelldesc modes 2 and 4 read the string this way. Mode 3 always prints a
+# whole number after the string.
+#
+# Console command: spelldescdecimals (install status)
+
+[spelldesc_decimals]
+
+# Master switch.
+enabled = true

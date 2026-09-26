@@ -26,16 +26,24 @@
 #   Hits from crossbow skills, and from everything those hits trigger (chance
 #   to cast on attack, on striking and on kill, and what those trigger in
 #   turn), deal (100 + damage_base + damage stat) percent of their final
-#   damage, after resistances and absorbs. Physical, fire, burn, lightning,
-#   cold, magic and poison scale. Crushing blow, open wounds and bleed do not.
-#   Chance to cast when struck is never counted as a crossbow hit.
+#   damage, after resistances and absorbs. That includes the explosions and
+#   other missiles a crossbow missile spawns. Physical, fire, burn,
+#   lightning, cold, magic and poison scale. Crushing blow, open wounds and
+#   bleed do not. Chance to cast when struck and aura pulses never count,
+#   whatever the player cast last.
 #
 # Attack speed
-#   Crossbow attacks (A1, A2 and S1 to S4 animations) always take exactly
+#   Crossbow attacks (the A1 attack animation) always take exactly
 #   default_attack_frames plus the attack frames stat, whatever IAS or skill
 #   attack speed the player has. Negative stat values make attacks faster. A
-#   total of 0 or less leaves the game's normal speed. Sequence skills such as
-#   Strafe keep the game's normal speed.
+#   total of 0 or less leaves the game's normal speed.
+#   Mirrored Blades with a crossbow takes the same number of frames for the
+#   whole attack. It is a sequence: 18 steps of the cast animation, bolt on
+#   step 12, so it never plays A1 and needs its own setting below. This only
+#   reaches it while its skills.txt row keeps UseAttackRate = 1 and a seqtrans
+#   other than SC (it ships with SQ); otherwise it keeps the game's speed.
+#   Other sequence skills and the special animations (S1 to S4, used by
+#   skills such as Assassin traps) keep the game's normal speed.
 #
 # Skill buttons
 #   Crossbow skills show the bolts left in the button's number box, 0 included.
@@ -47,12 +55,22 @@
 #   hudpanelhd.json and controller/hudpanelhd.json. A button without that
 #   child still shows the number.
 #
-# Console command: crossbowcharges (status and counters)
+# Console command
+#   crossbowcharges            status, bolt pools and counters
+#   crossbowcharges debug on   start the debug log (see debug below); off stops it
+#   crossbowcharges reset      zero the counters, for a clean test
 
 [crossbow_charges]
 
 # Master switch.
 enabled = true
+
+# Debug log. Writes one line per player skill start, bolt spent, missile
+# created, hit and proc to d2rloader/logs/celestialrayone.crossbow-charges.log:
+# which cast it belongs to, whether that is a crossbow cast and why, and for
+# hits the damage before and after the bonus. At most 60 lines per second;
+# the rest are counted and reported. Also switchable in game (see above).
+debug = false
 
 # itemtypes.txt codes that count as crossbows. Child types count too.
 crossbow_item_types = ["xbow"]
@@ -62,6 +80,10 @@ default_max_bolts = 3
 
 # Frames every crossbow attack takes. The attack frames stat adds to it.
 default_attack_frames = 5
+
+# skills.txt row id of Mirrored Blades. With a crossbow its whole attack takes
+# the frames above too. -1 leaves it at the game's speed.
+mirrored_blades_skill_id = 693
 
 # itemstatcost.txt rows.
 #   max bolts:     bolts added to default_max_bolts.
@@ -75,7 +97,7 @@ attack_frames_stat_id = 517
 
 # Percent always added to the bonus, before the damage stat.
 # 25 with a +50 item gives 175% damage.
-damage_base = 25
+damage_base = 150
 
 # Name of the shadow ImageWidget inside each skill button.
 sweep_widget_name = "CrossbowSweep"
@@ -85,5 +107,5 @@ sweep_frames = 64
 
 # Shadow colour (red, green, blue, 0 to 255) and opacity (percent, 0 is
 # invisible, 100 is solid). The sprite itself is plain white; these set it.
-shadow_color = [128, 128, 128]
-shadow_opacity = 50
+shadow_color = [0, 0, 0]
+shadow_opacity = 45

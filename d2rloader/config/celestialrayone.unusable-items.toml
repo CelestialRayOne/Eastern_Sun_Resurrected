@@ -1,0 +1,50 @@
+# celestialrayone.unusable-items
+#
+# Unusable Items
+#   Any item that carries the stat set below is treated exactly like an item
+#   whose requirements you do not meet:
+#     - it gets the red background in the inventory, stash and cube;
+#     - you cannot equip it, and neither can your mercenary;
+#     - an item that is already equipped stays where it is but gives no
+#       bonuses (no stats, skills or auras), and the same goes for a charm
+#       in your inventory.
+#   This works for every kind of item. The stat counts wherever the item gets
+#   it, socketed gems, runes and jewels included, the same way a
+#   "-15% Requirements" jewel lowers the requirements of the item it is in.
+#
+#   The tooltip's requirement lines keep their normal colours. Give the stat
+#   a description in itemstatcost.txt (descfunc, descstrpos) if players should
+#   see why the item cannot be used.
+#
+#   Give the stat's itemstatcost.txt row Save Bits above 0. Otherwise the stat
+#   is dropped when the item is saved, and the item is usable again after the
+#   character is reloaded.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# This is a Shared plugin: TCP/IP clients need it too.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# stat_id
+#
+# The *ID of the itemstatcost.txt row, 0 to 32767. Any value other than 0 on
+# an item makes it unusable. Only the value stored with param 0 is read, which
+# is where every stat without a param lives, so leave Save Param Bits empty on
+# this row.
+#
+# If the id is not a row of your itemstatcost.txt, no item is affected and the
+# plugin log says so.
+stat_id = 651
+
+# -----------------------------------------------------------------------------
+# diagnostics
+#
+# Writes one line to the plugin log for each of the first 64 different items
+# the rule makes unusable (item code, unit id, stat value). Keep false for
+# normal play. The console command "unusableitems" always shows the settings,
+# what is installed and the counters.
+diagnostics = false

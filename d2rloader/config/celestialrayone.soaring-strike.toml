@@ -1,0 +1,23 @@
+# celestialrayone.soaring-strike
+#
+# Soaring Strike return trip (missiles.txt pSrvHitFunc 34)
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3).
+
+# Hit again on the way back. pSrvHitFunc 34 starts the return trip without
+# touching the missile's LastCollide slot, which holds only the most recent
+# target, so the last monster struck on the way out stays blocked on the way
+# home. With this on, the slot is re-stamped the moment the missile turns.
+return_trip_rehit = true
+
+# What the slot is re-stamped with when the missile turns.
+#   true   the missile's owner
+#   false  cleared outright (id -1), which nothing matches
+# Either way no monster stays blocked. Only used with return_trip_rehit on.
+reseed_with_owner = true
+
+# Longest return trip. The engine takes min(distance, this), and the stock value
+# is 50. It is shifted left by 16 bits, so 1 to 32767 are valid; anything
+# outside that range leaves the stock 50 in place.
+return_path_cap = 32767

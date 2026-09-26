@@ -1,0 +1,33 @@
+# No Monster Collision
+#
+# While a character's stat (stat_id below) is above 0, the character walks and
+# runs through monsters, the same way Whirlwind carries it through a pack.
+#
+#   - Monsters, town NPCs and other players no longer stop the character.
+#   - Walls, doors, objects and blocked ground still do.
+#   - Monsters still cannot walk through the character.
+#   - Skills that move the character by their own rules, such as Whirlwind,
+#     keep them.
+#   - Players only. Hirelings, summons and monsters are never affected.
+#
+# The change takes effect on the character's next move after the stat appears
+# or disappears.
+#
+# The server and your client each check the stat on their own copy of the
+# character. A stat from an item is always on both. If you grant it another
+# way, type nomonstercollision in the console after walking through a pack:
+# the server and client parts must both show the stat. If only the server
+# does, your client stops at monsters while the server walks on, and the game
+# snaps the character forward.
+#
+# Console command: nomonstercollision (status, last stat read, counts)
+# Log: d2rloader\logs\celestialrayone.no-monster-collision.log
+
+[no_monster_collision]
+
+# Master switch.
+enabled = true
+
+# ItemStatCost.txt id of the stat that grants the effect, 0 to 32767.
+# Any value above 0 on the character turns it on.
+stat_id = 530

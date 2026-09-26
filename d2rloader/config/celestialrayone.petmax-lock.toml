@@ -1,0 +1,21 @@
+# Pet Max Lock (celestialrayone.petmax-lock)
+#
+# A skill whose skills.txt petmax formula works out to 0 or less cannot be
+# cast. It behaves exactly like a skill the player lacks the mana for:
+#   - its skill button shows the red no-mana background
+#   - trying to cast it is refused, with the no-mana feedback
+#   - the server refuses it as well
+#   - a skill flagged AttackNoMana swings a normal attack instead
+# Without the plugin the game treats petmax 0 as 1, which is why such a
+# skill could still summon one pet.
+#
+# petmax is worked out every time the game checks the skill, so a formula
+# that depends on skill level, synergies or stats locks and unlocks the
+# skill as those change. Skills with a blank petmax column are never
+# affected. Only players are affected.
+#
+# Console: petmaxlock shows the install state and how often a skill was
+# held back.
+
+# Set to false to turn the plugin off.
+enabled = true

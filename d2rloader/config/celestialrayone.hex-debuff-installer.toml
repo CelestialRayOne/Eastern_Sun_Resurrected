@@ -1,0 +1,21 @@
+# celestialrayone.hex-debuff-installer
+#
+# Hex Debuff Installer (skills.txt auraeventfunc 36, WarApplyHexDebuff)
+#
+# auraeventfunc 36 puts the skill's auratargetstate on the unit it hits. In the
+# stock game it registers the skill's Param1 as an event function on that unit
+# (damagedbymissile, damagedinmelee, hextrigger) only when the state is 217,
+# hexpurgedebuff, and it registers those events with no installer. An
+# auraeventfunc 33 (SkillActivateSubskill) registered that way looks for its
+# caster through the installer, finds nothing and never casts.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and that part is not installed.
+
+# Register Param1 for every auratargetstate, not only hexpurgedebuff (217).
+any_target_state = true
+
+# Store the hex caster as the installer of the events auraeventfunc 36
+# registers, so an auraeventfunc 33 Param1 finds its caster and casts.
+record_installer = true

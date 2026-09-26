@@ -1,0 +1,49 @@
+# Stance Dance
+#
+# Adds "Stance Dance" to Options > Controls, in its own "Ascendancies"
+# section, with no default key. Bind it there.
+#
+# What the key does
+#   While the character has the stance stat from its ascendancy (the
+#   ascendancy item gives 1), each press moves the stat to the next stance:
+#   1 -> 2 -> 3 -> 1. There is no key to go back.
+#   - Without the ascendancy the key does nothing.
+#   - The stat never drops to 0 and never goes above 3.
+#   - Taking the ascendancy item off removes the plugin's part at once, so a
+#     stance never outlives the ascendancy. With the item back on, the stance
+#     starts again at 1.
+#   - Holding the key down counts as one press.
+#
+# How the stat is built
+#   The ascendancy item gives 1. The plugin owns the character's own value of
+#   the same stat and keeps it at 0, 1 or 2, so the total is 1, 2 or 3. The
+#   host checks every player on every game update and corrects anything else
+#   that writes the character's own value of this stat.
+#
+# itemstatcost.txt row for stat_id
+#   - Saved = 1. Required. The game sends a change made on the character
+#     itself to that player's client only for rows with Saved = 1. Without it
+#     the stance changes on the host, but the client keeps seeing 1.
+#   - Save Bits above 0, so the ascendancy item keeps the stat when saved.
+#   - ValShift blank and no op, so the values are plain 1, 2 and 3.
+#   - CSvBits: with 0, every game starts at stance 1. Whether a value above 0
+#     keeps the stance between games in D2RLoader's extended save format is
+#     not confirmed.
+#   The plugin log reports the Saved check every time the tables load.
+#
+# Multiplayer
+#   Works in single player and TCP/IP. A key press goes to the host over
+#   D2RLoader's plugin network channel and the host makes the change, so the
+#   host and every client need this plugin.
+#
+# Console command
+#   stancedance   status, the itemstatcost check, counters, and the stance
+#                 of your client and of every player on the host.
+
+[stance_dance]
+
+# Master switch.
+enabled = true
+
+# itemstatcost.txt row of the stance stat.
+stat_id = 689

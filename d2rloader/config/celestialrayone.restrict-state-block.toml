@@ -1,0 +1,43 @@
+# Restrict State Block (celestialrayone.restrict-state-block)
+#
+# Adds a new value to the skills.txt "restrict" column:
+#
+#   restrict = 4   The skill cannot be used while the unit has any of the
+#                  states named in its State1, State2 or State3 columns.
+#                  At every other time it is usable, exactly like restrict 1,
+#                  including in wereform and under any other restrict state.
+#
+# How to set up a skill (skills.txt, on the skill's row)
+#   restrict = 4
+#   State1   = a states.txt state name that blocks the skill
+#   State2   = optional second blocking state
+#   State3   = optional third blocking state
+#   Empty State columns are skipped, so any of the three may be used.
+#   The blocking states do NOT need restrict = 1 in states.txt, so no other
+#   skill is affected when they are applied.
+#
+# What the player sees while a blocking state is on
+#   The same thing the stock game shows for a skill tried in wereform: the
+#   skill button gets the invalid tint, the character says "Impossible" and
+#   the server refuses the skill. If the row has AttackNoMana = 1, a normal
+#   attack is made instead, as the game does for any refused skill.
+#
+# Limits (all of them are how the game treats every restrict value)
+#   - Auras and passives are never blocked: the game classifies them as an
+#     aura or a passive before it reads the restrict column.
+#   - Item procs (chance to cast on striking, when struck, on kill and so on)
+#     are only checked when the row also has ItemUseRestrict = 1. The same
+#     State1-3 list then applies to them.
+#   - restrict 4 never removes a state. Only restrict 3 does that.
+#   - restrict 0, 1, 2 and 3 keep their stock behaviour.
+#
+# Install it on every machine taking part in a TCP/IP game: the skill button
+# and the "Impossible" refusal come from the client, the actual refusal from
+# the server.
+#
+# Console command: restrict4 (status, and how often restrict 4 refused a skill)
+
+[restrict_state_block]
+
+# Master switch. false installs nothing at all.
+enabled = true

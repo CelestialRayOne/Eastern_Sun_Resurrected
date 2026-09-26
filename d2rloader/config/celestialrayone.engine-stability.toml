@@ -1,23 +1,24 @@
 # =============================================================================
-# Engine Stability 0.10.0
-# Crash guards and vanilla engine fixes for Diablo II: Resurrected.
+# Engine Stability 0.11.0
+# Vanilla engine fixes for Diablo II: Resurrected.
 #
-# Built against D2RLoader 1.3.0: Diablo II: Resurrected 3.3 inside
-# D2RLoader.exe, plus D2RCore.dll for three of the entries below. Those three
-# are verified the same way but do not appear in D2RLoader's own diagnostics.
+# Built against D2RLoader 1.3.1: Diablo II: Resurrected 3.3 inside
+# D2RLoader.exe.
 # =============================================================================
 #
-# TWO KINDS OF ENTRY, AND THE DIFFERENCE MATTERS
+# WHAT IS LEFT, AND WHY
 #
-#   [guards] stop crashes. A guard is the difference between a hard crash and a
-#   normal frame. Most are invisible when nothing is going wrong. Where
-#   stopping the crash also changes what the engine does, the entry says so
-#   under "Also changes". Turning a guard off restores stock behaviour, which
-#   for these entries means the crash comes back.
+#   D2RLoader 1.3.1 now fixes eight of the ten entries this plugin used to
+#   carry, so 0.11.0 removed them. If an older copy of this file still lists
+#   their keys, they are ignored:
+#     client_unit_lookup_tombstone, lifesteal_while_dead,
+#     event_handler_recursion, skill_attack_rating_on_missiles,
+#     durability_tick_gear_refresh, hide_zero_skill_description_line,
+#     resocket_stat_inflation, blood_mana_cast_gate
 #
-#   [fixes] correct engine bugs that are not crashes. Fixes DO change
-#   gameplay: they make the engine apply what its own data already says.
-#   Turning a fix off restores stock behaviour.
+#   The two below are not fixed by D2RLoader. They correct engine bugs that
+#   are not crashes, so they DO change gameplay: they make the engine apply
+#   what its own data already says. Turning one off restores stock behaviour.
 #
 # SAFETY MODEL
 #
@@ -48,139 +49,16 @@
 [engine-stability]
 
 # Master switch for the whole plugin.
-#   true   Guards and fixes are installed as configured below.
+#   true   The fixes are installed as configured below.
 #   false  The DLL stays loaded and the console command still answers, but not
 #          one hook is installed. Use this to rule the plugin out while chasing
-#          a crash, without moving the DLL out of the folder.
+#          a problem, without moving the DLL out of the folder.
 # Default: true
 enabled = true
-
-
-# =============================================================================
-[guards]
-# =============================================================================
-
-# Client unit-by-id lookup on a tombstoned unit id.
-#   Site:     RVA 0009F270, the shared bottom of the client's unit-by-id
-#             lookup.
-#   Symptom:  Freeing a unit stamps a tombstone on the block (unit id -1) and
-#             returns it to the pool, so every later resolution of that owner
-#             arrives with id -1. That masks to bucket 0x7F and the walk
-#             follows whatever the slot happens to hold, which is where the
-#             dangling node is. Reliable repro: a summon dies while the
-#             missiles from its own on-death proc are still in flight.
-#   Guard:    An id of -1 is never a live unit, so the lookup answers "not
-#             found" without walking. Null is this function's own not-found
-#             result, so every call site already handles it. That is why the
-#             guard sits in the callee and not in any one caller: the captured
-#             dumps arrived through more than one.
-#   Cost:     One compare against -1 per lookup. Any live id touches nothing
-#             else.
-# Default: true
-client_unit_lookup_tombstone = true
-
-# Life stolen per hit paid to an already dead player.
-#   Site:     D2RCore.dll, the entry of its shared leech routine, which
-#             ItemEventFunc 28 calls in D2RLoader 1.3.0. That is the slot both
-#             the itemeventfunc columns of ItemStatCost.txt and the
-#             auraeventfunc columns of Skills.txt index.
-#   Symptom:  When a player dies the engine commits life to 0, then spends the
-#             whole death animation in the dying and dead modes before the
-#             corpse-spawn pass finishes. A leeching hit landing in that window
-#             runs the leech routine against the corpse, which writes life
-#             straight back into the life stat. That life is cashed in at the
-#             animation-complete transition and the player revives in place:
-#             server has them dead, client has them alive, and only Save and
-#             Exit clears it. Auras that keep spawning leeching missiles after
-#             their caster dies hit this constantly.
-#   Guard:    If the unit about to be paid life per hit is a player in a
-#             death animation, the routine returns without writing life and
-#             without scheduling its follow-up event. That is the routine's own
-#             do-nothing return, which its other early exits already use.
-#             Living players, monsters, hirelings and mana leech are exactly as
-#             before.
-#   Cost:     Two struct reads and up to three compares per leeching hit.
-# Default: true
-lifesteal_while_dead = true
-
-# Automap .map blob length truncated to 16 bits.
-#   Site:     RVA 000D7E3F, in the automap cell-set serializer.
-#   Symptom:  The serializer computes the blob byte length as (int16)(cells * 2)
-#             and stores it sign extended into a 32 bit field. One cell is 3
-#             words, so a layer holding more than 5461 cells writes a negative
-#             length, which the record writer's memmove consumes as roughly
-#             4GB. The game dies on the next automap flush, meaning on a layer
-#             change or on leaving the game. Long sessions spent map running a
-#             single layer are what get there.
-#   Guard:    Computes the length as a full 32 bit value. The loader already
-#             reads that field as unsigned 32 bit, so saves stay readable by an
-#             unpatched game and an unpatched loader.
-#   Cost:     None. This is a 13 byte instruction rewrite, not a hook.
-# Default: true
-automap_blob_length_truncation = true
-
-# Event handler recursion.
-#   Site:     D2RCore.dll, inside DispatchWideEffects, the server's unit event
-#             dispatcher in D2RLoader 1.3.0.
-#   Symptom:  A handler can raise its own event on the same unit before it
-#             returns, and the dispatcher then runs that handler again while
-#             the first run is still going, with nothing limiting the depth.
-#             The known case is a chance-to-cast-on-attack proc whose skill
-#             drains item durability, which raises the attack event again. A
-#             proc that always fires recurses until the stack overflows.
-#   Guard:    A handler already running is skipped when its event is raised
-#             again from inside it. Every other handler still runs and the
-#             first run finishes normally.
-#   Also changes: a proc can no longer trigger itself from inside its own
-#             handler. In stock, a chance-based proc could chain into another
-#             roll of itself within the same attack. That extra roll no longer
-#             happens. Other procs are unaffected.
-#   Cost:     One bit test per handler whose event matches.
-# Default: true
-event_handler_recursion = true
-
 
 # =============================================================================
 [fixes]
 # =============================================================================
-
-# Skill attack rating lost on player missiles.
-#   Site:     RVA 00537B23, in server missile creation.
-#   Bug:      A skill's ToHit, LevToHit and ToHitCalc give players an attack
-#             rating percent, but a missile only receives it when the game
-#             creates it through CreateSkillMissile. Missiles that skill
-#             functions create themselves, such as Multiple Shot's srvdofunc 8,
-#             roll to hit with no skill bonus at all, even though the Character
-#             Screen counts it.
-#   Fix:      Every player missile gets its skill's ToHit as it is created, the
-#             same value CreateSkillMissile would have given it.
-#   Scope:    Missiles that never roll to hit are unaffected. Monsters and
-#             hirelings keep vanilla behaviour.
-#   Cost:     One ToHit evaluation per player missile created without one.
-# Default: true
-skill_attack_rating_on_missiles = true
-
-# Durability loss forcing a full gear refresh.
-#   Site:     D2RCore.dll, in the client's item stat update handler (server
-#             message 62), ReceiveWideItemStatPacket in D2RLoader 1.3.0.
-#   Bug:      Every time a hit costs an item a point of durability, the server
-#             sends the new value and the client answers that one number by
-#             tearing down and re-applying the stats of every equipped item and
-#             re-selecting both mouse skills. In melee that happens constantly,
-#             mid-fight. A skill granted by an item, Whirlwind on a weapon for
-#             instance, drops to 0 for an instant inside that teardown: the
-#             character stops spinning while the server is still whirlwinding.
-#             Indestructible weapons never stutter because they never lose
-#             durability.
-#   Fix:      The new durability is still applied to the item, but the gear
-#             refresh is skipped for it. Durability cannot change what you have
-#             equipped or what your items grant. Breaking and repairing a
-#             broken item go through their own updates, untouched.
-#   Cost:     One extra compare per item stat update, and it removes an entire
-#             gear refresh from every durability loss.
-# Default: true
-durability_tick_gear_refresh = true
-
 # Missile burst skipped when the missile dies on a wall.
 #   Site:     RVA 0045FB6D and RVA 0045FBB5, in Missiles.txt pSrvHitFunc 29.
 #   Bug:      pSrvHitFunc 29 is the burst used by Frozen Orb and everything
@@ -205,93 +83,6 @@ durability_tick_gear_refresh = true
 #   Cost:     One compare per pSrvHitFunc 29 collision.
 # Default: true
 frozen_orb_burst_on_wall = true
-
-# Skill description line printed when both of its numbers are zero.
-#   Site:     RVA 00289AD0, inside the SkillDesc.txt descline 75 handler.
-#   Bug:      A skill tooltip is built one line at a time, each line naming a
-#             descline function, a text key and the two calc expressions
-#             desccalca and desccalcb. Descline 75 prints "<text>: <a>-<b>",
-#             for example "Physical Damage: 12-25". Its handler refuses to draw
-#             only when the text key is empty. It never looks at the two
-#             numbers, so a line whose calcs both evaluate to zero still
-#             prints, and you get "Physical Damage: 0-0" on skills with no
-#             physical damage at that level. The neighbouring descline 74
-#             already has the check this one is missing.
-#   Fix:      Descline 75 draws only when desccalca or desccalcb is non-zero.
-#             When both are zero the line is skipped through the same exit the
-#             engine already uses for a descline it will not draw, so the rest
-#             of the tooltip is unaffected and the lines below move up. A line
-#             with either number non-zero behaves exactly as before.
-#   Scope:    Descline 75 only, on whichever SkillDesc.txt rows use it. No
-#             other descline number is touched, and nothing on the item side is
-#             touched.
-#   Cost:     Two compares per descline 75 line drawn.
-# Default: true
-hide_zero_skill_description_line = true
-
-# Socketed gem and rune stats accumulating across resocketing.
-#   Site:     RVA 0038BBA3, in the routine that removes an item from its
-#             container.
-#   Bug:      When a gem or rune is socketed, its properties are applied to the
-#             gem or rune ITSELF, as a child entry hanging off its own stat
-#             list, and the host is then handed that whole stat list. When the
-#             filler is pulled back out the engine expires only the filler's
-#             own entry, and expiring an entry splices it out of the chain
-#             rather than taking its children with it. The child survives with
-#             the socketed properties still in it, so the next socket derives
-#             them from the gemsockets table a second time and applies them on
-#             top of the ones that never left. Every resocket adds another
-#             copy, and the values climb without limit.
-#   Fix:      The engine's own detach runs first, unchanged, so the host gives
-#             back exactly what it was given. Only then are the leftover
-#             entries on the filler expired, which subtracts them from the
-#             filler's own totals and leaves it clean for the next socket. A
-#             filler that was never socketed has no such entries, and an
-#             ordinary item moved between pages fails the gate. Both take a
-#             path identical to stock.
-#   Scope:    GEMS AND RUNES ONLY, AND IT WORKS OUT WHICH BY ITSELF. A gem or
-#             rune has its socketed properties rebuilt from the gemsockets
-#             table on every socket, so dropping the leftovers costs nothing. A
-#             jewel carries rolled affixes with nothing to rebuild them from,
-#             so its entry is the only copy and dropping it would return the
-#             jewel empty. There is no row number for you to set here: the fix
-#             reads the two Itemtypes rows out of the engine's own
-#             socket-property routine at 00475140 and fires on exactly the
-#             fillers that routine fires on. A jewel matches neither row, so
-#             nothing of a jewel is ever touched. If a future patch moves those
-#             rows, the fix notices and installs nothing rather than stripping
-#             the wrong kind of item.
-#   Cost:     One or two itemtype checks per item removed from a container.
-# Default: true
-resocket_stat_inflation = true
-
-# Blood mana skills silently refused by the server.
-#   Site:     RVA 00436750, the server's pre-cast affordability gate.
-#   Bug:      States.txt blood_mana, state 114, makes a skill cost life instead
-#             of mana. The server gate that decides whether a cast may start at
-#             all has no blood_mana branch: it reads mana and nothing else. So
-#             with the state up and mana below the skill's cost, the client
-#             plays the entire cast -- animation, missiles, overlays -- and the
-#             server drops it on the floor. No cooldown, no damage, no missile
-#             collisions. The payment path immediately behind that gate already
-#             knows about the state and pays in life; only the gate does not.
-#   Fix:      The gate asks whether the unit has state 114 and, when it does,
-#             weighs the cost against life instead of mana. That is the same
-#             question the payment already asks, so the gate now admits exactly
-#             the casts the payment will accept, and it is what the engine's
-#             own shared affordability check has always done.
-#   Also changes: while blood_mana is up, mana is ignored in BOTH directions. A
-#             cast you can afford in life goes through with no mana at all,
-#             and a cast you could previously start on mana alone while low on
-#             life is refused up front instead of reaching the payment, which
-#             would have stripped the state and left you on 1 life.
-#   Scope:    State 114 only, server side. Without the state the gate behaves
-#             exactly as stock, down to which stat it reads. Skills paid for
-#             with item charges bypass the cost check entirely, as before.
-#   Cost:     One state check per cast attempt.
-# Default: true
-blood_mana_cast_gate = true
-
 # Monster AI never resuming after a skill-applied freeze.
 #   Site:     RVA 00436240, the generic state-removal callback that skills,
 #             auras and curses install on every state they apply with a

@@ -1,0 +1,40 @@
+# Blood Boil
+#
+# Server-side changes to skills.txt srvdofunc 160 (WarDoBloodBoil). They only
+# touch Blood Boil's per-demon step, 0x521320 in the D2R 3.3 D2RLoader image.
+#
+# 1. sksrc() reads the caster
+#    Blood Boil evaluates calc1, calc2 and calc3 (the percent of the demon's
+#    maximum life it sacrifices) and aurarangecalc (the radius) on the DEMON.
+#    stat(), skill() and every other function in those four calcs read the
+#    demon, and keep doing so. With this on, sksrc() in them reads the Warlock
+#    who cast Blood Boil instead:
+#
+#      20+(sksrc('The Grand Sacrifice Passive'.lvl)>0)*60
+#
+#    The caster is read at the moment Blood Boil hits, so a passive gained or
+#    lost after the demon was summoned counts immediately. The percent is
+#    always applied to the demon's own maximum life. calc4 (next hit delay) is
+#    already evaluated on the caster and is not touched.
+#
+# 2. Lethal sacrifice
+#    Vanilla skips a demon completely, no sacrifice and no area damage, when
+#    the sacrifice would kill it. When the CASTER has a value above 0 in the
+#    stat below, that skip is removed: the demon takes the full sacrifice,
+#    dies if it runs out of life, and its area damage still goes off. A demon
+#    that is already dead keeps the vanilla skip.
+#
+# Console command: bloodboil (status and counters)
+# Log: d2rloader\logs\celestialrayone.blood-boil.log
+
+[blood_boil]
+
+# Master switch. false leaves the game completely vanilla.
+enabled = true
+
+# sksrc() in calc1, calc2, calc3 and aurarangecalc reads the caster.
+caster_is_sksrc_source = true
+
+# itemstatcost.txt row read on the caster. Above 0 lets the sacrifice kill the
+# demon. -1 turns the lethal sacrifice off.
+lethal_sacrifice_stat = 529
