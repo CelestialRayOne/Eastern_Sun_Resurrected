@@ -1,0 +1,20 @@
+# Client unit loop
+#
+# Every frame the client updates each unit of its client-side unit tables,
+# then looks the unit up again by id in its own table. The tables have
+# only 128 buckets per unit type, so with thousands of missiles every
+# lookup walks a long chain, and the whole pass grows with the square of
+# the missile count. The game only uses that lookup's result for monsters
+# and objects; for missiles it is thrown away.
+#
+# This plugin runs the same loop with the same calls, and skips the lookup
+# only where its result is never used. Nothing else changes.
+#
+# Console:
+#   client-unit-loop         lookups done and lookups skipped
+#   client-unit-loop reset   zero the counters
+
+[client-unit-loop]
+
+# Master switch. false installs nothing.
+enabled = true

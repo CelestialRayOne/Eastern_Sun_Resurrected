@@ -1,0 +1,544 @@
+{
+    "type": "MonsterHealthPanel",
+    "name": "HUDMonsterHealth",
+    "fields": {
+        "priority": -100,
+        "anchor": {
+            "x": 0.5
+        },
+        "rect": {
+            "y": 40
+        }
+    },
+    "children": [
+        {
+            "type": "Widget",
+            "name": "ScreenAnchored",
+            "fields": {
+                "rect": {
+                    "x": -500,
+                    "y": 0,
+                    "width": 1000,
+                    "height": 400
+                }
+            },
+            "children": [
+                {
+                    "type": "TextBoxWidget",
+                    "name": "Name",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 0,
+                            "width": 1000,
+                            "height": 56
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": "$LargeFontSize",
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "HealthBarWidget",
+                    "name": "Health",
+                    "fields": {
+                        "rect": {
+                            "x": 100,
+                            "y": 84,
+                            "width": 800,
+                            "height": 37
+                        },
+                        "normalColor": {
+                            "r": 0.4,
+                            "g": 0.02,
+                            "b": 0.02
+                        },
+                        "warningColor": {
+                            "r": 0.4,
+                            "g": 0.02,
+                            "b": 0.02
+                        },
+                        "criticalColor": {
+                            "r": 0.4,
+                            "g": 0.02,
+                            "b": 0.02
+                        },
+                        "transparency": 1,
+                        "backgroundTransparency": 0.85,
+                        "warningHealthPercent": 0,
+                        "criticalHealthPercent": 0,
+                        "drawWhenEmpty": true
+                    }
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "NormalMonsterBackground",
+                    "fields": {
+                        "rect": {
+                            "x": 100,
+                            "y": 53,
+                            "width": 800,
+                            "height": 101
+                        },
+                        "filename": "PANEL/MonsterDisplayFrames/normal_mid",
+                        "leftCap/filename": "PANEL/MonsterDisplayFrames/normal_left",
+                        "rightCap/filename": "PANEL/MonsterDisplayFrames/normal_right",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    }
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "UniqueMonsterBackground",
+                    "fields": {
+                        "rect": {
+                            "x": 100,
+                            "y": 53,
+                            "width": 800,
+                            "height": 101
+                        },
+                        "filename": "PANEL/MonsterDisplayFrames/unique_mid",
+                        "leftCap/filename": "PANEL/MonsterDisplayFrames/unique_left",
+                        "rightCap/filename": "PANEL/MonsterDisplayFrames/unique_right",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    },
+                    "children": [
+                        {
+                            "type": "ImageWidget",
+                            "name": "BottomCap",
+                            "fields": {
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "rect": {
+                                    "x": -14,
+                                    "y": 14
+                                },
+                                "filename": "PANEL/MonsterDisplayFrames/unique_skull"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "BossMonsterBackground",
+                    "fields": {
+                        "rect": {
+                            "x": 100,
+                            "y": 53,
+                            "width": 800,
+                            "height": 110
+                        },
+                        "filename": "PANEL/MonsterDisplayFrames/boss_mid",
+                        "leftCap/filename": "PANEL/MonsterDisplayFrames/boss_left",
+                        "rightCap/filename": "PANEL/MonsterDisplayFrames/boss_right",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    },
+                    "children": [
+                        {
+                            "type": "ImageWidget",
+                            "name": "BottomCap",
+                            "fields": {
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "rect": {
+                                    "x": -14,
+                                    "y": 19
+                                },
+                                "filename": "PANEL/MonsterDisplayFrames/unique_skull"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "HPValue",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 84,
+                            "width": 700,
+                            "height": 37
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 34,
+                            "alignment": {
+                                "h": "left",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "HPPercent",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 84,
+                            "width": 300,
+                            "height": 37
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 26,
+                            "alignment": {
+                                "h": "left",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "LevelType",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 158,
+                            "width": 1000,
+                            "height": 44
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 34,
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "Affixes",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 202,
+                            "width": 1000,
+                            "height": 38
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 30,
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "Aura",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 246,
+                            "width": 1000,
+                            "height": 38
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 30,
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "Resistances",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 290,
+                            "width": 1000,
+                            "height": 58
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 30,
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "ResistancesTopLine",
+                    "fields": {
+                        "rect": {
+                            "x": 244,
+                            "y": 285,
+                            "width": 512,
+                            "height": 20
+                        },
+                        "filename": "PANEL/MonsterDisplayFrames/resist_bar_mid",
+                        "leftCap/filename": "PANEL/MonsterDisplayFrames/resist_bar_left",
+                        "rightCap/filename": "PANEL/MonsterDisplayFrames/resist_bar_right",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    },
+                    "children": [
+                        {
+                            "type": "ImageWidget",
+                            "name": "Center",
+                            "fields": {
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "rect": {
+                                    "x": -12,
+                                    "y": -10
+                                },
+                                "filename": "PANEL/MonsterDisplayFrames/resist_bar_center"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "ResistancesBottomLine",
+                    "fields": {
+                        "rect": {
+                            "x": 244,
+                            "y": 333,
+                            "width": 512,
+                            "height": 20
+                        },
+                        "filename": "PANEL/MonsterDisplayFrames/resist_bar_mid",
+                        "leftCap/filename": "PANEL/MonsterDisplayFrames/resist_bar_left",
+                        "rightCap/filename": "PANEL/MonsterDisplayFrames/resist_bar_right",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    },
+                    "children": [
+                        {
+                            "type": "ImageWidget",
+                            "name": "Center",
+                            "fields": {
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 0.5
+                                },
+                                "rect": {
+                                    "x": -12,
+                                    "y": -10
+                                },
+                                "filename": "PANEL/MonsterDisplayFrames/resist_bar_center"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "TextBoxWidget",
+                    "name": "Immunities",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": 338,
+                            "width": 1000,
+                            "height": 38
+                        },
+                        "style": {
+                            "fontFace": "Exocet",
+                            "pointSize": 28,
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "Widget",
+            "name": "TargetAttached",
+            "fields": {
+                "rect": {
+                    "x": -250,
+                    "width": 500
+                }
+            },
+            "children": [
+                {
+                    "type": "TextBoxWidget",
+                    "name": "Name",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": -131
+                        },
+                        "anchor": {
+                            "x": 0
+                        },
+                        "style": {
+                            "pointSize": "$LargeFontSize",
+                            "alignment": {
+                                "h": "center",
+                                "v": "center"
+                            },
+                            "options": {
+                                "pipeCharacterBehavior": "handle"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "UniqueMonsterBackground",
+                    "rect": {
+                        "x": -500,
+                        "y": -26
+                    },
+                    "fields": {
+                        "filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique",
+                        "leftCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique_left_cap",
+                        "rightCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique_right_cap",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    },
+                    "children": [
+                        {
+                            "type": "ImageWidget",
+                            "name": "BottomCap",
+                            "fields": {
+                                "anchor": {
+                                    "x": 0.5,
+                                    "y": 1
+                                },
+                                "rect": {
+                                    "x": -60
+                                },
+                                "filename": "Controller/HUD/MonsterHealth/monster_healthbar_unique_bottom_cap"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "GrowableImageWidget",
+                    "name": "NormalMonsterBackground",
+                    "rect": {
+                        "x": -500,
+                        "y": -26
+                    },
+                    "fields": {
+                        "filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal",
+                        "leftCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal_left_cap",
+                        "rightCap/filename": "Controller/HUD/MonsterHealth/monster_healthbar_normal_right_cap",
+                        "leftCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "rightCapOffset": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "placeCapsOutsideRect": true
+                    }
+                },
+                {
+                    "type": "HealthBarWidget",
+                    "name": "Health",
+                    "fields": {
+                        "rect": {
+                            "x": 0,
+                            "y": -86
+                        },
+                        "filename": "Controller/HUD/MonsterHealth/monsterhealth_console",
+                        "transparency": 0.5,
+                        "backgroundTransparency": 0.75,
+                        "criticalHealthPercent": 0,
+                        "warningHealthPercent": 0,
+                        "drawWhenEmpty": true
+                    }
+                }
+            ]
+        }
+    ]
+}

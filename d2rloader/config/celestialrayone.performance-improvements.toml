@@ -1,0 +1,55 @@
+# Performance improvements
+#
+# Every missile-performance fix in one plugin. Each fix removes work the
+# game did in a way that grew with the square of the number of missiles
+# alive. None of them changes gameplay: the game gets the same results, it
+# just stops repeating the same search thousands of times per frame.
+# Each fix can be switched off on its own below.
+#
+# Console:
+#   perf           state of every fix and its counters
+#   perf reset     zero the counters
+#   perf verify    check the room index against the game's room lists
+#
+# This plugin replaces the separate plugins room-unit-index,
+# translation-queue, client-unit-loop, weak-instances and
+# unit-entity-lookup, and the patch file skip-room-add-duplicate-check.json.
+
+[performance-improvements]
+
+# Master switch. false installs nothing.
+enabled = true
+
+# Room lists, server and client. Every missile sits in its room's unit
+# list; a side index next to each list makes two things cheap:
+#   room_fast_removal  a unit (a dying missile) leaves its room without a
+#                      walk over the room's whole list;
+#   room_unit_search   missile collision checks look at players and
+#                      monsters only, for missiles.txt CollideType 1, 2, 3,
+#                      5 and 8, the types that can only ever hit those.
+room_fast_removal = true
+room_unit_search = true
+
+# Skip the debug-only duplicate check that walked a room's whole unit list
+# every time a unit (every new missile) was added to it. If the old patch
+# file skip-room-add-duplicate-check.json is still installed, this notices
+# and leaves its patch alone; the file can be deleted.
+skip_room_add_check = true
+
+# HD layer: drop superseded unit messages (create, move, remove) with hash
+# lookups instead of comparing every message with every earlier one.
+translation_queue = true
+
+# HD layer: a destroyed missile visual leaves its type's instance list
+# directly instead of a walk over every other visual of that type. The main
+# cost of many missiles colliding or expiring at the same time.
+weak_instances = true
+
+# Client: skip the per-unit re-lookup whose result the game only uses for
+# monsters and objects (it was thrown away for every missile).
+client_unit_loop = true
+
+# HD layer: find a removed unit's HD entity by scanning the key array
+# instead of walking every entity with a lookup and a call each. The
+# second cost of mass missile deaths.
+unit_entity_lookup = true

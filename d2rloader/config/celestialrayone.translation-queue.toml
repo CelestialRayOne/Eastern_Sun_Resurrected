@@ -1,0 +1,21 @@
+# Unit translation queue
+#
+# D2R's HD layer keeps its 3D scene in step with the game through a queue
+# of unit messages (create, move, change, remove), several per unit per
+# frame. Before applying the queue, the game drops messages that a later
+# message makes pointless, by comparing every message with every message
+# before it. That work grows with the square of the queue length, and
+# every missile adds to the queue every frame: with thousands of missiles
+# it was a third of the main thread's time.
+#
+# This plugin does the same job through hash lookups. The result is
+# identical, message for message; only the time it takes changes.
+#
+# Console:
+#   translation-queue         calls, messages seen, messages dropped
+#   translation-queue reset   zero the counters
+
+[translation-queue]
+
+# Master switch. false installs nothing.
+enabled = true

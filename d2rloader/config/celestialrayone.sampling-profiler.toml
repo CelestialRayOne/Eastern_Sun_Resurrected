@@ -1,0 +1,39 @@
+# Sampling profiler
+#
+# Shows where the game's time goes, without any external tool. While a
+# recording runs, the game's main thread is paused about once a
+# millisecond for a few microseconds so its call stack can be read; the
+# busiest other threads get the same treatment. The report goes to this
+# plugin's log file (d2rloader/logs/celestialrayone.sampling-profiler.log).
+# Nothing in the game is patched or hooked, and nothing runs while no
+# recording is in progress.
+#
+# Console:
+#   profile              record for default_seconds, or show the progress
+#                        of a recording that is running
+#   profile <seconds>    record for that many seconds (1 to 120)
+#   profile stop         stop early and write the report
+#   profile last         the top of the last report
+#
+# Type `profile` in the console, close it, reproduce the lag, and send the
+# log file once the time is up. The game's own "Main-Thread" is the main
+# thread sampled; the thread that ran the command stands in if it has no
+# such name.
+
+[sampling-profiler]
+
+# Seconds recorded by `profile` when no number is given.
+default_seconds = 15
+
+# Target time between samples, in microseconds. 1000 is about a thousand
+# samples a second per sampled thread.
+sample_interval_us = 1000
+
+# Besides the main thread, also sample this many of the busiest other
+# threads (chosen again four times a second). 0 samples the main thread
+# only.
+extra_threads = 2
+
+# Report sizes: functions listed per table, and call stacks per thread.
+report_functions = 40
+report_stacks = 12

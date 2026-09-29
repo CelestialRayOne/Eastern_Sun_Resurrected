@@ -1,0 +1,120 @@
+# Monster Display
+#
+# Shows, for the monster under the cursor (keyboard/mouse and controller):
+#   name
+#   health bar in a frame, exact life and a smaller percentage after it
+#   Level X <type> (the game's own type / description line after the level)
+#   unique affixes
+#   Aura Enchanted with the aura name and level on its own row
+#   the resistances your hits actually meet
+#   the game's immunity line
+#
+# Everything is drawn by the game's own widgets in hudmonsterhealthhd.json
+# (data/global/ui/layouts, controller and controller/pc). The plugin fills the
+# widgets it finds by name inside the panel (pc) or the ScreenAnchored
+# container (controller), and leaves every other container alone:
+#   Name, Health, UniqueMonsterBackground, NormalMonsterBackground  (stock)
+#   HPValue, HPPercent                                               (bar text)
+#   LevelType, Affixes, Aura, Resistances, Immunities                (rows)
+# The five rows are stacked in that order starting at LevelType's position;
+# empty rows are hidden and take no space, each row advances by its own
+# height from the layout plus row_gap. A row can carry two decoration images,
+# <Row>TopLine and <Row>BottomLine (the layouts give Resistances a pair); they
+# move and hide together with their row, and when they are GrowableImageWidgets
+# they are also sized to the row's text, so short resistances get short bars.
+#
+# Exact life, level, aura levels and resistances come from the server unit.
+# In single player and on a TCP/IP host they are read directly; a joined
+# TCP/IP client asks the host, which needs this plugin too. Without it the bar
+# shows the percentage only and the level, aura level and resistance rows are
+# left out.
+#
+# Remove yin's monsterdisplay.dll: both hook the same two game functions.
+#
+# Console command: monsterdisplay            status and counters
+#                  monsterdisplay debug on|off
+#
+# Restart the game after changing this file.
+
+# File format version. Leave this value unchanged.
+config_version = 1
+enabled = true
+
+[bar]
+# Width of the health bar for ordinary monsters, in layout units (the panel in
+# the shipped layouts is 1000 wide). 0 keeps the game's own sizing (the bar as
+# wide as the name).
+width = 800
+# Prime evils (monstats.txt primeevil) get a bar this many times as wide.
+boss_width_multiplier = 2.0
+# ... and this many times as tall. The boss frame (BossMonsterBackground,
+# PANEL/MonsterDisplayFrames/boss_*) has a fixed opening built for 1.25, so
+# change this only together with that art. Without that widget in the layout
+# bosses keep the normal height.
+boss_height_multiplier = 1.25
+# Height of the frame art in layout units. Only change it together with the
+# frame sprites (the shipped ones are 101 tall).
+frame_height = 101
+
+[text]
+# Level in front of the type line: "<level_label> <level>".
+show_level = true
+level_label = "Level"
+# Exact life inside the bar ("12 / 12") and the percentage after it ("(100%)").
+show_hp = true
+show_hp_percent = true
+# Unique affixes, in the game's own wording.
+show_affixes = true
+# D2R colour id of the affix and aura rows (see the list at the bottom).
+affix_color = 4
+# Aura Enchanted on its own row as "Aura Enchanted (Fanaticism Lv. 13)".
+# false keeps it among the other affixes, without the aura or its level.
+separate_aura = true
+aura_level_label = "Lv."
+# The game's immunity line ("Immune to Fire"), last.
+show_immunities = true
+# Space between two rows under the bar, in layout units (10 = 5 px at 1080p).
+# The gap between the bar and the first row comes from the layout.
+row_gap = 10
+
+[resistances]
+show = true
+# effective : what the hovering player's hits meet: sunder and -enemy
+#             resistance are applied, exactly as the damage code does.
+# monster   : the monster's own values, before anything the attacker has.
+# The Summon Resist Cap is applied in both modes.
+mode = "effective"
+# Reorder, omit or repeat: {fire} {lightning} {cold} {poison} {magic} {physical}
+# {color:N} sets the colour of the literal text that follows it. Values always
+# use their own colour below.
+template = "{fire} {lightning} {cold} {poison} {magic} {physical}"
+separator_color = 0
+fire_color = 1
+lightning_color = 9
+cold_color = 3
+poison_color = 2
+magic_color = 8
+physical_color = 4
+
+[summon_cap]
+# Mirror of the Summon Resist Cap plugin, so allied monsters show the capped
+# values the engine really uses. The cap is only applied while that plugin is
+# live (checked in the game image every time).
+use_align_column = true
+extra_monster_ids = []
+
+[debug]
+# Writes every data request and answer to the plugin log.
+log = false
+
+# D2R colour ids:
+#  0 White         1 Red           2 BrightGreen   3 Blue
+#  4 Gold          5 DarkGray      6 Black         7 PaleGold
+#  8 Orange        9 Yellow       10 DarkGreen    11 Purple
+# 12 Green        13 LightGray    14 DullGold     15 YellowGreen
+# 16 Amber        17 ForestGreen  18 Indigo       19 LimeGreen
+# 20 Khaki        21 Silver       22 SoftWhite    23 GrayWhite
+# 24 BlueGray     25 Teal         26 Goldenrod    27 Charcoal
+# 28 BrightGold   29 Violet       30 Beige        31 Cyan
+# 32 Pink         33 Lavender     34 LeafGreen    35 PaleYellow
+# 36 SoftRed      37 SkyBlue      38 RedOrange

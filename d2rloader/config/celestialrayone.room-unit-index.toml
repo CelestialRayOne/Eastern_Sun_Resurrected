@@ -1,0 +1,47 @@
+# Room unit index
+#
+# Removes the part of the missile cost that grows with the square of the
+# missile count. Every missile sits in its room's unit list next to the
+# players, monsters, objects and items. The engine walks that list from the
+# start to remove a unit and to find what a missile hit, so every missile
+# alive makes those steps slower for every other missile.
+#
+# The plugin keeps a side index next to every room's list. It never changes
+# which units a list holds, so everything else in the game that looks
+# through room lists is unaffected. The index is used for two things:
+#   * removing a unit from its room (missile death, room crossing) without
+#     walking the list;
+#   * the collision unit search, for the collide types whose rule can only
+#     ever accept a player or a monster: missiles.txt CollideType 1, 2, 3,
+#     5 and 8. The search then looks at the players and monsters only. Same
+#     rooms, same order, same tests, so the result is identical.
+#
+# Gameplay does not change. Results are identical to the engine's own, so
+# this is also safe in multiplayer with peers that do not run it.
+#
+# Pair it with the static patch skip-room-add-duplicate-check.json, which
+# removes the third full walk (a debug-only duplicate check that runs every
+# time any unit is added to a room). Each part works on its own; together
+# they remove all three walks.
+#
+# Console:
+#   room-unit-index          status and counters
+#   room-unit-index verify   compare the index with every indexed room's
+#                            real list; rebuilds any room that differs
+#   room-unit-index reset    zero the counters
+#
+# A healthy index shows 0 inconsistencies. A non-zero count means some code
+# edited a room list in a way the plugin does not know about; the room was
+# rebuilt from the real list, so results stay correct, but report it.
+
+[room-unit-index]
+
+# Master switch. false installs nothing.
+enabled = true
+
+# Unlink units from their room without walking the room's list.
+fast_room_removal = true
+
+# Collision unit search over players and monsters only, for the collide
+# types listed above. Every other search runs the engine's own code.
+unit_search_index = true

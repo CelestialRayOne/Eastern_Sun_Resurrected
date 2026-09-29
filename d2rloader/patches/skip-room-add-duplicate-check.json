@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Skip room-add duplicate check",
+  "description": "Every time any unit is added to a room (missile creation, room crossing, spawns), the engine walked the room's whole unit list only to assert that the unit was not already in it. The check feeds a debug assert and changes nothing in game, but with many missiles in a room it costs a full list walk per add. This jumps over the walk straight to the list insertion. Independent of the room-unit-index plugin; the two together remove all three full list walks.",
+  "patches": [
+    {
+      "description": "UNITROOM_AddUnitToRoomEx: short jump from the duplicate-check setup (0x38ED8B) to the insertion at 0x38EDC9. Nothing after the loop reads the registers it used.",
+      "op": "bytes",
+      "rva": "0x38ED8B",
+      "expected": "48 8B CE E8 FD 0F F6 FF",
+      "bytes": "EB 3C 90 90 90 90 90 90"
+    }
+  ]
+}

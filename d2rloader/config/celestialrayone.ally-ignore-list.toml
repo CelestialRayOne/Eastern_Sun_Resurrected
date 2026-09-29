@@ -1,0 +1,50 @@
+# Ally Ignore List
+#
+# Allied units never pick the monster types listed below as a target:
+# hirelings, necromancer summons, druid summons, assassin traps and
+# shadows, Warlock demons (GenericPet), converted monsters and every other
+# unit on the player's side.
+#
+# Only target picking changes. A listed monster is still a solid unit:
+#   - missiles still collide with it and hit it
+#   - whatever reaches it still deals its damage and effects
+#   - the player can still attack it
+#   - its corpse stays usable for corpse eaters and corpse skills
+#   - evil monsters are unaffected; a Confused monster will not pick it either
+#
+# How it works: when an AI looks for something to attack, the game tests
+# every nearby unit with one of four "is this a valid target?" checks. This
+# plugin answers "no" for a living monster from the list, so the ally moves
+# on to the next candidate. The four checks:
+#   - the wide search behind every allied AI's main target
+#   - the nearest-enemy search (hirelings, necro pets, traps, Poison Creeper)
+#   - the Shadow Master's own search
+#   - the GenericPet search (Warlock demons)
+#
+# Not covered: an ally copying the target the player attacks. Shadow Masters
+# copy their player's current target, and the skill that warps pets onto the
+# caster's target orders them onto it. Both need the player to target the
+# monster first, so a monster the player cannot select never gets there.
+# Shadow Masters also switch from a normal minion to the monster that owns
+# it, which only matters if a listed monster has minions of its own.
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: allyignore (status, ignored ids and skip counters)
+
+[ally_ignore_list]
+
+# Master switch. false installs nothing at all.
+enabled = true
+
+# The monsters allies must never target, as monstats.txt hcIdx values,
+# 0 to 32767. An empty list, [], ignores nothing and installs no hook.
+# The list may be written on one line or spread over several, and may
+# carry # comments:
+#
+#   ignored_monster_ids = [1110, 1111]
+#
+ignored_monster_ids = [
+    1110,   # stormobelisk
+]
