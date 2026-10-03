@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Controller skill release fix",
+  "description": "Fixes a D2R controller bug where a skill held on the first skill bar keeps casting forever after its button is released, and every other skill button is ignored. The game remembers which skill bar a held button belongs to, but a press only ever sets that memory to the second bar and never back to the first. If a second-bar hold ends without its own release (a panel opens while the button is still down), the memory stays on the second bar. The next first-bar press then gets released as a different button, the release is thrown away, and the character casts that skill until a panel is opened, after which it happens again. With this patch every press records the bar it was actually made on.",
+  "patches": [
+    {
+      "description": "sub_140149550, the controller skill press/release matcher, press path right after the second-bar modifier check call sub_14014CF40 at 1401495F3. Stock: test al,al / je 140149609 / mov byte [r12+rdi+1964h],1 (the per-player bar flag is only ever set, never cleared on a first-bar press). New: mov byte [r12+rdi+1964h],al / test al,al / je 140149609 / nop, so the flag is written 0 or 1 on every press. lea ebx,[r15+6] stays at 140149605, the target of the jmp at 1401495E5, and 140149609 stays the join point. The release path (1401495CF to 1401495E5 and 14014962B onwards) is unchanged.",
+      "op": "bytes",
+      "rva": "0x1495F8",
+      "expected": "84 C0 74 0D 41 C6 84 3C 64 19 00 00 01",
+      "bytes": "41 88 84 3C 64 19 00 00 84 C0 74 05 90"
+    }
+  ]
+}

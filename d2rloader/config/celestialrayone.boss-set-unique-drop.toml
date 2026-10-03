@@ -1,0 +1,68 @@
+# Boss Set Unique Drop
+#
+# Drops a named unique when the LAST monster of a configured set dies.
+#
+# Each [[boss_set_unique_drop.rule]] block is one set: a list of monster ids
+# and a unique. Once every monster in the list has died in the same game, in
+# any order, the unique drops at the monster that died last, the way the game
+# drops the Hellfire Torch from the last of the three uber bosses.
+#
+# This replaces the game's own uber Tristram drop. Vanilla never names the
+# Torch: it drops "a random unique large charm", which in a mod with several
+# unique large charms can be any of them. While this plugin is enabled that
+# random charm no longer drops, and the uber bosses drop what the rules below
+# say. The Standard of Heroes they drop for each player is not touched.
+#
+# Kills are counted for every monster, not only the uber bosses, so any set
+# of bosses works.
+#
+# How the unique drops
+#   - Like a treasureclass entry that names a unique: the game builds that
+#     exact unique on its base item, at the killed monster's position.
+#   - Item level is the killed monster's level, raised to the unique's lvl
+#     when it is lower, so the level can never stop the named unique.
+#   - The game's other unique rules still apply. A unique drops once per game
+#     unless its nolimit column is set; completing a set again in the same
+#     game then gives a magic or rare item of that base instead, exactly what
+#     vanilla does with a second Torch. The row must also pass the game's own
+#     checks on its code, version, flag and ladder season columns.
+#
+# Progress
+#   - Counted per game, in memory only. Leaving the game clears it.
+#   - After a set drops its unique it starts over, so killing the whole set
+#     again in the same game counts again.
+#   - A monster can be in several sets; each set counts its kill.
+#
+# Server side only. Single player hosts its own server, so it applies there.
+#
+# Console command: bossdrop (status, every set, progress in the current game)
+#
+# Each unique name is looked up in uniqueitems.txt as soon as the game loads
+# its tables, and the result is written to the plugin log.
+
+[boss_set_unique_drop]
+
+# Master switch. false installs nothing, and the uber bosses keep the game's
+# own random unique large charm drop.
+enabled = true
+
+# One block per set:
+#   monsters  monstats.txt hcIdx values (the row id), 0 to 32767, on one line
+#             or several, # comments allowed. Repeating an id changes nothing.
+#   unique    the uniqueitems.txt index column, exactly as written there, in
+#             double quotes (single quotes when the name contains a ").
+#             31 characters at most, the length the game keeps.
+#
+# Any mistake in any block (an id that is not a number, a missing unique, ...)
+# stops the plugin from installing and is reported in the plugin log, so a
+# typo can never make a set smaller than intended. The game then keeps its
+# vanilla drop.
+
+# The uber Tristram set: Uber Mephisto, Uber Diablo, Uber Baal.
+[[boss_set_unique_drop.rule]]
+monsters = [704, 705, 709]
+unique = "Hellfire Torch"
+
+[[boss_set_unique_drop.rule]]
+monsters = [976, 977, 978]
+unique = "Eternal Hourglass"

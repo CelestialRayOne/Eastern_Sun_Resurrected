@@ -1,0 +1,64 @@
+# Immunity Clears DoTs
+#
+# When a monster becomes immune to every damage type, the life drains
+# already running on it end on the spot: poison, bleed, burning, and any
+# other timed effect that drains life through negative life regeneration
+# (itemstatcost.txt hpregen, stat 74). Once applied, those drains are no
+# longer poison or physical damage, only negative regeneration, so without
+# this plugin they keep hurting a boss through its invulnerable phase.
+#
+# How immunity is judged
+#   - Every drain remembers the unit that applied it (the same record the
+#     game uses to credit a poison kill). Immunity is judged against that
+#     unit, exactly the way the game's damage code judges a hit from it:
+#     the monster's resistance, then that unit's Sunder, then its -enemy
+#     resistance, then the Sanctuary rule (physical counts as 0 against an
+#     undead monster while the unit has Sanctuary on it).
+#   - A drain ends when, against its own source, every damage type listed in
+#     immune_to is at 100 or more. 100 is the game's own immunity line: at
+#     100 resistance a hit of that type deals no damage.
+#   - So a boss whose immunities a player breaks with Sunder keeps taking
+#     that player's poison and bleed. When the boss turns invulnerable and
+#     even the sundered values reach 100, the drains end.
+#   - If the unit that applied a drain is no longer in the game, its Sunder
+#     cannot be known, so that drain is left to run out on its own.
+#   - Hirelings are capped like players by the game, and allied monsters
+#     (monstats.txt Align 1) are capped while the Summon Resist Cap plugin is
+#     active, so neither is ever treated as immune. Players are never
+#     touched either: their caps keep them below 100.
+#
+# How a drain ends
+#   - Each drain that qualifies gets the current frame as its end frame, and
+#     the game's own state expiry runs for the monster: the same thing that
+#     happens when a poison runs out by itself. The state goes away, its
+#     overlay clears and players see it end.
+#   - This happens right before the monster's life regeneration for that
+#     frame, so no life is lost to a drain that has ended.
+#   - Any timed effect with negative life regeneration counts, so poison,
+#     bleed and burning need no state ids here. Effects without negative
+#     life regeneration (curses, auras, buffs) are left alone.
+#
+# Console command: immunitydots (status, counters, and the last decision with
+# every effective resistance it used)
+
+[immunity_dot_clear]
+
+# Master switch.
+enabled = true
+
+# Damage types the monster must be immune to, against the drain's source,
+# before that drain ends. Any of: physical, magic, fire, lightning, cold,
+# poison. Remove one only if your bosses' invulnerable phase does not cover
+# that damage type. Write the list on one line.
+immune_to = ["physical", "magic", "fire", "lightning", "cold", "poison"]
+
+# Write one line to the plugin log for each monster whose drains are ended:
+# monster class id (monstats.txt row), how many drains ended, game frame.
+# Stops after 100 lines per session.
+log_clears = true
+
+# Write a line to the plugin log every time the decision for a drain changes:
+# the monster, the drain's state and life drain per frame, its source, the
+# effective value of every listed resistance against that source, and
+# whether the drain keeps running or ends. Stops after 2000 lines per session.
+debug = false

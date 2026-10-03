@@ -10,6 +10,11 @@
 #   perf           state of every fix and its counters
 #   perf reset     zero the counters
 #   perf verify    check the room index against the game's room lists
+#   perf memory    memory held by this plugin, the game's RAM and commit,
+#                  system headroom, and the game's video memory per GPU.
+#                  Read it before spawning missiles, while N are alive
+#                  and after they are gone: (during - before) / N is the
+#                  cost of one missile.
 #
 # This plugin replaces the separate plugins room-unit-index,
 # translation-queue, client-unit-loop, weak-instances and
@@ -48,6 +53,13 @@ weak_instances = true
 # Client: skip the per-unit re-lookup whose result the game only uses for
 # monsters and objects (it was thrown away for every missile).
 client_unit_loop = true
+
+# HD entity pool, in MB. Every HD entity component (every missile visual
+# among them) comes from one fixed pool the game makes 70 MB big. Around
+# 16k missiles it is full and the game crashes ("Unable to allocate for
+# entity pool"). This makes it bigger. Memory is only used as the game
+# fills it. 70 or less (or 0) leaves the game's 70 MB; at most 2040.
+entity_pool_mb = 1024
 
 # HD layer: find a removed unit's HD entity by scanning the key array
 # instead of walking every entity with a lookup and a call each. The

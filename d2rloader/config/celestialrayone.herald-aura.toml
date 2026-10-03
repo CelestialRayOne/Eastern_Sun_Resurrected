@@ -1,0 +1,24 @@
+# celestialrayone.herald-aura
+#
+# Replaces HeraldThorns in the herald extra-aura roll with another skill.
+#
+# Every herald with Aura Enchanted rolls one extra aura, all three equally
+# likely: Concentration (113), Vigor (115) or HeraldThorns (428). This plugin
+# swaps HeraldThorns for the skill below. Nothing else about the roll changes:
+#   - level = monster level / 10, kept between 1 and 99
+#   - it is applied like an item aura (stat 151, item_aura), so the skill must
+#     be an aura skill in skills.txt
+#
+# WHEN IT APPLIES
+#   Only while d2rloader.toml has d2rcore.game_rules.aura_enchanted_selection
+#   at 3.2, which is D2RLoader's default. At 3.1 D2RLoader runs the game's own
+#   Aura Enchanted routine, which reads the herald table inside D2R.exe; the
+#   static patch herald-aura-428-to-555.json changes that table instead.
+#   Herald replacements made by an Encounters plugin use their own aura list
+#   and are not affected.
+#
+# Read when the plugin loads. Restart the game after editing.
+# Console: type herald-aura to see the live skill id and which path is active.
+
+# skills.txt *Id that replaces HeraldThorns. 428 = vanilla (no change).
+thorns_slot_skill = 555

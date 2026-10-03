@@ -1,0 +1,52 @@
+# Weapon Block Rules
+#
+# Decides WHICH WEAPONS let passive_weaponblock (itemstatcost.txt row 348)
+# roll. Stock D2R only allows an Assassin holding a weapon in each hand.
+# With this plugin, a character of ANY class can weapon block while holding:
+#
+#   - a claw in each hand, or
+#   - a sword in each hand, or
+#   - one sword wielded with both hands and nothing in the other hand.
+#
+# Never counts: one claw, a claw and a sword, a one-handed sword on its own,
+# and a sword next to a shield, including a Barbarian's two-handed sword
+# held in one hand next to a shield. Broken or disabled weapons never count.
+#
+# Everything else about weapon block stays stock:
+#   - the chance is the passive_weaponblock total, rolled 0 to 99, so 100 or
+#     more always blocks; it is not capped at 75 like shield block
+#   - shield block rolls first; weapon block only rolls if that fails
+#   - no weapon block while walking or running
+#   - a melee skill with alwayshit=1 in skills.txt skips the roll
+#   - monsters and hirelings keep the stock rule
+#   - a player shapeshifted into a monster form (werewolf, werebear) keeps
+#     the stock rule; a form that is a player class uses this plugin's rule
+#
+# The stat's param still works as before: param 0 always counts, any other
+# param counts only while a hand holds that itemtypes.txt row. When several
+# params qualify, the highest total wins; they do not add up.
+#
+# DATA NOTE: vanilla Weapon Block has passiveitype = h2h in skills.txt, so
+# its value only counts while a claw is in hand and a sword wielder gets
+# nothing from the skill. Leave passiveitype blank on that skill for swords
+# to use it; this plugin still requires the claw pair or the swords.
+#
+# A block only plays the character's block animation when the game has one
+# for the weapons in hand. Stock data has none for some sword setups, for
+# example AIBL2HS (an Assassin with a two-handed sword), so those blocks
+# happen without an animation instead of freezing the character. If you add
+# a block animation for that weapon class later, it plays.
+#
+# The character screen's chance-to-block line follows the same rule.
+# Console command: wbrules (status and counters).
+
+# Master switch. false = stock behaviour, nothing is patched.
+enabled = true
+
+# itemtypes.txt codes that count as claws. Both hands must hold one.
+# A code also covers the types under it (h2h covers h2h2).
+claw_item_types = ["h2h"]
+
+# itemtypes.txt codes that count as swords: one in each hand, or a single
+# one wielded with both hands.
+sword_item_types = ["swor"]

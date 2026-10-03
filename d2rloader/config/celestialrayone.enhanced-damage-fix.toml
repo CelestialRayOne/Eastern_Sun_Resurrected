@@ -1,0 +1,61 @@
+# Enhanced Damage Fix (celestialrayone.enhanced-damage-fix)
+#
+# Fixes the classic "ED/dmg bug": Enhanced Damage on any item that is not a
+# weapon (helm, armor, shield, belt, boots, gloves, jewel, charm, ring, amulet)
+# was lost whenever that item also carried flat minimum or maximum damage at the
+# moment the Enhanced Damage was applied.
+#
+# What players saw:
+#   - item with +max damage, ED jewel socketed: ED only raised minimum damage
+#   - item with +min damage, ED jewel socketed: ED only raised maximum damage
+#   - jewel with ED and +max (or +min): the matching side was lost
+#   - jewel with ED and both +min and +max (Protector's Stone): no ED at all
+#   - ED socketed first and the flat damage later: worked, hence the
+#     dependence on socketing order
+#   - inside a weapon: always worked
+#
+# Why it happened:
+#   Enhanced Damage is two stats, item_maxdamage_percent and
+#   item_mindamage_percent. Both use itemstatcost.txt op 13, which adds the
+#   percent of the item's OWN BASE damage. Only weapons have base damage. After
+#   applying it there, the stat engine keeps the percent from also reaching the
+#   character so weapon ED is not counted twice. The engine took that decision
+#   by asking "does this item have any min/max damage at all?", flat bonuses
+#   included, instead of "did op 13 multiply base damage here?". So on a helm or
+#   jewel with flat damage the percent was held back from the character while
+#   op 13 had multiplied nothing. The max side is decided against max damage and
+#   the min side against min damage, hence the one-sided cases.
+#
+# What the plugin changes:
+#   That one decision now uses op 13's own condition: the percent stays on the
+#   item only when the item has base damage of that kind.
+#     - weapons: exactly as before
+#     - every other item: its Enhanced Damage always reaches the character and
+#       multiplies total damage like any other off-weapon Enhanced Damage, no
+#       matter what else the item carries or the order things were socketed in
+#     - nothing is counted twice: op 13 never multiplies flat damage
+#     - Enhanced Defense and max durability % also use op 13; they keep the
+#       game's own decision
+#
+# Existing characters are fixed when they load: item stats are rebuilt from the
+# save and pass through the corrected decision.
+#
+# Balance: every non-weapon item that combines Enhanced Damage with flat damage
+# now gives its full Enhanced Damage.
+#
+# Technical: under D2RLoader 1.3.1 the stat engine runs in D2RCore.dll. The
+# plugin replaces the 12-byte op 13 decision at D2RCore RVA 0x3DC117 with a jump
+# to its own code and checks D2RCore's bytes first. On any other D2RCore build
+# it installs nothing and says so in the log and the console.
+#
+# Console command: edfix (install state and counters)
+
+[enhanced_damage_fix]
+
+# Master switch. false leaves the game completely vanilla.
+enabled = true
+
+# Write the first 16 repaired decisions to the plugin log: the items.txt row of
+# the item and the damage stat (min or max side). The first repair is always
+# logged once. Leave false unless you are checking a specific item.
+log_repairs = false

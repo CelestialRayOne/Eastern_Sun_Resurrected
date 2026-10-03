@@ -1,0 +1,42 @@
+# Tooltip Color Scope
+#
+# A color code inside one item stat's text no longer recolors the other stat
+# lines of the tooltip.
+#
+# Why it happens in the unmodified game:
+#   The tooltip is built bottom to top, and each block of stat lines is
+#   colored once, by a single color code in front of the whole block: blue
+#   for magic properties, green for partial set bonuses, gold for full set
+#   bonuses, white for gem and rune effect lines. The text renderer keeps the
+#   current color from one line to the next, so a color code inside one stat
+#   stays active for every stat line above it on screen.
+#   No single closing code in a string can be right for every block, because
+#   the same stat can land in blocks of different colors.
+#
+# What this plugin does:
+#   Right after every stat whose text contains a color code, the block's own
+#   color is put back. Each stat's color codes now only affect that stat's own
+#   text, whatever color its block has.
+#   - A stat whose text spans several lines keeps its color across its own lines.
+#   - Stats without color codes are left exactly as the game writes them.
+#   - A string no longer needs a closing color code at its end; a leftover
+#     one is harmless.
+#   - The damage-range lines and lines other plugins add to the stat list
+#     (the bleed line) are covered too.
+#   - The game's text colouring function is only called, never patched, so
+#     plugins that call or check it (the monster display does both) are
+#     unaffected whatever order the plugins load in.
+#
+# Covered blocks: magic properties (socketed items' properties included),
+# partial set bonuses, full set bonuses, and the gem and rune
+# "Weapons:/Armor:/Helms:/Shields:" lines. D2RLoader's Ctrl ranges view gets
+# the fix in its tooltip; the raw property text it reads for its roll data is
+# left exactly as before.
+#
+# Console: type colorscope for the status and counters.
+
+[color_scope]
+
+# Master switch. false installs nothing and leaves every tooltip exactly as
+# the game builds it.
+enabled = true

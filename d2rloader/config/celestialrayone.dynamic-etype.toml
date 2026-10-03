@@ -1,0 +1,78 @@
+# Dynamic EType (celestialrayone.dynamic-etype)
+#
+# Lets a skills.txt calc column decide a skill's EType, once per cast.
+#
+# HOW TO USE IT
+#   Put a formula in the chosen calc column of a skills.txt row. When a cast
+#   of that skill starts, the formula is evaluated in the caster's context and
+#   its result becomes the skill's EType for that whole cast. The result is an
+#   elemtypes.txt row number:
+#
+#       1 fire    2 ltng    3 mag     4 cold    5 pois    6 life
+#       7 mana    8 stam    9 stun   10 rand   11 burn   12 frze
+#
+#   0, a blank column, or anything outside 1 to 12 keeps the row's own EType.
+#   Example, cold while a stat is above 2, the row's own element otherwise:
+#       (stat('stat name'.accr)>2)?4:0
+#
+# WHAT FOLLOWS THE ELEMENT
+#   Everything the game reads from EType while it runs that cast:
+#   - the elemental damage and the matching mastery (Fire Mastery, ...)
+#   - physical to elemental conversion in melee skill functions
+#   - "+X to <element> Skills" on the cast's level, so a Fireball turned cold
+#     gets +Cold Skills and loses +Fire Skills
+#   - missiles whose missiles.txt Skill column (or MissileSkill flag) points at
+#     the skill, including sub-missiles created later by those missiles
+#   - missiles of the cast with damage of their own (missiles.txt EType, EMin,
+#     EMax, ELen), such as bolts or lingering fire a missile leaves behind:
+#     their missiles.txt EType takes the cast's element when they are created
+#     and again every time they hit, so explosions, area damage and
+#     pSrvDmgFunc 1 conversion all land in the cast's element
+#
+# ELEMENT LENGTH (ELen)
+#   The length that comes with an element (chill for cold, the duration of
+#   poison and burn, stun) is the ELen of the row the damage comes from,
+#   whatever element that row ends up as:
+#   - the skill and its linked missiles: skills.txt ELen, ELevLen1 to 3 and
+#     ELenSymPerCalc
+#   - a missile with damage of its own: its missiles.txt ELen and ELevLen1 to 3
+#   A row with a blank ELen gives the new element no length. A fire row only
+#   chills after turning cold if that row has ELen filled.
+#
+# WHAT DOES NOT
+#   - a missile whose missiles.txt EType is blank has no element of its own
+#     and stays without one
+#   - tooltips and the skill tree: they keep showing the row's EType
+#
+# WHEN IT IS DECIDED
+#   Once at the start of each cast, kept for every hit of that cast (a whole
+#   sequence, a whole channel tick, every missile it fires and every hit of
+#   those missiles). Procs decide when they fire. Aura pulses decide on every
+#   pulse. Changing the stat mid-cast does not change the cast already running.
+#
+# MONSTERS
+#   The formula runs for every unit that casts the skill: players, monsters,
+#   hirelings, summons. Never read stat('tohit') in it: the game ends the
+#   process when a formula reads attack rating for anything but a player.
+#
+# WHICH COLUMN TO PICK
+#   calc1 to calc6 are also read by hardcoded skill functions on some skills,
+#   so a skill that uses them for its own behaviour will fight over the cell.
+#   calc7 to calc10 are not read by anything hardcoded. srcdam-calc-field uses
+#   calc10 by default, so this one defaults to calc9.
+#
+# CONSOLE
+#   dynamic-etype            status and counters
+#   dynamic-etype log on     writes every decision to the plugin log
+#   dynamic-etype log off
+
+[dynamic_etype]
+
+# Master switch. false leaves the game completely untouched.
+enabled = true
+
+# Which skills.txt column holds the EType formula. 1 to 10 = calc1 to calc10.
+calc_column = 9
+
+# Writes one log line per decision. Useful once, noisy forever.
+log_decisions = false

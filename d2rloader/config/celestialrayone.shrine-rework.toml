@@ -1,0 +1,129 @@
+# Shrine Rework
+#
+# Two parts, each with its own switch:
+#   [removal]  takes shrine types out of the game
+#   [effects]  changes what the Armor, Combat, Resist, Skill and Mana
+#              Recharge shrines give
+#
+# Durations are not changed here: every shrine lasts its shrines.txt
+# Duration in frames (25 frames = 1 second, 1500 = 1 minute).
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: shrines (status, removed Codes, what was assigned, and the
+# shrine effect counters)
+
+# ---------------------------------------------------------------------------
+# Removal
+# ---------------------------------------------------------------------------
+# A removed shrine never appears on a shrine object again: the object gets
+# one of the remaining shrines instead, and the remaining shrines keep their
+# odds relative to each other.
+#
+# How a shrine object gets its type (objects.txt InitFn 1, when its level is
+# built):
+#   objects.txt Parm0 0          any shrines.txt row except row 0, equal odds
+#   objects.txt Parm0 1          a row whose effectclass is 2
+#   objects.txt Parm0 2          a row whose effectclass is 3
+#   objects.txt Parm0 any other  a row whose effectclass is 4, or 1 time in 10
+#                                a row whose effectclass is 1
+# If the area's level id is below the drawn row's LevelMin, the game draws
+# again, at most 8 times, then keeps the last draw anyway. Afterwards the game
+# itself turns row 4 into row 2, row 5 into row 3 and row 16 into row 18,
+# which is why the Health Exchange, Mana Exchange and Enirhs shrines never
+# appear.
+#
+# A row counts as removed when the shrine it ends up as (after that last
+# step) has one of the Codes below, so a row the game would turn into a
+# removed shrine is out too. The number of draws, LevelMin and everything
+# else stay as they are.
+#
+# Healing and mana wells are shrine objects too: they draw only from
+# effectclass 2 (Health) and 3 (Mana). When every shrine an object could draw
+# is removed, it draws from fallback_effectclass instead (1 = Refilling, which
+# restores both life and mana). Each level's guaranteed healing well is
+# forced to row 2 (Health) by the game; when that shrine is removed, the well
+# draws from effectclass 2 with the same fallback.
+#
+# If nothing is left in the fallback either, that object draws from the full
+# list exactly as the game does, and the plugin log reports it.
+
+[removal]
+
+# Switch for this part. false installs none of it.
+enabled = true
+
+# The shrines to remove, as shrines.txt Code values, 0 to 255. Code is the
+# column that decides what a shrine does. An empty list, [], removes nothing.
+# The vanilla Codes are:
+#    1 Refilling       2 Health          3 Mana            6 Armor
+#    7 Combat          8 Resist Fire     9 Resist Cold    10 Resist Lightning
+#   11 Resist Poison  12 Skill          13 Mana Recharge  14 Stamina
+#   15 Experience     17 Portal         18 Gem            19 Fire
+#   20 Monster        21 Exploding      22 Poison
+# The list may be written on one line or spread over several lines, and may
+# carry comments.
+removed_shrine_codes = [
+    2,    # Health Shrine
+    3,    # Mana Shrine
+    14,   # Stamina Shrine
+    17,   # Portal Shrine
+    19,   # Fire Shrine
+    21,   # Exploding Shrine
+    22,   # Poison Shrine
+]
+
+# The effectclass an object draws from when removal leaves its own
+# effectclass empty, 1 to 7. 0 turns the fallback off.
+fallback_effectclass = 1
+
+# true writes one plugin log line per shrine object: level id, objects.txt
+# Parm0, the pool it drew from, the row and its Code. For checking the result
+# in game; leave it false otherwise.
+log_picks = false
+
+# ---------------------------------------------------------------------------
+# Effects
+# ---------------------------------------------------------------------------
+# Every setting below can be switched off on its own; a shrine whose setting
+# is off works exactly as in the game, and so does every shrine not listed.
+
+[effects]
+
+# Switch for this part. false installs none of it.
+enabled = true
+
+# Armor Shrine (Code 6). While its state is on (128, shrine_armor), the
+# player takes this much less damage, in percent, from every hit: physical,
+# fire, lightning, cold, magic, poison, burning, and life, mana and stamina
+# drain. It is applied at the same point as the game's own difficulty damage
+# percent, before absorbs (Energy Shield and similar) and before
+# resistances, so the poison, burning and bleed a hit leaves behind are
+# reduced too. The shrine no longer gives defense, so its shrines.txt Arg0 is
+# not used. 0 turns this off.
+armor_damage_reduction = 33
+
+# Combat Shrine (Code 7). The stats it gives instead of attack rating and
+# damage, as itemstatcost.txt row ids, each with the value below. Its
+# shrines.txt Arg0 and Arg1 are not used. An empty list, [], turns this off.
+combat_stats = [398, 832, 833]
+combat_value = 50
+
+# Resist Fire, Cold, Lightning and Poison Shrines (Codes 8, 9, 10, 11). On
+# top of their resistance (shrines.txt Arg0, unchanged) they also give this
+# much maximum resistance of the same element: maxfireresist 40,
+# maxcoldresist 44, maxlightresist 42, maxpoisonresist 46. 0 turns this off.
+resist_max_bonus = 10
+
+# Skill Shrine (Code 12). Total bonus to all skills on Normal, Nightmare and
+# Hell. The game itself gives +2 while the shrine state (134) is on; the
+# plugin adds item_allskills for the rest. [2, 2, 2] turns this off.
+skill_bonus = [2, 4, 6]
+
+# Mana Recharge Shrine (Code 13). Regenerates this percent of maximum life
+# and of maximum mana every second, as hpregen and manarecovery on the
+# shrine state (135). The maximums are taken when the shrine is clicked.
+# Replaces the game's mana regeneration bonus, so its shrines.txt Arg0 is not
+# used. 0 turns this off.
+mana_recharge_regen_percent = 5

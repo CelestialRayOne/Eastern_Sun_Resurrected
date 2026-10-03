@@ -1,0 +1,36 @@
+# Absorb All Damage
+#
+# Makes skills.txt auraeventfunc 40 absorb every kind of damage, not only
+# physical damage.
+#
+# How auraeventfunc 40 works (unchanged):
+# - The skill's aurastate on the unit holds the absorb pool in aurastat1 and
+#   the maximum in aurastat2. aurastat2 must be above 0 or nothing is
+#   absorbed.
+# - Pool and damage use the same unit: 256 = 1 life.
+# - When the pool reaches 0 the state is removed.
+# - When something is absorbed and the hit has an attacker, the skill's hit
+#   overlay plays.
+# - Damage is absorbed before resistances, the same as Bone Armor and
+#   Cyclone Armor.
+#
+# What the plugin changes:
+# - The pool now takes, in this order: physical, fire, lightning, cold,
+#   magic, poison.
+# - Poison costs damage per frame x (length + 1): the hit deals one frame of
+#   poison right away and the poison state deals the rest. When the pool
+#   cannot cover all of it, the poison damage per frame drops by what the
+#   pool can pay, and the pool empties (rounded up, so no sliver is left).
+#   A poison whose damage is fully absorbed is not applied at all.
+# - When the states.txt poison row keeps a separate poison per source, each
+#   source is absorbed on its own.
+# - Not absorbed: burning (fire damage over time), and the length of chill
+#   and freeze. Chill and freeze still apply, as with Cyclone Armor.
+# - Every skills.txt row that uses auraeventfunc 40 gets this behaviour.
+#
+# Console command: absorballdamage (state and counters).
+
+[absorb_all_damage]
+
+# Master switch.
+enabled = true

@@ -1,0 +1,52 @@
+# Transfer to Stash
+#
+# Adds a "Transfer to Stash" button to the inventory panel.
+#
+# What it does
+#   - The button sits under the inventory grid, on the right, centred on the
+#     gold row. It only shows while the stash is open.
+#       keyboard/mouse  right edge 27 px (at 1080p) inside the grid's right edge
+#       controller      right edge on the grid frame's outer edge; a bigger
+#                       button with the next font size up
+#   - Pressing it does what Ctrl+click does with the stash open, for every item
+#     in the inventory and in the Horadric Cube at once. The game picks the
+#     stash tab for each item.
+#   - The position comes from the inventory layout the game loaded, so a mod's
+#     own inventory layout needs no numbers here. Where the gold display sits
+#     is up to the mod's layout; the plugin does not move it.
+#   - On a controller the d-pad reaches the button from the gold button, once
+#     the mod's controller inventory layout points gold_button's "right"
+#     navigation at celestialrayone.transfer-to-stash/TransferButtonController;
+#     A presses it.
+#   - Keyboard key: Options > Controls > Stash > Transfer to Stash, no default
+#     key. It does the same as the button, and only while the stash is open.
+#     Holding it down counts as one press.
+#   - The button art is inside the DLL. A mod can replace it with its own files
+#     under data/hd/global/ui/d2rloader/celestialrayone.transfer-to-stash/:
+#       transferbutton.sprite, transferbutton.lowend.sprite
+#         4 frames of 368x58 (184x29 for lowend)
+#       transferbuttoncontroller.sprite, transferbuttoncontroller.lowend.sprite
+#         4 frames of 404x82 (202x41 for lowend)
+#     Frame order: normal, pressed, disabled, hovered.
+#
+# Which items move
+#   - Items whose misc.txt row has AdvancedStashStackable = 1 and that have a
+#     slot in the stash layout (bankexpansionlayouthd.json). That is the same
+#     rule Ctrl+click uses.
+#   - Items already on their way to the stash (a transfer the server has not
+#     answered yet) are skipped.
+#   - The server still checks every item. A stash slot that is full keeps its
+#     items where they are.
+#
+# Limits
+#   - Works in single player and in TCP/IP games: the requests are the game's
+#     own Ctrl+click requests, so the host checks them as usual.
+#
+# Console command
+#   transfertostash   status, where the button was placed, the Controls key,
+#                     and what the last press sent
+#
+[transfer_to_stash]
+
+# Master switch. false installs nothing.
+enabled = true

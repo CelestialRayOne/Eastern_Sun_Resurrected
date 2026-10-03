@@ -1,0 +1,124 @@
+# celestialrayone.monster-affixes
+#
+# Monster affix rework for the unique monster mods in monumod.txt.
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3).
+# Console command: monsteraffixes (what is installed, casts, lockouts).
+#
+# An affix only spawns when its monumod.txt row has enabled = 1 and a pick
+# weight (upick). Nothing here changes which affixes can roll.
+#
+# Every skill below is a skills.txt *Id. -1 turns that entry off.
+#
+# HOW THE SKILLS ARE CAST
+#   The monster casts the skill the way the game casts a "chance to cast when
+#   struck" item skill: at a unit, or at the point it is moving or aiming
+#   toward when there is no unit. The cast costs nothing and plays no
+#   animation. Skill level = the monster's level, except for Cursed.
+#
+# WHEN STRUCK
+#   Fire, Cold and Lightning Enchanted, Teleportation and Stone Skin trigger
+#   every time the monster is struck by a hit that makes it flinch, a hit
+#   that does not, or a soft hit. The killing blow triggers nothing. The
+#   skill is aimed at the attacker. Only uniques and superuniques trigger;
+#   minions that inherit the affix (monumod.txt xfer = 1) do not.
+#
+# LOCKOUT
+#   After a cast, that affix cannot cast again on that monster for the cast
+#   skill's localdelay in skills.txt, in frames (25 = 1 second). localdelay is
+#   evaluated as a formula for the monster at the cast level, so lvl and other
+#   calc terms work. Blank or 0 means no lockout. Teleportation uses its own
+#   cooldown below instead.
+
+# FIRE / COLD / LIGHTNING ENCHANTED (when struck)
+#   Fire Enchanted's death explosion and Cold Enchanted's death nova are
+#   unchanged. Lightning Enchanted: setting a skill replaces its vanilla
+#   charged bolts; with -1 the vanilla bolts stay.
+fire_enchanted_skill = 1544
+cold_enchanted_skill = 1545
+lightning_enchanted_skill = 1546
+
+# STONE SKIN (when struck)
+#   Stone Skin no longer doubles defense or adds resistance.
+stone_skin_skill = 1547
+
+# TELEPORTATION (when struck)
+#   The affix still gives the monster its teleport skill (skills.txt Id 184)
+#   as before. On top of that, each struck hit has teleport_chance percent to
+#   cast teleport_skill at the attacker. After a cast nothing fires for
+#   teleport_cooldown_frames (25 = 1 second). While the cooldown runs no roll
+#   is made. -1 for teleport_skill turns this part off.
+teleport_skill = 184
+teleport_chance = 50
+teleport_cooldown_frames = 50
+
+# SPECTRAL HIT (attack and cast animations)
+#   Each time the monster starts an attack or cast animation (A1, A2, SC,
+#   S1 to S4), it picks one of the skills below at random and casts it at its
+#   target. Only the entries that are not -1 are picked from. The lockout is
+#   per monster: after any of these casts, none of them fire again until the
+#   cast skill's localdelay has passed. Uniques only, as before.
+#   The vanilla routine (a random element added to the monster's damage and to
+#   every missile it fires) is always removed, even with all four set to -1.
+spectral_hit_skill_1 = 1548
+spectral_hit_skill_2 = 1549
+spectral_hit_skill_3 = 1550
+spectral_hit_skill_4 = 1551
+
+# CURSED (when the monster lands a hit)
+#   Same trigger and chance as before: monumod.txt constants row 34 (Proc
+#   chance for the curse mod), rolled each time the monster lands a hit,
+#   minions excluded. On a success it casts one skill picked at random from
+#   this list, at the unit it hit, at level = monster level / 5 + 1. The
+#   picked skill's localdelay applies as a lockout.
+#   Monsters with the special rank flag 800h (bound demons) keep the stock
+#   routine untouched: Amplify Damage (skills.txt Id 66) with its own chance.
+#   An empty list keeps the stock routine for every monster.
+cursed_skills = [495, 508, 515, 520]
+
+# EXTRA STRONG (at spawn)
+#   Flat bonuses, the same for every difficulty, for uniques and for minions
+#   that inherit the affix. No attack rating bonus any more.
+#   strong_damage_percent: damagepercent (stat 25)
+#   strong_spell_damage_percent: added to each of passive_fire_mastery,
+#   passive_ltng_mastery, passive_cold_mastery, passive_pois_mastery,
+#   passive_mag2_mastery and passive_wind_mastery (stats 329 to 332, 482, 483)
+strong_damage_percent = 150
+strong_spell_damage_percent = 100
+
+# EXTRA FAST (at spawn)
+#   Walk speed is unchanged. On top of it, flat attack rate (stat 68,
+#   attackrate) and cast rate, per difficulty.
+#   fast_cast_rate_stat is the itemstatcost.txt id the cast rate goes to:
+#   105 is item_fastercastrate (93 is item_fasterattackrate).
+fast_attack_rate_normal = 25
+fast_attack_rate_nightmare = 50
+fast_attack_rate_hell = 75
+fast_cast_rate_normal = 25
+fast_cast_rate_nightmare = 50
+fast_cast_rate_hell = 75
+fast_cast_rate_stat = 105
+
+# MANA BURN (when the monster lands a hit)
+#   No mana drain damage any more. Instead every successful hit on a player
+#   burns mana_burn_percent of that player's maximum mana from the current
+#   mana. Missiles count, and minions that inherit the affix burn too.
+#   -1 keeps the stock mana drain.
+mana_burn_percent = 10
+
+# RESISTANCE (always on, nothing to configure)
+#   No affix grants resistance any more. Removed: Fire / Cold / Lightning
+#   Enchanted (+75 to their element), Poison (+75 poison), Mana Burn
+#   (+20 magic), Spectral Hit (+20 fire, cold, lightning), Stone Skin
+#   (+50 physical) and the old Magic Resistant (+40 fire, cold, lightning).
+#   Ghostly champions keep their 80% physical resist (a separate routine).
+#
+# MAGIC RESISTANT (always on, nothing to configure)
+#   At spawn, each resist separately gets +50, capped at 95.
+#   What the cap leaves unused is converted:
+#     fire, cold, lightning, magic: 1% absorb of that element per 2 points
+#     physical: 1 dodge, 1 avoid and 1 evade per 2 points
+#     poison: 1% poison length reduction per point
+#   A resist already at 95 or more gets no boost and converts all 50.
+#   Applied once at spawn, never re-evaluated. Same monsters as vanilla:
+#   minions that inherit the affix get nothing.

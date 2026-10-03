@@ -1,0 +1,38 @@
+# Monster Regen Start
+#
+# Makes a monster start regenerating life as soon as it gains hpregen,
+# whatever gave it (an aura or skill state, a curse, an item, a monster mod).
+#
+# Why it is needed:
+# - A monster only regenerates while its regeneration timer runs.
+# - The game stops that timer at full life and whenever hpregen is 0.
+# - The game starts it again in two places only: a hit that deals life
+#   damage to a monster that survives and already has hpregen, and a poison
+#   landing.
+# - So hpregen that arrives any other way does nothing until the monster is
+#   hit again. With an absorb shield up, hits deal no life damage, so the
+#   regeneration never starts at all.
+#
+# What the plugin does:
+# - Whenever a monster's total hpregen changes to a value other than 0, the
+#   plugin starts its regeneration timer, exactly the way the game does after
+#   a hit. The game then stops it by itself at full life or at 0 hpregen.
+# - Negative hpregen (a draining state) starts ticking right away as well,
+#   instead of waiting for the next hit.
+# - Hirelings and summons are monsters, so they are covered too.
+# - Players are not touched: their regeneration never stops.
+# - Dead monsters, and monsters being removed from the game, are skipped.
+#
+# Data requirement, itemstatcost.txt, row hpregen (74):
+# - fCallback must be 1. Without it the game never reports hpregen changing.
+#   The plugin checks the row every time the tables load, and stays off
+#   (with an error in its log) while a data set has the row without it.
+# - fCallback on hpregen has no other effect: the game's stat-change handler
+#   has no special case for hpregen.
+#
+# Console command: monsterregen (state, table check, counters).
+
+[monster_regen_start]
+
+# Master switch.
+enabled = true

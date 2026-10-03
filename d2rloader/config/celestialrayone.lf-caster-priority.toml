@@ -1,27 +1,78 @@
-# Lightning Fury Caster Priority
+# Lightning Fury: bolt sync and caster return
+# d2rl-celestialrayone-lightning-fury-caster-return.dll
 #
-# A Lightning Fury style hit sends its bolt at the caster instead of at a
-# random enemy when the hit fires exactly bolt_count bolts, the skill's
-# skills.txt aurafilter has aurafilter_bit set, and the caster is inside the
-# skill's range. Otherwise the stock enemy search runs untouched.
+# Covers every missile that uses the Lightning Fury hit functions:
+# missiles.txt pSrvHitFunc 20 on the server, pCltHitFunc 25 on the client.
+# A hit releases sHitPar2 bolts at units within sHitPar1 of the impact point
+# (the skill supplies both when the columns are blank). The bolt is the
+# missile named in the javelin row's HitSubMissile1 column.
+#
+# Console command: lf-caster-priority (state of both parts plus counters).
+#
+# ---------------------------------------------------------------------------
+# Part 1: bolt sync
+# ---------------------------------------------------------------------------
+# Stock D2R picks the bolt targets twice. The server picks the units that
+# take damage. Your client separately picks the units it draws bolts to,
+# using cHitPar1, cHitPar2 and CltHitSubMissile1. Nothing ties the two
+# together, so drawn bolts often fly at monsters that take no damage.
+#
+# With sync on, the server sends its own bolts to every client, the thrower
+# included, and clients stop drawing their own guesses. Every bolt on screen
+# is a bolt the server created, flying at the unit it actually targets.
+#
+# No missiles.txt edits are needed. The plugin applies this to every row
+# with pSrvHitFunc 20 that names a bolt in HitSubMissile1, and only to bolts
+# created by that hit; other uses of the same bolt row stay stock.
+#
+# Each client draws the server's bolt as an ordinary client bolt, created at
+# the server's spawn point and flying to the server's target, so it shows for
+# its full visual lifetime even when the server bolt dies a frame later.
+#
+#   * Synced bolts are drawn using the HitSubMissile1 row. CltHitSubMissile1
+#     is no longer used for these rows. The plugin log names every javelin
+#     row where the two columns point at different missiles.
+#   * Chains work the same way: a bolt that is itself a Lightning Fury
+#     missile syncs its own bolts when it hits.
+#   * The javelin itself is still drawn by your client's own prediction, so
+#     the bolts start where the server's javelin hit.
+#
+# Multiplayer: everyone in a TCP/IP game must run the same build of this
+# plugin. The server alone decides targets and damage, exactly as in stock
+# D2R, so a joining player cannot abuse this.
+
+[lf-bolt-sync]
+
+# true:  the server's bolts are what every client draws.
+# false: stock behaviour, client and server pick their bolts separately.
+sync_bolts = true
+
+# ---------------------------------------------------------------------------
+# Part 2: caster return
+# ---------------------------------------------------------------------------
+# A hit sends its bolt at the caster instead of at a random enemy when:
+#   * the hit fires exactly bolt_count bolts,
+#   * the skill's skills.txt aurafilter has aurafilter_bit set,
+#   * the caster is inside the hit's range of the impact point.
+# Otherwise the stock enemy search runs untouched.
 
 [lf-caster-priority]
 
-# Master switch. false leaves both hooks installed but inert.
+# Master switch for caster return. false leaves the hooks installed but inert.
 enabled = true
 
-# Mirror the server behaviour on the client so the visual bolt matches.
-# Only turn this off to isolate a client side problem.
+# Mirror caster return on the client. Only used while sync_bolts is false;
+# with sync on, the client already receives the server's own caster bolt.
 hook_client = true
 
-# skills.txt aurafilter bit that marks a skill as caster-priority.
+# skills.txt aurafilter bit that marks a skill as caster return.
 # Decimal or 0x hex. Default is bit 30, the bit the 2.4 patches used.
 aurafilter_bit = 0x40000000
 
-# Bolt count the hit must have for its bolt to be redirected.
-# 1 means only single-bolt hits are affected, which is the 2.4 behaviour.
+# Bolt count the hit must have for its bolt to go to the caster.
+# 1 means only single-bolt hits are affected.
 bolt_count = 1
 
-# Require the caster to be within the skill's range of the impact point.
+# Require the caster to be within the hit's range of the impact point.
 # false redirects the bolt no matter how far away the caster is.
 require_caster_in_range = true

@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"name": "Cleave Crescent Arc",
+	"description": "Gives the Cleave crescent its arc for every skill whose cltstfunc is 59 (the Cleave client start function), instead of only for the vanilla skill ids 391 (Cleave) and 419 (Goatman Cleave). In vanilla data only those two skills use cltstfunc 59, so vanilla behaviour is unchanged.",
+	"patches": [
+		{
+			"description": "SkillParam1 for animation-spawned effects: replace the hardcoded skill id test (391 or 419) with a test of the skill's cltstfunc column (59)",
+			"op": "bytes",
+			"rva": "0x00338EC5",
+			"expected": "81 E9 87 01 00 00 74 09 83 F9 1C 0F 85 48 01 00 00",
+			"bytes": "66 41 83 BD 48 01 00 00 3B 0F 85 4A 01 00 00 66 90"
+		}
+	]
+}

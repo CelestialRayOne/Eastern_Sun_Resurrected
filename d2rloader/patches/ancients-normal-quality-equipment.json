@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Ancients: normal-quality equipment",
+  "description": "The Act 5 Ancients (ancientbarb1-3) keep their hardcoded weapons and armor but receive them in normal quality instead of magic, so no random affixes roll. Their ring is not created, because rings are always magic (itemtypes.txt Magic = 1) and cannot spawn in normal quality. Replaces ancients-no-equipment.json.",
+  "patches": [
+    {
+      "description": "Ancient equip routine: remove the magic-quality override (cmovne r15d, esi). The item quality stays 2 (normal) for every item, the value the Colossal Ancients already use.",
+      "op": "nop",
+      "rva": "0x4951B0",
+      "expected": "44 0F 45 FE",
+      "size": 4
+    },
+    {
+      "description": "Ancient item table, ring entry ('rin ', ancientbarb3): body slot 6 -> 0, so the ring is skipped instead of being forced to magic. The table is shared, so colossal3 loses its ring too.",
+      "op": "bytes",
+      "rva": "0x1D1DCF8",
+      "expected": "72 69 6E 20 06",
+      "bytes": "72 69 6E 20 00"
+    }
+  ]
+}
