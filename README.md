@@ -12,12 +12,7 @@ There is no end in sight for the support of this mod unless announced otherwise.
 
 # Installation Guide
 
-## You need to download D2RLoader, which can be found here: https://d2rloader.net/download.html.
-After downloading d2rloader, you need to extract it in your main Diablo II Resurrected folder.
-
-## The next step is to download this mod 
-
-Download the
+Download the release zip on the right. Extract contents in the Mods folder. Then extract the d2rloader archive in the Diablo II Resurrected folder.
 
 # Changelogs
 You can view changelogs [here](https://celestialrayone.github.io/Eastern_Sun_Resurrected/docs/index.html). This is also a link to the mod's documentation.
