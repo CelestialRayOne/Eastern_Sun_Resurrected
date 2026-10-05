@@ -1,0 +1,78 @@
+# Gold Capacities - raises how much gold a character can carry and store
+#
+#                         vanilla              this plugin
+#   carried gold          level x 10,000       level x gold_per_level
+#   personal stash        2,500,000            stash_gold
+#   each shared tab       2,500,000            stash_gold
+#   shared stash total    tabs x 2,500,000     tabs x stash_gold
+#
+# The game uses one number for the personal stash and for every shared stash
+# tab, and D2RLoader builds the shared stash total from the same amount, so
+# stash_gold sets all three. The plugin changes the limits themselves, so
+# every check the game makes follows them: auto gold pickup, the gold dialog,
+# deposits and withdrawals, the server's checks, the "Gold Max" text and the
+# check made when the shared stash file is written.
+#
+# READ BEFORE LOWERING A VALUE OR REMOVING THE PLUGIN
+#   When a character loads, the game sets carried gold and personal stash
+#   gold to 0 if they are above the limit. It does not cut them down to the
+#   limit, it empties them. So:
+#   - never lower a value below what a character already holds;
+#   - never load a character holding more than the vanilla limits without
+#     this plugin running.
+#   D2RLoader records this plugin in each character's save environment. When
+#   the plugin is missing it warns that a saved plugin is missing before the
+#   character loads: cancel at that warning. The plugin also declines to load
+#   on purpose when it cannot apply its game changes (for example after a game
+#   update) and when enabled = false, so that warning appears in those cases
+#   too, instead of the game quietly emptying the gold.
+#   A shared stash tab above the limit is not emptied: the character fails to
+#   load until the limit is high enough again.
+#
+# HOW HIGH YOU CAN GO
+#   Carried gold and personal stash gold are saved in the character file with
+#   the CSvBits of the gold and goldbank rows in itemstatcost.txt. Vanilla is
+#   25 bits: 33,554,431 at most. Anything above is cut down to that when the
+#   character saves. Shared stash tabs are saved as full 32-bit numbers: up to
+#   2,147,483,647 each, and the shared stash total is capped there as well.
+#
+# This file lives at <scope>\d2rloader\config\celestialrayone.gold-capacities.toml
+# and is created with these defaults on first run. Delete it to get them back.
+# It is read once at plugin load, so restart the game after editing.
+# In TCP/IP games, use the same values on every machine.
+#
+# Type `gold-capacities` in the console to see the values in effect.
+
+
+[gold-capacities]
+
+# Master switch.
+#   true  - the limits below are applied.
+#   false - the plugin does not load at all (see the warning above).
+# Default: true
+enabled = true
+
+# Carried gold limit = character level x gold_per_level.
+# Vanilla is 10000.
+#
+# Must be between 1 and 16909320. The game multiplies in 32 bits, and that
+# range stays safe up to level 127, the highest level a character file holds.
+# With vanilla CSvBits, keep level x gold_per_level at or below 33,554,431:
+# 338933 or less for a level 99 cap, 305040 or less for a level 110 cap.
+#
+# Anything outside the range is refused and 100000 is used instead.
+# Default: 100000
+gold_per_level = 1000000
+
+# Personal stash limit, limit of each shared stash tab, and the amount the
+# shared stash total is built from (shared tabs x stash_gold, capped at
+# 2,147,483,647).
+# Vanilla is 2500000.
+#
+# Must be between 1 and 2147483647.
+# With vanilla CSvBits the personal stash keeps at most 33,554,431 through a
+# save, so above that the personal stash loses the difference on every save.
+#
+# Anything outside the range is refused and 25000000 is used instead.
+# Default: 25000000
+stash_gold = 2000000000

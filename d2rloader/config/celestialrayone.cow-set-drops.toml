@@ -1,0 +1,40 @@
+# Cow Set Drops
+#
+# Replaces the game's hardcoded Cow King's Leathers rule with a configurable one.
+#
+# The vanilla rule: a set item whose set is sets.txt row 29 (Cow King's
+# Leathers) can only roll on an item dropped by a monster with monstats.txt
+# hcIdx 391 (hellbovine) or 735 (cowking). It has nothing to do with the cow
+# level itself: a hellbovine anywhere can drop the set, nothing else can.
+#
+# This plugin removes the row 29 check completely. Only the sets listed in
+# restricted_set_rows are restricted, and only drops from the monsters listed
+# in monster_ids can roll them. With the defaults below no set is restricted,# so monster_ids does nothing until a set is listed.
+#
+# When a restricted set item is ruled out, the game picks another set item of
+# the same base. When there is none, the item drops as a magic item with
+# doubled durability, the same fallback as any failed set roll in vanilla.
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: cowsets (status, both lists, counters and the last
+# restricted set item checked)
+
+[cow_set_drops]
+
+# Master switch. false installs nothing, which keeps the vanilla row 29 rule.
+enabled = true
+
+# Monsters whose drops may roll the restricted sets, as monstats.txt hcIdx
+# values, 0 to 32767. A list may span several lines and carry # comments.
+# The default is the vanilla pair. A missing key also means this default.
+monster_ids = [391, 735, 764, 765, 766, 767, 768, 769, 770, 771, 772]
+
+# Sets that only those monsters can drop, by the row number the game gives the
+# set: count the sets in sets.txt from 0, starting with the first one under the
+# header. 0 to 32767. [] restricts nothing, and so does a missing key.
+# [29] brings back the vanilla rule for Cow King's Leathers.
+# cowsets shows the set item name of the last restricted row checked, which
+# confirms the number in game.
+restricted_set_rows = [62]
