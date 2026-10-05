@@ -1,0 +1,54 @@
+# Respec Counter
+#
+# Puts a counter, saved on the character, on D2RLoader's built-in respec
+# shortcut, and shows the count in the stat button's tooltip.
+#
+# The shortcut
+#   [d2rcore.player] enable_respec = true turns on the game's own respec
+#   shortcut: Alt + click a stat button (the + next to Strength, Dexterity,
+#   Vitality or Energy). It resets every stat and skill point.
+#   - Each use costs 1 from the counter.
+#   - At 0 the shortcut does nothing.
+#   - Akara's quest respec is not counted and not blocked.
+#
+# The counter
+#   The character's own value of the itemstatcost.txt row stat_id.
+#   - A new character starts with starting_respecs.
+#   - The plugin only spends it. Anything else may add to it, for example a
+#     misc.txt pSpell that adds the stat (the Token of Absolution).
+#   - Characters made before this plugin was installed start at 0.
+#
+# itemstatcost.txt row for stat_id
+#   - CSvBits above 0. Required: D2RLoader saves a character's own stats
+#     only when CSvBits is above 0. 8 holds 0 to 255.
+#   - Saved = 1. Required: the game sends a change made on the character to
+#     that player's client only for rows with Saved = 1, and the tooltip
+#     reads the client's copy.
+#   - CSvSigned 0, no op, ValShift blank: the values are plain counts.
+#   The plugin log reports this check every time the tables load.
+#
+# The tooltip
+#   The stat button's tooltip is the string TooltipCharacterScreenSpendStatPoint.
+#   The plugin replaces the first %d in it with the counter, for example:
+#     "Spend Stat Point\nRespecs Left: %d"
+#   \n starts the second row. A language whose text has no %d shows as is.
+#   With the plugin off, a %d in that string shows as %d.
+#
+# Multiplayer
+#   The host spends the counter and gives new characters their starting
+#   value, so the host needs this plugin. Each client needs it for its own
+#   tooltip.
+#
+# Console command
+#   respeccounter   status, the itemstatcost check, counters and your count.
+
+[respec_counter]
+
+# Master switch.
+enabled = true
+
+# itemstatcost.txt row of the counter.
+stat_id = 237
+
+# Respecs a new character starts with.
+starting_respecs = 5
