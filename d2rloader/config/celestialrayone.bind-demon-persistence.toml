@@ -1,0 +1,33 @@
+# Bind Demon Persistence (celestialrayone.bind-demon-persistence)
+#
+# Every bound demon is saved with the character and comes back in the next
+# game, not only the first one.
+#
+# The game's own save rules still decide whether a demon is saved:
+#   - the character is a Warlock (class 7)
+#   - the demon is a pet of pettype.txt row 21 (binddemon)
+#   - the demon has states.txt row 207 (bind_demon)
+#   - the monster has a row in monpet.txt
+#   - the character save still has room for it
+# Without the plugin the game only looks at the first binddemon pet and
+# saves at most that one. The plugin goes through all of them.
+#
+# Coming back into a game:
+#   Bind Demon's petmax is worked out while the character is still loading,
+#   before items and +skills count, so it can come out lower than the number
+#   of saved demons, and the game would remove the extra demons right away.
+#   While the character loads, the plugin raises the cap just enough to fit
+#   every saved demon. Once you are in game, your normal petmax applies the
+#   next time you bind a demon.
+#
+# Save file:
+#   Each demon is stored as its own copy of the game's normal demon block.
+#   If the plugin is ever removed, the game reads the first block and
+#   ignores the rest, so the character still loads with its first demon.
+#
+# Console: binddemonsave shows the install state, what the last save wrote,
+# what the last load restored, and why a demon was left out. The same lines
+# go to this plugin's log.
+
+# Set to false to turn the plugin off.
+enabled = true

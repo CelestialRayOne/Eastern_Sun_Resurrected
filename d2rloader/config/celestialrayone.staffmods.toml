@@ -1,0 +1,40 @@
+# celestialrayone.staffmods
+#
+# Staffmods: the class skills an item rolls because of its item type
+# (itemtypes.txt StaffMods), shown as "+N to <Skill> (<Class> Only)".
+# Rolled once, on the server, when the item is created.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3).
+# This plugin has no settings; this file documents what it does.
+# Console command: staffmods (counters and the last item rolled).
+#
+# THE LEVEL CAP (what this plugin adds)
+#   A staffmod can only be a skill whose skills.txt reqlevel is at or below
+#   the item's Required Level as the item stands before its staffmods: base
+#   item levelreq, magic, rare and crafted affixes, socketed items and the
+#   item_levelreq stat. It is the value the item shows, without any class
+#   adjustment. Below 1 counts as 1, so an item with no Required Level (most
+#   normal tier items) rolls reqlevel 1 skills only.
+#   Example: Required Level 8 allows reqlevel 1 and 6 skills, nothing higher.
+#   So staffmods never raise an item's Required Level.
+#
+# HOW A STAFFMOD IS PICKED (as before, except where marked NEW)
+#   Count: 0 to 3 per item, same roll as before.
+#   Tier: from the item level (the level of the monster or area it dropped
+#   from): 11 or lower tier 1, 12 to 18 tier 2, 19 to 24 tier 3, 25 to 36
+#   tier 4, above 36 tier 5. Each staffmod then shifts it by -2 to +1
+#   (lowest tier 1). Low quality items stay at tier 4 or below.
+#   Tiers 1 to 6 are skills.txt reqlevel 1, 6, 12, 18, 24 and 30.
+#   NEW: a tier above the item's Required Level drops to the highest tier at
+#   or below it that has skills for the class.
+#   Skill: one at random from the tier. A skill whose skills.txt itypea1 the
+#   item is not, or one the item already rolled, is tried again, up to 6
+#   tries. A tier with no skills for the class gives that staffmod nothing
+#   (for example the Sorceress has no reqlevel 6 skill).
+#   Value: +1 to +3, same roll as before.
+#
+# GAME MODES
+#   Reign of the Warlock games: a tier is the class skills with exactly that
+#   reqlevel; a class skill with any other reqlevel never rolls.
+#   Lord of Destruction games: a tier is 5 class skills in row order, as
+#   before; a skill above the Required Level counts as a failed try.
+#   Items of Classic characters use a separate routine, left untouched.

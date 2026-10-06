@@ -1,0 +1,883 @@
+# celestialrayone.material-upgrade
+#
+# Material Upgrade
+#   Shift + click on a material in the stash's stack tabs upgrades it in place,
+#   Alt + click downgrades it.
+#
+# The clicks (stack tabs only, so the stash is open)
+#   Shift + Left Click    one upgrade: 3 Chipped Amethyst become 1 Flawed
+#                         Amethyst in the Flawed Amethyst slot.
+#   Shift + Right Click   the whole stack, the remainder stays: 13 Chipped
+#                         Amethyst become 4 Flawed Amethyst and 1 Chipped stays.
+#   Alt + Left Click      one downgrade: 1 Wo Rune becomes 1 Nu Rune.
+#   Alt + Right Click     the whole stack downgraded the same way.
+#   - Results go straight into their own stack-tab slot; the cube is never
+#     touched. A chain with output = "inventory" puts its results in the
+#     inventory instead (the Randomizing Stone below).
+#   - When the result's slot is full, only as many as fit are made. The limit
+#     is D2RLoader's stack-tab limit, never a number from this file.
+#   - The last item of a chain has nowhere to go. Shift + click (upgrades) or
+#     Alt + click (downgrades) on it does nothing.
+#   - Items that are in no chain keep the game's own clicks. Rejuvenation
+#     Potions are in an upgrade chain, so in the stack tab Shift + click
+#     upgrades them instead of moving them to the belt. Outside the stash it
+#     still moves them to the belt. The game itself does nothing with Alt.
+#   - With an item on the cursor every click does what the game does, and so
+#     does Ctrl, or Shift and Alt together.
+#
+# On a controller
+#   Hold A (Cross on PlayStation) on a stack-tab material: the whole stack
+#   upgraded, the same as Shift + Right Click. Its prompt then reads
+#     Pick Up (Hold to Make 4 Flawed Amethyst)
+#   or, without enough items,
+#     Pick Up (Hold to Make 1 Flawed Amethyst: Needs 3, Have 2)
+#   The game's own hold on a stack-tab item is a quick move: to the belt for
+#   rejuvenation potions, to the inventory for anything else (the same as X).
+#   It is replaced only for items in an upgrade chain; a top tier then shows
+#   plain "Pick Up" and holding it does nothing. Tap A, X and Y keep the
+#   game's actions. Downgrades have no controller button: every button on a
+#   stack-tab item is already taken.
+#
+# The hover text
+#   An item that converts gets lines under its tooltip, for example on a
+#   stack of 13 Chipped Amethyst:
+#     Shift + Left Click to Make 1 Flawed Amethyst (Uses 3)
+#     Shift + Right Click to Make 4 Flawed Amethyst (Uses 12)
+#   and on a stack of 5 Wo Runes, which upgrade nowhere but downgrade:
+#     Alt + Left Click to Make 1 Nu Rune (Uses 1)
+#     Alt + Right Click to Make 5 Nu Rune (Uses 5)
+#   A Right Click line only shows when at least 2 conversions are possible.
+#   Without enough items there is one line instead:
+#     Shift + Left Click to Make 1 Flawed Amethyst (Needs 3, Have 2)
+#
+#   Every text is a string Key, like any other string of the game:
+#     MaterialUpgradeMakeOne              Shift + Left Click line
+#     MaterialUpgradeMakeAll              Shift + Right Click line
+#     MaterialUpgradeNotEnough            Shift line without enough items
+#     MaterialUpgradeDowngradeOne         Alt + Left Click line
+#     MaterialUpgradeDowngradeAll         Alt + Right Click line
+#     MaterialUpgradeDowngradeNotEnough   Alt line without enough items
+#     MaterialUpgradeHoldMake             the controller prompt's hold part
+#     MaterialUpgradeHoldNotEnough        the same, without enough items
+#     plus one Key per item that converts, set in the strings pairs below:
+#     the name of what that item turns into, shown as {result}
+#   The lines use the placeholders {made} {result} {used} {need} {have}.
+#
+#   The plugin carries all of these texts in 13 languages (strings.json,
+#   built into the DLL). When one of the mod's own string files (ui.json,
+#   item-names.json and the others) has an entry with the same Key, the mod's
+#   entry is shown instead. So:
+#   - to reword a text, add an entry with its Key to one of the mod's string
+#     files, in every language, the way any other string is added
+#   - for a new recipe, add an entry with a new Key the same way, and put that
+#     Key in the recipe's strings pair
+#   A color code in one of these texts colors the rest of its line.
+#
+# Recipes
+#   [[chain]]      an upgrade chain, used by Shift
+#   [[downgrade]]  a downgrade chain, used by Alt
+#   Both take the same settings:
+#   name     only for this file and the log
+#   consume  how many of an item one conversion uses (1 to 999)
+#   produce  how many of the next item it makes (1 to 999, default 1)
+#   items    the chain in the order it converts: each item turns into the
+#            next one, the last item has nowhere to go. Upgrade chains list
+#            the lowest tier first, downgrade chains the highest first. A
+#            chain that ends on its first item is a cycle (the Dragon Stone
+#            forms).
+#   strings  one { item = "...", key = "..." } pair for each item that
+#            converts. item is the item the player hovers, key is the string
+#            whose text names what that item turns into (the {result}).
+#   output   where the results go (optional):
+#              "stash"      their own stack-tab slot (the default)
+#              "inventory"  the player's inventory, for results that cannot
+#                           go in any stack tab. Each one needs a free spot
+#                           there; a full inventory stops the conversion, and
+#                           nothing is used for a result that did not fit.
+#
+#   The downgrades below are all one for one: Runes Wo to I and Ancient
+#   Scrolls (the same as cubemain.txt), Runes Zod to El, Ancient Decals, and
+#   Chipped Skull to Randomizing Stone (into the inventory). The other gems,
+#   crystals, maps and the other chains have none. Add a [[downgrade]] block
+#   to give them one.
+#
+#   Checked when the plugin loads; anything broken is skipped and logged:
+#   - item codes are misc, weapons or armor codes of up to 4 characters
+#   - an item converts in one chain of each kind only: the first chain that
+#     lists it as converting wins
+#   - an item that converts without a strings pair shows its line with the
+#     result's item code, and the log names it
+#   The game still checks every conversion on the host: the item clicked
+#   needs a stack-tab slot (AdvancedStashStackable = 1 and a slot in the
+#   stash layout), and so does the result unless output = "inventory". The
+#   stack must be the player's own.
+#
+# Stacks above 255
+#   The game reads and lowers a stack-tab count as one byte in two places,
+#   which breaks stacks of exactly 256, 512 and 768. The plugin fixes both
+#   when it loads. The log and the console command say whether it did.
+#
+# TCP/IP games
+#   The host needs this plugin too, same version.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+#
+# Console command
+#   materialupgrade   status, recipes loaded, controller, last requests
+
+[material_upgrade]
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# ---------------------------------------------------------------------------
+# Upgrades (Shift)
+# ---------------------------------------------------------------------------
+
+[[chain]]
+name    = "Amethyst (gem)"
+consume = 3
+produce = 1
+items   = ["gcv", "gfv", "gsv", "gzv", "gpv", "gvb"]
+strings = [
+    { item = "gcv", key = "MaterialUpgrade_gcv" },
+    { item = "gfv", key = "MaterialUpgrade_gfv" },
+    { item = "gsv", key = "MaterialUpgrade_gsv" },
+    { item = "gzv", key = "MaterialUpgrade_gzv" },
+    { item = "gpv", key = "MaterialUpgrade_gpv" },
+]
+
+[[chain]]
+name    = "Topaz (gem)"
+consume = 3
+produce = 1
+items   = ["gcy", "gfy", "gsy", "gly", "gpy", "gyb"]
+strings = [
+    { item = "gcy", key = "MaterialUpgrade_gcy" },
+    { item = "gfy", key = "MaterialUpgrade_gfy" },
+    { item = "gsy", key = "MaterialUpgrade_gsy" },
+    { item = "gly", key = "MaterialUpgrade_gly" },
+    { item = "gpy", key = "MaterialUpgrade_gpy" },
+]
+
+[[chain]]
+name    = "Sapphire (gem)"
+consume = 3
+produce = 1
+items   = ["gcb", "gfb", "gsb", "glb", "gpb", "gbb"]
+strings = [
+    { item = "gcb", key = "MaterialUpgrade_gcb" },
+    { item = "gfb", key = "MaterialUpgrade_gfb" },
+    { item = "gsb", key = "MaterialUpgrade_gsb" },
+    { item = "glb", key = "MaterialUpgrade_glb" },
+    { item = "gpb", key = "MaterialUpgrade_gpb" },
+]
+
+[[chain]]
+name    = "Emerald (gem)"
+consume = 3
+produce = 1
+items   = ["gcg", "gfg", "gsg", "glg", "gpg", "ggb"]
+strings = [
+    { item = "gcg", key = "MaterialUpgrade_gcg" },
+    { item = "gfg", key = "MaterialUpgrade_gfg" },
+    { item = "gsg", key = "MaterialUpgrade_gsg" },
+    { item = "glg", key = "MaterialUpgrade_glg" },
+    { item = "gpg", key = "MaterialUpgrade_gpg" },
+]
+
+[[chain]]
+name    = "Ruby (gem)"
+consume = 3
+produce = 1
+items   = ["gcr", "gfr", "gsr", "glr", "gpr", "grb"]
+strings = [
+    { item = "gcr", key = "MaterialUpgrade_gcr" },
+    { item = "gfr", key = "MaterialUpgrade_gfr" },
+    { item = "gsr", key = "MaterialUpgrade_gsr" },
+    { item = "glr", key = "MaterialUpgrade_glr" },
+    { item = "gpr", key = "MaterialUpgrade_gpr" },
+]
+
+[[chain]]
+name    = "Diamond (gem)"
+consume = 3
+produce = 1
+items   = ["gcw", "gfw", "gsw", "glw", "gpw", "gwb"]
+strings = [
+    { item = "gcw", key = "MaterialUpgrade_gcw" },
+    { item = "gfw", key = "MaterialUpgrade_gfw" },
+    { item = "gsw", key = "MaterialUpgrade_gsw" },
+    { item = "glw", key = "MaterialUpgrade_glw" },
+    { item = "gpw", key = "MaterialUpgrade_gpw" },
+]
+
+[[chain]]
+name    = "Skull (gem)"
+consume = 3
+produce = 1
+items   = ["skc", "skf", "sku", "skl", "skz", "skb"]
+strings = [
+    { item = "skc", key = "MaterialUpgrade_skc" },
+    { item = "skf", key = "MaterialUpgrade_skf" },
+    { item = "sku", key = "MaterialUpgrade_sku" },
+    { item = "skl", key = "MaterialUpgrade_skl" },
+    { item = "skz", key = "MaterialUpgrade_skz" },
+]
+
+[[chain]]
+name    = "Obsidian (gem)"
+consume = 3
+produce = 1
+items   = ["gck", "gfk", "gsk", "gzk", "gpk", "gbk"]
+strings = [
+    { item = "gck", key = "MaterialUpgrade_gck" },
+    { item = "gfk", key = "MaterialUpgrade_gfk" },
+    { item = "gsk", key = "MaterialUpgrade_gsk" },
+    { item = "gzk", key = "MaterialUpgrade_gzk" },
+    { item = "gpk", key = "MaterialUpgrade_gpk" },
+]
+
+[[chain]]
+name    = "Frozen Soul (crystal)"
+consume = 5
+produce = 1
+items   = ["xr0", "xl0", "xt0"]
+strings = [
+    { item = "xr0", key = "MaterialUpgrade_xr0" },
+    { item = "xl0", key = "MaterialUpgrade_xl0" },
+]
+
+[[chain]]
+name    = "Shadow Quartz (crystal)"
+consume = 5
+produce = 1
+items   = ["xr1", "xl1", "xt1"]
+strings = [
+    { item = "xr1", key = "MaterialUpgrade_xr1" },
+    { item = "xl1", key = "MaterialUpgrade_xl1" },
+]
+
+[[chain]]
+name    = "Bleeding Stone (crystal)"
+consume = 5
+produce = 1
+items   = ["xr2", "xl2", "xt2"]
+strings = [
+    { item = "xr2", key = "MaterialUpgrade_xr2" },
+    { item = "xl2", key = "MaterialUpgrade_xl2" },
+]
+
+[[chain]]
+name    = "Burning Sulphur (crystal)"
+consume = 5
+produce = 1
+items   = ["xr3", "xl3", "xt3"]
+strings = [
+    { item = "xr3", key = "MaterialUpgrade_xr3" },
+    { item = "xl3", key = "MaterialUpgrade_xl3" },
+]
+
+[[chain]]
+name    = "Dark Azurite (crystal)"
+consume = 5
+produce = 1
+items   = ["xr4", "xl4", "xt4"]
+strings = [
+    { item = "xr4", key = "MaterialUpgrade_xr4" },
+    { item = "xl4", key = "MaterialUpgrade_xl4" },
+]
+
+[[chain]]
+name    = "Bitter Peridot (crystal)"
+consume = 5
+produce = 1
+items   = ["xr5", "xl5", "xt5"]
+strings = [
+    { item = "xr5", key = "MaterialUpgrade_xr5" },
+    { item = "xl5", key = "MaterialUpgrade_xl5" },
+]
+
+[[chain]]
+name    = "Pulsing Opal (crystal)"
+consume = 5
+produce = 1
+items   = ["xr6", "xl6", "xt6"]
+strings = [
+    { item = "xr6", key = "MaterialUpgrade_xr6" },
+    { item = "xl6", key = "MaterialUpgrade_xl6" },
+]
+
+[[chain]]
+name    = "Enigmatic Cinnabar (crystal)"
+consume = 5
+produce = 1
+items   = ["xr7", "xl7", "xt7"]
+strings = [
+    { item = "xr7", key = "MaterialUpgrade_xr7" },
+    { item = "xl7", key = "MaterialUpgrade_xl7" },
+]
+
+[[chain]]
+name    = "Tomb Jade (crystal)"
+consume = 5
+produce = 1
+items   = ["xr8", "xl8", "xt8"]
+strings = [
+    { item = "xr8", key = "MaterialUpgrade_xr8" },
+    { item = "xl8", key = "MaterialUpgrade_xl8" },
+]
+
+[[chain]]
+name    = "Solid Mercury (crystal)"
+consume = 5
+produce = 1
+items   = ["xr9", "xl9", "xt9"]
+strings = [
+    { item = "xr9", key = "MaterialUpgrade_xr9" },
+    { item = "xl9", key = "MaterialUpgrade_xl9" },
+]
+
+[[chain]]
+name    = "Storm Amber (crystal)"
+consume = 5
+produce = 1
+items   = ["xrx", "xlx", "xtx"]
+strings = [
+    { item = "xrx", key = "MaterialUpgrade_xrx" },
+    { item = "xlx", key = "MaterialUpgrade_xlx" },
+]
+
+[[chain]]
+name    = "Tainted Tourmaline (crystal)"
+consume = 5
+produce = 1
+items   = ["xry", "xly", "xty"]
+strings = [
+    { item = "xry", key = "MaterialUpgrade_xry" },
+    { item = "xly", key = "MaterialUpgrade_xly" },
+]
+
+[[chain]]
+name    = "Runes, I to Wo"
+consume = 2
+produce = 1
+items   = [
+    "r01", "r02", "r03", "r04", "r05", "r06", "r07", "r08", "r09", "r10",
+    "r11", "r12", "r13", "r14", "r15", "r16", "r17", "r18", "r19", "r20",
+    "r21", "r22", "r23", "r24", "r25", "r26", "r27", "r28", "r29", "r30",
+    "r31", "r32", "r33", "r34", "r35", "r36", "r37", "r38", "r39", "r40",
+    "r41", "r42", "r43", "r44", "r45", "r46",
+]
+strings = [
+    { item = "r01", key = "MaterialUpgrade_r01" },
+    { item = "r02", key = "MaterialUpgrade_r02" },
+    { item = "r03", key = "MaterialUpgrade_r03" },
+    { item = "r04", key = "MaterialUpgrade_r04" },
+    { item = "r05", key = "MaterialUpgrade_r05" },
+    { item = "r06", key = "MaterialUpgrade_r06" },
+    { item = "r07", key = "MaterialUpgrade_r07" },
+    { item = "r08", key = "MaterialUpgrade_r08" },
+    { item = "r09", key = "MaterialUpgrade_r09" },
+    { item = "r10", key = "MaterialUpgrade_r10" },
+    { item = "r11", key = "MaterialUpgrade_r11" },
+    { item = "r12", key = "MaterialUpgrade_r12" },
+    { item = "r13", key = "MaterialUpgrade_r13" },
+    { item = "r14", key = "MaterialUpgrade_r14" },
+    { item = "r15", key = "MaterialUpgrade_r15" },
+    { item = "r16", key = "MaterialUpgrade_r16" },
+    { item = "r17", key = "MaterialUpgrade_r17" },
+    { item = "r18", key = "MaterialUpgrade_r18" },
+    { item = "r19", key = "MaterialUpgrade_r19" },
+    { item = "r20", key = "MaterialUpgrade_r20" },
+    { item = "r21", key = "MaterialUpgrade_r21" },
+    { item = "r22", key = "MaterialUpgrade_r22" },
+    { item = "r23", key = "MaterialUpgrade_r23" },
+    { item = "r24", key = "MaterialUpgrade_r24" },
+    { item = "r25", key = "MaterialUpgrade_r25" },
+    { item = "r26", key = "MaterialUpgrade_r26" },
+    { item = "r27", key = "MaterialUpgrade_r27" },
+    { item = "r28", key = "MaterialUpgrade_r28" },
+    { item = "r29", key = "MaterialUpgrade_r29" },
+    { item = "r30", key = "MaterialUpgrade_r30" },
+    { item = "r31", key = "MaterialUpgrade_r31" },
+    { item = "r32", key = "MaterialUpgrade_r32" },
+    { item = "r33", key = "MaterialUpgrade_r33" },
+    { item = "r34", key = "MaterialUpgrade_r34" },
+    { item = "r35", key = "MaterialUpgrade_r35" },
+    { item = "r36", key = "MaterialUpgrade_r36" },
+    { item = "r37", key = "MaterialUpgrade_r37" },
+    { item = "r38", key = "MaterialUpgrade_r38" },
+    { item = "r39", key = "MaterialUpgrade_r39" },
+    { item = "r40", key = "MaterialUpgrade_r40" },
+    { item = "r41", key = "MaterialUpgrade_r41" },
+    { item = "r42", key = "MaterialUpgrade_r42" },
+    { item = "r43", key = "MaterialUpgrade_r43" },
+    { item = "r44", key = "MaterialUpgrade_r44" },
+    { item = "r45", key = "MaterialUpgrade_r45" },
+]
+
+[[chain]]
+name    = "Runes, El to Zod"
+consume = 2
+produce = 1
+items   = [
+    "r51", "r52", "r53", "r54", "r55", "r56", "r57", "r58", "r59", "r60",
+    "r61", "r62", "r63", "r64", "r65", "r66", "r67", "r68", "r69", "r70",
+    "r71", "r72", "r73", "r74", "r75", "r76", "r77", "r78", "r79", "r80",
+    "r81", "r82", "r83",
+]
+strings = [
+    { item = "r51", key = "MaterialUpgrade_r51" },
+    { item = "r52", key = "MaterialUpgrade_r52" },
+    { item = "r53", key = "MaterialUpgrade_r53" },
+    { item = "r54", key = "MaterialUpgrade_r54" },
+    { item = "r55", key = "MaterialUpgrade_r55" },
+    { item = "r56", key = "MaterialUpgrade_r56" },
+    { item = "r57", key = "MaterialUpgrade_r57" },
+    { item = "r58", key = "MaterialUpgrade_r58" },
+    { item = "r59", key = "MaterialUpgrade_r59" },
+    { item = "r60", key = "MaterialUpgrade_r60" },
+    { item = "r61", key = "MaterialUpgrade_r61" },
+    { item = "r62", key = "MaterialUpgrade_r62" },
+    { item = "r63", key = "MaterialUpgrade_r63" },
+    { item = "r64", key = "MaterialUpgrade_r64" },
+    { item = "r65", key = "MaterialUpgrade_r65" },
+    { item = "r66", key = "MaterialUpgrade_r66" },
+    { item = "r67", key = "MaterialUpgrade_r67" },
+    { item = "r68", key = "MaterialUpgrade_r68" },
+    { item = "r69", key = "MaterialUpgrade_r69" },
+    { item = "r70", key = "MaterialUpgrade_r70" },
+    { item = "r71", key = "MaterialUpgrade_r71" },
+    { item = "r72", key = "MaterialUpgrade_r72" },
+    { item = "r73", key = "MaterialUpgrade_r73" },
+    { item = "r74", key = "MaterialUpgrade_r74" },
+    { item = "r75", key = "MaterialUpgrade_r75" },
+    { item = "r76", key = "MaterialUpgrade_r76" },
+    { item = "r77", key = "MaterialUpgrade_r77" },
+    { item = "r78", key = "MaterialUpgrade_r78" },
+    { item = "r79", key = "MaterialUpgrade_r79" },
+    { item = "r80", key = "MaterialUpgrade_r80" },
+    { item = "r81", key = "MaterialUpgrade_r81" },
+    { item = "r82", key = "MaterialUpgrade_r82" },
+]
+
+[[chain]]
+name    = "Ancient Decals"
+consume = 2
+produce = 1
+items   = [
+    "01l", "02l", "03l", "04l", "05l", "06l", "07l", "08l", "09l", "10l",
+    "11l", "12l", "13l", "14l", "15l", "16l", "17l", "18l", "19l", "20l",
+    "21l", "22l", "23l", "24l", "25l", "26l", "27l", "28l", "29l", "30l",
+    "31l", "32l", "33l",
+]
+strings = [
+    { item = "01l", key = "MaterialUpgrade_01l" },
+    { item = "02l", key = "MaterialUpgrade_02l" },
+    { item = "03l", key = "MaterialUpgrade_03l" },
+    { item = "04l", key = "MaterialUpgrade_04l" },
+    { item = "05l", key = "MaterialUpgrade_05l" },
+    { item = "06l", key = "MaterialUpgrade_06l" },
+    { item = "07l", key = "MaterialUpgrade_07l" },
+    { item = "08l", key = "MaterialUpgrade_08l" },
+    { item = "09l", key = "MaterialUpgrade_09l" },
+    { item = "10l", key = "MaterialUpgrade_10l" },
+    { item = "11l", key = "MaterialUpgrade_11l" },
+    { item = "12l", key = "MaterialUpgrade_12l" },
+    { item = "13l", key = "MaterialUpgrade_13l" },
+    { item = "14l", key = "MaterialUpgrade_14l" },
+    { item = "15l", key = "MaterialUpgrade_15l" },
+    { item = "16l", key = "MaterialUpgrade_16l" },
+    { item = "17l", key = "MaterialUpgrade_17l" },
+    { item = "18l", key = "MaterialUpgrade_18l" },
+    { item = "19l", key = "MaterialUpgrade_19l" },
+    { item = "20l", key = "MaterialUpgrade_20l" },
+    { item = "21l", key = "MaterialUpgrade_21l" },
+    { item = "22l", key = "MaterialUpgrade_22l" },
+    { item = "23l", key = "MaterialUpgrade_23l" },
+    { item = "24l", key = "MaterialUpgrade_24l" },
+    { item = "25l", key = "MaterialUpgrade_25l" },
+    { item = "26l", key = "MaterialUpgrade_26l" },
+    { item = "27l", key = "MaterialUpgrade_27l" },
+    { item = "28l", key = "MaterialUpgrade_28l" },
+    { item = "29l", key = "MaterialUpgrade_29l" },
+    { item = "30l", key = "MaterialUpgrade_30l" },
+    { item = "31l", key = "MaterialUpgrade_31l" },
+    { item = "32l", key = "MaterialUpgrade_32l" },
+]
+
+[[chain]]
+name    = "Ancient Scrolls"
+consume = 2
+produce = 1
+items   = [
+    "01a", "02a", "03a", "04a", "05a", "06a", "07a", "08a", "09a", "10a",
+    "11a", "12a", "13a", "14a", "15a", "16a", "17a", "18a", "19a", "20a",
+    "21a", "22a", "23a", "24a", "25a", "26a", "27a", "28a", "29a", "30a",
+    "31a", "32a", "33a", "34a", "35a", "36a", "37a", "38a", "39a", "40a",
+    "41a", "42a", "43a", "44a", "45a", "46a", "47a", "48a", "49a", "50a",
+]
+strings = [
+    { item = "01a", key = "MaterialUpgrade_01a" },
+    { item = "02a", key = "MaterialUpgrade_02a" },
+    { item = "03a", key = "MaterialUpgrade_03a" },
+    { item = "04a", key = "MaterialUpgrade_04a" },
+    { item = "05a", key = "MaterialUpgrade_05a" },
+    { item = "06a", key = "MaterialUpgrade_06a" },
+    { item = "07a", key = "MaterialUpgrade_07a" },
+    { item = "08a", key = "MaterialUpgrade_08a" },
+    { item = "09a", key = "MaterialUpgrade_09a" },
+    { item = "10a", key = "MaterialUpgrade_10a" },
+    { item = "11a", key = "MaterialUpgrade_11a" },
+    { item = "12a", key = "MaterialUpgrade_12a" },
+    { item = "13a", key = "MaterialUpgrade_13a" },
+    { item = "14a", key = "MaterialUpgrade_14a" },
+    { item = "15a", key = "MaterialUpgrade_15a" },
+    { item = "16a", key = "MaterialUpgrade_16a" },
+    { item = "17a", key = "MaterialUpgrade_17a" },
+    { item = "18a", key = "MaterialUpgrade_18a" },
+    { item = "19a", key = "MaterialUpgrade_19a" },
+    { item = "20a", key = "MaterialUpgrade_20a" },
+    { item = "21a", key = "MaterialUpgrade_21a" },
+    { item = "22a", key = "MaterialUpgrade_22a" },
+    { item = "23a", key = "MaterialUpgrade_23a" },
+    { item = "24a", key = "MaterialUpgrade_24a" },
+    { item = "25a", key = "MaterialUpgrade_25a" },
+    { item = "26a", key = "MaterialUpgrade_26a" },
+    { item = "27a", key = "MaterialUpgrade_27a" },
+    { item = "28a", key = "MaterialUpgrade_28a" },
+    { item = "29a", key = "MaterialUpgrade_29a" },
+    { item = "30a", key = "MaterialUpgrade_30a" },
+    { item = "31a", key = "MaterialUpgrade_31a" },
+    { item = "32a", key = "MaterialUpgrade_32a" },
+    { item = "33a", key = "MaterialUpgrade_33a" },
+    { item = "34a", key = "MaterialUpgrade_34a" },
+    { item = "35a", key = "MaterialUpgrade_35a" },
+    { item = "36a", key = "MaterialUpgrade_36a" },
+    { item = "37a", key = "MaterialUpgrade_37a" },
+    { item = "38a", key = "MaterialUpgrade_38a" },
+    { item = "39a", key = "MaterialUpgrade_39a" },
+    { item = "40a", key = "MaterialUpgrade_40a" },
+    { item = "41a", key = "MaterialUpgrade_41a" },
+    { item = "42a", key = "MaterialUpgrade_42a" },
+    { item = "43a", key = "MaterialUpgrade_43a" },
+    { item = "44a", key = "MaterialUpgrade_44a" },
+    { item = "45a", key = "MaterialUpgrade_45a" },
+    { item = "46a", key = "MaterialUpgrade_46a" },
+    { item = "47a", key = "MaterialUpgrade_47a" },
+    { item = "48a", key = "MaterialUpgrade_48a" },
+    { item = "49a", key = "MaterialUpgrade_49a" },
+]
+
+[[chain]]
+name    = "Maps, Cellar of Pain line"
+consume = 3
+produce = 1
+items   = ["z01", "z05", "z09", "z13", "z19"]
+strings = [
+    { item = "z01", key = "MaterialUpgrade_z01" },
+    { item = "z05", key = "MaterialUpgrade_z05" },
+    { item = "z09", key = "MaterialUpgrade_z09" },
+    { item = "z13", key = "MaterialUpgrade_z13" },
+]
+
+[[chain]]
+name    = "Maps, Chasm of Horrors line"
+consume = 3
+produce = 1
+items   = ["z02", "z06", "z10", "z14", "z17"]
+strings = [
+    { item = "z02", key = "MaterialUpgrade_z02" },
+    { item = "z06", key = "MaterialUpgrade_z06" },
+    { item = "z10", key = "MaterialUpgrade_z10" },
+    { item = "z14", key = "MaterialUpgrade_z14" },
+]
+
+[[chain]]
+name    = "Maps, Crypt of Damnation line"
+consume = 3
+produce = 1
+items   = ["z03", "z07", "z11", "z15", "z20"]
+strings = [
+    { item = "z03", key = "MaterialUpgrade_z03" },
+    { item = "z07", key = "MaterialUpgrade_z07" },
+    { item = "z11", key = "MaterialUpgrade_z11" },
+    { item = "z15", key = "MaterialUpgrade_z15" },
+]
+
+[[chain]]
+name    = "Maps, Necropolis line"
+consume = 3
+produce = 1
+items   = ["z04", "z08", "z12", "z16", "z18"]
+strings = [
+    { item = "z04", key = "MaterialUpgrade_z04" },
+    { item = "z08", key = "MaterialUpgrade_z08" },
+    { item = "z12", key = "MaterialUpgrade_z12" },
+    { item = "z16", key = "MaterialUpgrade_z16" },
+]
+
+[[chain]]
+name    = "Dragon Stone forms (cycle)"
+consume = 1
+produce = 1
+items   = [
+    "ppp", "hly", "eee", "hh2", "ggg", "sss", "ttt", "vvv", "ppp",
+]
+strings = [
+    { item = "ppp", key = "MaterialUpgrade_ppp" },
+    { item = "hly", key = "MaterialUpgrade_hly" },
+    { item = "eee", key = "MaterialUpgrade_eee" },
+    { item = "hh2", key = "MaterialUpgrade_hh2" },
+    { item = "ggg", key = "MaterialUpgrade_ggg" },
+    { item = "sss", key = "MaterialUpgrade_sss" },
+    { item = "ttt", key = "MaterialUpgrade_ttt" },
+    { item = "vvv", key = "MaterialUpgrade_vvv" },
+]
+
+[[chain]]
+name    = "Rejuvenation Potions"
+consume = 3
+produce = 1
+items   = ["rvs", "rvl"]
+strings = [
+    { item = "rvs", key = "MaterialUpgrade_rvs" },
+]
+
+[[chain]]
+name    = "Ancient Decipherers"
+consume = 8
+produce = 1
+items   = ["ddd", "ppp"]
+strings = [
+    { item = "ddd", key = "MaterialUpgrade_ddd" },
+]
+
+# ---------------------------------------------------------------------------
+# Downgrades (Alt)
+# ---------------------------------------------------------------------------
+
+[[downgrade]]
+name    = "Runes, Wo to I"
+consume = 1
+produce = 1
+items   = [
+    "r46", "r45", "r44", "r43", "r42", "r41", "r40", "r39", "r38", "r37",
+    "r36", "r35", "r34", "r33", "r32", "r31", "r30", "r29", "r28", "r27",
+    "r26", "r25", "r24", "r23", "r22", "r21", "r20", "r19", "r18", "r17",
+    "r16", "r15", "r14", "r13", "r12", "r11", "r10", "r09", "r08", "r07",
+    "r06", "r05", "r04", "r03", "r02", "r01",
+]
+strings = [
+    { item = "r46", key = "MaterialDowngrade_r46" },
+    { item = "r45", key = "MaterialDowngrade_r45" },
+    { item = "r44", key = "MaterialDowngrade_r44" },
+    { item = "r43", key = "MaterialDowngrade_r43" },
+    { item = "r42", key = "MaterialDowngrade_r42" },
+    { item = "r41", key = "MaterialDowngrade_r41" },
+    { item = "r40", key = "MaterialDowngrade_r40" },
+    { item = "r39", key = "MaterialDowngrade_r39" },
+    { item = "r38", key = "MaterialDowngrade_r38" },
+    { item = "r37", key = "MaterialDowngrade_r37" },
+    { item = "r36", key = "MaterialDowngrade_r36" },
+    { item = "r35", key = "MaterialDowngrade_r35" },
+    { item = "r34", key = "MaterialDowngrade_r34" },
+    { item = "r33", key = "MaterialDowngrade_r33" },
+    { item = "r32", key = "MaterialDowngrade_r32" },
+    { item = "r31", key = "MaterialDowngrade_r31" },
+    { item = "r30", key = "MaterialDowngrade_r30" },
+    { item = "r29", key = "MaterialDowngrade_r29" },
+    { item = "r28", key = "MaterialDowngrade_r28" },
+    { item = "r27", key = "MaterialDowngrade_r27" },
+    { item = "r26", key = "MaterialDowngrade_r26" },
+    { item = "r25", key = "MaterialDowngrade_r25" },
+    { item = "r24", key = "MaterialDowngrade_r24" },
+    { item = "r23", key = "MaterialDowngrade_r23" },
+    { item = "r22", key = "MaterialDowngrade_r22" },
+    { item = "r21", key = "MaterialDowngrade_r21" },
+    { item = "r20", key = "MaterialDowngrade_r20" },
+    { item = "r19", key = "MaterialDowngrade_r19" },
+    { item = "r18", key = "MaterialDowngrade_r18" },
+    { item = "r17", key = "MaterialDowngrade_r17" },
+    { item = "r16", key = "MaterialDowngrade_r16" },
+    { item = "r15", key = "MaterialDowngrade_r15" },
+    { item = "r14", key = "MaterialDowngrade_r14" },
+    { item = "r13", key = "MaterialDowngrade_r13" },
+    { item = "r12", key = "MaterialDowngrade_r12" },
+    { item = "r11", key = "MaterialDowngrade_r11" },
+    { item = "r10", key = "MaterialDowngrade_r10" },
+    { item = "r09", key = "MaterialDowngrade_r09" },
+    { item = "r08", key = "MaterialDowngrade_r08" },
+    { item = "r07", key = "MaterialDowngrade_r07" },
+    { item = "r06", key = "MaterialDowngrade_r06" },
+    { item = "r05", key = "MaterialDowngrade_r05" },
+    { item = "r04", key = "MaterialDowngrade_r04" },
+    { item = "r03", key = "MaterialDowngrade_r03" },
+    { item = "r02", key = "MaterialDowngrade_r02" },
+]
+
+[[downgrade]]
+name    = "Runes, Zod to El"
+consume = 1
+produce = 1
+items   = [
+    "r83", "r82", "r81", "r80", "r79", "r78", "r77", "r76", "r75", "r74",
+    "r73", "r72", "r71", "r70", "r69", "r68", "r67", "r66", "r65", "r64",
+    "r63", "r62", "r61", "r60", "r59", "r58", "r57", "r56", "r55", "r54",
+    "r53", "r52", "r51",
+]
+strings = [
+    { item = "r83", key = "MaterialDowngrade_r83" },
+    { item = "r82", key = "MaterialDowngrade_r82" },
+    { item = "r81", key = "MaterialDowngrade_r81" },
+    { item = "r80", key = "MaterialDowngrade_r80" },
+    { item = "r79", key = "MaterialDowngrade_r79" },
+    { item = "r78", key = "MaterialDowngrade_r78" },
+    { item = "r77", key = "MaterialDowngrade_r77" },
+    { item = "r76", key = "MaterialDowngrade_r76" },
+    { item = "r75", key = "MaterialDowngrade_r75" },
+    { item = "r74", key = "MaterialDowngrade_r74" },
+    { item = "r73", key = "MaterialDowngrade_r73" },
+    { item = "r72", key = "MaterialDowngrade_r72" },
+    { item = "r71", key = "MaterialDowngrade_r71" },
+    { item = "r70", key = "MaterialDowngrade_r70" },
+    { item = "r69", key = "MaterialDowngrade_r69" },
+    { item = "r68", key = "MaterialDowngrade_r68" },
+    { item = "r67", key = "MaterialDowngrade_r67" },
+    { item = "r66", key = "MaterialDowngrade_r66" },
+    { item = "r65", key = "MaterialDowngrade_r65" },
+    { item = "r64", key = "MaterialDowngrade_r64" },
+    { item = "r63", key = "MaterialDowngrade_r63" },
+    { item = "r62", key = "MaterialDowngrade_r62" },
+    { item = "r61", key = "MaterialDowngrade_r61" },
+    { item = "r60", key = "MaterialDowngrade_r60" },
+    { item = "r59", key = "MaterialDowngrade_r59" },
+    { item = "r58", key = "MaterialDowngrade_r58" },
+    { item = "r57", key = "MaterialDowngrade_r57" },
+    { item = "r56", key = "MaterialDowngrade_r56" },
+    { item = "r55", key = "MaterialDowngrade_r55" },
+    { item = "r54", key = "MaterialDowngrade_r54" },
+    { item = "r53", key = "MaterialDowngrade_r53" },
+    { item = "r52", key = "MaterialDowngrade_r52" },
+]
+
+[[downgrade]]
+name    = "Ancient Scrolls, 50 to 1"
+consume = 1
+produce = 1
+items   = [
+    "50a", "49a", "48a", "47a", "46a", "45a", "44a", "43a", "42a", "41a",
+    "40a", "39a", "38a", "37a", "36a", "35a", "34a", "33a", "32a", "31a",
+    "30a", "29a", "28a", "27a", "26a", "25a", "24a", "23a", "22a", "21a",
+    "20a", "19a", "18a", "17a", "16a", "15a", "14a", "13a", "12a", "11a",
+    "10a", "09a", "08a", "07a", "06a", "05a", "04a", "03a", "02a", "01a",
+]
+strings = [
+    { item = "50a", key = "MaterialDowngrade_50a" },
+    { item = "49a", key = "MaterialDowngrade_49a" },
+    { item = "48a", key = "MaterialDowngrade_48a" },
+    { item = "47a", key = "MaterialDowngrade_47a" },
+    { item = "46a", key = "MaterialDowngrade_46a" },
+    { item = "45a", key = "MaterialDowngrade_45a" },
+    { item = "44a", key = "MaterialDowngrade_44a" },
+    { item = "43a", key = "MaterialDowngrade_43a" },
+    { item = "42a", key = "MaterialDowngrade_42a" },
+    { item = "41a", key = "MaterialDowngrade_41a" },
+    { item = "40a", key = "MaterialDowngrade_40a" },
+    { item = "39a", key = "MaterialDowngrade_39a" },
+    { item = "38a", key = "MaterialDowngrade_38a" },
+    { item = "37a", key = "MaterialDowngrade_37a" },
+    { item = "36a", key = "MaterialDowngrade_36a" },
+    { item = "35a", key = "MaterialDowngrade_35a" },
+    { item = "34a", key = "MaterialDowngrade_34a" },
+    { item = "33a", key = "MaterialDowngrade_33a" },
+    { item = "32a", key = "MaterialDowngrade_32a" },
+    { item = "31a", key = "MaterialDowngrade_31a" },
+    { item = "30a", key = "MaterialDowngrade_30a" },
+    { item = "29a", key = "MaterialDowngrade_29a" },
+    { item = "28a", key = "MaterialDowngrade_28a" },
+    { item = "27a", key = "MaterialDowngrade_27a" },
+    { item = "26a", key = "MaterialDowngrade_26a" },
+    { item = "25a", key = "MaterialDowngrade_25a" },
+    { item = "24a", key = "MaterialDowngrade_24a" },
+    { item = "23a", key = "MaterialDowngrade_23a" },
+    { item = "22a", key = "MaterialDowngrade_22a" },
+    { item = "21a", key = "MaterialDowngrade_21a" },
+    { item = "20a", key = "MaterialDowngrade_20a" },
+    { item = "19a", key = "MaterialDowngrade_19a" },
+    { item = "18a", key = "MaterialDowngrade_18a" },
+    { item = "17a", key = "MaterialDowngrade_17a" },
+    { item = "16a", key = "MaterialDowngrade_16a" },
+    { item = "15a", key = "MaterialDowngrade_15a" },
+    { item = "14a", key = "MaterialDowngrade_14a" },
+    { item = "13a", key = "MaterialDowngrade_13a" },
+    { item = "12a", key = "MaterialDowngrade_12a" },
+    { item = "11a", key = "MaterialDowngrade_11a" },
+    { item = "10a", key = "MaterialDowngrade_10a" },
+    { item = "09a", key = "MaterialDowngrade_09a" },
+    { item = "08a", key = "MaterialDowngrade_08a" },
+    { item = "07a", key = "MaterialDowngrade_07a" },
+    { item = "06a", key = "MaterialDowngrade_06a" },
+    { item = "05a", key = "MaterialDowngrade_05a" },
+    { item = "04a", key = "MaterialDowngrade_04a" },
+    { item = "03a", key = "MaterialDowngrade_03a" },
+    { item = "02a", key = "MaterialDowngrade_02a" },
+]
+
+[[downgrade]]
+name    = "Ancient Decals, 33 to 1"
+consume = 1
+produce = 1
+items   = [
+    "33l", "32l", "31l", "30l", "29l", "28l", "27l", "26l", "25l", "24l",
+    "23l", "22l", "21l", "20l", "19l", "18l", "17l", "16l", "15l", "14l",
+    "13l", "12l", "11l", "10l", "09l", "08l", "07l", "06l", "05l", "04l",
+    "03l", "02l", "01l",
+]
+strings = [
+    { item = "33l", key = "MaterialDowngrade_33l" },
+    { item = "32l", key = "MaterialDowngrade_32l" },
+    { item = "31l", key = "MaterialDowngrade_31l" },
+    { item = "30l", key = "MaterialDowngrade_30l" },
+    { item = "29l", key = "MaterialDowngrade_29l" },
+    { item = "28l", key = "MaterialDowngrade_28l" },
+    { item = "27l", key = "MaterialDowngrade_27l" },
+    { item = "26l", key = "MaterialDowngrade_26l" },
+    { item = "25l", key = "MaterialDowngrade_25l" },
+    { item = "24l", key = "MaterialDowngrade_24l" },
+    { item = "23l", key = "MaterialDowngrade_23l" },
+    { item = "22l", key = "MaterialDowngrade_22l" },
+    { item = "21l", key = "MaterialDowngrade_21l" },
+    { item = "20l", key = "MaterialDowngrade_20l" },
+    { item = "19l", key = "MaterialDowngrade_19l" },
+    { item = "18l", key = "MaterialDowngrade_18l" },
+    { item = "17l", key = "MaterialDowngrade_17l" },
+    { item = "16l", key = "MaterialDowngrade_16l" },
+    { item = "15l", key = "MaterialDowngrade_15l" },
+    { item = "14l", key = "MaterialDowngrade_14l" },
+    { item = "13l", key = "MaterialDowngrade_13l" },
+    { item = "12l", key = "MaterialDowngrade_12l" },
+    { item = "11l", key = "MaterialDowngrade_11l" },
+    { item = "10l", key = "MaterialDowngrade_10l" },
+    { item = "09l", key = "MaterialDowngrade_09l" },
+    { item = "08l", key = "MaterialDowngrade_08l" },
+    { item = "07l", key = "MaterialDowngrade_07l" },
+    { item = "06l", key = "MaterialDowngrade_06l" },
+    { item = "05l", key = "MaterialDowngrade_05l" },
+    { item = "04l", key = "MaterialDowngrade_04l" },
+    { item = "03l", key = "MaterialDowngrade_03l" },
+    { item = "02l", key = "MaterialDowngrade_02l" },
+]
+
+[[downgrade]]
+name    = "Chipped Skull to Randomizing Stone"
+consume = 1
+produce = 1
+output  = "inventory"
+items   = ["skc", "rnd"]
+strings = [
+    { item = "skc", key = "MaterialDowngrade_skc" },
+]
