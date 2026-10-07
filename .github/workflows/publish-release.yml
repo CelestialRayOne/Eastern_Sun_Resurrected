@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'mods/Eastern_Sun_Resurrected/Eastern_Sun_Resurrected.mpq/modinfo.json'
+      - 'Eastern_Sun_Resurrected.mpq/modinfo.json'
       - 'patchnotes/**'
   workflow_dispatch:
 
@@ -39,7 +39,7 @@ jobs:
         id: ver
         shell: pwsh
         run: |
-          $modinfo = Get-Content 'content/mods/Eastern_Sun_Resurrected/Eastern_Sun_Resurrected.mpq/modinfo.json' -Raw | ConvertFrom-Json
+          $modinfo = Get-Content 'content/Eastern_Sun_Resurrected.mpq/modinfo.json' -Raw | ConvertFrom-Json
           "version=$($modinfo.version)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
       - name: Short-circuit if release already exists
