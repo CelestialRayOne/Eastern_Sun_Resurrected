@@ -49,11 +49,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $tag = "${{ steps.ver.outputs.version }}"
-          $exists = (gh release view $tag --repo "$env:GITHUB_REPOSITORY" 2>$null) -ne $null
+          $null = gh release view $tag --repo $env:GITHUB_REPOSITORY 2>&1
+          $exists = ($LASTEXITCODE -eq 0)
+          $global:LASTEXITCODE = 0
           if ($exists) {
             Write-Host "Release $tag already exists. Nothing to do."
             "skip=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           } else {
+            Write-Host "Release $tag does not exist yet. Proceeding."
             "skip=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           }
 
