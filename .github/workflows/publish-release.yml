@@ -1,0 +1,68 @@
+﻿name: Publish ESR release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mods/Eastern_Sun_Resurrected/Eastern_Sun_Resurrected.mpq/modinfo.json'
+      - 'patchnotes/**'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout content repo
+        uses: actions/checkout@v4
+        with:
+          path: content
+
+      - name: Checkout launcher repo (private)
+        uses: actions/checkout@v4
+        with:
+          repository: CelestialRayOne/Eastern_Sun_Resurrected_Launcher
+          token: ${{ secrets.LAUNCHER_READ_TOKEN }}
+          path: launcher
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build launcher + publisher
+        working-directory: launcher
+        run: dotnet build esr_launcher.sln -c Release
+
+      - name: Read version from modinfo.json
+        id: ver
+        shell: pwsh
+        run: |
+          $modinfo = Get-Content 'content/mods/Eastern_Sun_Resurrected/Eastern_Sun_Resurrected.mpq/modinfo.json' -Raw | ConvertFrom-Json
+          "version=$($modinfo.version)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+
+      - name: Short-circuit if release already exists
+        id: check
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag = "${{ steps.ver.outputs.version }}"
+          $exists = (gh release view $tag --repo "$env:GITHUB_REPOSITORY" 2>$null) -ne $null
+          if ($exists) {
+            Write-Host "Release $tag already exists. Nothing to do."
+            "skip=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          } else {
+            "skip=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          }
+
+      - name: Run ESRPublish
+        if: steps.check.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          launcher/src/ESRPublish/bin/Release/ESRPublish.exe `
+            --input content `
+            --launcher-exe launcher/src/ESRLauncher/bin/Release/ESRLauncher.exe `
+            --publish

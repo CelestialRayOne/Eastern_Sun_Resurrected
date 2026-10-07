@@ -95,11 +95,16 @@
 #                           there; a full inventory stops the conversion, and
 #                           nothing is used for a result that did not fit.
 #
-#   The downgrades below are all one for one: Runes Wo to I and Ancient
-#   Scrolls (the same as cubemain.txt), Runes Zod to El, Ancient Decals, and
-#   Chipped Skull to Randomizing Stone (into the inventory). The other gems,
-#   crystals, maps and the other chains have none. Add a [[downgrade]] block
-#   to give them one.
+#   The downgrades below:
+#   - one for one: Runes Wo to I and Ancient Scrolls (the same as
+#     cubemain.txt), Runes Zod to El, Ancient Decals, and Chipped Skull to
+#     Randomizing Stone (into the inventory)
+#   - gems (1 into 3) and crystals (1 into 5): the exact reverse of their
+#     upgrades, so the total stays the same. 9 Chipped Amethyst upgrade to 3
+#     Flawed Amethyst and then 1 Amethyst; that Amethyst downgrades to 3
+#     Flawed Amethyst and then back to 9 Chipped Amethyst.
+#   Maps and the other chains have none. Add a [[downgrade]] block to give
+#   them one.
 #
 #   Checked when the plugin loads; anything broken is skipped and logged:
 #   - item codes are misc, weapons or armor codes of up to 4 characters
@@ -880,4 +885,232 @@ output  = "inventory"
 items   = ["skc", "rnd"]
 strings = [
     { item = "skc", key = "MaterialDowngrade_skc" },
+]
+
+# Gems: 1 into 3, the reverse of their upgrades
+
+[[downgrade]]
+name    = "Amethyst (gem)"
+consume = 1
+produce = 3
+items   = ["gvb", "gpv", "gzv", "gsv", "gfv", "gcv"]
+strings = [
+    { item = "gvb", key = "MaterialDowngrade_gvb" },
+    { item = "gpv", key = "MaterialDowngrade_gpv" },
+    { item = "gzv", key = "MaterialDowngrade_gzv" },
+    { item = "gsv", key = "MaterialDowngrade_gsv" },
+    { item = "gfv", key = "MaterialDowngrade_gfv" },
+]
+
+[[downgrade]]
+name    = "Topaz (gem)"
+consume = 1
+produce = 3
+items   = ["gyb", "gpy", "gly", "gsy", "gfy", "gcy"]
+strings = [
+    { item = "gyb", key = "MaterialDowngrade_gyb" },
+    { item = "gpy", key = "MaterialDowngrade_gpy" },
+    { item = "gly", key = "MaterialDowngrade_gly" },
+    { item = "gsy", key = "MaterialDowngrade_gsy" },
+    { item = "gfy", key = "MaterialDowngrade_gfy" },
+]
+
+[[downgrade]]
+name    = "Sapphire (gem)"
+consume = 1
+produce = 3
+items   = ["gbb", "gpb", "glb", "gsb", "gfb", "gcb"]
+strings = [
+    { item = "gbb", key = "MaterialDowngrade_gbb" },
+    { item = "gpb", key = "MaterialDowngrade_gpb" },
+    { item = "glb", key = "MaterialDowngrade_glb" },
+    { item = "gsb", key = "MaterialDowngrade_gsb" },
+    { item = "gfb", key = "MaterialDowngrade_gfb" },
+]
+
+[[downgrade]]
+name    = "Emerald (gem)"
+consume = 1
+produce = 3
+items   = ["ggb", "gpg", "glg", "gsg", "gfg", "gcg"]
+strings = [
+    { item = "ggb", key = "MaterialDowngrade_ggb" },
+    { item = "gpg", key = "MaterialDowngrade_gpg" },
+    { item = "glg", key = "MaterialDowngrade_glg" },
+    { item = "gsg", key = "MaterialDowngrade_gsg" },
+    { item = "gfg", key = "MaterialDowngrade_gfg" },
+]
+
+[[downgrade]]
+name    = "Ruby (gem)"
+consume = 1
+produce = 3
+items   = ["grb", "gpr", "glr", "gsr", "gfr", "gcr"]
+strings = [
+    { item = "grb", key = "MaterialDowngrade_grb" },
+    { item = "gpr", key = "MaterialDowngrade_gpr" },
+    { item = "glr", key = "MaterialDowngrade_glr" },
+    { item = "gsr", key = "MaterialDowngrade_gsr" },
+    { item = "gfr", key = "MaterialDowngrade_gfr" },
+]
+
+[[downgrade]]
+name    = "Diamond (gem)"
+consume = 1
+produce = 3
+items   = ["gwb", "gpw", "glw", "gsw", "gfw", "gcw"]
+strings = [
+    { item = "gwb", key = "MaterialDowngrade_gwb" },
+    { item = "gpw", key = "MaterialDowngrade_gpw" },
+    { item = "glw", key = "MaterialDowngrade_glw" },
+    { item = "gsw", key = "MaterialDowngrade_gsw" },
+    { item = "gfw", key = "MaterialDowngrade_gfw" },
+]
+
+[[downgrade]]
+name    = "Skull (gem)"
+consume = 1
+produce = 3
+items   = ["skb", "skz", "skl", "sku", "skf", "skc"]
+strings = [
+    { item = "skb", key = "MaterialDowngrade_skb" },
+    { item = "skz", key = "MaterialDowngrade_skz" },
+    { item = "skl", key = "MaterialDowngrade_skl" },
+    { item = "sku", key = "MaterialDowngrade_sku" },
+    { item = "skf", key = "MaterialDowngrade_skf" },
+]
+
+[[downgrade]]
+name    = "Obsidian (gem)"
+consume = 1
+produce = 3
+items   = ["gbk", "gpk", "gzk", "gsk", "gfk", "gck"]
+strings = [
+    { item = "gbk", key = "MaterialDowngrade_gbk" },
+    { item = "gpk", key = "MaterialDowngrade_gpk" },
+    { item = "gzk", key = "MaterialDowngrade_gzk" },
+    { item = "gsk", key = "MaterialDowngrade_gsk" },
+    { item = "gfk", key = "MaterialDowngrade_gfk" },
+]
+
+# Crystals: 1 into 5, the reverse of their upgrades
+
+[[downgrade]]
+name    = "Frozen Soul (crystal)"
+consume = 1
+produce = 5
+items   = ["xt0", "xl0", "xr0"]
+strings = [
+    { item = "xt0", key = "MaterialDowngrade_xt0" },
+    { item = "xl0", key = "MaterialDowngrade_xl0" },
+]
+
+[[downgrade]]
+name    = "Shadow Quartz (crystal)"
+consume = 1
+produce = 5
+items   = ["xt1", "xl1", "xr1"]
+strings = [
+    { item = "xt1", key = "MaterialDowngrade_xt1" },
+    { item = "xl1", key = "MaterialDowngrade_xl1" },
+]
+
+[[downgrade]]
+name    = "Bleeding Stone (crystal)"
+consume = 1
+produce = 5
+items   = ["xt2", "xl2", "xr2"]
+strings = [
+    { item = "xt2", key = "MaterialDowngrade_xt2" },
+    { item = "xl2", key = "MaterialDowngrade_xl2" },
+]
+
+[[downgrade]]
+name    = "Burning Sulphur (crystal)"
+consume = 1
+produce = 5
+items   = ["xt3", "xl3", "xr3"]
+strings = [
+    { item = "xt3", key = "MaterialDowngrade_xt3" },
+    { item = "xl3", key = "MaterialDowngrade_xl3" },
+]
+
+[[downgrade]]
+name    = "Dark Azurite (crystal)"
+consume = 1
+produce = 5
+items   = ["xt4", "xl4", "xr4"]
+strings = [
+    { item = "xt4", key = "MaterialDowngrade_xt4" },
+    { item = "xl4", key = "MaterialDowngrade_xl4" },
+]
+
+[[downgrade]]
+name    = "Bitter Peridot (crystal)"
+consume = 1
+produce = 5
+items   = ["xt5", "xl5", "xr5"]
+strings = [
+    { item = "xt5", key = "MaterialDowngrade_xt5" },
+    { item = "xl5", key = "MaterialDowngrade_xl5" },
+]
+
+[[downgrade]]
+name    = "Pulsing Opal (crystal)"
+consume = 1
+produce = 5
+items   = ["xt6", "xl6", "xr6"]
+strings = [
+    { item = "xt6", key = "MaterialDowngrade_xt6" },
+    { item = "xl6", key = "MaterialDowngrade_xl6" },
+]
+
+[[downgrade]]
+name    = "Enigmatic Cinnabar (crystal)"
+consume = 1
+produce = 5
+items   = ["xt7", "xl7", "xr7"]
+strings = [
+    { item = "xt7", key = "MaterialDowngrade_xt7" },
+    { item = "xl7", key = "MaterialDowngrade_xl7" },
+]
+
+[[downgrade]]
+name    = "Tomb Jade (crystal)"
+consume = 1
+produce = 5
+items   = ["xt8", "xl8", "xr8"]
+strings = [
+    { item = "xt8", key = "MaterialDowngrade_xt8" },
+    { item = "xl8", key = "MaterialDowngrade_xl8" },
+]
+
+[[downgrade]]
+name    = "Solid Mercury (crystal)"
+consume = 1
+produce = 5
+items   = ["xt9", "xl9", "xr9"]
+strings = [
+    { item = "xt9", key = "MaterialDowngrade_xt9" },
+    { item = "xl9", key = "MaterialDowngrade_xl9" },
+]
+
+[[downgrade]]
+name    = "Storm Amber (crystal)"
+consume = 1
+produce = 5
+items   = ["xtx", "xlx", "xrx"]
+strings = [
+    { item = "xtx", key = "MaterialDowngrade_xtx" },
+    { item = "xlx", key = "MaterialDowngrade_xlx" },
+]
+
+[[downgrade]]
+name    = "Tainted Tourmaline (crystal)"
+consume = 1
+produce = 5
+items   = ["xty", "xly", "xry"]
+strings = [
+    { item = "xty", key = "MaterialDowngrade_xty" },
+    { item = "xly", key = "MaterialDowngrade_xly" },
 ]
