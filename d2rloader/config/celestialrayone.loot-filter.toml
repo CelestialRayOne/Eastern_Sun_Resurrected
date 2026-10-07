@@ -1,0 +1,51 @@
+# celestialrayone.loot-filter
+#
+# Loot Filter
+#   D2RLAN-style loot filters in JSON. A filter can rename items, hide ground
+#   labels, color label backgrounds and borders, print chat lines and play
+#   sounds when an item drops.
+#
+# Where filters live
+#   Filters that ship with the mod:   <game>\mods\<mod>\LootFilters\
+#   Your own and imported filters:    <Saved Games>\Diablo II Resurrected\mods\<mod>\LootFilters\
+#   Sound files a filter plays sit in a "sounds" folder next to that filter.
+#   The launcher's Loot Filter tab manages all of this. Which filter is active,
+#   its level for each filter and whether sounds play are kept in
+#   selection.json in your own filters folder. Changing a filter or the
+#   selection while the game runs applies it at once.
+#
+# Keys (Options > Controls > Loot Filter, no default keys)
+#   Next Filter Level    switches to the filter's next level and says which.
+#   Show Hidden Items    shows the labels of hidden items until pressed again.
+#   The game's own loot filter toggle also shows every label while it is off.
+#
+# Hiding
+#   A hidden item gets no ground label, like the game's own loot filter does.
+#   The item itself stays on the ground and can still be hovered and picked
+#   up. Only items on the ground are ever hidden.
+#
+# Console
+#   lootfilter          shows the active filter, its level and any problems.
+#   lootfilter reload   reads the selection and the filter again.
+
+[loot_filter]
+# Turn the whole plugin off.
+enabled = true
+
+# The mod's own filter (a file name in <mod>\LootFilters) used while the
+# player has not picked one in the launcher. Empty: no filter.
+default_filter = ""
+
+# Your own filters folder. Empty: <Saved Games>\Diablo II Resurrected\mods\<mod>\LootFilters
+user_folder = ""
+
+# Volume for sound files, 0 to 100. Sounds from sounds.txt follow the game's
+# own volume settings.
+file_sound_volume = 80
+
+# Print the filter's title and level in chat when a game starts and when the
+# filter or its level changes.
+announce = true
+
+# Text added to the label of a hidden item while Show Hidden Items is on.
+hidden_marker = " ÿcO[H]"
