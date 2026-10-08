@@ -1,4 +1,25 @@
-﻿name: Publish ESR release
+﻿# =============================================================================
+# Drop this file into your CONTENT repo (Eastern_Sun_Resurrected) at:
+#   .github/workflows/publish-release.yml
+# =============================================================================
+#
+# What it does:
+#   On every push to main that touches d2rloader/metadata.json or patchnotes/, this
+#   workflow builds ESRPublish from the launcher repo, then runs it against
+#   the current content checkout to create a GitHub Release.
+#
+# Requires:
+#   - A `LAUNCHER_READ_TOKEN` repo secret: a fine-grained PAT with
+#     `Contents: Read` on the private Eastern_Sun_Resurrected_Launcher repo.
+#     Add it under Settings → Secrets and variables → Actions → New secret.
+#   - The repo's default GITHUB_TOKEN (automatic) — used to create the release.
+#   - Each release's version must be set in d2rloader/metadata.json's
+#     `metadata.modVersion` field.
+#   - A patchnotes/<version>.md file must exist for that version, or the
+#     publisher will refuse to publish.
+# =============================================================================
+
+name: Publish ESR release
 
 on:
   push:
@@ -19,7 +40,7 @@ jobs:
         with:
           path: content
 
-      - name: Checkout launcher repo (
+      - name: Checkout launcher repo (private)
         uses: actions/checkout@v5
         with:
           repository: CelestialRayOne/Eastern_Sun_Resurrected_Launcher
@@ -41,25 +62,25 @@ jobs:
         run: |
           $meta = Get-Content 'content/d2rloader/metadata.json' -Raw | ConvertFrom-Json
           $v = $meta.metadata.modVersion
-          if ([string]::IsNullOrWhiteSodVersion missing ind2rloader/metadata.json" }
+          if ([string]::IsNullOrWhiteSpace($v)) { throw "metadata.modVersion missing in d2rloader/metadata.json" }
           "version=$($v.Trim())" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
-      - name: Short-circuit if release
+      - name: Short-circuit if release already exists
         id: check
         shell: pwsh
         env:
-          GH_TOKEN: ${{ secrets.GITHUB
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $tag = "${{ steps.ver.outputs.version }}"
-          $null = gh release view $tagY 2>&1
+          $null = gh release view $tag --repo $env:GITHUB_REPOSITORY 2>&1
           $exists = ($LASTEXITCODE -eq 0)
           $global:LASTEXITCODE = 0
           if ($exists) {
-            Write-Host "Release $tag a"
+            Write-Host "Release $tag already exists. Nothing to do."
             "skip=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           } else {
             Write-Host "Release $tag does not exist yet. Proceeding."
-            "skip=false" | Out-File -Fppend
+            "skip=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           }
 
       - name: Run ESRPublish
@@ -67,7 +88,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          launcher/src/ESRPublish/bin/
+          launcher/src/ESRPublish/bin/Release/ESRPublish.exe `
             --input content `
-            --launcher-exe launcher/srLauncher.exe `
+            --launcher-exe launcher/src/ESRLauncher/bin/Release/ESRLauncher.exe `
             --publish
