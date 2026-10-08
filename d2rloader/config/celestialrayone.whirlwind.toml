@@ -1,6 +1,6 @@
 # Whirlwind - Whirlwind rework for Diablo II: Resurrected 3.3
 #
-# Four parts, each behind its own switch:
+# Ten parts, each behind its own switch:
 #   [ctc_while_uninterruptible]  item procs (chance to cast) fire while the
 #                                caster is Uninterruptible, optionally filtered
 #   [proc_start_fix]             a proc no longer takes over the caster's skill
@@ -8,8 +8,19 @@
 #                                Whirlwind after a Corpse Explosion proc)
 #   [dual_wield_same_target]     both dual-wielded weapons may strike the same
 #                                target in one Whirlwind hit
-#   [cyclone]                    Whirlwind follows the cursor for as long as
-#                                the button is held, and only that long
+#   [cyclone]                    Whirlwind follows the cursor, or the movement
+#                                stick on a controller, for as long as the
+#                                button is held, and only that long
+#   [death_while_whirlwinding]   a lethal hit kills the character during
+#                                Whirlwind instead of waiting for it to end
+#   [potions_while_whirlwinding] potions can be used during Whirlwind
+#   [whirlwind_with_bows]        Whirlwind works with bows and crossbows
+#   [whirlwind_speed_sync]       the server starts Whirlwind at the same
+#                                movement speed the client does
+#   [pets_follow_whirlwind]      summons, pets and hirelings follow the
+#                                character during Whirlwind
+#   [gold_while_whirlwinding]    Auto Gold Pickup keeps picking up gold during
+#                                Whirlwind
 #
 # Safety: the plugin verifies the original bytes of every site it touches, and
 # of every game function it calls, before it installs anything. On a game build
@@ -89,6 +100,13 @@ enabled = true
 # below. Holding the button never ends the Whirlwind by itself: when the
 # character reaches the point it was heading for it keeps spinning until the
 # cursor gives it somewhere new to go.
+# Steering never sets a movement speed of its own. The character moves at the
+# speed the game gives a Whirlwinding unit: walk speed scaled by faster
+# run/walk and by slows and haste, updated by the game whenever those change.
+# The one time steering asks for a speed is when a new route starts from a
+# standstill, because arriving at a point stops the path; it then runs the
+# game's own movement speed function (RVA 00350B40), the same one the game
+# runs itself.
 # Default: true
 enabled = true
 
@@ -111,6 +129,17 @@ near_cursor = "keep_heading"
 # Default: 3
 near_cursor_radius = 3
 
+# With a controller, Whirlwind follows the stick you move with (the left
+# stick unless you rebound it) for as long as the skill button is held,
+# from the moment it is pressed. The game's own controller aim (a point 2
+# subtiles ahead, or the enemy it docks to) only picks where the first spin
+# starts. What to do while the stick is not pushed:
+#   "spin_in_place" - stop moving and spin until the stick is pushed again.
+#   "keep_heading"  - keep moving in the last direction the stick gave.
+# Site: RVA 0014B89D (client).
+# Default: "spin_in_place"
+stick_released = "keep_heading"
+
 # While the button is held, Whirlwind pays its normal cost again every this
 # many game frames (25 frames is one second). Mana skills pay mana, skills cast
 # from charges use a charge. If the cost cannot be paid, Whirlwind ends. 0
@@ -123,3 +152,105 @@ mana_interval_frames = 25
 # Sites: RVA 0056A4E1 (server), RVA 00230B20 (client).
 # Default: true
 spin_at_melee_targets = true
+
+
+[death_while_whirlwinding]
+
+# Whirlwind makes the character Uninterruptible, and the game never kills an
+# Uninterruptible character on the spot: a lethal hit only marks the death as
+# pending (state 92), and the death happens when the Uninterruptible action
+# ends. With a cyclone Whirlwind that end might never come. With this on, the
+# frame a death becomes pending the Whirlwind ends, and the game's own
+# pending-death code kills the character right there, with the normal
+# Whirlwind teardown.
+# Site: shares the redirect at RVA 0042A99F (server).
+# Default: true
+enabled = true
+
+
+[potions_while_whirlwinding]
+
+# Vanilla blocks item use while the character is Uninterruptible, in three
+# places. The client's item-use lock refuses the belt keys, inventory use and
+# every other use path before anything is sent; the server then ignores the
+# use message (0x26, belt and inventory alike) in its message dispatcher, and
+# refuses it again in the use-item handler. With this on, using a potion is let
+# through all three while the character is Whirlwinding. Every other item stays
+# blocked exactly as before.
+# "Potion" is item type poti (itemtypes.txt row 9) and every type that
+# inherits from it.
+# Sites: RVA 001C7360, 001C738C (client);
+#        RVA 004F2FA0, 004F306E, 004F40C0, 004F4140 (server).
+# Default: true
+enabled = true
+
+
+[whirlwind_with_bows]
+
+# Player skill sequences are compiled into the game, one entry per weapon
+# class, and Whirlwind's sequence has no entry for bows or crossbows. With a
+# missile weapon the skill starts with no sequence to run: it spins for one
+# tick, stops, and leaves the character stuck Uninterruptible. With this on,
+# when the equipped weapon class has no entry, the sequence of the bare-handed
+# (hth) entry is used instead. Whirlwind's hand-to-hand entry is the same
+# 8-step sequence every melee weapon uses, so the hit timing is identical.
+# This covers every sequence skill that lacks an entry for the equipped weapon
+# class, not only Whirlwind, exactly like the 2.4 patch did. Sequences that do
+# have an entry for the weapon are untouched. Client and server share the code.
+# Site: RVA 003CB987 (sequence resolver 003CB890).
+# Default: true
+enabled = true
+
+
+[whirlwind_speed_sync]
+
+# The game moves a Whirlwinding character at walk speed scaled by faster
+# run/walk and by slows and haste (velocitypercent). The client applies that
+# the moment Whirlwind starts. The server start sets plain walk speed and only
+# switches to the scaled speed when a buff or debuff makes the game recompute
+# it. With any faster run/walk the two sides move at different speeds, drift
+# apart, and the server keeps pulling the character back, which shows as
+# stutter. The longer the Whirlwind, the worse it gets, so cyclone makes it
+# very visible. With this on, the server runs the game's movement speed
+# function right after a player's Whirlwind starts, exactly as the client
+# start does, so both sides move at the same speed from the first frame.
+# Players only. Monster Whirlwind is unchanged.
+# Site: RVA 0056A420 (server Whirlwind start, srvstfunc 38).
+# Default: true
+enabled = true
+
+
+[pets_follow_whirlwind]
+
+# Summons, pets and hirelings that fall behind follow their owner's trail:
+# the last 20 spots the character passed. Only walking, running and
+# knockback write that trail, never a skill, so during Whirlwind it stays
+# frozen where the Whirlwind started and every pet keeps heading back there.
+# A cyclone Whirlwind never ends, so they never catch up. With this on,
+# Whirlwind writes the trail exactly the way walking does: the character's
+# spot every 25 ms, once it is more than about 7 subtiles (squared distance
+# 45) from the last one. Pets then follow you as they do when you run.
+# Players only. The whirlwind console command shows how many trail points
+# Whirlwind has written.
+# Sites: shares the redirect at RVA 0042A99F (server); the trail is written
+# the same way as RVA 00429B8E (walk/run frame handler).
+# Default: true
+enabled = true
+
+
+[gold_while_whirlwinding]
+
+# The game's Auto Gold Pickup option does nothing during Whirlwind. The game
+# still finds the gold, but it picks gold up with a click, and every click is
+# refused while Whirlwind runs. The server also ignores pickup messages from an
+# Uninterruptible character. With this on, Auto Gold Pickup works during
+# Whirlwind the same way it works while walking: same option, same radius,
+# same delays, same server distance check. Like walking, it picks up gold while
+# the character is moving, not while it spins in place.
+# Only gold is affected. Clicks, every other item and the Whirlwind itself are
+# untouched. Nothing happens when Auto Gold Pickup is off in the game options.
+# Players only.
+# Sites: RVA 000FE689 (client); RVA 004F2FA0, 004F306E (server, shared with
+# potions_while_whirlwinding).
+# Default: true
+enabled = true

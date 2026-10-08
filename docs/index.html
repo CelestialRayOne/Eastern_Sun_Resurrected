@@ -132,7 +132,7 @@
                 padding-left: 8vw;">
                 <a class="navbar-link" href="installation_guide.html"
                     style="color: #cee7ff; text-decoration: none;">Installation Guide</a>
-                <a class="navbar-link" href="./changelogs.html"
+                <a class="navbar-link" href="Eastern Sun Resurrected Cube Recipes.html"
                     style="color: #cee7ff; text-decoration: none;">Documentation</a>
             </div>
             <img class="logo" src="./images/front-page/esr-logo.png" style="
@@ -168,7 +168,7 @@
             color: #cee7ff;
             text-align: center;
             line-height: 1.6;
-            margin-bottom: 100px;
+            margin-bottom: 50px;
         ">
             <img style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"
                 src="./images/front-page/content-box-main.png" />
@@ -186,21 +186,6 @@
                 ascendancy
                 classes, each offering distinct playstyles and itemization paths.</div>
         </div>
-        <div style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin-top: -50px;
-            margin-bottom: 50px;
-        ">
-            <iframe width="1280" height="720" src="https://www.youtube.com/embed/nbCeQaFtso4" title="Gameplay Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-
         <div class="content-section" style="
             display: flex;
             justify-content: space-between;
@@ -249,9 +234,7 @@
                 padding: 60px;
                 margin-left: 10px;
             ">
-                <img src="./images/front-page/skillshowcase1.png" style="width: 90%; margin-bottom: 1vw;" />
-                <img src="./images/front-page/skillshowcase2.png" style="width: 90%; margin-bottom: 1vw;" />
-                <img src="./images/front-page/skillshowcase3.png" style="width: 90%;" />
+                <video width="100%" src="./images/front-page/skillrework.mp4" autoplay loop muted playsinline></video>
             </div>
         </div>
         <div class="content-section inverse" style="
@@ -377,11 +360,48 @@
                 padding: 60px;
                 margin-right: 10px;
             ">
-                <img src="./images/front-page/mythicaluniqueshowcase.png" style="
-                    z-index: 1;
-                    pointer-events: none;
-                    width: 95%;
-                " />
+                <div class="mu-carousel" style="position: relative; z-index: 1; width: 95%;">
+                    <div class="mu-track" style="position: relative; overflow: hidden;">
+                        <img class="mu-slide" src="./images/front-page/soulengineshowcase.png"
+                            style="display: block; width: 100%;" />
+                        <img class="mu-slide" src="./images/front-page/inariusrodshowcase.png"
+                            style="display: none; width: 100%;" />
+                        <img class="mu-slide" src="./images/front-page/talrashawhispershowcase.png"
+                            style="display: none; width: 100%;" />
+                    </div>
+                    <button class="mu-prev" aria-label="Previous"
+                        style="position: absolute; left: -40px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #cee7ff; font-size: 40px; cursor: pointer; font-family: MedievalSharp, cursive;">&#8249;</button>
+                    <button class="mu-next" aria-label="Next"
+                        style="position: absolute; right: -40px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #cee7ff; font-size: 40px; cursor: pointer; font-family: MedievalSharp, cursive;">&#8250;</button>
+                    <div class="mu-dots" style="display: flex; justify-content: center; gap: 8px; margin-top: 10px;">
+                    </div>
+                </div>
+                <script>
+                    (function () {
+                        var root = document.currentScript.previousElementSibling;
+                        var slides = root.querySelectorAll('.mu-slide');
+                        var dotsBox = root.querySelector('.mu-dots');
+                        var i = 0, timer;
+                        var dots = Array.prototype.map.call(slides, function (_, n) {
+                            var d = document.createElement('span');
+                            d.style.cssText = 'width:10px;height:10px;border-radius:50%;background:#cee7ff;opacity:.35;cursor:pointer;';
+                            d.onclick = function () { show(n); restart(); };
+                            dotsBox.appendChild(d);
+                            return d;
+                        });
+                        function show(n) {
+                            i = (n + slides.length) % slides.length;
+                            slides.forEach(function (s, k) { s.style.display = k === i ? 'block' : 'none'; });
+                            dots.forEach(function (d, k) { d.style.opacity = k === i ? '1' : '.35'; });
+                        }
+                        function restart() { clearInterval(timer); timer = setInterval(function () { show(i + 1); }, 4000); }
+                        root.querySelector('.mu-prev').onclick = function () { show(i - 1); restart(); };
+                        root.querySelector('.mu-next').onclick = function () { show(i + 1); restart(); };
+                        root.addEventListener('mouseenter', function () { clearInterval(timer); });
+                        root.addEventListener('mouseleave', restart);
+                        show(0); restart();
+                    })();
+                </script>
             </div>
             <div style="
                 display: flex;
@@ -478,12 +498,8 @@
                 padding: 60px;
                 margin-right: 10px;
             ">
-                <img src="./images/front-page/craftingshowcase.png" style="
-                    z-index: 1;
-                    pointer-events: none;
-                    width: 85%;
-                    border-radius: 20px;
-                " />
+                <video width="100%" src="./images/front-page/craftingsystem.mp4" autoplay loop muted
+                    playsinline></video>
             </div>
             <div style="
                 display: flex;
@@ -504,13 +520,11 @@
             ">
                 <h2>Crafting System</h2>
                 <div class="content-text">
-                    Eastern Sun Resurrected features one of the most complex crafting systems found in an ARPG with
-                    hundreds
-                    of unique recipes. Most recipes are repeatable and can be combined, allowing players to refine,
-                    upgrade,
-                    or entirely transform items across multiple steps. The system includes forging, rerolling, adding
-                    new
-                    affixes, socket control, "dragon stoning" and many more.
+                    Eastern Sun Resurrected features one of the most complex crafting systems in ARPGs with
+                    thousands of unique recipes. Most recipes are repeatable and can be combined, allowing players to
+                    refine, upgrade, or entirely transform items across multiple steps.<br>
+                    In addition, the new stash tabs feature improved QoL, allowing you to transform crafting materials
+                    on the fly.
                 </div>
             </div>
         </div>
@@ -540,11 +554,9 @@
             ">
                 <h2>New Crossbow Mechanics</h2>
                 <div class="content-text">
-                    In classic Diablo II, crossbows were largely inferior to bows in both speed and versatility. In
-                    Eastern
-                    Sun Resurrected, crossbows have been fundamentally reworked. All crossbows now feature a base reload
-                    that follows the same formula as attack speed. Crossbows can fire up to 3 bolts by default and used
-                    bolts reload one at a time. Their total damage is increased by 50% and their effective attack speed
+                    In Eastern Sun Resurrected, crossbows have been fundamentally reworked. All crossbows now feature a
+                    reloading mechanism. Crossbows can fire up to 3 bolts by default and used bolts reload one at a
+                    time. To compensate, they come with a hefty total damage bonus and their effective attack speed
                     animation is a fixed 0.2 seconds.
                 </div>
             </div>
@@ -561,6 +573,126 @@
                 margin-left: 10px;
             ">
                 <img src="./images/front-page/crossbowshowcase.png" style="width: 90%; border-radius: 40px" />
+            </div>
+        </div>
+        <div class="content-section inverse" style="
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 40vw;
+            margin-bottom: 5vw;
+        ">
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+                width: 50%;
+                background: url('./images/front-page/content-box-showcase2.png') no-repeat center center;
+                background-size: 100% 100%;
+                padding: 40px;
+                margin-right: 10px;
+            ">
+                <img src="./images/front-page/launcher.png" style="
+                    z-index: 1;
+                    pointer-events: none;
+                    width: 85%;
+                    border-radius: 20px;
+                " />
+            </div>
+            <div style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+                width: 50%;
+                background: url('./images/front-page/content-box-text2.png') no-repeat center center;
+                background-size: 100% 100%;
+                padding: 60px;
+                font-family: MedievalSharp, cursive;
+                font-size: 20px;
+                color: #cee7ff;
+                margin-left: 10px;
+                text-align: center;
+                line-height: 30px;
+            ">
+                <h2>Dedicated Launcher</h2>
+                <div class="content-text">
+                    Eastern Sun Resurrected comes with a dedicated launcher that contains complex loot filters, support
+                    for patch notes and more.
+                </div>
+            </div>
+        </div>
+        <div style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: -50px;
+            margin-bottom: 50px;
+        ">
+            <div style="
+                max-width: 900px;
+                margin-bottom: 30px;
+                padding: 25px 40px;
+                box-sizing: border-box;
+                background: linear-gradient(180deg, rgba(20, 14, 10, 0.92), rgba(8, 6, 4, 0.92));
+                border: 1px solid #8a6a3a;
+                border-radius: 12px;
+                box-shadow: 0 0 0 1px #2a1d10, 0 8px 30px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(138, 106, 58, 0.15);
+                font-family: MedievalSharp, cursive;
+                color: #cee7ff;
+                text-align: center;
+            ">
+                <h2 style="margin: 0 0 10px 0;">See It In Action</h2>
+                <p style="font-size: 20px; line-height: 30px; margin: 0;">
+                    Want to find out more? Check out this gameplay video showcasing what Eastern Sun Resurrected has to
+                    offer.
+                </p>
+            </div>
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/nbCeQaFtso4" title="Gameplay Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 100%;">
+            </iframe>
+        </div>
+
+        <div style="
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 50px 0;
+        ">
+            <div style="
+                max-width: 900px;
+                padding: 25px 40px;
+                box-sizing: border-box;
+                background: linear-gradient(180deg, rgba(20, 14, 10, 0.92), rgba(8, 6, 4, 0.92));
+                border: 1px solid #8a6a3a;
+                border-radius: 12px;
+                box-shadow: 0 0 0 1px #2a1d10, 0 8px 30px rgba(0, 0, 0, 0.6), inset 0 0 25px rgba(138, 106, 58, 0.15);
+                font-family: MedievalSharp, cursive;
+                color: #cee7ff;
+                text-align: center;
+            ">
+                <h2 style="margin: 0 0 10px 0;">Ready To Play?</h2>
+                <p style="font-size: 20px; line-height: 30px; margin: 0 0 20px 0;">
+                    Follow the installation guide to get Eastern Sun Resurrected up and running.
+                </p>
+                <a href="installation_guide.html" style="
+                    display: inline-block;
+                    padding: 5px 25px;
+                    border: 1px solid #8a6a3a;
+                    border-radius: 8px;
+                    background: linear-gradient(180deg, #3a2a16, #1c140b);
+                    color: #cee7ff;
+                    font-size: 20px;
+                    text-decoration: none;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+                " onmouseover="this.style.borderColor='#d4a95a'; this.style.color='#ffffff';"
+                    onmouseout="this.style.borderColor='#8a6a3a'; this.style.color='#cee7ff';">Installation Guide</a>
             </div>
         </div>
         <div style="
