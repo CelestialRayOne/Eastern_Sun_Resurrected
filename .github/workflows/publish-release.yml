@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'Eastern_Sun_Resurrected.mpq/modinfo.json'
+      - 'd2rloader/metadata.json'
       - 'patchnotes/**'
   workflow_dispatch:
 
@@ -19,7 +19,7 @@ jobs:
         with:
           path: content
 
-      - name: Checkout launcher repo (private)
+      - name: Checkout launcher repo (
         uses: actions/checkout@v5
         with:
           repository: CelestialRayOne/Eastern_Sun_Resurrected_Launcher
@@ -35,29 +35,31 @@ jobs:
         working-directory: launcher
         run: dotnet build esr_launcher.sln -c Release
 
-      - name: Read version from modinfo.json
+      - name: Read version from d2rloader/metadata.json
         id: ver
         shell: pwsh
         run: |
-          $modinfo = Get-Content 'content/Eastern_Sun_Resurrected.mpq/modinfo.json' -Raw | ConvertFrom-Json
-          "version=$($modinfo.version)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          $meta = Get-Content 'content/d2rloader/metadata.json' -Raw | ConvertFrom-Json
+          $v = $meta.metadata.modVersion
+          if ([string]::IsNullOrWhiteSodVersion missing ind2rloader/metadata.json" }
+          "version=$($v.Trim())" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
-      - name: Short-circuit if release already exists
+      - name: Short-circuit if release
         id: check
         shell: pwsh
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB
         run: |
           $tag = "${{ steps.ver.outputs.version }}"
-          $null = gh release view $tag --repo $env:GITHUB_REPOSITORY 2>&1
+          $null = gh release view $tagY 2>&1
           $exists = ($LASTEXITCODE -eq 0)
           $global:LASTEXITCODE = 0
           if ($exists) {
-            Write-Host "Release $tag already exists. Nothing to do."
+            Write-Host "Release $tag a"
             "skip=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           } else {
             Write-Host "Release $tag does not exist yet. Proceeding."
-            "skip=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+            "skip=false" | Out-File -Fppend
           }
 
       - name: Run ESRPublish
@@ -65,7 +67,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          launcher/src/ESRPublish/bin/Release/ESRPublish.exe `
+          launcher/src/ESRPublish/bin/
             --input content `
-            --launcher-exe launcher/src/ESRLauncher/bin/Release/ESRLauncher.exe `
+            --launcher-exe launcher/srLauncher.exe `
             --publish
