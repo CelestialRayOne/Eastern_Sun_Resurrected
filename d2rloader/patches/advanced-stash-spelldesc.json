@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Advanced stash spelldesc",
+  "description": "Items in the advanced stash tabs (Gems, Materials, Runes) show their misc.txt spelldesc line in the tooltip, like in the inventory and the regular stash tabs. Ground items are not affected: their label never goes through the full item tooltip builder.",
+  "patches": [
+    {
+      "description": "AdvancedStashSlotWidget tooltip (sub_1402CE4D0), tooltip call at 0x2CE716: the 7th argument is the builder's skip-spelldesc flag, tested at 0x2BE1AA before the spelldesc builder 0x2C1B80 is called. It was r14b (= 1, set at 0x2CE651). Now a constant 0. Same length; the 6th argument at 0x2CE708 is untouched.",
+      "op": "bytes",
+      "rva": "0x2CE703",
+      "expected": "44 88 74 24 30",
+      "bytes": "C6 44 24 30 00"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# celestialrayone.transmute-hotkey
+#
+# Changes D2RLoader's "Transmute Horadric Cube" key (Options > Controls):
+#   - it transmutes with the Horadric Cube closed, from anywhere in the game,
+#     not only while the Horadric Cube or stash panel is open;
+#   - holding the key keeps transmuting until you let go.
+#
+# The key binding itself stays in D2RLoader's Controls menu.
+#
+# HOW IT TRANSMUTES
+#   The key does exactly what the Convert button does: the game collects the
+#   items in your cube and sends the transmute to the server. The server's
+#   own checks still apply: you must be alive, hold nothing on the cursor,
+#   and have the cube in your inventory. An empty cube does nothing.
+#
+# REPEAT WHILE HELD
+#   The first transmute happens when you press the key. If you keep holding
+#   it, the next one comes after repeat_delay_ms, then one every
+#   repeat_interval_ms until the key is released. The repeat also stops if
+#   you leave the game.
+#   A repeat that arrives before the server has finished the previous
+#   transmute is refused by the server and does nothing, so very short
+#   intervals only waste requests. The minimum is 50.
+#
+# Read when the game starts. Restart the game after editing.
+# Console: transmutehotkey shows the state and how many transmutes it sent.
+
+enabled = true
+
+# Milliseconds between the first transmute and the first repeat.
+repeat_delay_ms = 350
+
+# Milliseconds between repeats while the key stays down.
+repeat_interval_ms = 200

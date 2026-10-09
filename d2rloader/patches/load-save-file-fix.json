@@ -1,0 +1,14 @@
+﻿{
+  "version": 1,
+  "name": "Character list reads the whole save",
+  "description": "The character-select list (sub_14061CEF0, reached through D2RCore ReadOfflineCharacterSummaryWithEnvironment) copied only the first 16 KB (0x4000) of each .d2s into a fixed buffer, then walked every item. In D2RLoader extended saves an item cut off at that boundary fails D2RCore's item check, the summary fails and the character is left out of the list with no message. This raises the buffer, its clear and the copy capacity to 1 MiB (0x100000), D2RLoader's extended save limit, so the list reads the whole file. One edit, so the three sizes always change together.",
+  "patches": [
+    {
+      "description": "sub_14061CEF0: alloc size (mov edx @0x61CF4A), buffer clear size (mov ecx @0x61CF69) and copy capacity passed to ReadSavePreviewBytes (mov r8d @0x61CF81): 0x4000 -> 0x100000. Same-length immediates; every other byte in the range is unchanged.",
+      "op": "bytes",
+      "rva": "0x0061CF4A",
+      "expected": "BA 00 40 00 00 48 8B 00 FF 50 08 48 8B F8 E8 63 94 BE 00 33 D2 48 8B C8 4C 8B 00 41 FF 50 20 B9 00 40 00 00 4C 8B C7 4C 2B C7 33 D2 4C 03 C1 48 8B CF E8 8F 6D CB 00 41 B8 00 40 00 00",
+      "bytes": "BA 00 00 10 00 48 8B 00 FF 50 08 48 8B F8 E8 63 94 BE 00 33 D2 48 8B C8 4C 8B 00 41 FF 50 20 B9 00 00 10 00 4C 8B C7 4C 2B C7 33 D2 4C 03 C1 48 8B CF E8 8F 6D CB 00 41 B8 00 00 10 00"
+    }
+  ]
+}

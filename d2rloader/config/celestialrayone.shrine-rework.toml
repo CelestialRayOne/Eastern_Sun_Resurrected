@@ -1,9 +1,10 @@
 # Shrine Rework
 #
-# Two parts, each with its own switch:
+# Three parts, each with its own switch:
 #   [removal]  takes shrine types out of the game
 #   [effects]  changes what the Armor, Combat, Resist, Skill and Mana
 #              Recharge shrines give
+#   [sharing]  gives a clicked shrine's effect to everyone around it
 #
 # Durations are not changed here: every shrine lasts its shrines.txt
 # Duration in frames (25 frames = 1 second, 1500 = 1 minute).
@@ -11,8 +12,8 @@
 # Server side only. In single player the game hosts its own server, so it
 # applies there too.
 #
-# Console command: shrines (status, removed Codes, what was assigned, and the
-# shrine effect counters)
+# Console command: shrines (status, removed Codes, what was assigned, the
+# shrine effect counters and who sharing reached)
 
 # ---------------------------------------------------------------------------
 # Removal
@@ -127,3 +128,42 @@ skill_bonus = [2, 4, 6]
 # Replaces the game's mana regeneration bonus, so its shrines.txt Arg0 is not
 # used. 0 turns this off.
 mana_recharge_regen_percent = 5
+
+# ---------------------------------------------------------------------------
+# Sharing
+# ---------------------------------------------------------------------------
+# When a shrine is clicked, everyone within the radius below gets its effect
+# too: every other player, in your party or not, and every hireling and
+# summon of any player. The one who clicks gets it exactly as before. The
+# radius is measured from the shrine. Dead units, player corpses and units in
+# another act are left out.
+#
+# Who gets which shrine (shrines.txt Code):
+#   everyone in range       1 Refilling, 2 Health, 3 Mana, 6 Armor, 7 Combat,
+#                           8 to 11 Resist Fire, Cold, Lightning and Poison,
+#                           12 Skill, 13 Mana Recharge, 15 Experience, and a
+#                           Code with no effect of its own (the game refills
+#                           life and mana for it)
+#   other players only      4 Health Exchange, 5 Mana Exchange, 14 Stamina,
+#                           16 Enirhs, 18 Gem. They work on a player's own
+#                           stamina, name or inventory: on a summon, Enirhs
+#                           would crash the game and Gem would drop a gem
+#                           next to it.
+#   only the one clicking   17 Portal, 19 Fire, 20 Monster, 21 Exploding,
+#                           22 Poison. They act on the area around the
+#                           shrine, so sharing them would open several
+#                           portals, release several novas or upgrade
+#                           several monsters.
+#
+# Everyone gets the effect as [effects] above sets it.
+
+[sharing]
+
+# Switch for this part. false installs none of it.
+enabled = true
+
+# The radius in yards, from 1 to 1000. A yard is 1.5 game units (subtiles),
+# the same yard skill descriptions use: Inner Sight's "Radius: %d yards" line
+# in skilldesc.txt is its aura range in game units times 2, divided by 3.
+# 40 yards = 60 game units.
+radius_yards = 40

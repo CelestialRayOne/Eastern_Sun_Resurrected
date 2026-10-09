@@ -103,6 +103,18 @@ physical_color = 4
 use_align_column = true
 extra_monster_ids = []
 
+# Affixes not shown on minions, as monumod.txt ids. A boss passes every affix
+# whose monumod.txt xfer is 1 on to its minions, also the ones that do nothing
+# for a minion; the ones listed here are left out on minions. The boss always
+# shows all of its own. A minion left with no affix to show gets the game's
+# own type line, like a minion without affixes. [] shows everything.
+#   5 Extra Strong       6 Extra Fast         7 Cursed
+#   8 Magic Resistant    9 Fire Enchanted    17 Lightning Enchanted
+#  18 Cold Enchanted    25 Mana Burn         26 Teleportation
+#  27 Spectral Hit      28 Stone Skin        29 Multiple Shots
+#  30 Aura Enchanted
+minion_hidden_affixes = [9, 17, 18, 26, 27, 28]
+
 [debug]
 # Writes every data request and answer to the plugin log.
 log = false

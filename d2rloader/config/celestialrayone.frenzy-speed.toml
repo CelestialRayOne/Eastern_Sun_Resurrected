@@ -1,0 +1,59 @@
+# Frenzy Speed
+#
+# A stat that makes Frenzy faster. Every point takes one frame off each of
+# Frenzy's two swings. Nothing but Frenzy is affected.
+#
+# How the game times Frenzy
+#   Frenzy (skills.txt: anim SQ, seqnum 11) is not two separate attacks. It is
+#   one sequence compiled into the game, the same for every weapon pair:
+#     steps 1 to 9    A1 frames (main hand swing), first hit on step 5
+#     steps 10 to 17  S3 frames (off hand swing), second hit on step 10
+#   The whole double swing is timed as one piece:
+#     frames = ceil(4352 / rate)
+#   where rate is your normal attack speed (IAS, weapon speed, dual wield
+#   averaging, the -30 sequence penalty and the 175 cap all still apply).
+#
+# What the stat does
+#   Each point takes one frame off each swing, so two frames off the whole
+#   double swing. A 14 frame double swing (7 per swing) with 2 points becomes
+#   10 frames (5 per swing). Negative values add frames instead.
+#   The speed is set when a Frenzy swing starts, so a change in the stat
+#   shows from the next swing on.
+#   Only a player playing the Frenzy sequence (current skill frenzy_skill_id)
+#   is touched. Every other skill, sequence and animation keeps the game's own
+#   speed.
+#
+# Fastest possible Frenzy
+#   The game registers at most one hit per frame, and none in the frame that
+#   ends the sequence. Below 3 frames for the whole double swing the second
+#   hit would be lost (2 frames: first hit only, 1 frame: no hit at all). The
+#   plugin never makes Frenzy faster than the shortest length at which both
+#   hits still land, whatever the stat says.
+#
+# Server and client
+#   The game sets the speed in one function shared by the server (timing and
+#   hits) and every client (animation), and the plugin works inside it, so
+#   the two always agree.
+#
+# Console command
+#   frenzyspeed               status, counters and the last change
+#   frenzyspeed debug on|off  log every Frenzy speed change
+#   frenzyspeed reset         zero the counters
+#
+# Log: d2rloader/logs/celestialrayone.frenzy-speed.log
+
+[frenzy_speed]
+
+# Master switch.
+enabled = true
+
+# Debug log: one line per Frenzy speed change, at most 60 a second. Also
+# switchable in game (see above).
+debug = false
+
+# skills.txt row id of Frenzy (574 in Eastern Sun). -1 turns the plugin off.
+frenzy_skill_id = 574
+
+# itemstatcost.txt row id of the stat. Each point takes one frame off each
+# Frenzy swing.
+frames_stat_id = 920

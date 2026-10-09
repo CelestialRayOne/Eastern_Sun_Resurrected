@@ -1,0 +1,49 @@
+﻿{
+  "version": 1,
+  "name": "CollideFriend allies only",
+  "description": "missiles.txt CollideFriend: 0 = enemies only (unchanged), 1 = allies only, 2+ = allies and enemies (old behaviour). Server and client.",
+  "patches": [
+    {
+      "description": "Server collision filter: move the no-owner accept path to the new accept block",
+      "op": "bytes",
+      "rva": "0x467B68",
+      "expected": "74 1B",
+      "bytes": "74 1C"
+    },
+    {
+      "description": "Server collision filter: accept only when hostility differs from CollideFriend",
+      "op": "bytes",
+      "rva": "0x467B78",
+      "expected": "85 C0 75 09 41 38 86 AF 01 00 00 74 13 B8 01 00 00 00",
+      "bytes": "85 C0 0F 95 C0 41 38 86 AF 01 00 00 74 12 31 C0 FF C0"
+    },
+    {
+      "description": "Server collision handler: reject when hostility equals CollideFriend",
+      "op": "bytes",
+      "rva": "0x463B30",
+      "expected": "85 C0 75 09 41 38 85 AF 01 00 00 74 A9 41 0F B6 45 24",
+      "bytes": "85 C0 0F 95 C0 41 38 85 AF 01 00 00 74 A8 41 8A 45 24"
+    },
+    {
+      "description": "Client collision filter: move the no-owner accept path to the new accept block",
+      "op": "bytes",
+      "rva": "0x1BD6DB",
+      "expected": "74 1C",
+      "bytes": "74 1D"
+    },
+    {
+      "description": "Client collision filter: accept only when hostility differs from CollideFriend",
+      "op": "bytes",
+      "rva": "0x1BD6EC",
+      "expected": "85 C0 75 09 41 38 87 AF 01 00 00 74 12 B8 01 00 00 00",
+      "bytes": "85 C0 0F 95 C0 41 38 87 AF 01 00 00 74 11 31 C0 FF C0"
+    },
+    {
+      "description": "Client collision handler: reject when hostility equals CollideFriend",
+      "op": "bytes",
+      "rva": "0x1B8738",
+      "expected": "85 C0 75 0C 38 87 AF 01 00 00 0F 84 0E 02 00 00 0F B6 47 24",
+      "bytes": "85 C0 0F 95 C0 38 87 AF 01 00 00 0F 84 0D 02 00 00 8A 47 24"
+    }
+  ]
+}

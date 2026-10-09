@@ -1,5 +1,10 @@
-# Bind Demon Persistence (celestialrayone.bind-demon-persistence)
+# Bind Demon Persistence and Auras (celestialrayone.bind-demon-persistence)
 #
+# Two Bind Demon features, each with its own switch below.
+#
+# ---------------------------------------------------------------------------
+# 1. SAVE EVERY DEMON (save_every_demon)
+# ---------------------------------------------------------------------------
 # Every bound demon is saved with the character and comes back in the next
 # game, not only the first one.
 #
@@ -25,9 +30,82 @@
 #   If the plugin is ever removed, the game reads the first block and
 #   ignores the rest, so the character still loads with its first demon.
 #
-# Console: binddemonsave shows the install state, what the last save wrote,
-# what the last load restored, and why a demon was left out. The same lines
-# go to this plugin's log.
+# Game limit, not changed by this plugin: the game only puts a saved demon's
+# monster mods back when the monster was a champion, unique, superunique or
+# minion. A plain monster comes back without its calc2-calc5 mods, Aura
+# Enchanted included, so it has no aura after a relog.
+#
+# ---------------------------------------------------------------------------
+# 2. AURA LIST (aura_list, auras)
+# ---------------------------------------------------------------------------
+# Picks the aura of a bound demon from the auras list instead of
+# D2RLoader's built-in Aura Enchanted lists.
+#
+# Which demons get an aura: only demons with the Aura Enchanted monster mod
+# (monumod.txt row 30):
+#   - a new bind whose Bind Demon skills.txt calc2-calc5 add mod 30;
+#   - champions, uniques, superuniques and minions that already had Aura
+#     Enchanted before they were bound.
+# A demon is rolled when it is bound and again when it is restored from the
+# save. It works with both values of d2rloader.toml
+# d2rcore.game_rules.aura_enchanted_selection ("3.1" and "3.2").
+#
+# How the roll works:
+#   - Every entry the demon qualifies for is equally likely. List a skill
+#     twice to make it twice as likely.
+#   - The pick comes from the demon's monster seed. A restored demon keeps the
+#     seed it was saved with, so it comes back with the same aura.
+#   - Level = monster level / divisor, kept between 1 and 99. The monster
+#     level is the demon's level stat at the end of the bind.
+#   - The aura becomes the demon's active aura, the same way Aura Enchanted
+#     sets it.
+#   - If no entry qualifies (empty list, or every min_level is above the
+#     demon's level), the plugin gives no aura.
+#
+# Each entry:
+#   skill      skills.txt *Id of the aura (required, must be an aura skill)
+#   divisor    level = monster level / divisor (default 6)
+#   min_level  the entry only counts for demons of at least this monster
+#              level (default 0)
+#
+# The default list below is D2RLoader's own "3.2" Bind Demon list, so nothing
+# changes until you edit it. The names are the vanilla skills.txt rows.
+# Not affected: monsters that are not bound demons, and the herald extra aura.
+#
+# ---------------------------------------------------------------------------
+# Console
+# ---------------------------------------------------------------------------
+#   binddemonsave   what the last save wrote, what the last load restored,
+#                   and why a demon was left out
+#   binddemonauras  the aura list, the counters and the last rolls
+# The same lines go to this plugin's log, along with every aura roll.
+# Read when the game starts. Restart the game after editing.
 
-# Set to false to turn the plugin off.
+# Set to false to turn the whole plugin off.
 enabled = true
+
+# Save and restore every bound demon (feature 1).
+save_every_demon = true
+
+# Pick bound demons' aura from the list below (feature 2). false leaves the
+# aura to D2RLoader's aura_enchanted_selection.
+aura_list = true
+auras = [
+    { skill = 526, divisor = 3, min_level = 10 },                  # Prayer
+    { skill = 527, divisor = 6, min_level = 5 },                  # Resist Fire
+    { skill = 528, divisor = 6, min_level = 5 },                 # Resist Cold
+    { skill = 529, divisor = 5, min_level = 5 },                  # Blessed Aim
+    { skill = 530, divisor = 6, min_level = 5 },                  # Resist Lightning
+    { skill = 531, divisor = 4, min_level = 5 },                  # Sanctuary
+    { skill = 532, divisor = 1, min_level = 1 },                   # Thorns
+    { skill = 533, divisor = 3, min_level = 5 },                  # Defiance
+    { skill = 537, divisor = 6, min_level = 5 },                  # Cleansing
+    { skill = 540, divisor = 4, min_level = 5 },                 # Might
+    { skill = 543, divisor = 4, min_level = 5 },                  # Concentration
+    { skill = 545, divisor = 5, min_level = 5 },                  # Vigor
+    { skill = 549, divisor = 5, min_level = 5 },                  # Meditation
+    { skill = 550, divisor = 5, min_level = 5 },                  # Divinity
+    { skill = 554, divisor = 5, min_level = 5 },                   # Fanaticism
+    { skill = 555, divisor = 5, min_level = 5 },                  # Conviction
+    { skill = 557, divisor = 6, min_level = 5 },                    # Salvation
+]
