@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Treasure Class Upgrades On Normal",
+  "description": "Lets monsters on Normal difficulty upgrade their treasure class by monster level, the same way Nightmare and Hell already do. TREASURECLASS_GenerateDrops (0x441300) only hands the monster level to the treasure class level walk when the difficulty is not Normal; it compares the difficulty byte at game+0x104 with zero and jumps past the level read on Normal. NOPing that one jbe leaves every other condition untouched: classic games, monsters flagged boss or noRatio, and the desecrated-state override behave exactly as before.",
+  "patches": [
+    {
+      "description": "0x44138F: cmp byte ptr [rsi+0x104], dil (difficulty vs 0) followed by jbe 0x4413B1 (skip on Normal). The compare is kept as a witness, the 2-byte jbe becomes two NOPs, so Normal falls through to the boss/noRatio check and then reads the monster level like Nightmare and Hell.",
+      "op": "bytes",
+      "rva": "0x44138F",
+      "expected": "40 38 BE 04 01 00 00 76 19",
+      "bytes": "40 38 BE 04 01 00 00 90 90"
+    }
+  ]
+}

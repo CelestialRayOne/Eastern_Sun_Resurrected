@@ -103,6 +103,8 @@
 #     upgrades, so the total stays the same. 9 Chipped Amethyst upgrade to 3
 #     Flawed Amethyst and then 1 Amethyst; that Amethyst downgrades to 3
 #     Flawed Amethyst and then back to 9 Chipped Amethyst.
+#   - Perfect gem 6 Packs (1 into 6): the exact reverse of their upgrade,
+#     6 Perfect Amethyst into 1 Perfect Amethyst (6 Pack).
 #   Maps and the other chains have none. Add a [[downgrade]] block to give
 #   them one.
 #
@@ -243,6 +245,81 @@ strings = [
     { item = "gsk", key = "MaterialUpgrade_gsk" },
     { item = "gzk", key = "MaterialUpgrade_gzk" },
     { item = "gpk", key = "MaterialUpgrade_gpk" },
+]
+
+# Perfect gems into 6 Packs: 6 into 1. The key is the 6 Pack's own name
+# (item-gems.json), which has no color code.
+
+[[chain]]
+name    = "Amethyst (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["gvb", "6gv"]
+strings = [
+    { item = "gvb", key = "6gv" },
+]
+
+[[chain]]
+name    = "Topaz (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["gyb", "6gy"]
+strings = [
+    { item = "gyb", key = "6gy" },
+]
+
+[[chain]]
+name    = "Sapphire (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["gbb", "6gb"]
+strings = [
+    { item = "gbb", key = "6gb" },
+]
+
+[[chain]]
+name    = "Emerald (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["ggb", "6gg"]
+strings = [
+    { item = "ggb", key = "6gg" },
+]
+
+[[chain]]
+name    = "Ruby (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["grb", "6gr"]
+strings = [
+    { item = "grb", key = "6gr" },
+]
+
+[[chain]]
+name    = "Diamond (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["gwb", "6gw"]
+strings = [
+    { item = "gwb", key = "6gw" },
+]
+
+[[chain]]
+name    = "Skull (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["skb", "6sk"]
+strings = [
+    { item = "skb", key = "6sk" },
+]
+
+[[chain]]
+name    = "Obsidian (Perfect to 6 Pack)"
+consume = 6
+produce = 1
+items   = ["gbk", "6gk"]
+strings = [
+    { item = "gbk", key = "6gk" },
 ]
 
 [[chain]]
@@ -991,6 +1068,82 @@ strings = [
     { item = "gzk", key = "MaterialDowngrade_gzk" },
     { item = "gsk", key = "MaterialDowngrade_gsk" },
     { item = "gfk", key = "MaterialDowngrade_gfk" },
+]
+
+# Perfect gem 6 Packs: 1 into 6, the reverse of their upgrades. The key is
+# the one the Blemished gem's Shift line uses for the Perfect gem's name;
+# the game's own Perfect gem names carry a color code.
+
+[[downgrade]]
+name    = "Amethyst (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gv", "gvb"]
+strings = [
+    { item = "6gv", key = "MaterialUpgrade_gpv" },
+]
+
+[[downgrade]]
+name    = "Topaz (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gy", "gyb"]
+strings = [
+    { item = "6gy", key = "MaterialUpgrade_gpy" },
+]
+
+[[downgrade]]
+name    = "Sapphire (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gb", "gbb"]
+strings = [
+    { item = "6gb", key = "MaterialUpgrade_gpb" },
+]
+
+[[downgrade]]
+name    = "Emerald (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gg", "ggb"]
+strings = [
+    { item = "6gg", key = "MaterialUpgrade_gpg" },
+]
+
+[[downgrade]]
+name    = "Ruby (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gr", "grb"]
+strings = [
+    { item = "6gr", key = "MaterialUpgrade_gpr" },
+]
+
+[[downgrade]]
+name    = "Diamond (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gw", "gwb"]
+strings = [
+    { item = "6gw", key = "MaterialUpgrade_gpw" },
+]
+
+[[downgrade]]
+name    = "Skull (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6sk", "skb"]
+strings = [
+    { item = "6sk", key = "MaterialUpgrade_skz" },
+]
+
+[[downgrade]]
+name    = "Obsidian (6 Pack to Perfect)"
+consume = 1
+produce = 6
+items   = ["6gk", "gbk"]
+strings = [
+    { item = "6gk", key = "MaterialUpgrade_gpk" },
 ]
 
 # Crystals: 1 into 5, the reverse of their upgrades

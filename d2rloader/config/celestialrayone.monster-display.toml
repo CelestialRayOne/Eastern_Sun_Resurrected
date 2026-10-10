@@ -37,7 +37,7 @@
 # Restart the game after changing this file.
 
 # File format version. Leave this value unchanged.
-config_version = 1
+config_version = 2
 enabled = true
 
 [bar]
@@ -65,6 +65,17 @@ show_hp = true
 show_hp_percent = true
 # Unique affixes, in the game's own wording.
 show_affixes = true
+# Affixes not shown on minions, as monumod.txt ids. A boss passes every affix
+# whose monumod.txt xfer is 1 on to its minions, also the ones that do nothing
+# for a minion; the ones listed here are left out on minions. The boss always
+# shows all of its own. A minion left with no affix to show gets the game's
+# own type line, like a minion without affixes. [] shows everything.
+#   5 Extra Strong       6 Extra Fast         7 Cursed
+#   8 Magic Resistant    9 Fire Enchanted    17 Lightning Enchanted
+#  18 Cold Enchanted    25 Mana Burn         26 Teleportation
+#  27 Spectral Hit      28 Stone Skin        29 Multiple Shots
+#  30 Aura Enchanted
+minion_hidden_affixes = [9, 17, 18, 26, 27, 28]
 # D2R colour id of the affix and aura rows (see the list at the bottom).
 affix_color = 4
 # Aura Enchanted on its own row as "Aura Enchanted (Fanaticism Lv. 13)".
@@ -82,7 +93,10 @@ show = true
 # effective : what the hovering player's hits meet: sunder and -enemy
 #             resistance are applied, exactly as the damage code does.
 # monster   : the monster's own values, before anything the attacker has.
-# The Summon Resist Cap is applied in both modes.
+# The Summon Resist Cap is applied in both modes, exactly as the game applies
+# it: the display asks the Summon Resist Cap plugin which monsters it caps, so
+# its Align rule, its extra rows and its uncap pairs all show correctly.
+# There is nothing to set up here for it.
 mode = "effective"
 # Reorder, omit or repeat: {fire} {lightning} {cold} {poison} {magic} {physical}
 # {color:N} sets the colour of the literal text that follows it. Values always
@@ -95,25 +109,6 @@ cold_color = 3
 poison_color = 2
 magic_color = 8
 physical_color = 4
-
-[summon_cap]
-# Mirror of the Summon Resist Cap plugin, so allied monsters show the capped
-# values the engine really uses. The cap is only applied while that plugin is
-# live (checked in the game image every time).
-use_align_column = true
-extra_monster_ids = []
-
-# Affixes not shown on minions, as monumod.txt ids. A boss passes every affix
-# whose monumod.txt xfer is 1 on to its minions, also the ones that do nothing
-# for a minion; the ones listed here are left out on minions. The boss always
-# shows all of its own. A minion left with no affix to show gets the game's
-# own type line, like a minion without affixes. [] shows everything.
-#   5 Extra Strong       6 Extra Fast         7 Cursed
-#   8 Magic Resistant    9 Fire Enchanted    17 Lightning Enchanted
-#  18 Cold Enchanted    25 Mana Burn         26 Teleportation
-#  27 Spectral Hit      28 Stone Skin        29 Multiple Shots
-#  30 Aura Enchanted
-minion_hidden_affixes = [9, 17, 18, 26, 27, 28]
 
 [debug]
 # Writes every data request and answer to the plugin log.

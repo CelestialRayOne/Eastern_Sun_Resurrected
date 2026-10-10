@@ -1,0 +1,34 @@
+# Large Item Transfer  (celestialrayone.large-item-transfer)
+#
+# What it does
+#   The game sends each item to a player in one message with room for about
+#   240 bytes of item data. An item with many stats, or with stats that have
+#   large Save Bits in itemstatcost.txt, can need more than that. Without this
+#   plugin such an item arrives empty: the game crashes when it is put into the
+#   cube, stash or inventory (a cube recipe output, for example), and in other
+#   cases the player cannot see the item while the server still has it.
+#   With this plugin, an item too large for one message is sent in several
+#   pieces right before its message and rebuilt on the player's side. Items
+#   that fit are sent exactly as before.
+#
+# Who needs it
+#   Single player: this install. TCP/IP: the host and every player who joins,
+#   all with this plugin enabled.
+#
+# Limits
+#   Up to 16 KiB of item data per item, far above any real item.
+#   Not changed by this plugin: the server's own internal copies of an item
+#   (for example when an area unloads with the item on the ground) hold
+#   1024 bytes.
+#
+# Checking that it works
+#   Console command: largeitems
+#   Host side: items split, pieces sent, largest item. Player side: pieces
+#   received, items rebuilt, markers resolved. Any problem is written to this
+#   plugin's log, together with the first split item of each session.
+
+# true: on.  false: the game's own behaviour (oversized items arrive empty).
+enabled = true
+
+# true: one log line for every item that needed splitting, with its size.
+log_each_item = false

@@ -1,0 +1,14 @@
+﻿{
+  "version": 1,
+  "name": "Cube stats go to the item's own stats",
+  "description": "Stats added by cube recipes (cubemain mod 1-5 columns) now always land in the item's own stat list. Before this fix the game's stat-list lookup ignored the list state when asked for the item's own list (state 0), so on a set item with 2 or more set pieces equipped the added stats went into an active set bonus list, and on a runeword item they went into the runeword list. Charges and chance-to-cast properties added by D2RCore use the same lookup and are covered too.",
+  "patches": [
+    {
+      "description": "STATLIST_GetStatListFromUnitStateOrFlag (sub_1402F5B80), state-0 search loop rewritten in place (28 bytes, no cave). Old loop returned the first list in the chain whose flags[+0x1C] & requested & ~0x2000 was non-zero, without checking the list state at +0x20. New loop: mov eax,[rcx+1Ch] / and eax,edi / test eax,0FFFFDFFFh / je next / cmp [rcx+20h],esi / je 2F5C37 (found) / next: mov rcx,[rcx+68h] / test rcx,rcx / jne 2F5C1B / xor ecx,ecx. ESI holds the requested state and is always 0 on this path (state != 0 tail-jumps to the exact-state search at 2F58C0 before reaching here). The removed 5-byte alignment NOP pays for the new cmp/je. Targets kept: 2F5C35 (xor ecx,ecx, jumped to from 2F5C19 when the chain is empty) and 2F5C37 (found).",
+      "op": "bytes",
+      "rva": "0x2F5C1B",
+      "expected": "0F 1F 44 00 00 8B 41 1C 23 C7 A9 FF DF FF FF 75 0B 48 8B 49 68 48 85 C9 75 EB 33 C9",
+      "bytes": "8B 41 1C 21 F8 A9 FF DF FF FF 74 05 39 71 20 74 0B 48 8B 49 68 48 85 C9 75 E6 31 C9"
+    }
+  ]
+}
