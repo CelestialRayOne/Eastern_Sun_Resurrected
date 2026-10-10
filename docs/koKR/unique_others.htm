@@ -1,0 +1,6054 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Large Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						대형 부적
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						옐로 젤로
+						<br>
+			대형 부적 (cm2)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 35
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(5 to 10)% 공격 속도 증가 <br>+(5 to 10)% 시전 속도 증가 <br>공격에 대한 최소 번개 피해 +(12 to 24) 증가 <br>공격에 대한 최대 번개 피해 +(48 to 72) 증가 <br>+(15 to 45) 최대 스태미나 <br>모든 저항력 +(5 to 10) <br>공격자는 (15 to 30)의 번개 피해를 입습니다. <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						무언가 사악한
+						<br>
+			대형 부적 (cm2)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 70
+					<br>
+					필요 레벨: 80
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(0 to 1) 아마존 스킬 레벨 증가<br>+(0 to 1)의 암살자 기술 레벨<br>+(0 to 1)의 바바리안 스킬 레벨<br>+(0 to 1) 드루이드 스킬 레벨 증가<br>+(0 to 1)의 네크로맨서 스킬 레벨<br>+(0 to 1)의 성기사 기술 레벨<br>+(0 to 1)의 마법사 스킬 레벨<br>+1의 마나 (캐릭터 레벨 기준)<br>모든 저항력 +(10 to 15) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Grand Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						대형 부적
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						로타르의 의지
+						<br>
+			대형 부적 (cm3)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 35
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(6 to 12)% 시전 속도 증가 <br>최대 마나 증가 +(6 to 12)% <br>+(6 to 12)% 피해를 받을 때 마나로 전환 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						기드의 행운
+						<br>
+			대형 부적 (cm3)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 70
+					<br>
+					필요 레벨: 62
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						아이템 발견 수량 +(4 to 8)% 증가 <br>+(40 to 80)% 몬스터로부터 추가 골드 <br>+(20 to 40)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						알려지지 않은 영웅
+						<br>
+			대형 부적 (cm3)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 70
+					<br>
+					필요 레벨: 80
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(10 to 20)% 공격 속도 증가 <br>+(10 to 20)% 시전 속도 증가 <br>+(10 to 20) 힘 증가 <br>+(10 to 20)의 민첩성 <br>+(10 to 20) 에너지 증가 <br>(5 to 10) 만큼 피해 감소 <br>마법 피해 감소 (5 to 10) <br>공격자가 (100 to 150)의 피해를 입습니다. <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Odd Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						이상한 매력
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						변종 세포
+						<br>
+			이상한 매력 (cm4)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 35
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +2 추가 <br>공격에 대한 최대 피해 +0.25 증가 (캐릭터 레벨 기준)<br>+100 방어력 <br>+(10 to 15) 힘 증가 <br>+(10 to 15)의 민첩성 <br>생명력 흡수 -15 <br>+30% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Small Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						작은 부적
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						완벽한 세포
+						<br>
+			작은 부적 (cm1)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 35
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(10 to 15)% 물리 피해를 마나로 흡수합니다. <br>+(10 to 15)% 물리 피해 생명력으로 흡수됨 <br>생명력 회복 +(150 to 200) <br>마나 재생 +(50 to 100)% <br>+(150 to 220) 최대 스태미나 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						블라드 테페의 양식
+						<br>
+			작은 부적 (cm1)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 70
+					<br>
+					필요 레벨: 80
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 저항력 +(20 to 30) <br>원소 흡수 (1 to 2)% <br>물리 저항: +(10 to 15)% <br>독 지속 시간 감소 +50% <br>+(30 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						아니힐루스
+						<br>
+			작은 부적 (cm1)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 99
+					<br>
+					필요 레벨: 85
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>모든 능력치 +(10 to 20) 증가 <br>최대 생명 증가 +(10 to 20)% <br>최대 마나 증가 +(10 to 20)% <br>모든 저항력 +(10 to 20) <br>+(5 to 10)% 경험치 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						떨어진 별
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 10
+					<br>
+					필요 레벨: 5
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						죽은 괴물들은 평화롭게 잠든다 <br>+(25 to 50) 생명력 증가 <br>+(15 to 30)의 마나 <br>모든 저항력 +(20 to 40) <br>마법 피해 감소 (5 to 10) <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						드래곤 아이
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 20
+					<br>
+					필요 레벨: 10
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						2% 확률로 적중 시 레벨 5 화염 급증를 시전합니다.<br>2% 확률로 적중 시 레벨 5 차가운 물결를 시전합니다.<br>2% 확률로 적중 시 레벨 5 번개 급증를 시전합니다.<br>+(15 to 20)% 화염 주문 피해 <br>+(15 to 20)% 번개 주문 피해 증가 <br>냉기 주문 피해 +(15 to 20)% 증가 <br>생명력 회복 +(50 to 100) <br>마나 재생 +(25 to 75)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						복수의 반지
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 30
+					<br>
+					필요 레벨: 20
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(25 to 50)% 관통 공격 <br>공격에 대한 최소 피해 +15 증가 <br>공격에 대한 최대 피해 +25 증가 <br>공격에 대한 최대 피해 +0.5 증가 (캐릭터 레벨 기준)<br>+(15 to 30)% 공격 등급 보너스 <br>+(6 to 10)% 물리 피해 생명력으로 흡수됨 <br>+1 생명력 증가 (캐릭터 레벨 기준)<br>공격자가 (400 to 800)의 피해를 입습니다. <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						원소 보석
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 40
+					<br>
+					필요 레벨: 30
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 200-300 화염 피해를 추가합니다.<br>공격에 1-500 번개 피해를 추가합니다.<br>공격에 225-275 냉기 피해를 추가합니다. (10초 동안)<br>모든 기술에 +(1 to 2) 추가 <br>최대 마법 저항력 +(1 to 2)% 증가 <br>모든 최대 저항에 +(1 to 2)% 추가 <br>모든 저항력 +(30 to 40) <br>+50% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						철 바늘갑옷
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 50
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						4% 확률로 적중 시 레벨 20 던진 도끼를 시전합니다.<br>공격에 대한 최대 피해 +(25 to 50) 증가 <br>+(10 to 20) To 집중하다<br>+5 방어력 (캐릭터 레벨 기준)<br>+(25 to 50) 힘 증가 <br>+(25 to 50) 생명력 증가 <br>+(20 to 40) 생명력 증가 <br>물리 저항: +(10 to 20)% <br>(10 to 20) 만큼 피해 감소 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						조디악 밴드
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +(1 to 3) 추가 <br>+20% 더 빠른 이동/걷기 <br>+20% 공격 속도 증가 <br>+20% 시전 속도 증가 <br>모든 능력치 +(20 to 40) 증가 <br>모든 능력치에 +(6 to 20)% 보너스 <br>+(20 to 40)의 처치 후 마나 회복 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						하나의 반지
+						<br>
+			반지 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							반지 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						장착 시 (5 to 20) 그림자 망토 오라<br>모든 기술에 +(1 to 3) 추가 <br>+(1 to 15) To 페이드<br>최대 생명 증가 +(15 to 30)% <br>생명력 흡수 (-250 to -1) <br>최대 마나 증가 +(15 to 30)% <br>모든 저항력 +(1 to 40) <br>물리 저항: +(1 to 10)% <br>마법 피해 감소 (1 to 50) <br>+100% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Ama Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						아마존 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						릴리 꽃잎
+						<br>
+			아마존의 루프 (zrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아마존의 루프 (zrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 아마존 스킬 레벨 증가<br>+20% 공격 속도 증가 <br>+(1 to 10) To 관통 (아마존 전용)<br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						엘프의 축복
+						<br>
+			아마존의 루프 (zrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아마존의 루프 (zrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						근접 공격 시 5% 확률로 레벨 45 펜드 시전<br>+2 아마존 스킬 레벨 증가<br>+20% 더 빠른 이동/걷기 <br>+20% 공격 속도 증가 <br>+20% 더 빠른 타격 회복 <br>+(200 to 300) 공격 등급 증가 <br>+0.75 공격 등급 증가 (캐릭터 레벨 기준)<br>+25의 민첩성 <br>+25 에너지 증가 <br>모든 저항력 +(15 to 20) <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						Dfuzzz의 손가락 보호대
+						<br>
+			아마존의 루프 (zrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아마존의 루프 (zrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>1% 확률로 적중 시 레벨 60 시간 정지를 시전합니다.<br>+2 아마존 스킬 레벨 증가<br>+30% 공격 속도 증가 <br>+5 To Random Amazon Skill (아마존 전용)<br>+(5 to 15) To 속도 폭발<br>+5 To Random Amazon Skill (아마존 전용)<br>+(5 to 15) To 아툴루아의 지혜 (아마존 전용)<br>+1의 민첩성 (캐릭터 레벨 기준)<br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Sor Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						원소술사 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						망각의 꽃잎
+						<br>
+			마법사의 반지 (srn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							마법사의 반지 (srn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1의 마법사 스킬 레벨<br>+20% 시전 속도 증가 <br>+(1 to 10) To 영혼의 떨림 (여사제 전용)<br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 5 자연의 정령 (5/5 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						케레렉의 크리스탈 밴드
+						<br>
+			마법사의 반지 (srn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							마법사의 반지 (srn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2의 마법사 스킬 레벨<br>+(20 to 25)% 시전 속도 증가 <br>+(1 to 8) To 하락 저항<br>+8 To 텔레포트 (여사제 전용)<br>+8 To 시간 정지 (여사제 전용)<br>+2의 마나 (캐릭터 레벨 기준)<br>마법 저항 +(15 to 20)% <br>모든 저항력 +(15 to 20) <br>+(30 to 50)% 피해를 받을 때 마나로 전환 <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						킬라샨드라 리의 검은 수정
+						<br>
+			마법사의 반지 (srn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							마법사의 반지 (srn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 5% 확률로 레벨 60 시간 정지를 시전합니다.<br>+2의 마법사 스킬 레벨<br>+30% 시전 속도 증가 <br>+5 To Random Sorceress Skill (여사제 전용)<br>+5 To Random Sorceress Skill (여사제 전용)<br>+(5 to 15) To 전능 (여사제 전용)<br>+5 방어력 (캐릭터 레벨 기준)<br>+1 에너지 증가 (캐릭터 레벨 기준)<br>마나 재생 +(100 to 200)% <br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Nec Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						강령술사 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						선인장 꽃잎
+						<br>
+			강령술사의 돌 (nrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							강령술사의 돌 (nrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1의 네크로맨서 스킬 레벨<br>+(1 to 10) To 뼈 갑옷 (네크로맨서 전용)<br>마나 재생 +35% <br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						보라도르의 정수
+						<br>
+			강령술사의 돌 (nrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							강령술사의 돌 (nrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2의 네크로맨서 스킬 레벨<br>+20% 더 빠른 이동/걷기 <br>+20% 시전 속도 증가 <br>+(10 to 20)% 소환 피해 <br>+(1 to 15) To 골렘 숙련도 (네크로맨서 전용)<br>+(1 to 15) To 해골 숙련도 (네크로맨서 전용)<br>+(1 to 15) To 소환 저항 (네크로맨서 전용)<br>+100% 향상된 방어력 <br>최대 생명 증가 +20% <br>최대 마나 증가 +20% <br>물리 저항: +(10 to 15)% <br><br><FONT COLOR="WHITE">다음 중 1개:</FONT><br>+1 To 독 마스터리<br>+1 To 마법 숙련<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						검은 마법사의 손가락뼈
+						<br>
+			강령술사의 돌 (nrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							강령술사의 돌 (nrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 10% 확률로 레벨 60 뼈 갑옷를 시전합니다.<br>+2의 네크로맨서 스킬 레벨<br>+5 To Random Necromancer Skill (네크로맨서 전용)<br>+(5 to 15) To 에너지 방패<br>+5 To Random Necromancer Skill (네크로맨서 전용)<br>+(5 to 15) To 뼈 숙련도 (네크로맨서 전용)<br>+5 방어력 (캐릭터 레벨 기준)<br>+1 에너지 증가 (캐릭터 레벨 기준)<br>+200의 마나 <br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Pal Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						성기사 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						흰 장미 꽃잎
+						<br>
+			팔라딘의 후광 (prn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							팔라딘의 후광 (prn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1의 성기사 기술 레벨<br>+2% 차단 확률 증가 <br>+(1 to 10) To 신성한 갑옷 (팔라딘 전용)<br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						아다예인의 바위
+						<br>
+			팔라딘의 후광 (prn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							팔라딘의 후광 (prn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2의 성기사 기술 레벨<br>+20% 공격 속도 증가 <br>+0.75 공격 등급 증가 (캐릭터 레벨 기준)<br>-(10 to 15)% 적의 화염 저항력 <br>-(10 to 15)% 적의 냉기 저항력 <br>-(10 to 15)% 적의 번개 저항력 <br>+25 힘 증가 <br>+25의 민첩성 <br>최대 생명 증가 +30% <br>+(1 to 2) 타격 시 생명<br>모든 저항력 +(15 to 30) <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						술 취한 도넛
+						<br>
+			팔라딘의 후광 (prn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							팔라딘의 후광 (prn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">+5% 소환 피해 통계에 대한 총 배수</FONT> <br>+(50 to 100)% 증가된 피해<br>적을 처치할 때 10% 확률로 레벨 60 천상의 주먹를 시전합니다.<br>+2의 성기사 기술 레벨<br>+5 To Random Paladin Skill (팔라딘 전용)<br>+(5 to 15) To 곰 소환<br>+5 To Random Paladin Skill (팔라딘 전용)<br>+(5 to 15) To 광신주의 (팔라딘 전용)<br>+1 힘 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Bar Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						야만용사 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						보라색 꽃잎
+						<br>
+			야만적인 후프 (brg)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							야만적인 후프 (brg)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1의 바바리안 스킬 레벨<br>+(1 to 10) To 전투 명령 (바바리안 전용)<br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 30)% 피해를 받을 때 마나로 전환 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						마다우크의 광란
+						<br>
+			야만적인 후프 (brg)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							야만적인 후프 (brg)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2의 바바리안 스킬 레벨<br>+30% 더 빠른 이동/걷기 <br>+30% 공격 속도 증가 <br>공격에 대한 최소 피해 +10 증가 <br>공격에 대한 최대 피해 +20 증가 <br>공격에 대한 최대 피해 +0.5 증가 (캐릭터 레벨 기준)<br>+(7 to 10)% 물리 피해 생명력으로 흡수됨 <br>-(10 to 20)% 적의 번개 저항력 <br>+8 To 전투 명령 (바바리안 전용)<br>+30 힘 증가 <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						미친 켈트의 빛나는 반짝임
+						<br>
+			야만적인 후프 (brg)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							야만적인 후프 (brg)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>적을 처치할 때 5% 확률로 레벨 60 플라스마 비를 시전합니다.<br>+2의 바바리안 스킬 레벨<br>+30% 치명타 확률 <br>+5 To Random Barbarian Skill (바바리안 전용)<br>+(5 to 15) To 아툴루아의 지혜<br>+5 To Random Barbarian Skill (바바리안 전용)<br>+(5 to 15) To 자연 저항 (바바리안 전용)<br>+1 힘 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Dru Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						드루이드 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						민들레 꽃잎
+						<br>
+			드루이드의 인장 (drn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							드루이드의 인장 (drn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 드루이드 스킬 레벨 증가<br>+(1 to 10) To 늑대인간 변신 (드루이드 전용)<br>생명력 회복 +100 <br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						알라카샤르 라흘
+						<br>
+			드루이드의 인장 (drn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							드루이드의 인장 (drn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 드루이드 스킬 레벨 증가<br>+20% 시전 속도 증가 <br>공격에 대한 최대 피해 +0.5 증가 (캐릭터 레벨 기준)<br>+0.75 공격 등급 증가 (캐릭터 레벨 기준)<br>+(10 to 20)% 모든 소환수 저항 <br>+(4 to 7)% 소환 물리 및 마법 저항력 <br>+20% 치명타 확률 <br>+20% 치명타 <br>+25% 향상된 방어력 <br>+25 힘 증가 <br>+25 생명력 증가 <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						야굴의 분노
+						<br>
+			드루이드의 인장 (drn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							드루이드의 인장 (drn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>적을 처치할 때 5% 확률로 레벨 60 몬순를 시전합니다.<br>+2 드루이드 스킬 레벨 증가<br>+30% 치명타 <br>+5 To Random Druid Skill (드루이드 전용)<br>+(5 to 15) To 전투 명령<br>+5 To Random Druid Skill (드루이드 전용)<br>+(5 to 15) To 분노 (드루이드 전용)<br>+1 생명력 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Ass Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						어쌔신 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						붉은 장미 꽃잎
+						<br>
+			암살자의 나선 (arn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							암살자의 나선 (arn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1의 암살자 기술 레벨<br>+20% 더 빠른 타격 회복 <br>+(1 to 10) To 블레이드 노바 (암살자 전용)<br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						릴리트의 심장
+						<br>
+			암살자의 나선 (arn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							암살자의 나선 (arn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2의 암살자 기술 레벨<br>+20% 공격 속도 증가 <br>+20% 더 빠른 타격 회복 <br>-(30 to 50)% 목표 방어력 <br>+(10 to 30)% 소환 피해 <br>최대 생명 증가 +15% <br>+1.5 생명력 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(15 to 20) <br>마법 피해 감소 (15 to 25) <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						킬조이의 태도
+						<br>
+			암살자의 나선 (arn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							암살자의 나선 (arn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>적을 처치할 때 10% 확률로 레벨 60 냉기 폭발를 시전합니다.<br>+2의 암살자 기술 레벨<br>-20% 적의 냉기 저항력 <br>+5 To Random Assassin Skill (암살자 전용)<br>+(5 to 15) To 치명타<br>+5 To Random Assassin Skill (암살자 전용)<br>+(5 to 15) To 그림자 대가 (암살자 전용)<br>+1 생명력 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="War Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						워록 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						시드는 꽃잎
+						<br>
+			흑마법사의 인장 (wrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							흑마법사의 인장 (wrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						악마술사 기술 +1<br>+20% 더 빠른 이동/걷기 <br>+(1 to 10) To 소모 (악마술사 전용)<br>냉기 저항 +0.5% (캐릭터 레벨 기준)<br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>화염 저항 +0.5% (캐릭터 레벨 기준)<br>독 저항 +0.5% (캐릭터 레벨 기준)<br>+(5 to 10) 처치 후 생명력 회복 <br>+(20 to 40)% 몬스터로부터 추가 골드 <br>Level 1 텔레포트 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						펠스톤
+						<br>
+			흑마법사의 인장 (wrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							흑마법사의 인장 (wrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						악마술사 기술 +2<br>+20% 시전 속도 증가 <br>+20% 더 빠른 타격 회복 <br>+(10 to 15)% 스킬 쿨타임 감소 <br>+(10 to 30)% 화염 주문 피해 <br>적 마법 저항 -(10 to 15)% <br>최대 생명 증가 +15% <br>+1.5 생명력 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(15 to 20) <br>(15 to 25) 만큼 피해 감소 <br>+(20 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						방랑자의 징조
+						<br>
+			흑마법사의 인장 (wrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							흑마법사의 인장 (wrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>적을 처치할 때 10% 확률로 레벨 60 정신 결계를 시전합니다.<br>악마술사 기술 +2<br>+30% 소환 피해 <br>+5 To Random Warlock Skill (악마술사 전용)<br>+(5 to 15) To 자연의 정령<br>+5 To Random Warlock Skill (악마술사 전용)<br>+(5 to 15) To 흑마법 (악마술사 전용)<br>+1 생명력 증가 (캐릭터 레벨 기준)<br>모든 저항력 +(20 to 25) <br>+3% 경험치 증가 <br>+(30 to 35)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						아뮬렛
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						연인의 펜던트
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 10
+					<br>
+					필요 레벨: 5
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(20 to 40)% 더 빠른 이동/걷기 <br>생명력 회복 +(50 to 100) <br>마나 재생 +(40 to 80)% <br>+(10 to 20) 처치 후 생명력 회복 <br>+(5 to 10)의 처치 후 마나 회복 <br>+(50 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						마녀의 눈
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 20
+					<br>
+					필요 레벨: 10
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +(1 to 2) 추가 <br>+15% 더 빠른 이동/걷기 <br>+15% 시전 속도 증가 <br>+1 To 명상<br>+1 To 지연 텔레포트<br>+(50 to 100)의 마나 <br>마나 재생 +30% <br>냉기 저항 +(20 to 40)% <br>전기 저항 +(20 to 40)% <br>얼음에 갇히지 않음 <br>+3의 빛 반경 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						미노타우르의 목걸이
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 30
+					<br>
+					필요 레벨: 20
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						장착 시 (5 to 10) 힘 오라<br>+30% 더 빠른 이동/걷기 <br>-30% 공격 속도 증가 <br>공격에 대한 최소 피해 +25 증가 <br>공격에 대한 최대 피해 +50 증가 <br>+(20 to 40)% 치명타 확률 <br>+(10 to 15) To 충전<br>+(25 to 50) 생명력 증가 <br>물리 저항: +(10 to 20)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						수호자의 구슬
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 40
+					<br>
+					필요 레벨: 30
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						맞았을 때 1% 확률로 레벨 10 시간 경과를 시전합니다.<br>+10% 회피 확률 <br>+(20 to 25) to 에너지 방패 (All Classes)<br>+500 방어력 <br>생명력 회복 +(300 to 400) <br>마나 재생 +(100 to 150)% <br>모든 저항력 +(40 to 60) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						포효하는 천둥
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 50
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 3% 확률로 레벨 60 번개 급증를 시전합니다.<br>+(4 to 5) 번개 기술로<br>+(150 to 200) 공격 등급 증가 <br>공격에 대한 최소 번개 피해 +1 증가 <br>공격에 대한 최대 번개 피해 +(150 to 200) 증가 <br>+1 To 번개 숙련도<br>+(5 to 10)% 최대 번개 저항 증가 <br>전기 저항 +0.5% (캐릭터 레벨 기준)<br>공격자는 75의 번개 피해를 입습니다. <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						관찰자의 눈
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">원소 저항이 동일한 경우 원소 주문 피해 획득<br>해당 공유 값의 15%에 해당하는 주문 피해</FONT><br>모든 기술에 +1 추가 <br>+(5 to 15)% 스킬 쿨타임 감소 <br>+(100 to 200) 방어력 <br>모든 능력치 +(20 to 30) 증가 <br>+100 생명력 증가 <br>+100의 마나 <br>+1 타격 시 마나<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						주문 시전자의 보조
+						<br>
+			아뮬렛 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아뮬렛 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">주문 시전 또는 집중 유지 중 근처 적의 기본 달리기/걷기 속도<br>및 물리 피해가 100% 감소하고 최대치의 2%를 회복함<br>초당 생명력을 얻고 마나 회복 보너스 250% 획득</FONT><br>모든 기술에 +(1 to 2) 추가 <br>+(40 to 60)% 시전 속도 증가 <br>+(1 to 5) To 빙결 집중<br>최대 마나 증가 +(20 to 30)% <br>마법 저항 +(5 to 10)% <br>물리 저항: +(5 to 10)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Ama Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						아마존 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						벤자이텐의 부적
+						<br>
+			아마존 핀 (zam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아마존 핀 (zam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1)의 활 및 석궁 기술 (Amazon Only)<br>+(0 to 1)의 수동 및 마법 기술 (Amazon Only)<br>+(0 to 1)의 창과 창 기술에 대한 보너스 (Amazon Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>+0.75의 민첩성 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						발할라의 펜던트
+						<br>
+			아마존 핀 (zam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아마존 핀 (zam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>적을 처치할 때 25% 확률로 레벨 10 고대의 외침를 시전합니다.<br>+1의 수동 및 마법 기술 (Amazon Only)<br>+2 아마존 스킬 레벨 증가<br>+33% 치명타 <br>+(5 to 10) To 발키리 (아마존 전용)<br>+50 힘 증가 <br>+50 생명력 증가 <br>+60 생명력 증가 <br>생명력 회복 +(50 to 150) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						전염병의 마지막 화살촉
+						<br>
+			아마존 핀 (zam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							아마존 핀 (zam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						1% 확률로 적중 시 레벨 60 화염 플래시를 시전합니다.<br>1% 확률로 적중 시 레벨 60 냉기 플래시를 시전합니다.<br>1% 확률로 적중 시 레벨 60 번개 플래시를 시전합니다.<br>모든 기술에 +1 추가 <br>+1 아마존 스킬 레벨 증가<br>+30% 공격 속도 증가 <br>모든 능력치 +(25 to 40) 증가 <br>+(1 to 2) 타격 시 마나<br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Sor Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						원소술사 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						후쿠로쿠주의 부적
+						<br>
+			마법사의 부적 (sam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							마법사의 부적 (sam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1)의 화염 기술 (Sorceress Only)<br>+(0 to 1)의 번개 기술 (Sorceress Only)<br>+(0 to 1) 냉기 기술에 추가 (Sorceress Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>+0.75 에너지 증가 (캐릭터 레벨 기준)<br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						제이드의 로켓
+						<br>
+			마법사의 부적 (sam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							마법사의 부적 (sam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2의 마법사 스킬 레벨<br>+30% 시전 속도 증가 <br>+6 To 마법 부여 (여사제 전용)<br>+60 생명력 증가 <br>+60의 마나 <br>최대 마나 증가 +15% <br>최대 독 저항 +5% 증가 <br>모든 저항력 +35 <br>물리 저항: +(10 to 20)% <br>마법 피해 감소 (15 to 25) <br>독 지속 시간 감소 +(50 to 75)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						여주인의 가죽 목걸이
+						<br>
+			마법사의 부적 (sam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							마법사의 부적 (sam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						3% 확률로 적중 시 레벨 25 족쇄를 시전합니다.<br>적을 처치할 때 17% 확률로 레벨 45 다중 사격를 시전합니다.<br>모든 기술에 +1 추가 <br>+1의 마법사 스킬 레벨<br>+30% 공격 속도 증가 <br>+(20 to 30) To 관통<br>밀쳐내기 <br>모든 능력치 +(25 to 40) 증가 <br>+(2 to 5) 타격 시 생명<br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Nec Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						강령술사 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						에비수의 부적
+						<br>
+			죽음의 로켓 (nam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							죽음의 로켓 (nam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1)의 저주 (Necromancer Only)<br>+(0 to 1) 독 및 뼈 기술에 대한 보너스 (Necromancer Only)<br>+(0 to 1) 소환 기술 (Necromancer Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>+0.75 에너지 증가 (캐릭터 레벨 기준)<br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						다에베란의 돌
+						<br>
+			죽음의 로켓 (nam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							죽음의 로켓 (nam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						맞았을 때 10% 확률로 레벨 30 사이클론 갑옷를 시전합니다.<br>+2의 네크로맨서 스킬 레벨<br>+20% 더 빠른 이동/걷기 <br>+30% 시전 속도 증가 <br>+(5 to 10) To 뼈 갑옷 (네크로맨서 전용)<br>+60 생명력 증가 <br>최대 생명 증가 +15% <br>생명력 회복 +(50 to 150) <br>마나 재생 +(50 to 100)% <br>모든 저항력 +25 <br>물리 저항: +(10 to 20)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						저주받은 도넛
+						<br>
+			죽음의 로켓 (nam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							죽음의 로켓 (nam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						근접 공격 시 10% 확률로 레벨 45 로타르의 분노 시전<br>모든 기술에 +1 추가 <br>+1의 네크로맨서 스킬 레벨<br>+30% 공격 속도 증가 <br>+(40 to 60)% 물리 피해 생명력으로 흡수됨 <br>+(20 to 30) To 신성한 방어막<br>모든 능력치 +(25 to 40) 증가 <br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>얼음에 갇히지 않음 <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Pal Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						성기사 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						다이코쿠텐의 부적
+						<br>
+			신성한 펜던트 (pam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							신성한 펜던트 (pam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1) 전투 기술에 추가 (Paladin Only)<br>+(0 to 1) 공격 오라 증가 (Paladin Only)<br>+(0 to 1) 방어 오라에 추가 (Paladin Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>+0.75 힘 증가 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						신성한 일탈자
+						<br>
+			신성한 펜던트 (pam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							신성한 펜던트 (pam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						2% 확률로 적중 시 레벨 50 독의 노바를 시전합니다.<br>+1 전투 기술에 추가 (Paladin Only)<br>+2의 성기사 기술 레벨<br>+(4 to 8)% 물리 피해를 마나로 흡수합니다. <br>+(8 to 12)% 물리 피해 생명력으로 흡수됨 <br>-(40 to 50)% 적에게 독 저항력 <br>+(1 to 7) To 독 마스터리<br>+25 To 독<br>+20 힘 증가 <br>+20 에너지 증가 <br>마법 흡수 +(1 to 3)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						검은 기사 성스러운 인장
+						<br>
+			신성한 펜던트 (pam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							신성한 펜던트 (pam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						근접 공격 시 17% 확률로 레벨 60 영혼 수확 시전<br>모든 기술에 +1 추가 <br>+1의 성기사 기술 레벨<br>+30% 더 빠른 타격 회복 <br>공격에 대한 최소 피해 +(30 to 40) 증가 <br>모든 능력치 +(25 to 40) 증가 <br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>+(80 to 100) 처치 후 생명력 회복 <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Bar Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						야만용사 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						비샤몬텐의 부적
+						<br>
+			토템 구슬 (bam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							토템 구슬 (bam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1) 전투 기술에 추가 (Barbarian Only)<br>+(0 to 1)의 숙련도 (Barbarian Only)<br>+(0 to 1) 전투의 외침에 추가 (Barbarian Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>+0.75 힘 증가 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						키산스
+						<br>
+			토템 구슬 (bam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							토템 구슬 (bam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(2 to 3)의 숙련도 (Barbarian Only)<br>+2의 바바리안 스킬 레벨<br>+30% 공격 속도 증가 <br>+4 To 자연 저항 (바바리안 전용)<br>+4 To 철갑 피부 (바바리안 전용)<br>+25 힘 증가 <br>+(6 to 13)% 힘 보너스 <br>+1 생명력 증가 (캐릭터 레벨 기준)<br>생명력 회복 +(50 to 150) <br>물리 저항: +(10 to 20)% <br>마법 피해 감소 (15 to 25) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						스마크돈의 고통스러운 자존심
+						<br>
+			토템 구슬 (bam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							토템 구슬 (bam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						맞았을 때 5% 확률로 레벨 1 물리 피해의 트로피를 시전합니다.<br>모든 기술에 +1 추가 <br>+1의 바바리안 스킬 레벨<br>+30% 공격 속도 증가 <br>+(20 to 30)% 물리 피해 생명력으로 흡수됨 <br>+(1 to 10) To 치명타<br>모든 능력치 +(25 to 40) 증가 <br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>물리 저항: -(30 to 20)% <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Dru Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						드루이드 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						호테이의 부적
+						<br>
+			드루이드 목걸이 (dam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							드루이드 목걸이 (dam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1) 소환 기술에 추가 (Druid Only)<br>+(0 to 1)의 변신 기술 (Druid Only)<br>+(0 to 1)의 원소 기술 (Druid Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>+0.75 생명력 증가 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						어두운 수확자
+						<br>
+			드루이드 목걸이 (dam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							드루이드 목걸이 (dam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 소환 기술에 추가 (Druid Only)<br>+2 드루이드 스킬 레벨 증가<br>+30% 더 빠른 타격 회복 <br>+(10 to 20)% 소환 피해 <br>+(15 to 30)% 치명타 확률 <br>+7 To 레이븐 (드루이드 전용)<br>+(10 to 20) To 조롱<br>+7 To 정령 늑대 소환 (드루이드 전용)<br>+7 To 소환된 맹狼 (드루이드 전용)<br>+100% 향상된 방어력 <br>+30의 민첩성 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						야굴의 피비린내 나는 분노
+						<br>
+			드루이드 목걸이 (dam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							드루이드 목걸이 (dam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">원시적 야성 보너스가 두 배로 증가하지만 지속 시간이 1초로 단축됩니다</FONT><br>적을 처치할 때 8% 확률로 레벨 45 원시의 야만성를 시전합니다.<br>모든 기술에 +1 추가 <br>+1 드루이드 스킬 레벨 증가<br>+30% 더 빠른 타격 회복 <br>+(20 to 30)% 물리 피해 생명력으로 흡수됨 <br>모든 능력치 +(25 to 40) 증가 <br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Ass Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						어쌔신 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						키쇼텐의 부적
+						<br>
+			암살자의 목걸이 (aam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							암살자의 목걸이 (aam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(0 to 1) to 덫 (Assassin Only)<br>+(0 to 1)의 그림자 기술 (Assassin Only)<br>+(0 to 1)의 무술 능력 (Assassin Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>+0.75의 민첩성 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						서브 정신력
+						<br>
+			암살자의 목걸이 (aam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							암살자의 목걸이 (aam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>5% 확률로 적중 시 레벨 30 피해 증폭를 시전합니다.<br>+1의 무술 능력 (Assassin Only)<br>+2의 암살자 기술 레벨<br>+4 To 페이드 (암살자 전용)<br>+4 To 속도 폭발 (암살자 전용)<br>+4 To 그림자 갑옷 (암살자 전용)<br>+20의 민첩성 <br>+20 생명력 증가 <br>+20 에너지 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						드웨이아의 복수
+						<br>
+			암살자의 목걸이 (aam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							암살자의 목걸이 (aam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 5% 확률로 레벨 40 절대 0도를 시전합니다.<br>모든 기술에 +1 추가 <br>+1의 암살자 기술 레벨<br>+30% 시전 속도 증가 <br>-(10 to 20)% 적의 냉기 저항력 <br>대상을 얼립니다 +5<br>모든 능력치 +(25 to 40) 증가 <br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>얼음에 갇히지 않음 <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="War Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						워록 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						이자나미의 부적
+						<br>
+			흑마법사의 펜던트 (wam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							흑마법사의 펜던트 (wam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>악마 기술 +(0 to 1) (Warlock Only)<br>기괴 기술 +(0 to 1) (Warlock Only)<br>혼돈 기술 +(0 to 1) (Warlock Only)<br>+5 방어력 (캐릭터 레벨 기준)<br>모든 능력치에 +(6 to 13)% 보너스 <br>+0.75 에너지 증가 (캐릭터 레벨 기준)<br>생명력 회복 +(50 to 100) <br>물리 저항: +10% <br>+(50 to 100)% 몬스터로부터 추가 골드 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						블랙 로투스
+						<br>
+			흑마법사의 펜던트 (wam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							흑마법사의 펜던트 (wam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 증가된 피해<br>5% 확률로 적중 시 레벨 30 쇠약하게 만들기를 시전합니다.<br>기괴 기술 +1 (Warlock Only)<br>악마술사 기술 +2<br>+4 To 주술: 재앙 (악마술사 전용)<br>+4 To 주술: 처단 (악마술사 전용)<br>+4 To 주술: 흡수 (악마술사 전용)<br>+20 힘 증가 <br>+20 생명력 증가 <br>+20 에너지 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						모르고스의 해방된 광기
+						<br>
+			흑마법사의 펜던트 (wam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							흑마법사의 펜던트 (wam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 75
+					<br>
+					필요 레벨: 75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">+1 비고유 소환 제한</FONT> <br>적을 처치할 때 5% 확률로 레벨 40 특이점를 시전합니다.<br>모든 기술에 +1 추가 <br>악마술사 기술 +1<br>+30% 시전 속도 증가 <br>+(10 to 20) To 영혼의 떨림<br>+(10 to 20) To 고대의 힘<br>모든 능력치 +(25 to 40) 증가 <br>최대 마법 저항력 +(2 to 5)% 증가 <br>모든 최대 저항에 +(2 to 5)% 추가 <br>모든 저항력 +(30 to 50) <br>+(35 to 50)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="Jewel"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						보석
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						진두준
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+30% 더 빠른 이동/걷기 <br>+30% 공격 속도 증가 <br>+30% 시전 속도 증가 <br>+1% 차단 확률 증가 <br>+(25 to 30)의 민첩성 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						이상적인 제작
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 45
+					<br>
+					필요 레벨: 40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(40 to 80)% 증가된 피해<br>+(15 to 30)% 공격 속도 증가 <br>+(25 to 50)% 공격 등급 보너스 <br>요구 사항 -(25 to 15)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						보헤미안 스톤
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 50
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 750-1000 독 피해를 1 초 동안 추가합니다.<br>적을 처치할 때 2% 확률로 레벨 40 독의 파동를 시전합니다.<br>-(4 to 5)% 적에게 독 저항력 <br>물리 저항: +(1 to 3)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						여왕 에보시의 탐욕
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 50
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(5 to 8)% 물리 피해를 마나로 흡수합니다. <br>+(5 to 8)% 물리 피해 생명력으로 흡수됨 <br>모든 저항력 +(1 to 20) <br>+(1 to 100)% 몬스터로부터 추가 골드 <br>+(1 to 100)% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						넥서스 스타
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 50
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 2% 확률로 레벨 40 마법의 급증를 시전합니다.<br>+100 공격에 대한 최소 마법 피해 <br>+200 공격에 대한 최대 마법 피해 <br>+(5 to 10)% 마법 주문 피해 증가 <br>최대 마법 저항력 +1% 증가 <br>모든 최대 저항에 +1% 추가 <br>모든 저항력 +(10 to 30) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						얼음폭풍 조각
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 55
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 150-225 냉기 피해를 추가합니다. (5초 동안)<br>적을 처치할 때 2% 확률로 레벨 40 차가운 물결를 시전합니다.<br>-(4 to 5)% 적의 냉기 저항력 <br>마나 재생 +(20 to 30)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						살라맨더 스톤
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 55
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 175-225 화염 피해를 추가합니다.<br>적을 처치할 때 2% 확률로 레벨 40 화염 급증를 시전합니다.<br>-(4 to 5)% 적의 화염 저항력 <br>생명력 회복 +(25 to 50) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						세셰로냐의 불꽃
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 55
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 1-400 번개 피해를 추가합니다.<br>적을 처치할 때 2% 확률로 레벨 40 번개 급증를 시전합니다.<br>-(4 to 5)% 적의 번개 저항력 <br>+(5 to 20) 생명력 증가 <br>+(5 to 20)의 마나 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						스미프 스톤
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 55
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(0 to 1) 아마존 스킬 레벨 증가<br>+(0 to 1)의 암살자 기술 레벨<br>+(0 to 1)의 바바리안 스킬 레벨<br>+(0 to 1) 드루이드 스킬 레벨 증가<br>+(0 to 1)의 네크로맨서 스킬 레벨<br>+(0 to 1)의 마법사 스킬 레벨<br>+(0 to 1)의 성기사 기술 레벨<br>악마술사 기술 +(0 to 1)<br>요구 사항 -(10 to 5)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						라리아스의 방탕한 애가
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 55
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 능력치 +(1 to 20) 증가 <br>모든 능력치에 +(1 to 3)% 보너스 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						얼어붙은 종말
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 92
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>-(4 to 8)% 적의 냉기 저항력 <br>+1 To 냉기 숙련<br>마나 재생 +(10 to 100)% <br>냉기 흡수 +(1 to 2)% <br>+20 레벨 필요 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						지옥의 보석
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 92
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>-(4 to 8)% 적의 화염 저항력 <br>+1 To 화염 숙련<br>생명력 회복 +(20 to 200) <br>화염 흡수 +(1 to 2)% <br>+20 레벨 필요 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						전기 충격 소용돌이
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 92
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>-(4 to 8)% 적의 번개 저항력 <br>+1 To 번개 숙련도<br>번개 흡수 +(1 to 2)% <br>+(10 to 80)% 마법 아이템 획득 확률 증가 <br>+20 레벨 필요 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						취하는 수정
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 92
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>-(4 to 8)% 적에게 독 저항력 <br>+1 To 독 마스터리<br>최대 독 저항 +(1 to 3)% 증가 <br>독 저항 +(10 to 30)% <br>+(10 to 80)% 몬스터로부터 추가 골드 <br>+20 레벨 필요 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						천상의 조각
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 92
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+175 공격에 대한 최소 마법 피해 <br>+225 공격에 대한 최대 마법 피해 <br>+1 To 마법 숙련<br>최대 마법 저항력 +(1 to 3)% 증가 <br>마법 피해 감소 (10 to 20) <br>+20 레벨 필요 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						악마의 공허석
+						<br>
+			보석 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 92
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(2 to 10)% 치명타 <br>+(1 to 10) To 무기 숙련<br>+1 To 물리적 숙련<br>물리 저항: +(1 to 5)% <br>+20 레벨 필요 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						창조의 불씨
+						<br>
+			보석 (mjw)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					도박 아이템:
+					<br>
+						<b>
+							없음
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 100
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						무작위 직업 기술 +1
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="LoD Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						LoD 목걸이
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						노코잔 유물
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 14
+					<br>
+					필요 레벨: 10
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 40-60 화염 피해를 추가합니다.<br>적을 처치할 때 100% 확률로 레벨 10 화염 급증를 시전합니다.<br>+30% 더 빠른 이동/걷기 <br>-(10 to 15)% 적의 화염 저항력 <br>최대 화염 저항 +(5 to 10)% 증가 <br>화염 저항 +75% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						에틀리히의 눈
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 20
+					<br>
+					필요 레벨: 15
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +2 추가 <br>대상을 얼립니다 +1<br>+1 타격 시 마나<br>+5 타격 시 생명<br>얼음에 갇히지 않음 <br>+(5 to 10)의 빛 반경 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						마힘-오크 호기심
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 34
+					<br>
+					필요 레벨: 25
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 능력치 +(40 to 50) 증가 <br>모든 능력치에 +(6 to 13)% 보너스 <br>모든 저항력 +(20 to 40) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						사라센의 기회
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 55
+					<br>
+					필요 레벨: 47
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">운명의 총애를 받을 작은 확률이 있습니다</FONT><br>+(1 to 10)% 회피 확률 <br>+(1 to 50)% 치명타 <br>+100% 몬스터로부터 추가 골드 <br>모든 상인 가격을 +(1 to 5)% 감소시킵니다. <br>+100% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					10% 확률로 마법 아이템 발견 1000%, 골드 발견 1000%, 피해 강화 2000% 또는 총 주문 피해 50%를 얻고, 1% 확률로 회피 상한에 도달합니다.
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						고양이의 눈
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 58
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+50% 더 빠른 이동/걷기 <br>+30% 공격 속도 증가 <br>+(10 to 20) To 속도 폭발<br>+1 To 회피<br>+(80 to 120)의 민첩성 <br>+(13 to 26)% 민첩성 보너스 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						초승달
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 58
+					<br>
+					필요 레벨: 50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 20% 확률로 레벨 40 천상의 주먹를 시전합니다.<br>+(1 to 3) 마법 기술로<br>+(100 to 300)% 악마에게 가하는 피해 <br>+(100 to 300)% 언데드에 대한 피해 <br>+(20 to 30)% 마법 주문 피해 증가 <br>+(2 to 3) 타격 시 마나<br>+(3 to 5) 타격 시 생명<br>마법 저항 +(20 to 30)% <br>+(100 to 150)% 피해를 받을 때 마나로 전환 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						엔트로피 로켓
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 54
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">10% 확률로 두 배의 주문 피해를 줍니다</FONT><br>기술 시전 시 25% 확률로 레벨 60 독기 사슬를 시전합니다.<br>모든 기술에 +1 추가 <br>독기 사슬 최대 개수 +(1 to 2) <br>+(20 to 30)% 마법 주문 피해 증가 <br>+1 To 텔레포트<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						아트마의 스카라브
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 60
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						300%-400% 출혈 피해를 3초에 걸쳐 추가<br>3% 확률로 적중 시 레벨 60 피해 증폭를 시전합니다.<br>+(40 to 50)% 더 빠른 이동/걷기 <br>대상을 +(20 to 40)% 느리게 합니다. <br>생명력 회복 +(600 to 800) <br>독 지속 시간 감소 +(50 to 75)% <br>+(50 to 75) 처치 후 생명력 회복 <br>+(20 to 40)의 처치 후 마나 회복 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						떠오르는 태양
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 73
+					<br>
+					필요 레벨: 65
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						공격에 400-500 화염 피해를 추가합니다.<br>+(2 to 4) 불 기술로<br>-(15 to 20)% 적의 화염 저항력 <br>+(1 to 10) To 화염 숙련<br>생명력 회복 +(600 to 800) <br>화염 흡수 +(4 to 5)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						고위 군주의 분노
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 73
+					<br>
+					필요 레벨: 65
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						맞았을 때 5% 확률로 레벨 60 조롱를 시전합니다.<br>모든 기술에 +(1 to 2) 추가 <br>공격에 대한 최소 피해 +(30 to 50) 증가 <br>공격에 대한 최대 피해 +(20 to 30) 증가 <br>+(20 to 40)% 물리 피해 생명력으로 흡수됨 <br>+(40 to 60)% 치명타 <br>+(20 to 40)% 치명타 피해 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						세라프의 찬송가
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 73
+					<br>
+					필요 레벨: 65
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						적을 처치할 때 5% 확률로 레벨 40 전투 명령를 시전합니다.<br>적을 처치할 때 5% 확률로 레벨 40 전투 명령를 시전합니다.<br>적을 처치할 때 5% 확률로 레벨 40 외침를 시전합니다.<br>맞았을 때 5% 확률로 레벨 60 조롱를 시전합니다.<br>맞았을 때 5% 확률로 레벨 60 포효를 시전합니다.<br>모든 기술에 +(1 to 3) 추가 <br>+(1 to 10) To 마법 숙련<br>얼음에 갇히지 않음 <br>+(5 to 15)% 경험치 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						마라의 만화경
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 80
+					<br>
+					필요 레벨: 67
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +2 추가 <br>모든 능력치에 +(16 to 23)% 보너스 <br>모든 저항력 +(40 to 50) <br>+(5 to 35)% 경험치 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						메탈그리드
+						<br>
+			아뮬렛 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 85
+					<br>
+					필요 레벨: 81
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">-5 비고유 소환 제한</FONT> <br>모든 기술에 +(1 to 3) 추가 <br>-20% 모든 소환수 저항 <br>+(10 to 20)% 소환 물리 및 마법 저항력 <br>+(100 to 200)% 소환 피해 <br>+1 To 지연 텔레포트<br>모든 저항력 -40 <br>물리 저항: +(10 to 20)% <br>소켓 (1)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+<a name="LoD Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						LoD 반지
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					이름
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					능력치
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					속성
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					참고
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						나겔링
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 10
+					<br>
+					필요 레벨: 7
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						20 만큼 피해 감소 <br>마법 피해 감소 20 <br>+(100 to 150)% 몬스터로부터 추가 골드 <br>+(100 to 150)% 마법 아이템 획득 확률 증가 <br>소켓 (1)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						마날드 힐
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 20
+					<br>
+					필요 레벨: 15
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100) 생명력 증가 <br>생명력 회복 +(500 to 1000) <br>+(50 to 100)의 마나 <br>마나 재생 +(200 to 300)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						조던의 돌
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 40
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+(20 to 30)% 시전 속도 증가 <br>+1 To 텔레포트<br>+30 To Random Amazon Skill (아마존 전용)<br>+(50 to 100)의 마나 <br>최대 마나 증가 +(30 to 50)% <br>소켓 (1)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						드워프 스타
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 53
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">공격에 적용되는 화염 피해가 치명타로 적중할 수 있습니다</FONT><br>공격에 400-500 화염 피해를 추가합니다.<br>+(100 to 125) 힘 증가 <br>최대 화염 저항 -20% 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						레이븐 프로스트
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 53
+					<br>
+					필요 레벨: 45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">공격에 적용되는 냉기 피해가 치명타로 적중할 수 있습니다</FONT><br>공격에 400-500 냉기 피해를 추가합니다. (5초 동안)<br>+(100 to 125)의 민첩성 <br>최대 냉기 저항 -20% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						새총
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 65
+					<br>
+					필요 레벨: 57
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">피격 시 15% 확률로 기본 이동 속도 100%를 얻고<br>2초 동안 적을 통과할 수 있습니다</FONT><br>+(4 to 8)% 총 주문 피해 <br>+30% 공격 속도 증가 <br>+30% 시전 속도 증가 <br>적 마법 저항 -(5 to 10)% <br>적 물리 피해 저항 -(5 to 10)% <br>-(10 to 20)% 적에게 주는 원소 및 독 저항력 <br>+(6 to 12)% 치명타 피해 <br>+1 To 차원문<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						오팔맥
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 65
+					<br>
+					필요 레벨: 57
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +(1 to 2) 추가 <br>(40 to 50) 만큼 피해 감소 <br>마법 피해 감소 (40 to 50) <br>소켓 (1)<br><br><FONT COLOR="WHITE">다음 중 1개:</FONT><br><FONT COLOR="ORANGE">장착한 보석마다 강화된 피해 50%를 얻습니다<br>이 효과는 중첩되지 않지만, 50% 증가합니다<br>주문 피해 오팔맥을 착용한 경우</FONT><br>장착 시 1 Unknown Skill 오라<br><br><FONT COLOR="ORANGE">장착한 보석마다 주문 피해 10%를 얻습니다<br>이 효과는 중첩되지 않지만, 50% 증가합니다<br>강화된 피해 오팔맥을 착용한 경우</FONT><br>장착 시 1 Unknown Skill 오라<br><br><FONT COLOR="WHITE">다음 중 1개:</FONT><br>+1 To 용융의 집중<br>+1 To 빙결 집중<br>+1 To 정적 집중<br>+1 To 고대의 힘<br>+1 To 고대의 힘<br>+1 To 철갑 피부<br>+1 To 자연 저항<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						불카토스의 결혼 반지
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 66
+					<br>
+					필요 레벨: 58
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>+20% 물리 피해 생명력으로 흡수됨 <br>+(10 to 20) To 고대의 힘<br>+(10 to 20) To 자연 저항<br>+(13 to 20)% 힘 보너스 <br>+(150 to 200) 최대 스태미나 <br>50 만큼 피해 감소 <br>마법 피해 감소 30 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						썩은 바람
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 68
+					<br>
+					필요 레벨: 60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(2 to 4) 독 기술로<br>-(15 to 25)% 적에게 독 저항력 <br>+(1 to 10) To 독 마스터리<br>+(80 to 160) 생명력 증가 <br>+(1 to 4) 타격 시 생명<br>독 저항 +(40 to 60)% <br>독 지속 시간 감소 +(50 to 75)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						자연의 평화
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 77
+					<br>
+					필요 레벨: 69
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">+(10 to 20)% 소환 피해 통계에 대한 총 배수</FONT> <br><FONT COLOR="ORANGE">-(3 to 2) 비고유 소환 제한</FONT> <br>+(50 to 150)% 증가된 피해<br>장착 시 (10 to 20) 구속 오라<br>+(20 to 40)% 소환 피해 <br>+(10 to 20) To 곰 소환<br>+(1 to 3) 마법 흡수 <br>원소 흡수 (1 to 3)% <br>+(5 to 10)% 경험치 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						위스프 프로젝터
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 84
+					<br>
+					필요 레벨: 76
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						장착 시 (1 to 10) 번개 피해 오라 오라<br>+(0 to 3) 번개 기술로<br>-(10 to 15)% 적의 번개 저항력 <br>+1 To 텔레포트<br>마법 저항 +(5 to 10)% <br>번개 흡수 +(3 to 5)% <br>(10 to 15)% 소환하여: 허망한 불빛<br>+(5 to 10)% 경험치 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						조여지는 반지
+						<br>
+			반지 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>고대 쿠폰 고유 아이템<br>(도박 불가)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					아이템 레벨: 95
+					<br>
+					필요 레벨: 95
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						모든 기술에 +1 추가 <br>생명력 흡수 -30 <br>최대 마법 저항력 +(2 to 7)% 증가 <br>모든 최대 저항에 +(2 to 7)% 추가 <br>모든 저항력 +100 <br>+(5 to 15)% 경험치 증가 <br>+200% 마법 아이템 획득 확률 증가 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[대형 부적]</a>
+<a href="#Grand Charm">[대형 부적]</a>
+<a href="#Odd Charm">[이상한 매력]</a>
+<a href="#Small Charm">[작은 부적]</a>
+<a href="#Ring">[반지]</a>
+<a href="#Ama Ring">[아마존 반지]</a>
+<a href="#Sor Ring">[원소술사 반지]</a>
+<a href="#Nec Ring">[강령술사 반지]</a>
+<a href="#Pal Ring">[성기사 반지]</a>
+<a href="#Bar Ring">[야만용사 반지]</a>
+<a href="#Dru Ring">[드루이드 반지]</a>
+<a href="#Ass Ring">[어쌔신 반지]</a>
+<a href="#War Ring">[워록 반지]</a>
+<a href="#Amulet">[아뮬렛]</a>
+<a href="#Ama Amulet">[아마존 목걸이]</a>
+<a href="#Sor Amulet">[원소술사 목걸이]</a>
+<a href="#Nec Amulet">[강령술사 목걸이]</a>
+<a href="#Pal Amulet">[성기사 목걸이]</a>
+<a href="#Bar Amulet">[야만용사 목걸이]</a>
+<a href="#Dru Amulet">[드루이드 목걸이]</a>
+<a href="#Ass Amulet">[어쌔신 목걸이]</a>
+<a href="#War Amulet">[워록 목걸이]</a>
+<a href="#Jewel">[보석]</a>
+<a href="#LoD Amulet">[LoD 목걸이]</a>
+<a href="#LoD Ring">[LoD 반지]</a>
+</font></div>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

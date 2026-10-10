@@ -1,0 +1,6054 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 資料庫
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35486;&#35328;"><select id="esr-lang-zhTW" aria-label="&#35486;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW" selected>&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhTW",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhTW');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本資訊</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日誌]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[護甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前綴]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[後綴]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金護甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套裝]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石之語]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之語]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[方塊配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地圖]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速計算器]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查詢]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系統</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化結果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油結果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[終局地圖]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[靈魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[進階職業]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[擊殺帳簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵與外部技能資訊]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器專精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破壞神 II：獄火重生 全面轉換模組</div>
+            </div>                
+                                <div style="width:100%;">
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Large Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						大型護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						黃色果凍
+						<br>
+			大型護身符 (cm2)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：35
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(5 to 10)% 提升攻擊速度 <br>+(5 to 10)% 更快施法速度 <br>+(12 to 24) 最小閃電傷害於攻擊 <br>+(48 to 72) 最高閃電傷害加成至攻擊 <br>+(15 to 45) 最大耐力 <br>所有抗性 +(5 to 10) <br>攻擊者承受 (15 to 30) 點閃電傷害 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						邪惡之物
+						<br>
+			大型護身符 (cm2)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：70
+					<br>
+					所需等级：80
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(0 to 1) 亞馬遜技能等級<br>+(0 to 1) 到刺客技能等級<br>+(0 to 1) 到野蠻人技能等級<br>+(0 to 1) 到德魯伊技能等級<br>+(0 to 1) 到死靈法師技能等級<br>+(0 to 1) 到 聖騎士技能等級<br>+(0 to 1) 到女巫技能等級<br>+1 生命法力 （基於角色等級）<br>所有抗性 +(10 to 15) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Grand Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						大符文
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						洛薇的意志
+						<br>
+			大符文 (cm3)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：35
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(6 to 12)% 更快施法速度 <br>增加最大法力 +(6 to 12)% <br>+(6 to 12)% 受到的傷害轉換為法力 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						吉德的財運
+						<br>
+			大符文 (cm3)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：70
+					<br>
+					所需等级：62
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						找到物品數量提高 +(4 to 8)% <br>+(40 to 80)% 從怪物獲得的額外金幣 <br>+(20 to 40)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						未知的英雄
+						<br>
+			大符文 (cm3)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：70
+					<br>
+					所需等级：80
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(10 to 20)% 提升攻擊速度 <br>+(10 to 20)% 更快施法速度 <br>+(10 to 20) 力量 <br>+(10 to 20) 以敏捷 <br>+(10 to 20) 於能量 <br>減少傷害 (5 to 10) <br>魔法傷害減少 (5 to 10) <br>攻擊者承受 (100 to 150) 傷害 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Odd Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						奇異護符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						偏差細胞
+						<br>
+			奇異護符 (cm4)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：35
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到所有技能 <br>+0.25 最高傷害提升至攻擊 （基於角色等級）<br>+100 防禦 <br>+(10 to 15) 力量 <br>+(10 to 15) 以敏捷 <br>吸取生命 -15 <br>+30% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Small Charm"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						小飾品
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						完美的細胞
+						<br>
+			小飾品 (cm1)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：35
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(10 to 15)% 物理傷害吸取為魔法值 <br>+(10 to 15)% 物理傷害吸取為生命 <br>恢復生命 +(150 to 200) <br>法力再生 +(50 to 100)% <br>+(150 to 220) 最大耐力 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						弗拉德·特佩的滋養
+						<br>
+			小飾品 (cm1)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：70
+					<br>
+					所需等级：80
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						所有抗性 +(20 to 30) <br>元素吸收 (1 to 2)% <br>物理抗性: +(10 to 15)% <br>毒素持續時間減少 +50% <br>+(30 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						毀滅者
+						<br>
+			小飾品 (cm1)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：99
+					<br>
+					所需等级：85
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(10 to 20) 所有屬性 <br>增加最大生命 +(10 to 20)% <br>增加最大法力 +(10 to 20)% <br>所有抗性 +(10 to 20) <br>+(5 to 10)% 獲得經驗值 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						墮落之星
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：10
+					<br>
+					所需等级：5
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						被殺的怪物安息吧 <br>+(25 to 50) 生命值 <br>+(15 to 30) 生命法力 <br>所有抗性 +(20 to 40) <br>魔法傷害減少 (5 to 10) <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						龍眼
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：20
+					<br>
+					所需等级：10
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						2% 機率在攻擊時施放等級 5 火焰激增<br>2% 機率在攻擊時施放等級 5 寒流<br>2% 機率在攻擊時施放等級 5 閃電激增<br>+(15 to 20)% 火焰法術傷害 <br>+(15 to 20)% 於雷電法術傷害 <br>+(15 to 20)% 冷卻法術傷害 <br>恢復生命 +(50 to 100) <br>法力再生 +(25 to 75)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						復仇之戒
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：30
+					<br>
+					所需等级：20
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(25 to 50)% 穿透攻擊 <br>+15 至攻擊的最小傷害 <br>+25 最高傷害提升至攻擊 <br>+0.5 最高傷害提升至攻擊 （基於角色等級）<br>+(15 to 30)% 攻擊評價加成 <br>+(6 to 10)% 物理傷害吸取為生命 <br>+1 生命值 （基於角色等級）<br>攻擊者承受 (400 to 800) 傷害 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						元素寶石
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：40
+					<br>
+					所需等级：30
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 200-300 火焰傷害<br>對攻擊增加 1-500 電擊傷害<br>對攻擊增加 225-275 冷傷害，持續 10 秒<br>+(1 to 2) 到所有技能 <br>+(1 to 2)% 最高魔法抗性 <br>+(1 to 2)% 到所有最大抗性 <br>所有抗性 +(30 to 40) <br>+50% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						鐵製指套
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：50
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						4% 機率在攻擊時施放等級 20 投擲斧<br>+(25 to 50) 最高傷害提升至攻擊 <br>+(10 to 20) To 集中<br>+5 防禦 （基於角色等級）<br>+(25 to 50) 力量 <br>+(25 to 50) 生命力 <br>+(20 to 40) 生命值 <br>物理抗性: +(10 to 20)% <br>減少傷害 (10 to 20) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						星座戒指
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(1 to 3) 到所有技能 <br>+20% 更快的跑步/行走 <br>+20% 提升攻擊速度 <br>+20% 更快施法速度 <br>+(20 to 40) 所有屬性 <br>+(6 to 20)% 所有屬性加成 <br>每次擊殺後 +(20 to 40) 生命法力 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						唯一的戒指
+						<br>
+			戒指 (rin)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							戒指 (rin)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						裝備時提供 (5 to 20) 級 暗影斗篷 光環<br>+(1 to 3) 到所有技能 <br>+(1 to 15) To 消失<br>增加最大生命 +(15 to 30)% <br>吸取生命 (-250 to -1) <br>增加最大法力 +(15 to 30)% <br>所有抗性 +(1 to 40) <br>物理抗性: +(1 to 10)% <br>魔法傷害減少 (1 to 50) <br>+100% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Ama Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						亞馬遜戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						莉莉花瓣
+						<br>
+			亞馬遜環路 (zrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							亞馬遜環路 (zrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 亞馬遜技能等級<br>+20% 提升攻擊速度 <br>+(1 to 10) To 穿透 （亞馬遜專用）<br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						精靈祝福
+						<br>
+			亞馬遜環路 (zrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							亞馬遜環路 (zrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						5% 機率在近戰攻擊時施放等級 45 刺擊<br>+2 亞馬遜技能等級<br>+20% 更快的跑步/行走 <br>+20% 提升攻擊速度 <br>+20% 更快的擊中恢復 <br>+(200 to 300) 攻擊評價 <br>+0.75 攻擊評價 （基於角色等級）<br>+25 以敏捷 <br>+25 於能量 <br>所有抗性 +(15 to 20) <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						Dfuzzz的指護
+						<br>
+			亞馬遜環路 (zrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							亞馬遜環路 (zrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>1% 機率在攻擊時施放等級 60 時間停止<br>+2 亞馬遜技能等級<br>+30% 提升攻擊速度 <br>+5 To Random Amazon Skill （亞馬遜專用）<br>+(5 to 15) To 速度爆發<br>+5 To Random Amazon Skill （亞馬遜專用）<br>+(5 to 15) To 阿圖魯亞的智慧 （亞馬遜專用）<br>+1 以敏捷 （基於角色等級）<br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Sor Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						魔法師戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						勿忘我花瓣
+						<br>
+			巫師之環 (srn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							巫師之環 (srn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到女巫技能等級<br>+20% 更快施法速度 <br>+(1 to 10) To 靈魂顫慄 （只有女巫）<br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 5 自然之靈 (5/5 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						凱勒克的水晶戒指
+						<br>
+			巫師之環 (srn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							巫師之環 (srn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到女巫技能等級<br>+(20 to 25)% 更快施法速度 <br>+(1 to 8) To 降低抗性<br>+8 To 傳送 （只有女巫）<br>+8 To 時間停止 （只有女巫）<br>+2 生命法力 （基於角色等級）<br>魔法抗性 +(15 to 20)% <br>所有抗性 +(15 to 20) <br>+(30 to 50)% 受到的傷害轉換為法力 <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						基拉香德拉·瑞的黑水晶
+						<br>
+			巫師之環 (srn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							巫師之環 (srn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						5% 機率在你擊殺敵人時施放等級 60 時間停止<br>+2 到女巫技能等級<br>+30% 更快施法速度 <br>+5 To Random Sorceress Skill （只有女巫）<br>+5 To Random Sorceress Skill （只有女巫）<br>+(5 to 15) To 全能 （只有女巫）<br>+5 防禦 （基於角色等級）<br>+1 於能量 （基於角色等級）<br>法力再生 +(100 to 200)% <br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Nec Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						死靈法師戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						仙人掌花瓣
+						<br>
+			死靈法師之石 (nrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							死靈法師之石 (nrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到死靈法師技能等級<br>+(1 to 10) To 骨甲 （只限死靈法師）<br>法力再生 +35% <br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						沃拉多的精華
+						<br>
+			死靈法師之石 (nrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							死靈法師之石 (nrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到死靈法師技能等級<br>+20% 更快的跑步/行走 <br>+20% 更快施法速度 <br>+(10 to 20)% 召喚傷害 <br>+(1 to 15) To 傀儡精通 （只限死靈法師）<br>+(1 to 15) To 骷髏精通 （只限死靈法師）<br>+(1 to 15) To 召喚抗性 （只限死靈法師）<br>+100% 增強防禦 <br>增加最大生命 +20% <br>增加最大法力 +20% <br>物理抗性: +(10 to 15)% <br><br><FONT COLOR="WHITE">以下其中 1 項：</FONT><br>+1 To 毒素精通<br>+1 To 魔法精通<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						黑法師的指骨
+						<br>
+			死靈法師之石 (nrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							死靈法師之石 (nrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						10% 機率在你擊殺敵人時施放等級 60 骨甲<br>+2 到死靈法師技能等級<br>+5 To Random Necromancer Skill （只限死靈法師）<br>+(5 to 15) To 能量護盾<br>+5 To Random Necromancer Skill （只限死靈法師）<br>+(5 to 15) To 骨骼精通 （只限死靈法師）<br>+5 防禦 （基於角色等級）<br>+1 於能量 （基於角色等級）<br>+200 生命法力 <br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Pal Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						聖騎士戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						白玫瑰花瓣
+						<br>
+			聖騎士光環 (prn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							聖騎士光環 (prn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到 聖騎士技能等級<br>+2% 增加格擋機率 <br>+(1 to 10) To 神聖盔甲 （僧侶專用）<br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						阿達耶恩之石
+						<br>
+			聖騎士光環 (prn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							聖騎士光環 (prn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到 聖騎士技能等級<br>+20% 提升攻擊速度 <br>+0.75 攻擊評價 （基於角色等級）<br>-(10 to 15)% 對敵人火焰抗性 <br>-(10 to 15)% 對敵人冰冷抗性 <br>-(10 to 15)% 對敵人閃電抗性 <br>+25 力量 <br>+25 以敏捷 <br>增加最大生命 +30% <br>+(1 to 2) 生命在打擊上<br>所有抗性 +(15 to 30) <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						醉酒甜甜圈
+						<br>
+			聖騎士光環 (prn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							聖騎士光環 (prn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">+5% 總乘數到召喚傷害屬性</FONT> <br>+(50 to 100)% 增強傷害<br>10% 機率在你擊殺敵人時施放等級 60 天之拳<br>+2 到 聖騎士技能等級<br>+5 To Random Paladin Skill （僧侶專用）<br>+(5 to 15) To 召喚灰熊<br>+5 To Random Paladin Skill （僧侶專用）<br>+(5 to 15) To 狂熱主義 （僧侶專用）<br>+1 力量 （基於角色等級）<br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Bar Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						野蠻人戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						紫色花瓣
+						<br>
+			野蠻環 (brg)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							野蠻環 (brg)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到野蠻人技能等級<br>+(1 to 10) To 戰鬥命令 （僅限野蠻人）<br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 30)% 受到的傷害轉換為法力 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						馬達克的狂怒
+						<br>
+			野蠻環 (brg)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							野蠻環 (brg)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到野蠻人技能等級<br>+30% 更快的跑步/行走 <br>+30% 提升攻擊速度 <br>+10 至攻擊的最小傷害 <br>+20 最高傷害提升至攻擊 <br>+0.5 最高傷害提升至攻擊 （基於角色等級）<br>+(7 to 10)% 物理傷害吸取為生命 <br>-(10 to 20)% 對敵人閃電抗性 <br>+8 To 戰鬥指揮 （僅限野蠻人）<br>+30 力量 <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						瘋狂凱爾特人的閃亮閃爍
+						<br>
+			野蠻環 (brg)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							野蠻環 (brg)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>5% 機率在你擊殺敵人時施放等級 60 等離子雨<br>+2 到野蠻人技能等級<br>+30% 機率造成粉碎打擊 <br>+5 To Random Barbarian Skill （僅限野蠻人）<br>+(5 to 15) To 阿圖魯亞的智慧<br>+5 To Random Barbarian Skill （僅限野蠻人）<br>+(5 to 15) To 自然抗性 （僅限野蠻人）<br>+1 力量 （基於角色等級）<br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Dru Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						德魯伊戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						蒲公英花瓣
+						<br>
+			德魯伊的印記 (drn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							德魯伊的印記 (drn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到德魯伊技能等級<br>+(1 to 10) To 狼人症 （僧侶專用）<br>恢復生命 +100 <br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						阿拉卡沙爾·拉爾
+						<br>
+			德魯伊的印記 (drn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							德魯伊的印記 (drn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到德魯伊技能等級<br>+20% 更快施法速度 <br>+0.5 最高傷害提升至攻擊 （基於角色等級）<br>+0.75 攻擊評價 （基於角色等級）<br>+(10 to 20)% 所有召喚物抗性 <br>+(4 to 7)% 召喚物理和魔法抗性 <br>+20% 機率造成粉碎打擊 <br>+20% 致命一擊 <br>+25% 增強防禦 <br>+25 力量 <br>+25 生命力 <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						雅古爾的憤怒
+						<br>
+			德魯伊的印記 (drn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							德魯伊的印記 (drn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>5% 機率在你擊殺敵人時施放等級 60 季風<br>+2 到德魯伊技能等級<br>+30% 致命一擊 <br>+5 To Random Druid Skill （僧侶專用）<br>+(5 to 15) To 戰鬥指揮<br>+5 To Random Druid Skill （僧侶專用）<br>+(5 to 15) To 怒火 （僧侶專用）<br>+1 生命力 （基於角色等級）<br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Ass Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						刺客戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						紅玫瑰花瓣
+						<br>
+			刺客之螺旋 (arn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							刺客之螺旋 (arn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到刺客技能等級<br>+20% 更快的擊中恢復 <br>+(1 to 10) To 刀刃新星 （僧侶專用）<br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						莉莉絲的心臟
+						<br>
+			刺客之螺旋 (arn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							刺客之螺旋 (arn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到刺客技能等級<br>+20% 提升攻擊速度 <br>+20% 更快的擊中恢復 <br>-(30 to 50)% 目標防禦 <br>+(10 to 30)% 召喚傷害 <br>增加最大生命 +15% <br>+1.5 生命值 （基於角色等級）<br>所有抗性 +(15 to 20) <br>魔法傷害減少 (15 to 25) <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						殺氣的態度
+						<br>
+			刺客之螺旋 (arn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							刺客之螺旋 (arn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>10% 機率在你擊殺敵人時施放等級 60 寒冰爆發<br>+2 到刺客技能等級<br>-20% 對敵人冰冷抗性 <br>+5 To Random Assassin Skill （僧侶專用）<br>+(5 to 15) To 致命一擊<br>+5 To Random Assassin Skill （僧侶專用）<br>+(5 to 15) To 影子大師 （僧侶專用）<br>+1 生命力 （基於角色等級）<br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="War Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						術士戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						枯萎花瓣
+						<br>
+			術士印記 (wrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							術士印記 (wrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 術士技能<br>+20% 更快的跑步/行走 <br>+(1 to 10) To 吞噬 （只限術士）<br>冰冷抗性 +0.5% （基於角色等級）<br>閃電抗性 +0.5% （基於角色等級）<br>火焰抗性 +0.5% （基於角色等級）<br>毒素抗性 +0.5% （基於角色等級）<br>每次擊殺後 +(5 to 10) 生命 <br>+(20 to 40)% 從怪物獲得的額外金幣 <br>Level 1 傳送 (7/7 Charges)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						邪石
+						<br>
+			術士印記 (wrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							術士印記 (wrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 術士技能<br>+20% 更快施法速度 <br>+20% 更快的擊中恢復 <br>+(10 to 15)% 技能冷卻時間減少 <br>+(10 to 30)% 火焰法術傷害 <br>敵人魔法抗性 -(10 to 15)% <br>增加最大生命 +15% <br>+1.5 生命值 （基於角色等級）<br>所有抗性 +(15 to 20) <br>減少傷害 (15 to 25) <br>+(20 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						流浪者預兆
+						<br>
+			術士印記 (wrn)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							術士印記 (wrn)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>10% 機率在你擊殺敵人時施放等級 60 靈能護盾<br>+2 術士技能<br>+30% 召喚傷害 <br>+5 To Random Warlock Skill （只限術士）<br>+(5 to 15) To 自然之靈<br>+5 To Random Warlock Skill （只限術士）<br>+(5 to 15) To 黑魔法 （只限術士）<br>+1 生命力 （基於角色等級）<br>所有抗性 +(20 to 25) <br>+3% 獲得經驗值 <br>+(30 to 35)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						戀人之墜
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：10
+					<br>
+					所需等级：5
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(20 to 40)% 更快的跑步/行走 <br>恢復生命 +(50 to 100) <br>法力再生 +(40 to 80)% <br>每次擊殺後 +(10 to 20) 生命 <br>每次擊殺後 +(5 to 10) 生命法力 <br>+(50 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						女巫之眼
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：20
+					<br>
+					所需等级：10
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(1 to 2) 到所有技能 <br>+15% 更快的跑步/行走 <br>+15% 更快施法速度 <br>+1 To 冥想<br>+1 To 延遲傳送<br>+(50 to 100) 生命法力 <br>法力再生 +30% <br>冰冷抗性 +(20 to 40)% <br>閃電抗性 +(20 to 40)% <br>無法被冰凍 <br>+3 的光照半徑 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						牛頭人項圈
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：30
+					<br>
+					所需等级：20
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						裝備時提供 (5 to 10) 級 力量 光環<br>+30% 更快的跑步/行走 <br>-30% 提升攻擊速度 <br>+25 至攻擊的最小傷害 <br>+50 最高傷害提升至攻擊 <br>+(20 to 40)% 機率造成粉碎打擊 <br>+(10 to 15) To 衝鋒<br>+(25 to 50) 生命力 <br>物理抗性: +(10 to 20)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						守護者的珠子
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：40
+					<br>
+					所需等级：30
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						1% 機率在受到攻擊時施放等級 10 時間延遲<br>+10% 閃避機率 <br>+(20 to 25) to 能量護盾 (All Classes)<br>+500 防禦 <br>恢復生命 +(300 to 400) <br>法力再生 +(100 to 150)% <br>所有抗性 +(40 to 60) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						咆哮雷霆
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：50
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						3% 機率在你擊殺敵人時施放等級 60 閃電激增<br>+(4 to 5) 到雷電技能<br>+(150 to 200) 攻擊評價 <br>+1 最小閃電傷害於攻擊 <br>+(150 to 200) 最高閃電傷害加成至攻擊 <br>+1 To 雷電精通<br>+(5 to 10)% 最高閃電抗性 <br>閃電抗性 +0.5% （基於角色等級）<br>攻擊者承受 75 點閃電傷害 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						注視者之眼
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">如果你的元素抗性相同，則獲得元素<br>等於該共享數值 15% 的技能傷害</FONT><br>+1 到所有技能 <br>+(5 to 15)% 技能冷卻時間減少 <br>+(100 to 200) 防禦 <br>+(20 to 30) 所有屬性 <br>+100 生命值 <br>+100 生命法力 <br>+1 擊中時法力<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						法術施展者的助手
+						<br>
+			護身符 (amu)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							護身符 (amu)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">在施法或吟唱時，附近敵人的基礎跑步/步行速度<br>和物理傷害降低 100%，且你每秒回復 2% 的最大<br>生命值/秒，並獲得 250% 法力回復加成</FONT><br>+(1 to 2) 到所有技能 <br>+(40 to 60)% 更快施法速度 <br>+(1 to 5) To 冰霜專注<br>增加最大法力 +(20 to 30)% <br>魔法抗性 +(5 to 10)% <br>物理抗性: +(5 to 10)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Ama Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						亞馬遜護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						弁才天的護符
+						<br>
+			亞馬遜針 (zam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							亞馬遜針 (zam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 於弓和弩技能 (Amazon Only)<br>+(0 to 1) 至被動與魔法技能 (Amazon Only)<br>+(0 to 1) 於標槍和長矛技能 (Amazon Only)<br>+5 防禦 （基於角色等級）<br>+0.75 以敏捷 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						瓦爾哈拉的墜飾
+						<br>
+			亞馬遜針 (zam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							亞馬遜針 (zam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>25% 機率在你擊殺敵人時施放等級 10 古代的吼聲<br>+1 至被動與魔法技能 (Amazon Only)<br>+2 亞馬遜技能等級<br>+33% 致命一擊 <br>+(5 to 10) To 女武神 （亞馬遜專用）<br>+50 力量 <br>+50 生命力 <br>+60 生命值 <br>恢復生命 +(50 to 150) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						瘟疫的最後箭頭
+						<br>
+			亞馬遜針 (zam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							亞馬遜針 (zam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						1% 機率在攻擊時施放等級 60 火焰閃光<br>1% 機率在攻擊時施放等級 60 寒冰閃光<br>1% 機率在攻擊時施放等級 60 閃電閃光<br>+1 到所有技能 <br>+1 亞馬遜技能等級<br>+30% 提升攻擊速度 <br>+(25 to 40) 所有屬性 <br>+(1 to 2) 擊中時法力<br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Sor Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						魔法師護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						福禄寿的護符
+						<br>
+			法師的護符 (sam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							法師的護符 (sam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 火焰技能 (Sorceress Only)<br>+(0 to 1) 於雷電技能 (Sorceress Only)<br>+(0 to 1) 冷卻技能 (Sorceress Only)<br>+5 防禦 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>+0.75 於能量 （基於角色等級）<br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						玉佩
+						<br>
+			法師的護符 (sam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							法師的護符 (sam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到女巫技能等級<br>+30% 更快施法速度 <br>+6 To 附魔 （只有女巫）<br>+60 生命值 <br>+60 生命法力 <br>增加最大法力 +15% <br>+5% 最高毒素抗性 <br>所有抗性 +35 <br>物理抗性: +(10 to 20)% <br>魔法傷害減少 (15 to 25) <br>毒素持續時間減少 +(50 to 75)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						女主人皮革項圈
+						<br>
+			法師的護符 (sam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							法師的護符 (sam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						3% 機率在攻擊時施放等級 25 枷鎖<br>17% 機率在你擊殺敵人時施放等級 45 多重射擊<br>+1 到所有技能 <br>+1 到女巫技能等級<br>+30% 提升攻擊速度 <br>+(20 to 30) To 穿透<br>擊退 <br>+(25 to 40) 所有屬性 <br>+(2 to 5) 生命在打擊上<br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Nec Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						死靈法師護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						惠比壽的護符
+						<br>
+			死亡的項鍊 (nam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							死亡的項鍊 (nam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 到詛咒 (Necromancer Only)<br>+(0 to 1) 於毒與骨骸技能 (Necromancer Only)<br>+(0 to 1) 召喚技能 (Necromancer Only)<br>+5 防禦 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>+0.75 於能量 （基於角色等級）<br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						達維蘭之石
+						<br>
+			死亡的項鍊 (nam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							死亡的項鍊 (nam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						10% 機率在受到攻擊時施放等級 30 旋風護甲<br>+2 到死靈法師技能等級<br>+20% 更快的跑步/行走 <br>+30% 更快施法速度 <br>+(5 to 10) To 骨甲 （只限死靈法師）<br>+60 生命值 <br>增加最大生命 +15% <br>恢復生命 +(50 to 150) <br>法力再生 +(50 to 100)% <br>所有抗性 +25 <br>物理抗性: +(10 to 20)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						詛咒的甜甜圈
+						<br>
+			死亡的項鍊 (nam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							死亡的項鍊 (nam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						10% 機率在近戰攻擊時施放等級 45 洛薩的怒火<br>+1 到所有技能 <br>+1 到死靈法師技能等級<br>+30% 提升攻擊速度 <br>+(40 to 60)% 物理傷害吸取為生命 <br>+(20 to 30) To 神聖護衛<br>+(25 to 40) 所有屬性 <br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>無法被冰凍 <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Pal Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						聖騎士護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						大黑天的護符
+						<br>
+			神聖吊墜 (pam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							神聖吊墜 (pam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 於戰鬥技能 (Paladin Only)<br>+(0 to 1) 到攻擊光環 (Paladin Only)<br>+(0 to 1) 到防禦光環 (Paladin Only)<br>+5 防禦 （基於角色等級）<br>+0.75 力量 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						神聖的偏差者
+						<br>
+			神聖吊墜 (pam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							神聖吊墜 (pam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						2% 機率在攻擊時施放等級 50 毒霧<br>+1 於戰鬥技能 (Paladin Only)<br>+2 到 聖騎士技能等級<br>+(4 to 8)% 物理傷害吸取為魔法值 <br>+(8 to 12)% 物理傷害吸取為生命 <br>-(40 to 50)% 對敵人毒素抗性 <br>+(1 to 7) To 毒素精通<br>+25 To 毒液<br>+20 力量 <br>+20 於能量 <br>魔法吸收 +(1 to 3)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						黑騎士的神聖印記
+						<br>
+			神聖吊墜 (pam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							神聖吊墜 (pam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						17% 機率在近戰攻擊時施放等級 60 收割靈魂<br>+1 到所有技能 <br>+1 到 聖騎士技能等級<br>+30% 更快的擊中恢復 <br>+(30 to 40) 至攻擊的最小傷害 <br>+(25 to 40) 所有屬性 <br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>每次擊殺後 +(80 to 100) 生命 <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Bar Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						野蠻人護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						毘沙門天的護符
+						<br>
+			圖騰卵石 (bam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							圖騰卵石 (bam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 於戰鬥技能 (Barbarian Only)<br>+(0 to 1) 到精通 (Barbarian Only)<br>+(0 to 1) 到戰吼 (Barbarian Only)<br>+5 防禦 （基於角色等級）<br>+0.75 力量 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						Khisanth
+						<br>
+			圖騰卵石 (bam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							圖騰卵石 (bam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(2 to 3) 到精通 (Barbarian Only)<br>+2 到野蠻人技能等級<br>+30% 提升攻擊速度 <br>+4 To 自然抗性 （僅限野蠻人）<br>+4 To 鐵皮 （僅限野蠻人）<br>+25 力量 <br>+(6 to 13)% 力量加成 <br>+1 生命值 （基於角色等級）<br>恢復生命 +(50 to 150) <br>物理抗性: +(10 to 20)% <br>魔法傷害減少 (15 to 25) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						斯馬克敦的痛苦驕傲
+						<br>
+			圖騰卵石 (bam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							圖騰卵石 (bam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						5% 機率在受到攻擊時施放等級 1 物理傷害獎杯<br>+1 到所有技能 <br>+1 到野蠻人技能等級<br>+30% 提升攻擊速度 <br>+(20 to 30)% 物理傷害吸取為生命 <br>+(1 to 10) To 致命一擊<br>+(25 to 40) 所有屬性 <br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>物理抗性: -(30 to 20)% <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Dru Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						德魯伊護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						霍提的護符
+						<br>
+			德魯伊項鍊 (dam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							德魯伊項鍊 (dam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 召喚技能 (Druid Only)<br>+(0 to 1) 形態變化技能 (Druid Only)<br>+(0 to 1) 到元素技能 (Druid Only)<br>+5 防禦 （基於角色等級）<br>+0.75 生命力 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						陰森的收割者
+						<br>
+			德魯伊項鍊 (dam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							德魯伊項鍊 (dam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 召喚技能 (Druid Only)<br>+2 到德魯伊技能等級<br>+30% 更快的擊中恢復 <br>+(10 to 20)% 召喚傷害 <br>+(15 to 30)% 機率造成粉碎打擊 <br>+7 To 烏鴉 （僧侶專用）<br>+(10 to 20) To 嘲諷<br>+7 To 召喚靈狼 （僧侶專用）<br>+7 To 召喚恐狼 （僧侶專用）<br>+100% 增強防禦 <br>+30 以敏捷 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						雅古爾的血腥狂怒
+						<br>
+			德魯伊項鍊 (dam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							德魯伊項鍊 (dam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">原始狂暴加成翻倍，但持續時間縮短至 1 秒</FONT><br>8% 機率在你擊殺敵人時施放等級 45 原始野性<br>+1 到所有技能 <br>+1 到德魯伊技能等級<br>+30% 更快的擊中恢復 <br>+(20 to 30)% 物理傷害吸取為生命 <br>+(25 to 40) 所有屬性 <br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Ass Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						刺客護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						吻天的護符
+						<br>
+			刺客的項圈 (aam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							刺客的項圈 (aam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 於陷阱 (Assassin Only)<br>+(0 to 1) 影子技藝 (Assassin Only)<br>+(0 to 1) 於武術 (Assassin Only)<br>+5 防禦 （基於角色等級）<br>+0.75 以敏捷 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						子理智
+						<br>
+			刺客的項圈 (aam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							刺客的項圈 (aam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>5% 機率在攻擊時施放等級 30 放大傷害<br>+1 於武術 (Assassin Only)<br>+2 到刺客技能等級<br>+4 To 消失 （僧侶專用）<br>+4 To 速度爆發 （僧侶專用）<br>+4 To 陰影盔甲 （僧侶專用）<br>+20 以敏捷 <br>+20 生命力 <br>+20 於能量 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						德維亞的復仇
+						<br>
+			刺客的項圈 (aam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							刺客的項圈 (aam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						5% 機率在你擊殺敵人時施放等級 40 絕對零度<br>+1 到所有技能 <br>+1 到刺客技能等級<br>+30% 更快施法速度 <br>-(10 to 20)% 對敵人冰冷抗性 <br>凍結目標 +5<br>+(25 to 40) 所有屬性 <br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>無法被冰凍 <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="War Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						術士護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						伊邪那美護符
+						<br>
+			術士墜飾 (wam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							術士墜飾 (wam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(0 to 1) 惡魔技能 (Warlock Only)<br>+(0 to 1) 邪異技能 (Warlock Only)<br>+(0 to 1) 混沌技能 (Warlock Only)<br>+5 防禦 （基於角色等級）<br>+(6 to 13)% 所有屬性加成 <br>+0.75 於能量 （基於角色等級）<br>恢復生命 +(50 to 100) <br>物理抗性: +10% <br>+(50 to 100)% 從怪物獲得的額外金幣 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						黑蓮花
+						<br>
+			術士墜飾 (wam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							術士墜飾 (wam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100)% 增強傷害<br>5% 機率在攻擊時施放等級 30 衰弱<br>+1 邪異技能 (Warlock Only)<br>+2 術士技能<br>+4 To 邪咒：災禍 （只限術士）<br>+4 To 邪咒：消滅 （只限術士）<br>+4 To 邪咒：虹吸 （只限術士）<br>+20 力量 <br>+20 生命力 <br>+20 於能量 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						魔苟斯的無盡狂妄
+						<br>
+			術士墜飾 (wam)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							術士墜飾 (wam)
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：75
+					<br>
+					所需等级：75
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">+1 到非獨特召喚限制</FONT> <br>5% 機率在你擊殺敵人時施放等級 40 奇點<br>+1 到所有技能 <br>+1 術士技能<br>+30% 更快施法速度 <br>+(10 to 20) To 靈魂顫慄<br>+(10 to 20) To 古代的活力<br>+(25 to 40) 所有屬性 <br>+(2 to 5)% 最高魔法抗性 <br>+(2 to 5)% 到所有最大抗性 <br>所有抗性 +(30 to 50) <br>+(35 to 50)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="Jewel"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						寶石
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						金杜軍
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+30% 更快的跑步/行走 <br>+30% 提升攻擊速度 <br>+30% 更快施法速度 <br>+1% 增加格擋機率 <br>+(25 to 30) 以敏捷 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						理想工藝
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：45
+					<br>
+					所需等级：40
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(40 to 80)% 增強傷害<br>+(15 to 30)% 提升攻擊速度 <br>+(25 to 50)% 攻擊評價加成 <br>需求 -(25 to 15)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						波希米亞之石
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：50
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 750-1000 毒素傷害，持續 1 秒<br>2% 機率在你擊殺敵人時施放等級 40 毒素激增<br>-(4 to 5)% 對敵人毒素抗性 <br>物理抗性: +(1 to 3)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						艾博西女士的貪婪
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：50
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(5 to 8)% 物理傷害吸取為魔法值 <br>+(5 to 8)% 物理傷害吸取為生命 <br>所有抗性 +(1 to 20) <br>+(1 to 100)% 從怪物獲得的額外金幣 <br>+(1 to 100)% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						星際之星
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：50
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						2% 機率在你擊殺敵人時施放等級 40 魔法激增<br>+100 最小攻擊魔法傷害 <br>+200 最大攻擊魔法傷害 <br>+(5 to 10)% 於魔法傷害 <br>+1% 最高魔法抗性 <br>+1% 到所有最大抗性 <br>所有抗性 +(10 to 30) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						冰風暴碎片
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：55
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 150-225 冷傷害，持續 5 秒<br>2% 機率在你擊殺敵人時施放等級 40 寒流<br>-(4 to 5)% 對敵人冰冷抗性 <br>法力再生 +(20 to 30)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						火蜥蜴石
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：55
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 175-225 火焰傷害<br>2% 機率在你擊殺敵人時施放等級 40 火焰激增<br>-(4 to 5)% 對敵人火焰抗性 <br>恢復生命 +(25 to 50) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						塞瑟克隆雅的火花
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：55
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 1-400 電擊傷害<br>2% 機率在你擊殺敵人時施放等級 40 閃電激增<br>-(4 to 5)% 對敵人閃電抗性 <br>+(5 to 20) 生命值 <br>+(5 to 20) 生命法力 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						斯密夫石
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：55
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(0 to 1) 亞馬遜技能等級<br>+(0 to 1) 到刺客技能等級<br>+(0 to 1) 到野蠻人技能等級<br>+(0 to 1) 到德魯伊技能等級<br>+(0 to 1) 到死靈法師技能等級<br>+(0 to 1) 到女巫技能等級<br>+(0 to 1) 到 聖騎士技能等級<br>+(0 to 1) 術士技能<br>需求 -(10 to 5)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						拉里亞斯的放蕩哀歌
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：55
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(1 to 20) 所有屬性 <br>+(1 to 3)% 所有屬性加成 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						冰封末日
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：92
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>-(4 to 8)% 對敵人冰冷抗性 <br>+1 To 寒冷精通<br>法力再生 +(10 to 100)% <br>冰冷吸收 +(1 to 2)% <br>+20 所需等級 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						地獄寶石
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：92
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>-(4 to 8)% 對敵人火焰抗性 <br>+1 To 火焰精通<br>恢復生命 +(20 to 200) <br>火焰吸收 +(1 to 2)% <br>+20 所需等級 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						電漿漩渦
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：92
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>-(4 to 8)% 對敵人閃電抗性 <br>+1 To 雷電精通<br>閃電吸收 +(1 to 2)% <br>+(10 to 80)% 獲得魔法物品的機率提升 <br>+20 所需等級 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						醉人水晶
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：92
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>-(4 to 8)% 對敵人毒素抗性 <br>+1 To 毒素精通<br>+(1 to 3)% 最高毒素抗性 <br>毒素抗性 +(10 to 30)% <br>+(10 to 80)% 從怪物獲得的額外金幣 <br>+20 所需等級 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						天體碎片
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：92
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+175 最小攻擊魔法傷害 <br>+225 最大攻擊魔法傷害 <br>+1 To 魔法精通<br>+(1 to 3)% 最高魔法抗性 <br>魔法傷害減少 (10 to 20) <br>+20 所需等級 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						惡魔虛空石
+						<br>
+			寶石 (jew)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：92
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(2 to 10)% 致命一擊 <br>+(1 to 10) To 武器精通<br>+1 To 物理精通<br>物理抗性: +(1 to 5)% <br>+20 所需等級 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						創世餘燼
+						<br>
+			寶石 (mjw)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face=arial,helvetica size=-1>
+					賭博物品：
+					<br>
+						<b>
+							無
+						</b>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：100
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 隨機職業技能
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="LoD Amulet"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						LoD護身符
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						諾科贊遺物
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：14
+					<br>
+					所需等级：10
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 40-60 火焰傷害<br>100% 機率在你擊殺敵人時施放等級 10 火焰激增<br>+30% 更快的跑步/行走 <br>-(10 to 15)% 對敵人火焰抗性 <br>+(5 to 10)% 最高火焰抗性 <br>火焰抗性 +75% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						艾特利奇之眼
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：20
+					<br>
+					所需等级：15
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到所有技能 <br>凍結目標 +1<br>+1 擊中時法力<br>+5 生命在打擊上<br>無法被冰凍 <br>+(5 to 10) 的光照半徑 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						馬希姆-橡樹好奇物
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：34
+					<br>
+					所需等级：25
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(40 to 50) 所有屬性 <br>+(6 to 13)% 所有屬性加成 <br>所有抗性 +(20 to 40) <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						撒拉遜的機會
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：55
+					<br>
+					所需等级：47
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">你有小機率受到命運的眷顧</FONT><br>+(1 to 10)% 閃避機率 <br>+(1 to 50)% 致命一擊 <br>+100% 從怪物獲得的額外金幣 <br>降低所有商人價格 +(1 to 5)% <br>+100% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					你有 10% 機率獲得 1000% 魔法尋寶、1000% 金幣尋獲、2000% 傷害強化或 50% 總法術傷害，並有 1% 機率達到閃避上限。
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						貓眼
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：58
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+50% 更快的跑步/行走 <br>+30% 提升攻擊速度 <br>+(10 to 20) To 速度爆發<br>+1 To 閃避<br>+(80 to 120) 以敏捷 <br>+(13 to 26)% 速度加成 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						新月
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：58
+					<br>
+					所需等级：50
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						20% 機率在你擊殺敵人時施放等級 40 天之拳<br>+(1 to 3) 到魔法技能<br>+(100 to 300)% 對惡魔的傷害 <br>+(100 to 300)% 對不死生物的傷害 <br>+(20 to 30)% 於魔法傷害 <br>+(2 to 3) 擊中時法力<br>+(3 to 5) 生命在打擊上<br>魔法抗性 +(20 to 30)% <br>+(100 to 150)% 受到的傷害轉換為法力 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						無序墜盒
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：54
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">你有 10% 機率造成雙倍法術傷害</FONT><br>25% 機率在你施放技能時施放等級 60 瘴氣鎖鏈<br>+1 到所有技能 <br>+(1 to 2) 瘴氣鎖鏈數量上限 <br>+(20 to 30)% 於魔法傷害 <br>+1 To 傳送<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						阿特瑪的聖甲蟲
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：60
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						增加 300%-400% 流血傷害，持續 3 秒<br>3% 機率在攻擊時施放等級 60 放大傷害<br>+(40 to 50)% 更快的跑步/行走 <br>減緩目標 +(20 to 40)% <br>恢復生命 +(600 to 800) <br>毒素持續時間減少 +(50 to 75)% <br>每次擊殺後 +(50 to 75) 生命 <br>每次擊殺後 +(20 to 40) 生命法力 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						旭日
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：73
+					<br>
+					所需等级：65
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						對攻擊增加 400-500 火焰傷害<br>+(2 to 4) 火焰技能<br>-(15 to 20)% 對敵人火焰抗性 <br>+(1 to 10) To 火焰精通<br>恢復生命 +(600 to 800) <br>火焰吸收 +(4 to 5)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						高主的憤怒
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：73
+					<br>
+					所需等级：65
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						5% 機率在受到攻擊時施放等級 60 嘲諷<br>+(1 to 2) 到所有技能 <br>+(30 to 50) 至攻擊的最小傷害 <br>+(20 to 30) 最高傷害提升至攻擊 <br>+(20 to 40)% 物理傷害吸取為生命 <br>+(40 to 60)% 致命一擊 <br>+(20 to 40)% 致命一擊傷害 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						天使的聖歌
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：73
+					<br>
+					所需等级：65
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						5% 機率在你擊殺敵人時施放等級 40 戰鬥命令<br>5% 機率在你擊殺敵人時施放等級 40 戰鬥指揮<br>5% 機率在你擊殺敵人時施放等級 40 吼叫<br>5% 機率在受到攻擊時施放等級 60 嘲諷<br>5% 機率在受到攻擊時施放等級 60 吼叫<br>+(1 to 3) 到所有技能 <br>+(1 to 10) To 魔法精通<br>無法被冰凍 <br>+(5 to 15)% 獲得經驗值 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						瑪拉的萬花筒
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：80
+					<br>
+					所需等级：67
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+2 到所有技能 <br>+(16 to 23)% 所有屬性加成 <br>所有抗性 +(40 to 50) <br>+(5 to 35)% 獲得經驗值 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						金屬網格
+						<br>
+			護身符 (au9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：85
+					<br>
+					所需等级：81
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">-5 到非獨特召喚限制</FONT> <br>+(1 to 3) 到所有技能 <br>-20% 所有召喚物抗性 <br>+(10 to 20)% 召喚物理和魔法抗性 <br>+(100 to 200)% 召喚傷害 <br>+1 To 延遲傳送<br>所有抗性 -40 <br>物理抗性: +(10 to 20)% <br>插槽 (1)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+<a name="LoD Ring"></a>
+<table cellpadding="5" border="0" width="100%">
+	<tbody>
+		<tr>
+			<td colspan="4" bgcolor="#402040" align="center">
+				<font face="arial,helvetica">
+					<b>
+						LoD戒指
+					</b>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td width=300 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					名稱
+				</font></td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font></td>
+			<td width=500 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					屬性
+				</font>
+			</td>
+			<td width=200 bgcolor="#402040" align="center">
+				<font size="-1" face="arial,helvetica">
+					備註
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						納戈爾戒指
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：10
+					<br>
+					所需等级：7
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						減少傷害 20 <br>魔法傷害減少 20 <br>+(100 to 150)% 從怪物獲得的額外金幣 <br>+(100 to 150)% 獲得魔法物品的機率提升 <br>插槽 (1)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						曼納德之癒
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：20
+					<br>
+					所需等级：15
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(50 to 100) 生命值 <br>恢復生命 +(500 to 1000) <br>+(50 to 100) 生命法力 <br>法力再生 +(200 to 300)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						喬丹之石
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：40
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+(20 to 30)% 更快施法速度 <br>+1 To 傳送<br>+30 To Random Amazon Skill （亞馬遜專用）<br>+(50 to 100) 生命法力 <br>增加最大法力 +(30 to 50)% <br>插槽 (1)<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						矮星
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：53
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">攻擊的火焰傷害可以造成暴擊</FONT><br>對攻擊增加 400-500 火焰傷害<br>+(100 to 125) 力量 <br>-20% 最高火焰抗性 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						烏鴉之霜
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：53
+					<br>
+					所需等级：45
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">攻擊的冰霜傷害可以造成暴擊</FONT><br>對攻擊增加 400-500 冷傷害，持續 5 秒<br>+(100 to 125) 以敏捷 <br>-20% 冷抗上限 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						投索
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：65
+					<br>
+					所需等级：57
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">受到攻擊時有 15% 機率獲得 100% 基礎移動速度<br>並可穿過敵人，持續 2 秒</FONT><br>+(4 to 8)% 總法術傷害 <br>+30% 提升攻擊速度 <br>+30% 更快施法速度 <br>敵人魔法抗性 -(5 to 10)% <br>敵人物理傷害抗性 -(5 to 10)% <br>-(10 to 20)% 對敵人元素和毒素抗性 <br>+(6 to 12)% 致命一擊傷害 <br>+1 To 城門<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						蛋白石脈
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：65
+					<br>
+					所需等级：57
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(1 to 2) 到所有技能 <br>減少傷害 (40 to 50) <br>魔法傷害減少 (40 to 50) <br>插槽 (1)<br><br><FONT COLOR="WHITE">以下其中 1 項：</FONT><br><FONT COLOR="ORANGE">每裝備一顆寶石，獲得 50% 強化傷害<br>此效果無法疊加，但會提高 50%，<br>前提是你佩戴法術傷害的蛋白石脈</FONT><br>裝備時提供 1 級 Unknown Skill 光環<br><br><FONT COLOR="ORANGE">每裝備一顆寶石，獲得 10% 法術傷害<br>此效果無法疊加，但會提高 50%，<br>前提是你佩戴強化傷害的蛋白石脈</FONT><br>裝備時提供 1 級 Unknown Skill 光環<br><br><FONT COLOR="WHITE">以下其中 1 項：</FONT><br>+1 To 熔融焦點<br>+1 To 冰霜專注<br>+1 To 靜態聚焦<br>+1 To 古代的力量<br>+1 To 古代的活力<br>+1 To 鐵皮<br>+1 To 自然抗性<br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						布爾卡索的婚戒
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：66
+					<br>
+					所需等级：58
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>+20% 物理傷害吸取為生命 <br>+(10 to 20) To 古代的力量<br>+(10 to 20) To 自然抗性<br>+(13 to 20)% 力量加成 <br>+(150 to 200) 最大耐力 <br>減少傷害 50 <br>魔法傷害減少 30 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						腐肉之風
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：68
+					<br>
+					所需等级：60
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+(2 to 4) 對毒素技能<br>-(15 to 25)% 對敵人毒素抗性 <br>+(1 to 10) To 毒素精通<br>+(80 to 160) 生命值 <br>+(1 to 4) 生命在打擊上<br>毒素抗性 +(40 to 60)% <br>毒素持續時間減少 +(50 to 75)% <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						自然的安寧
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：77
+					<br>
+					所需等级：69
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						<FONT COLOR="ORANGE">+(10 to 20)% 總乘數到召喚傷害屬性</FONT> <br><FONT COLOR="ORANGE">-(3 to 2) 到非獨特召喚限制</FONT> <br>+(50 to 150)% 增強傷害<br>裝備時提供 (10 to 20) 級 救贖 光環<br>+(20 to 40)% 召喚傷害 <br>+(10 to 20) To 召喚灰熊<br>+(1 to 3) 魔法吸收 <br>元素吸收 (1 to 3)% <br>+(5 to 10)% 獲得經驗值 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						精靈投影器
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：84
+					<br>
+					所需等级：76
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						裝備時提供 (1 to 10) 級 閃電傷害光環 光環<br>+(0 to 3) 到雷電技能<br>-(10 to 15)% 對敵人閃電抗性 <br>+1 To 傳送<br>魔法抗性 +(5 to 10)% <br>閃電吸收 +(3 to 5)% <br>(10 to 15)% 重新復活為: 鬼火<br>+(5 to 10)% 獲得經驗值 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<b>
+						束縛之戒
+						<br>
+			戒指 (rn9)
+					</b>
+				</font>
+				<br>
+				<br>
+				<font face="arial,helvetica" size="-1" color="#928A70"><strong>古代優惠券暗金<br>(無法賭博)</strong></font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					物品等級：95
+					<br>
+					所需等级：95
+					<br>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					<font color=4850B8>
+						+1 到所有技能 <br>吸取生命 -30 <br>+(2 to 7)% 最高魔法抗性 <br>+(2 to 7)% 到所有最大抗性 <br>所有抗性 +100 <br>+(5 to 15)% 獲得經驗值 <br>+200% 獲得魔法物品的機率提升 <br>
+					</font>
+				</font>
+			</td>
+			<td align=center bgcolor=#101010>
+				<font face=arial,helvetica size=-1>
+					
+				</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div style="margin-top:10px; margin-bottom:10px;"><font size="-1" face="arial,helvetica">
+<a href="#Large Charm">[大型護身符]</a>
+<a href="#Grand Charm">[大符文]</a>
+<a href="#Odd Charm">[奇異護符]</a>
+<a href="#Small Charm">[小飾品]</a>
+<a href="#Ring">[戒指]</a>
+<a href="#Ama Ring">[亞馬遜戒指]</a>
+<a href="#Sor Ring">[魔法師戒指]</a>
+<a href="#Nec Ring">[死靈法師戒指]</a>
+<a href="#Pal Ring">[聖騎士戒指]</a>
+<a href="#Bar Ring">[野蠻人戒指]</a>
+<a href="#Dru Ring">[德魯伊戒指]</a>
+<a href="#Ass Ring">[刺客戒指]</a>
+<a href="#War Ring">[術士戒指]</a>
+<a href="#Amulet">[護身符]</a>
+<a href="#Ama Amulet">[亞馬遜護身符]</a>
+<a href="#Sor Amulet">[魔法師護身符]</a>
+<a href="#Nec Amulet">[死靈法師護身符]</a>
+<a href="#Pal Amulet">[聖騎士護身符]</a>
+<a href="#Bar Amulet">[野蠻人護身符]</a>
+<a href="#Dru Amulet">[德魯伊護身符]</a>
+<a href="#Ass Amulet">[刺客護身符]</a>
+<a href="#War Amulet">[術士護身符]</a>
+<a href="#Jewel">[寶石]</a>
+<a href="#LoD Amulet">[LoD護身符]</a>
+<a href="#LoD Ring">[LoD戒指]</a>
+</font></div>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

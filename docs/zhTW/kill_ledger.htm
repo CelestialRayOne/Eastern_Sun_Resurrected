@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 資料庫
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35486;&#35328;"><select id="esr-lang-zhTW" aria-label="&#35486;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW" selected>&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhTW",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhTW');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本資訊</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日誌]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[護甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前綴]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[後綴]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金護甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套裝]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石之語]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之語]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[方塊配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地圖]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速計算器]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查詢]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系統</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化結果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油結果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[終局地圖]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[靈魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[進階職業]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[擊殺帳簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵與外部技能資訊]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器專精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破壞神 II：獄火重生 全面轉換模組</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <br>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            這本 <font color="ORANGE">殺死賬本</font> 是一本特殊的書，會記錄你擊殺的敵人數量。<br>
+                            除了記錄之外，當你達到特定擊殺門檻時，還能為這本帳冊附加各種加成。<br>
+                            這本 <font color="ORANGE">殺死賬本</font> 也能用來捕捉終局地圖頭目的靈魂。擊殺地圖頭目後，你可以轉化這本帳冊以獲得特殊加成。<br>
+                            這些加成不像昇華加成那麼重要或改變局勢，但通常比較容易取得，主要是象徵性的，用來記錄你的進度。<br>
+                            <font color="706850">擊殺加成</font> 必須依序完成。例如，若沒有所有先前的加成就嘗試轉化全技能加成，是不會成功的。<br>
+                            這本 <font color="ORANGE">殺死賬本</font> 也是技能隨機效果運作的必要條件，因此你必須 <font color="RED">隨時把它放在物品欄中</font>.<br>
+                            <font color="purple">頭目加成</font> 可以依任意順序完成。<br>
+                            這本 <font color="ORANGE">殺死賬本</font> <font color="red">無法在角色之間</font> 轉移。<br>
+                            不用說，每個加成都只能獲得一次。<br>
+                        </font>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font size="-1" face="arial,helvetica">
+            <table cellpadding="5" border="0" style="width: 1200px">
+                <tbody>
+                    <a name="killbonuses"></a>
+                    <a href="./kill_ledger.htm#killbonuses">[擊殺加成]</a>&nbsp;
+                    <a href="./kill_ledger.htm#bossbonuses">[頭目加成]</a>&nbsp;
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center">
+                            <font face="arial,helvetica">
+                                <b>
+                                    擊殺加成
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 500 個）<br>
+                                任意無瑕的寶石<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +10% 所有抗性<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 5000 個）<br>
+                                任意瑕疵的寶石<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +10% 所有速度提升<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 10000 個）<br>
+                                任意完美寶石<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +5% 所有屬性加成<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 50000 個）<br>
+                                任意完美寶石 x2<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                增加最大生命 +10% <br>
+                                增加最大法力 +10% <br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 100000 個）<br>
+                                任意完美寶石 x3<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +10% 物理傷害吸取為生命 <br>
+                                +10% 物理傷害吸取為魔法值 <br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 1000000 個）<br>
+                                任意完美寶石 x4<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +10 火焰吸收<br>
+                                +10 冷卻吸收<br>
+                                +10 電擊吸收<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                （至少擊殺 10000000 個）<br>
+                                楓葉<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +1 到所有技能<br>
+                            </font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </font>
+        <br>
+        <font size="-1" face="arial,helvetica">
+            <table cellpadding="5" border="0" style="width: 1200px">
+                <tbody>
+                    <a name="bossbonuses"></a>
+                    <a href="./kill_ledger.htm#killbonuses">[擊殺加成]</a>&nbsp;
+                    <a href="./kill_ledger.htm#bossbonuses">[頭目加成]</a>&nbsp;
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center">
+                            <font face="arial,helvetica">
+                                <b>
+                                    頭目加成
+                                </b><br>
+                                <font face="arial,helvetica" size="-1">擊殺頭目後，你有 60 秒的時間，用適當的材料轉化你的 <font color="ORANGE">殺死賬本</font>
+                                    以獲得加成。
+                                </font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="RED">瑕疵的謎樣朱砂 x2</font><br>
+                                剛擊殺盧西恩的低語<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                恢復生命 +500<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="PURPLE">瑕疵的污穢碧璽 x2</font><br>
+                                剛擊殺迪亞布羅的地獄犬<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +10% 法術傷害<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="ORANGE">瑕疵風暴琥珀 x2</font><br>
+                                剛擊殺古老的墮天使<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +50% 增強傷害<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="GREEN">瑕疵苦橄欖石 x2</font><br>
+                                剛擊殺陰影中的恐懼<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                毒素持續時間減少 +25%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="WHITE">瑕疵的固體水銀 x2</font><br>
+                                剛擊殺夜之化身<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                減少傷害 20<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="GOLD">瑕疵脈動蛋白石 x2</font><br>
+                                剛擊殺厄運的先驅<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                -5% 敵人的元素與毒素抗性<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="BLUE">瑕疵冰凍靈魂 x2</font><br>
+                                剛擊殺冰霜巨獸<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +5% 技能冷卻時間減少<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="GREEN">瑕疵的墓穴翡翠 x2</font><br>
+                                剛擊殺任務主管<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +10% 召喚物傷害<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="LIGHTGRAY">瑕疵影子石英 x2</font><br>
+                                剛擊殺巴爾的扭曲毀滅先驅<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                魔法傷害減少 20<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="BLUE">瑕疵黑暗藍寶石 x2</font><br>
+                                剛擊殺靈魂的仲裁者<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                魔法吸收 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="YELLOW">缺陷的燃燒硫磺 x2</font><br>
+                                <font color="YELLOW">完美黃玉</font><br>
+                                剛擊殺無敵的梅菲斯托<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                閃電吸收 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="RED">瑕疵流血石 x2</font><br>
+                                <font color="RED">完美紅寶石</font><br>
+                                剛擊殺無敵的迪亞波羅<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                火焰吸收 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="BLUE">瑕疵黑暗藍寶石 x2</font><br>
+                                <font color="BLUE">完美藍寶石</font><br>
+                                剛擊殺無敵的巴爾<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                冰冷吸收 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="#928A70">楓葉</font><br>
+                                <font color="PURPLE">瑕疵的碧璽</font><br>
+                                剛擊殺任一永恆的遠古戰士<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                物理抗性: +5%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="#928A70">楓葉</font><br>
+                                <font color="BLUE">瑕疵冰凍靈魂</font><br>
+                                剛擊殺巫妖王<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                無法被冰凍<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="#928A70">楓葉</font><br>
+                                <font color="LIGHTGRAY">瑕疵影子石英</font><br>
+                                剛擊殺拉斯瑪<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                詛咒持續時間減少 15%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                <font color="#928A70">楓葉</font><br>
+                                <font color="RED">瑕疵流血石</font><br>
+                                剛擊殺盧西恩<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">殺死賬本</font><br>
+                                +100 生命值<br>
+                            </font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </font>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

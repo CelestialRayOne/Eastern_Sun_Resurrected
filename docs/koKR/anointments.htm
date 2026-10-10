@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+		<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+			<tbody>
+				<tr>
+					<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								성유는 특정 큐브 시약을 특정 아이템과 변환해 얻는 고유한 보너스입니다.<br>
+								참고로, <FONT color="#706850">고유 부적</FONT>의 성유는 폭풍의 눈 보스의 모든 신체 부위<br>
+								(<FONT color="PURPLE">디아블로의 악마 뿔</FONT>, <FONT color="PURPLE">바알의 악마의 눈</FONT>, <FONT color="PURPLE">메피스토의 악마 뇌</FONT>)를 <FONT color="#706850">고유 부적</FONT> 과(와) 변환하면 한 번만 얻을 수 있습니다.<br>
+								룬워드가 아닌 일반/<font color="blue">마법</font>/<font color="yellow">희귀</font>/<font color="orange">제작</font>/<font color="GREEN">세트</font> 착용 장비의 성유는 <FONT color="purple">성수의 구슬</FONT> 을(를) 희귀 아이템과 변환하면 얻을 수 있습니다.<br>
+								타락과 달리, 성유 부여로 아이템이 망가지지는 않습니다.<br>
+								특정 큐브 시약과 아이템을 변환한 뒤, 실제로 성유를 부여하려면 한 번 더 변환해야 합니다.
+							</font>
+						</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+			<tbody>
+				<tr>
+					<td width="500" bgcolor="#402040" align="center">
+						<font size="-1" face="arial,helvetica">
+							입력</font>
+					</td>
+					<td width="500" bgcolor="#402040" align="center">
+						<font size="-1" face="arial,helvetica">
+							가능한 결과</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							일반/<font color="blue">마법</font>/<font color="yellow">희귀</font>/<font color="orange">제작</font>/<font color="GREEN">세트</font> 착용 장비<br>
+							<FONT color="PURPLE">성수의 구슬<br></FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							같은 아이템<br>
+							<font color="orange">최상위 티어의 무작위 접미사</font><br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(40~50)% 증가된 피해<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>-(10~15)% 목표 방어력<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>모든 능력치에 +(8~10)% 보너스<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(15~20)% 마법 주문 피해 증가<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>적의 원소 및 독 저항 -(8~12)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(15~20)% 공격 속도 증가<br>
+							시전 속도 증가 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(8~12)% 물리 피해 생명력으로 흡수됨<br>
+							+(8~12)% 물리 피해를 마나로 흡수합니다.<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>모든 능력치 +(20~25) 증가<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(10~15)% 소환 피해<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>치명타 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>강타 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(15~20)% 물리 주문 피해 증가<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>모든 기술에 +1 추가<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>원소 및 독 주문 피해 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(20~30)% 더 빠른 이동/걷기<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(20~30)% 더 빠른 타격 회복<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>최대 생명 증가 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>최대 마나 증가 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>얼음에 갇히지 않음<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							최대 마법 저항력 +1% 증가<br>
+							최대 독 저항 +1% 증가<br>
+							최대 냉기 저항 +1%<br>
+							+1% 최대 번개 저항 증가<br>
+							최대 화염 저항 +1% 증가<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>모든 저항 +(15~20)%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(30~40)% 마법 아이템 획득 확률 증가<br>
+							+(30~40)% 몬스터로부터 추가 골드<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(60~80) 생명력 증가<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(60~80)의 마나<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>저주 지속시간 (15~20)% 감소<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>생명력 회복 +(300~400)<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(15~20)% 관통 공격<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>원소 흡수 +1%<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(20~30) 처치 후 생명력 회복<br>
+							적 처치 시마다 마나 +(15~20)<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							고유 부적<br>
+							<FONT color="PURPLE">디아블로의 악마 뿔<br>
+							바알의 악마의 눈<br>
+							메피스토의 악마 뇌</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(10~15) to 최소 피해<br>
+							+(15~20) to 최대 피해<br>
+							<FONT COLOR="Purple">*** 성유 부여됨 **</FONT><br>
+						</font>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

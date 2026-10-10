@@ -1,0 +1,4134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+		<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+			<tbody>
+				<tr>
+					<td colspan="2" align="center" bgcolor="#300000">
+						<font face="arial,helvetica" size="-1">
+							타락은 <font color="RED">세계석 조각</font> 을(를) 아무 아이템과 변환해 얻는 고유한 보너스입니다.<br>
+							SP 버전에서는 <font color="RED">세계석 조각</font> 이(가) 공포의 영역의 챔피언이나 고유 몬스터에게서 드롭됩니다.<br>
+							LAN 버전에서는 <font color="RED">세계석 조각</font> 이(가) 레벨 90 이상의 챔피언이나 고유 몬스터에게서,<br>공포의 영역 여부와 관계없이 드롭됩니다 (단, 공포의 영역은 해당 몬스터의 레벨을 올려 주므로 도움이 됩니다).<br>
+							모든 아이템은 타락시킬 때 25% 확률로 희귀 아이템(실패)으로 바뀝니다.<br>
+							타락에 성공(보너스 획득)할 확률은 75%입니다 ( <font color="#706850">고유</font> 부적은 66%).<br>
+							아이템을 세계석 조각과 변환한 뒤, 실제로 타락시키려면 한 번 더 변환해야 합니다.
+							<strong>주의:</strong> 아이템을 타락시키면 희귀 아이템으로 바뀔 수 있습니다.<br>
+						</font>
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+			<tbody>
+				<tr>
+					<td width="500" bgcolor="#402040" align="center">
+						<font size="-1" face="arial,helvetica">
+							입력</font>
+					</td>
+					<td width="500" bgcolor="#402040" align="center">
+						<font size="-1" face="arial,helvetica">
+							가능한 결과</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(150~200)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(400~500) 공격 등급 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(6~13)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(200~300)% 악마에게 가하는 피해 <br>악마에 대한 공격 등급 +400 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(10~16)% 보너스
+							<br>요구 사항 +100% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 마법 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(13~20)% 보너스
+							<br>요구 사항 +200% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(16~23)% 보너스
+							<br>요구 사항 +300% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 시전 속도 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(200~300)% 언데드에 대한 피해 <br>언데드에 대한 공격 등급 +400 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 화염 저항 -(15~20)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 번개 저항 -(15~20)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 냉기 저항 -(15~20)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 독 저항 -(15~20)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~20)% 물리 피해를 마나로 흡수합니다. <br>+(10~20)% 물리 피해 생명력으로 흡수됨 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치 +(40~50) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~35)% 소환 피해 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 공격 속도 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 치명타 확률
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(100~150)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br>+20% 공격 속도 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+30% 공격 속도 증가 <br>+(20~30)% 치명타 확률 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(50~100)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br>대상의 방어 무시 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(100~125)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 물리 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +1 추가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+20% 시전 속도 증가 <br>+(20~30)% 화염 주문 피해 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+20% 시전 속도 증가 <br>냉기 주문 피해 +(20~30)% 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+20% 시전 속도 증가 <br>+(20~30)% 번개 주문 피해 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 무기<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+20% 시전 속도 증가 <br>+(20~30)% 독 마법 피해 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 더 빠른 차단 속도 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 더 빠른 타격 회복
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>화염 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>냉기 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>전기 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>독 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>마나 재생 +(50~100)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>공격자가 80의 피해를 입습니다. (캐릭터 레벨 기준)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 생명 증가 +(20~30)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+20% 더 빠른 차단 속도 <br>+(3~5)% 차단 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>파괴 불가능 <br>+(150~200)% 향상된 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>얼음에 갇히지 않음 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>물리 저항: +(15~20)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							마법 저항: +(15~20)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(4~8)% 차단 확률 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 최대 저항 +(4~5)%
+							<br>요구 사항 +200% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +1 추가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(30~35) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 최대 저항 +(2~3)%<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(2~3)% 증가
+							<br>화염 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(2~3)%
+							<br>냉기 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(2~3)% 최대 번개 저항 증가
+							<br>전기 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 방패<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(2~3)% 증가
+							<br>독 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(150~250)% 향상된 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 더 빠른 타격 회복
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>화염 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>냉기 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>전기 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>독 저항 +(40~50)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>마나 재생 +(50~100)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>공격자가 80의 피해를 입습니다. (캐릭터 레벨 기준)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 생명 증가 +(25~35)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +(2~3) 추가 <br>요구 사항 +200% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>얼음에 갇히지 않음 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>물리 저항: +(15~20)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							마법 저항: +(15~20)% <br>
+							(저품질/일반/상급 아이템은 +(25~35)%)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>파괴 불가능 <br>+(150~200)% 향상된 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>저주 지속시간 (30~40)% 감소
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +1 추가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(25~35) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 최대 저항 +(2~3)%<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(2~3)% 증가
+							<br>화염 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(2~3)%
+							<br>냉기 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(2~3)% 최대 번개 저항 증가
+							<br>전기 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 갑옷<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(2~3)% 증가
+							<br>독 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(150~250)% 향상된 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150)% 몬스터로부터 추가 골드
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(1~2)% 증가
+							<br>화염 저항 +(15~25)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(1~2)%
+							<br>냉기 저항 +(15~25)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(1~2)% 최대 번개 저항 증가
+							<br>전기 저항 +(15~25)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(1~2)% 증가
+							<br>독 저항 +(15~25)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>마나 재생 +(60~80)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 더 빠른 타격 회복
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~120) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>파괴 불가능 <br>+(150~200)% 향상된 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(20~30) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>생명력 회복 +(200~300) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~40) 처치 후 생명력 회복
+							<br>+(20~40)의 처치 후 마나 회복 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 더 빠른 이동/걷기 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(50~60)% 더 빠른 이동/걷기
+							<br>요구 사항 +100% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 생명력 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>저주 지속시간 (20~30)% 감소
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>물리 저항: +(10~15)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(1~2)% 증가
+							<br>화염 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(1~2)%
+							<br>냉기 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(1~2)% 최대 번개 저항 증가
+							<br>전기 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장화<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(1~2)% 증가
+							<br>독 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 더 빠른 타격 회복
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150)% 몬스터로부터 추가 골드
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(1~2)% 증가
+							<br>화염 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(1~2)%
+							<br>냉기 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(1~2)% 최대 번개 저항 증가
+							<br>전기 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(1~2)% 증가
+							<br>독 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>마나 재생 +(60~80)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(300~400) 공격 등급 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~120) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)% 관통 공격 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 민첩성 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)의 민첩성 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(8~10)% 물리 피해를 마나로 흡수합니다. <br>+(8~10)% 물리 피해 생명력으로 흡수됨 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(6~10)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치 +(30~40) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~25)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~40) 처치 후 생명력 회복
+							<br>+(20~40)의 처치 후 마나 회복 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 시전 속도 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(20~30) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 공격 속도 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>-(30~40)% 목표 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>대상의 방어 무시 <br>+150% 공격 등급 보너스 <br>요구 사항 +200% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 장갑<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(100~150)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 힘 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50) 힘 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~120) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 생명 증가 +(20~25)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(20~30) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(1~2)% 증가
+							<br>화염 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(1~2)%
+							<br>냉기 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(1~2)% 최대 번개 저항 증가
+							<br>전기 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(1~2)% 증가
+							<br>독 저항 +(25~30)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치 +(30~40) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>물리 저항: +(15~25)%
+							<br>요구 사항 +100% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(300~400) 공격 등급 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>공격자가 80의 피해를 입습니다. (캐릭터 레벨 기준)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150)% 몬스터로부터 추가 골드
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 더 빠른 타격 회복
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~60)% 더 빠른 타격 회복
+							<br>요구 사항 +100% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 최대 저항 +(2~3)%<br>
+							(저품질/일반/상급 아이템은 +(2~4)%)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>저주 지속시간 (20~30)% 감소
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>물리 저항: +(10~15)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(3~5)% 차단 확률 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(6~10)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~15) 냉기 흡수 <br>+(10~15) 번개 흡수 <br>+(10~15) 화염 흡수 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 허리띠<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>밀쳐내기 <br>모든 능력치 +(20~30) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50) 힘 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50)의 민첩성 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50) 에너지 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 힘 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 민첩성 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 생명력 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 에너지 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)의 마나 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150)% 몬스터로부터 추가 골드
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>마법 피해 감소 (20~30)
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>(20~30) 만큼 피해 감소 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~40)의 처치 후 마나 회복
+							<br>+(20~40) 처치 후 생명력 회복 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 공격 속도 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 더 빠른 이동/걷기 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 시전 속도 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>저주 지속시간 (20~30)% 감소
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~15)% 물리 피해 생명력으로 흡수됨 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~15)% 물리 피해를 마나로 흡수합니다. <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치 +(25~35) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(25~30) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 반지<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(6~10)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~100) 힘 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~100)의 민첩성 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~100) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(80~100) 에너지 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~16)% 힘 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~16)% 민첩성 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~16)% 생명력 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~16)% 에너지 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치 +(40~50) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150)% 몬스터로부터 추가 골드
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +1 추가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>얼음에 갇히지 않음 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~40) 처치 후 생명력 회복
+							<br>+(20~40)의 처치 후 마나 회복 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +(2~3) 추가 <br>
+							(성공 확률 25%)<br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +(1~2) 추가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 치명타 확률
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(13~16)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(100~150)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 소환 피해 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>-(50~75)% 목표 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 저항 +(30~40) <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 목걸이<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~15)% 물리 피해를 마나로 흡수합니다. <br>+(10~15)% 물리 피해 생명력으로 흡수됨 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(200~250)% 향상된 방어력 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~13)% 에너지 보너스 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(40~50) 에너지 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 화염 저항 +(2~3)% 증가
+							<br>화염 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 냉기 저항 +(2~3)%
+							<br>냉기 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(2~3)% 최대 번개 저항 증가
+							<br>전기 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 독 저항 +(2~3)% 증가
+							<br>독 저항 +(30~35)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(75~100)% 마법 아이템 획득 확률 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150)% 몬스터로부터 추가 골드
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(10~13)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(100~150) 생명력 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>최대 생명 증가 +(20~30)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>얼음에 갇히지 않음 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~50) 처치 후 생명력 회복
+							<br>+(30~50)의 처치 후 마나 회복 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~25)의 빛 반경 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(400~500) 공격 등급 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>저주 지속시간 (20~30)% 감소
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +1 추가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +(2~3) 추가 <br>
+							(성공 확률 25%)<br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>물리 저항: +(10~15)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 마법 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 화염 주문 피해
+							<br>냉기 주문 피해 +(30~40)% 증가 <br>+(30~40)% 번개 주문 피해 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 소환 피해 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="green">세트</font>/<font color="orange">제작</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 투구<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(30~40)% 물리 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(80~100)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치에 +(3~6)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 마법 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(10~15)% 소환 피해 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~25)% 화염 주문 피해
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>냉기 주문 피해 +(20~25)% 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~25)% 번개 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~25)% 독 마법 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 시전 속도 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 화염 저항 -(10~15)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 번개 저항 -(10~15)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 냉기 저항 -(10~15)%
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>적의 독 저항 -(10~15)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 기술에 +1 추가 <br>
+							(성공 확률 50%)<br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(8~10)% 물리 피해를 마나로 흡수합니다. <br>+(8~10)% 물리 피해 생명력으로 흡수됨 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>모든 능력치 +(20~30) 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 치명타 확률
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 공격 속도 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font> 부적<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(20~30)% 물리 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>+(75~100)% 증가된 피해<br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							<br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(200~300) 공격 등급 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							모든 능력치에 +(6~10)% 보너스
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(100~150)% 악마에게 가하는 피해
+							<br>악마에 대한 공격 등급 +200 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(20~25)% 마법 주문 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(100~150)% 언데드에 대한 피해
+							<br>언데드에 대한 공격 등급 +200 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							적의 화염 저항 -(8~10)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							적의 번개 저항 -(8~10)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							적의 냉기 저항 -(8~10)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							적의 독 저항 -(8~10)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(5~10)% 물리 피해를 마나로 흡수합니다.
+							<br>+(5~10)% 물리 피해 생명력으로 흡수됨 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							모든 능력치 +(20~25) 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(20~25)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(20~25)% 공격 속도 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(20~25)% 치명타 확률 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템<br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(50~75)% 증가된 피해<br>
+							+10% 공격 속도 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+15% 공격 속도 증가
+							<br>+(10~15)% 치명타 확률 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(25~50)% 증가된 피해<br>
+							대상의 방어 무시 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>+(50~60)% 증가된 피해<br>
+							+(10~15)% 치명타 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							물리 기술 피해 +(20~25)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							모든 기술에 +1 추가 <br>
+							(확률 50%)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(12~15)% 화염 주문 피해
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							냉기 주문 피해 +(12~15)% 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							번개 기술 피해 +(12~15)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(12~15)% 독 마법 피해 증가
+							<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							적의 화염 저항 -(6~8)%
+							<br>적의 냉기 저항 -(6~8)% <br>적의 번개 저항 -(6~8)% <br>적의 독 저항 -(6~8)% <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							+(9~12)% 화염 주문 피해
+							<br>+(9~12)% 번개 주문 피해 증가 <br>냉기 주문 피해 +(9~12)% 증가 <br>+(9~12)% 독 마법 피해 증가 <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							4% 확률로 적중 시 레벨 25 내면의 통찰를 시전합니다.<br>
+							(확률 25%)<br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+							<FONT COLOR="ORANGE">모든 속도에 +(10~20)% 추가</FONT> <br><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<font color="#706850">고유</font>/<font color="yellow">희귀</font>/<font color="blue">마법</font>/일반 화살통<br>
+							<FONT COLOR="RED">세계석 조각</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> 같은 아이템 <br>
+							<FONT COLOR="RED">타락한</FONT><br>
+
+							<FONT COLOR="ORANGE">모든 능력치 +(25~40) 증가</FONT> <br><br>
+						</font>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

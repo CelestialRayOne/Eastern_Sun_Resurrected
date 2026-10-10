@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-YFKD8ZR9BX');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://d2esrdb.github.io">
+	<meta property="og:title" content="Eastern Sun Resurrected Database">
+	<meta property="og:description"
+		content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+	<title>
+		Eastern Sun Resurrected データベース
+	</title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+	<style>
+		/* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+	style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="&#35328;&#35486;"><select id="esr-lang-jaJP" aria-label="&#35328;&#35486;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP" selected>&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="jaJP",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-jaJP');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+	<nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本情報</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href=".././changelogs.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新履歴]</a>
+			<a href="./armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[防具]</a>
+			<a href="./weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+			<a href="./prefixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接頭辞]</a>
+			<a href="./suffixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接尾辞]</a>
+			<a href="./unique_armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク防具]</a>
+			<a href="./unique_weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク武器]</a>
+			<a href="./unique_others.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[その他のユニーク]</a>
+			<a href="./unique_mythicals.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話ユニーク]</a>
+			<a href="./sets.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[セット]</a>
+			<a href="./gems.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/ルーン]</a>
+			<a href="./gemwords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ジェムワード]</a>
+			<a href="./runewords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ルーンワード]</a>
+			<a href="./Eastern Sun Resurrected Cube Recipes.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[キューブレシピ]</a>
+			<a href="./Eastern Sun Resurrected Maps.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[マップ]</a>
+		</div>
+	</nav>
+	<nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">機能</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href="./corruptions.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐敗の結果]</a>
+			<a href="./anointments.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油の結果]</a>
+			<a href="./endgame_maps.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[エンドゲームマップ]</a>
+			<a href="./vessel_of_souls.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魂の器]</a>
+			<a href="./ascendancies.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[アセンダンシー]</a>
+			<a href="./kill_ledger.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[討伐台帳]</a>
+			<a href="./skill_information.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵と他クラススキル情報]</a>
+			<a href="./weapon_mastery.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器熟練]</a>
+		</div>
+	</nav>
+
+	<center>
+		<div
+			style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+			<h1
+				style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+				Eastern Sun Resurrected</h1>
+			<div
+				style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+				ディアブロ II リザレクテッド用トータルコンバージョンMOD</div>
+		</div>
+		<div style="width:100%;">
+
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								<font color="red">警告：</font> エンドゲームのマップゾーンは他のすべてのコンテンツよりはるかに難しく、非常に完成度の高いビルドが必要です。<br>
+								エンドゲームのマップゾーンへは、マップアイテムを単体で <font
+									color="red"> アクト5（ヘル）</font>でトランスミュートすると入れます。マップアイテムは5つのティアに合計18個あります。<br>
+								各ティアには4つのマップゾーンがありますが、ティア5だけは2つのマップのみで、特別かつ非常に難しいボス戦が待っています。<br>
+								マップアイテムはニーラサックの領域のスーパーユニークからドロップします。各スーパーユニークボスはティア1マップを5%の確率でドロップします。<br>
+								マップアイテムは、レベル96のテラーゾーンにいるチャンピオンやユニークモンスターからもドロップします。<br>
+								マップアイテムはエンドゲームのマップゾーン自体でもレアドロップとして入手でき、定期的にマップを周回するならこれが主な入手源になります<br>
+								マップ内の通常モンスターは、倒されたマップより1つ上のティアのマップをドロップすることがあります。マップは3:1の比率でアップグレードすることもできます。<br>
+								生き残るためには、ビルドに最低5000のライフ、最大まで上げた耐性、ある程度の物理耐性、その他の防御手段を持たせることをおすすめします。<br>
+								平均確率で表記された報酬は、/players 8 で最大100%まで上昇します。たとえばエンシェントは鍵を落とす50%の判定を
+								<b>2回</b>行うため、平均で鍵を1つ得られますが、プレイヤー数を8にすると鍵を2つ落とす確率がほぼ100%になります。<br>
+								エンドゲームのマップはテラーゾーンになることがあり、各ティアで同時に1つのマップがテラー化します（ティア5は例外で、2つのマップが他とは無関係に同時にテラー化します）。<br>
+								エンドゲームのマップはノーマルとナイトメアでもテラー化することがありますが、意図したものではありません。エンジンの制限により修正できません。<br>
+								テラー化したボスは必ずワールドストーンの破片をドロップします（ティア5のボスはエンジンの制限により例外です）。<br>
+								<storng>ティア1～4のボスには</storng> 時々外れる <font color="purple">免疫シールド</font>
+								があります。耐性低下効果があると、より頻繁に外れます。
+							</font>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								ボス</font>
+						</td>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								説明/報酬</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">ルシオンのささやき</font> - 痛みの地下室<br><br>
+							<img src=".././images/map-bosses/lucionwhisper.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>燃え盛る地獄の深淵の底から、ルシオンのささやきが姿を現す。それは主の意志を告げる霊的な先触れ。異界の炎に包まれた影であり、完全な悪魔でも亡霊でもなく、ルシオン自身の本質が呪われた残響である。</i><br><br>
+								<font color="red">永遠の炎</font> - ルシオンのささやきは30秒間燃え続け、凄まじい火炎ダメージを与える炎を呼び出せます。<br>
+								<font color="red">弱体化の呪い</font> - ルシオンのささやきは一定の確率で地面に呪いをかけます。その範囲に捕まると石化し、火炎耐性が150%低下します。<br>
+								<font color="red">テレポート</font> - ルシオンのささやきはダメージを受けると一定の確率でテレポートして離れるため、動きが読めません。<br><br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均5%の確率）<br> ティア2マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均25%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">ディアブロの地獄犬</font> - 恐怖の深淵<br><br>
+							<img src=".././images/map-bosses/diablohellhound.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>燃え盛る地獄の黒ずんだ穴から、ディアブロ専属の地獄犬が現れる。それは単なる肉と牙ではなく、生きた悪夢であり、大魔の果てしない怒りの化身である。</i><br><br>
+								<font color="red">フレンジー</font> - ディアブロの地獄犬は狂乱状態になり、攻撃するたびに攻撃速度と移動速度が上昇します。<br>
+								<font color="red">攻撃時の呪文</font> - ディアブロの地獄犬は獲物を攻撃する際、一定の確率で致命的な呪文を放ちます。使われる呪文は、通常のメテオ、氷の矢が近くのプレイヤーを追尾する強力なフローズンオーブ、貫通するボーンスピリット、そして標的を減速させ元素耐性を100%、魔法耐性を50%下げる呪いです。<br><br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均5%の確率）<br> ティア2マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均25%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">古代の堕天使</font> - ネクロポリス<br><br>
+							<img src=".././images/map-bosses/ancientfallenangel.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>かつて天上界の輝ける戦士だったこの古代の堕天使は、今や虚空をさまよう、天上の戦争に見捨てられた遺物である。時はその輝きを奪い、かつてきらめいていた鎧は砕けた世界の煤で汚れている。かつて神聖な光の上でそれを運んだ黄金の翼は、今では破れた残骸となって垂れ下がり、地獄の業火に焦がされている。</i><br><br>
+								<font color="red">抹消のノヴァ</font> - 古代の堕天使は時折、物理ダメージと魔法ダメージを与える壊滅的なノヴァを放ちます。ノヴァはゆっくり広がり、どこかの表面に当たると一度反響するため、その間は別の部屋に隠れることを強くおすすめします。<br>
+								<font color="red">ボールライトニングの嵐</font> - ボスは攻撃時やダメージを受けた時に、時折いくつものチャージドボルトに炸裂する雷球の嵐を放ちます。<br>
+								<font color="red">激怒</font> - ボスはダメージを受けると平均10%の確率で激怒し、短時間攻撃速度が最大になります。<br><br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均5%の確率）<br> ティア2マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均25%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">影の中の恐怖</font> - 感染した巣穴<br><br>
+							<img src=".././images/map-bosses/terrorintheshadows.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>地の底深く、腐敗で空気が淀み、闇のヴェールの向こうで見えないものがうごめく場所に、恐怖そのものから自らの領域を紡いだ古の怪物が潜んでいる。</i><br><br>
+								<font color="red">跳躍攻撃</font> - 巨大な蜘蛛は時折、油断した獲物の上に飛びかかり、範囲ダメージを与えます。<br>
+								<font color="red">子蜘蛛投げ</font> - ボスは一定の確率で、致命的な毒攻撃を持ち自ら跳びかかり攻撃もできる子蜘蛛の群れを投げつけます。<br>
+								<font color="red">糸吐き</font> - ボスは4秒ごとに致命的な毒の糸玉を投げつけます。毒の糸玉は命中した標的の移動速度と毒耐性を150%、攻撃速度と詠唱速度を50%低下させます。<br><br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均10%の確率）<br> ティア3マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均35%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">ダブルボス</font> - カオスリフト<br><br>
+							<img src=".././images/map-bosses/doubleboss.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>混沌の裂け目は非常に不安定で、時空の構造を弱め、2体のティア1マップのボスを一堂に会させてしまった。</i><br><br>
+								ボスはティア1マップの同名のボスと同一で、同じスキルを使います。狭い空間で2体同時に戦わなければならない点が難しさを増しています。<br><br>
+								<font color="#706850">報酬（ボス1体ごと）</font><br>
+								<font color="purple">神聖のオーブ</font> （平均5%の確率）<br> ティア2マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均25%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">夜の化身</font> - 苦悶の迷宮<br><br>
+							<img src=".././images/map-bosses/avatarofthenight.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>日が沈み夜のとばりが下りると、それは目覚める。影の中の影、夜の化身は狩りをする豹のように音もなく動き、黒曜石の体は深淵へと溶け込んでいく。</i><br><br>
+								<font color="red">飛びかかり</font> - 化身は時折待ち伏せを仕掛け、あなたの上に飛びかかって狂気の効果で弱らせ、物理耐性を100%、冷気耐性を150%低下させます。ただしこの効果はあなたを狂暴化させ、攻撃速度、詠唱速度、移動速度を100%上昇させます。<br>
+								<font color="red">ジャベリンの乱射</font> - ボスの主な攻撃は物理/冷気の混合ダメージを与えるジャベリンの乱射で、壁に当たった後でも近くのプレイヤーへ跳ね返ることがあります。<br>
+								<font color="red">収束する冷気のノヴァ</font> - 近くにいると、ボスは壁に張り付く氷の矢のノヴァを放ち、それが少し経ってから近くのプレイヤーを追尾するので、必ず走って逃げてください。ダメージを受けた時にもこの能力を使うことがあります。<br>
+								<font color="red">パッシブ</font> - ボスは攻撃時にパッシブでデッドリーストライクとクラッシングブローの確率を持っています。<br><br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均10%の確率）<br> ティア3マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均35%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">運命の先触れ</font> - 無限の深淵<br><br>
+							<img src=".././images/map-bosses/heraldofdoom.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>遥か昔、堕落がその魂を黒く染める前、彼はホラドリムの一員だった。禁じられた知識の学者であり、創造の影に真理を求める者だった。だが知恵は諸刃の剣であり、今や運命の先触れと呼ばれる者は見すぎてしまった。彼は元素の力の深淵をのぞき込んだ。用心深い番人としてではなく、進んで弟子となる者として。そして深淵もまた、彼をのぞき返した。</i><br><br>
+								<font color="red">破滅の雨</font> - 堕落したホラドリムは時折敵にメテオの雨を降らせ、一つ一つのメテオが壊滅的な物理ダメージと火炎ダメージを与えます。<br>
+								<font color="red">雷雨</font> - ボスは時々雷球の輪を呼び出し、それがやがて近くの敵を追尾する致命的な稲妻に変わるため、見えたらすぐに走ることが肝心です。<br>
+								<font color="red">氷の乱射</font> - ボスは直接ダメージは与えないものの、表面に張り付いて少し遅れて近くのプレイヤーを追尾する氷の矢のノヴァも呼び出せます。<br>
+								<font color="red">メテオの螺旋</font> - 愚かにもこの魔術師に近づいた者には、壊滅的なメテオの螺旋が放たれます。<br>
+								<font color="red">パッシブ</font> - ホラドリムの魔術師は元素耐性を100%貫通するため、挑む前に上限を大きく超えるまで耐性を上げておきましょう。<br><br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均15%の確率）<br> ティア4マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均50%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">氷河の巨獣</font> - 凍てついた荒野（北の下り道）<br><br>
+							<img src=".././images/map-bosses/glacialbehemoth.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>伝説によれば、かつてホラドリムは、その荒々しく抑えのきかない力が大魔にさえ挑みうることを恐れ、強大な元素の力を封じようとした。だが氷は死なない。消えもしない。ただ待つ。そして牢獄の封印が砕けた時、氷河の巨獣は再び立ち上がった。その吐息は剃刀のように鋭い霜の嵐となり、一歩ごとに死の雪崩の下で大地を割った。</i><br><br>
+								<font color="red">永久凍土</font> - 巨獣は近接範囲に致命的な氷の雪崩を呼び出そうとし、その跡に残る氷の炎が30秒間、凄まじい冷気ダメージと物理ダメージを与えます。<br>
+								<font color="red">永久凍結</font> - ダメージを受けると一定の確率で石化の呪いをかけ、冷気耐性を150%、移動速度を500%、詠唱速度と攻撃速度を200%低下させます。<br>
+								<font color="red">チャージ</font> - ダメージを受けると、ボスは一定の確率で凄まじい速さで標的に突進し、あなたとの距離を一気に詰めます。<br>
+								<font color="red">妨害</font> - ボスはテレポート系スキルを封じる謎のオーラを放っています。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均15%の確率）<br> ティア4マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均50%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">タスクマスター</font> - 凍てついた荒野（南の下り道）<br><br>
+							<img src=".././images/map-bosses/thetaskmaster.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>肉だけでなく魂までも縛る鎖をまとい、彼は一人では戦わない。喉の奥から響く命令で邪悪なものを呼び寄せ、世界を隔てるヴェールを引き裂いて悪魔の軍勢を解き放つ。そのすべてが彼の鉄の意志に縛られている。だが彼はただ戦いに送り出すのではない。駆り立てるのだ。その存在そのものが手下の中に狂気を燃え上がらせ、痛みを超え、恐怖を超え、死さえも超えて彼らを突き動かす。</i><br><br>
+								<font color="red">血に飢えた奴隷の召喚</font> - タスクマスターは定期的に地獄の深淵から血に飢えた悪魔を呼び出し、戦いの助けとします。手下はあらゆるダメージに免疫があり、その免疫は通常の手段で破る必要があります。<br>
+								<font color="red">ブラッドレイジ</font> - ボスは手下を激怒させようとし、6秒間凄まじい速さで回復させダメージ、攻撃速度、移動速度を与える強化を付与するか、自殺的な奴隷に変えます。<br>
+								<font color="red">自殺的な奴隷</font> - 自殺的な奴隷はプレイヤーを追いかけ、目の前で自爆しようとします。プレイヤーが直接倒すと、物理ダメージと火炎ダメージを与える極めて壊滅的な炎の雨となって爆発し、さらに致命的な火炎ダメージを与える追尾型の死の炎の頭蓋骨を放ちます。<br>
+								<font color="red">妨害</font> - ボスはテレポート系スキルを封じる謎のオーラを放っています。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均15%の確率）<br> ティア4マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均50%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">バールの歪んだ破壊の先触れ</font> - 破壊の神殿<br><br>
+							<img src=".././images/map-bosses/baaldisfiguredharbinger.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>かつてそれは破壊の王に仕える忠実で献身的な僕であり、バールの名のもとに破滅を広めるために選ばれた先触れだった。ほんの一瞬、それはバールの命令を疑い、ためらった。そのために、それは壊され作り直された。滅ぼされたのではなく、苦しみ続けるよう主の果てしない怒りによって作り変えられたのだ。バールが与えたのは死ではなく教訓、永遠の傷跡、破壊の王に逆らう者の末路を示すおぞましい見せしめだった。</i><br><br>
+								<font color="red">破壊の追尾冷気ノヴァ</font> - バールのかつての僕は、氷の矢をまき散らす致命的な氷のオーブを最もよく放ちます。氷の矢はまず短時間空中に静止し、その後とてつもない速さで近くのプレイヤーを貫こうとします。<br>
+								<font color="red">バールのライトニングストーム</font> - 破壊の先触れは高位の天使たちの秘術に手を出し、まれに壊滅的な雷球の嵐を放つことを覚えました。雷球は短時間空中に静止した後、チャージドボルトとなって炸裂し、高い雷ダメージを与えます。<br>
+								<font color="red">破壊の道具の召喚</font> - 30秒ごとに破壊の獣の群れを呼び出します。獣はダメージを受けると一定の確率でプレイヤーに突進し、死ぬと近くの味方を回復するため、素早く倒すのが難しく、ボスの近くで倒さないようにすることが肝心です。<br>
+								<font color="red">メテオの螺旋</font> - 破壊の先触れに近づくと、壊滅的な物理ダメージと火炎ダメージを与えるメテオの螺旋で身を守ろうとします。<br>
+								<font color="red">パッシブ</font> - ボスは元素耐性を100%貫通するため、上限を大きく超えるまで耐性を上げておきましょう。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均20%の確率）<br> ティア5マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均100%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">魂の仲裁者</font> - 魂の聖遺物<br><br>
+							<img src=".././images/map-bosses/arbiterofsouls.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>天使と悪魔が支配を巡って衝突する天と地獄の終わりなき戦争の中に、どちらにも仕えない力が存在する。かつては天使だったのかもしれない。死者を定められた来世へ導く役目を負った、天の恵みを宿す存在だったのかもしれない。だがその目的は歪められ、深淵のささやきに堕落させられ、まったく別のものへと変わった。光からも闇からも切り離された、冷たく公平な処刑人へと。</i><br><br>
+								<font color="red">骨の精霊</font> - 裁定者の主な攻撃は非常に高い魔法ダメージを与えるボーンスピリットで、同じ標的に何度も命中することがあります。<br>
+								<font color="red">ボーンスピアの乱射</font> - ボスは4秒のクールダウンで、近くの敵を追尾するボーンスピアの乱射を放ちます。高い魔法ダメージを与え標的を貫通するので、できるだけ避けるのが得策です。<br>
+								<font color="red">ソウルストーム</font> - まれに、ボスは死者の魂を呼び起こし、近くのプレイヤーを探し出して凄まじい魔法ダメージで滅ぼします。<br>
+								<font color="red">弱体化の呪い</font> - ダメージを受けると、ボスは一定の確率で魂の呪いを呼び出します。呪われた者は移動速度が150%、魔法耐性が50%低下します。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均20%の確率）<br> ティア5マップ（平均25%の確率）<br>
+								ランダムなパンデモニウムの鍵（平均100%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">無敵のメフィスト</font> - 嵐の目<br><br>
+							<img src=".././images/map-bosses/mephistotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>時を超えた英雄たちはヘルフォージの上で彼のソウルストーンを砕き、その破片が深淵に飲み込まれるのを見届けた。彼らは彼を滅ぼしたと思った。だが憎しみはそう簡単には滅びない。苦しみの残響が決して消えない地獄の燻る血脈の奥深くで、メフィストの本質の残骸は膿み続けていた。牢獄は砕かれても彼の悪意は残り、地獄の構造そのものにしがみついた。裏切りのささやき、残酷な行い、大地に流された罪なき血の一滴一滴が残り続ける彼の存在を養い、影の中で彼の魂を鍛え直した。燻る深淵から、彼は再び立ち上がった。もはやソウルストーンに縛られず、過去の掟にも縛られない。メフィストは戻ってきた、かつてないほど強大になって。</i><br><br>
+								<font color="red">無敵</font> - その名の通り、メフィストはあらゆるダメージに対して完全に無敵で、その免疫は通常の手段では破れません。<br>
+								<font color="red">毒の爆弾</font> - メフィストの消耗戦用の呪文は、地面に当たると爆発する毒の爆弾を投げつけ、範囲内の全員に信じられないほど強い毒を与えるものです。<br>
+								<font color="red">チャージドボルトの乱射</font> - およそ12秒ごとに、メフィストは近くの敵を追尾するチャージドボルトの乱射を放ち、非常に高い雷ダメージを与えます。<br>
+								<font color="red">氷のオーブの乱射</font> - メフィストに近づくと、12秒のクールダウンで凄まじい冷気ダメージと物理ダメージを与える氷のオーブの乱射を放とうとします。氷のオーブは一度当たっても止まらず、標的を追尾して何度も当たるため、この呪文からは必ず逃げてください。<br>
+								<font color="red">冷気の波の牢獄</font> - まれに、メフィストは油断したプレイヤーの上に収束する4つの冷気の波を放ち、その進路上の全員に極めて高い冷気ダメージを与えます。<br>
+								<font color="red">パッシブ</font> - メフィストはあなたの元素耐性を100%貫通します。<br>
+								<font color="green">天の光</font> - メフィスト戦で希望がすべて失われたわけではありません。メフィストにダメージを与えると、ごくまれに天の光が戦場に散らばります。光のオーブを拾うと強化され、あなたと効果を受けた召喚物は短時間メフィストにダメージを与えられるようになります。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均25%の確率）<br>
+								<font color="purple">メフィストの悪魔の角</font><br> ティア5マップ（平均25%の確率）<br>
+								パンデモニウムの鍵セット（平均50%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">無敵のディアブロ</font> - 嵐の目<br><br>
+							<img src=".././images/map-bosses/diablotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>地獄の基盤そのものが最も激しく燃える深淵の奥底で、大魔よりも古い太古の遺物、地獄のるつぼが動き始めた。伝説によれば、最初の悪魔たちはそこで形作られ、闇の本質そのものがそこで形を与えられたという。そして今、砕け散った自らの存在の残響に引き寄せられ、ディアブロの残骸はその炎の中へと流れ込み、恐怖の王をより偉大で決して砕けない何かへと鍛え直した。彼はかつてのディアブロとしてではなく、それ以上の何かとして現れた。もはやソウルストーンに縛られず、人間の儀式にも屈しない。彼こそ無敵のディアブロ、恐怖の化身、肉を得た闇、純粋で不滅の悪意の力である。</i><br><br>
+								<font color="red">無敵</font> - その名の通り、ディアブロはあらゆるダメージに対して完全に無敵で、その免疫は通常の手段では破れません。<br>
+								<font color="red">流星群</font> - ディアブロの通常能力は、凄まじい物理ダメージと火炎ダメージを与えるメテオを一列に呼び出すものです。<br>
+								<font color="red">ファイアノヴァ</font> - およそ12秒ごとに、効果音とともにディアブロはこれまでで最も壊滅的なファイアノヴァを放ちます。ファイアノヴァはゆっくり広がり、極めて高い火炎ダメージを与える炎を残すため、効果音が聞こえたら必ず逃げてください。<br>
+								<font color="red">破壊の乱射</font> - ごくまれに、ディアブロは跳ねるたびに空からメテオを呼ぶ追尾型の火の玉を乱射し始め、凄まじい物理ダメージと火炎ダメージを与えます。<br>
+								<font color="red">雷の奔流</font> - 彼のかつての呪文はかつてないほど強力になっています。6秒ごとに雷の奔流を放ち、とてつもない物理ダメージと雷ダメージを与えます。<br>
+								<font color="red">パッシブ</font> - ディアブロはあなたの元素耐性を100%貫通します。<br>
+								<font color="green">運命の天使</font> - ディアブロ戦で希望がすべて失われたわけではありません。ディアブロにダメージを与えると（10秒のクールダウン付きで）、ごくまれに天上界の天使たちが戦場に現れます。彼らはディアブロの猛攻で必ず倒されますが、その後短時間、近くのプレイヤー全員とその手下を強化し、ディアブロ本体にダメージを与えられるようにします。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均25%の確率）<br>
+								<font color="purple">ディアブロの悪魔の角</font><br> ティア5マップ（平均25%の確率）<br>
+								パンデモニウムの鍵セット（平均50%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">無敵のバール</font> - 嵐の目<br><br>
+							<img src=".././images/map-bosses/baaltheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>世界は彼が滅んだと信じていた。ワールドストーンが砕けた時、彼の体は崩れ、その本質は散り散りになり、太古の力は天の破滅の連鎖の中でほどけていった。だがバールは死んでいなかった。創造の中心そのものに吸収されていたのだ。何年もの間、彼の本質はワールドストーンの破片の中に散らばって眠っていた。だがサンクチュアリで戦争が起こるたび、破壊が行われるたびに、彼の力はゆっくりと形を取り戻し、混沌と破滅、かつて自分が堕落させようとした世界のほころびを糧にした。現実の亀裂は深まり、彼の意志の残響は存在の構造そのものを通してささやいた。そしてついに最後の亀裂が生じた。バールは再び立ち上がった。もはや大魔の肉体に縛られず、もはや単なる悪魔の王でもない。今の彼はそれ以上の存在、地獄のものでもサンクチュアリのものでもなく、砕けた世界の基盤そのものに属する存在だ。彼はもはや破壊を操るだけではない。今や彼こそが破壊の化身であり、かつてないほど強大である。</i><br><br>
+								<font color="red">無敵</font> - その名の通り、バールはあらゆるダメージに対して完全に無敵で、その免疫は通常の手段では破れません。<br>
+								<font color="red">チェーン・ライトニング</font> - バールの主な能力は非常に高い雷ダメージを与えるチェーン・ライトニングで、何もない空間でも跳ね返り、近くの敵を何度も追尾します。<br>
+								<font color="red">冷気の波</font> - バールは低い確率で、これまでで最も破壊的な冷気の波を呼び出し、高い冷気ダメージと物理ダメージを与えます。波は定期的に、近くのプレイヤーを追尾する残響を生み出します。<br>
+								<font color="red">メテオの牢獄</font> - およそ8秒ごとに、バールは油断した標的の上に収束する壊滅的なメテオの円を放ち、巻き込まれた全員に壊滅的な物理ダメージと火炎ダメージを与えます。<br>
+								<font color="red">パッシブ</font> - バールはあなたの元素耐性を100%貫通します。<br>
+								<font color="green">弱体化の塔</font> - バール戦で希望がすべて失われたわけではありません。およそ13秒ごとに、バールは壊滅的なメテオ攻撃を持つ悪魔の塔を召喚して戦いの助けとします。塔は破壊されると近くのプレイヤーとその手下を強化し、バール本体にダメージを与えられるようにします。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均25%の確率）<br>
+								<font color="purple">バールの悪魔の角</font><br> ティア5マップ（平均25%の確率）<br>
+								パンデモニウムの鍵セット（平均50%の確率）<br> その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">時の守護者</font> - アイスクラウン・シタデル（永遠の淵）<br><br>
+							<img src=".././images/map-bosses/guardiansoftime.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>遥か昔、3人の戦士がアリアット山の最後の守護者として立ち、ワールドストーンをふさわしくない者の手から守ると誓った。コルリック、タリック、マダウク、過ぎ去った時代の勇者たちは、侵入しようとするすべての者に立ちはだかった。彼らを動かしていたのは憎しみでも征服欲でもなく義務であり、死さえも超える神聖な誓いだった。だが義務とは残酷な主人である。ワールドストーンが砕けた時、彼らが守っていた力は失われ、それとともに彼らの存在意義も失われた。彼らの体は崩れ、魂は虚空へと溶けていった……少なくとも世界はそう信じていた。ネファレムたちが知らなかったのは、古代の者たちが本当の意味で死すべき存在ではなかったということだ。一瞬のように過ぎ去った幾世紀の間、彼らは現実の外を漂い、サンクチュアリがますます堕落に沈んでいくのを見ていた。彼らは人類、すなわちワールドストーンの子らそのものが使命を捨て、禁じられたネファレムの力を神であるかのように振るうのを見た。戦争を、裏切りを、かつて神聖とされた均衡の無謀な破壊を見た。そして虚空の中で、新たな目的が根を下ろした。古代の者たちは守護者として戻ってきたのではない。処刑人として戻ってきたのだ。</i><br><br>
+								<font color="red">無敵</font> - 戻ってきた古代の者たちは時そのものを操る、計り知れない力を持つ存在です。その攻撃は物理ダメージと魔法ダメージを半分ずつ与えます。通常の手段ではダメージを与えられません。<br><br>
+								<font color="#706850">コルリック</font><br>
+								<font color="red">カタクリズム</font> - コルリックは時折、空から岩の雪崩を降らせる壊滅的な攻撃を放ち、巻き込まれた全員に凄まじい物理ダメージを与えます。<br>
+								<font color="red">収束する斧</font> - 彼は時々、何もない空間から標的へと収束する斧を呼び出します。その中心に捕まった者は確実に即死します。<br>
+								<font color="red">パッシブ</font> - ダメージを受けると、コルリックは一定の確率で敵に突進します。<br>
+								<font color="green">天の光</font> - コルリックにダメージを与えると、低い確率で天が介入し、純粋な光の球を呼び出します。それに触れると、あなたと効果を受けた近くの味方が強化されます。<br><br>
+								<font color="#706850">タリック</font><br>
+								<font color="red">斧の牢獄</font> - タリックは時々、油断した標的を追尾する斧のノヴァを複数呼び出し、甚大な物理ダメージと魔法ダメージを与えます。<br>
+								<font color="green">永遠の振り子</font> - 近接攻撃時、タリックは一定の確率で永遠の振り子を召喚します。振り子は時の砂を呼び出し、それが近くの敵を追尾して壊滅的な物理ダメージを与え、標的を短時間スタンさせます。振り子を倒すと、あなたと近くの味方が強化されます。<br><br>
+								<font color="#706850">マダウク</font><br>
+								<font color="red">魔法の斧</font> - マダウクの主な攻撃は近くの標的を追尾する魔法の斧で、壊滅的な魔法ダメージと物理ダメージを与えます。<br>
+								<font color="red">魔法の斧の乱射</font> - 時折、マダウクは激怒し、魔法の斧を次々と投げ始めます。<br>
+								<font color="red">魔法の斧のノヴァ</font> - ごくまれに、マダウクは時そのものの力を引き出し、壁に刺さって止まり、少し経ってから近くのプレイヤーを追尾する魔法の斧の壊滅的なノヴァを呼び出します。<br><br>
+
+								<font color="purple">時を超えし者</font> - 戻ってきた古代の者たちはサンクチュアリの現状に激怒しており、あらゆるダメージに対して完全に不死です。永遠の振り子の強化と天の光の両方を得ると、ダメージを与えられるようになります。<br><br>
+
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （各平均16.67%の確率）<br>
+								<font color="#706850">永遠の砂の砂時計（ユニークの大きなお守り）</font>
+								<br>（鍛えるには全員を倒す必要があります）<br> ティア5マップ（各平均17%の確率）<br>
+								ランダムなパンデモニウムの鍵（各平均100%の確率）<br>
+								その他の一般アイテム/素材<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">リッチキング</font> - アイスクラウン・シタデル（凍てついた玉座）<br><br>
+							<img src=".././images/map-bosses/thelichking.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>世界と世界の境界は、サンクチュアリの学者たちがかつて信じていたほど壊れないものではない。ワールドストーンは現実の錨であり、天上界と燃え盛る地獄の両方の影響からサンクチュアリを隔てる神聖な障壁だった。だがティリエルがそれを砕いた時、その障壁は永遠に弱まった。そして別の何かがそれに気づいた。永遠の闘争の領域の遥か彼方、戦争と死に呑まれた世界で、リッチキングは冷たい沈黙の中に君臨していた。その支配は絶対で、軍勢は果てしなかったが、征服への渇望に限りはない。死は一つの世界に留まるものではなく、ワールドストーン崩壊の力は現実と現実の間の虚空に響き渡り、サンクチュアリの理解を超えた何かを呼び寄せたのだ。リッチキングは大魔のように世界を焼き払おうとはせず、嘘で堕落させようともしない。彼は世界を自らのものにしようとしている。燃え盛る地獄は混沌に酔いしれるが、彼は死によって秩序をもたらす。天は正義のために戦うが、彼は正義を幻想だと考える。彼にとって、すべては不死の中で終わる。太古の昔から争ってきた天使も悪魔も、永遠の凍てついた沈黙の前にひれ伏すだろう。あなたが彼の支配を終わらせなければ、彼はサンクチュアリのすべてを隷属させる。これはすべての終わりなのだ。</i><br><br>
+								<font color="red">収束する冷気</font> - リッチキングの通常能力は6本の冷気の棘が収束するノヴァで、当たった者に非常に高い冷気ダメージと物理ダメージを与えます。<br>
+								<font color="red">冷気のノヴァ</font> - リッチキングの第二の能力は高速で進む冷気の波で、命中した敵ごとに氷のオーブを呼び出します。オーブは1秒後に爆発し、半径5ヤード内のすべてに凄まじい冷気ダメージを与え、2秒間凍結させます。<br>
+								<font color="red">飛びかかり</font> - およそ10秒ごとに、リッチキングは油断した標的を襲って近くの敵を吹き飛ばす純粋なエネルギーのノヴァを放ち、そのすぐ後に <font color="red">永遠の冬</font>が続きます。同時に召喚されるのは2体の
+								<font color="#706850">ヴァルキリー</font>.<br>
+								<font color="red">永遠の冬</font> - まれに、飛びかかりの追撃に加えて、リッチキングは青い炎の致命的なノヴァを放ちます。巻き込まれた者の魂を吸い取り、極めて高い物理ダメージと冷気ダメージを与え、冷気耐性を150%、物理耐性を75%低下させ、移動をほとんど止めてしまうほど減速させます。この呪文は効果音で予告されます。<br>
+								<font color="red">アンデッド召喚</font> - およそ20秒ごとに、リッチキングは戦いの助けとして4体のグールと1体のアボミネーションを召喚します。<br>
+								<font color="red">シャドウトラップ</font> - ダメージを受けると、リッチキングは一定の確率で攻撃してきたプレイヤーの足元にシャドウトラップを召喚します。少し経つとトラップが作動し、 <font color="red">永遠の冬</font> の炎の波を、踏まれた瞬間に放ちます。<br><br>
+								<font color="#706850">グール</font><br>
+								グールはアンデッドの魂を宿し、非常に速く再生します。ダメージを受けると一定の確率で標的に突進することもあります。
+								<br><br>
+								<font color="#706850">アボミネーション</font><br>アボミネーションはあらゆるダメージに免疫があり、その免疫は通常の手段では破れません。ダメージを受けると一定の確率で激怒し、ダメージか移動速度が上昇します。ダメージを受けた際、ごくまれにアボミネーションは天にプレイヤーを助けさせ、 <font
+									color="green">天の光</font>を送らせます。その光を拾うと、プレイヤーはアボミネーションにダメージを与えて倒せるようになります。<br><br>
+								<font color="#706850">ヴァルキリー</font><br>ヴァルキリーは高い物理ダメージと冷気ダメージを与えます。<br>
+								倒すと、近くのプレイヤーを次の効果で強化します： <font color="green">光の希望</font>.<br>
+								<font color="purple">時を超えし者</font> - サンクチュアリの時空の外から来た存在であるリッチキングは、この世界のダメージに対して完全に不死です。ダメージを与えるには、次の両方の効果が必要です： <font color="green">光の希望
+								</font>
+								and <font color="green">天の光</font>.<br><br>
+								<font color="purple">ウーバー版</font> - /players 8 でこの戦いを行うとウーバー版が有効になり、すべての敵が次のように強化されます。<br>
+								<font color="#706850">リッチキング</font> - リッチキングは3倍の数のグールとアボミネーションを召喚します。<br>
+								<font color="#706850">グール</font> - グールは攻撃が命中するたびに激怒し、物理ダメージと冷気ダメージが25%上昇します。この効果は重複します。<br>
+								<font color="#706850">ヴァルキリー</font> - リッチキングはヴァルキリーを2体ではなく6体召喚し、ヴァルキリーは2倍のダメージを与えます。<br>
+								<br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均50%の確率）<br>
+								<font color="#706850">特別な神話ユニーク</font><br> ティア5マップ（平均50%の確率）<br>
+								パンデモニウムの鍵セット（100%の確率）<br> その他の一般アイテム/素材<br><br>
+								<font color="#706850">報酬（ウーバー版）</font><br>
+								/players 8 でリッチキングを倒せば、昇進の石と <font color="PURPLE">ヌルルーン</font> をトランスミュートしてボーナスを得られます <font
+									color="GREEN">すべてのスキルに +1 追加</font>.<br>このレシピは一度しか行えません。
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">ラトマ</font> - 死者の聖域（黄昏のバシリカ）<br><br>
+							<img src=".././images/map-bosses/rathma.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									サンクチュアリの消えゆく光の下、英雄たちは死者の聖域へと降りていった。そこは冥界の奥深くに埋もれた、骨とささやく灰の迷宮。空気は閉じ込められた魂で揺らめき、その青白い輝きが黒い大理石を霊的な色に染めていた。彼らが求めたのはラトマ、最初のネクロマンサー。かつては均衡の守護者であり、今やその裏切り者である。彼がかつて仕えた均衡は執着へと枯れ果て、彼は死を覆し、永遠の両端を支配しようとしていた。その傍らに立つのはコルナック、空虚の使徒。忘れられた信仰の祭服をまとった、彼の最も忠実な亡者である。肉は骨から剥がれ落ち、その肉に刻まれた言葉の一つ一つが禁じられた恩寵に脈打っていた。その声は霊さえもたじろがせる挽歌だった。生に意味のないその場所で、鋼と炎と信仰は、影と腐敗とぶつかり合った。英雄たちは知っていた。自分たちが立ち向かうのは死そのものではなく、死の設計者なのだと。
+								</i><br><br>
+								<font color="#706850">ラトマ</font><br>
+								<font color="#8B0000">死者のヴェール</font> - ラトマは英雄がテレポート系スキルを使えなくなるオーラを放っています。<br>
+								<font color="red">ボーンスピアの乱射 / ポイズンレイス</font> - ラトマは3本のボーンスピアの乱射と3体のポイズンレイスの乱射を交互に使い、それぞれ壊滅的な魔法ダメージと毒ダメージを与えます。<br>
+								<font color="red">骨の精霊</font> - まれに、ラトマは時間とともに加速するボーンスピリットを放ちます。命中すると極めて高い魔法ダメージを与えます。<br>
+								<font color="red">骨の監獄</font> - およそ20秒ごとに、ラトマの比較的近くにいると、彼はあなたの周りに出口の少ない骨の迷宮を作り出します。時間内に脱出できないと、彼はその一帯を爆破し、 <font color="RED">
+									あなたは即死します</font>
+								。爆破の後、彼は冒涜された大地から <font color="red">生ける死者</font> を呼び起こします。
+								<br>
+								<font color="green">枯れゆく人形の召喚</font> - 20秒ごとに、ラトマは4体の枯れゆく人形を呼び起こし、プレイヤーに重複するデバフをかけて <font color="red">魔法耐性と移動速度を下げます</font>。自然に崩れる前に倒すと、あなたと近くの味方は <font color="green">強化されます</font> （10秒間）。<br>
+								<font color="#706850">コルナック、空虚の使徒</font><br>
+								コルナックはラトマの最も忠実な僕で、常に戦いでラトマを助けます。<br>
+								<font color="red">壊滅の叩きつけ</font> - 時折、コルナックは地面を叩きつけ、極めて高い物理ダメージを与える壊滅的な衝撃波を放ちます。<br>
+								<font color="red">高まる憎悪</font> - 時間が経つにつれてコルナックは強くなり、移動速度が上がり、叩きつけも強化されます。
+								<br>
+								<br>
+								<font color="#706850">生ける死者</font><br>
+								生ける死者を倒すのは難しくありませんが、ダメージを受けると低い確率で敵に突進します。<br>
+								<font color="green">燃える魂</font> - 倒された生ける死者は苦悶する魂を残します。それを拾うと <font color="green">強化されます</font> （10秒間）。<br><br>
+								<font color="purple">時を超えし者</font> - ラトマはアンデッドの主であり、無限の力を得て無敵となっています。人形と生ける死者の魂から強化を得た時だけ、彼にダメージを与えられます。ラトマは無敵のオーラを最も信頼する僕、コルナックにも及ぼします。<br><br>
+								<font color="purple">ウーバー版</font> - /players 8 でこの戦いを行うとウーバー版が有効になり、すべての敵が次のように強化されます。<br>
+								<font color="#706850">ラトマ</font> - 現在のライフが25%に達すると、ラトマは激怒して範囲全体に衝撃波を放ち、詠唱速度が上がり、壊滅的な物理ダメージと火炎ダメージを与えるメテオを降らせます。<br>
+								<font color="#706850">生ける死者</font> - 生ける死者は突進時に500%のボーナスダメージも得て、突進効果の持続時間が3倍になります。<br>
+								<font color="#706850">コルナック、空虚の使徒</font> - コルナックは2倍の速さで激怒します。<br>
+								<br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均50%の確率）<br>
+								<font color="#706850">ラズマの永遠の頭蓋骨（ユニークの小さなお守り）</font><br> ティア5マップ（平均50%の確率）<br>
+								パンデモニウムの鍵セット（100%の確率）<br> その他の一般アイテム/素材<br><br>
+								<font color="#706850">報酬（ウーバー版）</font><br>
+								ラトマとコルナック、空虚の使徒の両方を1分以内に倒すと、ラズマの永遠の頭蓋骨をそれ自体とトランスミュートして、次のボーナスを得られます：<br>
+								<font color="#4850B8">魔法抵抗 +5%<br>
+									+5% 最大毒抵抗力に対して<br>
+									+(10～20) の コルナックを蘇らせる<br></font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">ルシオン</font> - 運命の救済の祭壇（偽りの光の聖遺物）<br><br>
+							<img src=".././images/map-bosses/lucion.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									メフィストの息子でありリリスの兄弟であるルシオンは、サンクチュアリを悪魔の秩序のもとに隷属させようとして失敗し、かつて深淵へと追放された。だが純粋な悪は決して死なず、膿み続ける。忘れられた教団の歪んだ信仰によってルシオンの本質は密かに再び燃え上がり、その魂は死にゆく世界の残り火に結びつけられた。今や生きた炎の姿で生まれ変わった彼は、生者への復讐を求め、人間の世界は自らの姿に似せて鍛えられる新たな創造のるつぼとして燃えるべきだと信じている。魂を一つ食らうたびに彼の地獄の光は強まり、あらゆる存在を呑み込まんとする炎を養う。ルシオンを止めるには、人間界とのつながりを断ち切り、彼を動かす地獄の核を消すしかない。もし彼が今の姿を超えて昇華すれば、大魔でさえその怒りの前に震えるだろう。
+								</i><br><br>
+								<font color="#706850">ルシオン</font><br>
+								<font color="red">ファイアストーム</font> - ルシオンの通常攻撃の一つは壊滅的なファイアストームで、1秒後に進路上のすべてを焼き尽くします。<br>
+								<font color="red">メテオの列</font> - ルシオンはファイアストームと、凄まじい火炎ダメージと物理ダメージを与えるメテオを一列に呼び出す攻撃を交互に使います。<br>
+								<font color="red">炎の飛びかかり</font> - およそ10秒ごとに、ルシオンは油断した標的に飛びかかり、壊滅的な収束型のファイアノヴァを放ちます。炎の矢は少し経ってから収束し、最初のノヴァの3倍のダメージを与えるので、何としても避けなければなりません。跳躍の後、ルシオンは加勢として4人の <font color="#706850">大司祭</font> も召喚します。<br>
+								<font color="red">炎の暴走</font> - ルシオンが飛びかかるたびに、部屋を埋め尽くす炎の矢の嵐を呼び出します。炎の矢は壊滅的な火炎ダメージを与えます。<br>
+								<font color="red">宗教的狂信者の召喚</font> - まれに、ルシオンは戦いで仕える10人の宗教的狂信者を召喚します。狂信者は受ける物理ダメージと元素ダメージを増加させる重複するデバフをかけます。<br>
+								<font color="orange">浄化の炎</font> - およそ8秒ごとに、ルシオンは周囲に浄化の炎を呼び出し、触れた者にそこそこ高いダメージを与えます。その炎に入ると <font color="green">強化されます</font> （4秒間）。
+								<br><br>
+								<font color="#706850">大司祭</font><br>
+								大司祭はルシオンに仕える高度に特化した呪文使いです。<br>
+								<font color="red">炎の玉</font> - 通常攻撃は着弾時に地面を焦がし、高い火炎ダメージを与える火の玉です。<br>
+								<font color="red">悪魔の強化</font> - 時折、近くの味方を強化し、ダメージと攻撃/詠唱速度を3%上昇させます。 <font color="red">この効果は重複します。
+								</font><br>
+								<font color="green">光の強化</font> - 大司祭は死ぬと近くのプレイヤーを強化します。<br><br>
+								<font color="#706850">宗教的狂信者</font><br>
+								宗教的狂信者はルシオンに仕える非常に攻撃的な僕です。<br>
+								<font color="red">氷河の尖峰/雷</font> - あなたを八つ裂きにしようと走り寄っていない時は、あらゆるものを貫く非常に強力な冷気/雷の呪文を唱えます。
+								<br>
+								<br>
+								<font color="purple">時を超えし者</font> - ルシオンは計り知れない力を持つ地獄の獣で、通常の攻撃では倒せない無敵の存在です。ダメージを与えるには、次の両方の効果が必要です： <font color="green">光の強化</font> and <font color="orange">
+									浄化の炎</font>.<br><br>
+
+								<font color="purple">ウーバー版</font> - /players 8 でこの戦いを行うとウーバー版が有効になり、すべての敵が次のように強化されます。<br>
+								<font color="#706850">ルシオン</font> - ルシオンは悪魔のオーラを放ち、20秒ごとに自身と味方のダメージを5%、攻撃速度と詠唱速度を2%上昇させます。この効果は無制限に重複します。<br>
+								<font color="#706850">大司祭</font> - 大司祭の強化が2倍になり、ダメージと攻撃/詠唱速度を3%ではなく6%上昇させます。<br>
+								<font color="#706850">宗教的狂信者</font> - ルシオンは宗教的狂信者を10人ではなく20人召喚します。<br>
+								<br>
+								<font color="#706850">報酬</font><br>
+								<font color="purple">神聖のオーブ</font> （平均50%の確率）<br>
+								<font color="orange">ルシオンの炎の遺物</font><br> （ボーナスの一覧は <a
+									href="Eastern%20Sun%20Resurrected%20Cube%20Recipes.html#legendary">レジェンダリーコンポーネント</a> のセクションを参照）<br>
+								ティア5マップ（平均50%の確率）<br>
+								パンデモニウムの鍵セット（100%の確率）<br> その他の一般アイテム/素材<br><br>
+								<font color="#706850">報酬（ウーバー版）</font><br>
+								/players 8 でルシオンを倒すと、彼は自身のエッセンス（<font color="ORANGE">ルシオンのエッセンス</font>）を落とします。エッセンスはソケットドーナツの強化版です。
+							</font>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</a>
+	</center>
+</body>
+
+</html>

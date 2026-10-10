@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-YFKD8ZR9BX');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://d2esrdb.github.io">
+	<meta property="og:title" content="Eastern Sun Resurrected Database">
+	<meta property="og:description"
+		content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+	<title>
+		Baza danych Eastern Sun Resurrected
+	</title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+	<style>
+		/* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+	style="padding: 0; padding-left: 170px; padding-right: 170px;">
+	<nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href=".././changelogs.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Dziennik zmian]</a>
+			<a href="./armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Pancerze]</a>
+			<a href="./weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Broń]</a>
+			<a href="./prefixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przedrostki]</a>
+			<a href="./suffixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przyrostki]</a>
+			<a href="./unique_armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowe pancerze]</a>
+			<a href="./unique_weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowa broń]</a>
+			<a href="./unique_others.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Inne unikaty]</a>
+			<a href="./unique_mythicals.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mityczne unikaty]</a>
+			<a href="./sets.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Zestawy]</a>
+			<a href="./gems.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Klejnoty/Runy]</a>
+			<a href="./gemwords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa klejnotów]</a>
+			<a href="./runewords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa runiczne]</a>
+			<a href="./Eastern Sun Resurrected Cube Recipes.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptury kostki]</a>
+			<a href="./Eastern Sun Resurrected Maps.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy]</a>
+			<a href="./drop-finder.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyszukiwarka łupów]</a>
+		</div>
+	</nav>
+	<nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href="./corruptions.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki skażenia]</a>
+			<a href="./anointments.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki namaszczenia]</a>
+			<a href="./endgame_maps.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy końcowe]</a>
+			<a href="./vessel_of_souls.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Naczynie dusz]</a>
+			<a href="./ascendancies.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendencje]</a>
+			<a href="./kill_ledger.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Księga zabójstw]</a>
+			<a href="./skill_information.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Najemnicy i umiejętności spoza klasy]</a>
+			<a href="./weapon_mastery.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Biegłość w broni]</a>
+		</div>
+	</nav>
+
+	<center>
+		<div
+			style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+			<h1
+				style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+				Eastern Sun Resurrected</h1>
+			<div
+				style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+				Mod całkowitej konwersji do Diablo II: Resurrected</div>
+		</div>
+		<div style="width:100%;">
+
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								<font color="red">Ostrzeżenie:</font> strefy map końcowych są znacznie trudniejsze niż cała pozostała zawartość i wymagają bardzo dopracowanych buildów.<br>
+								Do stref map końcowych wchodzi się, transmutując same przedmioty map w <font
+									color="red"> Akcie 5 na Piekle</font>. Łącznie jest 18 przedmiotów map w 5 progach.<br>
+								Każdy próg ma 4 różne strefy map, z wyjątkiem progu 5, który ma tylko 2 mapy z unikatowymi i skrajnie trudnymi walkami z bossami.<br>
+								Przedmioty map mogą wypadać z superunikatów w domenie Nihlathaka. Każdy superunikatowy boss ma 5% szansy na upuszczenie mapy progu 1.<br>
+								Przedmioty map mogą też wypadać z czempionów i unikatowych potworów w sterroryzowanych strefach poziomu 96.<br>
+								Przedmioty map można też zdobyć jako rzadki łup w samych strefach map końcowych; to będzie twoje główne źródło, jeśli regularnie robisz mapy<br>
+								Zwykłe potwory na mapach mogą upuścić mapę o jeden próg wyższą niż mapa, na której giną. Mapy można też ulepszać w stosunku 3:1.<br>
+								Aby przetrwać, zaleca się, by twój build miał co najmniej 5000 punktów życia, maksymalne odporności, trochę odporności fizycznej i inne warstwy obrony.<br>
+								Nagrody wyrażone średnią szansą mogą wzrosnąć nawet o 100% przy /players 8. Na przykład Pradawny ma 50% szansy na wylosowanie klucza, i to
+								<b>dwa razy</b>, więc średnio dostajesz jeden klucz, ale zwiększenie liczby graczy do 8 daje mu prawie 100% szansy na upuszczenie 2 kluczy.<br>
+								Mapy końcowe mogą zostać sterroryzowane; w danym momencie sterroryzowana jest jedna mapa z każdego progu (poza progiem 5, którego obie mapy są sterroryzowane jednocześnie, niezależnie od pozostałych).<br>
+								Mapy końcowe mogą być sterroryzowane także na poziomie Normalnym i Koszmar, ale nie jest to zamierzone. Nie da się tego naprawić z powodu ograniczeń silnika.<br>
+								Sterroryzowani bossowie zawsze upuszczają Kawałek Kamienia Świata (poza bossami progu 5, z powodu ograniczenia silnika).<br>
+								<storng>Bossowie progów 1-4</storng> mają <font color="purple">Tarczę odporności</font>
+								, która od czasu do czasu opada. Efekty obniżające odporności sprawiają, że opada częściej.
+							</font>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								Boss</font>
+						</td>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								Opis/Nagrody</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Szept Luciona</font> - Piwnica Bólu<br><br>
+							<img src=".././images/map-bosses/lucionwhisper.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Z otchłannych głębin Płonących Piekieł wyłania się Szept Luciona, widmowy zwiastun woli swojego pana. Cień spowity nieziemskim ogniem, ani w pełni demon, ani zjawa, lecz przeklęte echo samej esencji Luciona.</i><br><br>
+								<font color="red">Wieczne ognie</font> - Szept Luciona potrafi przywołać ognie, które płoną przez 30 sekund i zadają szalone obrażenia od ognia.<br>
+								<font color="red">Osłabiająca klątwa</font> - Szept Luciona może rzucić klątwę na ziemię. Jeśli znajdziesz się w obszarze, zostaniesz spetryfikowany, a twoja odporność na ogień spadnie o 150%.<br>
+								<font color="red">Teleportacja</font> - Szept Luciona może się teleportować, gdy zostanie zraniony, co czyni go nieprzewidywalnym.<br><br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 5% szansy)<br> Mapa progu 2 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 25% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Piekielny Pies Diablo</font> - Otchłań Grozy<br><br>
+							<img src=".././images/map-bosses/diablohellhound.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Z poczerniałych dołów Płonących Piekieł wyłania się osobisty piekielny pies Diablo. To więcej niż ciało i kły: żywy koszmar, wcielenie bezgranicznego gniewu Pierwotnego Zła.</i><br><br>
+								<font color="red">Frenzy</font> - Piekielny Pies Diablo wpada w szał i z każdym atakiem zyskuje szybkość ataku i ruchu.<br>
+								<font color="red">Czar przy ataku</font> - Piekielny Pies Diablo może rozpętać śmiertelny czar, atakując swoją ofiarę. Możliwe czary to zwykły Meteor, niszczycielska Zamarznięta Kula, której lodowe pociski szukają pobliskich graczy, przebijający Duch Kości oraz klątwa, która spowalnia cel i obniża jego odporności na żywioły o 100% i odporność na magię o 50%.<br><br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 5% szansy)<br> Mapa progu 2 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 25% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Starożytny Upadły Anioł</font> - Nekropolia<br><br>
+							<img src=".././images/map-bosses/ancientfallenangel.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Niegdyś promienny wojownik Wysokich Niebios, ten Starożytny Upadły Anioł wędruje teraz po pustce, porzucona relikwia niebiańskiej wojny. Czas odarł go z blasku, a jego niegdyś lśniąca zbroja jest pokryta sadzą zniszczonych światów. Tam, gdzie złote skrzydła nosiły go niegdyś na boskim świetle, teraz zwisają postrzępione resztki, osmalone ogniem potępienia.</i><br><br>
+								<font color="red">Nowa zagłady</font> - Starożytny Upadły Anioł od czasu do czasu rzuca niszczycielską nowę, która zadaje obrażenia fizyczne i magiczne. Nowa rozszerza się powoli i raz odbija się po trafieniu w dowolną powierzchnię, dlatego bardzo zaleca się schować w innym pomieszczeniu, gdy to się dzieje.<br>
+								<font color="red">Burza kul błyskawic</font> - Boss od czasu do czasu, atakując lub gdy zostanie zraniony, rzuca burzę kul błyskawic, które wybuchają kilkoma naładowanymi pociskami.<br>
+								<font color="red">Szał</font> - Boss ma średnio 10% szansy na wpadnięcie w szał po zranieniu, zyskując na krótko maksymalną szybkość ataku.<br><br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 5% szansy)<br> Mapa progu 2 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 25% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Terror W Cieniach</font> - Zainfekowane Gniazdo<br><br>
+							<img src=".././images/map-bosses/terrorintheshadows.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Głęboko pod ziemią, gdzie powietrze gęstnieje od rozkładu, a niewidzialne rzeczy przemykają za zasłoną ciemności, czai się pradawna groza, która utkała swoją domenę z samego strachu.</i><br><br>
+								<font color="red">Atak Skokowy</font> - Gigantyczny pająk od czasu do czasu skacze na niczego niespodziewające się ofiary, zadając obrażenia obszarowe.<br>
+								<font color="red">Rzut pajęczątkami</font> - Boss może rzucić gromadę pajęczątek, które mają śmiertelnie trujący atak i potrafią same wykonywać ataki z wyskoku.<br>
+								<font color="red">Plucie siecią</font> - Boss co 4 sekundy ciska śmiertelnie trującą kulę pajęczyny. Trująca kula obniża szybkość ruchu i odporność na truciznę trafionego celu o 150%, a jego szybkość ataku i rzucania czarów o 50%.<br><br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 10% szansy)<br> Mapa progu 3 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 35% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Podwójni bossowie</font> - Rozdarcie Chaosu<br><br>
+							<img src=".././images/map-bosses/doubleboss.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Chaotyczne rozdarcie jest bardzo niestabilne, co osłabiło tkankę czasoprzestrzeni i pozwoliło dwóm bossom map progu 1 znaleźć się razem.</i><br><br>
+								Bossowie są identyczni jak ich odpowiednicy z map progu 1 i używają tych samych umiejętności. Trudność rośnie, bo musisz walczyć z oboma naraz na małej przestrzeni.<br><br>
+								<font color="#706850">Nagrody (za każdego bossa)</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 5% szansy)<br> Mapa progu 2 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 25% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Awatar Nocy</font> - Labirynt Cierpienia<br><br>
+							<img src=".././images/map-bosses/avatarofthenight.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Gdy słońce gaśnie, a zasłona nocy opada, ono się budzi. Cień pośród cieni, Awatar Nocy porusza się bezgłośnie jak polująca pantera, a jego obsydianowa postać płynnie wtapia się w otchłań.</i><br><br>
+								<font color="red">Skok</font> - Awatar od czasu do czasu próbuje urządzić na ciebie zasadzkę, skacząc na ciebie i osłabiając cię efektem szaleństwa, który obniża twoją odporność fizyczną o 100% i odporność na zimno o 150%. Efekt wprawia cię jednak w stan wściekłości, zwiększając szybkość ataku, rzucania czarów i ruchu o 100%.<br>
+								<font color="red">Grad oszczepów</font> - Głównym atakiem bossa jest grad oszczepów zadających hybrydowe obrażenia fizyczne/od zimna, które mogą odbijać się na pobliskich graczy, nawet po trafieniu w ścianę.<br>
+								<font color="red">Zbieżna nowa zimna</font> - Gdy boss jest blisko ciebie, rzuca nowę lodowych pocisków, które przyklejają się do ścian i po krótkim czasie szukają pobliskich graczy, więc uciekaj. Może też rzucić tę umiejętność, gdy zostanie zraniony.<br>
+								<font color="red">Pasywne</font> - Boss ma przy ataku pasywną szansę na zabójczy cios i miażdżący cios.<br><br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 10% szansy)<br> Mapa progu 3 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 35% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Herold Zagłady</font> - Nieskończony Otchłań<br><br>
+							<img src=".././images/map-bosses/heraldofdoom.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Dawno temu, zanim zepsucie poczerniło jego duszę, chodził wśród Horadrimów: uczony zakazanej wiedzy, poszukiwacz prawdy w cieniach stworzenia. Lecz mądrość to miecz obosieczny, a ten, którego teraz zwą Heroldem Zagłady, ujrzał zbyt wiele. Spojrzał w otchłań mocy żywiołów, nie jako ostrożny strażnik, lecz jako chętny uczeń. A otchłań w zamian spojrzała na niego.</i><br><br>
+								<font color="red">Deszcz zagłady</font> - Zepsuty horadrim od czasu do czasu sprowadza na wrogów deszcz meteorów, z których każdy zadaje niszczycielskie obrażenia fizyczne i od ognia.<br>
+								<font color="red">Burza z piorunami</font> - Boss czasem przyzywa pierścień kul błyskawic, które w końcu zmieniają się w śmiercionośne pioruny szukające pobliskich wrogów, więc koniecznie uciekaj, gdy tylko je zobaczysz.<br>
+								<font color="red">Grad lodu</font> - Boss może też przyzwać nowy lodowych pocisków, które nie zadają bezpośrednich obrażeń, lecz przyklejają się do powierzchni i po krótkim opóźnieniu szukają pobliskich graczy.<br>
+								<font color="red">Spirala meteorów</font> - Gdy ktoś jest na tyle nierozważny, by podejść do czarnoksiężnika, ten rzuca spiralę niszczycielskich meteorów.<br>
+								<font color="red">Pasywne</font> - Horadrimski czarnoksiężnik przebija odporności na żywioły o 100%, więc przed walką z nim znacznie przekrocz ich maksimum.<br><br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 15% szansy)<br> Mapa progu 4 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 50% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Behemot Lodowy</font> - Zamarznięte Pustkowia (Zejście północne)<br><br>
+							<img src=".././images/map-bosses/glacialbehemoth.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Legendy mówią o czasach, gdy Horadrimowie próbowali uwięzić wielką siłę żywiołu, obawiając się, że jej surowa, nieokiełznana moc mogłaby rzucić wyzwanie nawet Pierwotnemu Złu. Lecz lód nie umiera. Nie znika. Czeka. A gdy pieczęcie jego więzienia pękły, Behemot Lodowy powstał ponownie: jego oddech to burza ostrego jak brzytwa mrozu, a każdy jego krok rozłupuje ziemię pod lawiną śmierci.</i><br><br>
+								<font color="red">Permafrost</font> - Behemot próbuje przywołać w zwarciu śmiercionośną lawinę lodu, która zostawia lodowe ognie zadające przez 30 sekund szalone obrażenia od zimna i fizyczne.<br>
+								<font color="red">Wieczny mróz</font> - Po otrzymaniu obrażeń może rzucić petryfikującą klątwę, która obniża twoją odporność na zimno o 150%, szybkość ruchu o 500%, a szybkość rzucania czarów i ataku o 200%.<br>
+								<font color="red">Ładowanie</font> - Po otrzymaniu obrażeń boss może z szaloną szybkością szarżować na cel, skracając dystans między wami.<br>
+								<font color="red">Zakłócenie</font> - Boss emituje tajemniczą aurę, która uniemożliwia działanie twoich umiejętności teleportacji.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 15% szansy)<br> Mapa progu 4 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 50% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Mistrz Zadań</font> - Zamarznięte Pustkowia (Zejście południowe)<br><br>
+							<img src=".././images/map-bosses/thetaskmaster.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Okuty w łańcuchy, które wiążą nie tylko ciało, ale i dusze, nie walczy sam. Gardłowym rozkazem przyzywa nikczemników, rozdzierając zasłonę między światami i wypuszczając legiony diabłów, z których każdy jest związany z jego żelazną wolą. Lecz nie tylko wysyła ich do walki, lecz ich pogania: sama jego obecność rozpala szaleństwo w jego sługach, pchając ich poza ból, poza strach, poza samą śmierć.</i><br><br>
+								<font color="red">Przyzwanie krwiożerczych niewolników</font> - Mistrz Zadań regularnie przyzywa z głębin piekła krwiożercze demony, by pomagały mu w walce. Słudzy są odporni na wszelkie obrażenia, a ich odporności trzeba przełamać zwykłymi sposobami.<br>
+								<font color="red">Krwawy szał</font> - Boss próbuje wprawić swoich sług w szał: albo daje im na 6 sekund wzmocnienie, które leczy ich szalenie szybko i zwiększa obrażenia oraz szybkość ataku i ruchu, albo zmienia ich w niewolników samobójców.<br>
+								<font color="red">Niewolnicy samobójcy</font> - Niewolnicy samobójcy ścigają graczy i próbują wybuchnąć im w twarz. Zabici bezpośrednio przez gracza wybuchają skrajnie niszczycielskim ognistym deszczem zadającym obrażenia fizyczne i od ognia oraz uwalniają naprowadzaną ognistą czaszkę śmierci, która zadaje zabójcze obrażenia od ognia.<br>
+								<font color="red">Zakłócenie</font> - Boss emituje tajemniczą aurę, która uniemożliwia działanie twoich umiejętności teleportacji.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 15% szansy)<br> Mapa progu 4 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 50% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Zniekształcony Harbinger Zniszczenia Baala</font> - Sanktuarium Zniszczenia<br><br>
+							<img src=".././images/map-bosses/baaldisfiguredharbinger.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Niegdyś był to lojalny i oddany sługa Pana Zniszczenia, wybrany zwiastun, który miał szerzyć ruinę w imię Baala. Przez jedną ulotną chwilę ośmielił się zwątpić, zawahać przed rozkazem Baala. I za to został rozbity i przekuty na nowo: nie zniszczony, lecz pozostawiony na cierpienie, przekształcony przez bezgraniczny gniew swojego pana. Baal nie podarował mu śmierci, lecz lekcję, wieczną bliznę, groteskowe przypomnienie tego, co spotyka tych, którzy sprzeciwiają się Panu Zniszczenia.</i><br><br>
+								<font color="red">Naprowadzane nowy zimna zniszczenia</font> - Dawny sługa Baala najczęściej rzuca śmiercionośną kulę lodu, która rozsiewa lodowe pociski. Najpierw pociski zawisają na krótko w powietrzu, a potem z ogromną prędkością próbują przebić pobliskich graczy.<br>
+								<font color="red">Burza błyskawic Baala</font> - Zwiastun zniszczenia sięgnął po tajemną moc wysokich aniołów i nauczył się rzadko rzucać niszczycielską burzę kul błyskawic. Kule zawisają na krótko w powietrzu, po czym wybuchają naładowanymi pociskami, zadając wysokie obrażenia od błyskawic.<br>
+								<font color="red">Przyzwanie narzędzi zniszczenia</font> - Co 30 sekund przyzywa hordę bestii zniszczenia. Gdy zostaną zranione, mogą szarżować na graczy, a po śmierci leczą pobliskich sojuszników, przez co trudno je szybko pokonać i koniecznie trzeba unikać zabijania ich blisko bossa.<br>
+								<font color="red">Spirala meteorów</font> - Gdy zbliżysz się do zwiastuna zniszczenia, będzie próbował bronić się spiralą meteorów zadających niszczycielskie obrażenia fizyczne i od ognia.<br>
+								<font color="red">Pasywne</font> - Boss przebija 100% twoich odporności na żywioły, więc znacznie przekrocz ich maksimum.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 20% szansy)<br> Mapa progu 5 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 100% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Sędzia Dusz</font> - Relikwiarz Dusz<br><br>
+							<img src=".././images/map-bosses/arbiterofsouls.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>W niekończącej się wojnie między Niebem a Piekłem, gdzie anioły i demony ścierają się o panowanie, istnieje siła, która nie służy żadnej ze stron. Niegdyś mogła być aniołem, istotą niebiańskiej łaski, której powierzono prowadzenie zmarłych do przeznaczonych im zaświatów. Lecz ten cel został wypaczony, zepsuty szeptami Otchłani, aż stał się czymś zupełnie innym: zimnym, bezstronnym katem, odciętym zarówno od światła, jak i od ciemności.</i><br><br>
+								<font color="red">Duch Kości</font> - Głównym atakiem arbitra jest duch kości, który zadaje bardzo wysokie obrażenia magiczne i może trafić cel wielokrotnie.<br>
+								<font color="red">Grad kościanych włóczni</font> - Boss co 4 sekundy rzuca grad kościanych włóczni, które szukają pobliskich wrogów. Zadają wysokie obrażenia magiczne i przebijają cele, więc najlepiej ich unikać.<br>
+								<font color="red">Burza dusz</font> - Rzadko boss wskrzesza dusze zmarłych, by odnalazły pobliskich graczy i zniszczyły ich szalenie wysokimi obrażeniami magicznymi.<br>
+								<font color="red">Osłabiająca klątwa</font> - Po otrzymaniu obrażeń boss może przywołać klątwę duszy. Ofiara traci 150% szybkości ruchu i 50% odporności na magię.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 20% szansy)<br> Mapa progu 5 (średnio 25% szansy)<br>
+								Losowy klucz Pandemonium (średnio 100% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Mephisto Niezwyciężony</font> - Oko Burzy<br><br>
+							<img src=".././images/map-bosses/mephistotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Ponadczasowi bohaterowie roztrzaskali jego kamień dusz na Piekielnej Kuźni i patrzyli, jak otchłań pochłania odłamki. Myśleli, że go zniszczyli. Lecz nienawiść nie daje się tak łatwo zniszczyć. Głęboko w tlących się żyłach Piekła, gdzie echo cierpienia nigdy nie milknie, jątrzyły się resztki esencji Mefista. Choć jego więzienie zostało rozbite, jego złośliwość przetrwała, czepiając się samej tkanki Piekła. Każdy szept zdrady, każdy akt okrucieństwa, każda kropla niewinnej krwi przelanej na ziemię karmiła jego trwającą obecność, przekuwając jego ducha w cieniu. Z tlącej się otchłani powstał na nowo. Już nie związany z kamieniem dusz, już nie ograniczony prawami przeszłości, Mefisto powrócił i jest potężniejszy niż kiedykolwiek.</i><br><br>
+								<font color="red">Niezwyciężoność</font> - Jak sama nazwa wskazuje, Mefisto jest całkowicie odporny na wszelkie obrażenia, a jego odporności nie da się przełamać zwykłymi sposobami.<br>
+								<font color="red">Bomba trucizny</font> - Czar wyniszczający Mefista to ciśnięcie bomby trucizny, która wybucha przy uderzeniu w ziemię i nakłada niezwykle silną truciznę na wszystkich w obszarze.<br>
+								<font color="red">Grad naładowanych pocisków</font> - Mniej więcej co 12 sekund Mefisto rzuca grad naładowanych pocisków, które szukają pobliskich wrogów i zadają bardzo wysokie obrażenia od błyskawic.<br>
+								<font color="red">Grad lodowych kul</font> - Gdy zbliżasz się do Mefista, próbuje on co 12 sekund rzucić grad lodowych kul zadających szalone obrażenia od zimna i fizyczne. Lodowe kule nie zatrzymują się po jednym trafieniu, lecz szukają celu i trafiają go wielokrotnie, więc koniecznie uciekaj przed tym czarem.<br>
+								<font color="red">Więzienie fal zimna</font> - Rzadko Mefisto rzuca 4 fale zimna, które zbiegają się nad niczego niespodziewającymi się graczami i zadają skrajnie wysokie obrażenia od zimna każdemu na swojej drodze.<br>
+								<font color="red">Pasywne</font> - Mefisto przebija 100% twoich odporności na żywioły.<br>
+								<font color="green">Światło Nieba</font> - W walce z Mefistem nie wszystko stracone. Bardzo rzadko, po zadaniu obrażeń Mefistowi, światła niebios rozsypią się po polu bitwy. Podniesienie kuli światła wzmacnia cię: ty i objęte efektem przywołańce możecie przez krótki czas zadawać Mefistowi obrażenia.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 25% szansy)<br>
+								<font color="purple">Demoniczny róg Mefista</font><br> Mapa progu 5 (średnio 25% szansy)<br>
+								Zestaw Kluczy Pandemonium (średnio 50% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Diablo Niezwyciężony</font> - Oko Burzy<br><br>
+							<img src=".././images/map-bosses/diablotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Z głębin Otchłani, gdzie fundamenty Piekła płoną najgoręcej, zaczął budzić się Piekielny Tygiel, pradawna relikwia starsza niż samo Pierwotne Zło. Legendy głoszą, że to tam ukształtowano pierwsze demony, tam sama esencja ciemności przybrała formę. A teraz, przyciągnięte echem jego własnego roztrzaskanego bytu, resztki Diablo spłynęły w jego płomienie, przekuwając Pana Grozy w coś większego, coś niezniszczalnego. Nie wyłonił się jako dawny Diablo, lecz jako coś więcej. Już nie związany z kamieniami dusz, już nie podatny na rytuały ludzi, jest Diablo Niezwyciężonym: wcieloną grozą, ciemnością, która przybrała ciało, siłą czystej, nieśmiertelnej złośliwości.</i><br><br>
+								<font color="red">Niezwyciężoność</font> - Jak sama nazwa wskazuje, Diablo jest całkowicie odporny na wszelkie obrażenia, a jego odporności nie da się przełamać zwykłymi sposobami.<br>
+								<font color="red">Deszcz Meteorytów</font> - Zwykła umiejętność Diablo przywołuje linię meteorów zadających szalone obrażenia fizyczne i od ognia.<br>
+								<font color="red">Nowa ognia</font> - Mniej więcej co 12 sekund, z sygnałem dźwiękowym, Diablo uwalnia swoją najbardziej niszczycielską jak dotąd nowę ognia. Nowa rozszerza się powoli i zostawia za sobą utrzymujący się ogień zadający skrajnie wysokie obrażenia od ognia, więc koniecznie uciekaj, gdy usłyszysz sygnał.<br>
+								<font color="red">Grad zniszczenia</font> - Bardzo rzadko Diablo zaczyna rzucać grad naprowadzanych kul ognia, które przy każdym odbiciu sprowadzają z nieba meteory, zadając szalenie wysokie obrażenia fizyczne i od ognia.<br>
+								<font color="red">Strumień błyskawic</font> - Jego dawny czar jest teraz potężniejszy niż kiedykolwiek. Rzuca swój strumień błyskawic co 6 sekund, zadając zaporowo wysokie obrażenia fizyczne i od błyskawic.<br>
+								<font color="red">Pasywne</font> - Diablo przebija 100% twoich odporności na żywioły.<br>
+								<font color="green">Anioły Dnia Ostatecznego</font> - W walce z Diablo nie wszystko stracone. Bardzo rzadko, po zadaniu obrażeń Diablo (z czasem odnowienia 10 sekund), na polu bitwy pojawią się anioły z Wysokich Niebios. Gdy nieuchronnie zostaną unicestwione przez arsenał Diablo, na krótko wzmocnią wszystkich pobliskich graczy i ich sługi, pozwalając wam zadawać obrażenia samemu Diablo.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 25% szansy)<br>
+								<font color="purple">Demoniczny Róg Diablo</font><br> Mapa progu 5 (średnio 25% szansy)<br>
+								Zestaw Kluczy Pandemonium (średnio 50% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Baal Niezwyciężony</font> - Oko Burzy<br><br>
+							<img src=".././images/map-bosses/baaltheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Świat uznał go za unicestwionego. Jego ciało rozpadło się, a esencja rozproszyła, gdy Kamień Świata pękł, a jego pradawna moc rozpadła się w kaskadzie niebiańskiej ruiny. Baal jednak nie zginął: został wchłonięty przez samo serce stworzenia. Przez lata jego esencja spoczywała uśpiona, rozproszona po odłamkach Kamienia Świata. Lecz z każdą wojną, z każdym aktem zniszczenia w Sanktuarium jego moc powoli się odradzała, karmiąc się chaosem, ruiną, rozpadem świata, który niegdyś chciał zepsuć. Pęknięcia rzeczywistości się pogłębiły, a echo jego woli szeptało przez samą tkankę istnienia. I wtedy nastąpiło ostateczne pęknięcie. Baal powstał ponownie, już nie związany z ciałem Pierwotnego Zła, już nie tylko demoniczny władca. Był teraz czymś większym: czymś, co nie należało już do Piekła ani do Sanktuarium, lecz do pękniętych fundamentów samego świata. Nie tylko rozkazuje Zniszczeniu: jest teraz wcielonym Zniszczeniem, potężniejszym niż kiedykolwiek.</i><br><br>
+								<font color="red">Niezwyciężoność</font> - Jak sama nazwa wskazuje, Baal jest całkowicie odporny na wszelkie obrażenia, a jego odporności nie da się przełamać zwykłymi sposobami.<br>
+								<font color="red">Seryjne Błyskawice</font> - Główną umiejętnością Baala są seryjne błyskawice, które zadają bardzo wysokie obrażenia od błyskawic, mogą odbijać się od powietrza i wielokrotnie szukają pobliskich wrogów.<br>
+								<font color="red">Zimowa Fala</font> - Baal ma niewielką szansę przywołać swoją najbardziej niszczycielską jak dotąd falę zimna, zadającą wysokie obrażenia od zimna i fizyczne. Fala co jakiś czas tworzy pogłosy, które szukają pobliskich graczy.<br>
+								<font color="red">Więzienie meteorów</font> - Mniej więcej co 8 sekund Baal rzuca niszczycielski krąg meteorów, który zbiega się nad niczego niespodziewającym się celem i zadaje niszczycielskie obrażenia fizyczne i od ognia wszystkim trafionym.<br>
+								<font color="red">Pasywne</font> - Baal przebija 100% twoich odporności na żywioły.<br>
+								<font color="green">Wieża Osłabienia</font> - W walce z Baalem nie wszystko stracone. Mniej więcej co 13 sekund Baal przyzywa demoniczne wieże z niszczycielskim atakiem meteorów, by pomagały mu w walce. Po zniszczeniu wieże wzmacniają pobliskich graczy i ich sługi, pozwalając im zadawać obrażenia samemu Baalowi.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 25% szansy)<br>
+								<font color="purple">Demoniczny róg Baala</font><br> Mapa progu 5 (średnio 25% szansy)<br>
+								Zestaw Kluczy Pandemonium (średnio 50% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Strażnicy Czasu</font> - Zamek Lodowej Korony (Krawędź Wieczności)<br><br>
+							<img src=".././images/map-bosses/guardiansoftime.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Dawno temu trzech wojowników stało jako ostatni strażnicy Góry Arreat, zaprzysiężonych, by trzymać Kamień Świata z dala od rąk niegodnych. Korlic, Talic i Madawc, czempioni dawno minionej epoki, stawiali czoła wszystkim, którzy ośmielili się wtargnąć. Nie kierowała nimi nienawiść ani żądza podbojów: wiązał ich obowiązek, święta przysięga, która przekraczała nawet śmierć. Lecz obowiązek to okrutny pan. Gdy Kamień Świata pękł, moc, którą chronili, przepadła, a wraz z nią ich cel. Ich ciała się rozpadły, a duchy rozpłynęły w pustce… a przynajmniej tak sądził świat. Nefalemowie nie wiedzieli, że Pradawni nigdy nie byli naprawdę śmiertelni. Przez stulecia, które minęły jak chwila, dryfowali poza rzeczywistością, patrząc, jak Sanktuarium coraz głębiej pogrąża się w zepsuciu. Widzieli, jak ludzkość, same dzieci Kamienia Świata, porzuca swój cel i dzierży zakazaną moc nefalemów, jakby byli bogami. Widzieli wojny, zdradę, lekkomyślne niszczenie niegdyś świętej równowagi. I w pustce zakorzenił się nowy cel. Pradawni nie wrócili jako obrońcy. Wrócili jako kaci.</i><br><br>
+								<font color="red">Niezwyciężoność</font> - Powracający Pradawni to istoty o ogromnej mocy, władające samym czasem. Ich ataki zadają po równo obrażenia fizyczne i magiczne. Zwykłymi sposobami nie możesz zadać im obrażeń.<br><br>
+								<font color="#706850">Korlic</font><br>
+								<font color="red">Kataklizm</font> - Korlic od czasu do czasu wykonuje niszczycielski atak, sprowadzając z nieba lawinę skał, która zadaje ogromne obrażenia fizyczne wszystkim trafionym.<br>
+								<font color="red">Zbieżne topory</font> - Czasem przyzywa znikąd topory, które zbiegają się na celu. Każdy, kto znajdzie się pośrodku, czeka szybka śmierć.<br>
+								<font color="red">Pasywne</font> - Po otrzymaniu obrażeń Korlic może szarżować na wroga.<br>
+								<font color="green">Światło Nieba</font> - Po zadaniu obrażeń Korlicowi istnieje niewielka szansa, że niebiosa interweniują, przyzywając kule czystego światła. Gdy ich dotkniesz, ty i pobliscy sojusznicy objęci efektem zostajecie wzmocnieni.<br><br>
+								<font color="#706850">Talic</font><br>
+								<font color="red">Więzienie toporów</font> - Talic czasem przyzywa kilka nów toporów, które szukają niczego niespodziewającego się celu i zadają ogromne obrażenia fizyczne i magiczne.<br>
+								<font color="green">Wieczny Wahadło</font> - Atakując wręcz, Talic może przyzwać Wieczne Wahadła. Wahadła przyzywają piaski czasu, które szukają pobliskich wrogów, zadają niszczycielskie obrażenia fizyczne i na krótko ogłuszają cel. Po zniszczeniu Wahadła ty i pobliscy sojusznicy zostajecie wzmocnieni.<br><br>
+								<font color="#706850">Madawc</font><br>
+								<font color="red">Magiczny topór</font> - Głównym atakiem Madawca jest magiczny topór, który naprowadza się na pobliskie cele i zadaje niszczycielskie obrażenia magiczne i fizyczne.<br>
+								<font color="red">Grad magicznych toporów</font> - Od czasu do czasu Madawc wpada w szał i zaczyna w szybkim tempie rzucać magiczne topory.<br>
+								<font color="red">Nowa magicznych toporów</font> - Bardzo rzadko Madawc sięga po moc samego czasu, przyzywając niszczycielską nowę magicznych toporów, które zatrzymują się w ścianach i po krótkim czasie szukają pobliskich graczy.<br><br>
+
+								<font color="purple">Ponadczasowi</font> - Powracający Pradawni są rozwścieczeni stanem Sanktuarium, przez co są całkowicie nieśmiertelni wobec wszelkich obrażeń. Gdy masz jednocześnie wzmocnienie Wiecznego Wahadła i Światło Nieba, możesz zadawać im obrażenia.<br><br>
+
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio po 16.67% szansy)<br>
+								<font color="#706850">Wieczny klepsydra bezczasowych piasków (unikatowy Duży Amulet)</font>
+								<br>(musisz zabić ich wszystkich, aby go wykuć)<br> Mapa progu 5 (średnio po 17% szansy)<br>
+								Losowy klucz Pandemonium (średnio po 100% szansy)<br>
+								Inne zwykłe przedmioty/materiały<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Król Lichów</font> - Zamek Lodowej Korony (Zamarznięty Tron)<br><br>
+							<img src=".././images/map-bosses/thelichking.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Granice między światami nie są tak nienaruszalne, jak sądzili uczeni Sanktuarium. Kamień Świata był kotwicą rzeczywistości, boską barierą, która oddzielała Sanktuarium od wpływu zarówno Wysokich Niebios, jak i Płonących Piekieł. Lecz gdy Tyrael go roztrzaskał, bariera została na zawsze osłabiona. I zauważyło to coś innego. Daleko poza królestwami Wiecznego Konfliktu, w świecie strawionym przez wojnę i śmierć, Król Lichów panował w zimnej ciszy. Jego władza była absolutna, legiony nieskończone, a jednak głód podbojów nie zna granic. Śmierć bowiem nie ogranicza się do jednego świata, a moc zniszczenia Kamienia Świata rozbrzmiała w pustce między rzeczywistościami, wzywając coś, co przekracza pojmowanie Sanktuarium. Król Lichów nie chce spalić świata jak Pierwotne Zło ani zepsuć go kłamstwami. Chce go przejąć. Płonące Piekła rozkoszują się chaosem; on niesie porządek przez śmierć. Niebiosa walczą o sprawiedliwość; on uważa sprawiedliwość za iluzję. Dla niego wszystko kończy się nieżyciem, a nawet anioły i demony, które walczą od niepamiętnych czasów, pokłonią się przed lodową ciszą wieczności. Jeśli nie położysz kresu jego panowaniu, zniewoli całe Sanktuarium. To koniec wszystkiego.</i><br><br>
+								<font color="red">Zbieżne zimno</font> - Zwykłą umiejętnością Króla Lichów jest zbieżna nowa 6 kolców zimna, która zadaje bardzo wysokie obrażenia od zimna i fizyczne każdemu trafionemu.<br>
+								<font color="red">Nowa zimna</font> - Drugą umiejętnością Króla Lichów jest szybka fala zimna, która przywołuje lodową kulę przy każdym trafionym wrogu. Kula wybucha po 1 sekundzie, zadając szalone obrażenia od zimna wszystkiemu w promieniu 5 metrów i zamrażając na 2 sekundy.<br>
+								<font color="red">Skok</font> - Mniej więcej co 10 sekund Król Lichów atakuje niczego niespodziewający się cel, uwalniając nowę czystej energii, która odrzuca pobliskich wrogów, a wkrótce potem następuje <font color="red">Wieczna Zima</font>. W tym samym czasie przyzywa 2
+								<font color="#706850">walkirie</font>.<br>
+								<font color="red">Wieczna Zima</font> - Rzadko, oprócz następstwa Skoku, Król Lichów uwalnia śmiercionośną nowę niebieskiego ognia, która wysysa dusze wszystkich trafionych, zadaje skrajnie wysokie obrażenia fizyczne i od zimna, obniża odporność na zimno o 150% i odporność fizyczną o 75% oraz spowalnia trafionych graczy niemal do zatrzymania. Ten czar jest zapowiadany sygnałem dźwiękowym.<br>
+								<font color="red">Przyzwanie nieumarłych</font> - Mniej więcej co 20 sekund Król Lichów przyzywa 4 ghule i 1 abominację, by pomagały mu w walce.<br>
+								<font color="red">Pułapka cienia</font> - Po otrzymaniu obrażeń Król Lichów może przyzwać pułapkę cienia pod atakującym graczem. Po krótkim czasie pułapka uzbraja się i uwalnia falę <font color="red">Wieczna Zima</font> ognia, gdy tylko ktoś na nią nadepnie.<br><br>
+								<font color="#706850">Ghule</font><br>
+								Ghule mają w sobie ducha nieumarłych i regenerują się bardzo szybko. Po zranieniu mogą też szarżować na cel.
+								<br><br>
+								<font color="#706850">Abominacje</font><br>Abominacja jest odporna na wszelkie obrażenia, a jej odporności nie da się przełamać zwykłymi sposobami. Po otrzymaniu obrażeń abominacja może wpaść w szał, zwiększając swoje obrażenia albo szybkość ruchu. Bardzo rzadko, po otrzymaniu obrażeń, abominacja sprawia, że niebiosa pomagają graczowi w walce, zsyłając <font
+									color="green">Światło Nieba</font>. Po podniesieniu światła gracz może zadawać abominacji obrażenia i ją zabić.<br><br>
+								<font color="#706850">Walkirie</font><br>Walkirie zadają wysokie obrażenia fizyczne i od zimna.<br>
+								Po zabiciu wzmacniają pobliskich graczy efektem <font color="green">Nadzieja Światła</font>.<br>
+								<font color="purple">Ponadczasowi</font> - Jako istota spoza przestrzeni i czasu Sanktuarium Król Lichów jest całkowicie nieśmiertelny wobec obrażeń z tego świata. Aby móc zadawać mu obrażenia, musisz mieć jednocześnie efekty <font color="green">Nadzieja Światła
+								</font>
+								and <font color="green">Światło Nieba</font>.<br><br>
+								<font color="purple">Wariant uber</font> - Rozegranie tej walki na /players 8 aktywuje wariant uber, a wszyscy wrogowie zostają wzmocnieni w następujący sposób.<br>
+								<font color="#706850">Król Lichów</font> - Król Lichów przywołuje 3 razy więcej ghuli i ohyd.<br>
+								<font color="#706850">Ghule</font> - Ghule wpadają teraz w szał przy każdym trafieniu, zyskując 25% obrażeń fizycznych i od zimna. Efekt się kumuluje.<br>
+								<font color="#706850">Walkirie</font> - Król Lichów przyzywa 6 walkirii zamiast 2, a one zadają dwa razy większe obrażenia.<br>
+								<br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 50% szansy)<br>
+								<font color="#706850">Specjalny mityczny unikat</font><br> Mapa progu 5 (średnio 50% szansy)<br>
+								Zestaw Kluczy Pandemonium (100% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+								<font color="#706850">Nagrody (wariant uber)</font><br>
+								Jeśli zabijesz Króla Lichów na /players 8, będziesz mógł transmutować swój Kamień Władzy z <font color="PURPLE">Runa Null</font> dla premii <font
+									color="GREEN">+1 do Wszystkich Umiejętności</font>.<br>Ten przepis można wykonać tylko raz.
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Rathma</font> - Sanctuarium Umarłych (Basilika Crepuscularna)<br><br>
+							<img src=".././images/map-bosses/rathma.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									W gasnącym świetle Sanktuarium bohaterowie zstąpili do Sanktuarium Umarłych, labiryntu kości i szepczącego popiołu pogrzebanego głęboko w zaświatach. Powietrze migotało uwięzionymi duszami, których blady blask malował czarny marmur widmowymi barwami. Przybyli w poszukiwaniu Rathmy, Pierwszego Nekromanty. Niegdyś strażnika równowagi, teraz jej zdrajcy. Równowaga, której niegdyś służył, zwiędła w obsesję: chciał zniweczyć śmierć, opanować oba krańce wieczności. U jego boku stał Kor'nac, Apostoł Pustki, jego najwierniejszy upiór, odziany w szaty zapomnianej wiary. Ciało odpadało mu od kości, a każde słowo wyryte w jego ciele pulsowało zakazaną łaską. Jego głos był pieśnią żałobną, przed którą wahały się nawet duchy. Stal, płomień i wiara spotkały się z cieniem i rozkładem w tym miejscu, gdzie życie nie miało znaczenia. Bohaterowie wiedzieli, że stają nie tylko przed śmiercią, lecz przed jej architektem.
+								</i><br><br>
+								<font color="#706850">Rathma</font><br>
+								<font color="#8B0000">Zasłona umarłych</font> - Rathma emituje aurę, która uniemożliwia bohaterom korzystanie z umiejętności teleportacji.<br>
+								<font color="red">Grad kościanych włóczni / Trujące gniewy</font> - Rathma na zmianę rzuca grad 3 kościanych włóczni i grad 3 trujących gniewów, zadających odpowiednio niszczycielskie obrażenia magiczne i od trucizny.<br>
+								<font color="red">Duch Kości</font> - Rzadko Rathma rzuca ducha kości, który z czasem przyspiesza. Po trafieniu zadaje skrajnie wysokie obrażenia magiczne.<br>
+								<font color="red">Klatka Kostna</font> - Mniej więcej co 20 sekund, gdy jesteś stosunkowo blisko Rathmy, wznosi on wokół ciebie labirynt kości z niewieloma wyjściami. Jeśli nie uciekniesz z niego na czas, zdetonuje obszar, <font color="RED">
+									zabijając cię natychmiast</font>
+								. Po zdetonowaniu obszaru wskrzesza <font color="red">Żywe Trupy</font> z zbezczeszczonej ziemi.
+								<br>
+								<font color="green">Przyzwanie więdnących kukieł</font> - Co 20 sekund Rathma wskrzesza 4 więdnące kukły, które rzucają na gracza kumulujące się osłabienie, <font color="red">obniżające jego odporność na magię i szybkość ruchu</font>. Jeśli zabijesz je, zanim same się rozsypią, ty i pobliscy sojusznicy zostajecie <font color="green">wzmocnieni</font> na 10 sekund.<br>
+								<font color="#706850">Kor'nac, Apostoł Pustki</font><br>
+								Kor'nac jest najwierniejszym sługą Rathmy i zawsze pomaga mu w walce.<br>
+								<font color="red">Niszczycielskie uderzenie</font> - Od czasu do czasu Kor'nac uderza w ziemię, wysyłając niszczycielskie fale uderzeniowe, które zadają skrajnie wysokie obrażenia fizyczne.<br>
+								<font color="red">Rosnąca nienawiść</font> - Z czasem Kor'nac staje się potężniejszy, zyskuje szybkość ruchu i ulepsza swoje uderzenie.
+								<br>
+								<br>
+								<font color="#706850">Żywe Trupy</font><br>
+								Żywe Trupy nie są trudne do pokonania, ale po zranieniu mają niewielką szansę na szarżę na wroga.<br>
+								<font color="green">Płonąca Dusza</font> - Zabite żywe trupy zostawiają swoją cierpiącą duszę. Jej podniesienie <font color="green">wzmacnia cię</font> na 10 sekund.<br><br>
+								<font color="purple">Ponadczasowi</font> - Rathma jest panem nieumarłych i osiągnął bezgraniczną moc, która czyni go niezwyciężonym. Tylko ze wzmocnieniem od kukieł i dusz żywych trupów możesz zadawać mu obrażenia. Rathma rozciąga swoją aurę niezwyciężoności na najbardziej zaufanego sługę, Kor'naca.<br><br>
+								<font color="purple">Wariant uber</font> - Rozegranie tej walki na /players 8 aktywuje wariant uber, a wszyscy wrogowie zostają wzmocnieni w następujący sposób.<br>
+								<font color="#706850">Rathma</font> - Po spadku do 25% obecnego zdrowia Rathma wpada w szał, wysyła fale uderzeniowe po całym obszarze, zyskuje szybkość rzucania czarów i sprowadza deszcz meteorów zadających niszczycielskie obrażenia fizyczne i od ognia.<br>
+								<font color="#706850">Żywe Trupy</font> - Żywe Trupy zyskują też 500% dodatkowych obrażeń podczas szarży, a efekt szarży trwa trzy razy dłużej.<br>
+								<font color="#706850">Kor'nac, Apostoł Pustki</font> - Kor'nac wpada w szał dwa razy szybciej.<br>
+								<br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 50% szansy)<br>
+								<font color="#706850">Wieczna Czaszka Rathmy (unikatowy Mały Urok)</font><br> Mapa progu 5 (średnio 50% szansy)<br>
+								Zestaw Kluczy Pandemonium (100% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+								<font color="#706850">Nagrody (wariant uber)</font><br>
+								Jeśli zabijesz zarówno Rathmę, jak i Kor'naca, Apostoła Pustki, w odstępie nie większym niż minuta, będziesz mógł transmutować Wieczną Czaszkę Rathmy samą ze sobą, aby zyskać następujące premie:<br>
+								<font color="#4850B8">Odporność na magię +5%<br>
+									+5% do Maksymalnego Oporu na Trucizny<br>
+									+(od 10 do 20) do Wznieś Kor'naca<br></font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Lucion</font> - Ołtarz Przeklętej Zbawienia (Relikwiarz Fałszywego Światła)<br><br>
+							<img src=".././images/map-bosses/lucion.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									Lucion, syn Mefista i brat Lilith, został niegdyś wygnany do otchłani po nieudanej próbie zniewolenia Sanktuarium demonicznym porządkiem. Lecz czyste zło nigdy nie umiera: jątrzy się. Dzięki zepsutej wierze zapomnianego kultu esencja Luciona została w tajemnicy rozpalona na nowo, a jego dusza związana z żarem umierającego świata. Teraz, odrodzony w postaci żywego płomienia, pragnie zemsty na żywych, wierząc, że świat śmiertelników powinien spłonąć jako tygiel nowego stworzenia wykutego na jego obraz. Każda pochłonięta dusza wzmacnia jego piekielne światło, karmiąc ogień, który grozi pochłonięciem całego istnienia. Tylko przecinając jego więź z planem śmiertelników i gasząc piekielny rdzeń, który go zasila, można powstrzymać Luciona. Gdyby wzniósł się ponad swoją obecną postać, nawet Pierwotne Zło zadrżałoby przed jego gniewem.
+								</i><br><br>
+								<font color="#706850">Lucion</font><br>
+								<font color="red">Burza Ognia</font> - Jednym ze zwykłych ataków Luciona jest niszczycielska burza ognia, która po 1 sekundzie spala wszystko na swojej drodze.<br>
+								<font color="red">Linia meteorów</font> - Lucion przeplata Burzę Ognia z atakiem przywołującym linię meteorów, które zadają ogromne obrażenia od ognia i fizyczne.<br>
+								<font color="red">Ognisty skok</font> - Mniej więcej co 10 sekund Lucion skacze na niczego niespodziewający się cel, uwalniając niszczycielską zbieżną nowę ognia. Ogniste pociski zbiegają się po krótkim czasie i zadają trzy razy większe obrażenia niż początkowa nowa, więc trzeba ich unikać za wszelką cenę. Po skoku Lucion przyzywa też 4 <font color="#706850">wysokich kapłanów</font> , by pomagali mu w walce.<br>
+								<font color="red">Ognista szarża</font> - Za każdym razem, gdy Lucion skacze, przyzywa nawałnicę ognistych pocisków, która wypełnia pomieszczenie. Pociski zadają niszczycielskie obrażenia od ognia.<br>
+								<font color="red">Przyzwanie religijnych fanatyków</font> - Rzadko Lucion przyzywa 10 religijnych fanatyków, którzy służą mu w walce. Fanatycy nakładają kumulujące się osłabienie, które zwiększa otrzymywane obrażenia fizyczne i od żywiołów.<br>
+								<font color="orange">Oczyszczające płomienie</font> - Mniej więcej co 8 sekund Lucion przywołuje wokół siebie oczyszczające płomienie, zadające umiarkowanie wysokie obrażenia każdemu, kto ich dotknie. Wejście w nie <font color="green">wzmacnia cię</font> na 4 sekund.
+								<br><br>
+								<font color="#706850">Wysocy kapłani</font><br>
+								Wysocy kapłani to wysoko wyspecjalizowani czarownicy na służbie Luciona.<br>
+								<font color="red">Ognista kula</font> - Ich zwykłym atakiem jest kula ognia, która przypala ziemię przy uderzeniu i zadaje wysokie obrażenia od ognia.<br>
+								<font color="red">Demoniczne wzmocnienie</font> - Od czasu do czasu wzmacniają pobliskich sojuszników, zwiększając ich obrażenia i szybkość ataku/rzucania czarów o 3%. <font color="red">Efekt się kumuluje.
+								</font><br>
+								<font color="green">Wzmocnienie światła</font> - Po śmierci wysocy kapłani wzmacniają pobliskich graczy.<br><br>
+								<font color="#706850">Religijni fanatycy</font><br>
+								Religijni fanatycy to skrajnie agresywni słudzy Luciona.<br>
+								<font color="red">Lodowy Cios/Błyskawica</font> - Gdy nie biegną w twoją stronę, by rozszarpać cię na strzępy, rzucają bardzo groźny czar zimna/błyskawic, który przebija wszystko.
+								<br>
+								<br>
+								<font color="purple">Ponadczasowi</font> - Lucion to piekielna bestia o ogromnej mocy, co czyni go niezwyciężonym wobec zwykłych ataków. Aby móc zadawać mu obrażenia, musisz mieć jednocześnie efekty <font color="green">Wzmocnienie światła</font> and <font color="orange">
+									Oczyszczające płomienie</font>.<br><br>
+
+								<font color="purple">Wariant uber</font> - Rozegranie tej walki na /players 8 aktywuje wariant uber, a wszyscy wrogowie zostają wzmocnieni w następujący sposób.<br>
+								<font color="#706850">Lucion</font> - Lucion emituje demoniczną aurę, która co 20 sekund zwiększa obrażenia jego i jego sojuszników o 5% oraz ich szybkość ataku i rzucania czarów o 2%. Efekt kumuluje się bez ograniczeń.<br>
+								<font color="#706850">Wysocy kapłani</font> - Wzmocnienie wysokich kapłanów jest teraz dwa razy silniejsze i zwiększa obrażenia oraz szybkość ataku/rzucania czarów o 6% zamiast 3%.<br>
+								<font color="#706850">Religijni fanatycy</font> - Lucion przyzywa 20 religijnych fanatyków zamiast 10.<br>
+								<br>
+								<font color="#706850">Nagrody</font><br>
+								<font color="purple">Kula Namaszczenia</font> (średnio 50% szansy)<br>
+								<font color="orange">Ognista relikwia Luciona</font><br> (zobacz sekcję <a
+									href="Eastern%20Sun%20Resurrected%20Cube%20Recipes.html#legendary">Legendarne komponenty</a> , gdzie znajdziesz listę premii)<br>
+								Mapa progu 5 (średnio 50% szansy)<br>
+								Zestaw Kluczy Pandemonium (100% szansy)<br> Inne zwykłe przedmioty/materiały<br><br>
+								<font color="#706850">Nagrody (wariant uber)</font><br>
+								Jeśli zabijesz Luciona na /players 8, upuści swoją esencję (<font color="ORANGE">Esencja Luciona</font>). Esencja to potężniejsza wersja przedmiotu Gniazdo Donut.
+							</font>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</a>
+	</center>
+</body>
+
+</html>

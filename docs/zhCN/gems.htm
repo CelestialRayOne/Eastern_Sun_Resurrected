@@ -1,0 +1,4599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 资料库
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35821;&#35328;"><select id="esr-lang-zhCN" aria-label="&#35821;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN" selected>&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhCN",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhCN');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本信息</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日志]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[护甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前缀]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[后缀]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金护甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神话暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套装]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石之语]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之语]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魔盒配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地图]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速计算器]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查询]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系统</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化结果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[涂油结果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[终局地图]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[灵魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[进阶职业]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[击杀账簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[佣兵与外部技能信息]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器专精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破坏神 II：狱火重生 全面转换模组</div>
+            </div>                
+                                <div style="width:100%;">
+<table cellpadding="5" border="0" width="100%">
+<tbody>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">碎裂的紫水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5% 提升攻击速度 <br>+30 攻击评级提升 <br>攻击者反伤：5 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 力量 <br>减少的伤害 2 <br>魔法伤害减少 2 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5% 更快的格挡率 <br>+20 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">缺陷的紫水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 提升攻击速度 <br>+60 攻击评级提升 <br>攻击者反伤：10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10 力量 <br>减少的伤害 4 <br>魔法伤害减少 4 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 更快的格挡率 <br>+40 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">紫水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 提升攻击速度 <br>+90 攻击评级提升 <br>攻击者反伤：20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15 力量 <br>减少的伤害 6 <br>魔法伤害减少 6 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 更快的格挡率 <br>+1% 增加格挡几率 <br>+60 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">完美紫水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 提升攻击速度 <br>+120 攻击评级提升 <br>攻击者反伤：50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 力量 <br>减少的伤害 8 <br>魔法伤害减少 8 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快的格挡率 <br>+1% 增加格挡几率 <br>+80 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">瑕疵的紫水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 提升攻击速度 <br>+150 攻击评级提升 <br>攻击者反伤：100 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25 力量 <br>减少的伤害 10 <br>魔法伤害减少 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 更快的格挡率 <br>+2% 增加格挡几率 <br>+100 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">完美紫水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 提升攻击速度 <br>+180 攻击评级提升 <br>攻击者反伤：200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 力量 <br>减少的伤害 12 <br>魔法伤害减少 12 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 更快的格挡率 <br>+2% 增加格挡几率 <br>+120 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">碎蓝宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 5-10 冰冷伤害，持续 0.8 秒<br>+5% 致命一击 <br>每次击杀后 +2 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 更快施法速度 <br>+10 生命值 <br>增加最大魔法值 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +10% <br>+3 冰冷吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">缺陷蓝宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 10-20 冰冷伤害，持续 1.6 秒<br>+8% 致命一击 <br>每次击杀后 +4 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 更快施法速度 <br>+20 生命值 <br>增加最大魔法值 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大冰冷抗性 <br>冰冷抗性 +20% <br>+4 冰冷吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">蓝宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 15-30 冰冷伤害，持续 2.4 秒<br>+11% 致命一击 <br>每次击杀后 +7 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 更快施法速度 <br>+30 生命值 <br>增加最大魔法值 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大冰冷抗性 <br>冰冷抗性 +30% <br>+5 冰冷吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">完美蓝宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 25-50 冰冷伤害，持续 3.2 秒<br>+14% 致命一击 <br>每次击杀后 +10 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 更快施法速度 <br>+40 生命值 <br>增加最大魔法值 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大冰冷抗性 <br>冰冷抗性 +40% <br>+6 冰冷吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">瑕疵蓝宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 50-100 冰冷伤害，持续 4 秒<br>+17% 致命一击 <br>每次击杀后 +15 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 更快施法速度 <br>+50 生命值 <br>增加最大魔法值 +5% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大冰冷抗性 <br>冰冷抗性 +50% <br>+8 冰冷吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">完美蓝宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 100-200 冰冷伤害，持续 4.8 秒<br>+20% 致命一击 <br>每次击杀后 +20 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 更快施法速度 <br>+60 生命值 <br>增加最大魔法值 +6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大冰冷抗性 <br>冰冷抗性 +60% <br>+10 冰冷吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">碎裂的翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+在 15 秒内为攻击增加 20-2 毒素伤害<br>+5% 击碎打击几率 <br>恢复生命 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 更快的奔跑/行走 <br>+5% 攻击评级加成 <br>+5 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +10% <br>毒素持续时间减少 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">瑕疵翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+在 20 秒内为攻击增加 40-2 毒素伤害<br>+8% 击碎打击几率 <br>恢复生命 +40 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 更快的奔跑/行走 <br>+8% 攻击评级加成 <br>+10 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大毒素抗性 <br>毒素抗性 +20% <br>毒素持续时间减少 +20% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+在 40 秒内为攻击增加 50-2 毒素伤害<br>+11% 击碎打击几率 <br>恢复生命 +60 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 更快的奔跑/行走 <br>+11% 攻击评级加成 <br>+15 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大毒素抗性 <br>毒素抗性 +30% <br>毒素持续时间减少 +25% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">完美翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+在 50 秒内为攻击增加 100-2 毒素伤害<br>+14% 击碎打击几率 <br>恢复生命 +90 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 更快的奔跑/行走 <br>+14% 攻击评级加成 <br>+20 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大毒素抗性 <br>毒素抗性 +40% <br>毒素持续时间减少 +30% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">瑕疵翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+在 100 秒内为攻击增加 200-2 毒素伤害<br>+17% 击碎打击几率 <br>恢复生命 +150 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 更快的奔跑/行走 <br>+17% 攻击评级加成 <br>+25 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大毒素抗性 <br>毒素抗性 +50% <br>毒素持续时间减少 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">完美翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+在 200 秒内为攻击增加 400-2 毒素伤害<br>+20% 击碎打击几率 <br>恢复生命 +200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 更快的奔跑/行走 <br>+20% 攻击评级加成 <br>+30 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大毒素抗性 <br>毒素抗性 +60% <br>毒素持续时间减少 +50% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">碎裂的红宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 10-15 火焰伤害到攻击中<br>+15% 对恶魔的伤害 <br>每次击杀后 +2 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 更快的击中恢复 <br>+4% 致命一击 <br>+10 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +10% <br>+3 火焰吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">缺陷红宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 15-25 火焰伤害到攻击中<br>+30% 对恶魔的伤害 <br>每次击杀后 +4 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 更快的击中恢复 <br>+6% 致命一击 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大火焰抗性 <br>火焰抗性 +20% <br>+4 火焰吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">红宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 20-40 火焰伤害到攻击中<br>+45% 对恶魔的伤害 <br>每次击杀后 +7 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 更快的击中恢复 <br>+8% 致命一击 <br>+30 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大火焰抗性 <br>火焰抗性 +30% <br>+5 火焰吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">完美红宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 30-60 火焰伤害到攻击中<br>+60% 对恶魔的伤害 <br>每次击杀后 +10 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 更快的击中恢复 <br>+10% 致命一击 <br>+40 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大火焰抗性 <br>火焰抗性 +40% <br>+6 火焰吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">瑕疵红宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 60-120 火焰伤害到攻击中<br>+80% 对恶魔的伤害 <br>每次击杀后 +15 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 更快的击中恢复 <br>+12% 致命一击 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大火焰抗性 <br>火焰抗性 +50% <br>+8 火焰吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">完美红宝石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 120-225 火焰伤害到攻击中<br>+100% 对恶魔的伤害 <br>每次击杀后 +20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 更快的击中恢复 <br>+15% 致命一击 <br>+60 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大火焰抗性 <br>火焰抗性 +60% <br>+10 火焰吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>碎钻石</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 最小攻击伤害 <br>+2 对攻击的最大伤害 <br>+15% 对不死生物的伤害 <br>+4 最小攻击魔法伤害 <br>+8 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-5% 目标防御 <br>+4% 击碎打击几率 <br>+20 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抗性 +2% <br>所有抗性 +5 <br>减少的伤害 2 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>瑕疵钻石</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2 最小攻击伤害 <br>+4 对攻击的最大伤害 <br>+30% 对不死生物的伤害 <br>+6 最小攻击魔法伤害 <br>+12 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-8% 目标防御 <br>+6% 击碎打击几率 <br>+40 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抗性 +3% <br>所有抗性 +8 <br>减少的伤害 4 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>钻石</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4 最小攻击伤害 <br>+8 对攻击的最大伤害 <br>+45% 对不死生物的伤害 <br>+10 最小攻击魔法伤害 <br>+20 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-11% 目标防御 <br>+8% 击碎打击几率 <br>+60 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抗性 +4% <br>所有抗性 +11 <br>减少的伤害 6 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>完美的钻石</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6 最小攻击伤害 <br>+12 对攻击的最大伤害 <br>+60% 对不死生物的伤害 <br>+20 最小攻击魔法伤害 <br>+40 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-14% 目标防御 <br>+10% 击碎打击几率 <br>+80 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抗性 +6% <br>所有抗性 +14 <br>减少的伤害 8 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>瑕疵钻石</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8 最小攻击伤害 <br>+15 对攻击的最大伤害 <br>+80% 对不死生物的伤害 <br>+30 最小攻击魔法伤害 <br>+60 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-17% 目标防御 <br>+12% 击碎打击几率 <br>+100 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抗性 +8% <br>所有抗性 +17 <br>减少的伤害 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>完美钻石</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10 最小攻击伤害 <br>+20 对攻击的最大伤害 <br>+100% 对不死生物的伤害 <br>+50 最小攻击魔法伤害 <br>+100 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-20% 目标防御 <br>+15% 击碎打击几率 <br>+120 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抗性 +10% <br>所有抗性 +20 <br>减少的伤害 12 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">碎裂的黄玉</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-25 点闪电伤害到攻击中<br>+2% 致命一击 <br>减缓目标 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 从怪物身上获得额外金币 <br>+10% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +10% <br>+3 闪电吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">瑕疵黄玉</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-40 点闪电伤害到攻击中<br>+3% 致命一击 <br>减缓目标 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 从怪物身上获得额外金币 <br>+20% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大闪电抗性 <br>闪电抗性 +20% <br>+4 闪电吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">黄玉</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-60 点闪电伤害到攻击中<br>+4% 致命一击 <br>减缓目标 +6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 从怪物身上获得额外金币 <br>+30% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大闪电抗性 <br>闪电抗性 +30% <br>+5 闪电吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">完美黄玉</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-100 点闪电伤害到攻击中<br>+6% 致命一击 <br>减缓目标 +8% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 从怪物身上获得额外金币 <br>+40% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大闪电抗性 <br>闪电抗性 +40% <br>+6 闪电吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">瑕疵黄玉</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-200 点闪电伤害到攻击中<br>+8% 致命一击 <br>减缓目标 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 从怪物身上获得额外金币 <br>+50% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大闪电抗性 <br>闪电抗性 +50% <br>+8 闪电吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">完美黄玉</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-350 点闪电伤害到攻击中<br>+10% 致命一击 <br>减缓目标 +12% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 从怪物身上获得额外金币 <br>+60% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大闪电抗性 <br>闪电抗性 +60% <br>+10 闪电吸收 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">碎裂的头骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2 最小攻击伤害 <br>+1% 物理伤害吸取为法力 <br>+1% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 更快的奔跑/行走 <br>恢复生命 +10 <br>恢复法力 +5% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 防御 <br>物理抗性：+2% <br>魔法伤害减少 2 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">缺陷骷髅</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3 最小攻击伤害 <br>+2% 物理伤害吸取为法力 <br>+2% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 更快的奔跑/行走 <br>恢复生命 +20 <br>恢复法力 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40 防御 <br>物理抗性：+3% <br>魔法伤害减少 4 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">骷髅</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6 最小攻击伤害 <br>+3% 物理伤害吸取为法力 <br>+3% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 更快的奔跑/行走 <br>恢复生命 +30 <br>恢复法力 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 防御 <br>物理抗性：+4% <br>魔法伤害减少 6 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">完美头骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++9 最小攻击伤害 <br>+4% 物理伤害吸取为法力 <br>+4% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 更快的奔跑/行走 <br>恢复生命 +50 <br>恢复法力 +20% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++80 防御 <br>物理抗性：+6% <br>魔法伤害减少 8 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">瑕疵骷髅</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12 最小攻击伤害 <br>+5% 物理伤害吸取为法力 <br>+5% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 更快的奔跑/行走 <br>恢复生命 +75 <br>恢复法力 +25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 防御 <br>物理抗性：+8% <br>魔法伤害减少 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">完美骷髅</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15 最小攻击伤害 <br>+6% 物理伤害吸取为法力 <br>+6% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 更快的奔跑/行走 <br>恢复生命 +100 <br>恢复法力 +30% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++120 防御 <br>物理抗性：+10% <br>魔法伤害减少 12 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">碎裂的黑曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++9% 增强伤害<br>+1% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 提升攻击速度 <br>所有抗性 +2 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 提升防御 <br>减少的伤害 2 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">瑕疵黑曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++18% 增强伤害<br>+2% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 提升攻击速度 <br>所有抗性 +4 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 提升防御 <br>减少的伤害 4 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">黑曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++27% 增强伤害<br>+3% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 提升攻击速度 <br>所有抗性 +6 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 提升防御 <br>减少的伤害 6 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">完美黑曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++36% 增强伤害<br>+4% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++16% 提升攻击速度 <br>所有抗性 +8 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 提升防御 <br>减少的伤害 8 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">瑕疵黑曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++45% 增强伤害<br>+5% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 提升攻击速度 <br>所有抗性 +10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 提升防御 <br>减少的伤害 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">完美黑曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++54% 增强伤害<br>+6% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++24% 提升攻击速度 <br>所有抗性 +12 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 提升防御 <br>减少的伤害 12 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">I 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：2</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 增强伤害<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">U 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：3</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 对不死生物的伤害 <br>对不死生物的攻击评级 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 更快的奔跑/行走 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 增加格挡几率 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">石符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：4</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+每次击杀后 +5 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+每次击杀后 +5 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+每次击杀后 +5 点法力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">卡符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：5</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+击退 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 对远程防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 对远程防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">N 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-25% 目标防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复法力 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复法力 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">库 rune</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10 对攻击的最大伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 伤害转化为法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 伤害转化为法力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">优 Rune</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：9</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击附加 75 毒素伤害，持续 2 秒<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">Ki 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：10</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 40-80 火焰伤害到攻击中<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">瑞符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：12</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-125 点闪电伤害到攻击中<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">米符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 30-70 冰冷伤害，持续 3 秒<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">雅鲁恩</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击者反伤：250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击者反伤：250 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">一个符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：17</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10 最小攻击伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+减少的伤害 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+减少的伤害 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">祖符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：19</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 提升攻击速度 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快的击中恢复 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快的格挡率 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">气符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：20</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复生命 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复生命 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复生命 +75 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">萨符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：22</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25 最小攻击魔法伤害 <br>+60 最大攻击魔法伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法伤害减少 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法伤害减少 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">余符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：23</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命值 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">凯符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命值 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">E 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：26</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 以敏捷 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">Ko 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：27</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 力量 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 力量 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 力量 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">拉符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 从怪物身上获得额外金币 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">O 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：30</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 对恶魔的伤害 <br>对恶魔的攻击评级 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 提升防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 提升防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">霍符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：31</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+所有抗性 +30 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+所有抗性 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+所有抗性 +25 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">我符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：32</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快施法速度 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快施法速度 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快施法速度 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">鲁符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：34</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 更好的获得魔法物品的机会 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">塔符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 攻击评级加成 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大毒素抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大毒素抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">到符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：36</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理伤害吸取为法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大火焰抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大火焰抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">瓦符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：38</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 增强伤害<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大冰冷抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大冰冷抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">哈符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：39</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大闪电抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大闪电抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">纳符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：40</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+减缓目标 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加最大魔法值 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">尼符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 击碎打击几率 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抗性：+10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抗性：+10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">塞符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：43</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+忽略目标的防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加最大生命 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：44</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冻结目标 +3<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+无法被冰冻 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+无法被冰冻 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">马符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：45</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 生命 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 生命 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 生命 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">嗨 符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：46</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 生命值 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 生命值 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 生命值 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">摩符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：47</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 力量 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 力量 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 力量 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">没有符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：48</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 以敏捷 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 以敏捷 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 以敏捷 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">特符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：50</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 生命值 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 生命值 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 生命值 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">罗符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：51</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 生命值 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 生命值 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 生命值 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">索 rune</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：52</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8 最高火焰伤害加成至攻击 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">穆符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：54</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8 最大冰冷伤害加成至攻击 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">尼符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：55</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8 最大毒素伤害加成于攻击 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">雷符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：56</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8 最大闪电伤害加成至攻击 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +0.75% (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">苏符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：57</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 攻击评级提升 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 防御 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 防御 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">赫 rune</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：59</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 对攻击的最大伤害 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击者反伤：10 (依角色等级而定)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击者反伤：10 (依角色等级而定)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">怒符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 所有属性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 所有属性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 所有属性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">沃符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+永不毁损 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+永不毁损 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+永不毁损 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">空符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>El 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：11</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 增强伤害<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Eld 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：11</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100% 对不死生物的伤害 <br>对不死生物的攻击评级 +100 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 更快的奔跑/行走 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 增加格挡几率 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Tir 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+每次击杀后 +7 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+每次击杀后 +7 点法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+每次击杀后 +7 点法力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Nef 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+击退 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 对远程防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 对远程防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Eth 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-25% 目标防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复法力 +50% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复法力 +50% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ith 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15 对攻击的最大伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 伤害转化为法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 伤害转化为法力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Tal 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：17</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击附加 375 毒素伤害，持续 5 秒<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒素抗性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ral 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：19</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 40-80 火焰伤害到攻击中<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火焰抗性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ort 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加 1-125 点闪电伤害到攻击中<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+闪电抗性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Thul 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：23</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+对攻击增加 35-75 冰冷伤害，持续 3 秒<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冰冷抗性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Amn 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：25</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击者反伤：300 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻击者反伤：300 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Sol 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：27</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15 最小攻击伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+减少的伤害 18 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+减少的伤害 18 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Shael 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：29</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 提升攻击速度 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 更快的击中恢复 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 更快的格挡率 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Dol 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：31</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复生命 +200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复生命 +15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+恢复生命 +15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Hel 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：0</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+需求 -25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+需求 -25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+需求 -25% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Io 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lum 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：37</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 生命值 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ko 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：39</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 以敏捷 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 以敏捷 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Fal 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：41</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 力量 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 力量 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 力量 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lem 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：43</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% 从怪物身上获得额外金币 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Pul 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：45</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++125% 对恶魔的伤害 <br>对恶魔的攻击评级 +125 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 提升防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 提升防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Um 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：47</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+所有抗性 +35 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+所有抗性 +25 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+所有抗性 +25 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Mal 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：49</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法伤害减少 20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法伤害减少 18 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法伤害减少 18 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ist 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：51</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 更好的获得魔法物品的机会 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 更好的获得魔法物品的机会 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Gul 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：53</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 攻击评级加成 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大毒素抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大毒素抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Vex 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：55</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理伤害吸取为法力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大火焰抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大火焰抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ohm 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：57</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++65% 增强伤害<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大冰冷抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大冰冷抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lo 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：59</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大闪电抗性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大闪电抗性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Sur 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：61</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+减缓目标 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加最大魔法值 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75 生命值 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ber 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：63</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 击碎打击几率 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抗性：+12% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抗性：+12% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Jah 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：65</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-33% 目标防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+增加最大生命 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75 生命 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Cham 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：67</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冻结目标 +5<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+无法被冰冻 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+无法被冰冻 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Zod 符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：69</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+永不毁损 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+永不毁损 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+永不毁损 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">月亮符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 魔法法术伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>魔法吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>魔法吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>火符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 火焰法术伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>火焰吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>火焰吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>水符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 冷却法术伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>冰冷吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>冰冷吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>木符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 召唤伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>无法被冰冻 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>无法被冰冻 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">金属符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+100% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+100% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+100% 从怪物身上获得额外金币 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">土之符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 毒法术伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>魔法伤害减少 50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>魔法伤害减少 50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>太阳符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>恢复生命 +250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>恢复生命 +250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>恢复生命 +250 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>雷霆符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 对闪电法术伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>闪电吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>闪电吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>风符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 物理法术伤害 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>减少的伤害 50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>减少的伤害 50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">龙符文</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 增强伤害<br>+1 所有技能加成 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>物理抗性：+10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>物理抗性：+10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>生命符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+10% 物理伤害吸取为法力 <br>+10% 物理伤害吸取为生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>增加最大生命 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>增加最大生命 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>死亡符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+20% 击碎打击几率 <br>+20% 致命一击 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>增加最大魔法值 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>增加最大魔法值 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">天符</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>修复 1 点耐久度，需 5 秒<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>修复 1 点耐久度，需 5 秒<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>修复 1 点耐久度，需 5 秒<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>神之符文</b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 经验获得提升 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 经验获得提升 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 所有技能加成 <br>+15% 经验获得提升 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">碎裂冰霜魂石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 魔法法术伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>魔法吸收 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>魔法吸收 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">缺陷冰霜魂石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 魔法法术伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>魔法吸收 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>魔法吸收 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">冰霜魂石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 魔法法术伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>魔法吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>魔法吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">碎裂暗影石英</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 物理伤害吸取为法力 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>增加最大魔法值 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>增加最大魔法值 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">缺陷暗影石英</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理伤害吸取为法力 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>增加最大魔法值 +7% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>增加最大魔法值 +7% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">暗影石英</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理伤害吸取为法力 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>增加最大魔法值 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>增加最大魔法值 +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">碎裂绯血原石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 火焰法术伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>火焰吸收 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>火焰吸收 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">缺陷绯血原石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 火焰法术伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>火焰吸收 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>火焰吸收 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">绯血原石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 火焰法术伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>火焰吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>火焰吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">碎裂燃烧硫磺</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 对闪电法术伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>闪电吸收 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>闪电吸收 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">缺陷燃烧硫磺</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 对闪电法术伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>闪电吸收 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>闪电吸收 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">燃烧硫磺</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 对闪电法术伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>闪电吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>闪电吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">碎裂的暗苍晶石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 冷却法术伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>冰冷吸收 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>冰冷吸收 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">缺陷暗苍晶石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 冷却法术伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>冰冷吸收 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>冰冷吸收 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">暗苍晶石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 冷却法术伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>冰冷吸收 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>冰冷吸收 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">碎裂苦橄榄石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 毒法术伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>魔法伤害减少 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>魔法伤害减少 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">缺陷苦橄榄石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 毒法术伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>魔法伤害减少 15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>魔法伤害减少 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">苦涩的橄榄石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 毒法术伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>魔法伤害减少 20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>魔法伤害减少 20 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">碎裂脉冲蛋白</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 物理伤害吸取为生命 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>增加最大生命 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>增加最大生命 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">缺陷脉冲蛋白</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理伤害吸取为生命 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>增加最大生命 +7% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>增加最大生命 +7% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">脉动蛋白</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理伤害吸取为生命 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>增加最大生命 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>增加最大生命 +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">碎裂神秘朱砂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>恢复生命 +50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>恢复生命 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>恢复生命 +50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">缺陷神秘朱砂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>恢复生命 +100 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>恢复生命 +35 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>恢复生命 +100 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">神秘朱砂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>恢复生命 +150 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>恢复生命 +50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>恢复生命 +150 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">碎裂古墓玉石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 召唤伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>减半冰冻持续时间 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>减半冰冻持续时间 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">缺陷古墓玉石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 召唤伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>减半冰冻持续时间 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>减半冰冻持续时间 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">古墓玉石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 召唤伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>无法被冰冻 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>无法被冰冻 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">碎裂固体水银</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>+40% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>+20% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>+20% 从怪物身上获得额外金币 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">缺陷固体水银</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>+60% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>+40% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>+40% 从怪物身上获得额外金币 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">固态水银</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>+80% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>+60% 从怪物身上获得额外金币 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>+60% 从怪物身上获得额外金币 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">碎裂风暴琥珀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 增强伤害<br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>物理抗性：+4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>物理抗性：+4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">缺陷风暴琥珀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 增强伤害<br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>物理抗性：+6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>物理抗性：+6% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">风暴琥珀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 增强伤害<br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>物理抗性：+8% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>物理抗性：+8% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">碎裂污染碧玺</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 物理法术伤害 <br>+20 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>减少的伤害 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 生命 <br>减少的伤害 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">缺陷污染碧玺</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理法术伤害 <br>+35 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>减少的伤害 15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 生命 <br>减少的伤害 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">污染碧玺</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">需求等级：42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理法术伤害 <br>+50 生命 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>减少的伤害 20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 生命 <br>减少的伤害 20 <br>
+</font></td>
+</tr>
+
+
+</tbody></table>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

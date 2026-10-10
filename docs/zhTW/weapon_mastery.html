@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected 資料庫
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35486;&#35328;"><select id="esr-lang-zhTW" aria-label="&#35486;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW" selected>&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhTW",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhTW');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本資訊</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日誌]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[護甲]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前綴]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[後綴]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金護甲]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話暗金]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套裝]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石/符文]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石之語]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之語]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[方塊配方]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地圖]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查詢]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系統</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化結果]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油結果]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[終局地圖]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[靈魂容器]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[進階職業]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[擊殺帳簿]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵與外部技能資訊]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器專精]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                暗黑破壞神 II：獄火重生 全面轉換模組</div>
+        </div>
+        <div style="width:100%;">
+
+            <br>
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                <font color="ORANGE">武器精通</font> 是一套獨特的系統，會改變職業武器與技能的互動方式。<br>
+                                將一個 <FONT color="#706850">武器精通代幣
+                                </FONT> 轉化即可獲得武器精通，它可能掉落自
+                                <FONT color="#706850">墮落的札卡倫</FONT> 與終局地圖頭目（25% 機率，不受 /players 影響）。<br>
+                                <FONT color="#706850">墮落的札卡倫</FONT> 是你在惡夢與地獄的劇情中會隨機遇到的致命精英敵人，有機會掉落武器精通代幣（最高 75%，不受 /players 影響），且掉落暗金物品與武器的機率更高。<br>
+                                轉化後，代幣會 <font color="ORANGE">覺醒</font> ，之後你可以把它與武器及一些材料一起轉化，正式套用到武器上。<br>
+                                武器精通專精的目的不是讓強度膨脹或一定讓角色變強，而是改變技能的運作機制，或為角色提供新的裝備路線。<br>
+                                每把武器只能套用一種武器精通。除非另有明確說明，武器精通不會疊加（雙持時）。<br>
+                                武器精通可以套用到任何職業武器上，無論其階層（擴充、菁英與神話底材也適用）。<br>
+                                武器精通 <FONT color="ORANGE">可以移除</FONT>，但 <font color="red">代幣會在</font> 移除時遺失。
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <a name="recipes"></a>
+                        <a href="./weapon_mastery.html#recipes">[一般配方]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[專精]</a>&nbsp;
+                    </tbody>
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                            <font face="arial,helvetica">
+                                <b>
+                                    一般配方
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                任何職業武器<br>
+                                <FONT color="#706850">武器精通代幣</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                相同物品*<br>
+                                <FONT color="#706850">覺醒武器精通代幣</FONT><br><br>
+                                <font color="gray">*這只會讓代幣覺醒，不會改變武器</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                任何帶有武器精通的職業武器<br>
+                                該職業專屬的龍之石形態<br>
+                                3 瓶解凍藥水
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                相同物品<br>
+                                已移除武器精通*<br><br>
+                                <font color="gray">*代幣會遺失</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">任何已覺醒的武器精通代幣</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">武器精通代幣*</FONT><br><br>
+                                <font color="gray">*未覺醒</font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <font size="-1" face="arial,helvetica">
+                    <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                        <tbody>
+                            <a name="specializations"></a>
+                            <a href="./weapon_mastery.html#recipes">[一般配方]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[專精]</a>&nbsp;
+                        </tbody>
+                        <br><br>
+                        <tr>
+                            <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        專精
+                                    </b><br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    鹿弓變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">蜘蛛絲</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">毒素箭、焚燒箭、冰凍箭、閃電箭</font><br>
+                                    讓這些技能每 5 次攻擊觸發一次特殊效果<br>
+                                    （原本是 3 次），但總傷害提高 20%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    反射弓變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">蜘蛛絲</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">掃射</font><br>
+                                    目標數量變為三倍，但每射出一支箭會施加 2% 的物理抗性<br>
+                                    懲罰，持續 2 秒。此效果沒有上限<br>
+                                    <br>
+                                    <font color="orange">多重射擊</font><br>
+                                    讓多重射擊改為射出一圈箭矢新星，<br>但不再獲得每級傷害加成<br>
+                                    <br>
+                                    <font color="orange">龍捲風射擊</font><br>
+                                    改為射出 16 支箭的新星，其特殊<br>
+                                    協同減益變為三倍，並獲得無法修改的 10 秒冷卻時間<br>
+                                    <br>
+                                    <font color="orange">傳奇箭矢</font><br>
+                                    不再從<br>
+                                    等級或協同獲得攻擊準確率，但傷害加成加倍
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    精準弓變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">蜘蛛絲</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">魔法, 冰寒, 爆炸箭</font><br>
+                                    這些技能每 3 次攻擊會對附近敵人多射一支箭，但<br>
+                                    失去來自等級與協同的所有傷害與攻擊準確率
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    少女之矛變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">蜘蛛絲</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">矛風暴</font><br>
+                                    讓長矛風暴<br>
+                                    每 3 次攻擊使長矛碎片數量加倍，但不再提供額外物理傷害<br>
+                                    <br>
+                                    <font color="orange">刺擊</font><br>
+                                    讓擋開只產生小型長矛新星，現在它會<br>
+                                    以 150% 的效率降低物理抗性，但不再緩速*<br>
+                                    <br>
+                                    <font color="orange">死亡之舞</font><br>
+                                    以追蹤長矛波取代匯聚新星<br>
+                                    暴擊改由額外的波次取代
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    少女長矛變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">蜘蛛絲</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">矛風暴</font><br>
+                                    每級獲得的長矛碎片減少為 2 分之一，<br>
+                                    但整體物理傷害加倍<br>
+                                    <br>
+                                    <font color="orange">刺擊</font><br>
+                                    讓擋開只產生較大的長矛<br>
+                                    新星，並使緩速效果加倍*<br>
+                                    <br>
+                                    <font color="orange">死亡之舞</font><br>
+                                    每 5 次攻擊透過特殊協同使總傷害加倍，<br>
+                                    取代原本 15% 機率使傷害變為四倍的效果
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    少女標槍變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">蜘蛛絲</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">柴堆、瘟疫、冰霜標槍、閃電之怒</font><br>
+                                    這些技能每 3 次投擲會多投 2 支標槍，<br>
+                                    但總傷害降低 40%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    忍者刀變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="purple">龍之石</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">龍之刃</font><br>
+                                    目標數量減半，並對附近一名<br>
+                                    敵人造成大約等於減少數量 60% 的打擊次數
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    部落斧變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="#706850">鍛造錘</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">斧頭狂潮</font><br>
+                                    不再彈跳。改為釋放由 4 把斧頭組成的匯聚<br>
+                                    新星，只會再次命中主要目標<br>
+                                    <br>
+                                    <font color="orange">幻影斧</font><br>
+                                    現在改以螺旋新星擲出斧頭，<br>
+                                    只能擊中地形，之後彈向最多 4 名附近敵人<br>
+                                    <br>
+                                    <font color="orange">猛衝</font><br>
+                                    魔法彈數量提高 50%，<br>
+                                    但搜尋目標數從 2 降為 1<br>
+                                    <br>
+                                    <font color="orange">狂暴之怒</font><br>
+                                    魔法彈會立即分裂飛向附近敵人，<br>
+                                    但不再產生匯聚新星。投射物<br>
+                                    速度與彈數提高 50%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    橡木枝變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="gray">鐵鋁礦</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">狼、烏鴉、灰熊</font><br>
+                                    可召喚的狼與烏鴉數量減半，而你<br>
+                                    每失去 5 隻一般召喚物，就獲得 1 隻額外的灰熊<br>
+                                    。所有寵物技能的命中次數加倍，傳染造成的傷害也加倍。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    靈魂獵手變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="red">黑沼</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">不死族狂潮</font><br>
+                                    此技能不再提供元素傷害，<br>
+                                    但物理傷害加倍
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    儀式匕首變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="red">黑沼</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">詛咒</font><br>
+                                    所有詛咒效果加倍，但持續時間<br>
+                                    縮短為 2 秒，範圍縮小為 4 碼
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    可憐的鐮刀變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="red">黑沼</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">魔法法術</font><br>
+                                    你的死靈法師的直接傷害魔法法術<br>
+                                    每失去 1% 生命，就有 1% 機率重複施放<br>
+                                    。你的魔法抗性永遠為 0
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    祝福之刃變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="white">聖徽</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">熱情</font><br>
+                                    總強化機率提高 50%，<br>
+                                    但持續時間縮短為 2 秒
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    法力之刃變體<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="blue">碎裂的寶石</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">狂熱揮擊</font><br>
+                                    命中次數減為 1，但每第三次命中<br>
+                                    現在會釋放造成法術傷害的元素效果，<br>
+                                    並隨對應元素的所有直接傷害法術提升
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    魔法師寶珠<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="blue">碎裂的寶石</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT><br>
+                                    <FONT color="red">碎紅寶石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">魔法師法術</font><br>
+                                    你的 24 級魔法師法術冷卻時間變為三倍<br>
+                                    並為九頭蛇加上 2 秒冷卻時間，<br>
+                                    但你的總法術傷害提高 20%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    魔法師寶珠<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="blue">碎裂的寶石</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT><br>
+                                    <FONT color="#f1e5ac">碎顱</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">魔法師專屬技能</font><br>
+                                    你的專屬技能加成提高 50%，缺點提高 75%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    刺客之爪<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="purple">龍之石</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT><br>
+                                    <FONT color="red">碎紅寶石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">元素蓄力技能</font><br>
+                                    讓所有元素蓄力技能只釋放對應的蓄力，<br>
+                                    但依蓄力等級分別使總傷害提高 50/70/100%<br>
+                                    此效果不影響觸發，也不會疊加<br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    刺客之爪<br>
+                                    <FONT color="#706850">覺醒武器精通代幣</FONT><br>
+                                    <FONT color="purple">龍之石</FONT><br>
+                                    <FONT color="purple">鐵砧石</FONT><br>
+                                    <FONT color="#f1e5ac">碎顱</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">元素蓄力技能</font><br>
+                                    所有元素蓄力技能的基礎傷害降低 25%，但每一種<br>
+                                    存在的不同蓄力會使總傷害提高 10%<br>
+                                    此效果可疊加*
+                                </font>
+                                <br><br>
+                                <font size="-1" color="gray">*此傷害加成不適用於釋放觸發</font>
+                            </td>
+                        </tr>
+                    </table>
+                </font>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

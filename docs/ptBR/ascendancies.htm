@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pt">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Banco de dados do Eastern Sun Resurrected 3.6
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="Idioma"><select id="esr-lang-ptBR" aria-label="Idioma" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR" selected>Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="ptBR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-ptBR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informações básicas</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registro de alterações]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armaduras]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armas]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Prefixos]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Sufixos]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armaduras únicas]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armas únicas]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Outros únicos]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Únicos míticos]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Conjuntos]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Gemas/Runas]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Palavras de gemas]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Palavras rúnicas]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receitas do cubo]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapas]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Calculadora de velocidade de ataque]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Recursos</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Resultados de corrupção]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Resultados de unção]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapas de fim de jogo]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptáculo de almas]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendências]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registro de abates]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mercenários e habilidades externas]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Maestria em armas]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod de conversão total para Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendências</font> são especializações poderosas que moldam seu jeito de jogar, concedendo habilidades e bônus únicos.<br>
+                            As ascendências são concedidas por um amuleto especial chamado <font color="orange">Pedra de Ascendência</font> , que só pode ser obtido depois de concluir vários encontros especiais.<br>
+                            As pedras de ascendência podem ser melhoradas ainda mais (ou seja, você pode ascender ainda mais) ao concluir desafios específicos, alguns ligados a conteúdo de fim de jogo muito difícil.<br>
+                            Há 5 níveis de ascendência; cada desafio é mais difícil que o anterior, mas os bônus também são mais fortes.<br>
+                            As pedras de ascendência <font color="red"><strong>não podem ser compartilhadas com outros personagens</strong>
+                            </font>. Você só pode ter uma pedra de ascendência equipada por vez.<br>
+                            Nem é preciso dizer que cada nível só pode ser alcançado uma vez. Mas você pode alcançá-los em qualquer ordem.<br>
+                            As pedras de ascendência não podem ser modificadas pelos meios normais (não podem ser corrompidas, ungidas, desmanchadas em folhas de bordo etc.).<br>
+                            Depois de morrer, <font color="red">você precisa equipar novamente</font> a Pedra de Ascendência para recuperar os bônus, por causa de uma limitação do motor.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Desafios]</a>
+            <a href="#ascendancies">[Ascendências]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>Desafio do nível 1</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Para obter uma <font color="orange">Pedra de Ascendência</font>, você precisa matar 5 superúnicos especiais <font color="red">na dificuldade Inferno</font> espalhados por Santuário<br>e transmutar os orbes elementais que cada um deles solta para obter:
+                            <font color="orange">Orbe da Criação</font>.<br>
+                            Depois, o orbe pode ser transmutado com gemas de cores específicas para desbloquear a ascendência que você escolher. Dica: os atos 1, 2 e 3 têm um superúnico cada. O ato 5 tem 2, e o ato 4 nenhum.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrada</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Resultado</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            2 Safira Manchada<br>
+                            2 Obsidiana Manchada<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência do Mago de Batalha<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            1 Obsidiana Manchada<br>1 Safira Manchada<br>1 Esmeralda Manchada<br>1 Rubí Manchado
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Despertada<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            2 Obsidiana Manchada<br>2 Esmeralda Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência do Mestre das Lâminas<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            2 Esmeralda Manchada<br>2 Rubí Manchado
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Nômade<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            2 Obsidiana Manchada<br>2 Rubí Manchado
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Ironbolt<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            2 Esmeralda Manchada<br>2 Safira Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência de Arcanista<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            2 Rubí Manchado<br>2 Safira Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência do Guardião da Alma<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            4 Esmeralda Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Atirador de Elite<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            4 Safira Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra da Ascendência Nascida das Estrelas<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            1 Rubí Manchado<br>1 Obsidiana Manchada<br>1 Safira Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência do Mago Sangrento<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            4 Rubí Manchado
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Quebra-Vidas<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            1 Rubí Manchado<br>1 Obsidiana Manchada<br>1 Esmeralda Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Modeladora do Mundo<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            1 Obsidiana Manchada<br>1 Esmeralda Manchada<br>1 Safira Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Dançarina de Postura<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            1 Esmeralda Manchada<br>1 Rubí Manchado<br>1 Safira Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência do Guardião de Mana<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe da Criação</font><br>
+                            4 Obsidiana Manchada
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência Berserker<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Desafio do nível 2</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            O segundo nível é alcançado matando Nihlathak em seu domínio na dificuldade Inferno e transmutando a pedra de ascendência com ela mesma.<br>
+                            <font color="red">Você precisa transmutá-la enquanto os redemoinhos estiverem ativos no seu personagem.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrada</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Resultado</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">Pedra de Ascendência</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            Melhorada para o nível 2
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Desafio do nível 3</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            O terceiro nível é alcançado matando todos os chefes do Über Tristram <font color="red">com menos de um minuto de diferença entre eles e sem morrer, </font>e transmutando a pedra de ascendência com uma folha de bordo.<br>Mesmo que os redemoinhos estejam ativos no seu personagem depois de matar o último chefe, não vai funcionar se tiver passado mais de 1 minuto desde que você matou o primeiro.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrada</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Resultado</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            Folha de Bordo
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            Melhorada para o nível 3
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Desafio do nível 4</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            O quarto nível é alcançado coletando 10 <font color="ORANGE">Pedras da Alma Primordiais
+                            </font> que caem de qualquer chefe de mapa de fim de jogo. Você só pode transmutar uma Pedra Primordial por vez com a Pedra de Ascendência. Depois de capturar 10 Pedras da Alma Primordiais na Pedra de Ascendência, você poderá transmutá-la com 2 folhas de bordo para ascender ao nível 4.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrada</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Resultado</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            <font color="orange">Almas Primordiais Capturadas: 10/10</font><br>
+                            2 folhas de bordo
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            Melhorada para o nível 4
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Desafio do nível 5</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            O quinto nível é alcançado matando qualquer chefe de mapa de nível 5 e transmutando a pedra de ascendência com 3 folhas de bordo.<br>
+                            <font color="red">Você precisa transmutá-la enquanto os redemoinhos estiverem ativos no seu personagem.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrada</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Resultado</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            3 folhas de bordo
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pedra de Ascendência</font><br>
+                            Melhorada para o nível 5
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Desafios]</a>
+            <a href="#ascendancies">[Ascendências]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">Ascendências</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+60 de Força<br>+60 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+25% Bônus de Força<br>+25% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3</font><br>Ganha 1% de dano de feitiço para cada 2% de golpe mortal e para cada 2% de golpe esmagador<br>+25% Chance de Golpe Destruidor<br>+25% Golpe Mortal<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1% de bônus de defesa total a cada 3% de golpe mortal e golpe esmagador*<br>+10 Vida ao Golpear<br>+15% Dano Físico Drenado como Mana<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>+50% para Todas as Velocidades<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Mago de batalha</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*O bônus de defesa total é multiplicativo com todo o seu valor de armadura.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Mestre da lâmina</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+60 de Força<br>+60 para Destreza<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+25% Bônus de Força<br>+25% Bônus em Destreza<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 10% de dano aprimorado a cada 1% de resistência física<br>20% de resistência física<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1% de Dano Físico Drenado como Vida para cada 1% de Resistência Física<br>+40 de Dano Mínimo em Ataques<br>+50 de Dano Máximo em Ataques<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>15% Chance de Lançar Nível 20 Machado Arremessado ao Atacar<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+60 para Destreza<br>+60 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+25% Bônus em Destreza<br>+25% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 5 de mana a cada 1% de velocidade*<br>+30% para Todas as Velocidades<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1 de mana ao acertar a cada 25% de velocidade*<br>+20 em Fúria Elemental (todas as classes)<br>+5% em todas as resistências máximas<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>5% Chance de Lançar Nível 20 Flecha Aprimorada de Fogo ao Atacar<br>5% Chance de Lançar Nível 20 Flecha Aprimorada de Frio ao Atacar<br>5% Chance de Lançar Nível 20 Flecha Aprimorada de Raio ao Atacar<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Arcanista</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Cada tipo de velocidade (bloqueio, conjuração, movimento, ataque, recuperação) conta separadamente. Por exemplo, +1% em todas as velocidades conta como +5% para os bônus de ascendência.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Mago de sangue</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+45 de Força<br>+45 para Vitalidade<br>+45 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+20% Bônus de Força<br>+20% Bônus para Vitalidade<br>+20% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 1% de dano de feitiços a cada 250 de vida e 1% de dano de invocações a cada 400 de vida<br>A energia não tem mais efeito no dano de feitiços nem de invocações<br>Magia de sangue*<br>+200 para Vida<br><br>
+                    <font color="orange">Nível 4</font><br>Cura de 2% da Vida Máxima ao Matar<br>+50% Recuperação de Acerto Mais Rápida<br>+25% de resistência física<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>+25% para Vida de Invocação<br>Vida máxima aumentada em 50%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Magia de sangue significa que agora você usa vida para lançar feitiços.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+30 para Todos os Atributos<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+15% Bônus para Todos os Atributos<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe +1 em todas as habilidades a cada 1000 pontos de atributos*<br>+20% para Todas as Velocidades<br>+30 para Todos os Atributos<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1 de absorção elemental e mágica a cada 100 pontos de atributos*<br>Ganhe 1 de defesa a cada 2 pontos de atributos*<br>+20 em Poder Avassalador (todas as classes)<br>Duração do Veneno Reduzida em +75%<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>10% Chance to Cast Level 60 Aniquilação ao Ser Atacado<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Desperto</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Os marcos contam o total de pontos de atributos (por exemplo, você ganha +1 em todas as habilidades se tiver 250 em cada atributo).</font><br>
+        <font size="-2">**Aniquilação é uma devastadora nova de 6 elementos (fogo/gelo/raio/veneno/físico/magia), uma habilidade que cobre a tela inteira e que, por nova, causa 50% do dano da arma convertido no elemento correspondente, além de um dano de feitiço considerável de cada tipo que escala com o total de atributos. Ela empurra os inimigos e reduz todas as resistências deles em 25% por 2 segundos. A nova de veneno não causa dano de arma.</font><br>
+        <font size="-2" color="red">**Aniquilação só pode ser ativada quando sua vida atual está abaixo de 30%.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Virote de ferro</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+60 de Força<br>+60 para Vitalidade<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+25% Bônus de Força<br>+25% Bônus para Vitalidade<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 1%-2% de dano de sangramento a cada 10 de força<br>A duração desse sangramento segue o escalonamento da velocidade de recarga da besta*<br>+150 de Força<br>
+                    <font color="orange">Nível 4</font><br>Ganha 1 Vida ao Acertar para cada 200 de Força<br>+20% De velocidade de recarga de besta<br>Limite de velocidade de recarga da besta reduzido em 20%<br>+500 para Classificação de Ataque<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>2% Chance de Lançar Nível 40 Visão Interior ao Atacar<br>+25 em Foco Afiado (todas as classes)<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*A duração do sangramento é igual ao escalonamento da velocidade de recarga da besta. Isso vale quer você use uma besta ou não. O sangramento do Virote de ferro pode ser diluído por outras fontes de sangramento (assim como as instâncias de veneno se diluem entre si).</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+75 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+30% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe -1% nas resistências a fogo, gelo e raio do inimigo a cada 400 de mana<br>+400 para Mana<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1 Reposição de Vida para cada 5 Mana<br>+20 em Onipotência (todas as classes)<br>+25% para Todas as Velocidades<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>+1 para Teletransporte<br>+1 para Todas as Habilidades<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Nascido das estrelas</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Quebra-vidas</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+75 para Vitalidade<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+30% Bônus para Vitalidade<br><br>
+                    <font color="orange">Nível 3</font><br>Ganha 1% de Dano Mágico para cada 100 de Vida Faltando<br>Aumenta a Vida Máxima +30%<br><br>
+                    <font color="orange">Nível 4</font><br>Ganha 1 Redução de Dano Mágico e Físico para cada 100 de Vida Faltando<br>+1 para Limite de Armadilhas<br>Dano Reduzido em 50<br>Dano Mágico Reduzido em 50<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>+10 em Pacto da Vida*<br>Resistência Mágica +15%<br>Resistência Física: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Pacto da Vida é uma habilidade ativável que drena 25% da sua vida máxima a cada segundo e concede 10% de vida máxima por nível. Pacto da Vida não pode matar você.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+45 de Força<br>+45 para Destreza<br>+45 para Vitalidade<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+20% Bônus de Força<br>+20% Bônus em Destreza<br>+20% Bônus para Vitalidade<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 2 de dano máximo de fogo, gelo e raio nos ataques a cada 1% de resistência elemental*<br>Resistência ao Fogo +50%<br>Resistência ao Frio +50%<br>Resistência a Raio +50%<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1% de resistência física e mágica a cada 30% de resistência elemental*<br>Ganhe 1% de resistência a veneno a cada 5% de resistência elemental*<br>Dano de feitiços: +50%**<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>2% de chance de lançar Fúria da Criação nível 1 ao golpear***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Moldador de mundos</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Cada tipo de resistência conta separadamente para os marcos de bônus. Por exemplo, você ganha 1% de resistência física se tiver 10% de resistência a fogo, gelo e raio cada.</font><br>
+        <font size="-2">**Dano de feitiços é o dano de feitiços de fogo/gelo/raio/veneno/mágicos/físicos e aumenta o dano fixo dos ataques (exceto o dano de feitiços físicos, que não aumenta o dano físico dos ataques).
+        </font><br>
+        <font size="-2">***Fúria da Criação é uma tripla nova elemental de área média; cada nova causa 50% do dano da arma convertido no elemento correspondente e reduz as resistências elementais dos inimigos em 30%.
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Guardião das almas</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+60 para Vitalidade<br>+60 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+25% Bônus para Vitalidade<br>+25% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 1% de dano de feitiços de veneno, mágicos e físicos a cada 40 de energia<br>+150 para Energia<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1 Vida para cada 3 Energia<br>Absorção Mágica +10%<br>Não Pode Ser Congelado<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>+1 para o Limite de Invocações Não Únicas<br>Dano Reduzido em 50<br>Dano Mágico Reduzido em 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+45 de Força<br>+45 para Destreza<br>+45 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+20% Bônus de Força<br>+20% Bônus em Destreza<br>+20% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3*</font><br>
+                    Postura de dano (vermelha): 5% de dano aprimorado e 1% de dano de feitiços<br>
+                    a cada 75 pontos combinados de força, destreza e energia<br>
+                    Postura de evasão (verde): 10% em todas as velocidades e 1% de esquiva<br>
+                    a cada 1000 pontos combinados de força, destreza e energia<br>
+                    Postura de recuperação (azul): +1 em todas as habilidades e 150 de regeneração de vida e mana<br>
+                    a cada 1500 pontos combinados de força, destreza e energia<br><br>
+                    <font color="orange">Nível 4</font><br>Bônus de todas as posturas aumentam em 25%<br>+30% Bônus de Força<br>+30% Bônus em Destreza<br>+30% Bônus para Energia<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>+50% Aumento de Velocidade de Ataque<br>+50% Taxa de Lançamento Mais Rápida<br>+100 Vida após cada Morte<br>+50 de Mana após cada Morte<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Dançarino de posturas</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*Você precisa definir uma tecla de atalho para trocar de postura no submenu de controles.</font></font><br>
+        <font size="-2">**Você pode trocar de postura quando quiser, mas as posturas só alternam nesta ordem: vermelha -&gt; verde -&gt; azul.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Nômade</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+60 para Destreza<br>+60 para Vitalidade<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+25% Bônus em Destreza<br>+25% Bônus para Vitalidade<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 5 de dano máximo a cada 5% de corrida/caminhada mais rápida ou 1% de velocidade base de corrida/caminhada<br>+75% Mais Rápido Correr/Caminhar<br>Adiciona 150%-250% de dano de sangramento durante 1 segundo<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 5% de chance de esquiva a cada 200% de corrida/caminhada mais rápida ou 40% de velocidade base de corrida/caminhada<br>+300 para Vida<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>20% Chance to Cast Level 1 Corrida ao Ser Atacado<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Escapulir é um bônus de 1 segundo de duração que concede 33% de esquiva, 100% de velocidade base de corrida/caminhada, 25% de dano físico máximo total nos ataques e regenera 10% da vida máxima ao longo da duração.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+75 para Destreza<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+30% Bônus em Destreza<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 2% de bônus na taxa de ataque a cada 1% de perfuração<br>Ganhe 1 de dano máximo a cada 2% de perfuração<br>+30 para Mínimo Dano<br>+20 em Perfuração (todas as classes)<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 3 Vitalidade para cada 1% de Penetração<br>+75% Mais Rápido Correr/Caminhar<br>+20 em Esquiva (todas as classes)<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>15% Chance de Lançar Nível 20 Flecha ao Atacar<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Atirador de elite</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Guardião da mana</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+45 para Destreza<br>+45 para Vitalidade<br>+45 para Energia<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+20% Bônus em Destreza<br>+20% Bônus para Vitalidade<br>+20% Bônus para Energia<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 1% de dano de feitiços a cada 20% de regeneração de mana<br>Ganhe 1 de dano mínimo nos ataques a cada 5% de regeneração de mana<br>+5 Mana ao Acertar<br>Regenerar Mana +100%<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1 Mana para cada 2% de Regeneração de Mana<br>+20 em Escudo de Energia (todas as classes)<br>+10% de Resistência Máxima a Veneno<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>20% Chance to Cast Level 50 Parada do Tempo ao Ser Atacado<br>Resistência a Veneno +75%<br>+20 ao Raio de Luz<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Nível 1</font><br>+1 nos níveis de habilidades de classe<br>+75 de Força<br><br>
+                    <font color="orange">Nível 2</font><br>+1 nos níveis de habilidades de classe<br>+30% Bônus de Força<br><br>
+                    <font color="orange">Nível 3</font><br>Ganhe 3% de Dano Máximo para cada 1% de Dano Físico Drenado como Vida<br>+30 para Máximo Dano<br>+25% Dano Físico Roubado como Vida<br><br>
+                    <font color="orange">Nível 4</font><br>Ganhe 1% de Resistência Física e Mágica para cada 5% de Dano Físico Sanguessugado como Vida<br>Duração da Maldição Reduzida em 100%<br><br>
+                    <font color="orange">Nível 5</font><br>+3 nos níveis de habilidades de classe<br>25% de chance de lançar Devastação nível 1 em ataque corpo a corpo**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendência Berserker</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Devastação é uma habilidade de área pequena a média que causa 150% do dano da arma como dano físico a todos os inimigos afetados e reduz a resistência física deles em 30% por 2 segundos.</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

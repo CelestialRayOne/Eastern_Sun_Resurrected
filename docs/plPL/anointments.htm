@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Baza danych Eastern Sun Resurrected
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Dziennik zmian]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Pancerze]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Broń]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przedrostki]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przyrostki]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowe pancerze]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowa broń]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Inne unikaty]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mityczne unikaty]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Zestawy]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Klejnoty/Runy]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa klejnotów]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa runiczne]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptury kostki]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Kalkulator szybkości ataku]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyszukiwarka łupów]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki skażenia]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki namaszczenia]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy końcowe]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Naczynie dusz]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendencje]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Księga zabójstw]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Najemnicy i umiejętności spoza klasy]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Biegłość w broni]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod całkowitej konwersji do Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+		<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+			<tbody>
+				<tr>
+					<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								Namaszczenia to unikatowe premie zdobywane przez transmutację określonych odczynników kostki z niektórymi przedmiotami.<br>
+								W przypadku <FONT color="#706850">unikatowych uroków</FONT>namaszczenia zdobywa się przez transmutację wszystkich części ciała bossa Oko Burzy<br>
+								(<FONT color="PURPLE">Demoniczny Róg Diablo</FONT>, <FONT color="PURPLE">Oko Demona Baala</FONT>, <FONT color="PURPLE">Demoniczny Mózg Mephisto</FONT>) z <FONT color="#706850">Unikatowy urok</FONT> w zamian za jednorazową premię.<br>
+								W przypadku zwykłego/<font color="blue">Magia</font>/<font color="yellow">Rzadkie</font>/<font color="orange">Wytworzony</font>/<font color="GREEN">Zestawy</font> ekwipunku do założenia bez słowa runicznego namaszczenia zdobywa się przez transmutację <FONT color="purple">Kula Namaszczenia</FONT> z rzadkim przedmiotem.<br>
+								W przeciwieństwie do skażeń namaszczenie nie może zniszczyć przedmiotu.<br>
+								Po transmutacji przedmiotu z określonymi odczynnikami kostki trzeba go transmutować ponownie, aby faktycznie go namaścić.
+							</font>
+						</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+			<tbody>
+				<tr>
+					<td width="500" bgcolor="#402040" align="center">
+						<font size="-1" face="arial,helvetica">
+							Wejście</font>
+					</td>
+					<td width="500" bgcolor="#402040" align="center">
+						<font size="-1" face="arial,helvetica">
+							Możliwe wyniki</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Zwykły/<font color="blue">Magia</font>/<font color="yellow">Rzadkie</font>/<font color="orange">Wytworzony</font>/<font color="GREEN">Zestawy</font> Ekwipunek do założenia<br>
+							<FONT color="PURPLE">Kula Namaszczenia<br></FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Ten sam przedmiot<br>
+							<font color="orange">Losowy przyrostek najwyższego poziomu</font><br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 40 do 50)% Zwiększone obrażenia<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>-(od 10 do 15)% Obrona Celu<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 8 do 10)% Bonus do Wszystkich Atrybutów<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% do obrażeń od zaklęć magicznych<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>-(od 8 do 12)% do odporności przeciwnika na żywioły i truciznę<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% Zwiększona Prędkość Ataku<br>
+							+(od 15 do 20)% szybszego rzucania czarów<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 8 do 12)% Fizyczne obrażenia kradzione jako życie<br>
+							+(od 8 do 12)% Fizycznych obrażeń kradzionych jako Mana<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 20 do 25) do Wszystkich Atrybutów<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 10 do 15)% do obrażeń przywołania<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% do zabójczego ciosu<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% do miażdżącego ciosu<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% do obrażeń od zaklęć fizycznych<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+1 do Wszystkich Umiejętności<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% do obrażeń zaklęć żywiołów i trucizny<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 20 do 30)% Szybszy Bieg/Chód<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 20 do 30)% Szybszy Powrót po Trafieniu<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>Zwiększa Maksymalne Życie +(od 15 do 20)%<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>Zwiększa Maksymalną Manę +(od 15 do 20)%<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>Nie można zamarznąć<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>
+							+1% do Maksymalnego Odporu na Magię<br>
+							+1% do Maksymalnego Oporu na Trucizny<br>
+							+1% do Maksymalnego Oporu na Zimno<br>
+							+1% do Maksymalnego Oporu na Pioruny<br>
+							+1% do Maksymalnego Ognistego Oporu<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% do wszystkich odporności<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 30 do 40)% Lepsza szansa na zdobycie magicznych przedmiotów<br>
+							+(od 30 do 40)% Dodatkowe Złoto z Potworów<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 60 do 80) do Życia<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 60 do 80) do Many<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>Czas trwania klątwy zmniejszony o (od 15 do 20)%<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>Odnów Życie +(od 300 do 400)<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 15 do 20)% Atak Przeszywający<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+1% absorpcji żywiołów<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 20 do 30) Życia po każdym zabójstwie<br>
+							+(od 15 do 20) many po każdym zabójstwie<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							Unikatowy urok<br>
+							<FONT color="PURPLE">Demoniczny Róg Diablo<br>
+							Oko Demona Baala<br>
+							Demoniczny Mózg Mephisto</FONT>
+						</font>
+					</td>
+					<td bgcolor="#101010" align="center">
+						<font size="-1" face="arial,helvetica">
+							<br> Ten sam przedmiot <br>+(od 10 do 15) do Minimalna Obrażenia<br>
+							+(od 15 do 20) do Maksymalna Obrażenia<br>
+							<FONT COLOR="Purple">*** Namaszczony **</FONT><br>
+						</font>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

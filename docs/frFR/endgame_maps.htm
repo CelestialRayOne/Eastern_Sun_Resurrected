@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="fr">
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-YFKD8ZR9BX');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://d2esrdb.github.io">
+	<meta property="og:title" content="Eastern Sun Resurrected Database">
+	<meta property="og:description"
+		content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+	<title>
+		Base de données Eastern Sun Resurrected
+	</title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+	<style>
+		/* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+	style="padding: 0; padding-left: 170px; padding-right: 170px;">
+	<nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Langue"><select id="esr-lang-frFR" aria-label="Langue" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR" selected>Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="frFR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-frFR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informations de base</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href=".././changelogs.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Notes de version]</a>
+			<a href="./armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armures]</a>
+			<a href="./weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armes]</a>
+			<a href="./prefixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Préfixes]</a>
+			<a href="./suffixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixes]</a>
+			<a href="./unique_armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armures uniques]</a>
+			<a href="./unique_weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armes uniques]</a>
+			<a href="./unique_others.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Autres uniques]</a>
+			<a href="./unique_mythicals.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Uniques mythiques]</a>
+			<a href="./sets.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ensembles]</a>
+			<a href="./gems.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Gemmes/Runes]</a>
+			<a href="./gemwords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mots de gemmes]</a>
+			<a href="./runewords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mots runiques]</a>
+			<a href="./Eastern Sun Resurrected Cube Recipes.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Recettes du cube]</a>
+			<a href="./Eastern Sun Resurrected Maps.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Cartes]</a>
+			<a href="./drop-finder.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Recherche de butin]</a>
+		</div>
+	</nav>
+	<nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Fonctionnalités</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href="./corruptions.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Résultats de corruption]</a>
+			<a href="./anointments.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Résultats d'onction]</a>
+			<a href="./endgame_maps.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Cartes de fin de jeu]</a>
+			<a href="./vessel_of_souls.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Réceptacle des âmes]</a>
+			<a href="./ascendancies.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendances]</a>
+			<a href="./kill_ledger.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registre des victimes]</a>
+			<a href="./skill_information.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mercenaires et compétences externes]</a>
+			<a href="./weapon_mastery.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Maîtrise des armes]</a>
+		</div>
+	</nav>
+
+	<center>
+		<div
+			style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+			<h1
+				style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+				Eastern Sun Resurrected</h1>
+			<div
+				style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+				Mod de conversion totale pour Diablo II: Resurrected</div>
+		</div>
+		<div style="width:100%;">
+
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								<font color="red">Avertissement :</font> les zones de cartes de fin de jeu sont bien plus difficiles que tout autre contenu et exigent des builds extrêmement aboutis.<br>
+								On accède aux zones de cartes de fin de jeu en transmutant les objets carte seuls, dans <font
+									color="red"> l'Acte 5 en Enfer</font>. Il existe au total 18 objets carte répartis sur 5 paliers.<br>
+								Chaque palier compte 4 zones de cartes différentes, sauf le palier 5 qui n'a que 2 cartes avec des combats de boss uniques et extrêmement difficiles.<br>
+								Les objets carte peuvent être lâchés par les monstres super-uniques du domaine de Nihlathak. Chaque boss super-unique a 5 % de chances de lâcher une carte de palier 1.<br>
+								Les objets carte peuvent aussi être lâchés par les champions et les monstres uniques dans les zones terrorisées de niveau 96.<br>
+								On peut aussi obtenir des objets carte comme butin rare dans les zones de cartes de fin de jeu elles-mêmes, ce qui sera votre source principale si vous faites des cartes régulièrement<br>
+								Les monstres normaux des cartes peuvent lâcher une carte d'un palier au-dessus de celui de la carte où ils sont tués. Vous pouvez aussi améliorer les cartes selon un ratio de 3:1.<br>
+								Pour survivre, il est recommandé que votre build ait au moins 5 000 points de vie, des résistances au maximum, un peu de résistance physique et d'autres couches défensives.<br>
+								Les récompenses exprimées en chance moyenne peuvent augmenter jusqu'à 100 % avec /players 8. Par exemple, un Ancien a 50 % de chances d'obtenir une clé, et ce
+								<b>deux fois</b>, donc vous obtenez en moyenne une clé, mais passer à 8 joueurs lui donne presque 100 % de chances de lâcher 2 clés.<br>
+								Les cartes de fin de jeu peuvent devenir terrorisées, et une carte de chaque palier est terrorisée à la fois (sauf le palier 5, dont les deux cartes sont terrorisées en même temps, indépendamment des autres).<br>
+								Les cartes de fin de jeu peuvent aussi être terrorisées en Normal et en Cauchemar, mais ce n'est pas voulu. Cela ne peut pas être corrigé à cause des limites du moteur.<br>
+								Les boss terrorisés lâchent toujours un Fragment de la Pierre du Monde (sauf les boss du palier 5, à cause d'une limite du moteur).<br>
+								<storng>Les boss des paliers 1 à 4</storng> ont un <font color="purple">Bouclier d'immunité</font>
+								qui tombe de temps en temps. Les effets de réduction des résistances le font tomber plus souvent.
+							</font>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								Boss</font>
+						</td>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								Description/Récompenses</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Le Murmure de Lucion</font> - Caveau de la douleur<br><br>
+							<img src=".././images/map-bosses/lucionwhisper.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Des profondeurs abyssales des Enfers Brûlants surgit le Murmure de Lucion, un héraut spectral de la volonté de son maître. Ombre drapée d'un feu surnaturel, il n'est ni tout à fait démon ni tout à fait spectre, mais un écho maudit de l'essence même de Lucion.</i><br><br>
+								<font color="red">Feux éternels</font> - Le Murmure de Lucion peut invoquer des flammes qui durent 30 secondes et infligent des dégâts de feu démentiels.<br>
+								<font color="red">Malédiction affaiblissante</font> - Le Murmure de Lucion peut lancer une malédiction au sol. Si vous êtes pris dans la zone, vous êtes pétrifié et votre résistance au feu diminue de 150 %.<br>
+								<font color="red">Téléportation</font> - Le Murmure de Lucion peut se téléporter lorsqu'il est blessé, ce qui le rend imprévisible.<br><br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (5 % de chances en moyenne)<br> Carte de palier 2 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (25 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Chien de l'Enfer de Diablo</font> - Gouffre de l'Horreur<br><br>
+							<img src=".././images/map-bosses/diablohellhound.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Des fosses noircies des Enfers Brûlants surgit le chien de l'enfer personnel de Diablo. Plus que chair et crocs, c'est un cauchemar vivant, une manifestation de la colère sans bornes du Démon Majeur.</i><br><br>
+								<font color="red">Frénésie</font> - Le Chien de l'Enfer de Diablo entre dans une frénésie et gagne de la vitesse d'attaque et de déplacement à chaque attaque.<br>
+								<font color="red">Sort à l'attaque</font> - Le Chien de l'Enfer de Diablo peut déchaîner un sort mortel en attaquant sa proie. Les sorts possibles sont un Météore normal, un Orbe gelé dévastateur dont les éclats de glace cherchent les joueurs proches, un Esprit de l'os perforant et une malédiction qui ralentit la cible et réduit ses résistances élémentaires de 100 % et sa résistance à la magie de 50 %.<br><br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (5 % de chances en moyenne)<br> Carte de palier 2 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (25 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Ancien Ange Déchu</font> - Nécropole<br><br>
+							<img src=".././images/map-bosses/ancientfallenangel.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Jadis guerrier radieux des Hauts-Cieux, cet Ancien Ange Déchu erre désormais dans le néant, relique abandonnée de la guerre céleste. Le temps lui a ôté son éclat, et son armure autrefois étincelante est ternie par la suie de royaumes brisés. Là où des ailes dorées le portaient jadis sur la lumière divine pendent maintenant des lambeaux en ruine, calcinés par les feux de la damnation.</i><br><br>
+								<font color="red">Nova d'anéantissement</font> - L'Ancien Ange Déchu lance parfois une nova dévastatrice qui inflige des dégâts physiques et magiques. La nova s'étend lentement et rebondit une fois en touchant une surface, il est donc vivement conseillé de vous cacher dans une autre pièce pendant ce temps.<br>
+								<font color="red">Tempête de boules de foudre</font> - Le boss lance parfois, en attaquant ou lorsqu'il est blessé, une tempête de boules de foudre qui explosent en plusieurs éclairs chargés.<br>
+								<font color="red">Enragement</font> - Le boss a en moyenne 10 % de chances d'enrager lorsqu'il est blessé, gagnant une vitesse d'attaque maximale pendant un court instant.<br><br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (5 % de chances en moyenne)<br> Carte de palier 2 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (25 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Terreur Dans Les Ombres</font> - Antre Infesté<br><br>
+							<img src=".././images/map-bosses/terrorintheshadows.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Profondément sous la terre, là où l'air s'épaissit de pourriture et où des choses invisibles grouillent au-delà du voile des ténèbres, rôde une horreur ancienne qui a tissé son domaine à partir de la peur elle-même.</i><br><br>
+								<font color="red">Attaque sautée</font> - L'araignée géante saute parfois sur des victimes inattentives et inflige des dégâts de zone.<br>
+								<font color="red">Lancer d'araignées</font> - Le boss peut lancer une nuée de bébés araignées dotées d'une attaque empoisonnée mortelle et capables de faire elles-mêmes des attaques bondissantes.<br>
+								<font color="red">Crachat de toile</font> - Le boss lance toutes les 4 secondes une boule de toile empoisonnée mortelle. La boule réduit la vitesse de déplacement et la résistance au poison de la cible de 150 % et ses vitesses d'attaque et d'incantation de 50 %.<br><br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (10 % de chances en moyenne)<br> Carte de palier 3 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (35 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Boss doubles</font> - Rift du Chaos<br><br>
+							<img src=".././images/map-bosses/doubleboss.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>La faille chaotique est très instable, ce qui a affaibli le tissu de l'espace-temps et réuni deux boss de cartes de palier 1.</i><br><br>
+								Les boss sont identiques à leurs équivalents des cartes de palier 1 et utilisent les mêmes compétences. La difficulté vient du fait que vous devez les affronter tous les deux à la fois dans un espace réduit.<br><br>
+								<font color="#706850">Récompenses (pour chaque boss)</font><br>
+								<font color="purple">Orbe d'Onction</font> (5 % de chances en moyenne)<br> Carte de palier 2 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (25 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Avatar de la Nuit</font> - Labyrinthe de la Souffrance<br><br>
+							<img src=".././images/map-bosses/avatarofthenight.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Quand le soleil s'efface et que le voile de la nuit descend, il s'éveille. Ombre parmi les ombres, l'Avatar de la Nuit se déplace avec le silence d'une panthère en chasse, sa forme d'obsidienne se fondant parfaitement dans l'abîme.</i><br><br>
+								<font color="red">Bond</font> - L'avatar tente parfois de vous tendre une embuscade en vous sautant dessus, vous affaiblissant avec un effet de folie qui réduit votre résistance physique de 100 % et votre résistance au froid de 150 %. Cet effet vous plonge cependant dans un état enragé qui augmente vos vitesses d'attaque, d'incantation et de déplacement de 100 %.<br>
+								<font color="red">Rafale de javelots</font> - L'attaque principale du boss est une rafale de javelots infligeant des dégâts mixtes physiques/froid, qui peuvent rebondir vers les joueurs proches, même après avoir touché un mur.<br>
+								<font color="red">Nova de froid convergente</font> - Lorsqu'il est près de vous, le boss lance une nova d'éclats de glace qui se collent aux murs puis cherchent les joueurs proches après un court délai : courez. Il peut aussi lancer cette capacité lorsqu'il est blessé.<br>
+								<font color="red">Passifs</font> - Le boss a une chance passive de frappe mortelle et de coup écrasant à l'attaque.<br><br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (10 % de chances en moyenne)<br> Carte de palier 3 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (35 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Héraut de la Destinée</font> - Abysses sans fin<br><br>
+							<img src=".././images/map-bosses/heraldofdoom.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Il y a longtemps, avant que la corruption ne noircisse son âme, il marchait parmi les Horadrim : un érudit du savoir interdit, un chercheur de vérité dans les ombres de la création. Mais la sagesse est une lame à double tranchant, et celui que l'on appelle désormais le Héraut de la Destinée en a trop vu. Il a contemplé l'abîme du pouvoir élémentaire, non en gardien prudent, mais en disciple consentant. Et en retour, l'abîme l'a contemplé.</i><br><br>
+								<font color="red">Pluie funeste</font> - L'Horadrim corrompu fait parfois pleuvoir des météores sur ses ennemis, chacun infligeant des dégâts physiques et de feu dévastateurs.<br>
+								<font color="red">Orage</font> - Le boss invoque parfois un anneau de boules de foudre qui finissent par se changer en éclairs mortels cherchant les ennemis proches : courez dès que vous les voyez.<br>
+								<font color="red">Rafale de glace</font> - Le boss peut aussi invoquer des novas d'éclats de glace qui n'infligent pas de dégâts directs, mais se collent aux surfaces et cherchent les joueurs proches après un court délai.<br>
+								<font color="red">Spirale de météores</font> - Quiconque est assez fou pour s'approcher du sorcier subit une spirale de météores dévastateurs.<br>
+								<font color="red">Passifs</font> - Le sorcier horadrim perce les résistances élémentaires de 100 %, alors dépassez largement leur maximum avant de l'affronter.<br><br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (15 % de chances en moyenne)<br> Carte de palier 4 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (50 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Béhémoth Glaciaire</font> - Terres Gelées (Descente nord)<br><br>
+							<img src=".././images/map-bosses/glacialbehemoth.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Les légendes parlent d'une époque où les Horadrim cherchèrent à emprisonner une grande force élémentaire, craignant que sa puissance brute et débridée ne défie même les Démons Majeurs. Mais la glace ne meurt pas. Elle ne s'efface pas. Elle attend. Et quand les sceaux de sa prison se brisèrent, le Béhémoth Glaciaire se releva, son souffle une tempête de givre tranchant, chacun de ses pas fendant la terre sous une avalanche de mort.</i><br><br>
+								<font color="red">Permafrost</font> - Le béhémoth tente d'invoquer au corps à corps une avalanche de glace mortelle qui laisse derrière elle des feux glacés infligeant pendant 30 secondes des dégâts de froid et physiques démentiels.<br>
+								<font color="red">Gel permanent</font> - Lorsqu'il subit des dégâts, il peut lancer une malédiction pétrifiante qui réduit votre résistance au froid de 150 %, votre vitesse de déplacement de 500 % et vos vitesses d'incantation et d'attaque de 200 %.<br>
+								<font color="red">Charge</font> - Lorsqu'il subit des dégâts, le boss peut charger sa cible à une vitesse folle, réduisant la distance qui vous sépare.<br>
+								<font color="red">Perturbation</font> - Le boss émet une aura mystérieuse qui empêche vos compétences de téléportation de fonctionner.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (15 % de chances en moyenne)<br> Carte de palier 4 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (50 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Le Maître des Tâches</font> - Terres Gelées (Descente sud)<br><br>
+							<img src=".././images/map-bosses/thetaskmaster.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Vêtu de chaînes qui lient non seulement la chair mais aussi les âmes, il ne combat pas seul. D'un ordre guttural, il invoque les impies, déchirant le voile entre les mondes pour déchaîner des légions de démons, chacun lié à sa volonté de fer. Mais il ne se contente pas de les envoyer au combat, il les pousse : sa seule présence attise la folie de ses serviteurs et les mène au-delà de la douleur, au-delà de la peur, au-delà de la mort elle-même.</i><br><br>
+								<font color="red">Invocation d'esclaves assoiffés de sang</font> - Le Maître des Tâches invoque régulièrement des démons assoiffés de sang venus des profondeurs de l'enfer pour l'aider au combat. Ses serviteurs sont immunisés contre tous les dégâts et leurs immunités doivent être brisées par les moyens habituels.<br>
+								<font color="red">Rage sanguinaire</font> - Le boss tente d'enrager ses serviteurs, soit en leur accordant pendant 6 secondes un bonus qui les soigne extrêmement vite et augmente leurs dégâts et leurs vitesses d'attaque et de déplacement, soit en les changeant en esclaves suicidaires.<br>
+								<font color="red">Esclaves suicidaires</font> - Les esclaves suicidaires poursuivent les joueurs et tentent d'exploser à leur visage. S'ils sont tués directement par un joueur, ils explosent en une pluie de feu extrêmement dévastatrice infligeant des dégâts physiques et de feu, et libèrent un crâne de feu mortel à tête chercheuse qui inflige des dégâts de feu létaux.<br>
+								<font color="red">Perturbation</font> - Le boss émet une aura mystérieuse qui empêche vos compétences de téléportation de fonctionner.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (15 % de chances en moyenne)<br> Carte de palier 4 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (50 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Héraut défiguré de Baal de la Destruction</font> - Sanctuaire de la Destruction<br><br>
+							<img src=".././images/map-bosses/baaldisfiguredharbinger.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Jadis, c'était un serviteur loyal et dévoué du Seigneur de la Destruction, un héraut élu chargé de semer la ruine au nom de Baal. Pendant un bref instant, il osa douter, hésiter devant le décret de Baal. Pour cela, il fut défait puis refait, non pas détruit mais condamné à souffrir, remodelé par la colère sans bornes de son maître. Baal ne lui accorda pas la mort, mais une leçon, une cicatrice éternelle, un rappel grotesque du sort réservé à ceux qui défient le Seigneur de la Destruction.</i><br><br>
+								<font color="red">Novas de froid destructrices à tête chercheuse</font> - L'ancien serviteur de Baal lance le plus souvent un orbe de glace mortel qui répand des éclats de glace. Ceux-ci restent d'abord suspendus en l'air un court instant, puis cherchent à transpercer les joueurs proches à une vitesse extrême.<br>
+								<font color="red">Tempête de foudre de Baal</font> - Le héraut de la destruction s'est essayé au pouvoir arcanique des hauts anges et a appris à lancer, rarement, une tempête dévastatrice de boules de foudre. Les boules restent suspendues en l'air un court instant avant d'exploser en éclairs chargés infligeant d'importants dégâts de foudre.<br>
+								<font color="red">Invocation des instruments de la destruction</font> - Il fait apparaître une horde de bêtes de destruction toutes les 30 secondes. Elles peuvent charger les joueurs lorsqu'elles sont blessées et soignent leurs alliés proches en mourant ; elles sont donc difficiles à éliminer rapidement, et il est impératif d'éviter de les tuer près du boss.<br>
+								<font color="red">Spirale de météores</font> - Si vous approchez du héraut de la destruction, il tente de se défendre avec une spirale de météores infligeant des dégâts physiques et de feu dévastateurs.<br>
+								<font color="red">Passifs</font> - Le boss perce 100 % de vos résistances élémentaires, alors dépassez largement leur maximum.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (20 % de chances en moyenne)<br> Carte de palier 5 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (100 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Arbitre des âmes</font> - Reliquaire des âmes<br><br>
+							<img src=".././images/map-bosses/arbiterofsouls.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Dans la guerre éternelle entre le Ciel et l'Enfer, où anges et démons s'affrontent pour la domination, il existe une force qui ne sert aucun camp. Jadis, ce fut peut-être un ange, un être de grâce céleste chargé de guider les morts vers l'au-delà qui leur était destiné. Mais ce but fut perverti, corrompu par les murmures de l'Abîme, jusqu'à devenir tout autre chose : un exécuteur froid et impartial, coupé à la fois de la lumière et des ténèbres.</i><br><br>
+								<font color="red">Esprit de l'os</font> - L'attaque principale de l'arbitre est un esprit de l'os qui inflige d'énormes dégâts magiques et peut toucher une cible plusieurs fois.<br>
+								<font color="red">Rafale de lances d'os</font> - Le boss lance, avec un temps de recharge de 4 secondes, une rafale de lances d'os qui cherchent les ennemis proches. Elles infligent de gros dégâts magiques et transpercent leurs cibles, mieux vaut donc les éviter.<br>
+								<font color="red">Tempête d'âmes</font> - Rarement, le boss fait se lever les âmes des morts pour traquer les joueurs proches et les détruire avec des dégâts magiques démentiels.<br>
+								<font color="red">Malédiction affaiblissante</font> - Lorsqu'il subit des dégâts, le boss peut invoquer une malédiction de l'âme. La victime voit sa vitesse de déplacement réduite de 150 % et sa résistance à la magie de 50 %.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (20 % de chances en moyenne)<br> Carte de palier 5 (25 % de chances en moyenne)<br>
+								Clé du Pandémonium aléatoire (100 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Méphisto l'Invincible</font> - Œil de la Tempête<br><br>
+							<img src=".././images/map-bosses/mephistotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Des héros intemporels brisèrent sa pierre d'âme sur la Forge infernale et regardèrent les fragments être engloutis par l'abîme. Ils crurent l'avoir détruit. Mais la haine ne se détruit pas si facilement. Au plus profond des veines fumantes de l'Enfer, là où l'écho de la souffrance ne s'éteint jamais, les restes de l'essence de Méphisto suppuraient. Bien que sa prison fût brisée, sa malveillance perdura, accrochée au tissu même de l'Enfer. Chaque murmure de trahison, chaque acte de cruauté, chaque goutte de sang innocent versée sur terre nourrit sa présence persistante et reforgea son esprit dans l'ombre. De l'abîme fumant, il se releva. Plus lié à une pierre d'âme, plus contraint par les lois du passé, Méphisto est revenu, plus puissant que jamais.</i><br><br>
+								<font color="red">Invincibilité</font> - Comme son nom l'indique, Méphisto est totalement invincible face à tous les dégâts et ses immunités ne peuvent pas être brisées par les moyens habituels.<br>
+								<font color="red">Bombe de poison</font> - Le sort d'usure de Méphisto consiste à lancer une bombe de poison qui explose en touchant le sol et applique un poison incroyablement puissant à tous ceux qui se trouvent dans la zone.<br>
+								<font color="red">Rafale d'éclairs chargés</font> - Environ toutes les 12 secondes, Méphisto lance une rafale d'éclairs chargés qui cherchent les ennemis proches et infligent d'énormes dégâts de foudre.<br>
+								<font color="red">Rafale d'orbes de glace</font> - Lorsque vous approchez de Méphisto, il tente de lancer, avec un temps de recharge de 12 secondes, une rafale d'orbes de glace infligeant des dégâts de froid et physiques démentiels. Les orbes ne s'arrêtent pas après un coup : ils cherchent leur cible et la frappent plusieurs fois, il est donc impératif de fuir ce sort.<br>
+								<font color="red">Prison d'ondes de froid</font> - Rarement, Méphisto lance 4 ondes de froid qui convergent sur les joueurs pris au dépourvu et infligent des dégâts de froid extrêmes à tout ce qui se trouve sur leur chemin.<br>
+								<font color="red">Passifs</font> - Méphisto perce 100 % de vos résistances élémentaires.<br>
+								<font color="green">Lumière du Ciel</font> - Tout espoir n'est pas perdu face à Méphisto. Très rarement, après avoir blessé Méphisto, les lumières du ciel se répandent sur le champ de bataille. Ramasser un orbe de lumière vous renforce : vous et les invocations affectées pouvez blesser Méphisto pendant un court moment.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (25 % de chances en moyenne)<br>
+								<font color="purple">Corne démoniaque de Méphisto</font><br> Carte de palier 5 (25 % de chances en moyenne)<br>
+								Ensemble de clés du Pandémonium (50 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Diablo l'Invincible</font> - Œil de la Tempête<br><br>
+							<img src=".././images/map-bosses/diablotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Des profondeurs de l'Abîme, là où les fondations mêmes de l'Enfer brûlent le plus fort, le Creuset infernal, une relique ancienne plus vieille que les Démons Majeurs eux-mêmes, commença à s'agiter. Selon les légendes, c'est là que furent façonnés les premiers démons, là que l'essence des ténèbres prit forme. Et désormais, attirés par les échos de son propre être brisé, les restes de Diablo se sont déversés dans ses flammes, reforgeant le Seigneur de la Terreur en quelque chose de plus grand, d'incassable. Il n'en est pas ressorti comme le Diablo d'autrefois, mais comme quelque chose de plus. Plus lié aux pierres d'âme, plus vulnérable aux rituels des hommes, il est Diablo l'Invincible, la terreur incarnée, les ténèbres faites chair, une force de malveillance pure et éternelle.</i><br><br>
+								<font color="red">Invincibilité</font> - Comme son nom l'indique, Diablo est totalement invincible face à tous les dégâts et ses immunités ne peuvent pas être brisées par les moyens habituels.<br>
+								<font color="red">Pluie de météores</font> - La capacité habituelle de Diablo invoque une ligne de météores infligeant des dégâts physiques et de feu démentiels.<br>
+								<font color="red">Nova de feu</font> - Environ toutes les 12 secondes, annoncée par un signal sonore, Diablo libère sa nova de feu la plus dévastatrice à ce jour. Elle s'étend lentement et laisse derrière elle un feu persistant aux dégâts extrêmes : fuyez dès que vous entendez le signal sonore.<br>
+								<font color="red">Rafale de destruction</font> - Très rarement, Diablo commence à lancer une rafale de boules de feu à tête chercheuse qui font tomber des météores du ciel à chaque rebond, infligeant des dégâts physiques et de feu démentiels.<br>
+								<font color="red">Flot de foudre</font> - Son ancien sort est désormais plus puissant que jamais. Il lance son flot de foudre toutes les 6 secondes et inflige des dégâts physiques et de foudre prohibitifs.<br>
+								<font color="red">Passifs</font> - Diablo perce 100 % de vos résistances élémentaires.<br>
+								<font color="green">Anges du Jugement Dernier</font> - Tout espoir n'est pas perdu face à Diablo. Très rarement, après avoir blessé Diablo (avec un temps de recharge de 10 secondes), des anges des Hauts-Cieux apparaissent sur le champ de bataille. Une fois inévitablement anéantis par l'arsenal de Diablo, ils renforcent brièvement tous les joueurs proches et leurs serviteurs, ce qui vous permet de blesser Diablo lui-même.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (25 % de chances en moyenne)<br>
+								<font color="purple">Corne démoniaque de Diablo</font><br> Carte de palier 5 (25 % de chances en moyenne)<br>
+								Ensemble de clés du Pandémonium (50 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Baal l'Invincible</font> - Œil de la Tempête<br><br>
+							<img src=".././images/map-bosses/baaltheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Le monde le croyait anéanti. Son corps s'effondra et son essence se dispersa quand la Pierre du Monde vola en éclats, son pouvoir ancien se défaisant dans une cascade de ruine céleste. Mais Baal n'avait pas péri : il avait été absorbé au cœur même de la création. Pendant des années, son essence resta en sommeil, dispersée parmi les fragments de la Pierre du Monde. Mais à chaque guerre, à chaque destruction sur Sanctuaire, son pouvoir se reforma lentement, se nourrissant du chaos, de la ruine, du délitement du monde qu'il avait jadis voulu corrompre. Les fissures de la réalité s'approfondirent, et les échos de sa volonté murmurèrent à travers le tissu même de l'existence. Puis vint la fracture finale. Baal se releva, plus lié à la chair d'un Démon Majeur, plus simple seigneur démon. Il était désormais quelque chose de plus grand : ni de l'Enfer ni de Sanctuaire, mais des fondations brisées du monde lui-même. Il ne commande plus seulement la Destruction : il est la Destruction incarnée, plus puissant que jamais.</i><br><br>
+								<font color="red">Invincibilité</font> - Comme son nom l'indique, Baal est totalement invincible face à tous les dégâts et ses immunités ne peuvent pas être brisées par les moyens habituels.<br>
+								<font color="red">Éclair en Chaîne</font> - La capacité principale de Baal est un éclair en chaîne qui inflige d'énormes dégâts de foudre, peut rebondir sur le vide et cherche plusieurs fois les ennemis proches.<br>
+								<font color="red">Vague de Froid</font> - Baal a une faible chance d'invoquer son onde de froid la plus destructrice à ce jour, infligeant de gros dégâts de froid et physiques. L'onde génère régulièrement des répercussions qui cherchent les joueurs proches.<br>
+								<font color="red">Prison de météores</font> - Environ toutes les 8 secondes, Baal lance un cercle de météores dévastateur qui converge sur la cible prise au dépourvu, infligeant des dégâts physiques et de feu dévastateurs à toutes les personnes touchées.<br>
+								<font color="red">Passifs</font> - Baal perce 100 % de vos résistances élémentaires.<br>
+								<font color="green">Tour affaiblissante</font> - Tout espoir n'est pas perdu face à Baal. Environ toutes les 13 secondes, Baal invoque des tours démoniaques dotées d'une attaque de météores dévastatrice pour l'aider au combat. À leur destruction, les tours renforcent les joueurs proches et leurs serviteurs, leur permettant de blesser Baal lui-même.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (25 % de chances en moyenne)<br>
+								<font color="purple">Corne démoniaque de Baal</font><br> Carte de palier 5 (25 % de chances en moyenne)<br>
+								Ensemble de clés du Pandémonium (50 % de chances en moyenne)<br> Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Gardiens du Temps</font> - La Citadelle de la Couronne de Glace (Le Bord de l'Éternité)<br><br>
+							<img src=".././images/map-bosses/guardiansoftime.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Il y a longtemps, trois guerriers se dressaient en derniers gardiens du mont Arreat, ayant juré de garder la Pierre du Monde hors des mains des indignes. Korlic, Talic et Madawc, champions d'un âge révolu, s'opposaient à tous ceux qui osaient s'introduire. Ils n'étaient mus ni par la haine ni par la conquête : ils étaient liés par le devoir, un serment sacré qui transcendait même la mort. Mais le devoir est un maître cruel. Quand la Pierre du Monde vola en éclats, le pouvoir qu'ils protégeaient fut perdu, et avec lui leur raison d'être. Leurs corps s'effondrèrent, leurs esprits se dissipèrent dans le néant… du moins le monde le crut-il. Ce que les Néphalem ignoraient, c'est que les Anciens n'avaient jamais été vraiment mortels. Pendant des siècles écoulés en un instant, ils dérivèrent hors de la réalité, regardant Sanctuaire sombrer toujours plus dans la corruption. Ils virent l'humanité, les enfants mêmes de la Pierre du Monde, abandonner sa mission et manier son pouvoir néphalem interdit comme si elle était divine. Ils virent les guerres, la trahison, la destruction insouciante de l'équilibre jadis sacré. Et dans le néant, un nouveau dessein prit racine. Les Anciens ne revinrent pas en protecteurs. Ils revinrent en bourreaux.</i><br><br>
+								<font color="red">Invincibilité</font> - Les Anciens revenus sont des êtres d'une puissance immense qui contrôlent le temps lui-même. Leurs attaques infligent à parts égales des dégâts physiques et magiques. Vous ne pouvez pas les blesser par les moyens habituels.<br><br>
+								<font color="#706850">Korlic</font><br>
+								<font color="red">Cataclysme</font> - Korlic lance parfois une attaque dévastatrice qui fait pleuvoir une avalanche de rochers depuis le ciel, infligeant d'immenses dégâts physiques à toutes les personnes touchées.<br>
+								<font color="red">Haches convergentes</font> - Il fait parfois apparaître de nulle part des haches qui convergent sur leur cible. Quiconque est pris au milieu connaîtra une mort rapide.<br>
+								<font color="red">Passifs</font> - Lorsqu'il subit des dégâts, Korlic peut charger l'ennemi.<br>
+								<font color="green">Lumière du Ciel</font> - Quand vous blessez Korlic, il y a une faible chance que le ciel intervienne en invoquant des boules de lumière pure. En les touchant, vous et les alliés proches affectés êtes renforcés.<br><br>
+								<font color="#706850">Talic</font><br>
+								<font color="red">Prison de haches</font> - Talic invoque parfois plusieurs novas de haches qui cherchent la cible prise au dépourvu et infligent d'énormes dégâts physiques et magiques.<br>
+								<font color="green">Pendule Éternel</font> - En attaquant au corps à corps, Talic peut invoquer des Pendules Éternels. Les Pendules invoquent les sables du temps, qui cherchent les ennemis proches, infligent des dégâts physiques dévastateurs et étourdissent brièvement la cible. En tuant un Pendule, vous et les alliés proches êtes renforcés.<br><br>
+								<font color="#706850">Madawc</font><br>
+								<font color="red">Hache magique</font> - L'attaque principale de Madawc est une hache magique qui se dirige vers les cibles proches et inflige des dégâts magiques et physiques dévastateurs.<br>
+								<font color="red">Rafale de haches magiques</font> - Parfois, Madawc enrage et lance des haches magiques à un rythme effréné.<br>
+								<font color="red">Nova de haches magiques</font> - Très rarement, Madawc puise dans le pouvoir du temps lui-même et invoque une nova dévastatrice de haches magiques qui restent plantées dans les murs avant de chercher les joueurs proches après un court délai.<br><br>
+
+								<font color="purple">Intemporel</font> - Les Anciens revenus sont furieux de l'état de Sanctuaire, ce qui les rend absolument immortels face à tous les dégâts. Une fois que vous avez à la fois le renforcement du Pendule Éternel et la Lumière du Ciel, vous pouvez les blesser.<br><br>
+
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (16.67 % de chances en moyenne chacun)<br>
+								<font color="#706850">Sablier Éternel des Sables Intemporels (grand charme unique)</font>
+								<br>(vous devez tous les tuer pour le forger)<br> Carte de palier 5 (17 % de chances en moyenne chacun)<br>
+								Clé du Pandémonium aléatoire (100 % de chances en moyenne chacun)<br>
+								Autres objets/matériaux génériques<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Le Roi Liche</font> - La Citadelle de la Couronne de Glace (Le Trône Gelé)<br><br>
+							<img src=".././images/map-bosses/thelichking.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Les frontières entre les mondes ne sont pas aussi infranchissables que les érudits de Sanctuaire le croyaient. La Pierre du Monde était l'ancre de la réalité, une barrière divine qui séparait Sanctuaire de l'influence des Hauts-Cieux comme des Enfers Brûlants. Mais quand Tyraël la brisa, cette barrière fut affaiblie à jamais. Et quelque chose d'autre le remarqua. Bien au-delà des royaumes du Conflit éternel, dans un monde consumé par la guerre et la mort, le Roi Liche régnait dans un silence glacé. Sa domination était absolue, ses légions infinies, mais la soif de conquête ne connaît pas de frontières. Car la mort ne se limite pas à un seul monde, et la puissance de la destruction de la Pierre du Monde résonna à travers le néant entre les réalités, appelant quelque chose qui dépasse l'entendement de Sanctuaire. Le Roi Liche ne cherche pas à brûler le monde comme les Démons Majeurs, ni à le corrompre par le mensonge. Il cherche à le prendre. Les Enfers Brûlants se délectent du chaos ; lui impose l'ordre par la mort. Les Cieux combattent pour la justice ; lui croit que la justice est une illusion. Pour lui, toute chose finit dans la non-mort, et même les anges et les démons qui se combattent depuis la nuit des temps s'inclineront devant le silence glacé de l'éternité. Si vous ne mettez pas fin à son règne, il asservira tout Sanctuaire. C'est la fin de toute chose.</i><br><br>
+								<font color="red">Froid convergent</font> - La capacité habituelle du Roi Liche est une nova convergente de 6 pointes de froid qui inflige d'énormes dégâts de froid et physiques à toute personne touchée.<br>
+								<font color="red">Nova de froid</font> - La capacité secondaire du Roi Liche est une onde de froid rapide qui invoque un orbe glacé pour chaque ennemi touché. L'orbe explose après 1 seconde, infligeant des dégâts de froid démentiels dans un rayon de 5 mètres et gelant pendant 2 secondes.<br>
+								<font color="red">Bond</font> - Environ toutes les 10 secondes, le Roi Liche assaille une cible prise au dépourvu, libérant une nova d'énergie pure qui repousse les ennemis proches, suivie peu après par <font color="red">Hiver Éternel</font>. Au même moment, il invoque 2
+								<font color="#706850">valkyries</font>.<br>
+								<font color="red">Hiver Éternel</font> - Rarement, en plus de la suite de Bond, le Roi Liche libère une nova mortelle de feu bleu qui aspire l'âme de toutes les personnes touchées, inflige des dégâts physiques et de froid extrêmes, réduit la résistance au froid de 150 % et la résistance physique de 75 %, et ralentit les joueurs affectés presque jusqu'à l'arrêt. Ce sort est annoncé par un signal sonore.<br>
+								<font color="red">Invocation de morts-vivants</font> - Environ toutes les 20 secondes, le Roi Liche invoque 4 goules et 1 abomination pour l'aider au combat.<br>
+								<font color="red">Piège d'ombre</font> - Lorsqu'il subit des dégâts, le Roi Liche peut invoquer un piège d'ombre sous le joueur attaquant. Après un court délai, le piège s'arme et libère une vague de <font color="red">Hiver Éternel</font> feux dès qu'on marche dessus.<br><br>
+								<font color="#706850">Goules</font><br>
+								Les goules possèdent l'esprit des morts-vivants et se régénèrent très rapidement. Elles peuvent aussi charger leur cible lorsqu'elles sont blessées.
+								<br><br>
+								<font color="#706850">Abominations</font><br>L'abomination est immunisée contre tous les dégâts et son immunité ne peut pas être brisée par les moyens habituels. Lorsqu'elle subit des dégâts, l'abomination peut enrager, augmentant soit ses dégâts, soit sa vitesse de déplacement. Très rarement, lorsqu'elle subit des dégâts, l'abomination pousse les cieux à aider le joueur au combat, envoyant la <font
+									color="green">Lumière du Ciel</font>. En ramassant la lumière, le joueur peut blesser l'abomination et la tuer.<br><br>
+								<font color="#706850">Valkyries</font><br>Les Valkyries infligent de gros dégâts physiques et de froid.<br>
+								Une fois tuées, elles renforcent les joueurs proches avec l' <font color="green">Espoir de la Lumière</font>.<br>
+								<font color="purple">Intemporel</font> - Être venu d'en dehors de l'espace et du temps de Sanctuaire, le Roi Liche est absolument immortel face aux dégâts de ce monde. Pour pouvoir le blesser, vous devez posséder à la fois les effets de <font color="green">Espoir de la Lumière
+								</font>
+								and <font color="green">Lumière du Ciel</font>.<br><br>
+								<font color="purple">Variante uber</font> - Jouer ce combat avec /players 8 active la variante uber, et tous les ennemis sont renforcés comme suit.<br>
+								<font color="#706850">Le Roi Liche</font> - Le Roi Liche invoque 3 fois plus de goules et d'abominations.<br>
+								<font color="#706850">Goules</font> - Les goules enragent désormais à chaque coup, gagnant 25 % de dégâts physiques et de froid. Cet effet se cumule.<br>
+								<font color="#706850">Valkyries</font> - Le Roi Liche invoque 6 valkyries au lieu de 2, et elles infligent deux fois plus de dégâts.<br>
+								<br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (50 % de chances en moyenne)<br>
+								<font color="#706850">Unique mythique spécial</font><br> Carte de palier 5 (50 % de chances en moyenne)<br>
+								Ensemble de clés du Pandémonium (100 % de chances)<br> Autres objets/matériaux génériques<br><br>
+								<font color="#706850">Récompenses (variante uber)</font><br>
+								Si vous parvenez à tuer le Roi Liche avec /players 8, vous pourrez transmuter votre Pierre d'Ascendance avec un <font color="PURPLE">Rune Nulle</font> pour un bonus <font
+									color="GREEN">+1 à toutes les compétences</font>.<br>Cette recette ne peut être faite qu'une seule fois.
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Rathma</font> - Le Sanctuaire des Morts (La Basilique Crépusculaire)<br><br>
+							<img src=".././images/map-bosses/rathma.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									Sous la lumière mourante de Sanctuaire, les héros descendirent dans le Sanctuaire des Morts, un labyrinthe d'os et de cendres murmurantes enfoui au plus profond du monde souterrain. L'air chatoyait d'âmes captives, dont la lueur pâle peignait le marbre noir de teintes spectrales. Ils venaient chercher Rathma, le Premier Nécromancien. Jadis gardien de l'équilibre, désormais son traître. L'équilibre qu'il servait s'était flétri en obsession : il cherchait à défaire la mort, à maîtriser les deux extrémités de l'éternité. À ses côtés se tenait Kor'nac, l'Apôtre Creux, son revenant le plus fidèle, drapé des vêtements d'une foi oubliée. La chair tombait de ses os, et chaque mot gravé dans sa chair palpitait d'une grâce interdite. Sa voix était un chant funèbre qui faisait vaciller même les esprits. L'acier, la flamme et la foi y affrontèrent l'ombre et la décomposition, en ce lieu où la vie n'avait aucun sens. Les héros savaient qu'ils ne faisaient pas seulement face à la mort, mais à son architecte.
+								</i><br><br>
+								<font color="#706850">Rathma</font><br>
+								<font color="#8B0000">Voile des morts</font> - Rathma émet une aura qui empêche les héros d'utiliser leurs compétences de téléportation.<br>
+								<font color="red">Rafale de lances d'os / Courroux empoisonnés</font> - Rathma alterne entre une rafale de 3 lances d'os et une rafale de 3 courroux empoisonnés, infligeant respectivement des dégâts magiques et de poison dévastateurs.<br>
+								<font color="red">Esprit de l'os</font> - Rarement, Rathma lance un esprit de l'os qui accélère avec le temps. À l'impact, il inflige des dégâts magiques extrêmes.<br>
+								<font color="red">Prison de Os</font> - Environ toutes les 20 secondes, si vous êtes relativement proche de Rathma, il élève autour de vous un labyrinthe d'os aux issues limitées. Si vous ne vous échappez pas à temps, il fait détoner la zone, <font color="RED">
+									vous tuant instantanément</font>
+								. Après avoir fait détoner la zone, il relève les <font color="red">Morts-Vivants</font> du sol profané.
+								<br>
+								<font color="green">Invocation d'effigies flétrissantes</font> - Toutes les 20 secondes, Rathma relève 4 effigies flétrissantes qui lancent sur le joueur un affaiblissement cumulable, <font color="red">réduisant sa résistance à la magie et sa vitesse de déplacement</font>. Si vous les tuez avant qu'elles ne s'effritent d'elles-mêmes, vous et les alliés proches êtes <font color="green">renforcés</font> pendant 10 secondes.<br>
+								<font color="#706850">Kor'nac, L'Apôtre Creux</font><br>
+								Kor'nac est le serviteur le plus fidèle de Rathma et l'aide au combat en permanence.<br>
+								<font color="red">Frappe dévastatrice</font> - Parfois, Kor'nac frappe le sol, envoyant des ondes de choc dévastatrices qui infligent des dégâts physiques extrêmes.<br>
+								<font color="red">Haine croissante</font> - Avec le temps, Kor'nac devient plus puissant, gagnant en vitesse de déplacement et améliorant sa frappe.
+								<br>
+								<br>
+								<font color="#706850">Morts-Vivants</font><br>
+								Les Morts-Vivants ne sont pas difficiles à éliminer, mais ils ont une faible chance de charger l'ennemi lorsqu'ils sont blessés.<br>
+								<font color="green">Âme Brûlante</font> - Une fois tués, les morts-vivants laissent derrière eux leur âme à l'agonie. La ramasser <font color="green">vous renforce</font> pendant 10 secondes.<br><br>
+								<font color="purple">Intemporel</font> - Rathma est le maître des morts-vivants et a atteint une puissance sans limites qui le rend invincible. Ce n'est qu'avec le renforcement des effigies et les âmes des morts-vivants que vous pourrez le blesser. Rathma étend son aura d'invincibilité à son serviteur le plus fidèle, Kor'nac.<br><br>
+								<font color="purple">Variante uber</font> - Jouer ce combat avec /players 8 active la variante uber, et tous les ennemis sont renforcés comme suit.<br>
+								<font color="#706850">Rathma</font> - Lorsqu'il atteint 25 % de sa vie, Rathma enrage, envoie des ondes de choc sur toute la zone, gagne en vitesse d'incantation et fait pleuvoir des météores aux dégâts physiques et de feu dévastateurs.<br>
+								<font color="#706850">Les Morts-Vivants</font> - Les Morts-Vivants gagnent aussi 500 % de dégâts bonus en chargeant, et leur effet de charge dure trois fois plus longtemps.<br>
+								<font color="#706850">Kor'nac, L'Apôtre Creux</font> - Kor'nac enrage deux fois plus vite.<br>
+								<br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (50 % de chances en moyenne)<br>
+								<font color="#706850">Crâne Éternel de Rathma (petit charme unique)</font><br> Carte de palier 5 (50 % de chances en moyenne)<br>
+								Ensemble de clés du Pandémonium (100 % de chances)<br> Autres objets/matériaux génériques<br><br>
+								<font color="#706850">Récompenses (variante uber)</font><br>
+								Si vous parvenez à tuer Rathma et Kor'nac, l'Apôtre Creux, à moins d'une minute d'intervalle, vous pourrez transmuter le Crâne Éternel de Rathma avec lui-même pour obtenir les bonus suivants :<br>
+								<font color="#4850B8">Résistance magique +5%<br>
+									+5% à la Résistance Maximale au Poison<br>
+									+(10 à 20) à Élever Kor'nac<br></font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Lucion</font> - L'Autel du Salut Maudit (Le Reliquaire de la Lumière Trompeuse)<br><br>
+							<img src=".././images/map-bosses/lucion.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									Lucion, fils de Méphisto et frère de Lilith, fut jadis banni dans l'abîme après sa tentative ratée d'asservir Sanctuaire sous un ordre démoniaque. Mais le mal pur ne meurt jamais, il suppure. Par la foi corrompue d'un culte oublié, l'essence de Lucion fut ranimée en secret, son âme liée aux braises d'un monde mourant. Désormais renaissant sous la forme d'une flamme vivante, il cherche à se venger des vivants, convaincu que le monde des mortels doit brûler pour servir de creuset à une nouvelle création forgée à son image. Chaque âme consumée renforce sa lumière infernale et nourrit un feu qui menace de dévorer toute existence. Ce n'est qu'en tranchant son lien avec le plan mortel et en éteignant le cœur infernal qui l'alimente que Lucion peut être arrêté. S'il s'élevait au-delà de sa forme actuelle, même les Démons Majeurs trembleraient devant sa colère.
+								</i><br><br>
+								<font color="#706850">Lucion</font><br>
+								<font color="red">Tempête de feu</font> - L'une des attaques habituelles de Lucion est une tempête de feu dévastatrice qui brûle tout sur son passage après 1 seconde.<br>
+								<font color="red">Ligne de météores</font> - Lucion alterne sa Tempête de feu avec une attaque qui invoque une ligne de météores infligeant d'immenses dégâts de feu et physiques.<br>
+								<font color="red">Bond enflammé</font> - Environ toutes les 10 secondes, Lucion bondit sur une cible prise au dépourvu et libère une nova de feu convergente dévastatrice. Les traits de feu convergent après un court délai et infligent trois fois plus de dégâts que la nova initiale : il faut l'esquiver à tout prix. Après son saut, Lucion invoque aussi 4 <font color="#706850">grands prêtres</font> pour l'aider au combat.<br>
+								<font color="red">Ruée de feu</font> - Chaque fois que Lucion bondit, il invoque une tempête de traits de feu qui remplit la salle. Les traits infligent des dégâts de feu dévastateurs.<br>
+								<font color="red">Invocation de fanatiques religieux</font> - Rarement, Lucion invoque 10 fanatiques religieux pour le servir au combat. Les fanatiques appliquent un affaiblissement cumulable qui augmente les dégâts physiques et élémentaires subis.<br>
+								<font color="orange">Flammes purificatrices</font> - Environ toutes les 8 secondes, Lucion fait apparaître autour de lui des flammes purificatrices qui infligent des dégâts assez élevés à quiconque les touche. Y entrer <font color="green">vous renforce</font> pendant 4 secondes.
+								<br><br>
+								<font color="#706850">Grands prêtres</font><br>
+								Les grands prêtres sont des lanceurs de sorts très spécialisés au service de Lucion.<br>
+								<font color="red">Boule de feu</font> - Leur attaque habituelle est une boule de feu qui brûle le sol à l'impact et inflige de gros dégâts de feu.<br>
+								<font color="red">Renforcement démoniaque</font> - Parfois, ils renforcent les alliés proches, augmentant leurs dégâts et leurs vitesses d'attaque/d'incantation de 3 %. <font color="red">Cet effet se cumule.
+								</font><br>
+								<font color="green">Renforcement de lumière</font> - À leur mort, les grands prêtres renforcent les joueurs proches.<br><br>
+								<font color="#706850">Fanatiques religieux</font><br>
+								Les fanatiques religieux sont des serviteurs extrêmement agressifs de Lucion.<br>
+								<font color="red">Pique Glaciaire/Foudre</font> - Quand ils ne courent pas vers vous pour vous mettre en pièces, ils lancent un sort de froid/foudre très puissant qui transperce tout.
+								<br>
+								<br>
+								<font color="purple">Intemporel</font> - Lucion est une bête infernale d'une puissance immense, ce qui le rend invincible aux attaques normales. Pour pouvoir le blesser, vous devez avoir à la fois les effets de <font color="green">Renforcement de lumière</font> and <font color="orange">
+									Flammes purificatrices</font>.<br><br>
+
+								<font color="purple">Variante uber</font> - Jouer ce combat avec /players 8 active la variante uber, et tous les ennemis sont renforcés comme suit.<br>
+								<font color="#706850">Lucion</font> - Lucion émet une aura démoniaque qui augmente toutes les 20 secondes ses dégâts et ceux de ses alliés de 5 % et leurs vitesses d'attaque et d'incantation de 2 %. Cet effet se cumule indéfiniment.<br>
+								<font color="#706850">Grands prêtres</font> - Le bonus des grands prêtres est désormais deux fois plus puissant et augmente les dégâts et les vitesses d'attaque/d'incantation de 6 % au lieu de 3 %.<br>
+								<font color="#706850">Fanatiques religieux</font> - Lucion invoque 20 fanatiques religieux au lieu de 10.<br>
+								<br>
+								<font color="#706850">Récompenses</font><br>
+								<font color="purple">Orbe d'Onction</font> (50 % de chances en moyenne)<br>
+								<font color="orange">Relique ardente de Lucion</font><br> (voir la section <a
+									href="Eastern%20Sun%20Resurrected%20Cube%20Recipes.html#legendary">Composants légendaires</a> pour la liste des bonus)<br>
+								Carte de palier 5 (50 % de chances en moyenne)<br>
+								Ensemble de clés du Pandémonium (100 % de chances)<br> Autres objets/matériaux génériques<br><br>
+								<font color="#706850">Récompenses (variante uber)</font><br>
+								Si vous parvenez à tuer Lucion avec /players 8, il lâche son essence (<font color="ORANGE">Essence de Lucion</font>). L'essence est une version plus puissante d'un Donut à emplacements.
+							</font>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</a>
+	</center>
+</body>
+
+</html>

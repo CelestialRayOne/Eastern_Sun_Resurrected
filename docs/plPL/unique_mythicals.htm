@@ -1,0 +1,2124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Baza danych Eastern Sun Resurrected
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Dziennik zmian]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Pancerze]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Broń]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przedrostki]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przyrostki]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowe pancerze]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowa broń]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Inne unikaty]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mityczne unikaty]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Zestawy]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Klejnoty/Runy]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa klejnotów]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa runiczne]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptury kostki]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy]</a>
+            <a href="./ias-calculator.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Kalkulator szybkości ataku]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyszukiwarka łupów]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki skażenia]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki namaszczenia]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy końcowe]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Naczynie dusz]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendencje]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Księga zabójstw]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Najemnicy i umiejętności spoza klasy]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Biegłość w broni]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                Mod całkowitej konwersji do Diablo II: Resurrected</div>
+        </div>
+        <div style="width:100%;">
+
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                Mityczne unikaty to przedmioty z inną bazą niż wszystkie pozostałe, więc nie można ich zdobyć w hazardzie.<br>
+                                Mityczne unikaty wypadają tylko na obszarach map końcowych, bo mają poziom łupu 100+.<br>
+                                Większość mitycznych unikatów ma specjalne efekty lub procki, które umożliwiają unikatowe style gry albo wzmacniają istniejące.<br>
+                                Niektóre mityczne unikaty mają określone źródła łupu (np. te od Króla Lichów). Wszystkie mityczne bazy mają nieco lepsze statystyki. Broń do ataków fizycznych ma zwykle 10% więcej obrażeń bazowych. Broń dla rzucających czary ma zwykle niższe wymagania lub inne drobne premie.<br>
+                                Wszystkie mityczne bazy mają nieco wyższy wymagany poziom (zwykle +3 względem przedmiotu bazowego, na którym się opierają; np. Młot tytana dla Mitycznego młota tytana).<br>
+                                Mitycznych unikatów <b>nie można</b> przelosować. Co wypadnie, to dostajesz.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mityczna unikatowa broń
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=400 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Imię
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Statystyki
+                                </font>
+                            </td>
+                            <td width=600 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Właściwości
+                                </font>
+                            </td>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Uwagi
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Wola Mephista
+                                        <br>
+                                        <a href="weapons.htm#m04">
+                                            Mityczna Demoniczna Różdżka
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mephistos_will.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">Możesz wskrzesić +(od 100 do 150)% więcej Szkieletowych magów<br>Nie możesz już wskrzeszać Szkieletowych wojowników</font><br>+(od 2 do 4) do Wszystkich Umiejętności
+                                        <br>+(od 20 do 30)% do Życia Przywołania <br>+(od 12 do 15)% do Oporności na Fizyczne i Magiczne Przywołania
+                                        <br>+(od 30 do 40)% do odporności przywołańców <br>-(od 40 do 50)% do odporności przeciwnika na ogień
+                                        <br>-(od 40 do 50)% do odporności przeciwnika na zimno <br>-(od 40 do 50)% do odporności przeciwnika na błyskawice <br>-(od 40 do 50)% do odporności przeciwnika na truciznę <br>+(od 80 do 100) do Energii
+                                        <br>+(od 25 do 30)% Bonus do Energii <br>Odpornność na fizyczne obrażenia: +(od 15 do 20)% <br>Zredukowane obrażenia o (od 50 do 60) <br>+(od 25 do 30)% do Zdobytego Doświadczenia <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Różdżka Nieskończonej Myśli Inariusa
+                                        <br>
+                                        <a href="weapons.htm#m12">
+                                            Mityczny Seraficki Scepter
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/inarius_rod_of_infinite_thought.png"
+                                        style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Twoje święte aury mają 25% szansy na trafienie krytyczne za<br>1% więcej całkowitych obrażeń za każde 50 energii</FONT><br>5% szansy na rzucenie Pięść Niebios poz. 60 przy trafieniu<br>+(od 2 do 4) do Aur Ofensywnych (Tylko dla Paladyna)<br>+(od 30 do 50)% Szybszy Wskaźnik Rzucania <br>-(od 30 do 40)% do odporności przeciwnika na ogień <br>-(od 30 do 40)% do odporności przeciwnika na zimno <br>-(od 30 do 40)% do odporności przeciwnika na błyskawice <br>-(od 30 do 40)% do odporności przeciwnika na truciznę <br>+(od 80 do 100)% do obrażeń od zaklęć magicznych <br>+(od 4 do 8)% do Maksymalnego Oporu na Trucizny <br>+(od 4 do 8)% do Maksymalnego Oporu na Zimno <br>+(od 4 do 8)% do Maksymalnego Oporu na Pioruny <br>+(od 4 do 8)% do Maksymalnego Ognistego Oporu <br>+(od 40 do 50)% Bonus do Energii <br>+(od 10 do 40) do Promienia Światła <br>Gniazda (od 1 do 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Efekt się nie kumuluje, jeśli walczysz dwiema sztukami tej broni.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Lux Aeterna, Nadzieja Świtu
+                                        <br>
+                                        <a href="weapons.htm#m17">
+                                            Mityczny Niebiański Scepter
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lux_aeterna_hope_of_dawn.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        25% Szansa na Rzucenie Poziomu 60 Upadek Gwiazd przy Rzucaniu Umiejętności<br>Poziom (od 20 do 30) Odkupienie Aura po wyposażeniu<br>+(od 2 do 4) do Wszystkich Umiejętności <br>+(od 40 do 50)% Szybszy Wskaźnik Rzucania <br>+(od 50 do 65)% do obrażeń od zaklęć magicznych <br>+(od 10 do 30) do Upadek Gwiazd<br>+(od 30 do 40) do Wszystkich Atrybutów <br>+(od 200 do 300) do Życia <br>+(od 200 do 300) do Many
+                                        <br>+(od 20 do 30)% Bonus do Wszystkich Atrybutów <br>+(od 20 do 40) do Promienia Światła <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Mjölnir
+                                        <br>
+                                        <a href="weapons.htm#m03">
+                                            Mityczny Młot Tytana
+                                        </a>
+                                    </b>
+                                    <br><br>
+                                    <img src=".././images/mythical-uniques/mjolnir.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Zyskaj 3 Maksymalnego Obrażenia Od Pioruna za 1 Siłę
+                                        </FONT><br>Dodaje 1-5000 obrażeń od błyskawic<br>15% szansy na rzucenie Wyrok poz. 50 przy ataku<br>5% szansy na rzucenie Mitologiczny Chaosowy Piorun* poz. 1 przy trafieniu<br>+(od 80 do 100)% Szybszy Bieg/Chód
+                                        <br>+100 do Minimalnych Obrażeń w Atakach
+                                        <br>+150 do Maksymalnych Obrażeń w Atakach <br>-(od 40 do 50)% do odporności przeciwnika na błyskawice <br>+(od 400 do 500) do Siły <br>Pochłanianie błyskawic +(od 8 do 10)%
+                                        <br>Wymagania +500% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Mityczna chaotyczna błyskawica to specjalny Łańcuch błyskawic, który zadaje 150% obrażeń broni jako obrażenia od błyskawic i przy trafieniu dzieli się na 2 kolejne błyskawice. Każda błyskawica przeskakuje do 3 razy.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Natalya's Krwawy Egzekutor
+                                        <br>
+                                        <a href="weapons.htm#m16">
+                                            Mityczny Rapier
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/natalyas_bloodied_rapier.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        50% Szansa na Rzucenie Poziomu 40 Błyskawiczne Uderzenie, gdy Zabijesz Wroga<br>+(od 30 do 50)% Zwiększona Prędkość Ataku <br>+3% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>+125 do Minimalnych Obrażeń w Atakach <br>+150 do Maksymalnych Obrażeń w Atakach
+                                        <br>Dodaje 1%-150% obrażeń od krwawienia w ciągu 0.2 sekund<br><br>+1 do Błyskawiczne Uderzenie<br>+(od 40 do 50) do Zręczności <br>Zwiększa Maksymalne Życie +(od 30 do 40)% <br>+(od 20 do 30)% Bonus do Zręczności <br>Zredukowane obrażenia o (od 50 do 60)
+                                        <br>+(od 150 do 225) Życia po każdym zabójstwie <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Tal Ostatni Szept Rashy
+                                        <br>
+                                        <a href="weapons.htm#m08">
+                                            Mityczny Zrównoważony Sztylet
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tal_rashas_last_whisper.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Dodaje do ataków 3-4 obrażeń od ognia, 2-5 od zimna i 1-7 od błyskawic<br>za każde 4 zręczności<br>Płaszcz Cieni przebija teraz odporność na żywioły zamiast fizycznej, z podwójną skutecznością</FONT><br>1% szansy na rzucenie Płaszcz Cieni poz. 60 przy trafieniu<br>8% szansy na rzucenie Strzała Wzmocniona Ognieniem poz. 15 przy trafieniu<br>8% szansy na rzucenie Strzała Wzmocniona Zimnem poz. 15 przy trafieniu<br>8% szansy na rzucenie Strzała Wzmocniona Piorunem poz. 15 przy trafieniu<br>+(od 40 do 50)% Zwiększona Prędkość Ataku <br>+(od 3 do 5)% do Maksymalnego Oporu na Trucizny <br>+(od 3 do 5)% do Maksymalnego Oporu na Zimno
+                                        <br>+(od 3 do 5)% do Maksymalnego Oporu na Pioruny <br>+(od 3 do 5)% do Maksymalnego Ognistego Oporu
+                                        <br>+(od 30 do 40)% Bonus do Zręczności <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Efekt specjalny się nie kumuluje, jeśli walczysz dwiema sztukami tej broni.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Kij Księcia Małp
+                                        <br>
+                                        <a href="weapons.htm#m11">
+                                            Mityczna Arkana Laska
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/monkey_king_bar.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="ORANGE">+(od 25 do 50)% bazowej prędkości biegu/chodu</font><br>
+                                        +(od 200 do 300)% Zwiększone obrażenia<br>25% szansy na rzucenie Gniew Króla Małp poz. 10 przy ataku<br>+(od 50 do 70)% Zwiększona Prędkość Ataku
+                                        <br>+150 do Minimalnych Obrażeń w Atakach <br>+250 do Maksymalnych Obrażeń w Atakach
+                                        <br>+(od 40 do 60)% Fizyczne obrażenia kradzione jako życie<br>Dodaje 400%-500% obrażeń od krwawienia w ciągu 2 sekund<br>-100% Obrona Celu <br>+(od 15 do 25)% Szansa na uniki<br>+1 do Skok Króla Małp<br>+(od 40 do 50)% Bonus do Zręczności<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        *Gniew Małpiego Króla to atak specjalny, który zsyła deszcz skał w linii prostej; każda skała zadaje 150% obrażeń broni na małym obszarze.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <br>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Prizma Doomfletcha
+                                        <br>
+                                        <a href="weapons.htm#m01">
+                                            Mityczny Łuk Strzelecki
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/doomfletchsprism.png" style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Zyskujesz 25% premii do fizycznych obrażeń ataków jako dodatkowe obrażenia każdego żywiołu<br>
+                                            Zabójczy cios może dotyczyć zamienionych obrażeń
+                                        </FONT>
+                                        <br>+(od 100 do 200)% Zwiększone obrażenia<br>+(od 50 do 100) do Minimalnych Obrażeń w Atakach<br>+(od 100 do 150) do Maksymalnych Obrażeń w Atakach<br>
+                                        8% szansy na rzucenie Strzała Wzmocniona Ognieniem poz. 20 przy trafieniu<br>8% szansy na rzucenie Strzała Wzmocniona Zimnem poz. 20 przy trafieniu<br>8% szansy na rzucenie Strzała Wzmocniona Piorunem poz. 20 przy trafieniu<br>+(od 2 do 7) do Wszystkich Umiejętności <br>+50% Zwiększona Prędkość Ataku <br>+(od 30 do 50) do Wszystkich Atrybutów
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Buriza-Do Kyanon
+                                        <br>
+                                        <a href="weapons.htm#m02">
+                                            Mityczny Kusza Odyseusza
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/burizadokyanon.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        Dodaje 2000-3000 obrażeń od zimna w ciągu 40 s<br>5% szansy na rzucenie Działo Blizzard* poz. 1 przy trafieniu<br>5% szansy na rzucenie Błysk zimna poz. 20 przy trafieniu<br>+200% Zwiększona Prędkość Ataku <br>+3% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>+3 do Maksymalna Obrażenia (W oparciu o poziom postaci)<br>+50 do Minimalnych Obrażeń w Atakach <br>+100 do Maksymalnych Obrażeń w Atakach <br>-(od 40 do 50)% do odporności przeciwnika na zimno <br>-2 do maksymalnej liczby bełtów do kuszy<br>+(od 75 do 100)% całkowitych obrażeń z kuszy<br> Nie można zamarznąć <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Działo zamieci to atak specjalny wystrzeliwujący szybki pocisk, który zadaje 150% obrażeń broni jako obrażenia od zimna i może trafić wiele razy. Trafieni wrogowie mają odporność na zimno obniżoną o 50% na sekundę, a efekt działa z 100% skutecznością na wrogów odpornych na zimno. Ten efekt może zamrozić Pierwotne Zła.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Szpony Duriela Zgniłego Cierpienia
+                                        <br>
+                                        <a href="weapons.htm#m13">
+                                            Mityczne Nożyczki Suwayyah
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/duriels_claws_of_festering_agony.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        Poziom (od 30 do 50) Święte Zatrzymanie Aura po wyposażeniu<br>2% szans na rzucenie poziomu 60 Ostrza Lodu Wybuch przy trafieniu<br>17% Szansa na Rzucenie Poziomu 1 Wykonaj Rozładowanie przy Ataku Melee<br>17% Szansa na Rzucenie Poziomu 60 Wybuch Pięści Ognia, gdy Zabijesz Wroga<br>17% Szansa na Rzucenie Poziomu 60 Pazury Thunder Discharge przy Ataku Melee<br>+(od 30 do 50)% Szybszy Bieg/Chód <br>+2% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>+75 do Minimalnych Obrażeń w Atakach <br>+125 do Maksymalnych Obrażeń w Atakach
+                                        <br>-(od 20 do 30)% do odporności przeciwnika na ogień <br>-(od 20 do 30)% do odporności przeciwnika na zimno <br>-(od 20 do 30)% do odporności przeciwnika na błyskawice <br>-(od 20 do 30)% do odporności przeciwnika na truciznę <br>+(od 40 do 80)% do obrażeń od zaklęć zimnych <br </font>
+                                    </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Wyładowanie Ostrzy lodu to procek, który symuluje wyładowanie Ostrzy lodu z 3 ładunkami.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Nieśmiertelny Gniew Imperiusa
+                                        <br>
+                                        <a href="weapons.htm#m07">
+                                            Mityczny Wymiarowy Kryształ
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/imperius_undying_wrath.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Zyskujesz 1% obrażeń zaklęć błyskawic za każde 100 siły, gdy<br>otrzymujesz obrażenia, na 5 s<br>Ten efekt może się kumulować do 25 razy<br>Obrażenia zaklęć błyskawic z energii przestają działać</FONT><br>+(od 2 do 4) do Wszystkich Umiejętności <br>+(od 80 do 100)% Szybszy Bieg/Chód
+                                        <br>+(od 40 do 50)% Szybszy Wskaźnik Rzucania <br>-(od 40 do 50)% do odporności przeciwnika na błyskawice <br>+(od 50 do 65) do Siły <br>+(od 160 do 200) do Many <br>Zwiększa Maksymalną Manę +(od 40 do 50)% <br>+(od 8 do 10)% do Maksymalnego Oporu na Pioruny <br>+(od 25 do 30)% Bonus do Siły <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Wieczność Panowania Rathmy
+                                        <br>
+                                        <a href="weapons.htm#m14">
+                                            Mitologiczny Ceremonialny Sztylet
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathmas_eternal_reign.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Jeśli masz co najmniej 1000 witalności, twoje wskrzeszone szkielety<br>i przywołany Król szkieletów mogą używać Wzmocnionej zatrutej broni*
+                                        </FONT><br>+(od 2 do 4) do Wszystkich Umiejętności <br>+(od 15 do 25)% do Oporności na Fizyczne i Magiczne Przywołania
+                                        <br>+(od 20 do 30)% do Życia Przywołania <br>+(od 40 do 50)% do obrażeń przywołania <br>-(od 40 do 50)% do odporności przeciwnika na truciznę <br>+1 do Teleportacja<br>+(od 30 do 50) do Wszystkich Atrybutów
+                                        <br>+(od 40 do 50)% Bonus do Witalności <br>Odpornność na fizyczne obrażenia: +(od 15 do 20)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Wzmocniona zatruta broń to silniejsza wersja zwykłej Zatrutej broni.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Żniwiarz Grim Reapera
+                                        <br>
+                                        <a href="weapons.htm#m05">
+                                            Mityczny Niszczyciel Dusz
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src="./images/mythical-uniques/the grim reaper's harvester.png"
+                                        style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">Możesz przywołać +(od 2 do 3) dodatkowych Królów szkieletów bez czasu odnowienia<br>Nie możesz już przywoływać ani wskrzeszać innych sług<br>
+                                            Nieumarły szał ma 0 czasu odnowienia, a Żniwa dusz dają<br>15% dodatkowych obrażeń fizycznych i 5% obrażeń przywołańców na poziom<br></font>+(od 300 do 400)% Zwiększone obrażenia<br>+(od 4 do 7) do Wszystkich Umiejętności <br>+(od 60 do 75)% Zwiększona Prędkość Ataku <br>+100 do Minimalnych Obrażeń w Atakach <br>+150 do Maksymalnych Obrażeń w Atakach
+                                        <br>+(od 10 do 20)% do Oporności na Fizyczne i Magiczne Przywołania <br>+(od 25 do 30) do Zbieraj Dusze (Tylko dla Nekromanty)<br>Wszystkie odporności +(od 50 do 60) <br>+(od 8 do 10)% absorpcji żywiołów <br>Czas trwania klątwy zmniejszony o 100% <br>+(od 250 do 300) Życia po każdym zabójstwie<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Wszystkie inne przywołańce obejmują też przywołańce klas innych niż Nekromanta.<br>
+                                    Obrażenia przywołańców liczą się tylko w chwili przywołania, więc musisz ponownie przywołać królów szkieletów, gdy Żniwa dusz są aktywne, aby premia zadziałała.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Koszmar Mephisto
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Magiczny Ostrze
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/mephistos_nightmare.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Przy co najmniej 1000% łącznej odporności na ogień, zimno i błyskawice<br>ta broń może przywołać do pięciu razy więcej Hydr</FONT><br>2% szansy na rzucenie Hydra błyskawiczna poz. 60 przy trafieniu<br>+(od 40 do 50)% Zwiększona Prędkość Ataku <br>-(od 50 do 65)% do odporności przeciwnika na błyskawice <br>+(od 200 do 300) do Życia <br>+(od 200 do 300) do Many
+                                        <br>Zwiększa Maksymalną Manę +(od 40 do 50)% <br>+(od 4 do 7)% do Maksymalnego Oporu na Trucizny <br>+(od 4 do 7)% do Maksymalnego Oporu na Zimno <br>+(od 4 do 7)% do Maksymalnego Oporu na Pioruny <br>+(od 4 do 7)% do Maksymalnego Ognistego Oporu <br>Wszystkie odporności +(od 80 do 100) <br>Odpornność na fizyczne obrażenia: +(od 20 do 30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Zwiastun Apokalipsy Trójcy
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Skamieniały Kij
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/the_triune_harbinger_of_apocalypse.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Ten przedmiot można skazić do 10 razy<br>Zwiększa obrażenia Orbu Triumwiratu o 10% za każde skażenie</FONT><br>
+                                        +(od 2 do 4) do Wszystkich Umiejętności <br>+(od 80 do 100)% Szybszy Bieg/Chód <br>+(od 40 do 50)% Szybszy Wskaźnik Rzucania <br>Zwiększa Maksymalną Manę +(od 40 do 50)% <br>Regeneracja Many +(od 200 do 300)% <br>+(od 75 do 100) do Energii <br>
+                                        Odpornność na ogień +(od 50 do 75)% <br>Odporność na zimno +(od 50 do 75)% <br>Odpornność na błyskawice +(od 50 do 75)% <br>
+                                        +(od 30 do 40)% do obrażeń od zaklęć ognia <br>+(od 30 do 40)% do obrażeń od zaklęć zimnych <br>+(od 30 do 40)% do obrażeń od zaklęć błyskawicznych <br>
+                                        -(od 15 do 25)% do odporności przeciwnika na ogień <br>-(od 15 do 25)% do odporności przeciwnika na zimno <br>-(od 15 do 25)% do odporności przeciwnika na błyskawice <br>
+                                        +(od 10 do 20) do Orb Triumwiratu
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Orb Triumwiratu to powolna kula, która strzela trójżywiołowymi promieniami w pobliskich wrogów. Skażenia innych przedmiotów też liczą się do jej obrażeń.
+                                    <br><br>
+                                    Ten przedmiot zaprojektował TiltedPrimate na Discordzie ESR jako zwycięzca konkursu na mityczny unikat.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Orion
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Starożytny Łuk
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orion.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            Ataki mają 10% szansy na zadanie trzykrotnie większych obrażeń całkowitych</FONT><br>15% szans na rzucenie poziomu 40 Strzała Wzmocniona Piorunem przy trafieniu<br>+3% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>+(od 100 do 200) do Maksymalnych Obrażeń w Atakach <br>+(od 500 do 1000) do Oceny Ataku
+                                        <br>-(od 20 do 30)% do odporności przeciwnika na błyskawice
+                                        <br>+100% Śmiertelny Cios
+                                        <br>+(od 20 do 30)% Bonus do Zręczności <br>+(od 10 do 20) do Rozdarcie Gwiazdy<br>
+                                        +(od 10 do 20) do Deszcz Gwiazd<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Rozdarcie Gwiazdy <font color="RED">nie może zadawać obrażeń bezpośrednio.</font> Musisz celować lekko obok wroga.<br><br>
+                                    Ten łuk jest inspirowany <a
+                                        href="https://ffylands.fandom.com/wiki/Orion">Orion</a>
+                                    bronią z moda Fight For Your Life Lands do Borderlands 2, która z kolei była inspirowana bronią o tej samej nazwie z Borderlands 1.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Ostateczne Polowanie Athuluy
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczna Matriarchalna Włócznia
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/athulua_final_hunt.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            Oszczep stosu, mrozu i zarazy oraz Furia błyskawic rzucają dwa razy więcej oszczepów przy życiu poniżej 33%
+                                        </FONT><br>
+                                        3% szans na rzucenie poziomu 40 Wewnętrzny Wzrok przy trafieniu<br>
+                                        +(od 2 do 4) do Umiejętności Włóczni i Oszczepów (Tylko Amazonka)<br>
+                                        +(od 2 do 4) do poziomów umiejętności Amazonki<br>
+                                        +(od 80 do 100)% Szybszy Bieg/Chód<br>
+                                        +(od 30 do 40)% Zwiększona Prędkość Ataku<br>
+                                        -(od 20 do 30)% do odporności przeciwnika na ogień<br>
+                                        -(od 20 do 30)% do odporności przeciwnika na zimno<br>
+                                        -(od 20 do 30)% do odporności przeciwnika na błyskawice<br>
+                                        -(od 20 do 30)% do odporności przeciwnika na truciznę<br>
+                                        +(od 5 do 10)% Szansa na uniki<br>
+                                        Absorpcja Żywiołowa (od 2 do 3)%<br>
+                                        +(od 50 do 100) Życia po każdym zabójstwie<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Kręgosłup Rathmy, który nieprzerwanie krwawi
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Łowca Waleń
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathma_endlessly_bleeding_spine.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Każdy ładunek Krwawego wzmocnienia daje 10 maks. obrażeń, 2% szybkości ataku i 2% kradzieży życia kosztem 10 życia na sekundę za ładunek. Trwa 3 s<br>
+                                            Maks. ładunków: 500
+                                        </FONT><br>+(od 300 do 400)% Zwiększone obrażenia<br>15% szans na rzucenie poziomu 1 Wzmocnienie Krwi przy trafieniu<br>8% szans na rzucenie poziomu 1 Krwawa Włócznia przy trafieniu<br>2% szans na rzucenie poziomu 60 Wzmocnienie Obrażeń przy trafieniu<br>+75 do Minimalnych Obrażeń w Atakach
+                                        <br>+125 do Maksymalnych Obrażeń w Atakach <br>+2 do Maksymalnych Obrażeń w Atakach (W oparciu o poziom postaci)<br>-(od 40 do 50)% Obrona Celu <br>+(od 20 do 40)% Fizyczne obrażenia kradzione jako życie
+                                        <br>Czas trwania klątwy zmniejszony o (od 40 do 50)%
+                                        <br>(od 20 do 30)% wskrzeszenia jako: Upiór skażenia<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Krwawa włócznia to pocisk zadający 125% obrażeń broni, który domyślnie przebija.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Celestialna Latarnia Yaeriusa
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczne Starożytne Odłamki
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/yaeriuscelestialbeacon.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Przy trafieniu wroga masz niewielką szansę przywołać na pole bitwy Ogniste latarnie światła, które po podniesieniu dają 15% całkowitych obrażeń fizycznych i 15% maks. życia<br>Ten efekt kumuluje się do 20 razy i trwa 2 s
+                                        </FONT><br>1% szans na rzucenie poziomu 1 Niebiańskie Wzmocnienie przy trafieniu<br>8% szans na rzucenie poziomu 60 Strzała Wzmocniona Piorunem przy trafieniu<br>8% szans na rzucenie poziomu 40 Strzała Wzmocniona Ognieniem przy trafieniu<br>+(od 40 do 50)% Zwiększona Prędkość Ataku <br>+3% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>+3 do Maksymalnych Obrażeń w Atakach (W oparciu o poziom postaci)<br>+(od 200 do 400)% Bonus do Oceny Ataku <br>-(od 20 do 30)% do odporności przeciwnika na błyskawice <br>-(od 20 do 30)% do odporności przeciwnika na ogień <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Starożytny Totem Scosglen
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Shillelagh
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/ancient_totem_of_scosglen.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Co 5 ataków wchodzisz w rezonans z określonym żywiołem, który go wzmacnia i sprawia, że Wybuch płomieni, Trąba lub Mroźny podmuch wystrzeliwują odpowiednio trzy razy więcej pocisków
+                                            <br>Zaklęcia żywiołów tworzą teraz synergie między wszystkimi żywiołami
+                                        </FONT><br>100% Szansa na Rzucenie Poziomu 2 Czasoprzestrzeń, gdy Zabijesz Wroga<br>
+                                        Poziom (od 10 do 15) Rezonans Scosglen Aura po wyposażeniu<br>
+                                        +(od 2 do 4) do Wszystkich Umiejętności<br>
+                                        +(od 40 do 50)% Szybszy Wskaźnik Rzucania<br>
+                                        +(od 20 do 40)% do obrażeń od zaklęć ognia<br>
+                                        +(od 20 do 40)% do obrażeń od zaklęć zimnych<br>
+                                        +(od 20 do 40)% do obrażeń od zaklęć fizycznych<br>
+                                        Wszystkie odporności +(od 40 do 60)<br>
+                                        +(od 40 do 60) do Many po każdym zabójstwie<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Gdy jesteś w rezonansie z danym żywiołem, zyskujesz też 5% obrażeń zaklęć tego żywiołu za poziom aury Rezonans Scosglen.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        El'druin, Excalibur Światła
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Niebiański Miecz
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/eldruin_excalibur_of_the_light.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Święte umiejętności wywołane przez El'Druin zadają obrażenia broni jako obrażenia magiczne<br>Zyskujesz 25% zwiększonych obrażeń za każdy punkt promienia światła
+                                        </FONT><br>+(od 300 do 400)% Zwiększone obrażenia<br>10% Szansa na Rzucenie Poziomu 1 Święty Pocisk przy Ataku Melee<br>
+                                        10% Szansa na Rzucenie Poziomu 1 Błogosławiony Młot przy Ataku Melee<br>
+                                        10% Szansa na Rzucenie Poziomu 1 Pięść Niebios przy Ataku Melee<br>
+                                        +(od 40 do 50)% Zwiększona Prędkość Ataku<br>
+                                        +100 do Minimalnych Obrażeń w Atakach<br>
+                                        +125 do Maksymalnych Obrażeń w Atakach<br>
+                                        +(od 1 do 2) Życie na Uderzeniu<br>
+                                        Odporność na magię +(od 15 do 30)%<br>
+                                        Odpornność na fizyczne obrażenia: +(od 15 do 30)%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Święty pocisk i Błogosławiony młot wywołane przez to ostrze zadają 20% obrażeń broni jako obrażenia magiczne i nie zadają stałych obrażeń magicznych. Pięść Niebios zadaje 125% obrażeń broni jako obrażenia magiczne, a jej pociski dodatkowe 20%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Filar Nadziei Orfeusza
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczna Laska Maga
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orpheus.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE"><br>Każdy ładunek Wzmocnienia zaświatów daje 5% obrażeń umiejętności trucizny, magicznych i fizycznych na 2 s<br>Maks. ładunków: 40
+                                        </FONT><br>1% Szansa na Rzucenie Poziomu 50 Czasoprzestrzeń po Uderzeniu<br>50% Szansa na Rzucenie Poziomu 1 Wzmocnienie Podziemi, gdy Zabijesz Wroga<br>+(od 0 do 8) do Wszystkich Umiejętności <br>+(od 0 do 30)% Redukcja Czasu Odnowienia Umiejętności <br>+(od 5 do 10) do losowego Mistrzostwa zaklęć (trucizna/magia/fizyczne)<br>+(od 10 do 20) do Podróż do Podziemia<br>Zwiększa Maksymalne Życie +(od 30 do 50)% <br>Zredukowane obrażenia o 50 <br>Zredukowane obrażenia magiczne o 50 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Umierające Światło Tsukuyomi'ego
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczna Katana
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tsukuyomi_dying_light.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Ataki mają 3% szansy na zadanie pięciokrotności całkowitych obrażeń
+                                        </FONT><br>+(od 200 do 300)% Zwiększone obrażenia<br>50% Szansa na Rzucenie Poziomu 1 Wykonaj Rozładowanie przy Ataku Melee<br>
+                                        +2% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>
+                                        +(od 100 do 125) do Maksymalnych Obrażeń w Atakach<br>
+                                        -(od 25 do 75)% Obrona Celu<br>
+                                        +(od 30 do 50)% Śmiertelny Cios<br>
+                                        +(od 10 do 20) do Cień Zstąpienia<br>
+                                        +(od 20 do 30) do Smok Ostrze (Tylko dla Zabójcy)<br>
+                                        Odporność na magię +(od 10 do 20)%<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Wyładowanie Egzekucji wyładowuje w pełni naładowaną Egzekucję na obecnym poziomie
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Pustkowy Księżyc Tysiąca Cięć
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mitologiczny Topór Arreatu
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/void_crescent_of_a_thousand_cuts.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Każdy ładunek Widmowego okaleczenia obniża odporność wroga na magię o 0.2%<br>i sprawia, że otrzymuje 5 dodatkowych obrażeń fizycznych przez 1 s<br>Maks. ładunków: 1000</FONT><br>+(od 300 do 400)% Zwiększone obrażenia<br>
+                                        100% szans na rzucenie poziomu 1 Spektralne Okaleczenie przy trafieniu<br>
+                                        8% szans na rzucenie poziomu 30 Rzucona siekiera przy trafieniu<br>
+                                        8% szans na rzucenie poziomu 30 Magicznie Wzmocniona Siekiera przy trafieniu<br>
+                                        Dodaje 150-200 obrażeń fizycznych do ataków <br>
+                                        Czas trwania klątwy zmniejszony o (od 40 do 50)%<br>
+                                        +(od 20 do 30)% Fizyczne obrażenia kradzione jako życie<br>
+                                        +(od 400 do 500) do Oceny Ataku<br>
+                                        +(od 80 do 100) premii do celności<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Dodatkowe obrażenia fizyczne z Widmowego okaleczenia to stała, niemodyfikowalna ilość premiowych obrażeń fizycznych.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Złe Szepty Baala
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczny Kagekiri
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/baals_vile_whisper_2.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Zyskaj 1% obrażeń od zaklęć zimnych na każde 50 Zręczności</FONT><br>
+                                        2% szans na rzucenie poziomu 60 Lodowe Kły przy trafieniu<br>
+                                        4% szans na rzucenie poziomu 60 Zimny Podmuch przy trafieniu<br>
+                                        1% szans na rzucenie poziomu 60 Mityczne Zdegradowanie przy trafieniu<br>
+                                        Dodaje 150-250 obrażeń do ataków<br>
+                                        Dodaje 2000-3000 obrażeń zimnych do ataków przez 20 s<br>
+                                        +150% Śmiertelny Cios<br>
+                                        +(od 30 do 50)% Bonus do Zręczności<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 20px 50px 20px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Mityczne zniedołężnienie łączy Zniedołężnienie i Wzmocnienie obrażeń, 2 w 1. Spowalnia tak jak zwykłe Zniedołężnienie i obniża odporność fizyczną tak jak zwykłe Wzmocnienie obrażeń (z tym samym przyrostem na poziom). Obniża też odporność na zimno o tyle samo co odporność fizyczną.<br><br>
+
+                                    Ten shuriken jest inspirowany unikatowym elitarnym shurikenem o tej samej nazwie z moda Diablo 2 Immersion.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Kuźnia Próżni
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mityczne Otchłanne Ostrze
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/voidforge.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Zyskujesz 100% obrażeń fizycznych jako dodatkowe obrażenia losowego<br>żywiołu spośród ognia, zimna i błyskawic<br>Twoje obrażenia żywiołów z ataków mogą teraz być krytyczne</FONT><br>
+
+                                        +(od 250 do 500)% Zwiększone obrażenia<br>
+                                        Dodaje 150-250 obrażeń do ataków<br>
+                                        Zwiększone maks. życie +(od 30 do 40)%<br>
+                                        +(od 8 do 10) Życie na Uderzeniu<br>
+                                        +(od 4 do 5) Mana przy Uderzeniu<br>
+                                        +30% Zwiększona Prędkość Ataku<br>
+                                        +(od 1 do 10) do Elementarny Furia<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mityczny unikatowy pancerz
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Imię
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Statystyki
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Właściwości
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Uwagi
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Łowca głów
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Mityczny Pas Konopny
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/headhunter.png" style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        2% Szansa na Rzucenie Poziomu 1 Trofeum Szybkości, gdy Zabijesz Wroga<br>2% Szansa na Rzucenie Poziomu 1 Trofеj obrażeń fizycznych, gdy Zabijesz Wroga<br>2% Szansa na Rzucenie Poziomu 1 Trofеj Obrażenia Czarów, gdy Zabijesz Wroga<br>2% Szansa na Rzucenie Poziomu 1 Trofeum Utrzymania, gdy Zabijesz Wroga<br>2% Szansa na Rzucenie Poziomu 1 Trofеj Oporności, gdy Zabijesz Wroga<br>2% Szansa na Rzucenie Poziomu 1 Trofeum Statystyk, gdy Zabijesz Wroga<br>2% Szansa na Rzucenie Poziomu 1 Trofеj Wszystkich Umiejętności, gdy Zabijesz Wroga<br>+(od 80 do 100) do Siły <br>+(od 80 do 100) do Zręczności <br>+(od 150 do 200) do Życia <br>Zwiększa Maksymalne Życie +(od 25 do 30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Każdy efekt trofeum trwa 20 s.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Awatar Nasyconych Rogów Natury
+                                        <br>
+                                        <a href="armors.htm#m15">
+                                            Mitologiczny Duch Snów
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/avatar_of_natures_infused_horns.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Jeśli masz co najmniej 1000 zręczności, twoje wilki mogą używać Skoku*
+                                        </FONT><br>
+                                        <FONT COLOR="ORANGE">+(od 1 do 2) do limitu nieunikalnych przyzwań</FONT> <br>2% Szansa na Rzucenie Poziomu 50 Zatrzymanie Czasu przy Otrzymywaniu Obrażeń<br>+(od 1 do 3) do Wszystkich Umiejętności <br>+(od 80 do 100)% Szybszy Bieg/Chód <br>+(od 10 do 20)% do Oporności na Fizyczne i Magiczne Przywołania
+                                        <br>+(od 25 do 35)% do Życia Przywołania <br>+(od 20 do 30)% do obrażeń przywołania <br>+(od 400 do 500) do Życia
+                                        <br>+(od 40 do 50)% Bonus do Zręczności <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Zarówno duchowe, jak i straszliwe wilki mogą używać Skoku. Skok to silny atak obszarowy i na pojedynczy cel, który teleportuje wilka na cel, by go uderzyć
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Aegis Korupcji
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mityczna Zbroja z Kamieniami Szlachetnymi
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/aegisofcorruption.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Jeśli masz założonych 20 lub więcej skażonych przedmiotów, całkowite obrażenia twoich zaklęć<br>o obrażeniach bezpośrednich z bazowym czasem odnowienia są podwojone
+                                        </FONT><br>5% Szansa na Rzucenie Poziomu 40 Zbroja Cyklonu przy Otrzymywaniu Obrażeń<br>+(od 2 do 3) do Wszystkich Umiejętności <br>-(od 20 do 30)% do odporności przeciwnika na ogień <br>-(od 20 do 30)% do odporności przeciwnika na zimno <br>-(od 20 do 30)% do odporności przeciwnika na błyskawice <br>-(od 20 do 30)% do odporności przeciwnika na truciznę <br>+(od 20 do 30)% Redukcja Czasu Odnowienia Umiejętności <br>+(od 2000 do 2500) Obrony <br>+(od 80 do 100) do Witalności <br>Zwiększa Maksymalną Manę +(od 40 do 50)%
+                                        <br>+(od 1 do 5)% do Maksymalnego Oporu na Trucizny <br>+(od 1 do 5)% do Maksymalnego Oporu na Zimno <br>+(od 1 do 5)% do Maksymalnego Oporu na Pioruny <br>+(od 1 do 5)% do Maksymalnego Ognistego Oporu <br>Wszystkie odporności +(od 50 do 60) <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Zaklęcia o obrażeniach bezpośrednich to zaklęcia, które można rzucić bezpośrednio (np. Deszcz ognia). Premia do obrażeń to całkowity mnożnik wszystkich premii (w praktyce podwojone obrażenia)<br>Skażone przedmioty to zarówno założone przedmioty, jak i uroki (unikatowe lub nie)
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Przebudzenie Tathameta<br>
+                                        (<font color="red">Ogień</font> wariant)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mityczne Diadem
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Twoja Teleportacja automatycznie rzuca teraz Nowę żywiołów przy użyciu<br>
+                                            Nowe żywiołów rzucone w ten sposób liczą się jako dostrojone do wszystkich żywiołów,<br>ale ich poziom zależy od poziomu Teleportacji</FONT>
+                                        <br>+(od 3 do 5) do Umiejętności Ognia<br>-(od 20 do 30)% do odporności przeciwnika na ogień
+                                        <br>Zwiększa Maksymalne Życie +(od 30 do 50)%<br>Odbicie Ognia +(od 8 do 10)% <br>Odnów Życie +(od 800 do 1000)<br>+(od 40 do 50)% Szybszy Powrót po Trafieniu<br>+1 do Mistrzostwo Ognia<br>+3 do Elementarny Nova<br>Gniazda (od 0 do 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Przebudzenie Tathameta<br>
+                                        (<font color="blue">Zimno</font> wariant)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mityczne Diadem
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Twoja Teleportacja automatycznie rzuca teraz Nowę żywiołów przy użyciu<br>
+                                            Nowe żywiołów rzucone w ten sposób liczą się jako dostrojone do wszystkich żywiołów,<br>ale ich poziom zależy od poziomu Teleportacji</FONT>
+                                        <br>+(od 3 do 5) do Umiejętności Zimowych<br>-(od 20 do 30)% do odporności przeciwnika na zimno <br>
+                                        +(od 15 do 20)% Redukcja Czasu Odnowienia Umiejętności<br>Zimna Absorpcja +(od 8 do 10)% <br>Regeneracja Many +(od 200 do 300)%<br>Nie można zamarznąć<br>+1 do Mistrzostwo Zimna<br>+3 do Elementarny Nova<br>Gniazda (od 0 do 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Przebudzenie Tathameta<br>
+                                        (<font color="yellow">Błyskawica</font> wariant)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mityczne Diadem
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Twoja Teleportacja automatycznie rzuca teraz Nowę żywiołów przy użyciu<br>
+                                            Nowe żywiołów rzucone w ten sposób liczą się jako dostrojone do wszystkich żywiołów,<br>ale ich poziom zależy od poziomu Teleportacji</FONT>
+                                        <br>+(od 3 do 5) do Umiejętności Ognia<br>-(od 20 do 30)% do odporności przeciwnika na błyskawice
+                                        <br>
+                                        Zwiększa Maksymalną Manę +(od 30 do 50)%<br>Pochłanianie błyskawic +(od 8 do 10)% <br>Wszystkie odporności +(od 40 do 60)<br>+(od 5 do 10)% Szansa na uniki<br>+1 do Mistrzostwo Błyskawic<br>+3 do Elementarny Nova<br>Gniazda (od 0 do 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Silnik Dusz<br>
+                                        <a href="armors.htm#m06">
+                                            Mityczna lekka zbroja płytowa
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_soul_engine.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Twoje maksymalne życie wynosi 1<br>
+                                            Jesteś odporny na truciznę</FONT>
+                                        <br>17% Szansa na Rzucenie Poziomu 60 Zimna Fala, gdy Zabijesz Wroga<br>
+                                        Poziom (60-100) Tarcza Energetyczna Aura po wyposażeniu<br>
+                                        +20% Redukcja Czasu Odnowienia Umiejętności<br>
+                                        +(od 5 do 10)% Szansa na uniki<br>
+                                        -(od 20 do 40)% do odporności przeciwnika na zimno<br>
+                                        +(od 10 do 20) do Hipotermia<br>
+                                        +1 do Mistrzostwo Zimna<br>
+                                        +(od 400 do 500)% Zwiększona Obrona<br>
+                                        Zwiększona maks. mana +(od 30 do 50)%
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Hipotermia to zimowy odpowiednik Słusznego ognia: zużywa manę zamiast życia, by się podtrzymać, i można ją łagodzić odpornością i absorpcją zimna.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mityczna unikatowa biżuteria
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Imię
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Statystyki
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Właściwości
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Uwagi
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Mityczny Gniew Wysokiego Władcy
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Amulet
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mythical_highlords_wrath.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Masz 10% szansy na zadanie trzykrotnie większych obrażeń całkowitych.
+                                        </FONT><br>+2 do Wszystkich Umiejętności <br>Odnów Życie +(od 800 do 1500) <br>Regeneracja Many +(od 120 do 200)% <br>Odporność na magię +(od 10 do 15)% <br>Wszystkie odporności +(od 30 do 50)
+                                        <br>Odpornność na fizyczne obrażenia: +(od 10 do 15)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Efekt potrójnych obrażeń dotyczy wszystkich zadawanych obrażeń, ze wszystkich źródeł. Obejmuje to ataki, zaklęcia, święte aury itp. Efekt kumuluje się mnożnikowo z trafieniem krytycznym i zabójczym ciosem, ale addytywnie z premią do obrażeń z kusz (i innymi podobnymi efektami, np. ekskluzywnymi umiejętnościami Czarodziejki).
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Węzły, które łączą<br>
+                                        <a href="armors.htm#m10">
+                                            Pierścień
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_ties_that_bind_fire.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Noszenie dwóch różnych wariantów Więzów, Które Wiążą<br>podwaja siłę ich właściwości
+                                        </FONT><br>
+                                        Dodaje 400-600 obrażeń Ognia do Ataków<br>
+                                        +30% obrażeń zaklęć ognia<br>
+                                        Odpornność na ogień +50%<br>
+                                        +15% Redukcja Czasu Odnowienia Umiejętności<br>
+                                        Zwiększa Maksymalne Życie +30%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Pierścień występuje w jednym z 7 wariantów. Każdy wariant ma statystyki podstawowe (obrażenia żywiołów, odporność, obrażenia zaklęć) i specjalne (np. maks. życie, skrócenie czasu odnowienia itp.). Noszenie dwóch <strong>różnych</strong> pierścieni podwaja siłę ich modyfikatorów.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Naczynie Dusz
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Amulet
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/vessel_of_souls.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            <FONT COLOR="ORANGE">Z tajemniczej siły emanującej z wnętrza słychać uwięzione dusze...<br>Niedola dusz jest tak potężna, że nie możesz teraz założyć artefaktu</FONT>
+                                        </FONT><br>
+                                        +(od 0 do 2) do poziomów umiejętności Amazonki<br>
+                                        +(od 0 do 2) do poziomów umiejętności Zabójcy<br>
+                                        +(od 0 do 2) do poziomów umiejętności Barbarzyńcy<br>
+                                        +(od 0 do 2) do poziomów umiejętności Druida<br>
+                                        +(od 0 do 2) do poziomów umiejętności Nekromanty<br>
+                                        +(od 0 do 2) do poziomów umiejętności Paladyna<br>
+                                        +(od 0 do 2) do poziomów umiejętności Czarodziejki<br>
+                                        Nie może zostać zamrożony (50% szansy na pojawienie się)<br>
+                                        +(od 50 do 200) do Życia<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Naczynie Dusz to specjalny mityczny unikat, który może pochłaniać narządy, by zyskiwać różne premie.<br>Zobacz <a href="./vessel_of_souls.htm">Naczynie Dusz</a> (strona z pełną listą premii).
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Żar Stworzenia
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Jewel
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/ember of creation.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 60
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        +1 do losowej umiejętności klasowej<br>
+                                        +20 do wymaganego poziomu
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Żar Stworzenia może wylosować zdecydowaną większość umiejętności klasowych poza kilkoma, których inne klasy nie mogą używać (np. Psychiczny młot, Podmuch umysłu, Pułapki), bo brakuje im potrzebnych animacji, lub umiejętnościami wymagającymi broni klasowej (np. umiejętności ładujące).
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mityczne unikaty z dedykowanych źródeł
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Imię
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Statystyki
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Właściwości
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Uwagi
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Wieczny klepsydra bezczasowych piasków
+                                        <br>
+                                        <font color="#928A70" style="text-decoration: underline;">Duży Amulet</font>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/hgc.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Masz małą szansę na uzyskanie maksymalnego skrócenia czasu odnowienia na 3 sekundy po zabiciu.
+                                        </FONT><br>5% szansy na rzucenie Moc bezczasowych piasków poz. 1 po zabiciu wroga<br>+1 do Wszystkich Umiejętności<br>+(od 20 do 40)% Szybszy Bieg/Chód <br>+(od 20 do 40)% Zwiększona Prędkość Ataku
+                                        <br>+(od 20 do 40)% Szybszy Wskaźnik Rzucania <br>+(od 20 do 40)% Szybszy Powrót po Trafieniu <br>+(od 20 do 40)% Szybkość Blokowania <br>+(od 10 do 15)% Redukcja Czasu Odnowienia Umiejętności<br>+(od 0 do 2)% do Maksymalnego Oporu na Trucizny <br>+(od 0 do 2)% do Maksymalnego Oporu na Zimno <br>+(od 0 do 2)% do Maksymalnego Oporu na Pioruny <br>+(od 0 do 2)% do Maksymalnego Ognistego Oporu <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Do zdobycia przez zabicie wszystkich wiecznych Pradawnych na Krańcu Wieczności i transmutację upuszczonych fragmentów klepsydry
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Esencja Króla Lichów
+                                        <br>
+                                        <a>
+                                            <font color="#928A70" style="text-decoration: underline;">Amulet</font>
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lichkingessence.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Jeśli masz 15 lub więcej namaszczonych przedmiotów, po zabiciu wroga masz 25% szansy na zdobycie<br>1% obrażeń zaklęć ognia i 3-6 obrażeń od ognia do ataków za każde 1% odporności na ogień
+                                        </FONT><br>5% szansy na rzucenie Ogień Wzmocniony Topór poz. 25 przy trafieniu<br>+(od 1 do 2) do Wszystkich Umiejętności
+                                        <br>+(od 15 do 25)% do obrażeń od zaklęć ognia <br>-(od 10 do 15)% do odporności przeciwnika na ogień
+                                        <br>+(od 5 do 15) do Wzmocnione Zaklęcie<br>+(od 20 do 40) do Wszystkich Atrybutów <br>+(od 4 do 8)% do Maksymalnego Ognistego Oporu <br>Odpornność na ogień +(od 40 do 80)% <br>Zredukowane obrażenia o (od 10 do 50)
+                                        <br>Nie można zamarznąć <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Do zdobycia przez zabicie Króla Lichów<br>
+                                    Amulet ma łącznie 6 wariantów, po jednym na każdy żywioł<br>
+                                    Choć efekt jest widoczny, działa dopiero przy 15 namaszczonych przedmiotach
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Frostmourne
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            Mityczny Ostrze Śmierci
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/frostmourne.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        1% szansy na rzucenie Wieczna Zima* poz. 60 przy trafieniu<br>Niezniszczalny <br>+(od 3 do 6) do Wszystkich Umiejętności <br>+(od 30 do 60)% Zwiększona Prędkość Ataku <br>+3% Zwiększone Maksymalne Obrażenia (W oparciu o poziom postaci)<br>+200 do Minimalnych Obrażeń w Atakach <br>+250 do Maksymalnych Obrażeń w Atakach <br>-(od 30 do 60)% do odporności przeciwnika na zimno <br>+(od 10 do 20) do Permafrost Burza<br>+(od 30 do 60)% Bonus do Wszystkich Atrybutów <br>Absorpcja Żywiołowa (od 8 do 10)% <br>+(od 200 do 400) Życia po każdym zabójstwie <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Do zdobycia przez zabicie Króla Lichów<br>
+                                    Wieczna zima to potężne zaklęcie obszarowe zadające z czasem bardzo wysokie obrażenia od zimna, obniżające odporność trafionych wrogów na zimno o 50% (z 100% skutecznością przeciw odpornym potworom) oraz ich szybkość ruchu i ataku/rzucania czarów odpowiednio o 150%/50%.<br>
+                                    Wieczna zima korzysta ze zwiększenia obrażeń zaklęć z Egidy skażenia.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Wieczna Czaszka Rathmy
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            Mały Urok
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/rathma_eternal_skull.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Poziom przedmiotu: 100
+                                    <br>
+                                    Wymagany poziom: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        1% Szansa na Rzucenie Poziomu 25 Czasoprzestrzeń po Uderzeniu<br>+1 do Wszystkich Umiejętności <br>+3 do Nieumarli Frenzy<br>+17 do Nieumarli Frenzy (Tylko dla Nekromanty)<br>+1 Do <FONT
+                                            COLOR="RED">
+                                            Można nosić tylko jeden<FONT COLOR="BLUE"></FONT>
+                                        </FONT><br>Czas trwania klątwy zmniejszony o (od 20 do 30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Do zdobycia przez zabicie Rathmy.<br>
+                                    Można ulepszyć, zabijając Rathmę i Kor'naca, Pustego Apostoła, w odstępie nie większym niż minuta, przy <font color="RED">/players 8</font> i transmutując urok z samym sobą. Urok zyskuje +(od 10 do 20) do Wskrzeszenia Kor'naca, Pustego Apostoła.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

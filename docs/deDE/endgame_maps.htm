@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="de">
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-YFKD8ZR9BX');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://d2esrdb.github.io">
+	<meta property="og:title" content="Eastern Sun Resurrected Database">
+	<meta property="og:description"
+		content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+	<title>
+		Eastern Sun Resurrected Datenbank
+	</title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+	<style>
+		/* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+	style="padding: 0; padding-left: 170px; padding-right: 170px;">
+	<nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Sprache"><select id="esr-lang-deDE" aria-label="Sprache" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE" selected>Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="deDE",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-deDE');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Grundlagen</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href=".././changelogs.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Änderungsprotokolle]</a>
+			<a href="./armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Rüstungen]</a>
+			<a href="./weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffen]</a>
+			<a href="./prefixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Präfixe]</a>
+			<a href="./suffixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixe]</a>
+			<a href="./unique_armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Rüstungen]</a>
+			<a href="./unique_weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Waffen]</a>
+			<a href="./unique_others.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartiges Sonstiges]</a>
+			<a href="./unique_mythicals.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mythische Einzigartige]</a>
+			<a href="./sets.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Sets]</a>
+			<a href="./gems.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteine/Runen]</a>
+			<a href="./gemwords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteinwörter]</a>
+			<a href="./runewords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Runenwörter]</a>
+			<a href="./Eastern Sun Resurrected Cube Recipes.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Würfelrezepte]</a>
+			<a href="./Eastern Sun Resurrected Maps.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Karten]</a>
+			<a href="./drop-finder.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Beutefinder]</a>
+		</div>
+	</nav>
+	<nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funktionen</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href="./corruptions.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Verderbnis-Ergebnisse]</a>
+			<a href="./anointments.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Salbungs-Ergebnisse]</a>
+			<a href="./endgame_maps.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Endgame-Karten]</a>
+			<a href="./vessel_of_souls.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Seelengefäß]</a>
+			<a href="./ascendancies.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Aszendenzen]</a>
+			<a href="./kill_ledger.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Tötungsbuch]</a>
+			<a href="./skill_information.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Söldner- und O-Fertigkeiten-Infos]</a>
+			<a href="./weapon_mastery.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffenbeherrschung]</a>
+		</div>
+	</nav>
+
+	<center>
+		<div
+			style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+			<h1
+				style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+				Eastern Sun Resurrected</h1>
+			<div
+				style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+				Total-Conversion-Mod für Diablo II: Resurrected</div>
+		</div>
+		<div style="width:100%;">
+
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								<font color="red">Warnung:</font> Endgame-Kartenzonen sind deutlich schwieriger als alle anderen Inhalte und erfordern äußerst ausgereifte Builds.<br>
+								Endgame-Kartenzonen betritt man, indem man Kartengegenstände einzeln transmutiert, und zwar in <font
+									color="red"> Akt 5 Hölle</font>. Es gibt insgesamt 18 Kartengegenstände in 5 Stufen.<br>
+								Jede Stufe hat 4 verschiedene Kartenzonen, außer Stufe 5, die nur 2 Karten mit einzigartigen und extrem schwierigen Bosskämpfen bietet.<br>
+								Kartengegenstände können von den Superunique-Monstern in Nihlathaks Reich fallen. Jeder Superunique-Boss hat eine Chance von 5 %, eine Karte der Stufe 1 fallen zu lassen.<br>
+								Kartengegenstände können außerdem von Champions und einzigartigen Monstern in terrorisierten Zonen der Stufe 96 fallen.<br>
+								Kartengegenstände gibt es auch als seltene Beute in den Endgame-Kartenzonen selbst; das ist deine Hauptquelle, wenn du regelmäßig Kartenzonen spielst<br>
+								Normale Monster in Karten können eine Karte fallen lassen, die eine Stufe höher ist als die Karte, in der sie getötet werden. Du kannst Karten außerdem im Verhältnis 3:1 aufwerten.<br>
+								Zum Überleben sollte dein Build mindestens 5.000 Leben, maximale Widerstände, etwas physischen Widerstand und weitere Verteidigungsschichten haben.<br>
+								Belohnungen mit durchschnittlicher Chance lassen sich mit /players 8 um bis zu 100 % steigern. Zum Beispiel hat ein Ahne eine Chance von 50 %, einen Schlüssel auszuwürfeln, und das
+								<b>zweimal</b>, sodass du im Schnitt einen Schlüssel erhältst; mit 8 Spielern liegt seine Chance auf 2 Schlüssel jedoch bei fast 100 %.<br>
+								Endgame-Karten können terrorisiert werden; dabei ist von jeder Stufe jeweils eine Karte gleichzeitig terrorisiert (außer Stufe 5, deren beide Karten gleichzeitig und unabhängig von den anderen terrorisiert werden).<br>
+								Endgame-Karten können auch auf Normal und Alptraum terrorisiert sein, das ist aber nicht beabsichtigt. Wegen Einschränkungen der Engine lässt sich das nicht beheben.<br>
+								Terrorisierte Bosse lassen immer ein Weltsteinfragment fallen (außer Bosse der Stufe 5, wegen einer Einschränkung der Engine).<br>
+								<storng>Bosse der Stufen 1-4</storng> haben einen <font color="purple">Immunitätsschild</font>
+								, der von Zeit zu Zeit abfällt. Mit Effekten, die Widerstände senken, fällt er öfter ab.
+							</font>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								Boss</font>
+						</td>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								Beschreibung/Belohnungen</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Lucions Flüstern</font> - Keller des Schmerzes<br><br>
+							<img src=".././images/map-bosses/lucionwhisper.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Aus den abgründigen Tiefen der Brennenden Höllen steigt Lucions Flüstern empor, ein gespenstischer Vorbote des Willens seines Meisters. Ein Schatten, gehüllt in unheimliches Feuer, weder ganz Dämon noch Schemen, sondern ein verfluchtes Echo von Lucions eigener Essenz.</i><br><br>
+								<font color="red">Ewige Feuer</font> - Lucions Flüstern kann Feuer beschwören, die 30 Sekunden lang brennen und enormen Feuerschaden verursachen.<br>
+								<font color="red">Schwächender Fluch</font> - Lucions Flüstern kann mit einer gewissen Chance einen Fluch auf den Boden wirken. Wer im Bereich steht, wird versteinert und sein Feuerwiderstand sinkt um 150 %.<br>
+								<font color="red">Teleportieren</font> - Lucions Flüstern kann sich bei Verletzung mit einer gewissen Chance wegteleportieren und ist dadurch unberechenbar.<br><br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 5 % Chance)<br> Karte der Stufe 2 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 25 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Diablos Höllenhund</font> - Schlund des Grauens<br><br>
+							<img src=".././images/map-bosses/diablohellhound.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Aus den geschwärzten Gruben der Brennenden Höllen erhebt sich Diablos persönlicher Höllenhund. Mehr als bloßes Fleisch und Fang ist er ein lebender Albtraum, eine Verkörperung des grenzenlosen Zorns des Großen Übels.</i><br><br>
+								<font color="red">Raserei</font> - Diablos Höllenhund gerät in Raserei und erhält mit jedem Angriff erhöhtes Angriffs- und Bewegungstempo.<br>
+								<font color="red">Zauber beim Angriff</font> - Diablos Höllenhund kann beim Angriff auf seine Beute mit einer gewissen Chance einen tödlichen Zauber entfesseln. Mögliche Zauber sind ein normaler Meteor, eine verheerende Gefrorene Kugel, deren Eisblitze nahe Spieler suchen, ein durchdringender Knochengeist und ein Fluch, der das Ziel verlangsamt und seine Elementarwiderstände um 100 % sowie seinen Magiewiderstand um 50 % senkt.<br><br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 5 % Chance)<br> Karte der Stufe 2 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 25 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Uralter gefallener Engel</font> - Nekropolis<br><br>
+							<img src=".././images/map-bosses/ancientfallenangel.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Einst ein strahlender Krieger der Hohen Himmel, wandert dieser Uralte gefallene Engel nun durch die Leere, ein verlassenes Relikt des himmlischen Krieges. Die Zeit hat ihm seinen Glanz genommen, seine einst schimmernde Rüstung ist vom Ruß zerstörter Reiche befleckt. Wo ihn einst goldene Schwingen auf göttlichem Licht trugen, hängen nun zerfetzte Überreste, verkohlt von den Feuern der Verdammnis.</i><br><br>
+								<font color="red">Vernichtungsnova</font> - Der Uralte gefallene Engel wirkt gelegentlich eine verheerende Nova, die physischen und magischen Schaden verursacht. Die Nova breitet sich langsam aus und hallt beim Auftreffen auf eine Oberfläche einmal wider, daher solltest du dich währenddessen unbedingt in einem anderen Raum verstecken.<br>
+								<font color="red">Kugelblitzsturm</font> - Der Boss wirkt beim Angriff oder wenn er verletzt wird gelegentlich einen Sturm aus Blitzkugeln, die in mehrere geladene Blitze zerplatzen.<br>
+								<font color="red">Raserei</font> - Der Boss gerät bei Verletzung mit durchschnittlich 10 % Chance in Raserei und erhält kurzzeitig maximales Angriffstempo.<br><br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 5 % Chance)<br> Karte der Stufe 2 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 25 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Terror in den Schatten</font> - Befallene Höhle<br><br>
+							<img src=".././images/map-bosses/terrorintheshadows.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Tief unter der Erde, wo die Luft schwer von Verwesung ist und Unsichtbares hinter dem Schleier der Dunkelheit huscht, lauert ein uralter Schrecken, der sein Reich aus der Angst selbst gewoben hat.</i><br><br>
+								<font color="red">Sprungangriff</font> - Die Riesenspinne springt gelegentlich auf ahnungslose Opfer und verursacht Flächenschaden.<br>
+								<font color="red">Spinnenbrut werfen</font> - Der Boss kann mit einer gewissen Chance eine Schar Spinnenjunge werfen, die einen tödlich giftigen Angriff haben und selbst Sprungangriffe ausführen können.<br>
+								<font color="red">Netzspucke</font> - Der Boss schleudert alle 4 Sekunden eine tödlich giftige Netzkugel. Die Giftkugel senkt Bewegungstempo und Giftwiderstand des getroffenen Ziels um 150 % sowie sein Angriffs- und Zaubertempo um 50 %.<br><br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 10 % Chance)<br> Karte der Stufe 3 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 35 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Doppelbosse</font> - Chaosspalte<br><br>
+							<img src=".././images/map-bosses/doubleboss.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Die chaotische Spalte ist höchst instabil; das hat das Gefüge der Raumzeit geschwächt und zwei Kartenbosse der Stufe 1 zusammengeführt.</i><br><br>
+								Die Bosse sind identisch mit ihren Gegenstücken aus den Karten der Stufe 1 und nutzen dieselben Fertigkeiten. Schwieriger wird es dadurch, dass du gegen beide gleichzeitig auf engem Raum kämpfen musst.<br><br>
+								<font color="#706850">Belohnungen (pro Boss)</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 5 % Chance)<br> Karte der Stufe 2 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 25 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Avatar der Nacht</font> - Labyrinth des Leidens<br><br>
+							<img src=".././images/map-bosses/avatarofthenight.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Wenn die Sonne verblasst und der Schleier der Nacht herabsinkt, erwacht es. Ein Schatten unter Schatten: Der Avatar der Nacht bewegt sich lautlos wie ein jagender Panther, seine obsidianfarbene Gestalt verschmilzt nahtlos mit dem Abgrund.</i><br><br>
+								<font color="red">Ansprung</font> - Der Avatar versucht gelegentlich, dich aus dem Hinterhalt anzuspringen, und schwächt dich mit einem Wahnsinnseffekt, der deinen physischen Widerstand um 100 % und deinen Kältewiderstand um 150 % senkt. Der Effekt versetzt dich jedoch auch in Tollwut und erhöht dein Angriffs-, Zauber- und Bewegungstempo um 100 %.<br>
+								<font color="red">Speerhagel</font> - Der Hauptangriff des Bosses ist ein Hagel aus Wurfspeeren mit gemischtem physischem und Kälteschaden, der auf nahe Spieler überspringen kann, sogar nach dem Aufprall an einer Wand.<br>
+								<font color="red">Zusammenlaufende Kältenova</font> - Ist der Boss nah bei dir, wirkt er eine Nova aus Eisblitzen, die an den Wänden haften bleiben und nach kurzer Zeit nahe Spieler suchen, also lauf weg. Wenn er verletzt wird, kann er diese Fähigkeit ebenfalls wirken.<br>
+								<font color="red">Passive Fähigkeiten</font> - Der Boss hat beim Angriff eine passive Chance auf tödlichen Schlag und vernichtenden Schlag.<br><br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 10 % Chance)<br> Karte der Stufe 3 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 35 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Herold des Unheils</font> - Endloser Abgrund<br><br>
+							<img src=".././images/map-bosses/heraldofdoom.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Vor langer Zeit, bevor die Verderbnis seine Seele schwärzte, wandelte er unter den Horadrim: ein Gelehrter verbotenen Wissens, ein Wahrheitssucher in den Schatten der Schöpfung. Doch Weisheit ist eine zweischneidige Klinge, und der, den man heute Herold des Unheils nennt, sah zu viel. Er blickte in den Abgrund elementarer Macht, nicht als vorsichtiger Wächter, sondern als williger Jünger. Und der Abgrund blickte zurück.</i><br><br>
+								<font color="red">Regen des Unheils</font> - Der verderbte Horadrim lässt gelegentlich einen Meteorregen auf seine Feinde niedergehen; jeder Meteor verursacht verheerenden physischen und Feuerschaden.<br>
+								<font color="red">Gewittersturm</font> - Der Boss beschwört manchmal einen Ring aus Blitzkugeln, die sich schließlich in tödliche Blitze verwandeln und nahe Feinde suchen; lauf also unbedingt los, sobald du sie siehst.<br>
+								<font color="red">Eishagel</font> - Der Boss kann außerdem Novas aus Eisblitzen beschwören, die keinen direkten Schaden verursachen, sondern an Oberflächen haften und nach kurzer Verzögerung nahe Spieler suchen.<br>
+								<font color="red">Meteorspirale</font> - Wer töricht genug ist, sich dem Zauberer zu nähern, dem schleudert er eine Spirale verheerender Meteore entgegen.<br>
+								<font color="red">Passive Fähigkeiten</font> - Der horadrische Zauberer durchdringt Elementarwiderstände um 100 %; erhöhe deine Widerstände also vor dem Kampf deutlich über das Maximum.<br><br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 15 % Chance)<br> Karte der Stufe 4 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 50 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Gletscherbehemoth</font> - Gefrorene Ödlande (Nördlicher Abstieg)<br><br>
+							<img src=".././images/map-bosses/glacialbehemoth.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Legenden erzählen von einer Zeit, als die Horadrim eine gewaltige Elementarkraft einkerkern wollten, aus Furcht, ihre rohe, ungezügelte Macht könne selbst die Großen Übel herausfordern. Doch Eis stirbt nicht. Es vergeht nicht. Es wartet. Und als die Siegel seines Gefängnisses zerbrachen, erhob sich der Gletscherbehemoth erneut, sein Atem ein Sturm aus messerscharfem Frost, jeder seiner Schritte ließ die Erde unter einer Lawine des Todes bersten.</i><br><br>
+								<font color="red">Permafrost</font> - Der Behemoth versucht, im Nahkampfbereich eine tödliche Eislawine zu beschwören, die eisige Feuer hinterlässt; diese verursachen 30 Sekunden lang enormen Kälte- und physischen Schaden.<br>
+								<font color="red">Dauerfrost</font> - Wenn er Schaden nimmt, kann er mit einer gewissen Chance einen versteinernden Fluch wirken, der deinen Kältewiderstand um 150 %, dein Bewegungstempo um 500 % und dein Zauber- und Angriffstempo um 200 % senkt.<br>
+								<font color="red">Ladung</font> - Wenn der Boss Schaden nimmt, kann er mit einer gewissen Chance mit irrsinniger Geschwindigkeit auf sein Ziel zustürmen und so den Abstand zu dir schließen.<br>
+								<font color="red">Störung</font> - Der Boss verströmt eine rätselhafte Aura, die deine Teleportfertigkeiten unterbindet.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 15 % Chance)<br> Karte der Stufe 4 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 50 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Der Aufseher</font> - Gefrorene Ödlande (Südlicher Abstieg)<br><br>
+							<img src=".././images/map-bosses/thetaskmaster.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Gehüllt in Ketten, die nicht nur Fleisch, sondern Seelen binden, kämpft er nicht allein. Mit einem kehligen Befehl ruft er die Bösen herbei, reißt den Schleier zwischen den Welten auf und entfesselt Legionen von Unholden, jeder an seinen eisernen Willen gebunden. Doch er schickt sie nicht einfach in den Kampf, er treibt sie an; schon seine Gegenwart entfacht Wahnsinn in seinen Dienern und treibt sie über Schmerz, über Furcht, über den Tod selbst hinaus.</i><br><br>
+								<font color="red">Blutdürstige Sklaven beschwören</font> - Der Aufseher beschwört regelmäßig blutdürstige Dämonen aus den Tiefen der Hölle, die ihm im Kampf beistehen. Die Diener sind gegen jeden Schaden immun, und ihre Immunitäten müssen auf normalem Weg gebrochen werden.<br>
+								<font color="red">Blutrausch</font> - Der Boss versucht, seine Diener in Raserei zu versetzen: Entweder erhalten sie 6 Sekunden lang einen Verstärkungseffekt, der sie extrem schnell heilt und ihnen Schaden sowie Angriffs- und Bewegungstempo verleiht, oder sie werden zu selbstmörderischen Sklaven.<br>
+								<font color="red">Selbstmörderische Sklaven</font> - Die selbstmörderischen Sklaven jagen Spieler und versuchen, ihnen ins Gesicht zu explodieren. Werden sie direkt von einem Spieler getötet, explodieren sie in einem äußerst verheerenden Feuerregen mit physischem und Feuerschaden und setzen einen zielsuchenden feurigen Todesschädel frei, der tödlichen Feuerschaden verursacht.<br>
+								<font color="red">Störung</font> - Der Boss verströmt eine rätselhafte Aura, die deine Teleportfertigkeiten unterbindet.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 15 % Chance)<br> Karte der Stufe 4 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 50 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Baals entstellter Vorbote der Zerstörung</font> - Schrein der Zerstörung<br><br>
+							<img src=".././images/map-bosses/baaldisfiguredharbinger.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Einst war es ein treuer und ergebener Diener des Herrn der Zerstörung, ein auserwählter Vorbote, der in Baals Namen Verderben säen sollte. Für einen flüchtigen Moment wagte es zu zweifeln, vor Baals Befehl zu zögern. Dafür wurde es zerstört und neu geformt, nicht vernichtet, sondern dem Leiden überlassen, umgestaltet vom grenzenlosen Zorn seines Meisters. Baal schenkte ihm nicht den Tod, sondern eine Lektion, eine ewige Narbe, eine groteske Mahnung, was denen widerfährt, die sich dem Herrn der Zerstörung widersetzen.</i><br><br>
+								<font color="red">Zielsuchende Kältenovas der Zerstörung</font> - Baals einstiger Diener wirkt am häufigsten eine tödliche Eiskugel, die Eisblitze verstreut. Zunächst schweben die Eisblitze kurz in der Luft, dann suchen sie mit extrem hoher Geschwindigkeit nahe Spieler, um sie zu durchbohren.<br>
+								<font color="red">Baals Blitzsturm</font> - Der Vorbote der Zerstörung hat sich an der arkanen Macht der hohen Engel versucht und gelernt, selten einen verheerenden Sturm aus Blitzkugeln zu wirken. Die Kugeln schweben kurz in der Luft und explodieren dann in geladene Blitze, die hohen Blitzschaden verursachen.<br>
+								<font color="red">Werkzeuge der Zerstörung beschwören</font> - Alle 30 Sekunden ruft er eine Horde Bestien der Zerstörung herbei. Bei Verletzung können sie mit einer gewissen Chance auf Spieler zustürmen, und beim Tod heilen sie nahe Verbündete; daher sind sie schwer schnell zu erledigen, und du solltest sie auf keinen Fall in der Nähe des Bosses töten.<br>
+								<font color="red">Meteorspirale</font> - Kommst du dem Vorboten der Zerstörung zu nahe, verteidigt er sich mit einer Meteorspirale, die verheerenden physischen und Feuerschaden verursacht.<br>
+								<font color="red">Passive Fähigkeiten</font> - Der Boss durchdringt 100 % deiner Elementarwiderstände; erhöhe sie also deutlich über das Maximum.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 20 % Chance)<br> Karte der Stufe 5 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 100 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Seelenrichter</font> - Reliquiar der Seelen<br><br>
+							<img src=".././images/map-bosses/arbiterofsouls.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Im endlosen Krieg zwischen Himmel und Hölle, in dem Engel und Dämonen um die Herrschaft ringen, gibt es eine Macht, die keiner Seite dient. Einst mag sie ein Engel gewesen sein, ein Wesen himmlischer Anmut, das die Toten in ihr bestimmtes Jenseits geleiten sollte. Doch dieser Zweck wurde verdreht, verdorben vom Flüstern des Abgrunds, bis daraus etwas völlig anderes wurde: ein kalter, unparteiischer Henker, abgeschnitten vom Licht wie von der Dunkelheit.</i><br><br>
+								<font color="red">Knochengeist</font> - Der Hauptangriff des Richters ist ein Knochengeist, der sehr hohen magischen Schaden verursacht und ein Ziel mehrfach treffen kann.<br>
+								<font color="red">Knochenspeerhagel</font> - Der Boss wirkt mit 4 Sekunden Abklingzeit einen Hagel aus Knochenspeeren, die nahe Feinde suchen. Sie verursachen hohen magischen Schaden und durchbohren ihre Ziele; weiche ihnen also am besten aus.<br>
+								<font color="red">Seelensturm</font> - Selten erweckt der Boss die Seelen der Toten, die nahe Spieler aufspüren und sie mit irrsinnig hohem magischem Schaden vernichten.<br>
+								<font color="red">Schwächender Fluch</font> - Wenn der Boss Schaden nimmt, kann er mit einer gewissen Chance einen Seelenfluch beschwören. Betroffene verlieren 150 % Bewegungstempo und 50 % Magiewiderstand.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 20 % Chance)<br> Karte der Stufe 5 (im Schnitt 25 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt 100 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Mephisto der Unbesiegbare</font> - Auge des Sturms<br><br>
+							<img src=".././images/map-bosses/mephistotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Zeitlose Helden zerschlugen seinen Seelenstein auf der Höllenschmiede und sahen zu, wie die Bruchstücke vom Abgrund verschlungen wurden. Sie glaubten, ihn vernichtet zu haben. Doch Hass lässt sich nicht so leicht vernichten. Tief in den glimmenden Adern der Hölle, wo das Echo des Leids nie verklingt, schwärten die Überreste von Mephistos Essenz. Obwohl sein Gefängnis zerbrochen war, überdauerte seine Bosheit und klammerte sich an das Gefüge der Hölle selbst. Jedes Flüstern des Verrats, jede Grausamkeit, jeder Tropfen unschuldigen Blutes, der auf die Erde fiel, nährte seine fortbestehende Präsenz und schmiedete seinen Geist in den Schatten neu. Aus dem glimmenden Abgrund erhob er sich aufs Neue. Nicht länger an einen Seelenstein gebunden, nicht länger von den Gesetzen der Vergangenheit gefesselt: Mephisto ist zurückgekehrt und mächtiger als je zuvor.</i><br><br>
+								<font color="red">Unbesiegbarkeit</font> - Wie sein Name sagt, ist Mephisto gegen jeden Schaden völlig unbesiegbar, und seine Immunitäten lassen sich nicht auf normalem Weg brechen.<br>
+								<font color="red">Giftbombe</font> - Mephistos Zermürbungszauber ist eine Giftbombe, die beim Aufprall auf den Boden explodiert und alle im Bereich mit einem unglaublich starken Gift belegt.<br>
+								<font color="red">Hagel geladener Blitze</font> - Etwa alle 12 Sekunden wirkt Mephisto einen Hagel geladener Blitze, die nahe Feinde suchen und sehr hohen Blitzschaden verursachen.<br>
+								<font color="red">Hagel aus Eiskugeln</font> - Nähert man sich Mephisto, wirkt er mit 12 Sekunden Abklingzeit einen Hagel aus Eiskugeln, die enormen Kälte- und physischen Schaden verursachen. Die Eiskugeln hören nach einem Treffer nicht auf, sondern suchen ihr Ziel und treffen es mehrfach; lauf vor diesem Zauber also unbedingt davon.<br>
+								<font color="red">Kältewellen-Gefängnis</font> - Selten wirkt Mephisto 4 Kältewellen, die über den ahnungslosen Spielern zusammenlaufen und allen in ihrem Weg extrem hohen Kälteschaden zufügen.<br>
+								<font color="red">Passive Fähigkeiten</font> - Mephisto durchdringt 100 % deiner Elementarwiderstände.<br>
+								<font color="green">Himmelslicht</font> - Im Kampf gegen Mephisto ist nicht alle Hoffnung verloren. Sehr selten, nachdem du Mephisto Schaden zugefügt hast, verstreuen sich die Lichter des Himmels über das Schlachtfeld. Wer eine Lichtkugel aufhebt, wird gestärkt: Du und alle betroffenen Beschwörungen können Mephisto für kurze Zeit Schaden zufügen.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 25 % Chance)<br>
+								<font color="purple">Mephistos dämonisches Horn</font><br> Karte der Stufe 5 (im Schnitt 25 % Chance)<br>
+								Pandemonium-Schlüsselset (im Schnitt 50 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Diablo der Unbesiegbare</font> - Auge des Sturms<br><br>
+							<img src=".././images/map-bosses/diablotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Aus den Tiefen des Abgrunds, wo die Grundfesten der Hölle am heißesten brennen, begann sich der Höllische Schmelztiegel zu regen, ein uraltes Relikt, älter als die Großen Übel selbst. Legenden zufolge wurden dort die ersten Dämonen geformt, dort wurde das Wesen der Dunkelheit selbst geschmiedet. Und nun flossen Diablos Überreste, angezogen vom Echo seines eigenen zerschmetterten Seins, in seine Flammen und schmiedeten den Herrn des Schreckens zu etwas Größerem, etwas Unzerbrechlichem um. Er kehrte nicht als der Diablo von einst zurück, sondern als etwas Mächtigeres. Nicht länger an Seelensteine gebunden, nicht länger verwundbar durch die Rituale der Menschen, ist er Diablo der Unbesiegbare: der fleischgewordene Schrecken, die verkörperte Dunkelheit, eine Macht reiner, unsterblicher Bosheit.</i><br><br>
+								<font color="red">Unbesiegbarkeit</font> - Wie sein Name sagt, ist Diablo gegen jeden Schaden völlig unbesiegbar, und seine Immunitäten lassen sich nicht auf normalem Weg brechen.<br>
+								<font color="red">Meteoritenregen</font> - Diablos normale Fähigkeit beschwört eine Linie von Meteoren, die enormen physischen und Feuerschaden verursachen.<br>
+								<font color="red">Feuernova</font> - Etwa alle 12 Sekunden entfesselt Diablo, angekündigt durch ein Geräusch, seine bislang verheerendste Feuernova. Die Feuernova breitet sich langsam aus und hinterlässt anhaltendes Feuer, das extrem hohen Feuerschaden verursacht; lauf also unbedingt weg, sobald du das Geräusch hörst.<br>
+								<font color="red">Hagel der Zerstörung</font> - Sehr selten beginnt Diablo, einen Hagel zielsuchender Feuerbälle zu wirken, die bei jedem Abprallen Meteore vom Himmel rufen und irrsinnig hohen physischen und Feuerschaden verursachen.<br>
+								<font color="red">Blitzstrom</font> - Sein alter Zauber ist mächtiger als je zuvor. Er wirkt seinen Blitzstrom alle 6 Sekunden und verursacht unfassbar hohen physischen und Blitzschaden.<br>
+								<font color="red">Passive Fähigkeiten</font> - Diablo durchdringt 100 % deiner Elementarwiderstände.<br>
+								<font color="green">Engel des Jüngsten Tages</font> - Im Kampf gegen Diablo ist nicht alle Hoffnung verloren. Sehr selten, nachdem du Diablo Schaden zugefügt hast (mit 10 Sekunden Abklingzeit), erscheinen Engel aus den Hohen Himmeln auf dem Schlachtfeld. Nachdem sie unweigerlich von Diablos Arsenal ausgelöscht wurden, stärken sie alle nahen Spieler und deren Diener für kurze Zeit, sodass ihr Diablo selbst Schaden zufügen könnt.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 25 % Chance)<br>
+								<font color="purple">Diablos dämonisches Horn</font><br> Karte der Stufe 5 (im Schnitt 25 % Chance)<br>
+								Pandemonium-Schlüsselset (im Schnitt 50 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Baal der Unbesiegbare</font> - Auge des Sturms<br><br>
+							<img src=".././images/map-bosses/baaltheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Die Welt hielt ihn für vernichtet. Sein Körper zerfiel, seine Essenz zerstreute sich, als der Weltstein zerbrach und seine uralte Macht sich in einer Kaskade himmlischer Zerstörung auflöste. Doch Baal war nicht vergangen, er war vom Herzen der Schöpfung selbst aufgesogen worden. Jahrelang ruhte seine Essenz, verteilt über die Bruchstücke des Weltsteins. Doch mit jedem Krieg, jeder Zerstörung in Sanktuario formte sich seine Macht langsam neu und nährte sich vom Chaos, vom Verfall, vom Zerfall der Welt, die er einst verderben wollte. Die Risse in der Wirklichkeit vertieften sich, das Echo seines Willens flüsterte durch das Gefüge des Daseins. Und dann kam der letzte Bruch. Baal erhob sich erneut, nicht länger an das Fleisch eines Großen Übels gebunden, nicht länger bloß ein Dämonenfürst. Er war nun etwas Größeres: nicht mehr Teil der Hölle oder Sanktuarios, sondern des zerbrochenen Fundaments der Welt selbst. Er gebietet nicht mehr nur über die Zerstörung, er ist nun die fleischgewordene Zerstörung, mächtiger als je zuvor.</i><br><br>
+								<font color="red">Unbesiegbarkeit</font> - Wie sein Name sagt, ist Baal gegen jeden Schaden völlig unbesiegbar, und seine Immunitäten lassen sich nicht auf normalem Weg brechen.<br>
+								<font color="red">Kettenblitz</font> - Baals Hauptfähigkeit ist ein Kettenblitz, der sehr hohen Blitzschaden verursacht, aus dem Nichts abprallen kann und nahe Feinde mehrfach sucht.<br>
+								<font color="red">Kalte Welle</font> - Baal hat eine geringe Chance, seine bislang zerstörerischste Kältewelle zu beschwören, die hohen Kälte- und physischen Schaden verursacht. Die Welle erzeugt regelmäßig Nachhalle, die nahe Spieler suchen.<br>
+								<font color="red">Meteorgefängnis</font> - Etwa alle 8 Sekunden wirkt Baal einen verheerenden Meteorkreis, der sich über dem ahnungslosen Ziel zusammenzieht und allen Betroffenen verheerenden physischen und Feuerschaden zufügt.<br>
+								<font color="red">Passive Fähigkeiten</font> - Baal durchdringt 100 % deiner Elementarwiderstände.<br>
+								<font color="green">Schwächungsturm</font> - Im Kampf gegen Baal ist nicht alle Hoffnung verloren. Etwa alle 13 Sekunden beschwört Baal dämonische Türme mit einem verheerenden Meteorangriff, die ihm im Kampf beistehen. Werden die Türme zerstört, stärken sie nahe Spieler und deren Diener, sodass diese Baal selbst Schaden zufügen können.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 25 % Chance)<br>
+								<font color="purple">Baals dämonisches Horn</font><br> Karte der Stufe 5 (im Schnitt 25 % Chance)<br>
+								Pandemonium-Schlüsselset (im Schnitt 50 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Hüter der Zeit</font> - Die Eiskronenzitadelle (Der Rand der Ewigkeit)<br><br>
+							<img src=".././images/map-bosses/guardiansoftime.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Vor langer Zeit standen drei Krieger als letzte Wächter des Berges Arreat, geschworen, den Weltstein vor den Händen der Unwürdigen zu bewahren. Korlic, Talic und Madawc, Helden eines längst vergangenen Zeitalters, stellten sich allen entgegen, die es wagten, einzudringen. Sie wurden weder von Hass noch von Eroberungslust getrieben, sondern waren an die Pflicht gebunden, an einen heiligen Eid, der selbst den Tod überdauerte. Doch die Pflicht ist ein grausamer Herr. Als der Weltstein zerbrach, ging die Macht verloren, die sie einst beschützten, und mit ihr ihr Lebenszweck. Ihre Körper zerfielen, ihre Geister lösten sich in der Leere auf… so glaubte zumindest die Welt. Was die Nephalem nicht ahnten: Die Ahnen waren nie wirklich sterblich. Jahrhunderte, die wie ein Augenblick vergingen, trieben sie außerhalb der Wirklichkeit und sahen zu, wie Sanktuario immer tiefer in die Verderbnis sank. Sie sahen, wie die Menschheit, die Kinder des Weltsteins selbst, ihre Bestimmung aufgab und ihre verbotene Nephalem-Macht führte, als wären sie Götter. Sie sahen die Kriege, den Verrat, die rücksichtslose Zerstörung des einst heiligen Gleichgewichts. Und in der Leere schlug eine neue Bestimmung Wurzeln. Die Ahnen kehrten nicht als Beschützer zurück. Sie kehrten als Henker zurück.</i><br><br>
+								<font color="red">Unbesiegbarkeit</font> - Die zurückgekehrten Ahnen sind Wesen von ungeheurer Macht, die die Zeit selbst beherrschen. Ihre Angriffe verursachen zu gleichen Teilen physischen und magischen Schaden. Mit normalen Mitteln kannst du ihnen keinen Schaden zufügen.<br><br>
+								<font color="#706850">Korlic</font><br>
+								<font color="red">Kataklysmus</font> - Korlic setzt gelegentlich einen verheerenden Angriff ein, der eine Gesteinslawine vom Himmel regnen lässt und allen Betroffenen enormen physischen Schaden zufügt.<br>
+								<font color="red">Zusammenlaufende Äxte</font> - Manchmal beschwört er aus dem Nichts Äxte, die auf ihr Ziel zulaufen. Wer in der Mitte steht, findet einen schnellen Tod.<br>
+								<font color="red">Passive Fähigkeiten</font> - Wenn Korlic Schaden nimmt, kann er mit einer gewissen Chance auf den Feind zustürmen.<br>
+								<font color="green">Himmelslicht</font> - Fügst du Korlic Schaden zu, greift mit geringer Chance der Himmel ein und beschwört Kugeln aus reinem Licht. Berührst du sie, werden du und betroffene Verbündete in der Nähe gestärkt.<br><br>
+								<font color="#706850">Talic</font><br>
+								<font color="red">Axtgefängnis</font> - Talic beschwört manchmal mehrere Axt-Novas, die das ahnungslose Ziel suchen und massiven physischen und magischen Schaden verursachen.<br>
+								<font color="green">Ewiger Pendel</font> - Bei Nahkampfangriffen kann Talic mit einer gewissen Chance Ewige Pendel beschwören. Die Pendel rufen den Sand der Zeit herbei, der nahe Feinde sucht, verheerenden physischen Schaden verursacht und das Ziel kurz betäubt. Zerstörst du ein Pendel, werden du und Verbündete in der Nähe gestärkt.<br><br>
+								<font color="#706850">Madawc</font><br>
+								<font color="red">Magische Axt</font> - Madawcs Hauptangriff ist eine magische Axt, die nahe Ziele verfolgt und verheerenden magischen und physischen Schaden verursacht.<br>
+								<font color="red">Hagel magischer Äxte</font> - Gelegentlich gerät Madawc in Raserei und wirft in rascher Folge magische Äxte.<br>
+								<font color="red">Nova magischer Äxte</font> - Sehr selten zapft Madawc die Macht der Zeit selbst an und beschwört eine verheerende Nova magischer Äxte, die in den Wänden stecken bleiben und nach kurzer Zeit nahe Spieler suchen.<br><br>
+
+								<font color="purple">Zeitlos</font> - Die zurückgekehrten Ahnen sind über den Zustand Sanktuarios erzürnt und daher gegen jeden Schaden völlig unsterblich. Erst wenn du sowohl die Stärkung des Ewigen Pendels als auch das Himmelslicht besitzt, kannst du ihnen Schaden zufügen.<br><br>
+
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt je 16.67 % Chance)<br>
+								<font color="#706850">Ewiger Sanduhr der zeitlosen Sande (Einzigartiger großer Zauber)</font>
+								<br>(du musst alle töten, um ihn zu schmieden)<br> Karte der Stufe 5 (im Schnitt je 17 % Chance)<br>
+								Zufälliger Pandemonium-Schlüssel (im Schnitt je 100 % Chance)<br>
+								Weitere allgemeine Gegenstände/Materialien<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Der Lichkönig</font> - Die Eiskronenzitadelle (Der Gefrorene Thron)<br><br>
+							<img src=".././images/map-bosses/thelichking.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>Die Grenzen zwischen den Welten sind nicht so unzerbrechlich, wie die Gelehrten Sanktuarios einst glaubten. Der Weltstein war der Anker der Wirklichkeit, eine göttliche Barriere, die Sanktuario vom Einfluss der Hohen Himmel wie der Brennenden Höllen trennte. Doch als Tyrael ihn zerschlug, wurde diese Barriere für immer geschwächt. Und etwas anderes wurde aufmerksam. Weit jenseits der Reiche des Ewigen Konflikts, in einer von Krieg und Tod verzehrten Welt, herrschte der Lichkönig in kalter Stille. Seine Herrschaft war absolut, seine Legionen endlos, doch der Hunger nach Eroberung kennt keine Grenzen. Denn der Tod ist nicht auf eine einzige Welt beschränkt, und die Macht der Zerstörung des Weltsteins hallte durch die Leere zwischen den Wirklichkeiten und rief nach etwas, das Sanktuarios Verständnis übersteigt. Der Lichkönig will die Welt nicht verbrennen wie die Großen Übel, noch sie mit Lügen verderben. Er will sie sich nehmen. Die Brennenden Höllen schwelgen im Chaos; er bringt Ordnung durch den Tod. Die Himmel kämpfen für Gerechtigkeit; er hält Gerechtigkeit für eine Illusion. Für ihn endet alles im Untod, und selbst die Engel und Dämonen, die seit Urzeiten Krieg führen, werden sich vor der gefrorenen Stille der Ewigkeit verneigen. Setzt du seiner Herrschaft kein Ende, wird er ganz Sanktuario versklaven. Dies ist das Ende aller Dinge.</i><br><br>
+								<font color="red">Zusammenlaufende Kälte</font> - Die normale Fähigkeit des Lichkönigs ist eine zusammenlaufende Nova aus 6 Kältestacheln, die allen Getroffenen sehr hohen Kälte- und physischen Schaden zufügen.<br>
+								<font color="red">Kältenova</font> - Die zweite Fähigkeit des Lichkönigs ist eine schnelle Kältewelle, die für jeden getroffenen Feind eine Eiskugel beschwört. Die Kugel explodiert nach 1 Sekunde Verzögerung, verursacht enormen Kälteschaden in einem Radius von 5 Metern und friert 2 Sekunden lang ein.<br>
+								<font color="red">Ansprung</font> - Etwa alle 10 Sekunden greift der Lichkönig ein ahnungsloses Ziel an und entfesselt eine Nova aus reiner Energie, die nahe Feinde zurückstößt, kurz gefolgt von <font color="red">Ewiger Winter</font>. Gleichzeitig beschwört er 2
+								<font color="#706850">Walküren</font>.<br>
+								<font color="red">Ewiger Winter</font> - Selten entfesselt der Lichkönig zusätzlich zum Nachsatz von Ansprung eine tödliche Nova aus blauem Feuer, die allen Betroffenen die Seele aussaugt, extrem hohen physischen und Kälteschaden verursacht, den Kältewiderstand um 150 % und den physischen Widerstand um 75 % senkt und Betroffene fast bis zum Stillstand verlangsamt. Dieser Zauber wird durch ein Geräusch angekündigt.<br>
+								<font color="red">Untote beschwören</font> - Etwa alle 20 Sekunden beschwört der Lichkönig 4 Ghule und 1 Abscheulichkeit, die ihm im Kampf beistehen.<br>
+								<font color="red">Schattenfalle</font> - Wenn der Lichkönig Schaden nimmt, kann er mit einer gewissen Chance eine Schattenfalle unter dem angreifenden Spieler beschwören. Nach kurzer Zeit macht sich die Schattenfalle scharf und entfesselt eine Welle aus <font color="red">Ewiger Winter</font> Feuern, sobald jemand darauf tritt.<br><br>
+								<font color="#706850">Ghule</font><br>
+								Ghule besitzen den Geist der Untoten und regenerieren sehr schnell. Wenn sie verletzt werden, können sie außerdem mit einer gewissen Chance auf ihr Ziel zustürmen.
+								<br><br>
+								<font color="#706850">Abscheulichkeiten</font><br>Die Abscheulichkeit ist gegen jeden Schaden immun, und ihre Immunität lässt sich nicht auf normalem Weg brechen. Wenn sie Schaden nimmt, kann sie mit einer gewissen Chance in Raserei geraten und entweder ihren Schaden oder ihr Bewegungstempo erhöhen. Sehr selten veranlasst die Abscheulichkeit beim Erleiden von Schaden die Himmel, dem Spieler im Kampf beizustehen, und diese senden das <font
+									color="green">Himmelslicht</font>. Hebt der Spieler das Licht auf, kann er der Abscheulichkeit Schaden zufügen und sie töten.<br><br>
+								<font color="#706850">Walküren</font><br>Die Walküren verursachen hohen physischen und Kälteschaden.<br>
+								Werden sie getötet, stärken sie nahe Spieler mit dem <font color="green">Licht der Hoffnung</font>.<br>
+								<font color="purple">Zeitlos</font> - Als Wesen von außerhalb von Sanktuarios Raum und Zeit ist der Lichkönig gegen den Schaden dieser Welt völlig unsterblich. Um ihm Schaden zufügen zu können, brauchst du die Effekte von <font color="green">Licht der Hoffnung
+								</font>
+								and <font color="green">Himmelslicht</font>.<br><br>
+								<font color="purple">Über-Variante</font> - Wenn du diesen Kampf mit /players 8 spielst, wird die Über-Variante aktiviert und alle Feinde werden wie folgt gestärkt.<br>
+								<font color="#706850">Der Lichkönig</font> - Der Lichkönig beschwört 3-mal so viele Ghule und Abscheulichkeiten.<br>
+								<font color="#706850">Ghule</font> - Ghule geraten nun bei jedem Treffer in Raserei und erhalten 25 % physischen und Kälteschaden. Dieser Effekt ist stapelbar.<br>
+								<font color="#706850">Walküren</font> - Der Lichkönig beschwört 6 statt 2 Walküren, und sie verursachen doppelt so viel Schaden.<br>
+								<br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 50 % Chance)<br>
+								<font color="#706850">Besonderes mythisches Unikat</font><br> Karte der Stufe 5 (im Schnitt 50 % Chance)<br>
+								Pandemonium-Schlüsselset (100 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+								<font color="#706850">Belohnungen (Über-Variante)</font><br>
+								Wenn du den Lichkönig mit /players 8 tötest, kannst du deinen Aufstiegstein transmutieren mit einem <font color="PURPLE">Null-Rune</font> für einen Bonus <font
+									color="GREEN">+1 zu allen Fähigkeiten</font>.<br>Dieses Rezept kann nur einmal ausgeführt werden.
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Rathma</font> - Das Heiligtum der Toten (Die Dämmerbasilika)<br><br>
+							<img src=".././images/map-bosses/rathma.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									Unter dem sterbenden Licht Sanktuarios stiegen die Helden in das Heiligtum der Toten hinab, ein Labyrinth aus Knochen und flüsternder Asche, tief in der Unterwelt begraben. Die Luft flimmerte von gefangenen Seelen, deren fahler Schein den schwarzen Marmor in gespenstische Farben tauchte. Sie kamen auf der Suche nach Rathma, dem Ersten Totenbeschwörer. Einst Hüter des Gleichgewichts, nun dessen Verräter. Das Gleichgewicht, dem er einst diente, war zur Besessenheit verkümmert; er wollte den Tod aufheben und beide Enden der Ewigkeit beherrschen. An seiner Seite stand Kor'nac, der Hohlapostel, sein treuester Wiedergänger, gehüllt in die Gewänder eines vergessenen Glaubens. Das Fleisch fiel von seinen Knochen, und jedes in sein Fleisch geritzte Wort pulsierte vor verbotener Gnade. Seine Stimme war ein Klagelied, das selbst die Geister wanken ließ. Stahl, Flamme und Glaube trafen an jenem Ort, an dem das Leben keine Bedeutung hatte, auf Schatten und Verfall. Die Helden wussten, dass sie nicht nur dem Tod gegenüberstanden, sondern seinem Baumeister.
+								</i><br><br>
+								<font color="#706850">Rathma</font><br>
+								<font color="#8B0000">Schleier der Toten</font> - Rathma verströmt eine Aura, die Helden daran hindert, Teleportfertigkeiten einzusetzen.<br>
+								<font color="red">Knochenspeerhagel / Giftzorn</font> - Rathma wechselt zwischen einem Hagel aus 3 Knochenspeeren und einem Hagel aus 3 Giftzornen, die verheerenden magischen beziehungsweise Giftschaden verursachen.<br>
+								<font color="red">Knochengeist</font> - Selten wirkt Rathma einen Knochengeist, der mit der Zeit schneller wird. Bei einem Treffer verursacht er extrem hohen magischen Schaden.<br>
+								<font color="red">Knochengefängnis</font> - Bist du Rathma relativ nahe, errichtet er etwa alle 20 Sekunden ein Knochenlabyrinth um dich mit nur wenigen Auswegen. Entkommst du dem Labyrinth nicht rechtzeitig, lässt er den Bereich explodieren und <font color="RED">
+									tötet dich sofort</font>
+								. Nach der Explosion erweckt er die <font color="red">Lebenden Toten</font> aus dem entweihten Boden.
+								<br>
+								<font color="green">Welkende Bildnisse beschwören</font> - Alle 20 Sekunden erweckt Rathma 4 welkende Bildnisse, die einen stapelbaren Schwächungseffekt auf den Spieler wirken, <font color="red">der Magiewiderstand und Bewegungstempo senkt</font>. Tötest du sie, bevor sie von selbst zerfallen, werden du und Verbündete in der Nähe <font color="green">gestärkt</font> , und zwar für 10 Sekunden.<br>
+								<font color="#706850">Kor'nac, Der Hohlapostel</font><br>
+								Kor'nac ist Rathmas treuester Diener und steht ihm im Kampf jederzeit bei.<br>
+								<font color="red">Verheerender Hieb</font> - Gelegentlich schlägt Kor'nac auf den Boden und sendet verheerende Schockwellen aus, die extrem hohen physischen Schaden verursachen.<br>
+								<font color="red">Wachsender Hass</font> - Mit der Zeit wird Kor'nac mächtiger, erhält erhöhtes Bewegungstempo und verbessert seinen Hieb.
+								<br>
+								<br>
+								<font color="#706850">Lebenden Toten</font><br>
+								Die Lebenden Toten sind nicht schwer zu erledigen, können aber bei Verletzung mit geringer Chance auf den Feind zustürmen.<br>
+								<font color="green">Brennende Seele</font> - Getötete Lebende Tote hinterlassen ihre gequälte Seele. Wer sie aufhebt, wird <font color="green">gestärkt</font> , und zwar für 10 Sekunden.<br><br>
+								<font color="purple">Zeitlos</font> - Rathma ist der Meister der Untoten und hat grenzenlose Macht erlangt, die ihn unbesiegbar macht. Nur mit der Stärkung durch die Bildnisse und die Seelen der Lebenden Toten kannst du ihm Schaden zufügen. Rathma überträgt seine Unbesiegbarkeitsaura auf seinen vertrautesten Diener, Kor'nac.<br><br>
+								<font color="purple">Über-Variante</font> - Wenn du diesen Kampf mit /players 8 spielst, wird die Über-Variante aktiviert und alle Feinde werden wie folgt gestärkt.<br>
+								<font color="#706850">Rathma</font> - Sinkt sein Leben auf 25 %, gerät Rathma in Raserei, sendet flächendeckende Schockwellen aus, erhält erhöhtes Zaubertempo und lässt Meteore regnen, die verheerenden physischen und Feuerschaden verursachen.<br>
+								<font color="#706850">Die Lebenden Toten</font> - Die Lebenden Toten erhalten beim Ansturm außerdem 500 % Bonusschaden, und ihr Ansturmeffekt hält dreimal so lange an.<br>
+								<font color="#706850">Kor'nac, Der Hohlapostel</font> - Kor'nac gerät doppelt so schnell in Raserei.<br>
+								<br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 50 % Chance)<br>
+								<font color="#706850">Rathmas ewiger Schädel (Einzigartiger kleiner Zauber)</font><br> Karte der Stufe 5 (im Schnitt 50 % Chance)<br>
+								Pandemonium-Schlüsselset (100 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+								<font color="#706850">Belohnungen (Über-Variante)</font><br>
+								Wenn du Rathma und Kor'nac, den Hohlapostel, innerhalb einer Minute nacheinander tötest, kannst du Rathmas ewigen Schädel mit sich selbst transmutieren und erhältst folgende Boni:<br>
+								<font color="#4850B8">Magieresistenz +5%<br>
+									+5% zu maximaler Giftschutz<br>
+									+(10 bis 20) zu Erhebe Kor'nac<br></font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">Lucion</font> - Der Altar der Verdammten Erlösung (Das Reliquiar des falschen Lichts)<br><br>
+							<img src=".././images/map-bosses/lucion.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									Lucion, Sohn Mephistos und Bruder Liliths, wurde einst in den Abgrund verbannt, nachdem sein Versuch gescheitert war, Sanktuario einer dämonischen Ordnung zu unterwerfen. Doch das reine Böse stirbt nie, es schwärt. Durch den verdorbenen Glauben eines vergessenen Kults wurde Lucions Essenz heimlich neu entfacht, seine Seele an die Glut einer sterbenden Welt gebunden. Nun, wiedergeboren in Gestalt lebender Flammen, sinnt er auf Rache an den Lebenden und glaubt, die Welt der Sterblichen solle als Schmelztiegel einer neuen, nach seinem Bild geschmiedeten Schöpfung brennen. Jede verschlungene Seele stärkt sein höllisches Licht und nährt ein Feuer, das alles Dasein zu verzehren droht. Nur wenn man seine Bindung an die Welt der Sterblichen kappt und den höllischen Kern löscht, der ihn antreibt, lässt sich Lucion aufhalten. Sollte er über seine jetzige Gestalt hinaus aufsteigen, würden selbst die Großen Übel vor seinem Zorn erzittern.
+								</i><br><br>
+								<font color="#706850">Lucion</font><br>
+								<font color="red">Feuersturm</font> - Einer von Lucions normalen Angriffen ist ein verheerender Feuersturm, der nach 1 Sekunde Verzögerung alles auf seinem Weg verbrennt.<br>
+								<font color="red">Meteorlinie</font> - Lucion wechselt seinen Feuersturm mit einem Angriff ab, der eine Linie von Meteoren beschwört, die enormen Feuer- und physischen Schaden verursachen.<br>
+								<font color="red">Feuriger Ansprung</font> - Etwa alle 10 Sekunden springt Lucion ein ahnungsloses Ziel an und entfesselt eine verheerende, zusammenlaufende Feuernova. Die Feuerblitze laufen nach kurzer Zeit zusammen und verursachen dreimal so viel Schaden wie die anfängliche Nova; ihnen muss also um jeden Preis ausgewichen werden. Nach dem Sprung beschwört Lucion außerdem 4 <font color="#706850">Hohepriester</font> , die ihm im Kampf beistehen.<br>
+								<font color="red">Feueransturm</font> - Jedes Mal, wenn Lucion zuspringt, beschwört er einen Sturm aus Feuerblitzen, der den Raum erfüllt. Die Blitze verursachen verheerenden Feuerschaden.<br>
+								<font color="red">Religiöse Fanatiker beschwören</font> - Selten beschwört Lucion 10 religiöse Fanatiker, die ihm im Kampf dienen. Die Fanatiker wirken einen stapelbaren Schwächungseffekt, der erlittenen physischen und Elementarschaden erhöht.<br>
+								<font color="orange">Reinigende Flammen</font> - Etwa alle 8 Sekunden beschwört Lucion reinigende Flammen um sich, die allen, die sie berühren, mäßig hohen Schaden zufügen. Wer hineintritt, wird <font color="green">gestärkt</font> , und zwar für 4 Sekunden.
+								<br><br>
+								<font color="#706850">Hohepriester</font><br>
+								Die Hohepriester sind hochspezialisierte Zauberwirker im Dienste Lucions.<br>
+								<font color="red">Feuerkugel</font> - Ihr normaler Angriff ist eine Feuerkugel, die beim Aufprall den Boden versengt und hohen Feuerschaden verursacht.<br>
+								<font color="red">Dämonische Stärkung</font> - Gelegentlich stärken sie Verbündete in der Nähe und erhöhen deren Schaden sowie Angriffs-/Zaubertempo um 3 %. <font color="red">Dieser Effekt ist stapelbar.
+								</font><br>
+								<font color="green">Lichtstärkung</font> - Beim Tod stärken die Hohepriester Spieler in der Nähe.<br><br>
+								<font color="#706850">Religiöse Fanatiker</font><br>
+								Religiöse Fanatiker sind äußerst aggressive Diener Lucions.<br>
+								<font color="red">Gletscherstachel/Blitz</font> - Wenn sie nicht gerade auf dich zurennen, um dich in Stücke zu reißen, wirken sie einen sehr schädlichen Kälte-/Blitzzauber, der alles durchdringt.
+								<br>
+								<br>
+								<font color="purple">Zeitlos</font> - Lucion ist eine höllische Bestie von ungeheurer Macht und daher gegen normale Angriffe unbesiegbar. Um ihm Schaden zufügen zu können, brauchst du die Effekte von <font color="green">Lichtstärkung</font> and <font color="orange">
+									Reinigende Flammen</font>.<br><br>
+
+								<font color="purple">Über-Variante</font> - Wenn du diesen Kampf mit /players 8 spielst, wird die Über-Variante aktiviert und alle Feinde werden wie folgt gestärkt.<br>
+								<font color="#706850">Lucion</font> - Lucion verströmt eine dämonische Aura, die alle 20 Sekunden seinen Schaden und den seiner Verbündeten um 5 % sowie ihr Angriffs- und Zaubertempo um 2 % erhöht. Dieser Effekt ist unbegrenzt stapelbar.<br>
+								<font color="#706850">Hohepriester</font> - Die Verstärkung der Hohepriester ist nun doppelt so stark und erhöht Schaden sowie Angriffs-/Zaubertempo um 6 % statt 3 %.<br>
+								<font color="#706850">Religiöse Fanatiker</font> - Lucion beschwört 20 statt 10 religiöse Fanatiker.<br>
+								<br>
+								<font color="#706850">Belohnungen</font><br>
+								<font color="purple">Salbölkchen</font> (im Schnitt 50 % Chance)<br>
+								<font color="orange">Lucions feuriges Relikt</font><br> (siehe <a
+									href="Eastern%20Sun%20Resurrected%20Cube%20Recipes.html#legendary">Legendäre Komponenten</a> für die Liste der Boni)<br>
+								Karte der Stufe 5 (im Schnitt 50 % Chance)<br>
+								Pandemonium-Schlüsselset (100 % Chance)<br> Weitere allgemeine Gegenstände/Materialien<br><br>
+								<font color="#706850">Belohnungen (Über-Variante)</font><br>
+								Wenn du Lucion mit /players 8 tötest, lässt er seine Essenz fallen (<font color="ORANGE">Lucion's Essenz</font>). Die Essenz ist eine stärkere Version eines Socket Donut.
+							</font>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</a>
+	</center>
+</body>
+
+</html>

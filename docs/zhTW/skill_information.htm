@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 資料庫
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35486;&#35328;"><select id="esr-lang-zhTW" aria-label="&#35486;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW" selected>&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhTW",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhTW');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本資訊</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日誌]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[護甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前綴]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[後綴]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金護甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套裝]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石之語]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之語]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[方塊配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地圖]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速計算器]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查詢]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系統</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化結果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油結果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[終局地圖]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[靈魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[進階職業]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[擊殺帳簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵與外部技能資訊]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器專精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破壞神 II：獄火重生 全面轉換模組</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            這裡可以找到傭兵與各種物品技能的資訊。<br>
+                            如果你覺得這裡還能補充什麼，請在 Discord 上聯絡我，我會加上去。
+                        </font>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a name="mercenaries"></a>
+        <font size="-1" face="arial,helvetica">
+            <a href="./skill_information.htm#mercenaries">[傭兵]</a>&nbsp;
+            <a href="./skill_information.htm#oskills">[物品技能]</a>&nbsp;
+        </font>
+        <br>
+        <br>
+        <table cellpadding="5" cellspacing="0"
+            style="border-collapse:collapse; max-width: 1200px; text-align:left; color:#fff; font-family:Arial, sans-serif; width:100%; border:2px solid #000;">
+            <tr style="background-color:#402040; border:2px solid #000;">
+                <td colspan="4" style="text-align: center;">
+                    <b>傭兵</b>
+                </td>
+            </tr>
+            <tr style="background-color:#402040; border:2px solid #000; text-align: center;">
+                <th style="border:2px solid #000;">傭兵</th>
+                <th style="border:2px solid #000;">子類型</th>
+                <th style="border:2px solid #000;">技能</th>
+            </tr>
+            <!-- Rogue Scout -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">遊俠偵察員</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">元素法術</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">焚燒箭, 冰凍箭, 閃電箭, 內視, 銳化專注, 穿透</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">遊俠偵察員</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">物理</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">多重射擊, 龍捲風射擊, 傳奇箭矢, 內視, 銳化專注, 穿透</font>
+                </td>
+            </tr>
+            <!-- Desert Mercenary -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">戰鬥 - 普通</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">力量, 刺擊, 矛風暴, 死亡之舞
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">防禦 - 普通</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">祈禱, 刺擊, 集中, 死亡之舞
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">攻擊 - 普通</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">神聖之火, 熱情, 復仇, 審判</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">戰鬥 - 惡夢</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">狂熱主義, 刺擊, 矛風暴, 死亡之舞</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">防禦 - 惡夢</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">冥想, 熱情, 集中, 死亡之舞</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">攻擊 - 惡夢</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">神聖冰凍, 熱情, 復仇, 審判
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">戰鬥 - 地獄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">定罪, 熱情, 復仇, 審判</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">防禦 - 地獄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">活力, 刺擊, 集中, 死亡之舞
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">沙漠傭兵</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">攻擊 - 地獄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">神聖震擊, 刺擊, 矛風暴, 死亡之舞</font>
+                </td>
+            </tr>
+            <!-- Eastern Sorcerer -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">東方術士</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰傷害光環, 火焰風暴, 火山, 火焰爆發</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">東方術士</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">冰寒</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">寒冷傷害光環, 漩渦, 季風, 冰凍爆炸</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">東方術士</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">閃電</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">閃電傷害光環, 電擊, 導管, 風暴樞紐</font>
+                </td>
+            </tr>
+            <!-- Barbarian -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">野蠻人</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">防禦靈氣</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">吼叫, 戰鬥指揮, 戰鬥命令, 眩暈, 集中</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">野蠻人</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">攻擊靈氣</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">嚎叫、戰鬥命令、遠古者之臨、狂暴、專注</font>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <a name="oskills"></a>
+        <font size="-1" face="arial,helvetica">
+            <a href="./skill_information.htm#mercenaries">[傭兵]</a>&nbsp;
+            <a href="./skill_information.htm#oskills">[物品技能]</a>&nbsp;
+        </font>
+        <br>
+        <br>
+        <table cellpadding="5" cellspacing="0"
+            style="border-collapse:collapse; max-width: 1200px; text-align:left; color:#fff; font-family:Arial, sans-serif; width:100%; border:2px solid #000;">
+            <tr style="background-color:#402040; border:2px solid #000;">
+                <td colspan="3" style="text-align: center;">
+                    <b>物品技能</b>
+                </td>
+            </tr>
+            <tr style="background-color:#402040; border:2px solid #000; text-align: center;">
+                <th style="border:2px solid #000;">點</th>
+                <th style="border:2px solid #000;">說明</th>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">箭矢、火焰/冰寒/閃電/魔法強化箭
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一支普通的箭，造成 100% 武器傷害且無法穿透。元素強化版本會把 100% 的物理傷害轉換為對應的傷害類型。</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">擲斧、火焰/冰寒/閃電/魔法強化斧
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一把普通的斧頭，造成 100% 武器傷害且無法穿透。元素強化版本會把 100% 的物理傷害轉換為對應的傷害類型。</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰/冰寒/閃電/毒素/魔法/風之湧動
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一種小範圍的瞬間法術傷害技能。每個技能都會從其所屬元素的所有法術獲得協同加成（例如火焰湧動會從所有直接傷害的火焰法術獲得協同加成，像是烈焰爆發或火山）。與其他觸發不同，它們會繼承十字弓的額外傷害。</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">元素湧動
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰、冰寒、閃電、魔法與風之湧動，5 合 1。</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰/冰寒/閃電/魔法/風之烙印
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個在目標敵人身上附加烙印的技能，延遲 0.4 秒後造成 100% 轉換為對應元素的武器傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰/冰寒/閃電/魔法/非元素尖刺新星
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個釋放 64 根尖刺新星的技能，造成 100% 轉換為對應元素的武器傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">時間延遲</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個在觸發或施放時單純治療使用者的技能。等級 = 治療百分比（例如等級 10 = 治療最大生命的 10%）。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">超級新星</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一道覆蓋全螢幕的新星，造成 150% 轉換為閃電傷害的武器傷害，並擊退所有敵人。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">自然之靈 精通</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一項被動技能，每級提供 1% 物理抗性與 5% 生命（與野性精通加成相加）。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">熱身</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，每級提供 2% 攻擊速度、2% 移動速度、2% 施法速度與 10% 法力回復。每級也會每秒回復約 10 點生命。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">冰刃/雷爪/火拳釋放</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">觸發時會釋放一個模擬 3 層蓄力的蓄力技能。它們享有與一般技能相同的協同加成。與物理終結釋放觸發不同，它們使用觸發本身的等級，而不是已學技能的等級。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰/冰寒/閃電傷害靈氣</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">每級為受影響的隊友提供 5% 對應元素的法術傷害的靈氣。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰/冰寒/閃電穿透靈氣</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">每級讓附近敵人對該元素的抗性降低 1% 的靈氣。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">龍之狂怒/處決釋放</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">這是物品上的觸發效果；觸發時會對敵人釋放一個完全蓄滿、當前等級（已學技能等級，而非觸發等級）的龍之狂怒/處決。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">物理傷害獎杯</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供 800% 傷害強化與 50-100 攻擊物理傷害。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">速度獎杯</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供 100% 基礎攻擊與跑步/行走速度、100% 施法速度、100% 格擋速度與 100% 打擊恢復速度。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">法術傷害獎杯</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供 300% 法術傷害。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">生存獎盃</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，使最大生命與法力提高 150%。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">抗性獎盃</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供 100% 元素與毒素抗性，以及 50% 物理與魔法抗性。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">數據獎盃</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供所有屬性 +150。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">技能戰利品</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供所有技能 +10。持續 20 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">譫妄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個增益，提供所有屬性 50% 加成、擊中時 15 點生命與詛咒免疫（ <strong>不會</strong> 解除現有的詛咒），持續 4 秒。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰/冰寒/閃電閃光</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一種多重射擊型攻擊，以錐形射出 1 發火焰/冰寒/閃電彈，每 5 級再 +1 發。每發都有 100% 的天生穿透機率，並把所有物理傷害轉換為對應元素。造成 125% 武器傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">枷鎖</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個詛咒，使敵人移動速度降低 100% + 每級 5%，總護甲降低 20% + 每級 1%。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">熱寂</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個法術，立即對附近敵人造成其目前生命 50% 的火焰傷害。作用範圍為 10 + 每級 2/3 碼。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">絕對零度</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個法術，立即對附近敵人造成其目前生命 50% 的冰寒傷害。作用範圍為 10 + 每級 2/3 碼。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">超載</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個法術，立即對附近敵人造成其目前生命 50% 的閃電傷害。作用範圍為 10 + 每級 2/3 碼。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">奇點</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個法術，立即對附近敵人造成其目前生命 50% 的魔法傷害。作用範圍為 10 + 每級 2/3 碼。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">死亡之網</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個法術，讓戰場布滿蜘蛛網，踩在上面的敵人毒素抗性降低 75%，基礎移動速度降低 100%。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">多重箭弩砲</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">召喚一座固定的構造物，向多個敵人發射多支箭矢。構造物繼承你的物理攻擊傷害與所有攻擊修正（觸發除外）。每 50000 點防禦可額外召喚一座弩砲。不受陷阱上限修正影響。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">魚叉弩砲</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">召喚一座固定的構造物，對單一敵人發動強力的暈眩攻擊。構造物繼承你的物理攻擊傷害與所有攻擊修正（觸發除外）。每 50000 點防禦可額外召喚一座弩砲。不受陷阱上限修正影響。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">閃電瀑布</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一種攻擊，對螢幕上每個敵人射出一道閃電。每道閃電造成 100% 轉換為閃電的武器傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">冰川地獄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一道毀滅性的冰霜之波，冰凍周圍所有怪物 8 秒，並造成 50% 武器傷害的冰寒傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">雷霆之星</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">釋放 5 道閃電組成的新星，產生電擊區域，對站在上面的所有人造成 20% 武器傷害的閃電傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">靈魂風暴</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">在 4 秒內每 0.2 秒釋放 1 個靈體，搜尋附近敵人並造成 50% 武器傷害的魔法傷害。每個靈體命中時治療玩家最大生命的 1%。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">龍之吐息</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">火焰風暴的分身，會從所有火焰法術獲得額外的協同傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">閃爍</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一個把充能彈召喚進戰場的技能，造成 10% 武器傷害的閃電傷害。
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">遠程射擊</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">一發投射物，造成 100% 武器傷害，在最大射程時最多額外造成 200% 總傷害。
+                    </font>
+                </td>
+            </tr>
+        </table>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

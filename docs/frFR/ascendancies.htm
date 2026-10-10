@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="fr">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Base de données Eastern Sun Resurrected 3.6
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Langue"><select id="esr-lang-frFR" aria-label="Langue" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR" selected>Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="frFR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-frFR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informations de base</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Notes de version]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armures]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armes]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Préfixes]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixes]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armures uniques]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armes uniques]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Autres uniques]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Uniques mythiques]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ensembles]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Gemmes/Runes]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mots de gemmes]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mots runiques]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Recettes du cube]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Cartes]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Calculateur de vitesse d'attaque]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Recherche de butin]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Fonctionnalités</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Résultats de corruption]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Résultats d'onction]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Cartes de fin de jeu]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Réceptacle des âmes]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendances]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registre des victimes]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mercenaires et compétences externes]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Maîtrise des armes]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod de conversion totale pour Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendances</font> sont de puissantes spécialisations qui façonnent votre façon de jouer en accordant des compétences et des bonus uniques.<br>
+                            Les ascendances sont accordées par un charme spécial appelé <font color="orange">Pierre d'Ascendance</font> , qui ne s'obtient qu'après avoir terminé plusieurs rencontres spéciales.<br>
+                            Les pierres d'ascendance peuvent être encore améliorées (vous pouvez donc continuer à vous élever) en relevant des défis précis, dont certains sont liés à du contenu de fin de jeu très difficile.<br>
+                            Il existe 5 paliers d'ascendance ; chaque défi est plus dur que le précédent, mais les bonus sont aussi plus puissants.<br>
+                            Les pierres d'ascendance <font color="red"><strong>ne peuvent pas être partagées avec d'autres personnages</strong>
+                            </font>. Vous ne pouvez avoir qu'une seule pierre d'ascendance équipée à la fois.<br>
+                            Inutile de préciser que chaque palier ne s'obtient qu'une fois. Vous pouvez cependant les obtenir dans n'importe quel ordre.<br>
+                            Les pierres d'ascendance ne peuvent pas être modifiées par les moyens habituels (elles ne peuvent pas être corrompues, ointes, démontées en feuilles d'érable, etc.).<br>
+                            Après votre mort, <font color="red">vous devez rééquiper</font> la Pierre d'Ascendance pour récupérer les bonus, à cause d'une limite du moteur.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Défis]</a>
+            <a href="#ascendancies">[Ascendances]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>Défi du palier 1</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Pour obtenir une <font color="orange">Pierre d'Ascendance</font>, vous devez tuer 5 super-uniques spéciaux <font color="red">en difficulté Enfer</font> répartis dans Sanctuaire<br>et transmuter les orbes élémentaires que chacun d'eux lâche pour obtenir :
+                            <font color="orange">Orbe de Création</font>.<br>
+                            L'orbe peut ensuite être transmuté avec des gemmes de couleurs précises pour débloquer l'ascendance de votre choix. Indice : les actes 1, 2 et 3 ont chacun un super-unique. L'acte 5 en a 2, l'acte 4 aucun.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrée</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Sortie</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            2 Saphir Blemie<br>
+                            2 Obsidienne Blemie<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance de Battlemage<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            1 Obsidienne Blemie<br>1 Saphir Blemie<br>1 Émeraude Blemie<br>1 Rubis Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Éveillée<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            2 Obsidienne Blemie<br>2 Émeraude Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Maître des Lames<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            2 Émeraude Blemie<br>2 Rubis Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Nomade<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            2 Obsidienne Blemie<br>2 Rubis Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Ironbolt<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            2 Émeraude Blemie<br>2 Saphir Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance d'Arcaniste<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            2 Rubis Blemie<br>2 Saphir Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Gardien des Âmes<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            4 Émeraude Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Tireur d'Élite<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            4 Saphir Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance des Étoiles<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            1 Rubis Blemie<br>1 Obsidienne Blemie<br>1 Saphir Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance de Sangmage<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            4 Rubis Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Briseur de Vie<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            1 Rubis Blemie<br>1 Obsidienne Blemie<br>1 Émeraude Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Façonneuse du Monde<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            1 Obsidienne Blemie<br>1 Émeraude Blemie<br>1 Saphir Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Danseur de Posture<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            1 Émeraude Blemie<br>1 Rubis Blemie<br>1 Saphir Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance de Gardien de Mana<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orbe de Création</font><br>
+                            4 Obsidienne Blemie
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance Berserker<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Défi du palier 2</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Le deuxième palier s'obtient en tuant Nihlathak dans son domaine en difficulté Enfer, puis en transmutant la pierre d'ascendance avec elle-même.<br>
+                            <font color="red">Vous devez la transmuter pendant que les tourbillons sont actifs sur votre personnage.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrée</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Sortie</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">Pierre d'Ascendance</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            Amélioré au palier 2
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Défi du palier 3</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Le troisième palier s'obtient en tuant tous les boss d'Uber Tristram <font color="red">à moins d'une minute d'intervalle et sans mourir, </font>puis en transmutant la pierre d'ascendance avec une feuille d'érable.<br>Même si les tourbillons sont actifs sur votre personnage après avoir tué le dernier boss, cela ne fonctionnera pas si plus d'1 minute s'est écoulée depuis la mort du premier.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrée</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Sortie</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            Feuille d'érable
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            Amélioré au palier 3
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Défi du palier 4</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Le quatrième palier s'obtient en récoltant 10 <font color="ORANGE">Pierres d'âme primordiales
+                            </font> lâchées par n'importe quel boss de carte de fin de jeu. Vous ne pouvez transmuter qu'une Pierre primordiale à la fois avec la Pierre d'Ascendance. Une fois 10 Pierres d'âme primordiales capturées dans la Pierre d'Ascendance, vous pourrez la transmuter avec 2 feuilles d'érable pour atteindre le palier 4.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrée</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Sortie</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            <font color="orange">Âmes Primordiales Capturées : 10/10</font><br>
+                            2 feuilles d'érable
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            Amélioré au palier 4
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Défi du palier 5</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Le cinquième palier s'obtient en tuant n'importe quel boss de carte de palier 5, puis en transmutant la pierre d'ascendance avec 3 feuilles d'érable.<br>
+                            <font color="red">Vous devez la transmuter pendant que les tourbillons sont actifs sur votre personnage.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Entrée</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Sortie</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            3 feuilles d'érable
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Pierre d'Ascendance</font><br>
+                            Amélioré au palier 5
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Défis]</a>
+            <a href="#ascendancies">[Ascendances]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">Ascendances</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+60 à la Force<br>+60 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+25% Bonus à la Force<br>+25% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 1% de dégâts de sort pour chaque 2% de coup mortel et pour chaque 2% de coup écrasant<br>+25% Chance de Coup Écrasant<br>+25% Frappe Mortelle<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 % de bonus de défense totale pour chaque 3 % de frappe mortelle et de coup écrasant*<br>+10 Vie sur Frappe<br>+15% Dégâts Physiques Volés en Mana<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>+50% à toutes les vitesses<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Mage de bataille</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Le bonus de défense totale est multiplicatif avec la valeur totale de votre armure.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Maître-lame</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+60 à la Force<br>+60 à la Dextérité<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+25% Bonus à la Force<br>+25% Bonus à la Dextérité<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 10 % de dégâts améliorés pour chaque 1 % de résistance physique<br>20 % de résistance physique<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1% de Dégâts Physiques Volés comme Vie pour chaque 1% de Résistance Physique<br>+40 aux Dégâts Minimum des Attaques<br>+50 aux Dégâts Maximaux aux Attaques<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>15% Chance de lancer le niveau 20 Hache de jet lors d'une frappe<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+60 à la Dextérité<br>+60 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+25% Bonus à la Dextérité<br>+25% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 5 de mana pour chaque 1 % de vitesse*<br>+30% à toutes les vitesses<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 de mana sur coup pour chaque 25 % de vitesse*<br>+20 à Fureur Élémentaire (toutes classes)<br>+5 % à toutes les résistances maximales<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>5% Chance de lancer le niveau 20 Flèche Améliorée par le Feu lors d'une frappe<br>5% Chance de lancer le niveau 20 Flèche Améliorée de Froid lors d'une frappe<br>5% Chance de lancer le niveau 20 Flèche Améliorée par la Foudre lors d'une frappe<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Arcaniste</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Chaque type de vitesse (blocage, incantation, déplacement, attaque, récupération) compte séparément. Par exemple, +1 % à toutes les vitesses compte comme +5 % pour les bonus d'ascendance.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Mage de sang</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+45 à la Force<br>+45 à la Vitalité<br>+45 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+20% Bonus à la Force<br>+20% Bonus à la Vitalité<br>+20% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 1 % de dégâts des sorts pour chaque 250 points de vie et 1 % de dégâts des invocations pour chaque 400 points de vie<br>L'énergie n'a plus aucun effet sur les dégâts des sorts ou des invocations<br>Magie du sang*<br>+200 à la Vie<br><br>
+                    <font color="orange">Palier 4</font><br>Soigne pour 2% de la Vie Maximale à la Mort<br>+50% Récupération de coup plus rapide<br>+25 % de résistance physique<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>+25% à la Vie des Invocations<br>Vie maximale augmentée de 50 %<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*La magie du sang signifie que vous utilisez désormais votre vie pour lancer des sorts.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+30 à toutes les attributs<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+15% Bonus à Tous les Attributs<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez +1 à toutes les compétences pour chaque 1000 points d'attributs*<br>+20% à toutes les vitesses<br>+30 à toutes les attributs<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 d'absorption élémentaire et magique pour chaque 100 points d'attributs*<br>Gagnez 1 de défense pour chaque 2 points d'attributs*<br>+20 à Pouvoir Écrasant (toutes classes)<br>Durée de Poison Réduite de +75%<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>10% Chance de lancer le niveau 60 Annihilation lorsqu'il est frappé<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Éveillé</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Les paliers se calculent sur le total des points d'attributs (par exemple, vous gagnez +1 à toutes les compétences si vous avez 250 dans chaque attribut).</font><br>
+        <font size="-2">**Annihilation est une nova dévastatrice de 6 éléments (feu/froid/foudre/poison/physique/magie), une compétence couvrant tout l'écran qui inflige, par nova, 50 % des dégâts de l'arme convertis dans l'élément correspondant, ainsi que d'importants dégâts de sort de chaque type qui augmentent avec le total des attributs. Elle repousse les ennemis et réduit toutes leurs résistances de 25 % pendant 2 secondes. La nova de poison n'inflige pas de dégâts d'arme.</font><br>
+        <font size="-2" color="red">**Annihilation ne peut se déclencher que lorsque votre vie actuelle est inférieure à 30 %.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Carreau de fer</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+60 à la Force<br>+60 à la Vitalité<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+25% Bonus à la Force<br>+25% Bonus à la Vitalité<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 1 %-2 % de dégâts de saignement pour chaque 10 points de force<br>La durée de ce saignement suit la progression de la vitesse de rechargement de l'arbalète*<br>+150 à la Force<br>
+                    <font color="orange">Palier 4</font><br>Gagne 1 Vie en frappant pour chaque tranche de 200 Force<br>+20% Temps de rechargement de l'arbalète<br>Limite de vitesse de rechargement de l'arbalète réduite de 20%<br>+500 à la Classe d'Attaque<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>2% Chance de lancer le niveau 40 Vision Intérieure lors d'une frappe<br>+25 à Concentration Aiguisée (toutes classes)<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*La durée du saignement correspond à la progression de la vitesse de rechargement de l'arbalète. Cela s'applique que vous utilisiez une arbalète ou non. Le saignement de Carreau de fer peut être dilué par d'autres sources de saignement (comme les instances de poison se diluent entre elles).</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+75 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+30% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez -1 % aux résistances au feu, au froid et à la foudre de l'ennemi pour chaque 400 points de mana<br>+400 à la Mana<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 Régénération de Vie pour chaque 5 Mana<br>+20 à Omnipotence (toutes classes)<br>+25% à toutes les vitesses<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>+1 à Téléportation<br>+1 à toutes les compétences<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Né des étoiles</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Briseur de vie</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+75 à la Vitalité<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+30% Bonus à la Vitalité<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 1% de Dégâts de Sort pour chaque 100 Points de Vie Manquants<br>Augmente la Vie Maximale +30%<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 Réduction de Dégâts Magiques et Physiques pour chaque 100 Points de Vie Manquants<br>+1 à la Limite de Piège<br>Dégâts réduits de 50<br>Dégâts magiques réduits de 50<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>+10 à Pacte de Vie*<br>Résistance magique +15%<br>Résistance Physique : +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Pacte de Vie est une compétence activable qui draine 25 % de votre vie maximale chaque seconde et accorde 10 % de vie maximale par niveau. Pacte de Vie ne peut pas vous tuer.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+45 à la Force<br>+45 à la Dextérité<br>+45 à la Vitalité<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+20% Bonus à la Force<br>+20% Bonus à la Dextérité<br>+20% Bonus à la Vitalité<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 2 de dégâts maximaux de feu, de froid et de foudre aux attaques pour chaque 1 % de résistance élémentaire*<br>Résistance au Feu +50%<br>Résistance au Froid +50%<br>Résistance à la foudre +50%<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 % de résistance physique et magique pour chaque 30 % de résistance élémentaire*<br>Gagnez 1 % de résistance au poison pour chaque 5 % de résistance élémentaire*<br>Dégâts des sorts : +50 %**<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>2 % de chances de lancer Fureur de la Création niveau 1 lors d'une frappe***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Façonneur de monde</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Chaque type de résistance compte séparément pour les paliers de bonus. Par exemple, vous obtenez 1 % de résistance physique si vous avez 10 % de résistance au feu, au froid et à la foudre chacune.</font><br>
+        <font size="-2">**Les dégâts des sorts désignent les dégâts des sorts de feu/froid/foudre/poison/magiques/physiques et augmentent les dégâts fixes aux attaques (sauf les dégâts des sorts physiques, qui n'augmentent pas les dégâts physiques aux attaques).
+        </font><br>
+        <font size="-2">***Fureur de la Création est une triple nova élémentaire à zone d'effet moyenne ; chaque nova inflige 50 % des dégâts de l'arme convertis dans l'élément correspondant et réduit les résistances élémentaires des ennemis de 30 %.
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Gardien des âmes</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+60 à la Vitalité<br>+60 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+25% Bonus à la Vitalité<br>+25% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 1 % de dégâts des sorts de poison, magiques et physiques pour chaque 40 points d'énergie<br>+150 à l'Énergie<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 vie pour 3 énergies<br>Absorption Magique +10%<br>Ne peut pas être gelé<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>+1 à la Limite des Invocations Non-Unique<br>Dégâts réduits de 50<br>Dégâts magiques réduits de 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+45 à la Force<br>+45 à la Dextérité<br>+45 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+20% Bonus à la Force<br>+20% Bonus à la Dextérité<br>+20% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3*</font><br>
+                    Posture de dégâts (rouge) : 5 % de dégâts améliorés et 1 % de dégâts des sorts<br>
+                    par tranche de 75 points de force, de dextérité et d'énergie cumulés<br>
+                    Posture d'esquive (verte) : 10 % à toutes les vitesses et 1 % d'esquive<br>
+                    par tranche de 1000 points de force, de dextérité et d'énergie cumulés<br>
+                    Posture de récupération (bleue) : +1 à toutes les compétences et 150 de régénération de vie et de mana<br>
+                    par tranche de 1500 points de force, de dextérité et d'énergie cumulés<br><br>
+                    <font color="orange">Palier 4</font><br>Les bonus de toutes les postures sont augmentés de 25%<br>+30% Bonus à la Force<br>+30% Bonus à la Dextérité<br>+30% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>+50% Vitesse d'Attaque Augmentée<br>+50% Vitesse de lancement plus rapide<br>+100 Vie après chaque Tuer<br>+50 de Mana après chaque Kill<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Danseur de postures</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*Vous devez définir un raccourci pour changer de posture dans le sous-menu Commandes.</font></font><br>
+        <font size="-2">**Vous pouvez changer de posture quand vous voulez, mais les postures ne s'enchaînent que dans cet ordre : rouge -&gt; vert -&gt; bleu.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Nomade</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+60 à la Dextérité<br>+60 à la Vitalité<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+25% Bonus à la Dextérité<br>+25% Bonus à la Vitalité<br><br>
+                    <font color="orange">Palier 3</font><br>Gagne 5 dégâts maximum par 5% de course/marche accélérée ou 1% de vitesse de course/marche de base<br>+75% Vitesse de course/marche plus rapide<br>Ajoute 150%-250% de dégâts de saignement sur 1 seconde<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 5% de chances d'esquive par 200% de course/marche accélérée ou 40% de vitesse de course/marche de base<br>+300 à la Vie<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>20% Chance de lancer le niveau 1 Se précipiter lorsqu'il est frappé<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Détalage est un bonus d'une durée de 1 seconde qui accorde 33 % d'esquive, 100 % de vitesse de course/marche de base, 25 % de dégâts physiques maximaux totaux aux attaques et régénère 10 % de la vie maximale pendant sa durée.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+75 à la Dextérité<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+30% Bonus à la Dextérité<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 2 % de bonus au score d'attaque pour chaque 1 % de perforation<br>Gagnez 1 de dégâts maximaux pour chaque 2 % de perforation<br>+30 à Minimal Dégâts<br>+20 à Perforation (toutes classes)<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 3 Vitalité pour chaque 1% de Pénétration<br>+75% Vitesse de course/marche plus rapide<br>+20 à Esquive (toutes classes)<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>15% Chance de lancer le niveau 20 Flèche lors d'une frappe<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Tireur d'élite</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Gardien du mana</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+45 à la Dextérité<br>+45 à la Vitalité<br>+45 à l'Énergie<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+20% Bonus à la Dextérité<br>+20% Bonus à la Vitalité<br>+20% Bonus à l'Énergie<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 1 % de dégâts des sorts pour chaque 20 % de régénération de mana<br>Gagnez 1 de dégâts minimaux aux attaques pour chaque 5 % de régénération de mana<br>+5 Mana sur Coup<br>Régénération de Mana +100%<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1 Mana pour chaque 2% de Régénération de Mana<br>+20 à Bouclier d'énergie (toutes classes)<br>+10% à la Résistance Maximale au Poison<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>20% Chance de lancer le niveau 50 Arrêt du Temps lorsqu'il est frappé<br>Résistance au poison +75%<br>+20 au Rayon de Lumière<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Palier 1</font><br>+1 aux niveaux des compétences de classe<br>+75 à la Force<br><br>
+                    <font color="orange">Palier 2</font><br>+1 aux niveaux des compétences de classe<br>+30% Bonus à la Force<br><br>
+                    <font color="orange">Palier 3</font><br>Gagnez 3% de Dégâts Maximaux pour chaque 1% de Dégâts Physiques Volés comme Vie<br>+30 à Maximal Dégâts<br>+25% Dégâts Physiques Volés en Vie<br><br>
+                    <font color="orange">Palier 4</font><br>Gagnez 1% de Résistance Physique et Magique pour chaque 5% de Dégâts Physiques Volés comme Vie<br>Durée de la malédiction réduite de 100%<br><br>
+                    <font color="orange">Palier 5</font><br>+3 aux niveaux des compétences de classe<br>25 % de chances de lancer Ravage niveau 1 lors d'une attaque de mêlée**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ascendance Berserker</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Ravage est une compétence à zone d'effet petite à moyenne qui inflige 150 % des dégâts de l'arme en dégâts physiques à tous les ennemis touchés et réduit leur résistance physique de 30 % pendant 2 secondes.</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

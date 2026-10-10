@@ -1,0 +1,4599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected データベース
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35328;&#35486;"><select id="esr-lang-jaJP" aria-label="&#35328;&#35486;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP" selected>&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="jaJP",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-jaJP');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本情報</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新履歴]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[防具]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接頭辞]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接尾辞]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク防具]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[その他のユニーク]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話ユニーク]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[セット]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/ルーン]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ジェムワード]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ルーンワード]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[キューブレシピ]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[マップ]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻撃速度計算機]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ドロップ検索]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">機能</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐敗の結果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油の結果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[エンドゲームマップ]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魂の器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[アセンダンシー]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[討伐台帳]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵と他クラススキル情報]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器熟練]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">ディアブロ II リザレクテッド用トータルコンバージョンMOD</div>
+            </div>                
+                                <div style="width:100%;">
+<table cellpadding="5" border="0" width="100%">
+<tbody>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">欠けたアメジスト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5% 攻撃速度増加 <br>+30 の攻撃評価 <br>攻撃者は 5 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 の力 <br>ダメージ減少 2 <br>魔法ダメージが 2 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5% ブロック速度アップ <br>+20 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">欠陥のアメジスト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 攻撃速度増加 <br>+60 の攻撃評価 <br>攻撃者は 10 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10 の力 <br>ダメージ減少 4 <br>魔法ダメージが 4 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% ブロック速度アップ <br>+40 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">アメジスト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 攻撃速度増加 <br>+90 の攻撃評価 <br>攻撃者は 20 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15 の力 <br>ダメージ減少 6 <br>魔法ダメージが 6 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% ブロック速度アップ <br>+1% ブロック確率増加 <br>+60 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">完璧なアメジスト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 攻撃速度増加 <br>+120 の攻撃評価 <br>攻撃者は 50 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 の力 <br>ダメージ減少 8 <br>魔法ダメージが 8 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% ブロック速度アップ <br>+1% ブロック確率増加 <br>+80 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">傷ついたアメジスト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 攻撃速度増加 <br>+150 の攻撃評価 <br>攻撃者は 100 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25 の力 <br>ダメージ減少 10 <br>魔法ダメージが 10 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% ブロック速度アップ <br>+2% ブロック確率増加 <br>+100 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">完璧なアメジスト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 攻撃速度増加 <br>+180 の攻撃評価 <br>攻撃者は 200 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 の力 <br>ダメージ減少 12 <br>魔法ダメージが 12 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% ブロック速度アップ <br>+2% ブロック確率増加 <br>+120 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">欠けたサファイア</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 5-10 冷気ダメージを追加（0.8秒間）<br>+5% 致命的一撃 <br>+2 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% キャスト速度アップ <br>+10 のマナ <br>最大マナを増加 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +10% <br>+3 冷気吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">欠けたサファイア</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 10-20 冷気ダメージを追加（1.6秒間）<br>+8% 致命的一撃 <br>+4 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% キャスト速度アップ <br>+20 のマナ <br>最大マナを増加 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +1% <br>冷気耐性 +20% <br>+4 冷気吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">サファイア</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 15-30 冷気ダメージを追加（2.4秒間）<br>+11% 致命的一撃 <br>+7 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% キャスト速度アップ <br>+30 のマナ <br>最大マナを増加 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +1% <br>冷気耐性 +30% <br>+5 冷気吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">完璧なサファイア</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 25-50 冷気ダメージを追加（3.2秒間）<br>+14% 致命的一撃 <br>+10 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% キャスト速度アップ <br>+40 のマナ <br>最大マナを増加 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +2% <br>冷気耐性 +40% <br>+6 冷気吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">傷ついたサファイア</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 50-100 冷気ダメージを追加（4秒間）<br>+17% 致命的一撃 <br>+15 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% キャスト速度アップ <br>+50 のマナ <br>最大マナを増加 +5% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +2% <br>冷気耐性 +50% <br>+8 冷気吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">完璧なサファイア</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 100-200 冷気ダメージを追加（4.8秒間）<br>+20% 致命的一撃 <br>+20 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% キャスト速度アップ <br>+60 のマナ <br>最大マナを増加 +6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +3% <br>冷気耐性 +60% <br>+10 冷気吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">欠けたエメラルド</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 15-20 毒ダメージを 2 秒間追加します<br>+5% クリティカルヒットのチャンス <br>ライフ回復 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 移動速度アップ <br>+5% 攻撃命中率ボーナス <br>+5 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +10% <br>毒の持続時間が +15% 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">欠けたエメラルド</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 20-40 毒ダメージを 2 秒間追加します<br>+8% クリティカルヒットのチャンス <br>ライフ回復 +40 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 移動速度アップ <br>+8% 攻撃命中率ボーナス <br>+10 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大毒抵抗力に対して <br>毒抵抗 +20% <br>毒の持続時間が +20% 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">エメラルド</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 40-50 毒ダメージを 2 秒間追加します<br>+11% クリティカルヒットのチャンス <br>ライフ回復 +60 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 移動速度アップ <br>+11% 攻撃命中率ボーナス <br>+15 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大毒抵抗力に対して <br>毒抵抗 +30% <br>毒の持続時間が +25% 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">完璧なエメラルド</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 50-100 毒ダメージを 2 秒間追加します<br>+14% クリティカルヒットのチャンス <br>ライフ回復 +90 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 移動速度アップ <br>+14% 攻撃命中率ボーナス <br>+20 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大毒抵抗力に対して <br>毒抵抗 +40% <br>毒の持続時間が +30% 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">傷んだエメラルド</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 100-200 毒ダメージを 2 秒間追加します<br>+17% クリティカルヒットのチャンス <br>ライフ回復 +150 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 移動速度アップ <br>+17% 攻撃命中率ボーナス <br>+25 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大毒抵抗力に対して <br>毒抵抗 +50% <br>毒の持続時間が +40% 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">完璧なエメラルド</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 200-400 毒ダメージを 2 秒間追加します<br>+20% クリティカルヒットのチャンス <br>ライフ回復 +200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 移動速度アップ <br>+20% 攻撃命中率ボーナス <br>+30 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大毒抵抗力に対して <br>毒抵抗 +60% <br>毒の持続時間が +50% 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">欠けたルビー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 10-15 の火炎ダメージを追加<br>悪魔に対するダメージ +15% <br>+2 キル後のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% ヒット回復速度アップ <br>+4% 致命的一撃 <br>+10 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +10% <br>+3 火吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">欠けたルビー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 15-25 の火炎ダメージを追加<br>悪魔に対するダメージ +30% <br>+4 キル後のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% ヒット回復速度アップ <br>+6% 致命的一撃 <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大火炎耐性に対して <br>火属性耐性 +20% <br>+4 火吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">ルビー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 20-40 の火炎ダメージを追加<br>悪魔に対するダメージ +45% <br>+7 キル後のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% ヒット回復速度アップ <br>+8% 致命的一撃 <br>+30 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大火炎耐性に対して <br>火属性耐性 +30% <br>+5 火吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">完璧なルビー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 30-60 の火炎ダメージを追加<br>悪魔に対するダメージ +60% <br>+10 キル後のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% ヒット回復速度アップ <br>+10% 致命的一撃 <br>+40 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大火炎耐性に対して <br>火属性耐性 +40% <br>+6 火吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">傷ついたルビー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 60-120 の火炎ダメージを追加<br>悪魔に対するダメージ +80% <br>+15 キル後のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% ヒット回復速度アップ <br>+12% 致命的一撃 <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大火炎耐性に対して <br>火属性耐性 +50% <br>+8 火吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">完璧なルビー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 120-225 の火炎ダメージを追加<br>悪魔に対するダメージ +100% <br>+20 キル後のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% ヒット回復速度アップ <br>+15% 致命的一撃 <br>+60 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大火炎耐性に対して <br>火属性耐性 +60% <br>+10 火吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>欠けたダイヤモンド</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +1 追加 <br>攻撃の最大ダメージに +2 追加 <br>+15% アンデッドへのダメージ <br>攻撃に対する最小魔法ダメージ +4 <br>攻撃に対する最大魔法ダメージ +8 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-5% 対象防御 <br>+4% クリティカルヒットのチャンス <br>+20 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抵抗 +2% <br>全ての抵抗力 +5 <br>ダメージ減少 2 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>欠陥のダイヤモンド</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +2 追加 <br>攻撃の最大ダメージに +4 追加 <br>+30% アンデッドへのダメージ <br>攻撃に対する最小魔法ダメージ +6 <br>攻撃に対する最大魔法ダメージ +12 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-8% 対象防御 <br>+6% クリティカルヒットのチャンス <br>+40 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抵抗 +3% <br>全ての抵抗力 +8 <br>ダメージ減少 4 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>ダイヤモンド</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +4 追加 <br>攻撃の最大ダメージに +8 追加 <br>+45% アンデッドへのダメージ <br>攻撃に対する最小魔法ダメージ +10 <br>攻撃に対する最大魔法ダメージ +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-11% 対象防御 <br>+8% クリティカルヒットのチャンス <br>+60 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抵抗 +4% <br>全ての抵抗力 +11 <br>ダメージ減少 6 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>完璧なダイヤモンド</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +6 追加 <br>攻撃の最大ダメージに +12 追加 <br>+60% アンデッドへのダメージ <br>攻撃に対する最小魔法ダメージ +20 <br>攻撃に対する最大魔法ダメージ +40 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-14% 対象防御 <br>+10% クリティカルヒットのチャンス <br>+80 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抵抗 +6% <br>全ての抵抗力 +14 <br>ダメージ減少 8 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>傷ついたダイヤモンド</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +8 追加 <br>攻撃の最大ダメージに +15 追加 <br>+80% アンデッドへのダメージ <br>攻撃に対する最小魔法ダメージ +30 <br>攻撃に対する最大魔法ダメージ +60 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-17% 対象防御 <br>+12% クリティカルヒットのチャンス <br>+100 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抵抗 +8% <br>全ての抵抗力 +17 <br>ダメージ減少 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>パーフェクトダイヤモンド</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +10 追加 <br>攻撃の最大ダメージに +20 追加 <br>+100% アンデッドへのダメージ <br>攻撃に対する最小魔法ダメージ +50 <br>攻撃に対する最大魔法ダメージ +100 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-20% 対象防御 <br>+15% クリティカルヒットのチャンス <br>+120 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法抵抗 +10% <br>全ての抵抗力 +20 <br>ダメージ減少 12 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">欠けたトパーズ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-25 の雷ダメージを追加します<br>+2% 致命的一撃 <br>ターゲットの速度を +2% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% モンスターからの追加ゴールド <br>+10% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +10% <br>+3 雷吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">欠けたトパーズ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-40 の雷ダメージを追加します<br>+3% 致命的一撃 <br>ターゲットの速度を +4% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% モンスターからの追加ゴールド <br>+20% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大雷撃耐性に対して <br>雷属性耐性 +20% <br>+4 雷吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">トパーズ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-60 の雷ダメージを追加します<br>+4% 致命的一撃 <br>ターゲットの速度を +6% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% モンスターからの追加ゴールド <br>+30% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 最大雷撃耐性に対して <br>雷属性耐性 +30% <br>+5 雷吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">完璧なトパーズ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-100 の雷ダメージを追加します<br>+6% 致命的一撃 <br>ターゲットの速度を +8% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% モンスターからの追加ゴールド <br>+40% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大雷撃耐性に対して <br>雷属性耐性 +40% <br>+6 雷吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">傷んだトパーズ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-200 の雷ダメージを追加します<br>+8% 致命的一撃 <br>ターゲットの速度を +10% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% モンスターからの追加ゴールド <br>+50% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 最大雷撃耐性に対して <br>雷属性耐性 +50% <br>+8 雷吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">完璧なトパーズ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-350 の雷ダメージを追加します<br>+10% 致命的一撃 <br>ターゲットの速度を +12% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% モンスターからの追加ゴールド <br>+60% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大雷撃耐性に対して <br>雷属性耐性 +60% <br>+10 雷吸収 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">欠けた頭骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +2 追加 <br>+1% 物理ダメージをマナとして吸収 <br>+1% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 移動速度アップ <br>ライフ回復 +10 <br>マナ再生 +5% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 防御力 <br>物理抵抗: +2% <br>魔法ダメージが 2 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">欠陥の頭蓋骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +3 追加 <br>+2% 物理ダメージをマナとして吸収 <br>+2% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 移動速度アップ <br>ライフ回復 +20 <br>マナ再生 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40 防御力 <br>物理抵抗: +3% <br>魔法ダメージが 4 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">スカル</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +6 追加 <br>+3% 物理ダメージをマナとして吸収 <br>+3% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 移動速度アップ <br>ライフ回復 +30 <br>マナ再生 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 防御力 <br>物理抵抗: +4% <br>魔法ダメージが 6 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">完璧な頭骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +9 追加 <br>+4% 物理ダメージをマナとして吸収 <br>+4% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 移動速度アップ <br>ライフ回復 +50 <br>マナ再生 +20% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++80 防御力 <br>物理抵抗: +6% <br>魔法ダメージが 8 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">傷んだ頭骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +12 追加 <br>+5% 物理ダメージをマナとして吸収 <br>+5% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 移動速度アップ <br>ライフ回復 +75 <br>マナ再生 +25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 防御力 <br>物理抵抗: +8% <br>魔法ダメージが 10 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">完璧な頭骨</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +15 追加 <br>+6% 物理ダメージをマナとして吸収 <br>+6% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 移動速度アップ <br>ライフ回復 +100 <br>マナ再生 +30% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++120 防御力 <br>物理抵抗: +10% <br>魔法ダメージが 12 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">欠けた黒曜石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++9% 強化ダメージ<br>+1% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 攻撃速度増加 <br>全ての抵抗力 +2 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 強化防御 <br>ダメージ減少 2 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">欠陥のオブシディアン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++18% 強化ダメージ<br>+2% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 攻撃速度増加 <br>全ての抵抗力 +4 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 強化防御 <br>ダメージ減少 4 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">オブシディアン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++27% 強化ダメージ<br>+3% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 攻撃速度増加 <br>全ての抵抗力 +6 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 強化防御 <br>ダメージ減少 6 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">完璧なオブシディアン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++36% 強化ダメージ<br>+4% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++16% 攻撃速度増加 <br>全ての抵抗力 +8 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 強化防御 <br>ダメージ減少 8 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">傷ついたオブシディアン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++45% 強化ダメージ<br>+5% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 攻撃速度増加 <br>全ての抵抗力 +10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 強化防御 <br>ダメージ減少 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">完璧なオブシディアン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++54% 強化ダメージ<br>+6% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++24% 攻撃速度増加 <br>全ての抵抗力 +12 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 強化防御 <br>ダメージ減少 12 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">I ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 2</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 強化ダメージ<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">U ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 3</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% アンデッドへのダメージ <br>+75 の攻撃命中率（アンデッドに対して） <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 移動速度アップ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% ブロック確率増加 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">シルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 4</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 のキル後にマナを得る <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">カルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 5</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ノックバック <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 ミサイルに対する防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 ミサイルに対する防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">N ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-25% 対象防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+マナ再生 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+マナ再生 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">ク rune</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最大ダメージに +10 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% ダメージを受けるとマナに変換される <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% ダメージを受けるとマナに変換される <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">ヨルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 9</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に2秒かけて毒ダメージ75を追加<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">キルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 10</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 40-80 の火炎ダメージを追加<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">リルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 12</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-125 の雷ダメージを追加します<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">ミルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 30-70 冷気ダメージを追加（3秒間）<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">ヤルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃者は 250 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃者は 250 のダメージを受ける <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">A ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 17</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +10 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ダメージ減少 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ダメージ減少 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">ツルーンク</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 19</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 攻撃速度増加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% ヒット回復速度アップ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% ブロック速度アップ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">チー ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 20</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ライフ回復 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ライフ回復 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ライフ回復 +75 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">サルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 22</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に対する最小魔法ダメージ +25 <br>攻撃に対する最大魔法ダメージ +60 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法ダメージが 10 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法ダメージが 15 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">ユ Rune</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 23</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の生命力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の生命力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の生命力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">ケルン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のエネルギー <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のエネルギー <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のエネルギー <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">E ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 26</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の敏捷性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">Ko ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 27</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 の力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">ラルルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% モンスターからの追加ゴールド <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">O ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 30</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+悪魔に対するダメージ +75% <br>悪魔に対する攻撃命中率 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 強化防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 強化防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">ホルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 31</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+全ての抵抗力 +30 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+全ての抵抗力 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+全ての抵抗力 +25 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">メルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 32</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% キャスト速度アップ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% キャスト速度アップ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% キャスト速度アップ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 34</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">タルルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 攻撃命中率ボーナス <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大毒抵抗力に対して <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大毒抵抗力に対して <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">ルーンへ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 36</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理ダメージをマナとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大火炎耐性に対して <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大火炎耐性に対して <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">ワルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 38</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 強化ダメージ<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">ハルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 39</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大雷撃耐性に対して <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 最大雷撃耐性に対して <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">ナルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 40</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ターゲットの速度を +15% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大マナを増加 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 のマナ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">ニルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% クリティカルヒットのチャンス <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抵抗: +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抵抗: +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">セ・ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 43</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+敵の防御を無視 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大ライフを増加 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 のライフ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">フー・ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 44</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+対象を凍結させる +3<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+凍結されない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+凍結されない <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">マルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 45</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 のライフ (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 のライフ (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 のライフ (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">ハイルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 46</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 のマナ (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 のマナ (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 のマナ (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">モルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 47</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の力 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の力 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の力 (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">ルーンなし</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 48</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の敏捷性 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の敏捷性 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の敏捷性 (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 50</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の生命力 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の生命力 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 の生命力 (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">ロルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 51</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 のエネルギー (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 のエネルギー (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 のエネルギー (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">ソルルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 52</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に対する最大火炎ダメージ +8 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">ムルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 54</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に対する最大冷気ダメージ +8 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">ネ・ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 55</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に対する最大毒ダメージ +8 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">レルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 56</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に対する最大雷ダメージ +8 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +0.75% (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">スー・ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 57</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 の攻撃評価 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 防御力 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 防御力 (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">ヘルルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 59</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最大ダメージに +0.625 追加 (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃者は 10 のダメージを受ける (キャラクターレベルに基づく)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃者は 10 のダメージを受ける (キャラクターレベルに基づく)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">ヌルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべての属性に +30 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべての属性に +30 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべての属性に +30 追加 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">ウルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+壊れない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+壊れない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+壊れない <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">ヌルルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>El ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 11</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 強化ダメージ<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Eld ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 11</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100% アンデッドへのダメージ <br>+100 の攻撃命中率（アンデッドに対して） <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 移動速度アップ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% ブロック確率増加 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Tir ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7 のキル後にマナを得る <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7 のキル後にマナを得る <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Nef ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ノックバック <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 ミサイルに対する防御力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 ミサイルに対する防御力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Eth ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-25% 対象防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+マナ再生 +50% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+マナ再生 +50% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ith ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最大ダメージに +15 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% ダメージを受けるとマナに変換される <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% ダメージを受けるとマナに変換される <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Tal ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 17</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に5秒かけて毒ダメージ375を追加<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+毒抵抗 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ral ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 19</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 40-80 の火炎ダメージを追加<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+火属性耐性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ort ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 1-125 の雷ダメージを追加します<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+雷属性耐性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Thul ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 23</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃に 35-75 冷気ダメージを追加（3秒間）<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気耐性 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Amn ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 25</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃者は 300 のダメージを受ける <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃者は 300 のダメージを受ける <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Sol ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 27</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+攻撃の最小ダメージに +15 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ダメージ減少 18 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ダメージ減少 18 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Shael ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 29</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 攻撃速度増加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% ヒット回復速度アップ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% ブロック速度アップ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Dol ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 31</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ライフ回復 +200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ライフ回復 +15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ライフ回復 +15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Hel ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 0</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+要求 -25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+要求 -25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+要求 -25% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Io ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の生命力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の生命力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の生命力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lum ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 37</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 のエネルギー <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 のエネルギー <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 のエネルギー <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ko ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 39</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の敏捷性 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の敏捷性 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Fal ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 41</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の力 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 の力 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lem ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 43</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% モンスターからの追加ゴールド <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Pul ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 45</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+悪魔に対するダメージ +125% <br>悪魔に対する攻撃命中率 +125 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 強化防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 強化防御 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Um ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 47</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+全ての抵抗力 +35 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+全ての抵抗力 +25 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+全ての抵抗力 +25 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Mal ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 49</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法ダメージが 20 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法ダメージが 18 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+魔法ダメージが 18 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ist ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 51</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 魔法アイテムを得る確率が上昇 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Gul ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 53</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 攻撃命中率ボーナス <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大毒抵抗力に対して <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大毒抵抗力に対して <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Vex ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 55</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理ダメージをマナとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大火炎耐性に対して <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大火炎耐性に対して <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ohm ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 57</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++65% 強化ダメージ<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大冷気耐性 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lo ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 59</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大雷撃耐性に対して <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 最大雷撃耐性に対して <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Sur ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 61</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+ターゲットの速度を +18% 減少させる <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大マナを増加 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75 のマナ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ber ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 63</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% クリティカルヒットのチャンス <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抵抗: +12% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理抵抗: +12% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Jah ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 65</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-33% 対象防御 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+最大ライフを増加 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75 のライフ <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Cham ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 67</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+対象を凍結させる +5<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+凍結されない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+凍結されない <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Zod ルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 69</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+壊れない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+壊れない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+壊れない <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">月のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+15% の魔法ダメージ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>魔法吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>魔法吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">火のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+15% の火の呪文ダメージ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>火炎吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>火炎吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">水のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>冷気呪文ダメージ +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>冷気吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>冷気吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">ウッドルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+15% の召喚ダメージ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>凍結されない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>凍結されない <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">メタルルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+100% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+100% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+100% モンスターからの追加ゴールド <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">地のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+15% 毒呪文ダメージに対するボーナス <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>魔法ダメージが 50 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>魔法ダメージが 50 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">太陽ルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>ライフ回復 +250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>ライフ回復 +250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>ライフ回復 +250 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">雷のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+15% の雷属性呪文ダメージ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>雷撃吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>雷撃吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>風のルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>物理呪文ダメージ +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>ダメージ減少 50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>ダメージ減少 50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>ドラゴンルーン</b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 強化ダメージ<br>すべてのスキルに +1 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>物理抵抗: +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>物理抵抗: +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">ライフルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+10% 物理ダメージをマナとして吸収 <br>+10% 物理ダメージをライフとして吸収 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>最大ライフを増加 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>最大ライフを増加 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">死のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>+20% クリティカルヒットのチャンス <br>+20% 致命的一撃 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>最大マナを増加 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>最大マナを増加 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">天のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>1秒で5の耐久性を修理します<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>1秒で5の耐久性を修理します<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>1秒で5の耐久性を修理します<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">神のルーン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>経験値獲得に +15% 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>経験値獲得に +15% 追加 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+すべてのスキルに +1 追加 <br>経験値獲得に +15% 追加 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">欠けた氷の魂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% の魔法ダメージ <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>魔法吸収 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>魔法吸収 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">欠陥の凍った魂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% の魔法ダメージ <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>魔法吸収 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>魔法吸収 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">凍りついた魂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% の魔法ダメージ <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>魔法吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>魔法吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">欠けたシャドウクォーツ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 物理ダメージをマナとして吸収 <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>最大マナを増加 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>最大マナを増加 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">欠陥の影の水晶</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理ダメージをマナとして吸収 <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>最大マナを増加 +7% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>最大マナを増加 +7% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">シャドウクォーツ</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理ダメージをマナとして吸収 <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>最大マナを増加 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>最大マナを増加 +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">欠けた出血の石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% の火の呪文ダメージ <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>火炎吸収 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>火炎吸収 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">欠陥の流血石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% の火の呪文ダメージ <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>火炎吸収 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>火炎吸収 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">出血の石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% の火の呪文ダメージ <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>火炎吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>火炎吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">欠けた燃える硫黄</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% の雷属性呪文ダメージ <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>雷撃吸収 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>雷撃吸収 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">欠陥の燃える硫黄</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% の雷属性呪文ダメージ <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>雷撃吸収 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>雷撃吸収 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">燃える硫黄</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% の雷属性呪文ダメージ <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>雷撃吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>雷撃吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">欠けたダークアズライト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気呪文ダメージ +4% <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>冷気吸収 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>冷気吸収 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">欠陥のダークアズライト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気呪文ダメージ +7% <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>冷気吸収 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>冷気吸収 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">ダークアズライト</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+冷気呪文ダメージ +10% <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>冷気吸収 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>冷気吸収 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">欠けた苦いペリドット</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 毒呪文ダメージに対するボーナス <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>魔法ダメージが 10 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>魔法ダメージが 10 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">欠陥の苦いペリドット</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 毒呪文ダメージに対するボーナス <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>魔法ダメージが 15 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>魔法ダメージが 15 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">苦いペリドット</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 毒呪文ダメージに対するボーナス <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>魔法ダメージが 20 減少 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>魔法ダメージが 20 減少 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">欠けた脈動オパール</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 物理ダメージをライフとして吸収 <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>最大ライフを増加 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>最大ライフを増加 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">欠陥の脈動オパール</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 物理ダメージをライフとして吸収 <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>最大ライフを増加 +7% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>最大ライフを増加 +7% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">脈動するオパール</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 物理ダメージをライフとして吸収 <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>最大ライフを増加 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>最大ライフを増加 +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">欠けた謎めいた辰砂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>ライフ回復 +50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>ライフ回復 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>ライフ回復 +50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">欠陥の謎めいた朱色鉱石</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>ライフ回復 +100 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>ライフ回復 +35 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>ライフ回復 +100 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">謎めいた辰砂</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>ライフ回復 +150 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>ライフ回復 +50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>ライフ回復 +150 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">欠けた墓の翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% の召喚ダメージ <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>半分の凍結時間 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>半分の凍結時間 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">欠陥の墓の翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% の召喚ダメージ <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>半分の凍結時間 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>半分の凍結時間 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">墓の翡翠</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% の召喚ダメージ <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>凍結されない <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>凍結されない <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">欠けた固体水銀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>+40% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>+20% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>+20% モンスターからの追加ゴールド <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">欠陥の固体水銀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>+60% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>+40% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>+40% モンスターからの追加ゴールド <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">固体水銀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>+80% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>+60% モンスターからの追加ゴールド <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>+60% モンスターからの追加ゴールド <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">欠けた嵐の琥珀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 強化ダメージ<br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>物理抵抗: +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>物理抵抗: +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">欠陥の嵐の琥珀</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 強化ダメージ<br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>物理抵抗: +6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>物理抵抗: +6% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">ストームアンバー</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 強化ダメージ<br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>物理抵抗: +8% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>物理抵抗: +8% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">欠けた汚れたトルマリン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理呪文ダメージ +4% <br>+20 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>ダメージ減少 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 のライフ <br>ダメージ減少 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">欠陥の汚れたトルマリン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理呪文ダメージ +7% <br>+35 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>ダメージ減少 15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 のライフ <br>ダメージ減少 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">汚れたトルマリン</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">要求Lv: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+物理呪文ダメージ +10% <br>+50 のライフ <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>ダメージ減少 20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 のライフ <br>ダメージ減少 20 <br>
+</font></td>
+</tr>
+
+
+</tbody></table>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

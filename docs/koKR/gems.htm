@@ -1,0 +1,4599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+<table cellpadding="5" border="0" width="100%">
+<tbody>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">깨진 자수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5% 공격 속도 증가 <br>+30 공격 등급 증가 <br>공격자가 5의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 힘 증가 <br>2 만큼 피해 감소 <br>마법 피해 감소 2 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5% 더 빠른 차단 속도 <br>+20 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">결함이 있는 자수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 공격 속도 증가 <br>+60 공격 등급 증가 <br>공격자가 10의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10 힘 증가 <br>4 만큼 피해 감소 <br>마법 피해 감소 4 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 더 빠른 차단 속도 <br>+40 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">자수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 공격 속도 증가 <br>+90 공격 등급 증가 <br>공격자가 20의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15 힘 증가 <br>6 만큼 피해 감소 <br>마법 피해 감소 6 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 더 빠른 차단 속도 <br>+1% 차단 확률 증가 <br>+60 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">완벽한 자수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 공격 속도 증가 <br>+120 공격 등급 증가 <br>공격자가 50의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 힘 증가 <br>8 만큼 피해 감소 <br>마법 피해 감소 8 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 더 빠른 차단 속도 <br>+1% 차단 확률 증가 <br>+80 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">흠집 있는 자수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 공격 속도 증가 <br>+150 공격 등급 증가 <br>공격자가 100의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25 힘 증가 <br>10 만큼 피해 감소 <br>마법 피해 감소 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 더 빠른 차단 속도 <br>+2% 차단 확률 증가 <br>+100 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">완벽한 자수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 공격 속도 증가 <br>+180 공격 등급 증가 <br>공격자가 200의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 힘 증가 <br>12 만큼 피해 감소 <br>마법 피해 감소 12 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 더 빠른 차단 속도 <br>+2% 차단 확률 증가 <br>+120 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">조각난 사파이어</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 5-10 냉기 피해를 추가합니다. (0.8초 동안)<br>+5% 치명타 <br>+2의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 시전 속도 증가 <br>+10의 마나 <br>최대 마나 증가 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +10% <br>+3 냉기 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">결함 있는 사파이어</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 10-20 냉기 피해를 추가합니다. (1.6초 동안)<br>+8% 치명타 <br>+4의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 시전 속도 증가 <br>+20의 마나 <br>최대 마나 증가 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +1% <br>냉기 저항 +20% <br>+4 냉기 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">사파이어</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 15-30 냉기 피해를 추가합니다. (2.4초 동안)<br>+11% 치명타 <br>+7의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 시전 속도 증가 <br>+30의 마나 <br>최대 마나 증가 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +1% <br>냉기 저항 +30% <br>+5 냉기 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">완벽한 사파이어</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 25-50 냉기 피해를 추가합니다. (3.2초 동안)<br>+14% 치명타 <br>+10의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 시전 속도 증가 <br>+40의 마나 <br>최대 마나 증가 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +2% <br>냉기 저항 +40% <br>+6 냉기 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">흠이 있는 사파이어</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 50-100 냉기 피해를 추가합니다. (4초 동안)<br>+17% 치명타 <br>+15의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 시전 속도 증가 <br>+50의 마나 <br>최대 마나 증가 +5% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +2% <br>냉기 저항 +50% <br>+8 냉기 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTBLUE">완벽한 사파이어</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 100-200 냉기 피해를 추가합니다. (4.8초 동안)<br>+20% 치명타 <br>+20의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 시전 속도 증가 <br>+60의 마나 <br>최대 마나 증가 +6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +3% <br>냉기 저항 +60% <br>+10 냉기 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">깨진 에메랄드</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 15-20 독 피해를 2 초 동안 추가합니다.<br>+5% 치명타 확률 <br>생명력 회복 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 더 빠른 이동/걷기 <br>+5% 공격 등급 보너스 <br>+5의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +10% <br>독 지속 시간 감소 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">결점이 있는 에메랄드</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 20-40 독 피해를 2 초 동안 추가합니다.<br>+8% 치명타 확률 <br>생명력 회복 +40 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 더 빠른 이동/걷기 <br>+8% 공격 등급 보너스 <br>+10의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +1% 증가 <br>독 저항 +20% <br>독 지속 시간 감소 +20% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">에메랄드</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 40-50 독 피해를 2 초 동안 추가합니다.<br>+11% 치명타 확률 <br>생명력 회복 +60 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 더 빠른 이동/걷기 <br>+11% 공격 등급 보너스 <br>+15의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +1% 증가 <br>독 저항 +30% <br>독 지속 시간 감소 +25% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">완벽한 에메랄드</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 50-100 독 피해를 2 초 동안 추가합니다.<br>+14% 치명타 확률 <br>생명력 회복 +90 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 더 빠른 이동/걷기 <br>+14% 공격 등급 보너스 <br>+20의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +2% 증가 <br>독 저항 +40% <br>독 지속 시간 감소 +30% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">흠이 있는 에메랄드</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 100-200 독 피해를 2 초 동안 추가합니다.<br>+17% 치명타 확률 <br>생명력 회복 +150 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 더 빠른 이동/걷기 <br>+17% 공격 등급 보너스 <br>+25의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +2% 증가 <br>독 저항 +50% <br>독 지속 시간 감소 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">완벽한 에메랄드</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 200-400 독 피해를 2 초 동안 추가합니다.<br>+20% 치명타 확률 <br>생명력 회복 +200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 더 빠른 이동/걷기 <br>+20% 공격 등급 보너스 <br>+30의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +3% 증가 <br>독 저항 +60% <br>독 지속 시간 감소 +50% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">조각난 루비</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 10-15 화염 피해를 추가합니다.<br>+15% 악마에게 가하는 피해 <br>+2 처치 후 생명력 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 더 빠른 타격 회복 <br>+4% 치명타 <br>+10 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +10% <br>+3 화염 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">결함 있는 루비</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 15-25 화염 피해를 추가합니다.<br>+30% 악마에게 가하는 피해 <br>+4 처치 후 생명력 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 더 빠른 타격 회복 <br>+6% 치명타 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +1% 증가 <br>화염 저항 +20% <br>+4 화염 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">루비</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 20-40 화염 피해를 추가합니다.<br>+45% 악마에게 가하는 피해 <br>+7 처치 후 생명력 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 더 빠른 타격 회복 <br>+8% 치명타 <br>+30 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +1% 증가 <br>화염 저항 +30% <br>+5 화염 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">완벽한 루비</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 30-60 화염 피해를 추가합니다.<br>+60% 악마에게 가하는 피해 <br>+10 처치 후 생명력 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 더 빠른 타격 회복 <br>+10% 치명타 <br>+40 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +2% 증가 <br>화염 저항 +40% <br>+6 화염 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">흠이 있는 루비</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 60-120 화염 피해를 추가합니다.<br>+80% 악마에게 가하는 피해 <br>+15 처치 후 생명력 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 더 빠른 타격 회복 <br>+12% 치명타 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +2% 증가 <br>화염 저항 +50% <br>+8 화염 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">완벽한 루비</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 120-225 화염 피해를 추가합니다.<br>+100% 악마에게 가하는 피해 <br>+20 처치 후 생명력 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 더 빠른 타격 회복 <br>+15% 치명타 <br>+60 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +3% 증가 <br>화염 저항 +60% <br>+10 화염 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>조각난 다이아몬드</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +1 증가 <br>공격에 대한 최대 피해 +2 증가 <br>+15% 언데드에 대한 피해 <br>+4 공격에 대한 최소 마법 피해 <br>+8 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-5% 목표 방어력 <br>+4% 치명타 확률 <br>+20 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 저항 +2% <br>모든 저항력 +5 <br>2 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>결점 있는 다이아몬드</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +2 증가 <br>공격에 대한 최대 피해 +4 증가 <br>+30% 언데드에 대한 피해 <br>+6 공격에 대한 최소 마법 피해 <br>+12 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-8% 목표 방어력 <br>+6% 치명타 확률 <br>+40 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 저항 +3% <br>모든 저항력 +8 <br>4 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>다이아몬드</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +4 증가 <br>공격에 대한 최대 피해 +8 증가 <br>+45% 언데드에 대한 피해 <br>+10 공격에 대한 최소 마법 피해 <br>+20 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-11% 목표 방어력 <br>+8% 치명타 확률 <br>+60 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 저항 +4% <br>모든 저항력 +11 <br>6 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>완벽한 다이아몬드</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +6 증가 <br>공격에 대한 최대 피해 +12 증가 <br>+60% 언데드에 대한 피해 <br>+20 공격에 대한 최소 마법 피해 <br>+40 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-14% 목표 방어력 <br>+10% 치명타 확률 <br>+80 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 저항 +6% <br>모든 저항력 +14 <br>8 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>흠집이 있는 다이아몬드</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +8 증가 <br>공격에 대한 최대 피해 +15 증가 <br>+80% 언데드에 대한 피해 <br>+30 공격에 대한 최소 마법 피해 <br>+60 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-17% 목표 방어력 <br>+12% 치명타 확률 <br>+100 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 저항 +8% <br>모든 저항력 +17 <br>10 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>완벽한 다이아몬드</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +10 증가 <br>공격에 대한 최대 피해 +20 증가 <br>+100% 언데드에 대한 피해 <br>+50 공격에 대한 최소 마법 피해 <br>+100 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-20% 목표 방어력 <br>+15% 치명타 확률 <br>+120 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 저항 +10% <br>모든 저항력 +20 <br>12 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">깨진 토파즈</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-25 번개 피해를 추가합니다.<br>+2% 치명타 <br>대상을 +2% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 몬스터로부터 추가 골드 <br>+10% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +10% <br>+3 번개 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">결점 있는 토파즈</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-40 번개 피해를 추가합니다.<br>+3% 치명타 <br>대상을 +4% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 몬스터로부터 추가 골드 <br>+20% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 최대 번개 저항 증가 <br>전기 저항 +20% <br>+4 번개 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">토파즈</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-60 번개 피해를 추가합니다.<br>+4% 치명타 <br>대상을 +6% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 몬스터로부터 추가 골드 <br>+30% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1% 최대 번개 저항 증가 <br>전기 저항 +30% <br>+5 번개 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">완벽한 토파즈</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-100 번개 피해를 추가합니다.<br>+6% 치명타 <br>대상을 +8% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 몬스터로부터 추가 골드 <br>+40% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 최대 번개 저항 증가 <br>전기 저항 +40% <br>+6 번개 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">흠이 있는 토파즈</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-200 번개 피해를 추가합니다.<br>+8% 치명타 <br>대상을 +10% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 몬스터로부터 추가 골드 <br>+50% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 최대 번개 저항 증가 <br>전기 저항 +50% <br>+8 번개 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">완벽한 토파즈</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-350 번개 피해를 추가합니다.<br>+10% 치명타 <br>대상을 +12% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 몬스터로부터 추가 골드 <br>+60% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 최대 번개 저항 증가 <br>전기 저항 +60% <br>+10 번개 흡수 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">조각난 해골</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +2 증가 <br>+1% 물리 피해를 마나로 흡수합니다. <br>+1% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 더 빠른 이동/걷기 <br>생명력 회복 +10 <br>마나 재생 +5% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 방어력 <br>물리 저항: +2% <br>마법 피해 감소 2 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">결함 있는 해골</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +3 증가 <br>+2% 물리 피해를 마나로 흡수합니다. <br>+2% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++6% 더 빠른 이동/걷기 <br>생명력 회복 +20 <br>마나 재생 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40 방어력 <br>물리 저항: +3% <br>마법 피해 감소 4 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">해골</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +6 증가 <br>+3% 물리 피해를 마나로 흡수합니다. <br>+3% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 더 빠른 이동/걷기 <br>생명력 회복 +30 <br>마나 재생 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 방어력 <br>물리 저항: +4% <br>마법 피해 감소 6 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">완벽한 해골</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +9 증가 <br>+4% 물리 피해를 마나로 흡수합니다. <br>+4% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 더 빠른 이동/걷기 <br>생명력 회복 +50 <br>마나 재생 +20% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++80 방어력 <br>물리 저항: +6% <br>마법 피해 감소 8 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">흠집 있는 해골</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +12 증가 <br>+5% 물리 피해를 마나로 흡수합니다. <br>+5% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 더 빠른 이동/걷기 <br>생명력 회복 +75 <br>마나 재생 +25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 방어력 <br>물리 저항: +8% <br>마법 피해 감소 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">완벽한 해골</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +15 증가 <br>+6% 물리 피해를 마나로 흡수합니다. <br>+6% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 더 빠른 이동/걷기 <br>생명력 회복 +100 <br>마나 재생 +30% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++120 방어력 <br>물리 저항: +10% <br>마법 피해 감소 12 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">조각난 흑요석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 1</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++9% 증가된 피해<br>+1% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 공격 속도 증가 <br>모든 저항력 +2 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 향상된 방어력 <br>2 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">흠집 있는 흑요석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++18% 증가된 피해<br>+2% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 공격 속도 증가 <br>모든 저항력 +4 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 향상된 방어력 <br>4 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">흑요석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 14</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++27% 증가된 피해<br>+3% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++12% 공격 속도 증가 <br>모든 저항력 +6 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 향상된 방어력 <br>6 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">완벽한 흑요석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++36% 증가된 피해<br>+4% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++16% 공격 속도 증가 <br>모든 저항력 +8 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 향상된 방어력 <br>8 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">흠이 있는 흑요석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++45% 증가된 피해<br>+5% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 공격 속도 증가 <br>모든 저항력 +10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 향상된 방어력 <br>10 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">완벽한 흑요석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++54% 증가된 피해<br>+6% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++24% 공격 속도 증가 <br>모든 저항력 +12 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 향상된 방어력 <br>12 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">I 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 2</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 증가된 피해<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">U 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 3</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 언데드에 대한 피해 <br>언데드에 대한 공격 등급 +75 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++15% 더 빠른 이동/걷기 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++2% 차단 확률 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">시 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 4</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5의 처치 후 마나 회복 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">카 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 5</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+밀쳐내기 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 투사체 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 투사체 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">N 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-25% 목표 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마나 재생 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마나 재생 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">쿠 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 7</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 피해 +10 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 피해를 받을 때 마나로 전환 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 피해를 받을 때 마나로 전환 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">요 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 9</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 2초 동안 독 피해 75 추가<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">키 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 10</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 40-80 화염 피해를 추가합니다.<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">리 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 12</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-125 번개 피해를 추가합니다.<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">미 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 30-70 냉기 피해를 추가합니다. (3초 동안)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +40% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +40% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">야 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++8% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격자가 250의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격자가 250의 피해를 입습니다. <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 17</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +10 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+10 만큼 피해 감소 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+15 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">츠 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 19</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 공격 속도 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 더 빠른 타격 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 더 빠른 차단 속도 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">치 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 20</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+생명력 회복 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+생명력 회복 +75 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+생명력 회복 +75 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">사 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 22</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25 공격에 대한 최소 마법 피해 <br>+60 공격에 대한 최대 마법 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 피해 감소 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 피해 감소 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">유 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 23</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">케 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 에너지 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 에너지 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 에너지 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">E 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 26</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50의 민첩성 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 27</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 힘 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 힘 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 힘 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">라 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 28</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 몬스터로부터 추가 골드 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">O 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 30</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 악마에게 가하는 피해 <br>악마에 대한 공격 등급 +75 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 향상된 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 향상된 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">호 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 31</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 저항력 +30 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 저항력 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 저항력 +25 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">메 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 32</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 시전 속도 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 시전 속도 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 시전 속도 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">루 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 34</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">타 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 공격 등급 보너스 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +3% 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +3% 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">룬으로</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 36</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 물리 피해를 마나로 흡수합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +3% 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +3% 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">와 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 38</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 증가된 피해<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">하 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 39</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 최대 번개 저항 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 최대 번개 저항 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">나 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 40</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+대상을 +15% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 마나 증가 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60의 마나 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">니 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 치명타 확률 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+물리 저항: +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+물리 저항: +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">세 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 43</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+대상의 방어 무시 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 생명 증가 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 생명력 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">푸 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 44</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+대상을 얼립니다 +3<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+얼음에 갇히지 않음 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+얼음에 갇히지 않음 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">마 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 45</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 생명력 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 생명력 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1 생명력 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">하이 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 46</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1의 마나 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1의 마나 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++1의 마나 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">모 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 47</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 힘 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 힘 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 힘 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">룬 없음</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 48</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625의 민첩성 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625의 민첩성 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625의 민첩성 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">테 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 50</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 생명력 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 생명력 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 생명력 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">로 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 51</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 에너지 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 에너지 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++0.625 에너지 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">소 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 52</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 화염 피해 +8 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">무 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 54</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 냉기 피해 +8 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">네 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 55</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 독 피해 +8 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">레 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 56</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 번개 피해 +8 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +0.75% (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">수 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 57</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 공격 등급 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 방어력 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++5 방어력 (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">헤 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 59</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 피해 +0.625 증가 (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격자가 10의 피해를 입습니다. (캐릭터 레벨 기준)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격자가 10의 피해를 입습니다. (캐릭터 레벨 기준)<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">누 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 능력치 +30 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 능력치 +30 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 능력치 +30 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">워 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+파괴 불가능 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+파괴 불가능 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+파괴 불가능 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">널 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>El 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 11</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 증가된 피해<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Eld 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 11</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100% 언데드에 대한 피해 <br>언데드에 대한 공격 등급 +100 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 더 빠른 이동/걷기 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++3% 차단 확률 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Tir 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7의 처치 후 마나 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7의 처치 후 마나 회복 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Nef 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 13</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+밀쳐내기 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 투사체 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++100 투사체 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Eth 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-25% 목표 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마나 재생 +50% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마나 재생 +50% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ith 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 15</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최대 피해 +15 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 피해를 받을 때 마나로 전환 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50% 피해를 받을 때 마나로 전환 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Tal 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 17</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 5초 동안 독 피해 375 추가<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+독 저항 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ral 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 19</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 40-80 화염 피해를 추가합니다.<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+화염 저항 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ort 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 21</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 1-125 번개 피해를 추가합니다.<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+전기 저항 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Thul 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 23</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 35-75 냉기 피해를 추가합니다. (3초 동안)<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +45% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 저항 +45% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Amn 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 25</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격자가 300의 피해를 입습니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격자가 300의 피해를 입습니다. <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Sol 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 27</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+공격에 대한 최소 피해 +15 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+18 만큼 피해 감소 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+18 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Shael 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 29</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 공격 속도 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 더 빠른 타격 회복 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++25% 더 빠른 차단 속도 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Dol 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 31</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+생명력 회복 +200 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+생명력 회복 +15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+생명력 회복 +15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Hel 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 0</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+요구 사항 -25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+요구 사항 -25% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+요구 사항 -25% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Io 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 35</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 생명력 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lum 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 37</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 에너지 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 에너지 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 에너지 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ko 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 39</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60의 민첩성 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60의 민첩성 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Fal 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 41</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 힘 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 힘 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60 힘 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lem 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 43</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++55% 몬스터로부터 추가 골드 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Pul 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 45</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++125% 악마에게 가하는 피해 <br>악마에 대한 공격 등급 +125 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 향상된 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 향상된 방어력 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Um 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 47</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 저항력 +35 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 저항력 +25 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 저항력 +25 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Mal 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 49</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 피해 감소 20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 피해 감소 18 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+마법 피해 감소 18 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ist 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 51</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35% 마법 아이템 획득 확률 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Gul 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 53</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 공격 등급 보너스 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +4% 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 독 저항 +4% 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Vex 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 55</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 물리 피해를 마나로 흡수합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +4% 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 화염 저항 +4% 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ohm 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 57</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++65% 증가된 피해<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 냉기 저항 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Lo 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 59</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 최대 번개 저항 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 최대 번개 저항 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Sur 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 61</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+대상을 +18% 느리게 합니다. <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 마나 증가 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75의 마나 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Ber 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 63</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++30% 치명타 확률 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+물리 저항: +12% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+물리 저항: +12% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Jah 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 65</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+-33% 목표 방어력 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+최대 생명 증가 +18% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75 생명력 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Cham 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 67</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+대상을 얼립니다 +5<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+얼음에 갇히지 않음 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+얼음에 갇히지 않음 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>Zod 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 69</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+파괴 불가능 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+파괴 불가능 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+파괴 불가능 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">달 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 마법 주문 피해 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>마법 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>마법 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">불 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 화염 주문 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>화염 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>화염 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">물 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>냉기 주문 피해 +15% 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>냉기 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>냉기 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">나무 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 소환 피해 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>얼음에 갇히지 않음 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>얼음에 갇히지 않음 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">메탈 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+100% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+100% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+100% 몬스터로부터 추가 골드 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">지구 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 독 마법 피해 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>마법 피해 감소 50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>마법 피해 감소 50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">태양 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>생명력 회복 +250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>생명력 회복 +250 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>생명력 회복 +250 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">번개 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 번개 주문 피해 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>번개 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>번개 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">바람 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 물리 주문 피해 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>50 만큼 피해 감소 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>50 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">드래곤 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++75% 증가된 피해<br>모든 기술에 +1 추가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>물리 저항: +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>물리 저항: +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">생명 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+10% 물리 피해를 마나로 흡수합니다. <br>+10% 물리 피해 생명력으로 흡수됨 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>최대 생명 증가 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>최대 생명 증가 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b>죽음 룬</b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+20% 치명타 확률 <br>+20% 치명타 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>최대 마나 증가 +15% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>최대 마나 증가 +15% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">천국 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>1 초에 5 내구성을 수리합니다.<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>1 초에 5 내구성을 수리합니다.<br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>1 초에 5 내구성을 수리합니다.<br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="#EED68D">신 룬</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 60</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 경험치 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 경험치 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+모든 기술에 +1 추가 <br>+15% 경험치 증가 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">조각난 얼음 영혼</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 마법 주문 피해 증가 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>마법 흡수 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>마법 흡수 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">결함 있는 얼어붙은 영혼</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 마법 주문 피해 증가 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>마법 흡수 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>마법 흡수 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">얼어붙은 영혼</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 마법 주문 피해 증가 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>마법 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>마법 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">조각난 그림자 수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 물리 피해를 마나로 흡수합니다. <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>최대 마나 증가 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>최대 마나 증가 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">결점 있는 그림자 수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 물리 피해를 마나로 흡수합니다. <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>최대 마나 증가 +7% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>최대 마나 증가 +7% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="LIGHTGRAY">그림자 수정</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 물리 피해를 마나로 흡수합니다. <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>최대 마나 증가 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>최대 마나 증가 +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">조각난 피의 돌</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 화염 주문 피해 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>화염 흡수 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>화염 흡수 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">흠이 있는 피의 돌</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 화염 주문 피해 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>화염 흡수 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>화염 흡수 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">피의 돌</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 화염 주문 피해 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>화염 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>화염 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">조각난 타오르는 유황</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 번개 주문 피해 증가 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>번개 흡수 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>번개 흡수 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">결함 있는 타오르는 유황</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 번개 주문 피해 증가 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>번개 흡수 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>번개 흡수 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="YELLOW">타오르는 유황</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 번개 주문 피해 증가 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>번개 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>번개 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">조각난 어두운 아줄라이트</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 주문 피해 +4% 증가 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>냉기 흡수 +1% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>냉기 흡수 +1% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">결함 있는 어두운 아주라이트</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 주문 피해 +7% 증가 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>냉기 흡수 +2% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>냉기 흡수 +2% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="BLUE">어두운 아주라이트</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
+냉기 주문 피해 +10% 증가 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>냉기 흡수 +3% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>냉기 흡수 +3% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">조각난 쓴 페리도트</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 독 마법 피해 증가 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>마법 피해 감소 10 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>마법 피해 감소 10 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">흠집 있는 쓴 페리도트</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 독 마법 피해 증가 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>마법 피해 감소 15 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>마법 피해 감소 15 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">쓴 페리도트</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 독 마법 피해 증가 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>마법 피해 감소 20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>마법 피해 감소 20 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">조각난 맥동 오팔</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 물리 피해 생명력으로 흡수됨 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>최대 생명 증가 +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>최대 생명 증가 +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">결점 있는 맥동 오팔</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 물리 피해 생명력으로 흡수됨 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>최대 생명 증가 +7% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>최대 생명 증가 +7% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GOLD">맥동하는 오팔</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 물리 피해 생명력으로 흡수됨 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>최대 생명 증가 +10% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>최대 생명 증가 +10% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">조각난 수수께끼의 주홍석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>생명력 회복 +50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>생명력 회복 +20 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>생명력 회복 +50 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">결함 있는 수수께끼의 주홍석</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>생명력 회복 +100 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>생명력 회복 +35 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>생명력 회복 +100 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="RED">신비로운 주홍색</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>생명력 회복 +150 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>생명력 회복 +50 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>생명력 회복 +150 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">조각난 무덤 비취</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 소환 피해 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>반 동결 지속 시간 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>반 동결 지속 시간 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">흠집 있는 무덤 비취</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 소환 피해 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>반 동결 지속 시간 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>반 동결 지속 시간 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="GREEN">무덤 비취</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 소환 피해 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>얼음에 갇히지 않음 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>얼음에 갇히지 않음 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">조각난 고체 수은</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>+40% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>+20% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>+20% 몬스터로부터 추가 골드 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">결함이 있는 고체 수은</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>+60% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>+40% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>+40% 몬스터로부터 추가 골드 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="WHITE">고체 수은</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>+80% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>+60% 몬스터로부터 추가 골드 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>+60% 몬스터로부터 추가 골드 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">조각난 폭풍의 호박</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20% 증가된 피해<br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>물리 저항: +4% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>물리 저항: +4% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">결점 있는 폭풍 호박</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++40% 증가된 피해<br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>물리 저항: +6% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>물리 저항: +6% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="ORANGE">폭풍 호박</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++60% 증가된 피해<br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>물리 저항: +8% <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>물리 저항: +8% <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">깨진 더럽혀진 투르말린</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 6</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++4% 물리 주문 피해 증가 <br>+20 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>10 만큼 피해 감소 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++20 생명력 증가 <br>10 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">흠집 있는 오염된 투어멀린</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 24</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++7% 물리 주문 피해 증가 <br>+35 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>15 만큼 피해 감소 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++35 생명력 증가 <br>15 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+<tr><td colspan="3" bgcolor="#402040" align="center">
+<font size="-1" face="arial,helvetica" color="GRAY"><b><FONT COLOR="PURPLE">오염된 투르말린</FONT></b></font>
+<br>
+<font size="-1" face="arial,helvetica">요구 레벨: 42</font>
+</td></tr>
+<tr><td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Weapons / Gloves</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Helms / Boots</font></td>
+<td width="266" bgcolor="#402040" align="center"><font size="-1" face="arial,helvetica">Armor / Shields / Belts</font></td>
+</tr>
+<tr>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++10% 물리 주문 피해 증가 <br>+50 생명력 증가 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>20 만큼 피해 감소 <br>
+</font></td>
+<td height="70" bgcolor="#101010" align="center">
+<font size="-1" face="arial,helvetica">
++50 생명력 증가 <br>20 만큼 피해 감소 <br>
+</font></td>
+</tr>
+
+
+</tbody></table>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

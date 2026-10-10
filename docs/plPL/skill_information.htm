@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Baza danych Eastern Sun Resurrected
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Dziennik zmian]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Pancerze]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Broń]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przedrostki]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przyrostki]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowe pancerze]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowa broń]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Inne unikaty]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mityczne unikaty]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Zestawy]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Klejnoty/Runy]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa klejnotów]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa runiczne]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptury kostki]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Kalkulator szybkości ataku]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyszukiwarka łupów]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki skażenia]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki namaszczenia]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy końcowe]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Naczynie dusz]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendencje]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Księga zabójstw]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Najemnicy i umiejętności spoza klasy]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Biegłość w broni]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod całkowitej konwersji do Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Tutaj znajdziesz informacje o najemnikach i różnych umiejętnościach z przedmiotów.<br>
+                            Jeśli uważasz, że czegoś tu brakuje, napisz do mnie na Discordzie, a to dodam.
+                        </font>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a name="mercenaries"></a>
+        <font size="-1" face="arial,helvetica">
+            <a href="./skill_information.htm#mercenaries">[Najemnicy]</a>&nbsp;
+            <a href="./skill_information.htm#oskills">[Umiejętności z przedmiotów]</a>&nbsp;
+        </font>
+        <br>
+        <br>
+        <table cellpadding="5" cellspacing="0"
+            style="border-collapse:collapse; max-width: 1200px; text-align:left; color:#fff; font-family:Arial, sans-serif; width:100%; border:2px solid #000;">
+            <tr style="background-color:#402040; border:2px solid #000;">
+                <td colspan="4" style="text-align: center;">
+                    <b>Najemnicy</b>
+                </td>
+            </tr>
+            <tr style="background-color:#402040; border:2px solid #000; text-align: center;">
+                <th style="border:2px solid #000;">Najemnik</th>
+                <th style="border:2px solid #000;">Podtyp</th>
+                <th style="border:2px solid #000;">Umiejętności</th>
+            </tr>
+            <!-- Rogue Scout -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zwiadowca Złodziei</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Żywioły</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Strzała Immolacji, Strzała Zamarzająca, Strzała błyskawicy, Wewnętrzny Wzrok, Ostrzona Koncentracja, Przebicie</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zwiadowca Złodziei</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Fizyczne</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wielokrotny Strzał, Strzał Tornado, Legendarny Strzał, Wewnętrzny Wzrok, Ostrzona Koncentracja, Przebicie</font>
+                </td>
+            </tr>
+            <!-- Desert Mercenary -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Walka - Normalny</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Moc, Pchnięcie, Sztorm Włóczni, Taniec Śmierci
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Obr. - Normalny</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Modlitwa, Pchnięcie, Skoncentruj się, Taniec Śmierci
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Ofens. - Normalny</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Święty Ogień, Zapał, Zemsta, Wyrok</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Walka - Koszmar</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Fanatyzm, Pchnięcie, Sztorm Włóczni, Taniec Śmierci</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Obr. - Koszmar</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Medytacja, Zapał, Skoncentruj się, Taniec Śmierci</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Ofens. - Koszmar</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Święte Zatrzymanie, Zapał, Zemsta, Wyrok
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Walka - Piekło</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Przekonanie, Zapał, Zemsta, Wyrok</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Obr. - Piekło</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wigor, Pchnięcie, Skoncentruj się, Taniec Śmierci
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pustynny najemnik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Ofens. - Piekło</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Święty Wstrząs, Pchnięcie, Sztorm Włóczni, Taniec Śmierci</font>
+                </td>
+            </tr>
+            <!-- Eastern Sorcerer -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wschodni czarownik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Ogień</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura obrażenia od ognia, Burza Ognia, Wulkan, Wybuch Płomieni</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wschodni czarownik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zimno</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura Zimnego Obrażenia, Wirpool, Monsun, Zamarznięta Eksplozja</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wschodni czarownik</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Błyskawica</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura Zniszczenia Piorunów, Zabij, Przewód, Nexus Burzy</font>
+                </td>
+            </tr>
+            <!-- Barbarian -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Barbarzyńca</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Defensywne</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Krzyk, Rozkaz Bitewny, Rozkazy Bitewne, Ogłuszenie, Skoncentruj się</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Barbarzyńca</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Ofensywne</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wycie, Rozkaz bitewny, Obecność Starożytnych, Berserk, Koncentracja</font>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <a name="oskills"></a>
+        <font size="-1" face="arial,helvetica">
+            <a href="./skill_information.htm#mercenaries">[Najemnicy]</a>&nbsp;
+            <a href="./skill_information.htm#oskills">[Umiejętności z przedmiotów]</a>&nbsp;
+        </font>
+        <br>
+        <br>
+        <table cellpadding="5" cellspacing="0"
+            style="border-collapse:collapse; max-width: 1200px; text-align:left; color:#fff; font-family:Arial, sans-serif; width:100%; border:2px solid #000;">
+            <tr style="background-color:#402040; border:2px solid #000;">
+                <td colspan="3" style="text-align: center;">
+                    <b>Umiejętności z przedmiotów</b>
+                </td>
+            </tr>
+            <tr style="background-color:#402040; border:2px solid #000; text-align: center;">
+                <th style="border:2px solid #000;">Umiejętności</th>
+                <th style="border:2px solid #000;">Opis</th>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Strzała, Strzała wzmocniona ogniem/zimnem/błyskawicą/magią
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zwykła strzała, która zadaje 100% obrażeń broni i nie może przebijać. Warianty żywiołów zamieniają 100% obrażeń fizycznych na odpowiedni rodzaj obrażeń.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Rzut toporem, Topór wzmocniony ogniem/zimnem/błyskawicą/magią
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zwykły topór, który zadaje 100% obrażeń broni i nie może przebijać. Warianty żywiołów zamieniają 100% obrażeń fizycznych na odpowiedni rodzaj obrażeń.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Fala ognia/zimna/błyskawic/trucizny/magii/wiatru
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Umiejętność zadająca natychmiastowe obrażenia zaklęć na małym obszarze. Każda umiejętność dostaje premie synergii od wszystkich zaklęć swojego żywiołu (np. Fala ognia dostaje synergie od wszystkich zaklęć ognia o obrażeniach bezpośrednich, takich jak Wybuch płomieni czy Wulkan). W przeciwieństwie do innych procków dziedziczą one premię do obrażeń z kusz.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pływy Żywiołów
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Fala ognia, zimna, błyskawic, magii i wiatru, 5 w 1.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Piętno ognia/zimna/błyskawic/magii/wiatru
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Umiejętność, która przyczepia piętno do wybranego wroga i po 0.4 s zadaje 100% obrażeń broni zamienionych na odpowiedni żywioł.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Nowa kolców ognia/zimna/błyskawic/magii/nieżywiołowa
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Umiejętność, która uwalnia nowę z 64 kolców zadającą 100% obrażeń broni zamienionych na odpowiedni żywioł.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Czasoprzestrzeń</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Umiejętność, która po prostu leczy użytkownika, gdy się aktywuje lub zostanie rzucona. Poziom = % leczenia (np. poziom 10 = 10% maks. życia).
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Supernowa</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Nowa na cały ekran, która zadaje 150% obrażeń broni zamienionych na obrażenia od błyskawic i odrzuca wszystkich wrogów.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Duch Mistrzostwa Natury</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Umiejętność pasywna dająca na poziom 1% odporności fizycznej i 5% życia (sumuje się z premią Dzikiego mistrzostwa).
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Rozgrzewka</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające na poziom 2% szybkości ataku, 2% szybkości ruchu, 2% szybkości rzucania czarów i 10% regeneracji many. Odnawia też około 10 życia na sekundę na poziom.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wyładowanie Ostrzy lodu/Szponów gromu/Pięści ognia</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Procki, które po aktywacji wyładowują symulowaną umiejętność ładującą z 3 ładunkami. Mają te same synergie co zwykłe umiejętności. W przeciwieństwie do fizycznych procków wyładowania wykończenia używają poziomu samego procka, a nie poznanej umiejętności.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura obrażeń od ognia/zimna/błyskawic</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura dająca na poziom 5% obrażeń zaklęć danego żywiołu członkom drużyny w jej zasięgu.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura przebicia ognia/zimna/błyskawic</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Aura obniżająca na poziom o 1% odporność pobliskich wrogów na dany żywioł.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wyładowanie Smoczej furii/Egzekucji</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">To procek z przedmiotów; po aktywacji na wroga wyładowuje się w pełni naładowana Smocza furia/Egzekucja na obecnym poziomie (poziom poznanej umiejętności, nie procka).
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofеj obrażeń fizycznych</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 800% zwiększonych obrażeń i 50-100 obrażeń fizycznych do ataków. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofeum Szybkości</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 100% bazowej szybkości ataku i biegu/chodu, 100% szybszego rzucania czarów, 100% szybszego bloku i 100% szybszego otrząsania się. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofеj Obrażenia Czarów</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 300% obrażeń zaklęć. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofeum Utrzymania</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie zwiększające maks. życie i manę o 150%. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofеj Oporności</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 100% do odporności na żywioły i truciznę oraz 50% do odporności fizycznej i na magię. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofeum Statystyk</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 150 do wszystkich atrybutów. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Trofeum umiejętności</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 10 do wszystkich umiejętności. Trwa 20 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Delirium</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Wzmocnienie dające 50% premii do wszystkich atrybutów, 15 życia przy trafieniu i odporność na klątwy (która <strong>NIE</strong> usuwa obecnych klątw) przez 4 s.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Błysk ognia/zimna/błyskawic</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Atak typu wielokrotny strzał, który wystrzeliwuje w stożku 1 pocisk ognia/zimna/błyskawic + 1 co 5 poziomów. Każdy pocisk ma 100% wrodzonej szansy na przebicie i zamienia wszystkie obrażenia fizyczne na swój żywioł. Zadaje 125% obrażeń broni.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Kajdany</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Klątwa, która spowalnia ruch wrogów o 100% + 5% na poziom i obniża ich całkowity pancerz o 20% + 1% na poziom.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Śmierć Cieplna</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zaklęcie, które natychmiast zadaje pobliskim wrogom 50% ich obecnego życia jako obrażenia od ognia. Obszar działania to 10 + 2/3 m na poziom.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zero Bezwzględne</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zaklęcie, które natychmiast zadaje pobliskim wrogom 50% ich obecnego życia jako obrażenia od zimna. Obszar działania to 10 + 2/3 m na poziom.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Przeciążenie</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zaklęcie, które natychmiast zadaje pobliskim wrogom 50% ich obecnego życia jako obrażenia od błyskawic. Obszar działania to 10 + 2/3 m na poziom.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Osobliwość</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zaklęcie, które natychmiast zadaje pobliskim wrogom 50% ich obecnego życia jako obrażenia magiczne. Obszar działania to 10 + 2/3 m na poziom.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Sieć Śmierci</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Zaklęcie, które pokrywa pole bitwy pajęczynami, obniżając odporność na truciznę wrogów, którzy po nich chodzą, o 75% i ich bazową szybkość ruchu o 100%.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Balista Wielostrzałowa</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Przywołuje nieruchomy konstrukt, który wystrzeliwuje wiele strzał w wielu wrogów. Konstrukt dziedziczy twoje fizyczne obrażenia ataku i wszystkie modyfikatory ataku poza prockami. Za każde 50000 obrony można przywołać dodatkową balistę. Nie skaluje się z modyfikatorem limitu pułapek.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Balista Harpunowa</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Przywołuje nieruchomy konstrukt, który wykonuje potężne ogłuszające ataki na jednego wroga. Konstrukt dziedziczy twoje fizyczne obrażenia ataku i wszystkie modyfikatory ataku poza prockami. Za każde 50000 obrony można przywołać dodatkową balistę. Nie skaluje się z modyfikatorem limitu pułapek.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Kaskada Błyskawic</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Atak, który wystrzeliwuje błyskawicę w każdego wroga na ekranie. Każda błyskawica zadaje 100% obrażeń broni zamienionych na błyskawice.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Glacjalne Inferno</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Kataklizmiczna fala mrozu, która zamraża wszystkie pobliskie potwory na 8 s i zadaje 50% obrażeń broni jako obrażenia od zimna.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Gwiazdowy Grzmot</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Uwalnia nowę z 5 błyskawic, które tworzą pola wstrząsu zadające 20% obrażeń broni jako błyskawice każdemu, kto na nich stoi.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Burza Duchów</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Przez 4 s co 0.2 s uwalnia 1 ducha, który szuka pobliskich wrogów i zadaje 50% obrażeń broni jako obrażenia magiczne. Każdy duch po trafieniu leczy o 1% maks. życia gracza.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Oddech Smoka</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Klon Burzy ognia, który dostaje premię do obrażeń z synergii od wszystkich zaklęć ognia.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Błyszczeć</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Umiejętność, która przywołuje do walki Naładowane pociski zadające 10% obrażeń broni jako błyskawice.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Daleki strzał</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">Pocisk, który zadaje 100% obrażeń broni i do 200% więcej całkowitych obrażeń na maksymalnym zasięgu.
+                    </font>
+                </td>
+            </tr>
+        </table>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

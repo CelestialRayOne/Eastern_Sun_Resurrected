@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 3.6 データベース
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="&#35328;&#35486;"><select id="esr-lang-jaJP" aria-label="&#35328;&#35486;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP" selected>&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="jaJP",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-jaJP');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本情報</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新履歴]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[防具]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接頭辞]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接尾辞]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク防具]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[その他のユニーク]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話ユニーク]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[セット]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/ルーン]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ジェムワード]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ルーンワード]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[キューブレシピ]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[マップ]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻撃速度計算機]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">機能</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐敗の結果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油の結果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[エンドゲームマップ]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魂の器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[アセンダンシー]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[討伐台帳]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵と他クラススキル情報]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器熟練]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">ディアブロ II リザレクテッド用トータルコンバージョンMOD</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">アセンダンシー</font> は、遊び方を形作る強力な特化で、固有のスキルとボーナスを与えます。<br>
+                            アセンダンシーは、いくつかの特別な戦いを終えた後にのみ入手できる <font color="orange">昇進の石</font> という特別なお守りによって付与されます。<br>
+                            昇進の石は、特定の試練を達成することでさらにアップグレードできます（つまり、さらに昇華できます）。その一部は非常に難しいエンドゲームコンテンツに結びついています。<br>
+                            到達できるアセンダンシーのティアは5つあり、試練は前のものより難しくなりますが、ボーナスもより強力になります。<br>
+                            昇進の石は <font color="red"><strong>他のキャラクターと共有できません</strong>
+                            </font>。同時に装備できる昇進の石は1つだけです。<br>
+                            言うまでもなく、各ティアは一度しか達成できません。ただし、どの順番で達成しても構いません。<br>
+                            昇進の石は通常の手段では変更できません（堕落、聖別、カエデの葉への分解などはできません）。<br>
+                            エンジンの制限により、死亡した後は <font color="red">昇進の石を装備し直す</font> 必要があります。そうしないとボーナスが戻りません。<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[試練]</a>
+            <a href="#ascendancies">[アセンダンシー]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>ティア1の試練</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            次のアイテムを手に入れるには： <font color="orange">昇進の石</font>。まず、特別なスーパーユニーク5体を倒す必要があります <font color="red">（ヘル難易度）</font> （サンクチュアリ各地に点在）<br>。そして各ボスが落とすエレメンタルオーブをトランスミュートして、次を入手します：
+                            <font color="orange">創造のオーブ</font>.<br>
+                            そのオーブを特定の色の宝石とトランスミュートすると、好きなアセンダンシーを解放できます。ヒント：アクト1、2、3にはそれぞれスーパーユニークが1体います。アクト5には2体、アクト4にはいません。
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 入力</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 出力</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            2 傷ついたサファイア<br>
+                            2 傷ついたオブシディアン<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">バトルメイジの昇進石<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            1 傷ついたオブシディアン<br>1 傷ついたサファイア<br>1 傷んだエメラルド<br>1 傷ついたルビー
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">覚醒した昇進の石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            2 傷ついたオブシディアン<br>2 傷んだエメラルド
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">ブレードマスターの昇天石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            2 傷んだエメラルド<br>2 傷ついたルビー
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">遊牧民の昇華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            2 傷ついたオブシディアン<br>2 傷ついたルビー
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">アイアンボルトの昇天石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            2 傷んだエメラルド<br>2 傷ついたサファイア
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">アルカニストの昇華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            2 傷ついたルビー<br>2 傷ついたサファイア
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">ソウルウォーデンの昇天石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            4 傷んだエメラルド
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">シャープシューターのアセンデンシーストーン<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            4 傷ついたサファイア
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">星生まれの昇天石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            1 傷ついたルビー<br>1 傷ついたオブシディアン<br>1 傷ついたサファイア
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">ブラッドメイジの昇進石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            4 傷ついたルビー
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">ライフブレイカーのアセンダンシーストーン<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            1 傷ついたルビー<br>1 傷ついたオブシディアン<br>1 傷んだエメラルド
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">ワールドシェイパーの昇進石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            1 傷ついたオブシディアン<br>1 傷んだエメラルド<br>1 傷ついたサファイア
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">スタンスダンサーのアセンダンシーストーン<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            1 傷んだエメラルド<br>1 傷ついたルビー<br>1 傷ついたサファイア
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">マナウォーデンのアセンデンシーストーン<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造のオーブ</font><br>
+                            4 傷ついたオブシディアン
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">バーサーカーの昇天石<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ティア2の試練</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            第2ティアは、ヘル難易度でニーラサックの領域にいるニーラサックを倒し、昇進の石をそれ自体とトランスミュートすると達成できます。<br>
+                            <font color="red">キャラクターに渦が出ている間にトランスミュートする必要があります。</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 入力</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 出力</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">昇進の石</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            ティア2にアップグレード
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ティア3の試練</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            第3ティアは、ウーバー・トリストラムのボスすべてを <font color="red">互いに1分以内に、死なずに倒し、 </font>昇進の石をカエデの葉とトランスミュートすると達成できます。<br>最後のボスを倒した後にキャラクターに渦が出ていても、最初のボスを倒してから1分以上経っていると機能しません。
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 入力</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 出力</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            カエデの葉
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            ティア3にアップグレード
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ティア4の試練</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            第4ティアは、どのエンドゲームマップのボスからもドロップする <font color="ORANGE">原初のソウルストーン
+                            </font> を10個集めると達成できます。昇進の石には一度に1個の原初の石しかトランスミュートできません。昇進の石に原初のソウルストーンを10個取り込んだら、カエデの葉2枚とトランスミュートしてティア4に昇華できます。<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 入力</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 出力</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            <font color="orange">原初のソウルストーン 捕獲数: 10/10</font><br>
+                            カエデの葉 2枚
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            ティア4にアップグレード
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>ティア5の試練</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            第5ティアは、任意のティア5マップのボスを倒し、昇進の石をカエデの葉3枚とトランスミュートすると達成できます。<br>
+                            <font color="red">キャラクターに渦が出ている間にトランスミュートする必要があります。</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 入力</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 出力</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            カエデの葉 3枚
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇進の石</font><br>
+                            ティア5にアップグレード
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[試練]</a>
+            <a href="#ascendancies">[アセンダンシー]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">アセンダンシー</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+60 の力<br>+60 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+25% 力量ボーナス<br>+25% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>致命打2%につき1%の呪文ダメージ、およびクラッシング・ブロウ2%につき1%の呪文ダメージを得る<br>+25% クリティカルヒットのチャンス<br>+25% 致命的一撃<br><br>
+                    <font color="orange">ティア4</font><br>デッドリーストライクとクラッシングブロー 3%ごとに総防御ボーナス 1%*<br>+10 ストライキングの命<br>+15% 物理ダメージをマナとして吸収<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>全ての速度に +50% 追加<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">バトルメイジのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*総防御ボーナスは防具値全体に乗算されます。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">ブレードマスターのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+60 の力<br>+60 の敏捷性<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+25% 力量ボーナス<br>+25% デクスタリティへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>物理耐性 1%ごとに強化ダメージ 10%<br>物理耐性 20%<br><br>
+                    <font color="orange">ティア4</font><br>物理耐性が1%増加するごとに、1%の物理ダメージをライフとして吸収する<br>攻撃の最小ダメージに +40 追加<br>攻撃の最大ダメージに +50 追加<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>15% の確率でヒット時にレベル 20 の 投げ斧 を発動する<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+60 の敏捷性<br>+60 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+25% デクスタリティへのボーナス<br>+25% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>速度 1%ごとにマナ 5*<br>全ての速度に +30% 追加<br><br>
+                    <font color="orange">ティア4</font><br>速度 25%ごとに命中時マナ 1*<br>エレメンタル・フューリー +20（全クラス）<br>全最大耐性 +5%<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>5% の確率でヒット時にレベル 20 の 火の強化矢 を発動する<br>5% の確率でヒット時にレベル 20 の 冷気強化矢 を発動する<br>5% の確率でヒット時にレベル 20 の 雷の強化された矢 を発動する<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">アルカニストのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*速度の種類（ブロック、詠唱、移動、攻撃、回復）はそれぞれ別に数えます。たとえば全速度 +1% は、アセンダンシーのボーナスでは +5% として数えます。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">ブラッドメイジのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+45 の力<br>+45 の生命力<br>+45 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+20% 力量ボーナス<br>+20% 体力ボーナス<br>+20% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>ライフ 250ごとに呪文ダメージ 1%、ライフ 400ごとに召喚ダメージ 1%<br>エナジーは呪文ダメージと召喚ダメージに影響しなくなります<br>ブラッドマジック*<br>+200 のライフ<br><br>
+                    <font color="orange">ティア4</font><br>敵を倒すと最大ライフの2%を回復<br>+50% ヒット回復速度アップ<br>物理耐性 +25%<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>+25% の召喚ライフ<br>最大ライフ 50% 増加<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*ブラッドマジックとは、呪文の詠唱にライフを使うようになることです。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>すべての属性に +30 追加<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>全ての属性に +15% ボーナス<br><br>
+                    <font color="orange">ティア3</font><br>能力値 1000ごとに全スキル +1*<br>全ての速度に +20% 追加<br>すべての属性に +30 追加<br><br>
+                    <font color="orange">ティア4</font><br>能力値 100ごとに元素吸収と魔法吸収 1*<br>能力値 2ごとに防御力 1*<br>圧倒的な力 +20（全クラス）<br>毒の持続時間が +75% 減少<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>10% の確率で攻撃を受けた時にレベル 60 の 壊滅 を発動する<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">覚醒者のアセンダンシー</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*しきい値は能力値の合計で判定されます（例：各能力値が250あれば全スキル +1 を得ます）。</font><br>
+        <font size="-2">**アニヒレーションは、6元素（火炎/冷気/雷/毒/物理/魔法）の壊滅的なノヴァで、画面全体が効果範囲のスキルです。ノヴァごとに武器ダメージの50%を各元素に変換して与えるほか、総能力値で増加する各属性の大きな呪文ダメージも与えます。敵をノックバックさせ、2秒間すべての耐性を25%下げます。毒のノヴァは武器ダメージを与えません。</font><br>
+        <font size="-2" color="red">**アニヒレーションは、現在のライフが30%未満のときにのみ発動します。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">アイアンボルトのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+60 の力<br>+60 の生命力<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+25% 力量ボーナス<br>+25% 体力ボーナス<br><br>
+                    <font color="orange">ティア3</font><br>筋力 10ごとに出血ダメージ 1%～2%<br>この出血の持続時間はクロスボウのリロード速度のスケーリングに従います*<br>+150 の力<br>
+                    <font color="orange">ティア4</font><br>攻撃時に力200ごとに1ライフを得る<br>+20% クロスボウのリロード時間短縮<br>クロスボウのリロード速度上限が 20% 減少<br>+500 の攻撃評価<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>2% の確率でヒット時にレベル 40 の 内なる視界 を発動する<br>鋭い集中 +25（全クラス）<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*出血の持続時間はクロスボウのリロード速度のスケーリングと同じです。これはクロスボウを使っているかどうかに関係なく適用されます。アイアンボルトの出血は、他の出血源によって薄まることがあります（毒のインスタンスが互いに薄め合うのと同様です）。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+75 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+30% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>マナ 400ごとに敵の火炎・冷気・雷耐性 -1%<br>+400 のマナ<br><br>
+                    <font color="orange">ティア4</font><br>マナ5ごとに1のライフ再生を得る<br>全能 +20（全クラス）<br>全ての速度に +25% 追加<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>+1 の テレポート<br>すべてのスキルに +1 追加<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">スターボーンのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">ライフブレイカーのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+75 の生命力<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+30% 体力ボーナス<br><br>
+                    <font color="orange">ティア3</font><br>失ったライフ100ごとに1%の呪文ダメージを得る<br>最大ライフを増加 +30%<br><br>
+                    <font color="orange">ティア4</font><br>失ったライフ100ごとに1の魔法および物理ダメージ減少を得る<br>+1 トラップ制限に追加<br>ダメージ減少 50<br>魔法ダメージが 50 減少<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>ライフパクト +10*<br>魔法抵抗 +15%<br>物理抵抗: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*ライフパクトは、毎秒最大ライフの25%を消費し、レベルごとに最大ライフを10%与える切り替え式スキルです。ライフパクトで死ぬことはありません。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+45 の力<br>+45 の敏捷性<br>+45 の生命力<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+20% 力量ボーナス<br>+20% デクスタリティへのボーナス<br>+20% 体力ボーナス<br><br>
+                    <font color="orange">ティア3</font><br>元素耐性 1%ごとに攻撃に最大火炎・冷気・雷ダメージ 2 を追加*<br>火属性耐性 +50%<br>冷気耐性 +50%<br>雷属性耐性 +50%<br><br>
+                    <font color="orange">ティア4</font><br>元素耐性 30%ごとに物理耐性と魔法耐性 1%*<br>元素耐性 5%ごとに毒耐性 1%*<br>呪文ダメージ：+50%**<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>命中時に2%の確率でレベル1の創造の怒りを発動***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">ワールドシェイパーのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*耐性の種類ごとに別々にボーナスのしきい値を数えます。たとえば、火炎・冷気・雷耐性がそれぞれ10%あれば物理耐性1%を得ます。</font><br>
+        <font size="-2">**呪文ダメージとは火炎/冷気/雷/毒/魔法/物理の呪文ダメージのことで、攻撃の固定ダメージも上昇させます（物理呪文ダメージは攻撃の物理ダメージを上昇させません）。
+        </font><br>
+        <font size="-2">***創造の怒りは中範囲の三重元素ノヴァスキルで、ノヴァごとに武器ダメージの50%を各元素に変換して与え、敵の元素耐性を30%下げます。
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">ソウルウォーデンのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+60 の生命力<br>+60 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+25% 体力ボーナス<br>+25% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>エナジー 40ごとに毒・魔法・物理の呪文ダメージ 1%<br>+150 のエネルギー<br><br>
+                    <font color="orange">ティア4</font><br>エネルギー 3 ごとにライフ 1 を獲得<br>魔法吸収 +10%<br>凍結されない<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>+1の非ユニーク召喚制限<br>ダメージ減少 50<br>魔法ダメージが 50 減少<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+45 の力<br>+45 の敏捷性<br>+45 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+20% 力量ボーナス<br>+20% デクスタリティへのボーナス<br>+20% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3*</font><br>
+                    ダメージの構え（赤）：強化ダメージ 5% と呪文ダメージ 1%<br>
+                    （筋力・器用さ・エナジーの合計75ごと）<br>
+                    回避の構え（緑）：全速度 10% と回避 1%<br>
+                    （筋力・器用さ・エナジーの合計1000ごと）<br>
+                    回復の構え（青）：全スキル +1、ライフとマナの補充 150<br>
+                    （筋力・器用さ・エナジーの合計1500ごと）<br><br>
+                    <font color="orange">ティア4</font><br>すべての構えからのボーナスが25%増加する<br>+30% 力量ボーナス<br>+30% デクスタリティへのボーナス<br>+30% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>+50% 攻撃速度増加<br>+50% キャスト速度アップ<br>+100 キル後のライフ<br>+50 のキル後にマナを得る<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">スタンスダンサーのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*操作のサブメニューで構え切り替えのホットキーを設定する必要があります。</font></font><br>
+        <font size="-2">**構えはいつでも切り替えられますが、順番は赤 -&gt; 緑 -&gt; 青 のみです。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">ノマドのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+60 の敏捷性<br>+60 の生命力<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+25% デクスタリティへのボーナス<br>+25% 体力ボーナス<br><br>
+                    <font color="orange">ティア3</font><br>走行/歩行速度上昇5%または基本走行/歩行速度1%ごとに最大ダメージ+5<br>+75% 移動速度アップ<br>1秒間で150%-250%の出血ダメージを追加<br><br>
+                    <font color="orange">ティア4</font><br>走行/歩行速度上昇200%または基本走行/歩行速度40%ごとに回避率+5%<br>+300 のライフ<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>20% の確率で攻撃を受けた時にレベル 1 の 逃げる を発動する<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*スカリーは1秒間持続する強化で、回避 33%、基本走行/歩行速度 100%、攻撃の総最大物理ダメージ 25% を与え、持続中に最大ライフの10%を回復します。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+75 の敏捷性<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+30% デクスタリティへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>貫通 1%ごとに命中率ボーナス 2%<br>貫通 2%ごとに最大ダメージ 1<br>+30 の 小 ダメージ<br>貫通 +20（全クラス）<br><br>
+                    <font color="orange">ティア4</font><br>1%の貫通ごとに3の生命力を獲得<br>+75% 移動速度アップ<br>回避 +20（全クラス）<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>15% の確率でヒット時にレベル 20 の 矢 を発動する<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">シャープシューターのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">マナウォーデンのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+45 の敏捷性<br>+45 の生命力<br>+45 のエネルギー<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+20% デクスタリティへのボーナス<br>+20% 体力ボーナス<br>+20% エネルギーへのボーナス<br><br>
+                    <font color="orange">ティア3</font><br>マナ再生 20%ごとに呪文ダメージ 1%<br>マナ再生 5%ごとに攻撃の最小ダメージ 1<br>+5 攻撃時のマナ<br>マナ再生 +100%<br><br>
+                    <font color="orange">ティア4</font><br>マナ再生2%ごとに1マナを獲得<br>エネルギーシールド +20（全クラス）<br>+10% 最大毒抵抗力に対して<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>20% の確率で攻撃を受けた時にレベル 50 の 時間停止 を発動する<br>毒抵抗 +75%<br>+20 の光の半径<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">ティア1</font><br>クラススキルレベル +1<br>+75 の力<br><br>
+                    <font color="orange">ティア2</font><br>クラススキルレベル +1<br>+30% 力量ボーナス<br><br>
+                    <font color="orange">ティア3</font><br>物理ダメージをライフとして吸収するごとに、最大ダメージが3%増加する<br>+30 の 大 ダメージ<br>+25% 物理ダメージをライフとして吸収<br><br>
+                    <font color="orange">ティア4</font><br>物理ダメージをライフとして吸収するごとに、1%の物理および魔法耐性を獲得する（5%ごと）<br>呪いの持続時間が100%短縮されました。<br><br>
+                    <font color="orange">ティア5</font><br>クラススキルレベル +3<br>近接攻撃時に25%の確率でレベル1のラヴェジを発動**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">バーサーカーのアセンダンシー</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*ラヴェジは小～中範囲のスキルで、範囲内のすべての敵に武器ダメージの150%を物理ダメージとして与え、2秒間物理耐性を30%下げます。</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

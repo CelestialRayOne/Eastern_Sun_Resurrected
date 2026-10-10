@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <br>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            이 <font color="ORANGE">킬 장부</font> 는 처치한 적의 수를 기록하는 특별한 책입니다.<br>
+                            기록뿐 아니라, 특정 처치 수에 도달하면 이 장부에 다양한 보너스를 부여할 수 있습니다.<br>
+                            이 <font color="ORANGE">킬 장부</font> 는 엔드게임 지도 보스의 영혼을 붙잡는 데도 쓸 수 있습니다. 지도 보스를 처치하면 특별한 보너스를 위해 장부를 변환할 수 있습니다.<br>
+                            이 보너스는 승천 보너스만큼 중요하거나 판도를 바꾸지는 않지만, 대체로 얻기 쉽고 주로 진행 상황을 기록하는 상징적인 의미가 있습니다.<br>
+                            <font color="706850">처치 보너스는</font> 순서대로 달성해야 합니다. 예를 들어 이전 보너스를 모두 갖추지 않은 채 모든 기술용 변환을 시도하면 작동하지 않습니다.<br>
+                            이 <font color="ORANGE">킬 장부</font> 는 기술의 무작위 효과가 작동하는 데도 꼭 필요하므로, <font color="RED">항상 인벤토리에 넣어 두어야 합니다</font>.<br>
+                            <font color="purple">보스 보너스는</font> 어떤 순서로든 달성할 수 있습니다.<br>
+                            이 <font color="ORANGE">킬 장부</font> <font color="red">는 옮길 수 없습니다</font> (캐릭터 간).<br>
+                            말할 필요도 없이, 각 보너스는 한 번만 얻을 수 있습니다.<br>
+                        </font>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font size="-1" face="arial,helvetica">
+            <table cellpadding="5" border="0" style="width: 1200px">
+                <tbody>
+                    <a name="killbonuses"></a>
+                    <a href="./kill_ledger.htm#killbonuses">[처치 보너스]</a>&nbsp;
+                    <a href="./kill_ledger.htm#bossbonuses">[보스 보너스]</a>&nbsp;
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center">
+                            <font face="arial,helvetica">
+                                <b>
+                                    처치 보너스
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 500 처치)<br>
+                                아무 흠 없는 보석<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                모든 저항 +10%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 5000 처치)<br>
+                                아무 얼룩진 보석<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                모든 속도에 +10% 추가<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 10000 처치)<br>
+                                아무 완벽한 보석<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                모든 능력치에 +5% 보너스<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 50000 처치)<br>
+                                아무 완벽한 보석 x2<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                최대 생명 증가 +10% <br>
+                                최대 마나 증가 +10% <br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 100000 처치)<br>
+                                아무 완벽한 보석 x3<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                +10% 물리 피해 생명력으로 흡수됨 <br>
+                                +10% 물리 피해를 마나로 흡수합니다. <br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 1000000 처치)<br>
+                                아무 완벽한 보석 x4<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                +10 화염 흡수<br>
+                                +10 냉기 흡수<br>
+                                +10 번개 흡수<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                (최소 10000000 처치)<br>
+                                단풍잎<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                모든 기술에 +1 추가<br>
+                            </font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </font>
+        <br>
+        <font size="-1" face="arial,helvetica">
+            <table cellpadding="5" border="0" style="width: 1200px">
+                <tbody>
+                    <a name="bossbonuses"></a>
+                    <a href="./kill_ledger.htm#killbonuses">[처치 보너스]</a>&nbsp;
+                    <a href="./kill_ledger.htm#bossbonuses">[보스 보너스]</a>&nbsp;
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center">
+                            <font face="arial,helvetica">
+                                <b>
+                                    보스 보너스
+                                </b><br>
+                                <font face="arial,helvetica" size="-1">보스를 처치한 뒤 60초 안에 <font color="ORANGE">킬 장부</font>
+                                    를 알맞은 재료와 함께 변환하면 보너스를 얻습니다.
+                                </font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="RED">결함 있는 수수께끼의 주홍석 x2</font><br>
+                                루시온의 속삭임을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                생명력 회복 +500<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="PURPLE">흠집 있는 오염된 투어멀린 x2</font><br>
+                                디아블로의 지옥 개를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                +10% 주문 피해<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="ORANGE">결점 있는 폭풍 호박 x2</font><br>
+                                고대의 타락한 천사를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                +50% 증가된 피해<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="GREEN">흠집 있는 쓴 페리도트 x2</font><br>
+                                그림자의 공포를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                독 지속 시간 감소 +25%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="WHITE">결함이 있는 고체 수은 x2</font><br>
+                                밤의 화신을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                20 만큼 피해 감소<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="GOLD">결점 있는 맥동 오팔 x2</font><br>
+                                재앙의 전령을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                적의 원소 및 독 저항 -5%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="BLUE">결함 있는 얼어붙은 영혼 x2</font><br>
+                                빙하의 거대괴물을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                +5% 스킬 쿨타임 감소<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="GREEN">흠집 있는 무덤 비취 x2</font><br>
+                                작업 감독을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                소환수 피해 +10%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="LIGHTGRAY">결점 있는 그림자 수정 x2</font><br>
+                                바알의 변형된 파괴의 전조를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                마법 피해 감소 20<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="BLUE">결함 있는 어두운 아주라이트 x2</font><br>
+                                영혼의 심판자를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                마법 흡수 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="YELLOW">결함 있는 타오르는 유황 x2</font><br>
+                                <font color="YELLOW">완벽한 토파즈</font><br>
+                                무적의 메피스토를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                번개 흡수 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="RED">흠이 있는 피의 돌 x2</font><br>
+                                <font color="RED">완벽한 루비</font><br>
+                                무적의 디아블로를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                화염 흡수 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="BLUE">결함 있는 어두운 아주라이트 x2</font><br>
+                                <font color="BLUE">완벽한 사파이어</font><br>
+                                무적의 바알을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                냉기 흡수 +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="#928A70">단풍잎</font><br>
+                                <font color="PURPLE">흠 있는 투어멀린</font><br>
+                                아무 영원한 고대인을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                물리 저항: +5%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="#928A70">단풍잎</font><br>
+                                <font color="BLUE">결함 있는 얼어붙은 영혼</font><br>
+                                리치 왕을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                얼음에 갇히지 않음<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="#928A70">단풍잎</font><br>
+                                <font color="LIGHTGRAY">결점 있는 그림자 수정</font><br>
+                                라스마를 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                저주 지속시간 15% 감소<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                <font color="#928A70">단풍잎</font><br>
+                                <font color="RED">흠이 있는 피의 돌</font><br>
+                                루시온을 막 처치함<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">킬 장부</font><br>
+                                +100 생명력 증가<br>
+                            </font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </font>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

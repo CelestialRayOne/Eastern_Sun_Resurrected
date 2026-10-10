@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-YFKD8ZR9BX');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://d2esrdb.github.io">
+	<meta property="og:title" content="Eastern Sun Resurrected Database">
+	<meta property="og:description"
+		content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+	<title>
+		Eastern Sun Resurrected 资料库
+	</title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+	<style>
+		/* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+	style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="&#35821;&#35328;"><select id="esr-lang-zhCN" aria-label="&#35821;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN" selected>&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhCN",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhCN');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+	<nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本信息</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href=".././changelogs.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日志]</a>
+			<a href="./armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[护甲]</a>
+			<a href="./weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+			<a href="./prefixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前缀]</a>
+			<a href="./suffixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[后缀]</a>
+			<a href="./unique_armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金护甲]</a>
+			<a href="./unique_weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+			<a href="./unique_others.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+			<a href="./unique_mythicals.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神话暗金]</a>
+			<a href="./sets.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套装]</a>
+			<a href="./gems.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/符文]</a>
+			<a href="./gemwords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石之语]</a>
+			<a href="./runewords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之语]</a>
+			<a href="./Eastern Sun Resurrected Cube Recipes.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魔盒配方]</a>
+			<a href="./Eastern Sun Resurrected Maps.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地图]</a>
+		</div>
+	</nav>
+	<nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系统</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href="./corruptions.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化结果]</a>
+			<a href="./anointments.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[涂油结果]</a>
+			<a href="./endgame_maps.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[终局地图]</a>
+			<a href="./vessel_of_souls.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[灵魂容器]</a>
+			<a href="./ascendancies.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[进阶职业]</a>
+			<a href="./kill_ledger.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[击杀账簿]</a>
+			<a href="./skill_information.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[佣兵与外部技能信息]</a>
+			<a href="./weapon_mastery.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器专精]</a>
+		</div>
+	</nav>
+
+	<center>
+		<div
+			style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+			<h1
+				style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+				Eastern Sun Resurrected</h1>
+			<div
+				style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+				暗黑破坏神 II：狱火重生 全面转换模组</div>
+		</div>
+		<div style="width:100%;">
+
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								<font color="red">警告：</font> 终局地图区域比其他所有内容都困难得多，需要极为完善的配置。<br>
+								终局地图区域的进入方式：将地图物品单独在 <font
+									color="red"> 第5幕地狱难度</font>中转化。总共有 18 个地图物品，分为 5 个阶层。<br>
+								每个阶层有 4 个不同的地图区域，唯独第 5 阶层只有 2 张地图，各自拥有独特且极为困难的头目战。<br>
+								地图物品可从尼拉塞克领域的超级精英身上掉落。每个超级精英头目都有 5% 机率掉落第 1 阶层地图。<br>
+								地图物品也可从等级 96 恐惧地带中的冠军与精英怪物身上掉落。<br>
+								地图物品也能在终局地图区域本身作为稀有掉落取得，如果你经常刷地图，这会是你的主要来源<br>
+								地图中的普通怪物可能掉落比其被击杀之地图高一个阶层的地图。你也可以用 3:1 的比例升级地图。<br>
+								为了存活，建议你的配置至少拥有 5000 生命、满抗性、一些物理抗性以及其他防御手段。<br>
+								以平均机率表示的奖励，在 /players 8 时最多可提高 100%。例如，远古战士有 50% 机率掷出钥匙掉落，而且会掷
+								<b>两次</b>，所以平均可得一把钥匙；但若把玩家人数提高到 8，他几乎有 100% 机率掉落 2 把钥匙。<br>
+								终局地图可能变为恐惧地带，每个阶层同一时间会有一张地图受恐惧影响（第 5 阶层除外，两张地图会同时受恐惧影响，且与其他地图无关）。<br>
+								终局地图在普通与恶梦难度也可能变为恐惧地带，但这并非刻意设计。由于引擎限制，无法修正。<br>
+								受恐惧影响的头目一定会掉落世界石碎片（第 5 阶层头目因引擎限制除外）。<br>
+								<storng>第 1-4 阶层的头目</storng> 拥有 <font color="purple">免疫护盾</font>
+								，会不时脱落。降低抗性的效果能让它更常脱落。
+							</font>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								头目</font>
+						</td>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								说明/奖励</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">路西昂的低语</font> - 痛苦地窖<br><br>
+							<img src=".././images/map-bosses/lucionwhisper.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>卢西恩的低语自燃烧地狱的深渊中现身，是传达其主人意志的幽灵先驱。这道裹著诡异火焰的阴影既非完全的恶魔，也非纯粹的幽魂，而是卢西恩本质遭到诅咒的回响。</i><br><br>
+								<font color="red">永恒之火</font> - 卢西恩的低语能召唤持续 30 秒、造成惊人火焰伤害的烈焰。<br>
+								<font color="red">削弱诅咒</font> - 卢西恩的低语有机率在地面施放诅咒。若你身处范围内，会被石化，且火焰抗性降低 150%。<br>
+								<font color="red">传送术</font> - 卢西恩的低语受到伤害时有机率传送离开，令人难以预测。<br><br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 5% 机率）<br> 第 2 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 25% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">迪亚布罗的地狱犬</font> - 恐惧深渊<br><br>
+							<img src=".././images/map-bosses/diablohellhound.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>迪亚布罗的专属地狱犬自燃烧地狱焦黑的坑洞中崛起。它不只是血肉与獠牙，而是活生生的梦魇，是大魔王无边怒火的化身。</i><br><br>
+								<font color="red">狂乱连击</font> - 迪亚布罗的地狱犬会陷入狂暴，每次攻击都会提升攻击速度与移动速度。<br>
+								<font color="red">攻击时施法</font> - 迪亚布罗的地狱犬在攻击猎物时有机率释放致命法术。可能的法术包括普通的陨石、冰箭会追踪附近玩家的毁灭性冰霜之球、穿透性的骨灵，以及使目标缓速并降低其元素抗性 100%、魔法抗性 50% 的诅咒。<br><br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 5% 机率）<br> 第 2 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 25% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">远古堕落天使</font> - 亡者之城<br><br>
+							<img src=".././images/map-bosses/ancientfallenangel.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>曾是至高天堂光辉的战士，这位古老的堕天使如今在虚空中游荡，成了天界战争中被遗弃的遗物。时光夺去了它的光彩，曾经闪耀的盔甲沾满了破碎世界的煤灰。过去载著它乘著神圣之光翱翔的金色羽翼，如今只剩被诅咒之火烧焦、破烂垂挂的残骸。</i><br><br>
+								<font color="red">湮灭新星</font> - 古老的堕天使偶尔会施放毁灭性的新星，造成物理与魔法伤害。新星会缓慢扩散，碰到任何表面时会反弹一次，因此强烈建议在它发动时躲到另一个房间。<br>
+								<font color="red">球状闪电风暴</font> - 头目在攻击或受到伤害时，偶尔会施放闪电球风暴，闪电球会爆裂成数道充能闪电球。<br>
+								<font color="red">狂怒</font> - 头目受到伤害时平均有 10% 机率陷入狂怒，在短时间内获得最高攻击速度。<br><br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 5% 机率）<br> 第 2 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 25% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">恐惧在阴影中</font> - 感染的巢穴<br><br>
+							<img src=".././images/map-bosses/terrorintheshadows.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>在大地深处，空气因腐败而浓稠，看不见的东西在黑暗帷幕后窜动，那里潜伏著一只以恐惧本身编织出自己领域的远古恐怖。</i><br><br>
+								<font color="red">跃击</font> - 巨型蜘蛛偶尔会跳到毫无防备的受害者身上，造成范围伤害。<br>
+								<font color="red">抛掷小蜘蛛</font> - 头目有机率抛出一群小蜘蛛，牠们拥有致命的毒性攻击，还能自行跳跃攻击。<br>
+								<font color="red">吐网</font> - 头目每 4 秒会抛出一颗致命的毒网球。毒球会使命中目标的移动速度与毒素抗性降低 150%，攻击速度与施法速度降低 50%。<br><br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 10% 机率）<br> 第 3 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 35% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">双头目</font> - 混沌裂隙<br><br>
+							<img src=".././images/map-bosses/doubleboss.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>这道混沌裂隙极不稳定，削弱了时空的结构，使两名第 1 阶层地图的头目聚在一起。</i><br><br>
+								这些头目与第 1 阶层地图中的对应头目完全相同，使用相同的技能。难度在于你必须在狭小空间中同时对付两者。<br><br>
+								<font color="#706850">奖励（每个头目）</font><br>
+								<font color="purple">祝福宝珠</font> （平均 5% 机率）<br> 第 2 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 25% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">夜之化身</font> - 痛苦迷宫<br><br>
+							<img src=".././images/map-bosses/avatarofthenight.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>当太阳隐没、夜幕降临，它便苏醒。影中之影，夜之化身如狩猎的黑豹般悄然移动，黑曜石般的身躯无缝融入深渊。</i><br><br>
+								<font color="red">扑击</font> - 化身偶尔会试图伏击你，扑到你身上并以疯狂效果削弱你，使你的物理抗性降低 100%、冰寒抗性降低 150%。不过这个效果也会让你进入狂暴状态，使攻击、施法与移动速度提高 100%。<br>
+								<font color="red">标枪连射</font> - 头目的主要攻击是一连串标枪，造成物理/冰寒混合伤害，即使击中墙壁后仍可能弹向附近玩家。<br>
+								<font color="red">汇聚冰寒新星</font> - 当头目靠近你时，会施放冰箭新星，冰箭会黏在墙上，短时间后追踪附近玩家，所以务必快跑。受到伤害时他也有机率施放这个能力。<br>
+								<font color="red">被动</font> - 头目攻击时拥有致命一击与压碎性打击的被动机率。<br><br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 10% 机率）<br> 第 3 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 35% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">灾厄的先驱</font> - 无尽深渊<br><br>
+							<img src=".././images/map-bosses/heraldofdoom.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>很久以前，在腐化将他的灵魂染黑之前，他曾是赫拉迪姆的一员：钻研禁忌知识的学者，在创世阴影中追寻真理的人。但智慧是一把双面刃，如今被称为厄运的先驱之人看得太多了。他凝视元素力量的深渊，不是以谨慎守护者的身分，而是以甘愿的门徒之姿。而作为回报，深渊也回望著他。</i><br><br>
+								<font color="red">厄运之雨</font> - 腐化的赫拉迪姆偶尔会对敌人降下陨石雨，每颗陨石都会造成毁灭性的物理与火焰伤害。<br>
+								<font color="red">雷霆风暴</font> - 头目有时会召唤一圈闪电球，最后化为追踪附近敌人的致命闪电，所以一看到就必须立刻逃跑。<br>
+								<font color="red">冰霜连射</font> - 头目也能召唤冰箭新星，这些冰箭不会造成直接伤害，而是黏在物体表面，短暂延迟后追踪附近玩家。<br>
+								<font color="red">陨石螺旋</font> - 若有人愚蠢到靠近这名术士，他就会施放毁灭性的陨石螺旋。<br>
+								<font color="red">被动</font> - 赫拉迪姆术士会穿透 100% 的元素抗性，所以在挑战他之前务必把抗性堆到远超上限。<br><br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 15% 机率）<br> 第 4 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 50% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">冰霜巨兽</font> - 冰封荒原（北方下坡）<br><br>
+							<img src=".././images/map-bosses/glacialbehemoth.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>传说曾有一段时期，赫拉迪姆试图封印一股巨大的元素之力，害怕它原始而狂野的力量甚至能挑战大魔王。但冰不会死去，不会消逝，它只会等待。当囚笼的封印碎裂时，冰霜巨兽再次崛起，牠的吐息是锐利如刀的冰霜风暴，每一步都让大地在死亡雪崩下崩裂。</i><br><br>
+								<font color="red">永霜</font> - 巨兽会试图在近战范围召唤致命的冰雪崩，留下冰冷的火焰，在 30 秒内造成惊人的冰寒与物理伤害。<br>
+								<font color="red">永久冻结</font> - 受到伤害时，他有机率施放石化诅咒，使你的冰寒抗性降低 150%、移动速度降低 500%、施法与攻击速度降低 200%。<br>
+								<font color="red">冲锋打击</font> - 受到伤害时，头目有机率以惊人速度冲向目标，瞬间拉近与你的距离。<br>
+								<font color="red">干扰</font> - 头目散发出神秘的光环，使你的传送技能无法运作。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 15% 机率）<br> 第 4 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 50% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">任务主管</font> - 冰封荒原（南方下坡）<br><br>
+							<img src=".././images/map-bosses/thetaskmaster.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>他身缠锁链，这些锁链束缚的不只是血肉，还有灵魂；他从不独自作战。他以喉音发出命令，召唤邪恶之物，撕裂世界之间的帷幕，放出成群的魔物，每一只都受他钢铁般的意志所束缚。但他不只是派牠们上战场，而是驱使牠们。他的存在本身就在手下心中点燃疯狂，推著牠们超越痛苦、超越恐惧，甚至超越死亡本身。</i><br><br>
+								<font color="red">召唤嗜血奴隶</font> - 任务主管会定期从地狱深处召唤嗜血恶魔协助作战。这些手下对所有伤害免疫，必须以一般方式打破其免疫。<br>
+								<font color="red">血怒</font> - 头目会试图激怒手下，不是赋予牠们持续 6 秒的增益，使其以惊人速度回复并提高伤害、攻击与移动速度，就是将牠们变成自杀奴隶。<br>
+								<font color="red">自杀奴隶</font> - 自杀奴隶会追著玩家跑，试图在他们面前自爆。若被玩家直接击杀，牠们会爆炸成极具毁灭性的火雨，造成物理与火焰伤害，并释放一颗会追踪的死亡火焰骷髅，造成致命的火焰伤害。<br>
+								<font color="red">干扰</font> - 头目散发出神秘的光环，使你的传送技能无法运作。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 15% 机率）<br> 第 4 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 50% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">巴尔的扭曲毁灭先驱</font> - 毁灭圣坛<br><br>
+							<img src=".././images/map-bosses/baaldisfiguredharbinger.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>它曾是毁灭之王忠诚且虔诚的仆人，是被选中、要以巴尔之名散播毁灭的先驱。在短暂的一瞬间，它竟敢质疑、在巴尔的命令前迟疑。为此，它被拆解又重塑：不是被毁灭，而是被留下来受苦，由主人无边的怒火重新塑形。巴尔赐予它的不是死亡，而是一个教训、一道永恒的伤疤，一个怪诞的警示，提醒所有胆敢违抗毁灭之王者的下场。</i><br><br>
+								<font color="red">追踪冰寒毁灭新星</font> - 巴尔的前仆人最常施放会散射冰箭的致命冰球。冰箭一开始会在空中短暂悬停，接著以极高速度试图刺穿附近玩家。<br>
+								<font color="red">巴尔闪电风暴</font> - 这名毁灭先驱涉足了高阶天使的奥术力量，学会偶尔施放毁灭性的闪电球风暴。闪电球会在空中短暂悬停，随后爆裂成充能闪电球，造成高额闪电伤害。<br>
+								<font color="red">召唤毁灭之器</font> - 他每 30 秒会召唤一群毁灭野兽。牠们受伤时有机率冲向玩家，死亡时会治疗附近盟友，因此难以快速清除，也务必避免在头目附近击杀牠们。<br>
+								<font color="red">陨石螺旋</font> - 靠近这名毁灭先驱时，他会试图以陨石螺旋自卫，造成毁灭性的物理与火焰伤害。<br>
+								<font color="red">被动</font> - 头目会穿透你 100% 的元素抗性，所以务必把抗性堆到远超上限。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 20% 机率）<br> 第 5 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 100% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">灵魂的仲裁者</font> - 灵魂圣匣<br><br>
+							<img src=".././images/map-bosses/arbiterofsouls.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>在天堂与地狱无尽的战争中，天使与恶魔为争夺统治而交锋，却存在一股不属于任何一方的力量。它或许曾是一名天使，一个拥有天界恩典、负责引导亡者前往其应得来世的存在。但那个使命被扭曲了，被深渊的低语腐化，直到它变成完全不同的东西：一名冷酷、公正的处刑者，与光明和黑暗都断绝了联系。</i><br><br>
+								<font color="red">骸骨之魂</font> - 仲裁者的主要攻击是骨灵，会造成极高的魔法伤害，并能多次命中同一目标。<br>
+								<font color="red">骨矛连射</font> - 头目会以 4 秒冷却施放追踪附近敌人的骨矛连射。骨矛造成高额魔法伤害并会穿透目标，最好尽量闪避。<br>
+								<font color="red">灵魂风暴</font> - 头目偶尔会唤起亡者之魂，找出附近玩家并以惊人的魔法伤害将其毁灭。<br>
+								<font color="red">削弱诅咒</font> - 受到伤害时，头目有机率施放灵魂诅咒。受影响者的移动速度降低 150%，魔法抗性降低 50%。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 20% 机率）<br> 第 5 阶层地图（平均 25% 机率）<br>
+								随机混沌之钥（平均 100% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">无敌的梅菲斯托</font> - 风暴之眼<br><br>
+							<img src=".././images/map-bosses/mephistotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>不朽的英雄们在地狱熔炉上击碎了他的灵魂石，眼看著碎片被深渊吞没。他们以为已经消灭了他。但仇恨并不容易被消灭。在地狱闷烧的血脉深处，苦难的回响永不消散，墨菲斯托本质的残余在那里溃烂。尽管囚笼已破，他的恶意却延续下来，紧紧攀附在地狱的结构之上。每一句背叛的低语、每一桩残酷的行为、每一滴洒落大地的无辜之血，都滋养著他残存的存在，在阴影中重新锻造他的灵魂。他从闷烧的深渊中再度崛起。不再受灵魂石束缚，不再受过去的法则约束，墨菲斯托回来了，而且比以往任何时候都更强大。</i><br><br>
+								<font color="red">无敌</font> - 正如其名，墨菲斯托对任何伤害完全无敌，其免疫无法以一般方式打破。<br>
+								<font color="red">毒弹</font> - 墨菲斯托的消耗型法术是抛出一颗毒弹，落地时爆炸，对范围内所有人施加极其强烈的毒素。<br>
+								<font color="red">充能闪电球连射</font> - 大约每 12 秒，墨菲斯托会施放追踪附近敌人的充能闪电球连射，造成极高的闪电伤害。<br>
+								<font color="red">冰球连射</font> - 靠近墨菲斯托时，他会以 12 秒冷却施放冰球连射，造成惊人的冰寒与物理伤害。冰球命中一次后不会停下，而是会追踪目标并多次命中，因此务必远离这个法术。<br>
+								<font color="red">冰寒波牢笼</font> - 墨菲斯托偶尔会施放 4 道冰寒波，汇聚在毫无防备的玩家身上，对路径上的所有人造成极高的冰寒伤害。<br>
+								<font color="red">被动</font> - 墨菲斯托会穿透你 100% 的元素抗性。<br>
+								<font color="green">天堂之光</font> - 对抗墨菲斯托时并非毫无希望。对墨菲斯托造成伤害后，极少数情况下天堂之光会洒落战场。拾取光之球会强化你，让你与受影响的召唤物在短时间内能对墨菲斯托造成伤害。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 25% 机率）<br>
+								<font color="purple">墨菲斯托的恶魔之角</font><br> 第 5 阶层地图（平均 25% 机率）<br>
+								混沌之钥组（平均 50% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">无敌的迪亚波罗</font> - 风暴之眼<br><br>
+							<img src=".././images/map-bosses/diablotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>在深渊深处，地狱根基燃烧得最炽烈之处，比大魔王本身更古老的远古圣物「炼狱熔炉」开始躁动。传说最初的恶魔就是在那里成形，黑暗的本质也是在那里被锻造成形。如今，受到自身破碎存在的回响吸引，迪亚布罗的残骸流入其火焰之中，将恐惧之王重新锻造成更伟大、无法摧毁的存在。他归来时不再是昔日的迪亚布罗，而是更强大的存在。不再受灵魂石束缚，不再畏惧凡人的仪式，他就是无敌的迪亚波罗：恐惧的化身、化为血肉的黑暗、一股纯粹而不朽的恶意之力。</i><br><br>
+								<font color="red">无敌</font> - 正如其名，迪亚布罗对任何伤害完全无敌，其免疫无法以一般方式打破。<br>
+								<font color="red">流星雨</font> - 迪亚布罗的一般能力是召唤一整排陨石，造成惊人的物理与火焰伤害。<br>
+								<font color="red">火焰新星</font> - 大约每 12 秒，伴随音效提示，迪亚布罗会释放他迄今最具毁灭性的火焰新星。火焰新星缓慢扩散，并留下持续燃烧的火焰，造成极高的火焰伤害，所以听到音效提示时务必逃开。<br>
+								<font color="red">毁灭连射</font> - 迪亚布罗极少数情况下会开始施放追踪火球连射，每次反弹都会从天空召唤陨石，造成惊人的物理与火焰伤害。<br>
+								<font color="red">闪电洪流</font> - 他的旧法术如今比以往更强大。他每 6 秒施放一次闪电洪流，造成高得吓人的物理与闪电伤害。<br>
+								<font color="red">被动</font> - 迪亚布罗会穿透你 100% 的元素抗性。<br>
+								<font color="green">末日天使</font> - 对抗迪亚布罗时并非毫无希望。对迪亚布罗造成伤害后（冷却 10 秒），极少数情况下会有至高天堂的天使出现在战场上。他们终究会被迪亚布罗的火力消灭，但之后会在短时间内强化附近所有玩家及其手下，让你们能对迪亚布罗本体造成伤害。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 25% 机率）<br>
+								<font color="purple">迪亚波罗的恶魔之角</font><br> 第 5 阶层地图（平均 25% 机率）<br>
+								混沌之钥组（平均 50% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">无敌的巴尔</font> - 风暴之眼<br><br>
+							<img src=".././images/map-bosses/baaltheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>世人以为他已经消亡。世界之石碎裂时，他的身躯崩解、本质四散，远古的力量在天界毁灭的连锁中瓦解。但巴尔并未死去，而是被吸收进了创造的核心。多年来，他的本质沉睡著，分散在世界之石的碎片之中。然而，随著庇护之地的每一场战争、每一次毁灭，他的力量缓缓重组，以混乱、废墟以及他曾企图腐化的世界之崩解为养分。现实的裂痕越来越深，他意志的回响在存在的结构中低语。接著，最后的断裂来临了。巴尔再度崛起，不再受大魔王的血肉束缚，也不再只是一名恶魔领主。他已成为更伟大的存在：既不属于地狱，也不属于庇护之地，而是属于这个世界破碎的根基本身。他不再只是掌控毁灭，如今他就是毁灭的化身，比以往任何时候都更强大。</i><br><br>
+								<font color="red">无敌</font> - 正如其名，巴尔对任何伤害完全无敌，其免疫无法以一般方式打破。<br>
+								<font color="red">连锁闪电</font> - 巴尔的主要能力是连锁闪电，造成极高的闪电伤害，能凭空反弹并多次追踪附近敌人。<br>
+								<font color="red">寒流</font> - 巴尔有低机率召唤他迄今最具破坏力的冰寒波，造成高额冰寒与物理伤害。这道波会定期产生追踪附近玩家的余波。<br>
+								<font color="red">陨石牢笼</font> - 大约每 8 秒，巴尔会施放一圈毁灭性的陨石，汇聚在毫无防备的目标身上，对所有受影响者造成毁灭性的物理与火焰伤害。<br>
+								<font color="red">被动</font> - 巴尔会穿透你 100% 的元素抗性。<br>
+								<font color="green">虚弱之塔</font> - 对抗巴尔时并非毫无希望。大约每 13 秒，巴尔会召唤拥有毁灭性陨石攻击的恶魔之塔协助作战。恶魔之塔被摧毁时会强化附近玩家及其手下，让他们能对巴尔本体造成伤害。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 25% 机率）<br>
+								<font color="purple">巴尔的恶魔之角</font><br> 第 5 阶层地图（平均 25% 机率）<br>
+								混沌之钥组（平均 50% 机率）<br> 其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">时间守护者</font> - 冰冠城塞（永恒的边缘）<br><br>
+							<img src=".././images/map-bosses/guardiansoftime.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>很久以前，三名战士作为阿瑞特山最后的守护者，誓言不让世界之石落入不配之人手中。科尔利克、塔利克与马达克，这些来自久远年代的勇士，挺身对抗所有胆敢擅闯之人。驱使他们的不是仇恨，也不是征服，而是职责，一个甚至超越死亡的神圣誓言。但职责是残酷的主人。当世界之石碎裂，他们守护的力量消失了，他们存在的意义也随之消失。他们的身躯崩解，灵魂消散于虚空……至少世人是这么相信的。奈法隆们不知道的是，远古战士们从来就不是真正的凡人。在宛如一瞬的数百年间，他们漂流于现实之外，看著庇护之地越来越深陷腐化。他们看见人类，也就是世界之石的子嗣，抛弃自己的使命，把禁忌的奈法隆力量当成神一般挥舞。他们看见战争、背叛，以及曾经神圣的平衡被肆意摧毁。于是在虚空之中，新的目的生了根。远古战士归来时不是守护者，而是处刑者。</i><br><br>
+								<font color="red">无敌</font> - 归来的远古战士是掌控时间本身、拥有无穷力量的存在。他们的攻击造成各半的物理与魔法伤害。你无法以一般方式对他们造成伤害。<br><br>
+								<font color="#706850">科力克</font><br>
+								<font color="red">灾难</font> - 科尔利克偶尔会施放毁灭性的攻击，从天空降下岩石雪崩，对所有受影响者造成巨大的物理伤害。<br>
+								<font color="red">汇聚之斧</font> - 他有时会凭空召唤斧头，汇聚至目标身上。被夹在中间的人必定迅速死亡。<br>
+								<font color="red">被动</font> - 受到伤害时，科尔利克有机率冲向敌人。<br>
+								<font color="green">天堂之光</font> - 对科尔利克造成伤害时，有小机率天堂会介入，召唤纯净的光球。触碰光球后，你与受影响的附近盟友都会获得强化。<br><br>
+								<font color="#706850">塔力克</font><br>
+								<font color="red">斧之牢笼</font> - 塔利克有时会召唤数道斧头新星，追踪毫无防备的目标，造成巨大的物理与魔法伤害。<br>
+								<font color="green">永恒摆锤</font> - 近战攻击时，塔利克有机率召唤永恒摆锤。摆锤会召唤时间之沙，追踪附近敌人，造成毁灭性的物理伤害并短暂击晕目标。击杀摆锤后，你与附近盟友都会获得强化。<br><br>
+								<font color="#706850">马道克</font><br>
+								<font color="red">魔法之斧</font> - 马达克的主要攻击是一把会追踪附近目标的魔法之斧，造成毁灭性的魔法与物理伤害。<br>
+								<font color="red">魔法之斧连射</font> - 马达克偶尔会陷入狂怒，开始快速投掷魔法之斧。<br>
+								<font color="red">魔法之斧新星</font> - 马达克极少数情况下会汲取时间本身的力量，召唤毁灭性的魔法之斧新星，斧头会悬停在墙中，短时间后追踪附近玩家。<br><br>
+
+								<font color="purple">永恒者</font> - 归来的远古战士对庇护之地的现状感到愤怒，因此对所有伤害完全不死。只有同时拥有永恒摆锤的强化与天之光时，你才能对他们造成伤害。<br><br>
+
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （各平均 16.67% 机率）<br>
+								<font color="#706850">永恒沙漏（暗金大型护身符）</font>
+								<br>（必须击杀他们全部才能锻造）<br> 第 5 阶层地图（各平均 17% 机率）<br>
+								随机混沌之钥（各平均 100% 机率）<br>
+								其他一般物品/材料<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">巫妖王</font> - 冰冠城塞（冰封王座）<br><br>
+							<img src=".././images/map-bosses/thelichking.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>世界之间的界线并不像庇护之地的学者曾经相信的那样牢不可破。世界之石是现实的锚，是将庇护之地与至高天堂及燃烧地狱的影响隔开的神圣屏障。但当泰瑞尔击碎它时，那道屏障就永远被削弱了。而另一种存在注意到了这一点。在永恒冲突的国度遥远之外，在一个被战争与死亡吞噬的世界里，巫妖王在冰冷的寂静中统治。他的统治是绝对的，他的军团无穷无尽，然而征服的渴望没有边界。因为死亡不只限于一个世界，世界之石毁灭的力量在现实与现实之间的虚空中回荡，呼唤著某种超乎庇护之地理解的存在。巫妖王不像大魔王那样想焚毁世界，也不想以谎言腐化它。他想要占有它。燃烧地狱沉醉于混乱；他以死亡带来秩序。天堂为正义而战；他认为正义只是幻象。对他而言，万物终将归于不死，就连自远古以来便征战不休的天使与恶魔，也将在永恒冰封的寂静前俯首。若你不终结他的统治，他将奴役整个庇护之地。这就是万物的终结。</i><br><br>
+								<font color="red">汇聚寒冰</font> - 巫妖王的一般能力是由 6 根冰刺汇聚而成的新星，对被命中者造成极高的冰寒与物理伤害。<br>
+								<font color="red">冰寒新星</font> - 巫妖王的第二项能力是快速移动的冰寒波，每命中一名敌人就会召唤一颗冰球。冰球在 1 秒后爆炸，对 5 码范围内的所有目标造成惊人的冰寒伤害，并冰冻 2 秒。<br>
+								<font color="red">扑击</font> - 大约每 10 秒，巫妖王会突袭毫无防备的目标，释放击退附近敌人的纯能量新星，随后紧接著 <font color="red">永恒之冬</font>。同时，他还会召唤 2 名
+								<font color="#706850">女武神</font>.<br>
+								<font color="red">永恒之冬</font> - 巫妖王偶尔会在扑击的后续攻击之外，释放致命的蓝色火焰新星，吸取所有受影响者的灵魂，造成极高的物理与冰寒伤害，使冰寒抗性降低 150%、物理抗性降低 75%，并使受影响的玩家慢得几乎无法移动。此法术会以音效提示。<br>
+								<font color="red">召唤不死生物</font> - 大约每 20 秒，巫妖王会召唤 4 只食尸鬼与 1 只畸形怪协助作战。<br>
+								<font color="red">暗影陷阱</font> - 受到伤害时，巫妖王有机率在攻击他的玩家脚下召唤暗影陷阱。不久后陷阱会启动，并释放一波 <font color="red">永恒之冬</font> 火焰（在有人踩上时触发）。<br><br>
+								<font color="#706850">食尸鬼</font><br>
+								食尸鬼拥有不死生物的灵魂，再生速度非常快。受伤时也有机率冲向目标。
+								<br><br>
+								<font color="#706850">畸形怪</font><br>畸形怪对所有伤害免疫，其免疫无法以一般方式打破。受到伤害时，畸形怪有机率陷入狂怒，提高其伤害或移动速度。极少数情况下，畸形怪受到伤害时会让天堂协助玩家作战，降下 <font
+									color="green">天堂之光</font>。拾取光芒后，玩家就能对畸形怪造成伤害并击杀牠。<br><br>
+								<font color="#706850">女武神</font><br>女武神会造成高额的物理与冰寒伤害。<br>
+								击杀她们后，会以下列效果强化附近的玩家： <font color="green">光之希望</font>.<br>
+								<font color="purple">永恒者</font> - 身为来自庇护之地时空之外的存在，巫妖王对这个世界的伤害完全不死。若要对他造成伤害，你必须同时拥有以下两种效果： <font color="green">光之希望
+								</font>
+								and <font color="green">天堂之光</font>.<br><br>
+								<font color="purple">超级版本</font> - 以 /players 8 进行这场战斗会启动超级版本，所有敌人都会获得以下强化。<br>
+								<font color="#706850">巫妖王</font> - 巫妖王会召唤 3 倍数量的食尸鬼与畸形怪。<br>
+								<font color="#706850">食尸鬼</font> - 食尸鬼现在每次命中都会陷入狂怒，获得 25% 物理与冰寒伤害。此效果可叠加。<br>
+								<font color="#706850">女武神</font> - 巫妖王会召唤 6 名而非 2 名女武神，而且她们造成两倍伤害。<br>
+								<br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 50% 机率）<br>
+								<font color="#706850">特殊神话暗金</font><br> 第 5 阶层地图（平均 50% 机率）<br>
+								混沌之钥组（100% 机率）<br> 其他一般物品/材料<br><br>
+								<font color="#706850">奖励（超级版本）</font><br>
+								若在 /players 8 下击杀巫妖王，就能将你的统治之石与 <font color="PURPLE">空符文</font> 一起转化，以获得额外奖励 <font
+									color="GREEN">+1 所有技能加成</font>.<br>此配方只能执行一次。
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">拉斯玛</font> - 亡者圣所（黄昏大教堂）<br><br>
+							<img src=".././images/map-bosses/rathma.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									在庇护之地黯淡的光芒下，英雄们下到了亡者圣所，那是一座深埋于冥界的迷宫，由骸骨与低语的灰烬构成。空气中闪烁著被困的灵魂，它们苍白的微光将黑色大理石染上幽魂般的色彩。他们前来寻找拉斯玛，第一位死灵法师。他曾是平衡的守护者，如今却成了平衡的背叛者。他曾侍奉的平衡已枯萎成执念：他企图消除死亡，掌控永恒的两端。他身旁站著 Kor'nac，空洞的使徒，他最忠诚的亡魂，身披一个被遗忘信仰的法衣。血肉从他的骨头上剥落，刻在他血肉上的每一个字都脉动著禁忌的恩典。他的声音是连灵魂都会为之动摇的挽歌。在那个生命毫无意义的地方，钢铁、火焰与信仰迎战阴影与腐朽。英雄们知道，他们面对的不只是死亡，而是死亡的设计者。
+								</i><br><br>
+								<font color="#706850">拉斯玛</font><br>
+								<font color="#8B0000">亡者帷幕</font> - 拉斯玛散发出一道光环，使英雄无法使用传送技能。<br>
+								<font color="red">骨矛连射 / 剧毒怨灵</font> - 拉斯玛会交替施放 3 支骨矛连射与 3 道剧毒怨灵连射，分别造成毁灭性的魔法与毒素伤害。<br>
+								<font color="red">骸骨之魂</font> - 拉斯玛偶尔会施放随时间加速的骨灵。命中时会造成极高的魔法伤害。<br>
+								<font color="red">骨牢</font> - 大约每 20 秒，若你距离拉斯玛较近，他会在你周围筑起出口有限的骸骨迷宫。若没能及时逃出，他就会引爆该区域， <font color="RED">
+									使你立即死亡</font>
+								。引爆区域后，他会唤起 <font color="red">活死人</font> ，从亵渎的大地中爬出。
+								<br>
+								<font color="green">召唤枯萎人偶</font> - 每 20 秒，拉斯玛会唤起 4 个枯萎人偶，对玩家施加可叠加的减益， <font color="red">降低其魔法抗性与移动速度</font>。若在它们自行崩解前击杀，你与附近盟友会获得 <font color="green">强化</font> ，持续 10 秒。<br>
+								<font color="#706850">空虚使徒 柯尔纳克</font><br>
+								Kor'nac 是拉斯玛最忠诚的仆人，随时在战斗中协助他。<br>
+								<font color="red">毁灭重击</font> - Kor'nac 偶尔会重击地面，发出毁灭性的冲击波，造成极高的物理伤害。<br>
+								<font color="red">高涨的仇恨</font> - 随著时间推移，Kor'nac 会变得更强，移动速度提高，重击也会增强。
+								<br>
+								<br>
+								<font color="#706850">活死人</font><br>
+								活死人并不难解决，但受伤时有小机率冲向敌人。<br>
+								<font color="green">燃魂鬼火</font> - 活死人被击杀后会留下痛苦的灵魂。拾取后 <font color="green">可强化你</font> ，持续 10 秒。<br><br>
+								<font color="purple">永恒者</font> - 拉斯玛是不死生物之主，已获得无边力量而变得无敌。只有在获得人偶与活死人灵魂的强化时，你才能对他造成伤害。拉斯玛会将无敌光环延伸至他最信任的仆人 Kor'nac。<br><br>
+								<font color="purple">超级版本</font> - 以 /players 8 进行这场战斗会启动超级版本，所有敌人都会获得以下强化。<br>
+								<font color="#706850">拉斯玛</font> - 当目前生命降至 25% 时，拉斯玛会陷入狂怒，发出全区域的冲击波，提高施法速度，并降下造成毁灭性物理与火焰伤害的陨石。<br>
+								<font color="#706850">活死人</font> - 活死人冲锋时还会获得 500% 额外伤害，冲锋效果持续时间延长为三倍。<br>
+								<font color="#706850">空虚使徒 柯尔纳克</font> - Kor'nac 陷入狂怒的速度加快一倍。<br>
+								<br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 50% 机率）<br>
+								<font color="#706850">拉斯玛的永恒骷髅（暗金小饰品）</font><br> 第 5 阶层地图（平均 50% 机率）<br>
+								混沌之钥组（100% 机率）<br> 其他一般物品/材料<br><br>
+								<font color="#706850">奖励（超级版本）</font><br>
+								若你能在一分钟内先后击杀拉斯玛与 Kor'nac，空洞的使徒，就能将拉斯玛的永恒骷髅与其自身转化，获得以下加成：<br>
+								<font color="#4850B8">魔法抗性 +5%<br>
+									+5% 最大毒素抗性<br>
+									+(10~20) 到 召唤科尔纳克<br></font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">路西恩</font> - 被诅咒的救赎祭坛（虚光圣物箱）<br><br>
+							<img src=".././images/map-bosses/lucion.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									卢西恩是墨菲斯托之子、莉莉丝之兄弟，曾企图以恶魔秩序奴役庇护之地失败后被放逐至深渊。但纯粹的邪恶永不消亡，只会溃烂。透过一个被遗忘邪教的腐化信仰，卢西恩的本质在暗中重新点燃，他的灵魂被绑缚在一个垂死世界的余烬之上。如今他以活火之姿重生，向生者寻求复仇，相信凡人世界应当燃烧，成为依他形象锻造的新创世之熔炉。每吞噬一个灵魂，他的地狱之光便更加强大，喂养著一场威胁吞噬一切存在的烈火。唯有切断他与凡间的连结，并熄灭驱动他的地狱核心，才能阻止卢西恩。若他超越现有形态而升华，就连大魔王也将在他的怒火前颤抖。
+								</i><br><br>
+								<font color="#706850">路西恩</font><br>
+								<font color="red">火焰风暴</font> - 卢西恩的一般攻击之一是毁灭性的火焰风暴，延迟 1 秒后焚烧路径上的一切。<br>
+								<font color="red">陨石直线</font> - 卢西恩会交替施放火焰风暴，以及召唤一整排陨石、造成巨大火焰与物理伤害的攻击。<br>
+								<font color="red">烈焰扑击</font> - 大约每 10 秒，卢西恩会扑向毫无防备的目标，释放毁灭性的汇聚火焰新星。火焰弹在短时间后汇聚，造成初始新星三倍的伤害，因此必须不惜一切代价闪避。跳跃后，卢西恩也会召唤 4 名 <font color="#706850">高祭司</font> 协助作战。<br>
+								<font color="red">烈焰奔腾</font> - 每当卢西恩扑击时，他会召唤充满整个房间的火焰弹风暴。火焰弹会造成毁灭性的火焰伤害。<br>
+								<font color="red">召唤宗教狂热者</font> - 卢西恩偶尔会召唤 10 名宗教狂热者为他作战。狂热者会施加可叠加的减益，提高受到的物理与元素伤害。<br>
+								<font color="orange">净化之焰</font> - 大约每 8 秒，卢西恩会在身边召唤净化之焰，对触碰到的人造成中等偏高的伤害。走进火焰中 <font color="green">可强化你</font> ，持续 4 秒。
+								<br><br>
+								<font color="#706850">高祭司</font><br>
+								高祭司是侍奉卢西恩、高度专精的施法者。<br>
+								<font color="red">火焰之球</font> - 他们的一般攻击是一颗火球，命中时会灼烧地面并造成高额火焰伤害。<br>
+								<font color="red">恶魔强化</font> - 他们偶尔会强化附近盟友，使其伤害与攻击/施法速度提高 3%。 <font color="red">此效果可叠加。
+								</font><br>
+								<font color="green">光之强化</font> - 高祭司死亡时会强化附近玩家。<br><br>
+								<font color="#706850">宗教狂热者</font><br>
+								宗教狂热者是卢西恩极具攻击性的仆从。<br>
+								<font color="red">冰霜尖刺/闪电</font> - 当他们没有冲向你、要把你撕成碎片时，就会施放能穿透一切的高伤害冰寒/闪电法术。
+								<br>
+								<br>
+								<font color="purple">永恒者</font> - 卢西恩是拥有无穷力量的地狱野兽，对一般攻击无敌。若要对他造成伤害，你必须同时拥有以下效果： <font color="green">光之强化</font> and <font color="orange">
+									净化之焰</font>.<br><br>
+
+								<font color="purple">超级版本</font> - 以 /players 8 进行这场战斗会启动超级版本，所有敌人都会获得以下强化。<br>
+								<font color="#706850">路西恩</font> - 卢西恩散发恶魔光环，每 20 秒使他与盟友的伤害提高 5%、攻击与施法速度提高 2%。此效果可无限叠加。<br>
+								<font color="#706850">高祭司</font> - 高祭司的增益现在强化为两倍，使伤害与攻击/施法速度提高 6% 而非 3%。<br>
+								<font color="#706850">宗教狂热者</font> - 卢西恩会召唤 20 名而非 10 名宗教狂热者。<br>
+								<br>
+								<font color="#706850">奖励</font><br>
+								<font color="purple">祝福宝珠</font> （平均 50% 机率）<br>
+								<font color="orange">卢西恩的烈焰圣物</font><br> （加成清单请见 <a
+									href="Eastern%20Sun%20Resurrected%20Cube%20Recipes.html#legendary">传奇组件</a> 章节）<br>
+								第 5 阶层地图（平均 50% 机率）<br>
+								混沌之钥组（100% 机率）<br> 其他一般物品/材料<br><br>
+								<font color="#706850">奖励（超级版本）</font><br>
+								若在 /players 8 下击杀卢西恩，他会掉落自己的精华（<font color="ORANGE">路西恩的精华</font>）。精华是插槽甜甜圈的强化版。
+							</font>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</a>
+	</center>
+</body>
+
+</html>

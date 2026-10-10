@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            여기에서 용병과 여러 아이템 기술에 대한 정보를 확인할 수 있습니다.<br>
+                            추가할 내용이 있다고 생각되면 디스코드로 연락 주세요. 추가하겠습니다.
+                        </font>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <a name="mercenaries"></a>
+        <font size="-1" face="arial,helvetica">
+            <a href="./skill_information.htm#mercenaries">[용병]</a>&nbsp;
+            <a href="./skill_information.htm#oskills">[아이템 기술]</a>&nbsp;
+        </font>
+        <br>
+        <br>
+        <table cellpadding="5" cellspacing="0"
+            style="border-collapse:collapse; max-width: 1200px; text-align:left; color:#fff; font-family:Arial, sans-serif; width:100%; border:2px solid #000;">
+            <tr style="background-color:#402040; border:2px solid #000;">
+                <td colspan="4" style="text-align: center;">
+                    <b>용병</b>
+                </td>
+            </tr>
+            <tr style="background-color:#402040; border:2px solid #000; text-align: center;">
+                <th style="border:2px solid #000;">용병</th>
+                <th style="border:2px solid #000;">하위 유형</th>
+                <th style="border:2px solid #000;">기술</th>
+            </tr>
+            <!-- Rogue Scout -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">도적 정찰병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">원소</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염 화살, 얼음 화살, 번개 화살, 내면의 통찰, 날카로운 집중, 관통</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">도적 정찰병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">물리</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">다중 사격, 토네이도 샷, 전설의 화살, 내면의 통찰, 날카로운 집중, 관통</font>
+                </td>
+            </tr>
+            <!-- Desert Mercenary -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">전투 - 보통</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">힘, 펜드, 창폭풍, 죽음의 춤
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">방어 - 보통</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">기도, 펜드, 집중하다, 죽음의 춤
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">공격 - 보통</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">신성한 불꽃, 열정, 복수, 판결</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">전투 - 악몽</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">광신주의, 펜드, 창폭풍, 죽음의 춤</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">방어 - 악몽</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">명상, 열정, 집중하다, 죽음의 춤</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">공격 - 악몽</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">신성한 동결, 열정, 복수, 판결
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">전투 - 지옥</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">확신, 열정, 복수, 판결</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">방어 - 지옥</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">활력, 펜드, 집중하다, 죽음의 춤
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">사막 용병</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">공격 - 지옥</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">신성한 충격, 펜드, 창폭풍, 죽음의 춤</font>
+                </td>
+            </tr>
+            <!-- Eastern Sorcerer -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">동방의 술사</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">불</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염 피해 오라, 불폭풍, 화산, 화염 폭발</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">동방의 술사</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">냉기</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">냉기 피해 오라, 소용돌이, 몬순, 얼음 폭발</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">동방의 술사</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">번개</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">번개 피해 오라, 지진, 전도체, 폭풍의 넥서스</font>
+                </td>
+            </tr>
+            <!-- Barbarian -->
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">야만용사</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">방어</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">외침, 전투 명령, 전투 명령, 기절, 집중하다</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">야만용사</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">공격</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">울부짖음, 전투 지휘, 고대인의 존재, 광폭, 집중</font>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <a name="oskills"></a>
+        <font size="-1" face="arial,helvetica">
+            <a href="./skill_information.htm#mercenaries">[용병]</a>&nbsp;
+            <a href="./skill_information.htm#oskills">[아이템 기술]</a>&nbsp;
+        </font>
+        <br>
+        <br>
+        <table cellpadding="5" cellspacing="0"
+            style="border-collapse:collapse; max-width: 1200px; text-align:left; color:#fff; font-family:Arial, sans-serif; width:100%; border:2px solid #000;">
+            <tr style="background-color:#402040; border:2px solid #000;">
+                <td colspan="3" style="text-align: center;">
+                    <b>아이템 기술</b>
+                </td>
+            </tr>
+            <tr style="background-color:#402040; border:2px solid #000; text-align: center;">
+                <th style="border:2px solid #000;">기술</th>
+                <th style="border:2px solid #000;">설명</th>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화살, 화염/냉기/번개/마법 강화 화살
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">무기 피해의 100%를 주며 관통하지 못하는 단순한 화살입니다. 원소 강화 버전은 물리 피해의 100%를 해당 피해 유형으로 변환합니다.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">도끼 던지기, 화염/냉기/번개/마법 강화 도끼
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">무기 피해의 100%를 주며 관통하지 못하는 단순한 도끼입니다. 원소 강화 버전은 물리 피해의 100%를 해당 피해 유형으로 변환합니다.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염/냉기/번개/독/마법/바람의 쇄도
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">작은 범위에 즉시 주문 피해를 주는 기술입니다. 각 기술은 해당 원소의 모든 주문에서 시너지 보너스를 받습니다(예: 화염 쇄도는 화염 폭발이나 화산처럼 직접 피해를 주는 모든 화염 주문에서 시너지를 받습니다). 다른 발동 효과와 달리 석궁의 추가 피해를 물려받습니다.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">원소 분출
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염, 냉기, 번개, 마법, 바람의 쇄도를 5개로 합친 1개짜리 기술.</font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염/냉기/번개/마법/바람의 낙인
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">대상 적에게 낙인을 붙이고 0.4초 뒤 무기 피해의 100%를 해당 원소로 변환해 주는 기술입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염/냉기/번개/마법/무속성 가시 회오리
+                    </font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">무기 피해의 100%를 해당 원소로 변환해 주는 가시 64개짜리 회오리를 내뿜는 기술입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">시간 경과</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">발동하거나 시전할 때 사용자를 치유하기만 하는 기술입니다. 레벨 = 치유 비율(예: 레벨 10 = 최대 생명력의 10% 치유).
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">초신성</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화면 전체에 퍼지는 회오리로, 무기 피해의 150%를 번개 피해로 변환해 주고 모든 적을 밀쳐냅니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">자연의 정령 숙련</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">레벨당 물리 저항 1%와 생명력 5%를 주는 패시브 기술입니다(야성 숙련 보너스와 합산).
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">워밍업</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">레벨당 공격 속도 2%, 이동 속도 2%, 시전 속도 2%, 마나 재생 10%를 주는 강화 효과입니다. 또한 레벨당 초당 약 10의 생명력을 재생합니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">얼음 칼날/천둥 발톱/화염 주먹 방출</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">발동 시 3충전짜리 충전 기술을 모의로 방출하는 발동 효과입니다. 일반 기술과 같은 시너지를 받습니다. 물리 마무리 방출 발동과 달리, 배운 기술이 아니라 발동 효과 자체의 레벨을 사용합니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염/냉기/번개 피해 오라</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">영향을 받는 파티원에게 레벨당 해당 원소 주문 피해 5%를 주는 오라입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염/냉기/번개 관통 오라</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주변 적의 해당 원소 저항을 레벨당 1% 낮추는 오라입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">용의 분노/처형 방출</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">아이템의 발동 효과로, 발동하면 완전히 충전된 현재 레벨(발동 레벨이 아니라 배운 기술 레벨)의 용의 분노/처형을 적에게 방출합니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">물리 피해의 트로피</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">피해 강화 800%와 공격에 물리 피해 50-100를 주는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">속도의 트로피</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">기본 공격 속도와 달리기/걷기 속도 100%, 시전 속도 증가 100%, 막기 속도 증가 100%, 타격 회복 속도 증가 100%를 주는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주문 피해의 트로피</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주문 피해 300%를 주는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">생존의 트로피</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">최대 생명력과 마나를 150% 늘리는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">저항의 트로피</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">원소 및 독 저항 100%, 물리 및 마법 저항 50%를 주는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">스탯의 트로피</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">모든 능력치 +150을 주는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">기술의 전리품</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">모든 기술 +10을 주는 강화 효과입니다. 20초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">섬망</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">모든 능력치 50% 보너스, 타격 시 생명력 15, 저주 면역을 주는 강화 효과입니다(현재 걸린 저주는 <strong>제거하지 않음</strong> ). 4초 동안 지속됩니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화염/냉기/번개 섬광</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">다중 사격형 공격으로, 화염/냉기/번개 탄을 1발 + 5레벨마다 1발씩 부채꼴로 발사합니다. 각 탄은 100%의 고유 관통 확률을 가지며 모든 물리 피해를 자기 원소로 변환합니다. 무기 피해의 125%를 줍니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">족쇄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">적의 이동 속도를 100% + 레벨당 5%, 총 방어력을 20% + 레벨당 1% 낮추는 저주입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">열적死</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주변 적에게 현재 생명력의 50%를 즉시 화염 피해로 주는 주문입니다. 효과 범위는 10 + 레벨당 2/3야드입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">절대 0도</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주변 적에게 현재 생명력의 50%를 즉시 냉기 피해로 주는 주문입니다. 효과 범위는 10 + 레벨당 2/3야드입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">과부하</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주변 적에게 현재 생명력의 50%를 즉시 번개 피해로 주는 주문입니다. 효과 범위는 10 + 레벨당 2/3야드입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">특이점</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주변 적에게 현재 생명력의 50%를 즉시 마법 피해로 주는 주문입니다. 효과 범위는 10 + 레벨당 2/3야드입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">죽음의 거미줄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">전장을 거미줄로 덮어, 그 위를 걷는 적의 독 저항을 75%, 기본 이동 속도를 100% 낮추는 주문입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">다발 사격 발리스타</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">여러 적에게 여러 화살을 쏘는 고정형 구조물을 소환합니다. 구조물은 당신의 물리 공격 피해와 발동 효과를 제외한 모든 공격 보정치를 물려받습니다. 방어력 50000마다 발리스타를 하나 더 소환할 수 있습니다. 덫 상한 보정치의 영향을 받지 않습니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">작살 발리스타</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">단일 적에게 강력한 기절 공격을 퍼붓는 고정형 구조물을 소환합니다. 구조물은 당신의 물리 공격 피해와 발동 효과를 제외한 모든 공격 보정치를 물려받습니다. 방어력 50000마다 발리스타를 하나 더 소환할 수 있습니다. 덫 상한 보정치의 영향을 받지 않습니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">번개 연쇄</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">화면 위의 모든 적을 향해 번개를 쏘는 공격입니다. 각 번개는 무기 피해의 100%를 번개로 변환해 줍니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">빙하의 지옥불</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">주변 모든 몬스터를 8초 동안 얼리고 무기 피해의 50%를 냉기 피해로 주는 파멸적인 서리의 파도입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">천둥 별</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">번개 5개로 된 회오리를 내뿜고, 번개가 만든 충격 지대는 그 위에 선 모두에게 무기 피해의 20%를 번개로 줍니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">영혼 폭풍</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">4초 동안 0.2초마다 영혼을 1개 내보내며, 영혼은 주변 적을 찾아 무기 피해의 50%를 마법 피해로 줍니다. 각 영혼은 적중 시 플레이어 최대 생명력의 1%를 치유합니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">드래곤의 숨결</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">모든 화염 주문에서 추가 시너지 피해를 받는 화염 폭풍의 복제본입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">반짝임</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">충전된 화살을 전장에 불러내 무기 피해의 10%를 번개로 주는 기술입니다.
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">원거리 사격</font>
+                </td>
+                <td style="background-color:#262322; border:2px solid #000;">
+                    <font face="arial,helvetica" size="-1">무기 피해의 100%를 주며, 최대 사거리에서는 총 피해가 최대 200% 증가하는 투사체입니다.
+                    </font>
+                </td>
+            </tr>
+        </table>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

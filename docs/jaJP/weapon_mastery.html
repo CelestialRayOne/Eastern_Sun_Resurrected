@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected データベース
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="&#35328;&#35486;"><select id="esr-lang-jaJP" aria-label="&#35328;&#35486;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP" selected>&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="jaJP",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-jaJP');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本情報</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新履歴]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[防具]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接頭辞]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[接尾辞]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク防具]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ユニーク武器]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[その他のユニーク]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話ユニーク]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[セット]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/ルーン]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ジェムワード]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[ルーンワード]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[キューブレシピ]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[マップ]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">機能</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐敗の結果]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油の結果]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[エンドゲームマップ]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魂の器]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[アセンダンシー]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[討伐台帳]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵と他クラススキル情報]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器熟練]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                ディアブロ II リザレクテッド用トータルコンバージョンMOD</div>
+        </div>
+        <div style="width:100%;">
+
+            <br>
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                <font color="ORANGE">武器の達人</font> は、クラス武器とスキルの相互作用を変える独自のシステムです。<br>
+                                武器マスタリーは、 <FONT color="#706850">武器マスタリーのトークン
+                                </FONT> （ドロップ元：
+                                <FONT color="#706850">堕落したザカラム</FONT> とエンドゲームマップのボス、確率25%、/players の影響なし）をトランスミュートすると習得できます。<br>
+                                <FONT color="#706850">堕落したザカラム</FONT> は、ナイトメアとヘルのキャンペーンでランダムに遭遇する危険なユニーク敵で、武器マスタリートークンを落とすことがあり（最大75%、/players の影響なし）、ユニークや武器のドロップ率も高くなっています。<br>
+                                トランスミュートするとトークンは <font color="ORANGE">覚醒</font> し、武器といくつかの素材と一緒にトランスミュートすれば武器に適用できます。<br>
+                                武器マスタリーの特化は、パワーインフレを起こしたりキャラクターを必ずしも強くしたりするためのものではなく、スキルの仕組みを変えたり、新しい装備構成の道を提供したりするためのものです。<br>
+                                1つの武器に適用できる武器マスタリーは1つだけです。明記されていない限り、武器マスタリーは（二刀流でも）重複しません。<br>
+                                武器マスタリーは、ティアに関係なくどのクラス武器にも適用できます（エクセプショナル、エリート、神話のベースでも機能します）。<br>
+                                武器の達人 <FONT color="ORANGE">は取り外せます</FONT>が、 <font color="red">取り外す際にトークンは</font> 失われます。
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <a name="recipes"></a>
+                        <a href="./weapon_mastery.html#recipes">[一般レシピ]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[特化]</a>&nbsp;
+                    </tbody>
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                            <font face="arial,helvetica">
+                                <b>
+                                    一般レシピ
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                任意のクラス武器<br>
+                                <FONT color="#706850">武器マスタリーのトークン</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                同じアイテム*<br>
+                                <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br><br>
+                                <font color="gray">*トークンを覚醒させるだけで、武器は変化しません</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                武器マスタリー付きの任意のクラス武器<br>
+                                クラス専用のドラゴンストーンの形態<br>
+                                解凍ポーション 3個
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                同じアイテム<br>
+                                武器マスタリー解除*<br><br>
+                                <font color="gray">*トークンは失われます</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">任意の覚醒した武器マスタリートークン</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">武器マスタリートークン*</FONT><br><br>
+                                <font color="gray">*未覚醒</font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <font size="-1" face="arial,helvetica">
+                    <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                        <tbody>
+                            <a name="specializations"></a>
+                            <a href="./weapon_mastery.html#recipes">[一般レシピ]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[特化]</a>&nbsp;
+                        </tbody>
+                        <br><br>
+                        <tr>
+                            <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        特化
+                                    </b><br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    スタッグボウ版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">蜘蛛の糸</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ポイズン、イモレーション、フリージング、ライトニングアロー</font><br>
+                                    これらのスキルが特殊効果を発動する間隔を5回攻撃ごとに変更<br>
+                                    （通常は3回）。ただし総ダメージが20%増加
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    リフレックスボウ版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">蜘蛛の糸</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ストレイフ</font><br>
+                                    対象数が3倍になりますが、矢を1本放つごとに物理耐性2%のペナルティ<br>
+                                    が2秒間付きます。この効果に上限はありません<br>
+                                    <br>
+                                    <font color="orange">マルチプルショット</font><br>
+                                    マルチショットが代わりに矢のノヴァを放つようになりますが、<br>レベルごとのダメージボーナスは得られなくなります<br>
+                                    <br>
+                                    <font color="orange">トルネードショット</font><br>
+                                    代わりに16本の矢のノヴァを放ち、特殊な<br>
+                                    シナジーのデバフが3倍になり、変更不可の10秒クールダウンが付きます<br>
+                                    <br>
+                                    <font color="orange">伝説の矢</font><br>
+                                    レベルやシナジーによる命中率の上昇が<br>
+                                    なくなる代わりに、ダメージボーナスが2倍になります
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    精密弓版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">蜘蛛の糸</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">魔法, 冷気, 爆発矢</font><br>
+                                    これらのスキルは3回攻撃ごとに近くの敵へ追加の矢を放ちますが、<br>
+                                    レベルとシナジーによるダメージと命中率をすべて失います
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    メイデン・スピア版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">蜘蛛の糸</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">スピアストーム</font><br>
+                                    スピアストームが<br>
+                                    3回攻撃ごとに槍の破片の数を2倍にしますが、ボーナス物理ダメージは得られなくなります<br>
+                                    <br>
+                                    <font color="orange">フェンド</font><br>
+                                    フェンドが小さな槍のノヴァだけを生成するようになり、<br>
+                                    物理耐性を150%の効率で下げますが、減速はしなくなります*<br>
+                                    <br>
+                                    <font color="orange">死の舞踏</font><br>
+                                    収束するノヴァの代わりに追尾する槍の波を放ちます<br>
+                                    クリティカルは追加の波に置き換わります
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    メイデンパイク版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">蜘蛛の糸</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">スピアストーム</font><br>
+                                    レベルごとの槍の破片が2分の1になりますが、<br>
+                                    全体の物理ダメージが2倍になります<br>
+                                    <br>
+                                    <font color="orange">フェンド</font><br>
+                                    フェンドが大きな槍の<br>
+                                    ノヴァだけを生成し、減速効果が2倍になります*<br>
+                                    <br>
+                                    <font color="orange">死の舞踏</font><br>
+                                    特殊なシナジーにより、5回攻撃ごとに総ダメージが2倍になります<br>
+                                    （15%の確率でダメージが4倍になる効果の代わり）
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    メイデンジャベリン版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">蜘蛛の糸</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">パイア、プレイグ、フロストジャベリン、ライトニングフューリー</font><br>
+                                    これらのスキルは3回投げるごとに追加でジャベリンを2本投げますが、<br>
+                                    総ダメージが40%減少します
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    忍者刀版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="purple">ドラゴンストーン</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ドラゴンブレード</font><br>
+                                    対象数が半分になり、近くの敵1体に<br>
+                                    減った数のおよそ60%の回数だけ攻撃します
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    部族の斧版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="#706850">鍛造ハンマー</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ハチェットフルーリー</font><br>
+                                    跳ね返らなくなります。代わりに4本の斧が収束する<br>
+                                    ノヴァを放ち、主目標だけに再度ヒットします<br>
+                                    <br>
+                                    <font color="orange">ファントムハチェット</font><br>
+                                    斧を螺旋状のノヴァで投げるようになります。<br>
+                                    地形にしか当たらず、その後最大4体の近くの敵へ跳ね返ります<br>
+                                    <br>
+                                    <font color="orange">スタンピード</font><br>
+                                    魔法の弾の数が50%増加しますが、<br>
+                                    追尾する対象数は2から1に減ります<br>
+                                    <br>
+                                    <font color="orange">バーサークの怒り</font><br>
+                                    魔法の弾が即座に近くの敵へ分裂しますが、<br>
+                                    収束するノヴァは生成しなくなります。<br>
+                                    弾速と弾数が50%増加します
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    オークの枝版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="gray">ティラニウム鉱石</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ウルフ、レイヴン、グリズリー</font><br>
+                                    召喚できるウルフとレイヴンが半分になり、<br>
+                                    失った通常召喚5体ごとにグリズリーを1体追加で得ます<br>
+                                    。すべてのペットスキルのヒット数とコンテイジョンのダメージが2倍になります。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    ソウルハンター版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="red">ブラックムーア</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">アンデッドフレンジー</font><br>
+                                    このスキルは元素ダメージを与えなくなりますが、<br>
+                                    物理ダメージが2倍になります
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    儀式的な短剣版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="red">ブラックムーア</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">呪い</font><br>
+                                    すべての呪いの効果が2倍になりますが、持続時間は<br>
+                                    2秒、半径は4ヤードに短縮されます
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    忌まわしき鎌版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="red">ブラックムーア</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">魔法呪文</font><br>
+                                    ネクロマンサーの直接ダメージの魔法呪文は<br>
+                                    失ったライフ1%ごとに、1%の確率で<br>
+                                    再発動します。魔法耐性は常に0になります
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    祝福された刃版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="white">聖なるシンボル</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">熱意</font><br>
+                                    エンパワーの総確率が50%増加しますが、<br>
+                                    持続時間は2秒に短縮されます
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    マナブレード版<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="blue">砕けた宝石</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ファナティックスイング</font><br>
+                                    ヒット数が1になりますが、3回目のヒットごとに<br>
+                                    呪文ダメージを与える属性効果が発生し、<br>
+                                    それぞれの属性の直接ダメージ呪文すべてに応じて強化されます
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    ソーサレスのオーブ<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="blue">砕けた宝石</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT><br>
+                                    <FONT color="red">欠けたルビー</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ソーサレスの呪文</font><br>
+                                    レベル24のソーサレス呪文のクールダウンが3倍になり<br>
+                                    、ハイドラに2秒のクールダウンが追加されますが、<br>
+                                    呪文の総ダメージが20%増加します
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    ソーサレスのオーブ<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="blue">砕けた宝石</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT><br>
+                                    <FONT color="#f1e5ac">欠けた頭骨</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">ソーサレス専用スキル</font><br>
+                                    専用スキルのボーナスが50%、デメリットが75%増加します
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    アサシンのクロー<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="purple">ドラゴンストーン</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT><br>
+                                    <FONT color="red">欠けたルビー</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">属性チャージスキル</font><br>
+                                    すべての属性チャージスキルが対応するチャージだけを放出するようになりますが、<br>
+                                    チャージ段階に応じて総ダメージがそれぞれ50/70/100%増加します<br>
+                                    この効果は発動効果には影響せず、重複もしません<br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    アサシンのクロー<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="purple">ドラゴンストーン</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT><br>
+                                    <FONT color="#f1e5ac">欠けた頭骨</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">属性チャージスキル</font><br>
+                                    すべての属性チャージスキルの基本ダメージが25%減少しますが、<br>
+                                    存在する異なるチャージ1種類ごとに総ダメージが10%増加します<br>
+                                    この効果は重複します*
+                                </font>
+                                <br><br>
+                                <font size="-1" color="gray">*このダメージボーナスはディスチャージの発動には適用されません</font>
+                            </td>
+                        </tr>
+                    </table>
+                </font>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

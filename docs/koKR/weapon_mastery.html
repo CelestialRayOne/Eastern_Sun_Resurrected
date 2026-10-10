@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected 데이터베이스
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+        </div>
+        <div style="width:100%;">
+
+            <br>
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                <font color="ORANGE">무기 숙련</font> 은(는) 직업 무기와 기술의 상호작용 방식을 바꾸는 독특한 시스템입니다.<br>
+                                무기 숙련은 <FONT color="#706850">무기 숙련 토큰
+                                </FONT> (드롭처:
+                                <FONT color="#706850">타락한 자카룸</FONT> 및 엔드게임 지도 보스, 확률 25%, /players 영향 없음)을 변환하면 얻을 수 있습니다.<br>
+                                <FONT color="#706850">타락한 자카룸</FONT> 은(는) 악몽과 지옥 난이도 캠페인에서 무작위로 마주치는 치명적인 고유 적으로, 무기 숙련 토큰을 떨어뜨릴 수 있으며(최대 75%, /players 영향 없음) 고유 아이템과 무기 드롭 확률도 높습니다.<br>
+                                변환하면 토큰이 <font color="ORANGE">각성</font> 하며, 무기 및 몇 가지 재료와 함께 변환하면 무기에 적용할 수 있습니다.<br>
+                                무기 숙련 특화는 강함을 부풀리거나 캐릭터를 반드시 강하게 만들기 위한 것이 아니라, 기술의 작동 방식을 바꾸거나 새로운 장비 구성 방향을 제공하기 위한 것입니다.<br>
+                                무기 하나에는 무기 숙련을 하나만 적용할 수 있습니다. 명시적으로 다르게 표기되지 않는 한 무기 숙련은 (쌍수일 때) 중첩되지 않습니다.<br>
+                                무기 숙련은 티어와 관계없이 모든 직업 무기에 적용할 수 있습니다(특급, 정예, 신화 기본 아이템에서도 작동).<br>
+                                무기 숙련 <FONT color="ORANGE">은(는) 제거할 수 있지만</FONT>, <font color="red">제거 시 토큰은</font> 사라집니다.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <a name="recipes"></a>
+                        <a href="./weapon_mastery.html#recipes">[일반 조합법]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[특화]</a>&nbsp;
+                    </tbody>
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                            <font face="arial,helvetica">
+                                <b>
+                                    일반 조합법
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                아무 직업 무기<br>
+                                <FONT color="#706850">무기 숙련 토큰</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                같은 아이템*<br>
+                                <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br><br>
+                                <font color="gray">*토큰을 각성시킬 뿐 무기는 바뀌지 않습니다</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                무기 숙련이 있는 아무 직업 무기<br>
+                                직업 전용 드래곤 스톤 형태<br>
+                                해동 물약 3개
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                같은 아이템<br>
+                                무기 숙련 제거됨*<br><br>
+                                <font color="gray">*토큰이 사라집니다</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">아무 각성한 무기 숙련 토큰</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">무기 숙련 토큰*</FONT><br><br>
+                                <font color="gray">*미각성</font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <font size="-1" face="arial,helvetica">
+                    <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                        <tbody>
+                            <a name="specializations"></a>
+                            <a href="./weapon_mastery.html#recipes">[일반 조합법]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[특화]</a>&nbsp;
+                        </tbody>
+                        <br><br>
+                        <tr>
+                            <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        특화
+                                    </b><br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    사슴 활 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">거미의 실크</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">독, 화장, 빙결, 번개 화살</font><br>
+                                    해당 기술이 특수 효과를 5회 공격마다 발동하게 합니다<br>
+                                    (원래는 3회). 대신 총 피해가 20% 증가합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    반사 활 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">거미의 실크</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">스트레이프</font><br>
+                                    대상 수가 세 배가 되지만, 화살을 쏠 때마다 물리 저항 2% 페널티가<br>
+                                    2초 동안 적용됩니다. 이 효과에는 한도가 없습니다<br>
+                                    <br>
+                                    <font color="orange">다중 사격</font><br>
+                                    다중 사격이 대신 화살 회오리를 발사하지만,<br>레벨당 피해 보너스는 더 이상 얻지 못합니다<br>
+                                    <br>
+                                    <font color="orange">토네이도 샷</font><br>
+                                    대신 화살 16개짜리 회오리를 발사하고, 특수<br>
+                                    시너지 약화 효과가 세 배가 되며, 수정할 수 없는 10초 재사용 대기시간이 생깁니다<br>
+                                    <br>
+                                    <font color="orange">전설의 화살</font><br>
+                                    레벨이나 시너지로 얻는 명중률이<br>
+                                    사라지는 대신 피해 보너스가 두 배가 됩니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    정밀 활 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">거미의 실크</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">마법, 냉기, 폭발 화살</font><br>
+                                    해당 기술은 3회 공격마다 주변 적에게 추가 화살을 쏘지만,<br>
+                                    레벨과 시너지로 얻는 피해와 명중률을 모두 잃습니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    처녀의 창 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">거미의 실크</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">창폭풍</font><br>
+                                    창 폭풍이<br>
+                                    3회 공격마다 창 파편 수를 두 배로 늘리지만, 보너스 물리 피해는 더 이상 주지 않습니다<br>
+                                    <br>
+                                    <font color="orange">펜드</font><br>
+                                    막아내기가 작은 창 회오리만 생성하며, 이제<br>
+                                    물리 저항을 150% 효율로 낮추지만 더 이상 감속시키지 않습니다*<br>
+                                    <br>
+                                    <font color="orange">죽음의 춤</font><br>
+                                    모여드는 회오리 대신 유도 창의 파도를 발사합니다<br>
+                                    치명타가 추가 파도로 대체됩니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    처녀의 창 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">거미의 실크</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">창폭풍</font><br>
+                                    레벨당 창 파편을 2분의 1만 얻지만,<br>
+                                    전체 물리 피해가 두 배가 됩니다<br>
+                                    <br>
+                                    <font color="orange">펜드</font><br>
+                                    막아내기가 큰 창<br>
+                                    회오리만 생성하며 감속 효과가 두 배가 됩니다*<br>
+                                    <br>
+                                    <font color="orange">죽음의 춤</font><br>
+                                    특수 시너지로 5회 공격마다 총 피해가 두 배가 됩니다<br>
+                                    (15% 확률로 피해가 네 배가 되는 효과 대신)
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    처녀 창 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">거미의 실크</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">화장, 역병, 서리 투창, 번개 분노</font><br>
+                                    해당 기술은 3번 던질 때마다 투창을 2개 더 던지지만,<br>
+                                    총 피해가 40% 감소합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    닌자토 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="purple">드래곤 스톤</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">드래곤 블레이드</font><br>
+                                    대상 수가 절반이 되며, 주변 적 하나를<br>
+                                    줄어든 수의 약 60%만큼 타격합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    부족 도끼 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="#706850">망치 제작기</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">도끼 난사</font><br>
+                                    더 이상 튕기지 않습니다. 대신 도끼 4개가 모여드는<br>
+                                    회오리를 발사해 주 대상만 다시 타격합니다<br>
+                                    <br>
+                                    <font color="orange">환영 도끼</font><br>
+                                    이제 도끼를 나선형 회오리로 던지며,<br>
+                                    지형에만 맞을 수 있고, 그 뒤 주변 적 최대 4명에게 튕겨 나갑니다<br>
+                                    <br>
+                                    <font color="orange">스탬피드</font><br>
+                                    마법 탄 수가 50% 증가하지만,<br>
+                                    추적 대상 수는 2에서 1로 줄어듭니다<br>
+                                    <br>
+                                    <font color="orange">광란의 분노</font><br>
+                                    마법 탄이 즉시 주변 적에게 갈라지지만,<br>
+                                    모여드는 회오리는 더 이상 생성하지 않습니다.<br>
+                                    투사체 속도와 탄 수가 50% 증가합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    참나무 가지 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="gray">티라늄 광석</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">늑대, 까마귀, 회색곰</font><br>
+                                    소환할 수 있는 늑대와 까마귀가 절반이 되며,<br>
+                                    잃은 일반 소환수 5마리마다 회색곰을 1마리 더 얻습니다<br>
+                                    . 모든 소환수 기술의 적중 횟수와 전염의 피해가 두 배가 됩니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    영혼 사냥꾼 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="red">블랙무어</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">언데드 광란</font><br>
+                                    이 기술은 더 이상 원소 피해를 주지 않지만,<br>
+                                    물리 피해가 두 배가 됩니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    의식의 단검 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="red">블랙무어</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">저주</font><br>
+                                    모든 저주가 두 배로 강해지지만, 지속 시간은<br>
+                                    2초로, 반경은 4야드로 줄어듭니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    비참한 낫 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="red">블랙무어</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">마법 주문</font><br>
+                                    강령술사의 직접 피해 마법 주문은<br>
+                                    잃은 생명력 1%마다 1% 확률로<br>
+                                    반복 시전됩니다. 마법 저항은 항상 0입니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    축복받은 가장자리 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="white">성스러운 상징</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">열정</font><br>
+                                    강화 총 확률이 50% 증가하지만,<br>
+                                    지속 시간은 2초로 줄어듭니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    마나 블레이드 변형<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="blue">부서진 보석</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">광신자의 휘두르기</font><br>
+                                    적중 횟수가 1으로 줄지만, 세 번째 적중마다<br>
+                                    주문 피해를 주는 원소 효과가 발생하며,<br>
+                                    각 원소의 모든 직접 피해 주문에 따라 강해집니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    원소술사 구슬<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="blue">부서진 보석</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT><br>
+                                    <FONT color="red">조각난 루비</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">원소술사 주문</font><br>
+                                    레벨 24 원소술사 주문의 재사용 대기시간이 세 배가 되고<br>
+                                    , 히드라에 2초 재사용 대기시간이 추가되지만,<br>
+                                    총 주문 피해가 20% 증가합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    원소술사 구슬<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="blue">부서진 보석</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT><br>
+                                    <FONT color="#f1e5ac">조각난 해골</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">원소술사 전용 기술</font><br>
+                                    전용 기술의 보너스가 50%, 단점이 75% 증가합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    어쌔신 클로<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="purple">드래곤 스톤</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT><br>
+                                    <FONT color="red">조각난 루비</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">원소 충전 기술</font><br>
+                                    모든 원소 충전 기술이 해당 충전만 방출하게 되지만,<br>
+                                    충전 단계에 따라 총 피해가 각각 50/70/100% 증가합니다<br>
+                                    이 효과는 발동 효과에 적용되지 않으며 중첩되지 않습니다<br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    어쌔신 클로<br>
+                                    <FONT color="#706850">깨어난 무기 숙련 토큰</FONT><br>
+                                    <FONT color="purple">드래곤 스톤</FONT><br>
+                                    <FONT color="purple">모루 돌</FONT><br>
+                                    <FONT color="#f1e5ac">조각난 해골</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">원소 충전 기술</font><br>
+                                    모든 원소 충전 기술의 기본 피해가 25% 감소하지만,<br>
+                                    존재하는 서로 다른 충전마다 총 피해가 10% 증가합니다<br>
+                                    이 효과는 중첩됩니다*
+                                </font>
+                                <br><br>
+                                <font size="-1" color="gray">*이 피해 보너스는 방출 발동에는 적용되지 않습니다</font>
+                            </td>
+                        </tr>
+                    </table>
+                </font>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

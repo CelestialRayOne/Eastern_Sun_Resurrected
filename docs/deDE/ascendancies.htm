@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="de">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 3.6 Datenbank
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Sprache"><select id="esr-lang-deDE" aria-label="Sprache" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE" selected>Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="deDE",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-deDE');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Grundlagen</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Änderungsprotokolle]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Rüstungen]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffen]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Präfixe]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixe]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Rüstungen]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Waffen]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartiges Sonstiges]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mythische Einzigartige]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Sets]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteine/Runen]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteinwörter]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Runenwörter]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Würfelrezepte]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Karten]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Angriffstempo-Rechner]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Beutefinder]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funktionen</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Verderbnis-Ergebnisse]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Salbungs-Ergebnisse]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Endgame-Karten]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Seelengefäß]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Aszendenzen]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Tötungsbuch]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Söldner- und O-Fertigkeiten-Infos]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffenbeherrschung]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Total-Conversion-Mod für Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiege</font> sind mächtige Spezialisierungen, die deine Spielweise prägen und einzigartige Fertigkeiten und Boni gewähren.<br>
+                            Aufstiege werden durch einen besonderen Zauber gewährt, den <font color="orange">Aufstiegstein</font> , der erst nach mehreren besonderen Begegnungen erhältlich ist.<br>
+                            Aufstiegsteine können durch bestimmte Herausforderungen weiter aufgewertet werden (du kannst also weiter aufsteigen), von denen einige an sehr schwere Endgame-Inhalte gebunden sind.<br>
+                            Es gibt 5 Aufstiegsstufen; jede Herausforderung ist schwerer als die vorherige, dafür sind auch die Boni stärker.<br>
+                            Aufstiegsteine <font color="red"><strong>können nicht mit anderen Charakteren geteilt werden</strong>
+                            </font>. Du kannst immer nur einen Aufstiegstein gleichzeitig ausgerüstet haben.<br>
+                            Selbstverständlich kann jede Stufe nur einmal erreicht werden. Du kannst sie aber in beliebiger Reihenfolge erreichen.<br>
+                            Aufstiegsteine können nicht auf normalem Weg verändert werden (sie können nicht verdorben, gesalbt, zu Ahornblättern zerlegt werden usw.).<br>
+                            Nach dem Tod <font color="red">musst du den Aufstiegstein neu anlegen,</font> um die Boni zurückzuerhalten; das liegt an einer Einschränkung der Engine.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Herausforderungen]</a>
+            <a href="#ascendancies">[Aszendenzen]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>Herausforderung der Stufe 1</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Um einen <font color="orange">Aufstiegstein</font>zu erhalten, musst du 5 besondere Superunique-Monster <font color="red">auf Schwierigkeitsgrad Hölle</font> , die überall in Sanktuario verstreut sind, töten<br>und die Elementarkugeln, die jedes von ihnen fallen lässt, transmutieren, um Folgendes zu erhalten:
+                            <font color="orange">Orb der Schöpfung</font>.<br>
+                            Die Kugel kann dann mit bestimmten farbigen Edelsteinen transmutiert werden, um den Aufstieg deiner Wahl freizuschalten. Hinweis: Akt 1, 2 und 3 haben je ein Superunique-Monster. Akt 5 hat 2, Akt 4 keines.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Eingabe</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Ausgabe</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            2 Fehlerhafter Saphir<br>
+                            2 Befleckter Obsidian<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kampfmagier Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            1 Befleckter Obsidian<br>1 Fehlerhafter Saphir<br>1 Fehlerhafter Smaragd<br>1 Makelloser Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Erwachter Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            2 Befleckter Obsidian<br>2 Fehlerhafter Smaragd
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Klingenmeister Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            2 Fehlerhafter Smaragd<br>2 Makelloser Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Nomadenaufstieg-Stein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            2 Befleckter Obsidian<br>2 Makelloser Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Eisenbolzen Aufstiegstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            2 Fehlerhafter Smaragd<br>2 Fehlerhafter Saphir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Arkanist Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            2 Makelloser Rubin<br>2 Fehlerhafter Saphir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Seelenwächter Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            4 Fehlerhafter Smaragd
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Schärfeschütze Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            4 Fehlerhafter Saphir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Sterngeborene Aufstiegssstone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            1 Makelloser Rubin<br>1 Befleckter Obsidian<br>1 Fehlerhafter Saphir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Blutmagier-Aufsichtsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            4 Makelloser Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Lebensbrecher Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            1 Makelloser Rubin<br>1 Befleckter Obsidian<br>1 Fehlerhafter Smaragd
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Weltenformer Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            1 Befleckter Obsidian<br>1 Fehlerhafter Smaragd<br>1 Fehlerhafter Saphir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Haltungstänzer Aufstiegssstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            1 Fehlerhafter Smaragd<br>1 Makelloser Rubin<br>1 Fehlerhafter Saphir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Mana Warden Aufstiegsstein<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb der Schöpfung</font><br>
+                            4 Befleckter Obsidian
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Berserker-Aufsichtsstein<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Herausforderung der Stufe 2</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Die zweite Stufe erreichst du, indem du Nihlathak in seinem Reich auf Hölle tötest und den Aufstiegstein mit sich selbst transmutierst.<br>
+                            <font color="red">Du musst ihn transmutieren, während die Wirbel auf deinem Charakter aktiv sind.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Eingabe</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Ausgabe</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">Aufstiegstein</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            Auf Stufe 2 aufgewertet
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Herausforderung der Stufe 3</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Die dritte Stufe erreichst du, indem du alle Bosse des Über-Tristram <font color="red">innerhalb einer Minute nacheinander tötest, ohne zu sterben, </font>und den Aufstiegstein mit einem Ahornblatt transmutierst.<br>Selbst wenn die Wirbel nach dem Tod des letzten Bosses auf deinem Charakter aktiv sind, funktioniert es nicht, wenn seit dem Tod des ersten mehr als 1 Minute vergangen ist.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Eingabe</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Ausgabe</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            Ahornblatt
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            Auf Stufe 3 aufgewertet
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Herausforderung der Stufe 4</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Die vierte Stufe erreichst du, indem du 10 <font color="ORANGE">Uralte Seelensteine
+                            </font> sammelst, die von jedem Boss einer Endgame-Karte fallen. Du kannst immer nur einen Uralten Seelenstein auf einmal mit dem Aufstiegstein transmutieren. Sobald du 10 Uralte Seelensteine im Aufstiegstein eingefangen hast, kannst du ihn mit 2 Ahornblättern transmutieren, um auf Stufe 4 aufzusteigen.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Eingabe</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Ausgabe</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            <font color="orange">Ursprüngliche Seelensteine gefangen: 10/10</font><br>
+                            2 Ahornblätter
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            Auf Stufe 4 aufgewertet
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Herausforderung der Stufe 5</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Die fünfte Stufe erreichst du, indem du einen beliebigen Boss einer Karte der Stufe 5 tötest und den Aufstiegstein mit 3 Ahornblättern transmutierst.<br>
+                            <font color="red">Du musst ihn transmutieren, während die Wirbel auf deinem Charakter aktiv sind.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Eingabe</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Ausgabe</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            3 Ahornblätter
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Aufstiegstein</font><br>
+                            Auf Stufe 5 aufgewertet
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Herausforderungen]</a>
+            <a href="#ascendancies">[Aszendenzen]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">Aufstiege</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+60 zu Stärke<br>+60 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+25% Bonus auf Stärke<br>+25% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhaltet 1% Zauberschaden für jeweils 2% Todesschlag und für jeweils 2% Vernichtender Schlag<br>+25% Chance auf Durchschlagsschaden<br>+25% Tödlicher Schlag<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 % Gesamtverteidigungsbonus pro 3 % tödlichem Schlag und vernichtendem Schlag*<br>+10 Leben beim Schlagen<br>+15% Physischer Schaden als Mana entzogen<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>+50% zu allen Geschwindigkeiten<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Kampfmagier</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Der Gesamtverteidigungsbonus wirkt multiplikativ auf deinen gesamten Rüstungswert.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Klingenmeister</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+60 zu Stärke<br>+60 zu Geschicklichkeit<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+25% Bonus auf Stärke<br>+25% Bonus auf Geschicklichkeit<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 10 % verbesserten Schaden pro 1 % physischem Widerstand<br>20 % physischer Widerstand<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1% physischen Schaden als Leben zurückgewonnen für jeden 1% physischen Widerstand<br>+40 zu Minimaler Schaden bei Angriffen<br>+50 zu Maximaler Schaden bei Angriffen<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>15% Chance, Level 20 Geworfene Axt beim Treffen zu wirken<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+60 zu Geschicklichkeit<br>+60 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+25% Bonus auf Geschicklichkeit<br>+25% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 5 Mana pro 1 % Tempo*<br>+30% zu allen Geschwindigkeiten<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Mana beim Treffen pro 25 % Tempo*<br>+20 auf Elementare Wut (alle Klassen)<br>+5 % auf alle maximalen Widerstände<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>5% Chance, Level 20 Feuerverstärkte Pfeile beim Treffen zu wirken<br>5% Chance, Level 20 Kälteverbesserter Pfeil beim Treffen zu wirken<br>5% Chance, Level 20 Blitzverstärkter Pfeil beim Treffen zu wirken<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Arkanist</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Jede Tempoart (Blocken, Zaubern, Bewegen, Angreifen, Erholung) zählt einzeln. +1 % auf alle Tempowerte zählt z. B. als +5 % für die Aufstiegsboni.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Blutmagier</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+45 zu Stärke<br>+45 zu Vitalität<br>+45 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+20% Bonus auf Stärke<br>+20% Bonus auf Vitalität<br>+20% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 1 % Zauberschaden pro 250 Leben und 1 % Beschwörungsschaden pro 400 Leben<br>Energie hat keine Wirkung mehr auf Zauber- oder Beschwörungsschaden<br>Blutmagie*<br>+200 zu Leben<br><br>
+                    <font color="orange">Stufe 4</font><br>Heilung für 2% des maximalen Lebens bei einem Kill<br>+50% Schnellere Trefferwiederherstellung<br>+25 % physischer Widerstand<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>+25% zu Beschwörung Leben<br>50 % erhöhtes maximales Leben<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Blutmagie bedeutet, dass du jetzt Leben zum Wirken von Zaubern verwendest.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+30 zu allen Attributen<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+15% Bonus auf Alle Attribute<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte +1 auf alle Fertigkeiten pro 1000 Attributpunkte*<br>+20% zu allen Geschwindigkeiten<br>+30 zu allen Attributen<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Elementar- und Magieabsorption pro 100 Attributpunkte*<br>Erhalte 1 Verteidigung pro 2 Attributpunkte*<br>+20 auf Mächtige Überwältigung (alle Klassen)<br>Vergiftungsdauer um +75% reduziert<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>10% Chance, Level 60 Vernichtung zu wirken, wenn getroffen<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Erweckter</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Die Schwellen gelten für die Gesamtzahl der Attributpunkte (z. B. erhältst du +1 auf alle Fertigkeiten, wenn du von jedem Attribut 250 hast).</font><br>
+        <font size="-2">**Vernichtung ist eine verheerende Nova aus 6 Elementen (Feuer/Kälte/Blitz/Gift/Physisch/Magie), eine Fertigkeit mit Wirkungsbereich über den ganzen Bildschirm, die pro Nova 50 % des Waffenschadens in das jeweilige Element umgewandelt verursacht, dazu erheblichen Zauberschaden jeder Schadensart, der mit den Gesamtattributen skaliert. Sie stößt Gegner zurück und senkt 2 Sekunden lang alle ihre Widerstände um 25 %. Die Giftnova verursacht keinen Waffenschaden.</font><br>
+        <font size="-2" color="red">**Vernichtung kann nur ausgelöst werden, wenn dein aktuelles Leben unter 30 % liegt.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Eisenbolzen</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+60 zu Stärke<br>+60 zu Vitalität<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+25% Bonus auf Stärke<br>+25% Bonus auf Vitalität<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 1 %-2 % Blutungsschaden pro 10 Stärke<br>Die Dauer dieser Blutung folgt der Skalierung der Armbrust-Nachladegeschwindigkeit*<br>+150 zu Stärke<br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Leben bei Treffer für je 200 Stärke<br>+20% Schnellere Armbrust-Nachladezeit<br>Grenze der Armbrust-Nachladegeschwindigkeit um 20% verringert<br>+500 zu Trefferwertung<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>2% Chance, Level 40 Innerer Blick beim Treffen zu wirken<br>+25 auf Scharfer Fokus (alle Klassen)<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Die Blutungsdauer entspricht der Skalierung der Armbrust-Nachladegeschwindigkeit. Das gilt unabhängig davon, ob du eine Armbrust benutzt oder nicht. Die Blutung des Eisenbolzens kann durch andere Blutungsquellen verwässert werden (ähnlich wie sich Giftinstanzen gegenseitig verwässern).</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+75 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+30% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte -1 % auf gegnerischen Feuer-, Kälte- und Blitzwiderstand pro 400 Mana<br>+400 zu Mana<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Lebensregeneration für alle 5 Mana<br>+20 auf Allmacht (alle Klassen)<br>+25% zu allen Geschwindigkeiten<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>+1 zu Teleportieren<br>+1 zu allen Fähigkeiten<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Sternengeborener</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Lebensbrecher</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+75 zu Vitalität<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+30% Bonus auf Vitalität<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 1% Zauberschaden für jede 100 fehlenden Lebenspunkte<br>Erhöhe Maximale Lebenspunkte +30%<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Magie- und physischen Schadensreduzierung für jede 100 fehlenden Lebenspunkte<br>+1 zur Fallenobergrenze<br>Schaden reduziert um 50<br>Magischer Schaden um 50 reduziert<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>+10 auf Lebenspakt*<br>Magieresistenz +15%<br>Physischer Widerstand: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Lebenspakt ist eine umschaltbare Fertigkeit, die jede Sekunde 25 % deines maximalen Lebens entzieht und pro Stufe 10 % maximales Leben gewährt. Lebenspakt kann dich nicht töten.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+45 zu Stärke<br>+45 zu Geschicklichkeit<br>+45 zu Vitalität<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+20% Bonus auf Stärke<br>+20% Bonus auf Geschicklichkeit<br>+20% Bonus auf Vitalität<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 2 maximalen Feuer-, Kälte- und Blitzschaden für Angriffe pro 1 % Elementarwiderstand*<br>Feuerwiderstand +50%<br>Kältewiderstand +50%<br>Blitzwiderstand +50%<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 % physischen und magischen Widerstand pro 30 % Elementarwiderstand*<br>Erhalte 1 % Giftwiderstand pro 5 % Elementarwiderstand*<br>Zauberschaden: +50 %**<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>2 % Chance, Level 1 Wut der Schöpfung beim Treffen zu wirken***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Weltenformer</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Jede Widerstandsart zählt einzeln für die Bonusschwellen. Zum Beispiel erhältst du 1 % physischen Widerstand, wenn du je 10 % Feuer-, Kälte- und Blitzwiderstand hast.</font><br>
+        <font size="-2">**Zauberschaden ist Feuer-/Kälte-/Blitz-/Gift-/Magie-/physischer Zauberschaden und erhöht den festen Schaden für Angriffe (außer physischem Zauberschaden, der den physischen Schaden für Angriffe nicht erhöht).
+        </font><br>
+        <font size="-2">***Wut der Schöpfung ist eine dreifache Elementar-Nova mit mittlerem Wirkungsbereich; jede Nova verursacht 50 % des Waffenschadens in das jeweilige Element umgewandelt und senkt die Elementarwiderstände der Gegner um 30 %.
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Seelenwächter</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+60 zu Vitalität<br>+60 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+25% Bonus auf Vitalität<br>+25% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 1 % Gift-, Magie- und physischen Zauberschaden pro 40 Energie<br>+150 zu Energie<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Leben pro 3 Energie<br>Magieabsorption +10%<br>Kann nicht eingefroren werden<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>+1 zu Nicht-Einzigartigen Beschwörungen Limit<br>Schaden reduziert um 50<br>Magischer Schaden um 50 reduziert<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+45 zu Stärke<br>+45 zu Geschicklichkeit<br>+45 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+20% Bonus auf Stärke<br>+20% Bonus auf Geschicklichkeit<br>+20% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3*</font><br>
+                    Schadenshaltung (Rot): 5 % verbesserter Schaden und 1 % Zauberschaden<br>
+                    pro 75 Punkte Stärke, Geschicklichkeit und Energie zusammen<br>
+                    Ausweichhaltung (Grün): 10 % auf alle Tempowerte und 1 % Ausweichen<br>
+                    pro 1000 Punkte Stärke, Geschicklichkeit und Energie zusammen<br>
+                    Erholungshaltung (Blau): +1 auf alle Fertigkeiten und 150 Leben- und Manaauffüllung<br>
+                    pro 1500 Punkte Stärke, Geschicklichkeit und Energie zusammen<br><br>
+                    <font color="orange">Stufe 4</font><br>Boni aller Haltungen sind um 25% erhöht<br>+30% Bonus auf Stärke<br>+30% Bonus auf Geschicklichkeit<br>+30% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>+50% Erhöhte Angriffsgeschwindigkeit<br>+50% Schnellere Zaubergeschwindigkeit<br>+100 Leben nach jedem Kill<br>+50 zu Mana nach jedem Kill<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Haltungstänzer</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*Du musst im Untermenü Steuerung ein Tastenkürzel für den Haltungswechsel festlegen.</font></font><br>
+        <font size="-2">**Du kannst die Haltung jederzeit wechseln, aber die Haltungen wechseln nur in dieser Reihenfolge: Rot -&gt; Grün -&gt; Blau.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Nomade</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+60 zu Geschicklichkeit<br>+60 zu Vitalität<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+25% Bonus auf Geschicklichkeit<br>+25% Bonus auf Vitalität<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 5 maximalen Schaden pro 5% schnelleres Laufen/Gehen oder 1% Basis-Lauf-/Gehgeschwindigkeit<br>+75% Schnellere Bewegung/Gang<br>Verursacht 150%-250% Blutungsschaden über 1 Sekunde<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 5% Ausweichchance pro 200% schnelleres Laufen/Gehen oder 40% Basis-Lauf-/Gehgeschwindigkeit<br>+300 zu Leben<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>20% Chance, Level 1 Husch zu wirken, wenn getroffen<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Huschen ist ein Verstärkungseffekt von 1 Sekunde Dauer, der 33 % Ausweichen, 100 % Basis-Lauf-/Gehgeschwindigkeit und 25 % maximalen physischen Gesamtschaden für Angriffe gewährt und über seine Dauer 10 % des maximalen Lebens regeneriert.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+75 zu Geschicklichkeit<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+30% Bonus auf Geschicklichkeit<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 2 % Bonus auf Angriffswert pro 1 % Durchschlag<br>Erhalte 1 maximalen Schaden pro 2 % Durchschlag<br>+30 zu Minimal Schaden<br>+20 auf Durchschlag (alle Klassen)<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 3 Vitalität für jeden 1% Durchdringung<br>+75% Schnellere Bewegung/Gang<br>+20 auf Ausweichen (alle Klassen)<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>15% Chance, Level 20 Pfeil beim Treffen zu wirken<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Scharfschütze</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Manawächter</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+45 zu Geschicklichkeit<br>+45 zu Vitalität<br>+45 zu Energie<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+20% Bonus auf Geschicklichkeit<br>+20% Bonus auf Vitalität<br>+20% Bonus auf Energie<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 1 % Zauberschaden pro 20 % Manaregeneration<br>Erhalte 1 minimalen Schaden für Angriffe pro 5 % Manaregeneration<br>+5 Mana beim Treffen<br>Mana regenerieren +100%<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1 Mana für jeden 2% Mana-Regeneration<br>+20 auf Energieschild (alle Klassen)<br>+10% zu maximaler Giftschutz<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>20% Chance, Level 50 Zeitstopp zu wirken, wenn getroffen<br>Giftwiderstand +75%<br>+20 zu Lichtradius<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Stufe 1</font><br>+1 auf Klassenfertigkeiten<br>+75 zu Stärke<br><br>
+                    <font color="orange">Stufe 2</font><br>+1 auf Klassenfertigkeiten<br>+30% Bonus auf Stärke<br><br>
+                    <font color="orange">Stufe 3</font><br>Erhalte 3% Maximale Schadens für jeden 1% Physischer Schaden, der als Leben entzogen wird<br>+30 zu Maximal Schaden<br>+25% Physischer Schaden als Leben entzogen<br><br>
+                    <font color="orange">Stufe 4</font><br>Erhalte 1% physische und magische Resistenz für jeden 5% physisch verursachten Schaden, der als Leben entzogen wird<br>Fluchdauer um 100% reduziert<br><br>
+                    <font color="orange">Stufe 5</font><br>+3 auf Klassenfertigkeiten<br>25 % Chance, Level 1 Verwüstung beim Nahkampfangriff zu wirken**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Aufstieg: Berserker</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Verwüstung ist eine Fertigkeit mit kleinem bis mittlerem Wirkungsbereich, die allen betroffenen Gegnern 150 % des Waffenschadens als physischen Schaden zufügt und 2 Sekunden lang ihren physischen Widerstand um 30 % senkt.</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

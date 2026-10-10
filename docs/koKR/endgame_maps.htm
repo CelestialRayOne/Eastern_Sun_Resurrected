@@ -1,0 +1,718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+
+<head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+		crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-YFKD8ZR9BX');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://d2esrdb.github.io">
+	<meta property="og:title" content="Eastern Sun Resurrected Database">
+	<meta property="og:description"
+		content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+	<title>
+		Eastern Sun Resurrected 데이터베이스
+	</title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+	<style>
+		/* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+	style="padding: 0; padding-left: 170px; padding-right: 170px;">
+	<nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href=".././changelogs.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+			<a href="./armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+			<a href="./weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+			<a href="./prefixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+			<a href="./suffixes.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+			<a href="./unique_armors.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+			<a href="./unique_weapons.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+			<a href="./unique_others.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+			<a href="./unique_mythicals.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+			<a href="./sets.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+			<a href="./gems.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+			<a href="./gemwords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+			<a href="./runewords.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+			<a href="./Eastern Sun Resurrected Cube Recipes.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+			<a href="./Eastern Sun Resurrected Maps.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+			<a href="./drop-finder.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+		</div>
+	</nav>
+	<nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+		<div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+			<span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+		</div>
+		<div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+			<a href="./corruptions.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+			<a href="./anointments.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+			<a href="./endgame_maps.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+			<a href="./vessel_of_souls.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+			<a href="./ascendancies.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+			<a href="./kill_ledger.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+			<a href="./skill_information.htm"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+			<a href="./weapon_mastery.html"
+				style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+				onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+				onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+		</div>
+	</nav>
+
+	<center>
+		<div
+			style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+			<h1
+				style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+				Eastern Sun Resurrected</h1>
+			<div
+				style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+				디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+		</div>
+		<div style="width:100%;">
+
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td colspan="2" align="center" bgcolor="#300000">
+							<font face="arial,helvetica" size="-1">
+								<font color="red">경고:</font> 엔드게임 지도 구역은 다른 모든 콘텐츠보다 훨씬 어려우며, 매우 잘 짜인 빌드가 필요합니다.<br>
+								엔드게임 지도 구역은 지도 아이템을 단독으로 <font
+									color="red"> 5막 지옥</font>에서 변환하면 입장할 수 있습니다. 지도 아이템은 5개 티어에 걸쳐 총 18개가 있습니다.<br>
+								각 티어에는 4개의 지도 구역이 있지만, 티어 5에는 특별하고 매우 어려운 보스전이 있는 지도 2개만 있습니다.<br>
+								지도 아이템은 니흘라탁의 영역에 있는 슈퍼 유니크에게서 드롭됩니다. 슈퍼 유니크 보스는 각각 5% 확률로 티어 1 지도를 드롭합니다.<br>
+								지도 아이템은 레벨 96 공포의 영역에 있는 챔피언과 유니크 몬스터에게서도 드롭됩니다.<br>
+								지도 아이템은 엔드게임 지도 구역 자체에서도 희귀 드롭으로 얻을 수 있으며, 지도를 꾸준히 돈다면 이것이 주된 입수처가 됩니다<br>
+								지도 안의 일반 몬스터는 처치된 지도보다 한 티어 높은 지도를 드롭할 수 있습니다. 지도는 3:1 비율로 업그레이드할 수도 있습니다.<br>
+								살아남으려면 빌드에 최소 5천 생명력, 최대 저항, 약간의 물리 저항과 기타 방어 수단을 갖추는 것을 권장합니다.<br>
+								평균 확률로 표기된 보상은 /players 8에서 최대 100%까지 증가합니다. 예를 들어 고대인은 열쇠 드롭 50% 판정을
+								<b>두 번</b> 하므로 평균적으로 열쇠 1개를 얻지만, 플레이어 수를 8로 늘리면 열쇠 2개를 떨어뜨릴 확률이 거의 100%가 됩니다.<br>
+								엔드게임 지도는 공포의 영역이 될 수 있으며, 각 티어마다 한 번에 지도 하나가 공포 상태가 됩니다(티어 5는 예외로, 두 지도가 다른 지도와 무관하게 동시에 공포 상태가 됩니다).<br>
+								엔드게임 지도는 보통과 악몽 난이도에서도 공포 상태가 될 수 있지만, 의도한 것이 아닙니다. 엔진 제약 때문에 수정할 수 없습니다.<br>
+								공포 상태의 보스는 항상 세계석 조각을 드롭합니다(티어 5 보스는 엔진 제약으로 예외).<br>
+								<storng>티어 1~4 보스에게는</storng> 가끔 벗겨지는 <font color="purple">면역 보호막</font>
+								이 있습니다. 저항 감소 효과로 더 자주 벗겨지게 할 수 있습니다.
+							</font>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+				<tbody>
+					<tr>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								보스</font>
+						</td>
+						<td width="500" bgcolor="#402040" align="center">
+							<font size="-1" face="arial,helvetica">
+								설명/보상</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">루시온의 속삭임</font> - 고통의 지하실<br><br>
+							<img src=".././images/map-bosses/lucionwhisper.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>불타는 지옥의 심연 깊은 곳에서 루시온의 속삭임이 모습을 드러낸다. 주인의 뜻을 전하는 유령 같은 전령이다. 기이한 불꽃에 휩싸인 그림자로, 완전한 악마도 망령도 아닌, 루시온 자신의 정수가 남긴 저주받은 메아리다.</i><br><br>
+								<font color="red">영원한 불꽃</font> - 루시온의 속삭임은 30초 동안 타오르며 엄청난 화염 피해를 주는 불꽃을 소환할 수 있습니다.<br>
+								<font color="red">약화의 저주</font> - 루시온의 속삭임은 일정 확률로 바닥에 저주를 겁니다. 그 범위에 갇히면 석화되며 화염 저항이 150% 감소합니다.<br>
+								<font color="red">텔레포트</font> - 루시온의 속삭임은 피해를 받으면 일정 확률로 순간이동해 멀어지므로 움직임을 예측하기 어렵습니다.<br><br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 5% 확률)<br> 티어 2 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 25% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">디아블로의 지옥 개</font> - 공포의 심연<br><br>
+							<img src=".././images/map-bosses/diablohellhound.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>불타는 지옥의 그을린 구덩이에서 디아블로의 전속 지옥 개가 솟아오른다. 그것은 살과 송곳니 이상의 존재, 살아 있는 악몽이자 대악마의 끝없는 분노가 구현된 것이다.</i><br><br>
+								<font color="red">광란</font> - 디아블로의 지옥 개는 광란 상태에 빠져, 공격할 때마다 공격 속도와 이동 속도가 증가합니다.<br>
+								<font color="red">공격 시 주문</font> - 디아블로의 지옥 개는 먹잇감을 공격할 때 일정 확률로 치명적인 주문을 펼칩니다. 사용할 수 있는 주문은 일반 메테오, 얼음 화살이 주변 플레이어를 추적하는 파괴적인 얼음 구체, 관통하는 뼈 영혼, 그리고 대상을 둔화시키고 원소 저항을 100%, 마법 저항을 50% 낮추는 저주입니다.<br><br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 5% 확률)<br> 티어 2 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 25% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">고대의 타락한 천사</font> - 네크로폴리스<br><br>
+							<img src=".././images/map-bosses/ancientfallenangel.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>한때 고위 천상의 빛나는 전사였던 이 고대의 타락한 천사는 이제 공허를 떠도는, 천상 전쟁의 버려진 유물이다. 세월은 그 광채를 앗아 갔고, 한때 반짝이던 갑옷은 무너진 세계들의 그을음으로 더럽혀졌다. 한때 신성한 빛 위로 그를 날라 주던 황금 날개는 이제 저주의 불길에 그을린 채 누더기가 되어 늘어져 있다.</i><br><br>
+								<font color="red">말살의 회오리</font> - 고대의 타락한 천사는 가끔 물리 피해와 마법 피해를 주는 파괴적인 회오리를 시전합니다. 회오리는 천천히 퍼지며 어떤 표면에 부딪히면 한 번 반향하므로, 그동안에는 다른 방에 숨는 것을 강력히 권장합니다.<br>
+								<font color="red">구전 폭풍</font> - 보스는 공격하거나 피해를 받을 때 가끔 여러 개의 전하 화살로 터지는 번개 구체의 폭풍을 시전합니다.<br>
+								<font color="red">격분</font> - 보스는 피해를 받으면 평균 10% 확률로 격분하여 짧은 시간 동안 공격 속도가 최대가 됩니다.<br><br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 5% 확률)<br> 티어 2 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 25% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">그림자의 공포</font> - 감염된 소굴<br><br>
+							<img src=".././images/map-bosses/terrorintheshadows.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>땅속 깊은 곳, 공기가 부패로 탁해지고 보이지 않는 것들이 어둠의 장막 너머에서 꿈틀대는 그곳에, 공포 그 자체로 자신의 영역을 엮어 낸 고대의 공포가 도사리고 있다.</i><br><br>
+								<font color="red">점프 공격</font> - 거대 거미는 가끔 방심한 희생자 위로 뛰어올라 범위 피해를 줍니다.<br>
+								<font color="red">새끼 거미 던지기</font> - 보스는 일정 확률로 치명적인 독 공격을 지녔고 스스로 도약 공격도 할 수 있는 새끼 거미 무리를 던집니다.<br>
+								<font color="red">거미줄 뱉기</font> - 보스는 4초마다 치명적인 독 거미줄 덩어리를 던집니다. 이 독 덩어리는 맞은 대상의 이동 속도와 독 저항을 150%, 공격 속도와 시전 속도를 50% 낮춥니다.<br><br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 10% 확률)<br> 티어 3 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 35% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">이중 보스</font> - 혼돈의 균열<br><br>
+							<img src=".././images/map-bosses/doubleboss.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>혼돈의 균열은 매우 불안정하여 시공간의 구조를 약하게 만들었고, 티어 1 지도 보스 둘이 한곳에 모이게 되었다.</i><br><br>
+								보스들은 티어 1 지도의 같은 보스와 동일하며 같은 기술을 사용합니다. 좁은 공간에서 둘을 동시에 상대해야 한다는 점이 난이도를 높입니다.<br><br>
+								<font color="#706850">보상 (보스 하나당)</font><br>
+								<font color="purple">성수의 구슬</font> (평균 5% 확률)<br> 티어 2 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 25% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">밤의 화신</font> - 고통의 미로<br><br>
+							<img src=".././images/map-bosses/avatarofthenight.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>해가 지고 밤의 장막이 내려앉으면, 그것이 깨어난다. 그림자 속의 그림자, 밤의 화신은 사냥하는 표범처럼 소리 없이 움직이며, 흑요석 같은 몸은 심연 속으로 매끄럽게 녹아든다.</i><br><br>
+								<font color="red">덮치기</font> - 화신은 가끔 매복하여 당신 위로 뛰어들고, 광기 효과로 당신을 약화시켜 물리 저항을 100%, 냉기 저항을 150% 낮춥니다. 하지만 이 효과는 당신을 광폭 상태로 만들어 공격 속도, 시전 속도, 이동 속도를 100% 높입니다.<br>
+								<font color="red">투창 연사</font> - 보스의 주 공격은 물리/냉기 혼합 피해를 주는 투창 연사로, 벽에 맞은 뒤에도 주변 플레이어에게 튕길 수 있습니다.<br>
+								<font color="red">수렴하는 냉기 회오리</font> - 가까이 있으면 보스는 벽에 붙는 얼음 화살 회오리를 시전하고, 이 화살은 잠시 후 주변 플레이어를 추적하므로 반드시 달아나세요. 피해를 받을 때도 일정 확률로 이 능력을 사용합니다.<br>
+								<font color="red">패시브</font> - 보스는 공격 시 패시브로 치명타와 강타 확률을 가집니다.<br><br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 10% 확률)<br> 티어 3 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 35% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">재앙의 전령</font> - 끝없는 심연<br><br>
+							<img src=".././images/map-bosses/heraldofdoom.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>아주 오래전, 타락이 그의 영혼을 검게 물들이기 전, 그는 호라드림의 일원이었다. 금지된 지식을 연구하는 학자이자 창조의 그림자 속에서 진리를 찾는 자였다. 그러나 지혜는 양날의 검이었고, 지금은 재앙의 전령이라 불리는 자는 너무 많은 것을 보았다. 그는 원소의 힘이라는 심연을 들여다보았다. 신중한 파수꾼이 아니라 기꺼이 따르는 제자로서. 그리고 그 대가로, 심연도 그를 들여다보았다.</i><br><br>
+								<font color="red">파멸의 비</font> - 타락한 호라드림은 가끔 적들에게 메테오의 비를 내리며, 메테오 하나하나가 파괴적인 물리 피해와 화염 피해를 줍니다.<br>
+								<font color="red">뇌우</font> - 보스는 가끔 번개 구체의 고리를 소환하고, 이 구체들은 결국 주변 적을 추적하는 치명적인 번개로 변하므로, 보이는 즉시 달아나는 것이 중요합니다.<br>
+								<font color="red">얼음 연사</font> - 보스는 직접 피해를 주지는 않지만 표면에 달라붙었다가 잠시 후 주변 플레이어를 추적하는 얼음 화살 회오리도 소환할 수 있습니다.<br>
+								<font color="red">메테오 나선</font> - 어리석게도 마법사에게 가까이 다가가는 자에게는 파괴적인 메테오 나선이 쏟아집니다.<br>
+								<font color="red">패시브</font> - 호라드림 마법사는 원소 저항을 100% 관통하므로, 싸우기 전에 저항을 최대치보다 훨씬 높게 올려 두세요.<br><br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 15% 확률)<br> 티어 4 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 50% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">빙하의 거대괴물</font> - 얼어붙은 황무지 (북쪽 내리막)<br><br>
+							<img src=".././images/map-bosses/glacialbehemoth.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>전설에 따르면, 한때 호라드림은 그 거칠고 억제되지 않은 힘이 대악마에게조차 맞설 수 있음을 두려워하여 거대한 원소의 힘을 가두려 했다. 그러나 얼음은 죽지 않는다. 사라지지도 않는다. 그저 기다린다. 그리고 감옥의 봉인이 부서졌을 때, 빙하의 거대괴물이 다시 일어섰다. 그 숨결은 면도날 같은 서리의 폭풍이었고, 발걸음마다 죽음의 눈사태 아래 대지가 갈라졌다.</i><br><br>
+								<font color="red">영구 동토</font> - 거대괴물은 근접 범위에 치명적인 얼음 눈사태를 소환하려 하며, 그 뒤에 남는 얼음 불꽃은 30초 동안 엄청난 냉기 피해와 물리 피해를 줍니다.<br>
+								<font color="red">영구 동결</font> - 피해를 받으면 일정 확률로 석화 저주를 걸어 냉기 저항을 150%, 이동 속도를 500%, 시전 속도와 공격 속도를 200% 낮춥니다.<br>
+								<font color="red">충전</font> - 피해를 받으면 보스는 일정 확률로 엄청난 속도로 대상에게 돌진하여 당신과의 거리를 순식간에 좁힙니다.<br>
+								<font color="red">방해</font> - 보스는 순간이동 기술을 쓸 수 없게 만드는 신비한 오라를 내뿜습니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 15% 확률)<br> 티어 4 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 50% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">작업 감독</font> - 얼어붙은 황무지 (남쪽 내리막)<br><br>
+							<img src=".././images/map-bosses/thetaskmaster.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>살뿐 아니라 영혼까지 묶는 사슬을 두른 그는 홀로 싸우지 않는다. 목구멍 깊은 곳에서 울리는 명령으로 사악한 자들을 불러내고, 세계 사이의 장막을 찢어 그의 강철 같은 의지에 묶인 악마 군단을 풀어놓는다. 그러나 그는 그들을 그저 전장에 보내지 않는다. 몰아붙인다. 그의 존재만으로도 하수인들 안에 광기가 타올라, 고통을 넘어, 두려움을 넘어, 죽음 그 자체를 넘어 그들을 내몬다.</i><br><br>
+								<font color="red">피에 굶주린 노예 소환</font> - 작업 감독은 주기적으로 지옥 깊은 곳에서 피에 굶주린 악마들을 불러내 전투를 돕게 합니다. 하수인들은 모든 피해에 면역이며, 그 면역은 일반적인 방법으로 깨야 합니다.<br>
+								<font color="red">피의 분노</font> - 보스는 하수인들을 격분시키려 하며, 6초 동안 엄청난 속도로 회복하고 피해, 공격 속도, 이동 속도를 높여 주는 강화 효과를 주거나, 자살하는 노예로 바꿉니다.<br>
+								<font color="red">자살하는 노예</font> - 자살하는 노예는 플레이어를 쫓아가 얼굴 앞에서 자폭하려 합니다. 플레이어가 직접 처치하면 물리 피해와 화염 피해를 주는 극도로 파괴적인 불의 비로 폭발하며, 치명적인 화염 피해를 주는 추적형 죽음의 불타는 해골을 방출합니다.<br>
+								<font color="red">방해</font> - 보스는 순간이동 기술을 쓸 수 없게 만드는 신비한 오라를 내뿜습니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 15% 확률)<br> 티어 4 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 50% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">바알의 변형된 파괴의 전조</font> - 파괴의 성소<br><br>
+							<img src=".././images/map-bosses/baaldisfiguredharbinger.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>한때 그것은 파괴의 군주를 섬기는 충성스럽고 헌신적인 종이자, 바알의 이름으로 파멸을 퍼뜨리도록 선택된 전령이었다. 아주 잠깐, 그것은 감히 의심하고 바알의 명령 앞에서 머뭇거렸다. 그 대가로 그것은 부서지고 다시 만들어졌다. 파괴된 것이 아니라, 주인의 끝없는 분노로 다시 빚어져 고통받도록 남겨졌다. 바알이 내린 것은 죽음이 아니라 교훈, 영원한 상처, 파괴의 군주에게 맞서는 자들의 최후를 보여 주는 끔찍한 본보기였다.</i><br><br>
+								<font color="red">파괴의 추적 냉기 회오리</font> - 바알의 옛 종은 얼음 화살을 흩뿌리는 치명적인 얼음 구체를 가장 자주 시전합니다. 얼음 화살은 처음에 잠시 공중에 멈춰 있다가, 엄청난 속도로 주변 플레이어를 꿰뚫으려 합니다.<br>
+								<font color="red">바알의 번개 폭풍</font> - 파괴의 전령은 고위 천사들의 비전 힘에 손을 대어, 드물게 파괴적인 번개 구체 폭풍을 시전하는 법을 익혔습니다. 구체는 잠시 공중에 멈춰 있다가 전하 화살로 폭발하여 높은 번개 피해를 줍니다.<br>
+								<font color="red">파괴의 도구 소환</font> - 30초마다 파괴의 야수 무리를 불러냅니다. 야수들은 피해를 받으면 일정 확률로 플레이어에게 돌진하고, 죽을 때 주변 아군을 치유하므로 빠르게 처치하기 어렵고, 보스 근처에서 처치하지 않는 것이 중요합니다.<br>
+								<font color="red">메테오 나선</font> - 파괴의 전령에게 가까이 가면, 파괴적인 물리 피해와 화염 피해를 주는 메테오 나선으로 자신을 지키려 합니다.<br>
+								<font color="red">패시브</font> - 보스는 원소 저항을 100% 관통하므로, 저항을 최대치보다 훨씬 높게 올려 두세요.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 20% 확률)<br> 티어 5 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 100% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">영혼의 심판자</font> - 영혼의 유물<br><br>
+							<img src=".././images/map-bosses/arbiterofsouls.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>천사와 악마가 지배권을 두고 맞서는 천국과 지옥의 끝없는 전쟁 속에, 어느 쪽도 섬기지 않는 힘이 존재한다. 어쩌면 한때는 천사였을지도 모른다. 죽은 자를 정해진 내세로 인도하는 임무를 맡은 천상의 은총을 지닌 존재였을지도. 그러나 그 목적은 뒤틀렸고, 심연의 속삭임에 타락하여 완전히 다른 것이 되었다. 빛과 어둠 모두에서 떨어져 나온, 차갑고 공정한 처형자로.</i><br><br>
+								<font color="red">뼈 영혼</font> - 중재자의 주 공격은 매우 높은 마법 피해를 주는 뼈 영혼으로, 같은 대상을 여러 번 맞힐 수 있습니다.<br>
+								<font color="red">뼈 창 연사</font> - 보스는 4초 재사용 대기시간으로 주변 적을 추적하는 뼈 창 연사를 시전합니다. 높은 마법 피해를 주고 대상을 관통하므로 최대한 피하는 것이 좋습니다.<br>
+								<font color="red">영혼 폭풍</font> - 드물게 보스는 죽은 자의 영혼을 일으켜 주변 플레이어를 찾아내 엄청난 마법 피해로 파멸시킵니다.<br>
+								<font color="red">약화의 저주</font> - 피해를 받으면 보스는 일정 확률로 영혼의 저주를 겁니다. 저주받은 자는 이동 속도가 150%, 마법 저항이 50% 감소합니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 20% 확률)<br> 티어 5 지도 (평균 25% 확률)<br>
+								무작위 판데모니움 열쇠 (평균 100% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">무적의 메피스토</font> - 폭풍의 눈<br><br>
+							<img src=".././images/map-bosses/mephistotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>시간을 초월한 영웅들이 지옥의 대장간 위에서 그의 영혼석을 부수고, 그 파편이 심연에 삼켜지는 것을 지켜보았다. 그들은 그를 없앴다고 생각했다. 그러나 증오는 그렇게 쉽게 사라지지 않는다. 고통의 메아리가 결코 사그라지지 않는 지옥의 그을린 혈관 깊은 곳에서, 메피스토의 정수가 남긴 잔해는 곪아 가고 있었다. 감옥은 부서졌어도 그의 악의는 남아 지옥의 구조 그 자체에 매달렸다. 배신의 속삭임 하나하나, 잔혹한 행위 하나하나, 땅에 흘려진 무고한 피 한 방울 한 방울이 남아 있는 그의 존재를 먹여 살리며 그림자 속에서 그의 영혼을 다시 벼려 냈다. 그을린 심연에서 그는 다시 일어섰다. 더 이상 영혼석에 묶이지도, 과거의 법칙에 얽매이지도 않는다. 메피스토가 돌아왔고, 그 어느 때보다 강해졌다.</i><br><br>
+								<font color="red">무적</font> - 이름 그대로 메피스토는 모든 피해에 완전히 무적이며, 그의 면역은 일반적인 방법으로 깰 수 없습니다.<br>
+								<font color="red">독 폭탄</font> - 메피스토의 소모전 주문은 땅에 닿으면 폭발하는 독 폭탄을 던져, 범위 안의 모두에게 믿을 수 없을 만큼 강한 독을 거는 것입니다.<br>
+								<font color="red">전하 화살 연사</font> - 약 12초마다 메피스토는 주변 적을 추적하는 전하 화살 연사를 시전하여 매우 높은 번개 피해를 줍니다.<br>
+								<font color="red">얼음 구체 연사</font> - 메피스토에게 다가가면 그는 12초 재사용 대기시간으로 엄청난 냉기 피해와 물리 피해를 주는 얼음 구체 연사를 시전하려 합니다. 얼음 구체는 한 번 맞혀도 멈추지 않고 대상을 추적해 여러 번 맞히므로, 이 주문에서는 반드시 달아나야 합니다.<br>
+								<font color="red">냉기 파동 감옥</font> - 드물게 메피스토는 방심한 플레이어들 위로 수렴하는 냉기 파동 4개를 시전하여, 그 경로에 있는 모두에게 극도로 높은 냉기 피해를 줍니다.<br>
+								<font color="red">패시브</font> - 메피스토는 당신의 원소 저항을 100% 관통합니다.<br>
+								<font color="green">천국의 빛</font> - 메피스토와 싸울 때 희망이 모두 사라진 것은 아닙니다. 메피스토에게 피해를 주면 아주 드물게 천국의 빛이 전장에 흩어집니다. 빛의 구체를 주우면 강화되어, 당신과 효과를 받은 소환수가 짧은 시간 동안 메피스토에게 피해를 줄 수 있습니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 25% 확률)<br>
+								<font color="purple">메피스토의 악마 뿔</font><br> 티어 5 지도 (평균 25% 확률)<br>
+								판데모니움 열쇠 세트 (평균 50% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">무적의 디아블로</font> - 폭풍의 눈<br><br>
+							<img src=".././images/map-bosses/diablotheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>지옥의 토대 그 자체가 가장 뜨겁게 타오르는 심연 깊은 곳에서, 대악마보다도 오래된 고대 유물인 지옥의 도가니가 꿈틀대기 시작했다. 전설에 따르면 그곳에서 최초의 악마들이 빚어졌고, 어둠의 정수 그 자체가 형체를 얻었다고 한다. 그리고 이제, 산산이 부서진 자신의 존재가 남긴 메아리에 이끌려 디아블로의 잔해는 그 불길 속으로 흘러들었고, 공포의 군주를 더 위대하고 부서지지 않는 무언가로 다시 벼려 냈다. 그는 예전의 디아블로가 아닌, 그 이상의 존재로 나타났다. 더 이상 영혼석에 묶이지 않고, 인간의 의식에도 굴하지 않는 그는 무적의 디아블로, 공포의 화신, 살을 얻은 어둠, 순수하고 불멸하는 악의의 힘이다.</i><br><br>
+								<font color="red">무적</font> - 이름 그대로 디아블로는 모든 피해에 완전히 무적이며, 그의 면역은 일반적인 방법으로 깰 수 없습니다.<br>
+								<font color="red">유성우</font> - 디아블로의 일반 능력은 엄청난 물리 피해와 화염 피해를 주는 메테오를 일렬로 소환하는 것입니다.<br>
+								<font color="red">화염 회오리</font> - 약 12초마다, 효과음과 함께 디아블로는 지금까지 가장 파괴적인 화염 회오리를 방출합니다. 화염 회오리는 천천히 퍼지며 극도로 높은 화염 피해를 주는 불꽃을 남기므로, 효과음이 들리면 반드시 달아나세요.<br>
+								<font color="red">파괴의 연사</font> - 아주 드물게 디아블로는 튕길 때마다 하늘에서 메테오를 부르는 추적형 화염구를 연사하기 시작하여, 엄청난 물리 피해와 화염 피해를 줍니다.<br>
+								<font color="red">번개의 흐름</font> - 그의 옛 주문은 그 어느 때보다 강력해졌습니다. 6초마다 번개의 흐름을 시전하여 감당하기 힘든 물리 피해와 번개 피해를 줍니다.<br>
+								<font color="red">패시브</font> - 디아블로는 당신의 원소 저항을 100% 관통합니다.<br>
+								<font color="green">운명의 천사</font> - 디아블로와 싸울 때 희망이 모두 사라진 것은 아닙니다. 디아블로에게 피해를 주면(재사용 대기시간 10초) 아주 드물게 고위 천상의 천사들이 전장에 나타납니다. 그들은 디아블로의 공격에 결국 쓰러지지만, 그 후 짧은 시간 동안 주변의 모든 플레이어와 하수인을 강화하여 디아블로 본체에게 피해를 줄 수 있게 합니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 25% 확률)<br>
+								<font color="purple">디아블로의 악마 뿔</font><br> 티어 5 지도 (평균 25% 확률)<br>
+								판데모니움 열쇠 세트 (평균 50% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">무적의 바알</font> - 폭풍의 눈<br><br>
+							<img src=".././images/map-bosses/baaltheinvincible.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>세상은 그가 사라졌다고 믿었다. 세계석이 부서질 때 그의 육체는 무너지고 정수는 흩어졌으며, 그 고대의 힘은 천상의 파멸이 연쇄되는 가운데 풀려 버렸다. 그러나 바알은 죽지 않았다. 그는 창조의 심장 그 자체로 흡수되었던 것이다. 여러 해 동안 그의 정수는 세계석의 파편 사이에 흩어진 채 잠들어 있었다. 그러나 성역에서 전쟁이 벌어질 때마다, 파괴가 일어날 때마다 그의 힘은 천천히 다시 모여, 한때 그가 타락시키려 했던 세계의 혼돈과 파멸과 붕괴를 양분으로 삼았다. 현실의 균열은 깊어졌고, 그의 의지의 메아리는 존재의 구조 자체를 통해 속삭였다. 그리고 마침내 마지막 균열이 찾아왔다. 바알은 다시 일어섰다. 더 이상 대악마의 육신에 묶이지 않고, 더 이상 단순한 악마 군주도 아니었다. 이제 그는 그보다 위대한 존재, 지옥의 것도 성역의 것도 아닌, 부서진 세계의 토대 그 자체에 속한 존재였다. 그는 더 이상 파괴를 다스리기만 하지 않는다. 이제 그가 바로 파괴의 화신이며, 그 어느 때보다 강하다.</i><br><br>
+								<font color="red">무적</font> - 이름 그대로 바알은 모든 피해에 완전히 무적이며, 그의 면역은 일반적인 방법으로 깰 수 없습니다.<br>
+								<font color="red">연쇄 번개</font> - 바알의 주 능력은 매우 높은 번개 피해를 주는 연쇄 번개로, 허공에서도 튕기며 주변 적을 여러 번 추적합니다.<br>
+								<font color="red">차가운 파도</font> - 바알은 낮은 확률로 지금까지 가장 파괴적인 냉기 파동을 소환하여 높은 냉기 피해와 물리 피해를 줍니다. 파동은 주기적으로 주변 플레이어를 추적하는 여파를 만들어 냅니다.<br>
+								<font color="red">메테오 감옥</font> - 약 8초마다 바알은 방심한 대상 위로 수렴하는 파괴적인 메테오 원을 시전하여, 휘말린 모두에게 파괴적인 물리 피해와 화염 피해를 줍니다.<br>
+								<font color="red">패시브</font> - 바알은 당신의 원소 저항을 100% 관통합니다.<br>
+								<font color="green">약화의 탑</font> - 바알과 싸울 때 희망이 모두 사라진 것은 아닙니다. 약 13초마다 바알은 파괴적인 메테오 공격을 지닌 악마의 탑을 소환해 전투를 돕게 합니다. 탑이 파괴되면 주변 플레이어와 하수인이 강화되어 바알 본체에게 피해를 줄 수 있게 됩니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 25% 확률)<br>
+								<font color="purple">바알의 악마 뿔</font><br> 티어 5 지도 (평균 25% 확률)<br>
+								판데모니움 열쇠 세트 (평균 50% 확률)<br> 기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">시간의 수호자</font> - 얼음왕관 성채 (영원의 경계)<br><br>
+							<img src=".././images/map-bosses/guardiansoftime.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>아주 오래전, 세 전사가 아레앗 산의 마지막 수호자로 서서, 자격 없는 자들의 손에 세계석이 넘어가지 않도록 지키겠다고 맹세했다. 코를릭, 탈릭, 마다우크, 지나간 시대의 용사들은 감히 침입하려는 모든 자에게 맞섰다. 그들을 움직인 것은 증오도 정복욕도 아닌 의무였다. 죽음조차 넘어서는 신성한 맹세였다. 그러나 의무는 잔인한 주인이다. 세계석이 부서졌을 때 그들이 지키던 힘은 사라졌고, 그와 함께 그들의 존재 이유도 사라졌다. 그들의 육체는 무너지고 영혼은 공허 속으로 녹아 버렸다… 적어도 세상은 그렇게 믿었다. 네팔렘들이 알지 못한 것은, 고대인들이 진정으로 필멸의 존재였던 적이 없었다는 사실이다. 한순간처럼 지나간 수백 년 동안 그들은 현실 밖을 떠돌며 성역이 점점 더 타락으로 가라앉는 것을 지켜보았다. 그들은 인류, 바로 세계석의 자손들이 자신의 사명을 저버리고 금지된 네팔렘의 힘을 마치 신처럼 휘두르는 것을 보았다. 전쟁과 배신, 그리고 한때 신성했던 균형이 무모하게 파괴되는 것을 보았다. 그리고 공허 속에서 새로운 목적이 뿌리를 내렸다. 고대인들은 수호자로 돌아오지 않았다. 그들은 처형자로 돌아왔다.</i><br><br>
+								<font color="red">무적</font> - 돌아온 고대인들은 시간 그 자체를 다루는 엄청난 힘을 지닌 존재입니다. 그들의 공격은 물리 피해와 마법 피해를 절반씩 줍니다. 일반적인 방법으로는 피해를 줄 수 없습니다.<br><br>
+								<font color="#706850">코를릭</font><br>
+								<font color="red">대재앙</font> - 코를릭은 가끔 하늘에서 바위 눈사태를 쏟아붓는 파괴적인 공격을 시전하여, 휘말린 모두에게 엄청난 물리 피해를 줍니다.<br>
+								<font color="red">수렴하는 도끼</font> - 그는 가끔 허공에서 대상에게 수렴하는 도끼들을 불러냅니다. 그 한가운데 갇힌 자는 틀림없이 즉사합니다.<br>
+								<font color="red">패시브</font> - 피해를 받으면 코를릭은 일정 확률로 적에게 돌진합니다.<br>
+								<font color="green">천국의 빛</font> - 코를릭에게 피해를 주면 낮은 확률로 하늘이 개입하여 순수한 빛의 구체를 불러냅니다. 그것에 닿으면 당신과 효과를 받은 주변 아군이 강화됩니다.<br><br>
+								<font color="#706850">탈릭</font><br>
+								<font color="red">도끼 감옥</font> - 탈릭은 가끔 방심한 대상을 추적하는 도끼 회오리를 여러 개 불러내 막대한 물리 피해와 마법 피해를 줍니다.<br>
+								<font color="green">영원한 진자</font> - 근접 공격 시 탈릭은 일정 확률로 영원한 진자를 소환합니다. 진자는 시간의 모래를 불러내며, 모래는 주변 적을 추적하여 파괴적인 물리 피해를 주고 대상을 잠시 기절시킵니다. 진자를 처치하면 당신과 주변 아군이 강화됩니다.<br><br>
+								<font color="#706850">마다우크</font><br>
+								<font color="red">마법 도끼</font> - 마다우크의 주 공격은 주변 대상을 추적하는 마법 도끼로, 파괴적인 마법 피해와 물리 피해를 줍니다.<br>
+								<font color="red">마법 도끼 연사</font> - 가끔 마다우크는 격분하여 마법 도끼를 빠르게 연달아 던지기 시작합니다.<br>
+								<font color="red">마법 도끼 회오리</font> - 아주 드물게 마다우크는 시간 그 자체의 힘을 끌어와, 벽에 박혀 멈췄다가 잠시 후 주변 플레이어를 추적하는 마법 도끼의 파괴적인 회오리를 소환합니다.<br><br>
+
+								<font color="purple">시간을 초월한 자</font> - 돌아온 고대인들은 성역의 상태에 격분하여 모든 피해에 대해 완전히 불사입니다. 영원한 진자의 강화와 천국의 빛을 모두 얻으면 피해를 줄 수 있습니다.<br><br>
+
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (각각 평균 16.67% 확률)<br>
+								<font color="#706850">영원한 모래의 시간의 모래시계 (유니크 대형 부적)</font>
+								<br>(제작하려면 모두 처치해야 합니다)<br> 티어 5 지도 (각각 평균 17% 확률)<br>
+								무작위 판데모니움 열쇠 (각각 평균 100% 확률)<br>
+								기타 일반 아이템/재료<br><br>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">리치 왕</font> - 얼음왕관 성채 (얼음 왕좌)<br><br>
+							<img src=".././images/map-bosses/thelichking.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>세계와 세계 사이의 경계는 성역의 학자들이 한때 믿었던 것만큼 깨지지 않는 것이 아니다. 세계석은 현실의 닻이었으며, 고위 천상과 불타는 지옥 모두의 영향으로부터 성역을 갈라놓는 신성한 장벽이었다. 그러나 티리엘이 그것을 부수었을 때 그 장벽은 영원히 약해졌다. 그리고 다른 무언가가 그것을 알아차렸다. 영원한 분쟁의 영역 훨씬 너머, 전쟁과 죽음에 삼켜진 세계에서 리치 왕은 차가운 침묵 속에 군림하고 있었다. 그의 지배는 절대적이었고 군단은 끝이 없었지만, 정복에 대한 갈망에는 경계가 없다. 죽음은 하나의 세계에 머물지 않으며, 세계석 파괴의 힘은 현실과 현실 사이의 공허에 메아리쳐 성역의 이해를 넘어선 무언가를 불러들였다. 리치 왕은 대악마처럼 세상을 불태우려 하지도, 거짓으로 타락시키려 하지도 않는다. 그는 세상을 차지하려 한다. 불타는 지옥은 혼돈에 취하지만, 그는 죽음으로 질서를 가져온다. 천상은 정의를 위해 싸우지만, 그는 정의를 환상이라 여긴다. 그에게 모든 것은 언데드로 끝나며, 태고부터 싸워 온 천사와 악마조차 영원의 얼어붙은 침묵 앞에 무릎 꿇을 것이다. 그의 통치를 끝내지 않는다면, 그는 성역 전체를 노예로 삼을 것이다. 이것이 모든 것의 끝이다.</i><br><br>
+								<font color="red">수렴하는 냉기</font> - 리치 왕의 일반 능력은 6개의 냉기 가시가 수렴하는 회오리로, 맞은 모두에게 매우 높은 냉기 피해와 물리 피해를 줍니다.<br>
+								<font color="red">냉기 회오리</font> - 리치 왕의 두 번째 능력은 빠르게 나아가는 냉기 파동으로, 맞은 적마다 얼음 구체를 소환합니다. 구체는 1초 후 폭발하여 반경 5야드 안의 모든 것에 엄청난 냉기 피해를 주고 2초 동안 빙결시킵니다.<br>
+								<font color="red">덮치기</font> - 약 10초마다 리치 왕은 방심한 대상을 습격하여 주변 적을 밀쳐내는 순수한 에너지의 회오리를 방출하고, 곧이어 <font color="red">영원한 겨울</font>이(가) 이어집니다. 동시에 소환하는 것은 2명의
+								<font color="#706850">발키리</font>.<br>
+								<font color="red">영원한 겨울</font> - 드물게 리치 왕은 덮치기의 후속 공격에 더해 푸른 불꽃의 치명적인 회오리를 방출합니다. 이 회오리는 휘말린 모두의 영혼을 빨아들여 극도로 높은 물리 피해와 냉기 피해를 주고, 냉기 저항을 150%, 물리 저항을 75% 낮추며, 휘말린 플레이어를 거의 멈출 정도로 둔화시킵니다. 이 주문은 효과음으로 예고됩니다.<br>
+								<font color="red">언데드 소환</font> - 약 20초마다 리치 왕은 전투를 돕도록 구울 4마리와 변종 1마리를 소환합니다.<br>
+								<font color="red">그림자 함정</font> - 피해를 받으면 리치 왕은 일정 확률로 공격한 플레이어 발밑에 그림자 함정을 소환합니다. 잠시 후 함정이 작동하여 <font color="red">영원한 겨울</font> 의 불꽃 파동을 누군가 밟는 순간 방출합니다.<br><br>
+								<font color="#706850">구울</font><br>
+								구울은 언데드의 영혼을 지니고 있어 매우 빠르게 재생합니다. 피해를 받으면 일정 확률로 대상에게 돌진하기도 합니다.
+								<br><br>
+								<font color="#706850">변종</font><br>변종은 모든 피해에 면역이며, 그 면역은 일반적인 방법으로 깰 수 없습니다. 피해를 받으면 일정 확률로 격분하여 피해량이나 이동 속도가 증가합니다. 아주 드물게, 피해를 받을 때 변종은 하늘이 플레이어를 돕게 만들어 <font
+									color="green">천국의 빛</font>을(를) 보내게 합니다. 그 빛을 주우면 플레이어는 변종에게 피해를 주고 처치할 수 있습니다.<br><br>
+								<font color="#706850">발키리</font><br>발키리는 높은 물리 피해와 냉기 피해를 줍니다.<br>
+								처치하면 주변 플레이어를 다음 효과로 강화합니다: <font color="green">빛의 희망</font>.<br>
+								<font color="purple">시간을 초월한 자</font> - 성역의 시공간 밖에서 온 존재인 리치 왕은 이 세계의 피해에 대해 완전히 불사입니다. 피해를 주려면 다음 두 효과가 모두 필요합니다: <font color="green">빛의 희망
+								</font>
+								and <font color="green">천국의 빛</font>.<br><br>
+								<font color="purple">우버 버전</font> - /players 8에서 이 전투를 하면 우버 버전이 활성화되고, 모든 적이 다음과 같이 강화됩니다.<br>
+								<font color="#706850">리치 왕</font> - 리치 왕이 구울과 변종을 3배 더 소환합니다.<br>
+								<font color="#706850">구울</font> - 구울이 이제 공격을 맞힐 때마다 격분하여 물리 피해와 냉기 피해가 25% 증가합니다. 이 효과는 중첩됩니다.<br>
+								<font color="#706850">발키리</font> - 리치 왕이 발키리를 2명이 아닌 6명 소환하며, 발키리는 2배의 피해를 줍니다.<br>
+								<br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 50% 확률)<br>
+								<font color="#706850">특별한 신화 유니크</font><br> 티어 5 지도 (평균 50% 확률)<br>
+								판데모니움 열쇠 세트 (100% 확률)<br> 기타 일반 아이템/재료<br><br>
+								<font color="#706850">보상 (우버 버전)</font><br>
+								/players 8에서 리치 왕을 처치하면, 승천의 돌과 <font color="PURPLE">널 룬</font> 을(를) 변환하여 보너스를 얻을 수 있습니다 <font
+									color="GREEN">모든 기술에 +1 추가</font>.<br>이 조합법은 한 번만 할 수 있습니다.
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">라스마</font> - 죽은 자의 성소 (황혼의 대성당)<br><br>
+							<img src=".././images/map-bosses/rathma.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									성역의 꺼져 가는 빛 아래, 영웅들은 죽은 자의 성소로 내려갔다. 그곳은 저승 깊숙이 묻힌, 뼈와 속삭이는 재로 이루어진 미로였다. 공기는 갇힌 영혼들로 일렁였고, 그 창백한 빛은 검은 대리석을 유령 같은 빛깔로 물들였다. 그들이 찾아온 것은 라스마, 최초의 강령술사였다. 한때 균형의 수호자였으나 이제는 그 배신자가 된 자. 그가 섬기던 균형은 집착으로 시들어 버렸고, 그는 죽음을 되돌리고 영원의 양 끝을 지배하려 했다. 그의 곁에는 코르나크, 공허의 사도가 서 있었다. 잊혀진 신앙의 제의를 걸친, 그의 가장 충성스러운 망자였다. 살점이 뼈에서 떨어져 나갔고, 그 살에 새겨진 말 하나하나가 금지된 은총으로 고동쳤다. 그의 목소리는 영혼들조차 흔들리게 하는 만가였다. 삶이 아무 의미도 없는 그곳에서 강철과 불꽃과 신앙이 그림자와 부패와 맞섰다. 영웅들은 알고 있었다. 그들이 마주한 것은 죽음만이 아니라, 죽음의 설계자라는 것을.
+								</i><br><br>
+								<font color="#706850">라스마</font><br>
+								<font color="#8B0000">죽은 자의 장막</font> - 라스마는 영웅들이 순간이동 기술을 쓰지 못하게 하는 오라를 내뿜습니다.<br>
+								<font color="red">뼈 창 연사 / 독 망령</font> - 라스마는 뼈 창 3개의 연사와 독 망령 3개의 연사를 번갈아 사용하며, 각각 파괴적인 마법 피해와 독 피해를 줍니다.<br>
+								<font color="red">뼈 영혼</font> - 드물게 라스마는 시간이 지날수록 빨라지는 뼈 영혼을 시전합니다. 적중하면 극도로 높은 마법 피해를 줍니다.<br>
+								<font color="red">뼈 감옥</font> - 약 20초마다, 라스마와 비교적 가까이 있으면 그는 당신 주위에 출구가 적은 뼈의 미로를 세웁니다. 제시간에 탈출하지 못하면 그 일대를 폭파하여 <font color="RED">
+									즉사시킵니다</font>
+								. 폭파 후에는 더럽혀진 땅에서 <font color="red">살아있는 죽은 자</font> 를 일으킵니다.
+								<br>
+								<font color="green">시들어가는 인형 소환</font> - 20초마다 라스마는 시들어가는 인형 4개를 일으켜 플레이어에게 중첩되는 약화 효과를 걸어 <font color="red">마법 저항과 이동 속도를 낮춥니다</font>. 스스로 무너지기 전에 처치하면 당신과 주변 아군이 <font color="green">강화됩니다</font> (10초간).<br>
+								<font color="#706850">코르나크, 공허의 사도</font><br>
+								코르나크는 라스마의 가장 충성스러운 종으로, 언제나 전투에서 그를 돕습니다.<br>
+								<font color="red">파괴적인 내려찍기</font> - 가끔 코르나크는 땅을 내려찍어 극도로 높은 물리 피해를 주는 파괴적인 충격파를 보냅니다.<br>
+								<font color="red">커져 가는 증오</font> - 시간이 지날수록 코르나크는 더 강해지며, 이동 속도가 증가하고 내려찍기가 강화됩니다.
+								<br>
+								<br>
+								<font color="#706850">살아있는 죽은 자</font><br>
+								살아있는 죽은 자는 처치하기 어렵지 않지만, 피해를 받으면 낮은 확률로 적에게 돌진합니다.<br>
+								<font color="green">타오르는 영혼</font> - 처치된 살아있는 죽은 자는 고통받는 영혼을 남깁니다. 그것을 주우면 <font color="green">강화됩니다</font> (10초간).<br><br>
+								<font color="purple">시간을 초월한 자</font> - 라스마는 언데드의 주인으로, 무한한 힘을 얻어 무적이 되었습니다. 인형과 살아있는 죽은 자의 영혼에게서 강화를 얻었을 때만 그에게 피해를 줄 수 있습니다. 라스마는 무적 오라를 가장 신뢰하는 종인 코르나크에게도 펼칩니다.<br><br>
+								<font color="purple">우버 버전</font> - /players 8에서 이 전투를 하면 우버 버전이 활성화되고, 모든 적이 다음과 같이 강화됩니다.<br>
+								<font color="#706850">라스마</font> - 현재 생명력이 25%에 이르면 라스마는 격분하여 지역 전체에 충격파를 보내고, 시전 속도가 증가하며, 파괴적인 물리 피해와 화염 피해를 주는 메테오를 쏟아붓습니다.<br>
+								<font color="#706850">살아있는 죽은 자</font> - 살아있는 죽은 자는 돌진할 때 500%의 추가 피해도 얻으며, 돌진 효과가 3배 더 오래 지속됩니다.<br>
+								<font color="#706850">코르나크, 공허의 사도</font> - 코르나크가 2배 빠르게 격분합니다.<br>
+								<br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 50% 확률)<br>
+								<font color="#706850">라스마의 영원한 해골 (유니크 작은 부적)</font><br> 티어 5 지도 (평균 50% 확률)<br>
+								판데모니움 열쇠 세트 (100% 확률)<br> 기타 일반 아이템/재료<br><br>
+								<font color="#706850">보상 (우버 버전)</font><br>
+								라스마와 코르나크, 공허의 사도를 서로 1분 이내에 모두 처치하면, 라스마의 영원한 해골을 그 자체와 변환하여 다음 보너스를 얻을 수 있습니다:<br>
+								<font color="#4850B8">마법 저항 +5%<br>
+									최대 독 저항 +5% 증가<br>
+									+(10~20) to Kor'nac을 소환하다<br></font>
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#101010" align="center">
+							<br>
+							<font color="#706850">루시온</font> - 운명 지어진 구원의 제단 (거짓 빛의 유물)<br><br>
+							<img src=".././images/map-bosses/lucion.png" style="width: 275px" /><br><br>
+						</td>
+						<td bgcolor="#101010" align="center" style="vertical-align: center; padding: 0px 15px;">
+							<br>
+							<font style="font-size: 14px;"><i>
+									메피스토의 아들이자 릴리트의 형제인 루시온은 성역을 악마의 질서 아래 노예로 삼으려다 실패한 뒤 심연으로 추방되었다. 그러나 순수한 악은 결코 죽지 않는다. 곪아 갈 뿐이다. 잊혀진 교단의 타락한 신앙을 통해 루시온의 정수는 은밀히 다시 불붙었고, 그의 영혼은 죽어 가는 세계의 불씨에 묶였다. 이제 살아 있는 불꽃의 모습으로 다시 태어난 그는 산 자들에게 복수하려 하며, 필멸의 세계가 자신의 모습으로 벼려질 새로운 창조의 도가니로서 불타야 한다고 믿는다. 영혼을 하나 삼킬 때마다 그의 지옥의 빛은 강해지고, 모든 존재를 집어삼키려는 불길을 키운다. 필멸의 차원과의 연결을 끊고 그를 움직이는 지옥의 핵을 꺼야만 루시온을 막을 수 있다. 만약 그가 지금의 모습을 넘어 승천한다면, 대악마조차 그의 분노 앞에 떨 것이다.
+								</i><br><br>
+								<font color="#706850">루시온</font><br>
+								<font color="red">불폭풍</font> - 루시온의 일반 공격 중 하나는 1초 후 경로상의 모든 것을 불태우는 파괴적인 불폭풍입니다.<br>
+								<font color="red">메테오 줄</font> - 루시온은 불폭풍과, 엄청난 화염 피해와 물리 피해를 주는 메테오를 일렬로 소환하는 공격을 번갈아 사용합니다.<br>
+								<font color="red">불타는 덮치기</font> - 약 10초마다 루시온은 방심한 대상에게 덮쳐 파괴적인 수렴형 화염 회오리를 방출합니다. 화염 화살은 잠시 후 수렴하여 처음 회오리의 3배 피해를 주므로 무슨 일이 있어도 피해야 합니다. 도약 후 루시온은 지원군으로 4명의 <font color="#706850">대사제</font> 도 소환합니다.<br>
+								<font color="red">화염 쇄도</font> - 루시온이 덮칠 때마다 방을 가득 채우는 화염 화살 폭풍을 소환합니다. 화염 화살은 파괴적인 화염 피해를 줍니다.<br>
+								<font color="red">종교 광신자 소환</font> - 드물게 루시온은 전투에서 자신을 섬길 종교 광신자 10명을 소환합니다. 광신자들은 받는 물리 피해와 원소 피해를 증가시키는 중첩 약화 효과를 겁니다.<br>
+								<font color="orange">정화의 불꽃</font> - 약 8초마다 루시온은 주위에 정화의 불꽃을 불러내, 닿는 자에게 꽤 높은 피해를 줍니다. 그 불꽃에 들어가면 <font color="green">강화됩니다</font> (4초간).
+								<br><br>
+								<font color="#706850">대사제</font><br>
+								대사제는 루시온을 섬기는 고도로 특화된 주문 시전자입니다.<br>
+								<font color="red">불덩이</font> - 그들의 일반 공격은 착탄 시 땅을 그을리며 높은 화염 피해를 주는 불덩이입니다.<br>
+								<font color="red">악마의 강화</font> - 가끔 주변 아군을 강화하여 피해와 공격/시전 속도를 3% 높입니다. <font color="red">이 효과는 중첩됩니다.
+								</font><br>
+								<font color="green">빛의 강화</font> - 대사제는 죽을 때 주변 플레이어를 강화합니다.<br><br>
+								<font color="#706850">종교 광신자</font><br>
+								종교 광신자는 루시온을 섬기는 매우 공격적인 종입니다.<br>
+								<font color="red">빙결 스파이크/번개</font> - 당신을 갈기갈기 찢으려고 달려오지 않을 때는 모든 것을 관통하는 매우 강력한 냉기/번개 주문을 시전합니다.
+								<br>
+								<br>
+								<font color="purple">시간을 초월한 자</font> - 루시온은 엄청난 힘을 지닌 지옥의 짐승이라 일반 공격에는 무적입니다. 피해를 주려면 다음 두 효과가 모두 필요합니다: <font color="green">빛의 강화</font> and <font color="orange">
+									정화의 불꽃</font>.<br><br>
+
+								<font color="purple">우버 버전</font> - /players 8에서 이 전투를 하면 우버 버전이 활성화되고, 모든 적이 다음과 같이 강화됩니다.<br>
+								<font color="#706850">루시온</font> - 루시온은 악마의 오라를 내뿜어 20초마다 자신과 아군의 피해를 5%, 공격 속도와 시전 속도를 2% 높입니다. 이 효과는 무한히 중첩됩니다.<br>
+								<font color="#706850">대사제</font> - 대사제의 강화가 2배가 되어 피해와 공격/시전 속도를 3% 대신 6% 높입니다.<br>
+								<font color="#706850">종교 광신자</font> - 루시온이 종교 광신자를 10명이 아닌 20명 소환합니다.<br>
+								<br>
+								<font color="#706850">보상</font><br>
+								<font color="purple">성수의 구슬</font> (평균 50% 확률)<br>
+								<font color="orange">루시온의 불타는 유물</font><br> (보너스 목록은 <a
+									href="Eastern%20Sun%20Resurrected%20Cube%20Recipes.html#legendary">전설 구성품</a> 섹션 참조)<br>
+								티어 5 지도 (평균 50% 확률)<br>
+								판데모니움 열쇠 세트 (100% 확률)<br> 기타 일반 아이템/재료<br><br>
+								<font color="#706850">보상 (우버 버전)</font><br>
+								/players 8에서 루시온을 처치하면 그는 정수(<font color="ORANGE">루시온의 정수</font>)를 떨어뜨립니다. 정수는 소켓 도넛의 강화판입니다.
+							</font>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		</a>
+	</center>
+</body>
+
+</html>

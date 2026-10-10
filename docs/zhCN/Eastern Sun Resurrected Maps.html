@@ -1,0 +1,877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 资料库
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35821;&#35328;"><select id="esr-lang-zhCN" aria-label="&#35821;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN" selected>&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhCN",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhCN');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本信息</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日志]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[护甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前缀]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[后缀]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金护甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神话暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套装]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石之语]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之语]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魔盒配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地图]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速计算器]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查询]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系统</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化结果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[涂油结果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[终局地图]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[灵魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[进阶职业]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[击杀账簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[佣兵与外部技能信息]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器专精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破坏神 II：狱火重生 全面转换模组</div>
+            </div>                
+                                <div style="width:100%;">
+
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破坏神 II：狱火重生 全面转换模组</div>
+            </div>                
+                                <div style="width:100%;">
+
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>传送限制</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#272727">
+            <table cellpadding="5" border="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">被遗忘的塔 第5层</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">无法穿墙传送</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">地下墓穴 第4层</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">无法穿墙传送</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">亡者之厅 第2层</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">无法穿墙传送</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">憎恨囚牢第三层</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">无法穿墙传送</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">混沌圣所</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">无法穿墙传送</font>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="3" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>特殊地城/区域</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center" bgcolor="#300000">
+            <table width="560" cellpadding="5" border="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#300000">
+                    <font face="arial,helvetica" size="-1">
+                      这些是像秘密牛关卡一样的特殊区域，能提供最好的经验与掉落。基本上建议在通关该难度后再来，但对老手来说，用低等级角色来挑战这些区域也可能既有趣又有收获。<br>
+                      请注意，你不必前往失落的农场（原失落之城）也能取得毒蛇护身符，而为了取得书而去的莎琳娜书店（原毁坏的神庙）在击败巴尔之后也能前往。 </font>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 秘密乳牛关</b></font><br>
+            <font face="arial,helvetica" size="-1"> 开阔原野<br>
+              <font color="FFFF99"> 地点：第1幕 秘密牛关卡</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 血鸦的工坊</b></font><br>
+            <font face="arial,helvetica" size="-1"> 第1层与第2层<br>
+              <font color="FFFF99"> 地点：第1幕 塔莫高地</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 黑暗魔法师的房间</b></font><br>
+            <font face="arial,helvetica" size="-1"> 第1层与第2层<br>
+              <font color="FFFF99"> 地点：第2幕 岩石荒地</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 安达利尔的更衣室</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第2幕 失落之城</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 失落的农场</b></font><br>
+            <font face="arial,helvetica" size="-1"> 开阔原野<br>
+              <font color="FFFF99"> 地点：第2幕 失落之城</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 痛苦沼泽</b></font><br>
+            <font face="arial,helvetica" size="-1"> 开阔原野<br>
+              <font color="FFFF99"> 地点：第3幕 大沼泽</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 莎琳娜书店</b></font><br>
+            <font face="arial,helvetica" size="-1"> 第1层与第2层<br>
+              <font color="FFFF99"> 地点：第3幕 库拉斯特集市</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 鹰身女妖巢穴</b></font><br>
+            <font face="arial,helvetica" size="-1"> 第1层与第2层<br>
+              <font color="FFFF99"> 地点：第3幕 库拉斯特大道</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 私酿酒厂</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 寒冷高地</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 伪钞工厂</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 阿瑞特高原</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 罂粟农场</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 冰封苔原</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 奈落</b></font><br>
+            <font face="arial,helvetica" size="-1"> 第1-3层<br>
+              <font color="FFFF99"> 地点：第5幕 古老者之路</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> GFraizer Dome</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 奈落 第1层与第2层</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 比尔·罗柏纪念球场</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 奈落 第2层</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 死路</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 奈落 第3层</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 虚无之地</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 死路</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 尼拉塞克的领域</b></font><br>
+            <font face="arial,helvetica" size="-1"> 等级 1<br>
+              <font color="FFFF99"> 地点：第5幕 无处</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica" size="-1"> 注意：奈落及以下是极为<br>
+              困难的区域，专为超级富有的高手而设。只有顶尖<br>
+              玩家能在那里活下来。你不需要<br>
+              击杀尼拉塞克就能通关一个难度，而且我相信<br>
+              99% 的人都不会用个人化功能。;) </font> <br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>第二章</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica"> <b>遥远的绿洲</b> </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>卢特·戈尔因</b><br>
+              <font size="-1"> 下水道<br>
+                南入口 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>蛆虫巢穴</b><br>
+              <font size="-1" color="red">国王之杖 </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>蛆虫隧道</b> </font>
+          </td>
+          <td colspan="3" align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>地下迷宫</b> </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>蛆虫通道</b>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td rowspan="2" align="center" width="20%" bgcolor="#444433">
+            <font face="arial,helvetica"> <b>神殿通道</b><br>
+              <font size="-1">等级 1 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>邪恶祭坛</b><br>
+              <font size="-1" color="red">毒蛇护身符 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#444433">
+            <font face="arial,helvetica">
+              <b>神殿通道</b><br>
+              <font size="-1">等级 2<br>
+                <i>传送平台</i>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>利爪蛇魔神殿</b><br>
+              <font size="-1">等级 1 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>群蛇峡谷</b>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>第三章</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#226622">
+            <font face="arial,helvetica"> <b>蜘蛛森林</b><br>
+              <font size="-1"><i>传送平台</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#226622">
+            <font face="arial,helvetica">
+              <b>剥皮丛林</b><br>
+              <font size="-1"><i>传送平台</i><br>
+                <font color="eebb22">你无法回去<br>
+                  （从下水道第1层） </font>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>剥皮者隧道</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td rowspan="3" colspan="2" align="center" width="20%" bgcolor="#444433">
+            <font face="arial,helvetica"> <b>下水道</b><br>
+              <font size="-1">等级 1<br>
+                <br>
+                <table cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td align="center" bgcolor="#000000">
+                        <table cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td align="center" height="105" width="160" bgcolor="#444433">
+                                <font face="arial,helvetica"> <b>下水道</b><br>
+                                  <font size="-1">等级 2<br>
+                                    <font color="DD4422">克林姆的心脏 </font>
+                                  </font>
+                                </font>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </font>
+            </font>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>荒废的寺院</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#226622">
+            <font face="arial,helvetica"> <b>剥皮丛林</b><br>
+              <font size="-1"><i>吉德宾村</i></font><br>
+              <font size="-1" color="EE2222">吉德宾</font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>库拉斯特集市</b><br>
+            </font>
+          </td>
+          <td colspan="2" align="center" height="100" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>库拉斯特上层</b><br>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>莎琳娜书店</b><br>
+              <font size="-1">等级 1<br>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>沼泽地穴</b>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>剥皮地牢</b><br>
+              <font size="-1">等级 1<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>莎琳娜书店</b><br>
+              <font size="-1">等级 2<br>
+                <font color="FF0000">蓝伊森之书 </font>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>剥皮地牢</b><br>
+              <font size="-1">等级 2<br>
+                <font color="red">克林姆的大脑 </font>
+              </font>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>第五章</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>血腥丘陵</b><br>
+              <font size="-1"> <i>传送平台</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica"> <b>私酿酒厂</b><br>
+              <font size="-1"> </font>
+            </font>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>寒冷高地</b><br>
+              <font size="-1"> <i>传送平台</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>亚瑞特高原</b><br>
+              <font size="-1"> <i>传送平台</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica">
+              <b>伪钞工厂</b><br>
+              <font size="-1"> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>冰冻之河</b><br>
+              <font size="-1" color="red">安雅 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>次元之门</b><br>
+              <font size="-1" color="red"> 暴皮<br>
+              </font>
+              <font size="-1"> <i>传送平台*</i><br>
+                *使用此传送平台会让<br>
+                红色传送门消失。<br>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica"> <b>罂粟农场</b><br>
+              <font size="-1"> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>冰冻苔原</b><br>
+              <font size="-1"> <i>传送平台</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>古老者之路</b><br>
+              <font size="-1"> <i>传送平台</i> </font>
+            </font>
+          </td>
+          <td colspan="2" align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>奈落</b><br>
+              <font size="-1"> 等级 1<br>
+                <font size="-1" color="red"> 树精之王<br>
+                </font> <i>传送平台</i><br>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>GFraizer Dome</b><br>
+              <font size="-1" color="red"> 雷齐亚弗格<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>亚瑞特山巅</b><br>
+              <font size="-1" color="red">远古野蛮人 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td colspan="2" align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>奈落</b><br>
+              <font size="-1"> 等级 2<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>世界之石要塞</b><br>
+              <font size="-1"> 等级 1<br>
+                <i>传送平台</i>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td rowspan="2" align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>奈落</b><br>
+              <font size="-1"> 等级 3<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>世界之石要塞</b><br>
+              <font size="-1"> 等级 2 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>比尔·罗柏<br>
+                纪念球场 </b><br>
+              <font size="-1" color="red"> 重生者<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica">
+              <b>毁灭王座</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>死胡同</b><br>
+              <font size="-1"> 通往下层的楼梯<br>
+                是隐藏的，但总会<br>
+                有地标。;)<br>
+                （提示：Sp***ling C***t） </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica">
+              <b>世界之石密室</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>虚无之地</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>尼拉塞克的领域</b><br>
+              <font size="-1" color="red"> 尼拉塞克<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="-1"> 以下层数已被移除：第2幕 下水道第1层、宫殿第1层、地下墓穴第4层（以4取代3）、世界之石要塞第3层（以3取代2）、监狱第3层（以3取代2）。
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+                </div>
+            </a>
+        
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

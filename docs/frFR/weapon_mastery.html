@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="fr">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Base de données Eastern Sun Resurrected
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Langue"><select id="esr-lang-frFR" aria-label="Langue" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR" selected>Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="frFR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-frFR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informations de base</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Notes de version]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armures]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armes]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Préfixes]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixes]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armures uniques]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armes uniques]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Autres uniques]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Uniques mythiques]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ensembles]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Gemmes/Runes]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mots de gemmes]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mots runiques]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Recettes du cube]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Cartes]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Recherche de butin]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Fonctionnalités</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Résultats de corruption]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Résultats d'onction]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Cartes de fin de jeu]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Réceptacle des âmes]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendances]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registre des victimes]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mercenaires et compétences externes]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Maîtrise des armes]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                Mod de conversion totale pour Diablo II: Resurrected</div>
+        </div>
+        <div style="width:100%;">
+
+            <br>
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                <font color="ORANGE">Maîtrise des Armes</font> est un système unique qui change la façon dont les armes de classe interagissent avec les compétences.<br>
+                                La maîtrise d'arme s'obtient en transmutant un <FONT color="#706850">Jeton de maîtrise des armes
+                                </FONT> qui peut tomber du
+                                <FONT color="#706850">Zakarum corrompu</FONT> et des boss des cartes de fin de jeu (25 % de chances, non modifiées par /players).<br>
+                                <FONT color="#706850">Zakarum corrompu</FONT> sont des ennemis uniques redoutables que vous rencontrerez au hasard dans la campagne en Cauchemar et Enfer ; ils peuvent lâcher un jeton de maîtrise d'arme (jusqu'à 75 %, non modifié par /players) et ont plus de chances de lâcher des uniques et des armes.<br>
+                                Une fois transmuté, le jeton est <font color="ORANGE">éveillé</font> et vous pouvez l'appliquer à l'arme en le transmutant avec l'arme et quelques ingrédients.<br>
+                                Les spécialisations de maîtrise d'arme ne visent pas à gonfler la puissance ni forcément à rendre le personnage plus fort, mais à changer le fonctionnement mécanique des compétences ou à offrir de nouvelles pistes d'équipement.<br>
+                                Vous ne pouvez appliquer qu'une maîtrise d'arme par arme. Les maîtrises d'arme ne se cumulent pas (en maniant deux armes), sauf mention contraire explicite.<br>
+                                La maîtrise d'arme peut s'appliquer à n'importe quelle arme de classe, quel que soit son palier (fonctionne aussi sur les bases exceptionnelles, élites et mythiques).<br>
+                                Maîtrise des Armes <FONT color="ORANGE">peut être retirée</FONT>, mais <font color="red">le jeton est perdu</font> lors du retrait.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <a name="recipes"></a>
+                        <a href="./weapon_mastery.html#recipes">[Recettes générales]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[Spécialisations]</a>&nbsp;
+                    </tbody>
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                            <font face="arial,helvetica">
+                                <b>
+                                    Recettes générales
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                N'importe quelle arme de classe<br>
+                                <FONT color="#706850">Jeton de maîtrise des armes</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                Même objet*<br>
+                                <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br><br>
+                                <font color="gray">*Cela ne fait qu'éveiller le jeton, l'arme n'est pas modifiée</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                N'importe quelle arme de classe avec maîtrise d'arme<br>
+                                Forme de pierre de dragon propre à la classe<br>
+                                3 potions de dégel
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                Même objet<br>
+                                Maîtrise d'arme retirée*<br><br>
+                                <font color="gray">*Le jeton est perdu</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">N'importe quel jeton de maîtrise d'arme éveillé</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">Jeton de maîtrise d'arme*</FONT><br><br>
+                                <font color="gray">*Non éveillé</font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <font size="-1" face="arial,helvetica">
+                    <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                        <tbody>
+                            <a name="specializations"></a>
+                            <a href="./weapon_mastery.html#recipes">[Recettes générales]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[Spécialisations]</a>&nbsp;
+                        </tbody>
+                        <br><br>
+                        <tr>
+                            <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Spécialisations
+                                    </b><br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Arc de Cerf<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Soie d'araignée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Flèche empoisonnée, d'immolation, gelante et de foudre</font><br>
+                                    Ces compétences déclenchent leur effet spécial toutes les 5 attaques<br>
+                                    au lieu de 3, mais leurs dégâts totaux augmentent de 20 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Arc à réflexe<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Soie d'araignée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Tir en rafale</font><br>
+                                    Triple le nombre de cibles, mais applique une pénalité de 2 % de résistance physique<br>
+                                    par flèche tirée pendant 2 secondes. Cet effet n'a pas de limite<br>
+                                    <br>
+                                    <font color="orange">Tir Multiple</font><br>
+                                    Tir multiple tire une nova de flèches à la place<br>mais ne gagne plus de bonus de dégâts par niveau<br>
+                                    <br>
+                                    <font color="orange">Tir Tornado</font><br>
+                                    Tire une nova de 16 flèches à la place, triple son affaiblissement<br>
+                                    de synergie spécial et gagne un temps de recharge non modifiable de 10 secondes<br>
+                                    <br>
+                                    <font color="orange">Flèche Légendaire</font><br>
+                                    Ne gagne plus de score d'attaque par<br>
+                                    niveau ni par synergie, mais le bonus de dégâts est doublé
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Arc de Précision<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Soie d'araignée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Magie, Froid, Flèche Explosive</font><br>
+                                    Ces compétences tirent une flèche supplémentaire sur un ennemi proche toutes les 3 attaques, mais<br>
+                                    perdent tous les dégâts et le score d'attaque issus des niveaux et des synergies
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lance de la Demoiselle<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Soie d'araignée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Tempête de Lances</font><br>
+                                    Tempête de lances double le nombre d'éclats de lance<br>
+                                    toutes les 3 attaques, mais n'accorde plus de dégâts physiques bonus<br>
+                                    <br>
+                                    <font color="orange">Fend</font><br>
+                                    Parade ne génère plus que la petite nova de lances, qui<br>
+                                    réduit désormais la résistance physique avec 150 % d'efficacité, mais ne ralentit plus*<br>
+                                    <br>
+                                    <font color="orange">Danse de la Mort</font><br>
+                                    Remplace les novas convergentes par des vagues de lances à tête chercheuse<br>
+                                    Les coups critiques sont remplacés par des vagues supplémentaires
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Pique de la Demoiselle<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Soie d'araignée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Tempête de Lances</font><br>
+                                    Gagne 2 fois moins d'éclats de lance par niveau,<br>
+                                    mais les dégâts physiques globaux sont doublés<br>
+                                    <br>
+                                    <font color="orange">Fend</font><br>
+                                    Parade ne génère plus que la grande nova<br>
+                                    de lances et double l'efficacité du ralentissement*<br>
+                                    <br>
+                                    <font color="orange">Danse de la Mort</font><br>
+                                    Double les dégâts totaux toutes les 5 attaques avec la synergie<br>
+                                    spéciale au lieu d'avoir 15 % de chances de quadrupler les dégâts
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Javelot de Vierge<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Soie d'araignée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Bûcher, Peste, Javeline de givre, Furie de la foudre</font><br>
+                                    Ces compétences lancent 2 javelines supplémentaires tous les 3 lancers,<br>
+                                    mais les dégâts totaux sont réduits de 40 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Ninja-To<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="purple">Pierre de Dragon</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Lame du Dragon</font><br>
+                                    Divise par deux le nombre de cibles et frappe un ennemi<br>
+                                    proche environ autant de fois que 60 % du nombre retiré
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Hache tribale<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="#706850">Marteau de forge</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Fouet de Hache</font><br>
+                                    Ne rebondit plus. Libère à la place une nova convergente de 4 haches<br>
+                                    qui ne touche à nouveau que la cible principale<br>
+                                    <br>
+                                    <font color="orange">Haches Fantômes</font><br>
+                                    Lance désormais les haches en nova spirale, qui<br>
+                                    ne peut toucher que le terrain puis ricoche vers jusqu'à 4 ennemis proches<br>
+                                    <br>
+                                    <font color="orange">Charge</font><br>
+                                    Augmente le nombre de projectiles magiques de 50 %,<br>
+                                    mais réduit le nombre de cibles recherchées de 2 à 1<br>
+                                    <br>
+                                    <font color="orange">Fureur Berserk</font><br>
+                                    Les projectiles magiques se divisent instantanément vers les ennemis proches,<br>
+                                    mais ne génèrent plus de novas convergentes. Augmente<br>
+                                    la vitesse des projectiles et leur nombre de 50 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Branche de chêne<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="gray">Minerai de Tyranium</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Loups, Corbeaux, Grizzly</font><br>
+                                    Divise par deux les loups et corbeaux invocables et vous fait gagner<br>
+                                    1 grizzly supplémentaire pour chaque tranche de 5 invocations normales<br>
+                                    perdues. Double le nombre de coups de toutes les compétences de familier et les dégâts de Contagion.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Chasseur d'âmes<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="red">Noirbois</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Frénésie des morts-vivants</font><br>
+                                    Cette compétence n'accorde plus de dégâts élémentaires,<br>
+                                    mais les dégâts physiques sont doublés
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Dague Rituel<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="red">Noirbois</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Malédictions</font><br>
+                                    Toutes les malédictions sont deux fois plus fortes, mais leur durée<br>
+                                    est réduite à 2 secondes et leur rayon à 4 mètres
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Faux Misérable<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="red">Noirbois</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Sorts magiques</font><br>
+                                    Les sorts magiques à dégâts directs de votre Nécromancien<br>
+                                    ont 1 % de chances de se répéter par tranche de 1 % de vie<br>
+                                    manquante. Votre résistance magique est toujours de 0
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lame Bénie<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="white">Symbole sacré</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Zèle</font><br>
+                                    Augmente la chance totale de renforcement de 50 %,<br>
+                                    mais réduit la durée à 2 secondes
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lame de Mana<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="blue">Gemme Écrasée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Balancement Fanatique</font><br>
+                                    Réduit le nombre de coups à 1, mais chaque troisième coup<br>
+                                    libère désormais des effets élémentaires qui infligent des dégâts de sort,<br>
+                                    évoluant avec tous les sorts à dégâts directs de l'élément correspondant
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Orbe d'Ensorceleuse<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="blue">Gemme Écrasée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT><br>
+                                    <FONT color="red">Rubis Ébréché</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Sorts d'Ensorceleuse</font><br>
+                                    Triple le temps de recharge de vos sorts d'Ensorceleuse de niveau 24<br>
+                                    et ajoute un temps de recharge de 2 secondes à Hydre,<br>
+                                    mais augmente vos dégâts totaux des sorts de 20 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Orbe d'Ensorceleuse<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="blue">Gemme Écrasée</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT><br>
+                                    <FONT color="#f1e5ac">Crâne Ébréché</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Exclusivités d'Ensorceleuse</font><br>
+                                    Augmente les bonus de vos exclusivités de 50 % et leurs inconvénients de 75 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Griffe d'Assassin<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="purple">Pierre de Dragon</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT><br>
+                                    <FONT color="red">Rubis Ébréché</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Compétences de charge élémentaires</font><br>
+                                    Toutes les compétences de charge élémentaires ne déchargent plus que la charge correspondante,<br>
+                                    mais les dégâts totaux augmentent de 50/70/100 % selon le niveau de charge<br>
+                                    Cet effet ne s'applique pas aux procs et ne se cumule pas<br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Griffe d'Assassin<br>
+                                    <FONT color="#706850">Jeton de maîtrise des armes éveillé</FONT><br>
+                                    <FONT color="purple">Pierre de Dragon</FONT><br>
+                                    <FONT color="purple">Pierre d'enclume</FONT><br>
+                                    <FONT color="#f1e5ac">Crâne Ébréché</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Compétences de charge élémentaires</font><br>
+                                    Réduit de 25 % les dégâts de base de toutes les compétences de charge élémentaires, mais chaque<br>
+                                    charge différente présente augmente les dégâts totaux de 10 %<br>
+                                    Cet effet se cumule*
+                                </font>
+                                <br><br>
+                                <font size="-1" color="gray">*ce bonus de dégâts ne s'applique pas aux procs de décharge</font>
+                            </td>
+                        </tr>
+                    </table>
+                </font>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

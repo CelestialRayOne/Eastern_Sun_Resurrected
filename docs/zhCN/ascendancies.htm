@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 3.6 资料库
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="&#35821;&#35328;"><select id="esr-lang-zhCN" aria-label="&#35821;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN" selected>&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhCN",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhCN');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本信息</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日志]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[护甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前缀]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[后缀]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金护甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神话暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套装]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[宝石之语]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之语]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[魔盒配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地图]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速计算器]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系统</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化结果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[涂油结果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[终局地图]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[灵魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[进阶职业]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[击杀账簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[佣兵与外部技能信息]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器专精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破坏神 II：狱火重生 全面转换模组</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华</font> 是能塑造你玩法的强大专精，会给予独特的技能与加成。<br>
+                            升华是透过一个名为 <font color="orange">升华之石</font> 的特殊护身符给予，而它只有在完成数场特殊战斗后才能取得。<br>
+                            统治之石可以透过完成特定挑战进一步升级（也就是继续升华），其中一些挑战与非常困难的终局内容有关。<br>
+                            升华共有 5 个阶层，每个挑战都比前一个更难，但加成也更强。<br>
+                            统治之石 <font color="red"><strong>无法与其他角色共用</strong>
+                            </font>。同一时间只能装备一颗统治之石。<br>
+                            不用说，每个阶层都只能达成一次。不过你可以依任意顺序达成。<br>
+                            统治之石无法以一般方式修改（无法堕落、受膏、拆解成枫叶等）。<br>
+                            由于引擎限制，死亡后 <font color="red">你必须重新装备</font> 统治之石，才能恢复加成。<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[挑战]</a>
+            <a href="#ascendancies">[进阶职业]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>第 1 阶层挑战</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            若要取得 <font color="orange">升华之石</font>，你需要击杀 5 个特殊的超级精英 <font color="red">（地狱难度）</font> ，牠们散布在庇护之地各处，<br>并转化牠们各自掉落的元素宝珠，以取得
+                            <font color="orange">创造宝珠</font>.<br>
+                            接著可以把宝珠与特定颜色的宝石一起转化，解锁你选择的升华。提示：第 1、2、3 幕各有一个超级精英。第 5 幕有 2 个，第 4 幕没有。
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            2 瑕疵蓝宝石<br>
+                            2 瑕疵黑曜石<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">战斗法师升华石<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            1 瑕疵黑曜石<br>1 瑕疵蓝宝石<br>1 瑕疵翡翠<br>1 瑕疵红宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">觉醒升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            2 瑕疵黑曜石<br>2 瑕疵翡翠
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">剑圣升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            2 瑕疵翡翠<br>2 瑕疵红宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">游牧升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            2 瑕疵黑曜石<br>2 瑕疵红宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">铁弩升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            2 瑕疵翡翠<br>2 瑕疵蓝宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">秘术师升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            2 瑕疵红宝石<br>2 瑕疵蓝宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">灵魂守卫升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            4 瑕疵翡翠
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">神射手升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            4 瑕疵蓝宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">星裔升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            1 瑕疵红宝石<br>1 瑕疵黑曜石<br>1 瑕疵蓝宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">血法师升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            4 瑕疵红宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">生命破坏者升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            1 瑕疵红宝石<br>1 瑕疵黑曜石<br>1 瑕疵翡翠
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">世界塑形者升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            1 瑕疵黑曜石<br>1 瑕疵翡翠<br>1 瑕疵蓝宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">姿态舞者升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            1 瑕疵翡翠<br>1 瑕疵红宝石<br>1 瑕疵蓝宝石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">魔力守卫升华石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">创造宝珠</font><br>
+                            4 瑕疵黑曜石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">狂战士升华石<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 2 阶层挑战</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            在地狱难度击杀尼拉塞克领域中的尼拉塞克，并把统治之石与其自身转化，即可达成第二阶层。<br>
+                            <font color="red">必须在角色身上的漩涡效果仍在时进行转化。</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">升华之石</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            已升级为第 2 阶层
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 3 阶层挑战</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            击杀超级崔斯特姆的所有头目 <font color="red">（彼此间隔不超过一分钟，且不能死亡）， </font>并把统治之石与枫叶一起转化，即可达成第三阶层。<br>即使击杀最后一个头目后角色身上仍有漩涡效果，若距离击杀第一个头目已超过 1 分钟，也不会成功。
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            枫叶
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            已升级为第 3 阶层
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 4 阶层挑战</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            收集 10 颗从任何终局地图头目身上掉落的 <font color="ORANGE">原始灵魂石
+                            </font> ，即可达成第4阶层。统治之石一次只能与一颗原始之石转化。在统治之石中收集到 10 颗原始灵魂石后，就能与 2 片枫叶一起转化，升华到第 4 阶层。<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            <font color="orange">原始灵魂石捕获: 10/10</font><br>
+                            2 片枫叶
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            已升级为第 4 阶层
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 5 阶层挑战</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            击杀任何第 5 阶层地图的头目，并把统治之石与 3 片枫叶一起转化，即可达成第五阶层。<br>
+                            <font color="red">必须在角色身上的漩涡效果仍在时进行转化。</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 输出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            3 片枫叶
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">升华之石</font><br>
+                            已升级为第 5 阶层
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[挑战]</a>
+            <a href="#ascendancies">[进阶职业]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">升华</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+60 力量<br>+60 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+25% 力量加成<br>+25% 能量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每2%致命攻击和每2%粉碎打击获得1%法术伤害<br>+25% 击碎打击几率<br>+25% 致命一击<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 3% 致命一击与压碎性打击，获得 1% 总防御加成*<br>+10 击中时获得 生命值<br>+15% 物理伤害吸取为法力<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>所有速度 +50%<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">战斗法师升华</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*总防御加成会与你的全部护甲值相乘。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">剑术大师升华</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+60 力量<br>+60 以敏捷<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+25% 力量加成<br>+25% 敏捷加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 1% 物理抗性，获得 10% 伤害强化<br>20% 物理抗性<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 1% 物理抗性，获得 +1% 物理伤害吸取生命<br>+40 最小攻击伤害<br>+50 对攻击的最大伤害<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>击中时有 15% 机率施展等级 20 投掷斧<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+60 以敏捷<br>+60 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+25% 敏捷加成<br>+25% 能量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 1% 速度，获得 5 点法力*<br>所有速度 +30%<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 25% 速度，获得击中时 1 点法力*<br>+20 元素之怒（所有职业）<br>+5% 所有最大抗性<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>击中时有 5% 机率施展等级 20 火焰强化箭<br>击中时有 5% 机率施展等级 20 冰霜强化箭<br>击中时有 5% 机率施展等级 20 闪电强化箭<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">奥术师升华</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*每种速度（格挡、施法、移动、攻击、恢复）分别计算。例如 +1% 所有速度，在升华加成中算作 +5%。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">血法师升华</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+45 力量<br>+45 生命值<br>+45 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+20% 力量加成<br>+20% 体力加成<br>+20% 能量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 250 点生命获得 1% 法术伤害，每 400 点生命获得 1% 召唤物伤害<br>能量不再影响法术伤害或召唤物伤害<br>血魔法*<br>+200 生命<br><br>
+                    <font color="orange">第 4 阶层</font><br>击杀敌人时恢复 2% 最大生命值<br>+50% 更快的击中恢复<br>+25% 物理抗性<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>+25% 召唤生命<br>最大生命提高 50%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*血魔法表示你现在改用生命来施放法术。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+30 所有属性<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+15% 全属性加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 1000 点属性，获得 +1 所有技能*<br>所有速度 +20%<br>+30 所有属性<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 100 点属性，获得 1 点元素与魔法吸收*<br>每 2 点属性，获得 1 点防御*<br>+20 力量压倒一切（所有职业）<br>毒素持续时间减少 +75%<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>被击中时有 10% 机率施展等级 60 毁灭<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">觉醒者升华</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*门槛依属性总点数计算（例如每项属性都达到 250 时，就能获得 +1 所有技能）。</font><br>
+        <font size="-2">**毁灭是一种毁天灭地的 6 元素新星（火焰/冰寒/闪电/毒素/物理/魔法），作用范围涵盖整个画面，每道新星会造成转换为对应元素的 50% 武器伤害，并造成会随属性总点数提升的各类型可观法术伤害。它会击退敌人，并在 2 秒内降低其所有抗性 25%。毒素新星不会造成武器伤害。</font><br>
+        <font size="-2" color="red">**毁灭只有在你目前生命低于 30% 时才能触发。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">铁弩升华</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+60 力量<br>+60 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+25% 力量加成<br>+25% 体力加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 10 点力量，获得 1%-2% 流血伤害<br>此流血的持续时间依十字弓装填速度的比例而定*<br>+150 力量<br>
+                    <font color="orange">第 4 阶层</font><br>每 200 点力量，击中时获得 1 点生命<br>+20% 更快的弩装填时间<br>弩装填速度上限降低 20%<br>+500 攻击评级提升<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>击中时有 2% 机率施展等级 40 心灵视野<br>+25 锐化专注（所有职业）<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*流血持续时间等同于十字弓装填速度的比例。无论你是否使用十字弓都适用。铁弩的流血可能会被其他流血来源稀释（类似毒素效果会互相稀释）。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+75 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+30% 能量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 400 点法力，获得 -1% 敌人的火焰、冰寒与闪电抗性<br>+400 生命值<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 5 点法力获得 1 点生命恢复<br>+20 全能（所有职业）<br>所有速度 +25%<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>+1 到 传送<br>+1 所有技能加成<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">星辰之子升华</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">破命者升华</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+75 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+30% 体力加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 100 点缺失生命，获得 1% 法术伤害加成<br>增加最大生命 +30%<br><br>
+                    <font color="orange">第 4 阶层</font><br>每损失 100 点生命值，获得 1 点魔法和物理伤害减免<br>+1 至陷阱限制<br>减少的伤害 50<br>魔法伤害减少 50<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>+10 生命契约*<br>魔法抗性 +15%<br>物理抗性：+15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*生命契约是一个可切换的技能，每秒吸取你最大生命的 25%，并每级给予 10% 最大生命。生命契约不会让你死亡。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+45 力量<br>+45 以敏捷<br>+45 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+20% 力量加成<br>+20% 敏捷加成<br>+20% 体力加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 1% 元素抗性，攻击获得 2 点最大火焰、冰寒与闪电伤害*<br>火焰抗性 +50%<br>冰冷抗性 +50%<br>闪电抗性 +50%<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 30% 元素抗性，获得 1% 物理与魔法抗性*<br>每 5% 元素抗性，获得 1% 毒素抗性*<br>法术伤害：+50%**<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>击中时有 2% 机率施放 1 级创造之怒***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">塑界者升华</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*每种抗性分别计入加成门槛。例如，火焰、冰寒与闪电抗性各有 10% 时，你就能获得 1% 物理抗性。</font><br>
+        <font size="-2">**法术伤害指火焰/冰寒/闪电/毒素/魔法/物理法术伤害，并会提高攻击的固定伤害（物理法术伤害除外，它不会提高攻击的物理伤害）。
+        </font><br>
+        <font size="-2">***创造之怒是一个中等范围的三重元素新星技能，每道新星造成转换为对应元素的 50% 武器伤害，并使敌人的元素抗性降低 30%。
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">灵魂守卫升华</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+60 生命值<br>+60 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+25% 体力加成<br>+25% 能量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 40 点能量，获得 1% 毒素、魔法与物理法术伤害<br>+150 生命值<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 3 点能量获得 1 点生命<br>魔法吸收 +10%<br>无法被冰冻<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>+1 至非唯一召唤限制<br>减少的伤害 50<br>魔法伤害减少 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+45 力量<br>+45 以敏捷<br>+45 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+20% 力量加成<br>+20% 敏捷加成<br>+20% 能量加成<br><br>
+                    <font color="orange">第 3 阶层*</font><br>
+                    伤害架式（红）：5% 伤害强化与 1% 法术伤害<br>
+                    （力量、敏捷与能量合计每 75 点）<br>
+                    闪避架式（绿）：10% 所有速度与 1% 闪避<br>
+                    （力量、敏捷与能量合计每 1000 点）<br>
+                    恢复架式（蓝）：+1 所有技能与 150 生命与法力补充<br>
+                    （力量、敏捷与能量合计每 1500 点）<br><br>
+                    <font color="orange">第 4 阶层</font><br>所有姿态的加成提高 25%<br>+30% 力量加成<br>+30% 敏捷加成<br>+30% 能量加成<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>+50% 提升攻击速度<br>+50% 更快施法速度<br>每次击杀后 +100 生命<br>每次击杀后 +50 点法力<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">架式舞者升华</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*你必须在操作子选单中设定切换架式的快捷键。</font></font><br>
+        <font size="-2">**你可以随时切换架式，但架式只会依以下顺序循环：红 -&gt; 绿 -&gt; 蓝。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">游牧者升华</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+60 以敏捷<br>+60 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+25% 敏捷加成<br>+25% 体力加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 5% 高速跑步/行走或 1% 基础跑走速度获得 5 点最大伤害<br>+75% 更快的奔跑/行走<br>在1秒内造成150%-250%流血伤害<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 200% 高速跑步/行走或 40% 基础跑走速度获得 5% 闪避机率<br>+300 生命<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>被击中时有 20% 机率施展等级 1 疾行<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*疾窜是持续 1 秒的增益效果，提供 33% 闪避、100% 基础跑步/行走速度、25% 攻击的总最大物理伤害，并在持续期间回复 10% 最大生命。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+75 以敏捷<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+30% 敏捷加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 1% 穿透，获得 2% 攻击准确率加成<br>每 2% 穿透，获得 1 点最大伤害<br>+30 到 最小 伤害<br>+20 穿透（所有职业）<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 1% 穿透获得 3 点活力<br>+75% 更快的奔跑/行走<br>+20 闪避（所有职业）<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>击中时有 15% 机率施展等级 20 箭矢<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">神射手升华</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">法力守卫升华</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+45 以敏捷<br>+45 生命值<br>+45 生命值<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+20% 敏捷加成<br>+20% 体力加成<br>+20% 能量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 20% 法力恢复，获得 1% 法术伤害<br>每 5% 法力恢复，攻击获得 1 点最小伤害<br>+5 击中时获得 法力值<br>恢复法力 +100%<br><br>
+                    <font color="orange">第 4 阶层</font><br>每2%法力再生，获得1点法力<br>+20 能量护盾（所有职业）<br>+10% 最大毒素抗性<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>被击中时有 20% 机率施展等级 50 时间静止<br>毒素抗性 +75%<br>+20 的光照半径<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 阶层</font><br>+1 职业技能等级<br>+75 力量<br><br>
+                    <font color="orange">第 2 阶层</font><br>+1 职业技能等级<br>+30% 力量加成<br><br>
+                    <font color="orange">第 3 阶层</font><br>每 1% 物理伤害吸取生命，获得 +3% 最大伤害<br>+30 到 最大 伤害<br>+25% 物理伤害吸取为生命<br><br>
+                    <font color="orange">第 4 阶层</font><br>每 5% 物理伤害吸取生命，获得 +1% 物理与魔法抗性<br>诅咒持续时间降低：100%<br><br>
+                    <font color="orange">第 5 阶层</font><br>+3 职业技能等级<br>近战攻击时有 25% 机率施放 1 级蹂躏**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">狂战士升华</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*蹂躏是小到中等范围的技能，对所有受影响的敌人造成 150% 武器伤害的物理伤害，并在 2 秒内使其物理抗性降低 30%。</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

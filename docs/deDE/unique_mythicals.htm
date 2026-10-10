@@ -1,0 +1,2124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="de">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected Datenbank
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Sprache"><select id="esr-lang-deDE" aria-label="Sprache" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE" selected>Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="deDE",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-deDE');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Grundlagen</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Änderungsprotokolle]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Rüstungen]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffen]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Präfixe]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixe]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Rüstungen]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Waffen]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartiges Sonstiges]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mythische Einzigartige]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Sets]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteine/Runen]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteinwörter]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Runenwörter]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Würfelrezepte]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Karten]</a>
+            <a href="./ias-calculator.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Angriffstempo-Rechner]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Beutefinder]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funktionen</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Verderbnis-Ergebnisse]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Salbungs-Ergebnisse]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Endgame-Karten]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Seelengefäß]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Aszendenzen]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Tötungsbuch]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Söldner- und O-Fertigkeiten-Infos]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffenbeherrschung]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                Total-Conversion-Mod für Diablo II: Resurrected</div>
+        </div>
+        <div style="width:100%;">
+
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                Mythische Unikate sind Gegenstände mit einer anderen Basis als alle anderen Gegenstände, daher kann man sie nicht im Glücksspiel erhalten.<br>
+                                Mythische Unikate können nur in Endgame-Kartengebieten fallen, weil sie eine Dropstufe von 100+ haben.<br>
+                                Die meisten mythischen Unikate haben besondere Effekte oder Procs, die einzigartige Spielstile ermöglichen oder bestehende verstärken.<br>
+                                Einige mythische Unikate haben bestimmte Dropquellen (z. B. die des Lichkönigs). Alle mythischen Basisgegenstände haben leicht verbesserte Werte. Waffen für physische Angriffe haben meist 10 % mehr Basisschaden. Zauberwirkerwaffen haben meist niedrigere Anforderungen oder andere kleine Boni.<br>
+                                Alle mythischen Basisgegenstände haben leicht erhöhte Stufenanforderungen (meist +3 gegenüber dem Basisgegenstand, nach dem sie gestaltet sind; z. B. Titanenschlägel für Mythischer Titanenschlägel).<br>
+                                Mythische Unikate <b>können nicht</b> neu ausgewürfelt werden. Was fällt, ist, was du bekommst.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mythische einzigartige Waffen
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=400 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Name
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Werte
+                                </font>
+                            </td>
+                            <td width=600 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Eigenschaften
+                                </font>
+                            </td>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Anmerkungen
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Mephistos Wille
+                                        <br>
+                                        <a href="weapons.htm#m04">
+                                            Mythische Dämonenstab
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mephistos_will.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">Du kannst +(100 bis 150) % mehr Skelettmagier erwecken<br>Du kannst keine Skelettkrieger mehr erwecken</font><br>+(2 bis 4) zu allen Fähigkeiten
+                                        <br>+(20 bis 30)% zu Beschwörung Leben <br>+(12 bis 15)% zu Beschwörung Physische und Magische Widerstände
+                                        <br>+(30 bis 40) % auf Widerstände von Beschwörungen <br>-(40 bis 50) % auf gegnerischen Feuerwiderstand
+                                        <br>-(40 bis 50) % auf gegnerischen Kältewiderstand <br>-(40 bis 50) % auf gegnerischen Blitzwiderstand <br>-(40 bis 50) % auf gegnerischen Giftwiderstand <br>+(80 bis 100) zu Energie
+                                        <br>+(25 bis 30)% Bonus auf Energie <br>Physischer Widerstand: +(15 bis 20)% <br>Schaden reduziert um (50 bis 60) <br>+(25 bis 30)% zu erhaltenem Erfahrungspunkt <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Inarius' Stab der unendlichen Gedanken
+                                        <br>
+                                        <a href="weapons.htm#m12">
+                                            Mythischer Seraphischer Zepter
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/inarius_rod_of_infinite_thought.png"
+                                        style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Deine heiligen Auren haben eine Chance von 25 %, kritisch zu treffen für<br>1 % mehr Gesamtschaden pro 50 Energie</FONT><br>5 % Chance, Level 60 Himmelshammer beim Treffen zu wirken<br>+(2 bis 4) zu Offensiv-Auren (Nur Paladin)<br>+(30 bis 50)% Schnellere Zaubergeschwindigkeit <br>-(30 bis 40) % auf gegnerischen Feuerwiderstand <br>-(30 bis 40) % auf gegnerischen Kältewiderstand <br>-(30 bis 40) % auf gegnerischen Blitzwiderstand <br>-(30 bis 40) % auf gegnerischen Giftwiderstand <br>+(80 bis 100)% zu Magieschaden <br>+(4 bis 8)% zu maximaler Giftschutz <br>+(4 bis 8)% zu maximaler Kältewiderstand <br>+(4 bis 8)% zu maximalem Blitzwiderstand <br>+(4 bis 8)% zu maximaler Feuerwiderstand <br>+(40 bis 50)% Bonus auf Energie <br>+(10 bis 40) zu Lichtradius <br>Sockel (1 bis 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Der Effekt ist nicht stapelbar, wenn du diese Waffe doppelt führst.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Lux Aeterna, Hoffnung der Dämmerung
+                                        <br>
+                                        <a href="weapons.htm#m17">
+                                            Mythischer Himmlischer Zepter
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lux_aeterna_hope_of_dawn.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        25% Chance, Level 60 Sternenfall beim Wirken einer Fertigkeit zu wirken<br>Stufe (20 bis 30) Erlösung Aura beim Anlegen<br>+(2 bis 4) zu allen Fähigkeiten <br>+(40 bis 50)% Schnellere Zaubergeschwindigkeit <br>+(50 bis 65)% zu Magieschaden <br>+(10 bis 30) zu Sternenfall<br>+(30 bis 40) zu allen Attributen <br>+(200 bis 300) zu Leben <br>+(200 bis 300) zu Mana
+                                        <br>+(20 bis 30)% Bonus auf Alle Attribute <br>+(20 bis 40) zu Lichtradius <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Mjölnir
+                                        <br>
+                                        <a href="weapons.htm#m03">
+                                            Mythischer Titanenhammer
+                                        </a>
+                                    </b>
+                                    <br><br>
+                                    <img src=".././images/mythical-uniques/mjolnir.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Erhalte 3 Maximale Blitzschaden pro 1 Stärke
+                                        </FONT><br>Fügt 1-5000 Blitzschaden hinzu<br>15 % Chance, Level 50 Urteil beim Angriff zu wirken<br>5 % Chance, Level 1 Mythisches Chaosblitz* beim Treffen zu wirken<br>+(80 bis 100)% Schnellere Bewegung/Gang
+                                        <br>+100 zu Minimaler Schaden bei Angriffen
+                                        <br>+150 zu Maximaler Schaden bei Angriffen <br>-(40 bis 50) % auf gegnerischen Blitzwiderstand <br>+(400 bis 500) zu Stärke <br>Blitzabsorption +(8 bis 10)%
+                                        <br>Anforderungen +500% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Mythischer Chaosblitz ist ein besonderer Kettenblitz, der 150 % Waffenschaden als Blitzschaden verursacht und sich beim Treffen in 2 weitere Blitze teilt. Jeder Blitz springt bis zu 3-mal weiter.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Natalyas blutiger Henker
+                                        <br>
+                                        <a href="weapons.htm#m16">
+                                            Mythos-Rapier
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/natalyas_bloodied_rapier.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        50% Chance, Level 40 Blinkschlag zu wirken, wenn du einen Feind tötest<br>+(30 bis 50)% Erhöhte Angriffsgeschwindigkeit <br>+3% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>+125 zu Minimaler Schaden bei Angriffen <br>+150 zu Maximaler Schaden bei Angriffen
+                                        <br>Fügt 1%-150% Blutungsschaden über 0.2 Sekunden hinzu<br><br>+1 zu Blinkschlag<br>+(40 bis 50) zu Geschicklichkeit <br>Erhöhe Maximale Lebenspunkte +(30 bis 40)% <br>+(20 bis 30)% Bonus auf Geschicklichkeit <br>Schaden reduziert um (50 bis 60)
+                                        <br>+(150 bis 225) Leben nach jedem Kill <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Tal Rashas letztes Flüstern
+                                        <br>
+                                        <a href="weapons.htm#m08">
+                                            Mythische Ausgewogene Klinge
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tal_rashas_last_whisper.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Fügt Angriffen 3-4 Feuer-, 2-5 Kälte- und 1-7 Blitzschaden hinzu<br>pro 4 Geschicklichkeit<br>Umhang der Schatten durchdringt jetzt Elementar- statt physischen Widerstand mit doppelter Wirkung</FONT><br>1 % Chance, Level 60 Umhang der Schatten beim Treffen zu wirken<br>8 % Chance, Level 15 Feuerverstärkte Pfeile beim Treffen zu wirken<br>8 % Chance, Level 15 Kälteverbesserter Pfeil beim Treffen zu wirken<br>8 % Chance, Level 15 Blitzverstärkter Pfeil beim Treffen zu wirken<br>+(40 bis 50)% Erhöhte Angriffsgeschwindigkeit <br>+(3 bis 5)% zu maximaler Giftschutz <br>+(3 bis 5)% zu maximaler Kältewiderstand
+                                        <br>+(3 bis 5)% zu maximalem Blitzwiderstand <br>+(3 bis 5)% zu maximaler Feuerwiderstand
+                                        <br>+(30 bis 40)% Bonus auf Geschicklichkeit <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Der Spezialeffekt ist nicht stapelbar, wenn du diese Waffe doppelt führst.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Affenkönigs Bar
+                                        <br>
+                                        <a href="weapons.htm#m11">
+                                            Mythischer Arkane Stab
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/monkey_king_bar.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="ORANGE">+(25 bis 50)% Basis-Renn-/Gehgeschwindigkeit</font><br>
+                                        +(200 bis 300)% Verbesserter Schaden<br>25 % Chance, Level 10 Zorn des Affenkönigs beim Angriff zu wirken<br>+(50 bis 70)% Erhöhte Angriffsgeschwindigkeit
+                                        <br>+150 zu Minimaler Schaden bei Angriffen <br>+250 zu Maximaler Schaden bei Angriffen
+                                        <br>+(40 bis 60)% Physischer Schaden als Leben entzogen<br>Fügt 400%-500% Blutungsschaden über 2 Sekunden hinzu<br>-100% Zielverteidigung <br>+(15 bis 25)% Ausweichchance<br>+1 zu Affensprung des Königs<br>+(40 bis 50)% Bonus auf Geschicklichkeit<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        *Zorn des Affenkönigs ist ein Spezialangriff, der einen Steinhagel in gerader Linie niedergehen lässt; jeder Stein verursacht 150 % Waffenschaden in einem kleinen Bereich.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <br>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Doomfletch's Prisma
+                                        <br>
+                                        <a href="weapons.htm#m01">
+                                            Mythischer Scharfschützenbogen
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/doomfletchsprism.png" style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Erhalte 25 % der Boni auf physischen Angriffsschaden als zusätzlichen Schaden jedes Elements<br>
+                                            Tödlicher Schlag kann auf den umgewandelten Schaden wirken
+                                        </FONT>
+                                        <br>+(100 bis 200)% Verbesserter Schaden<br>+(50 bis 100) zu Minimaler Schaden bei Angriffen<br>+(100 bis 150) zu Maximaler Schaden bei Angriffen<br>
+                                        8 % Chance, Level 20 Feuerverstärkte Pfeile beim Treffen zu wirken<br>8 % Chance, Level 20 Kälteverbesserter Pfeil beim Treffen zu wirken<br>8 % Chance, Level 20 Blitzverstärkter Pfeil beim Treffen zu wirken<br>+(2 bis 7) zu allen Fähigkeiten <br>+50% Erhöhte Angriffsgeschwindigkeit <br>+(30 bis 50) zu allen Attributen
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Buriza-Do Kyanon
+                                        <br>
+                                        <a href="weapons.htm#m02">
+                                            Mythische Odysseus Armbrust
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/burizadokyanon.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        Fügt 2000-3000 Kälteschaden über 40 Sekunden hinzu<br>5 % Chance, Level 1 Blizzardkanone* beim Treffen zu wirken<br>5 % Chance, Level 20 Kälteblitz beim Treffen zu wirken<br>+200% Erhöhte Angriffsgeschwindigkeit <br>+3% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>+3 zu Maximal Schaden (Basierend auf Charakterlevel)<br>+50 zu Minimaler Schaden bei Angriffen <br>+100 zu Maximaler Schaden bei Angriffen <br>-(40 bis 50) % auf gegnerischen Kältewiderstand <br>-2 auf maximale Armbrustbolzen<br>+(75 bis 100)% Gesamtschaden mit Armbrüsten<br> Kann nicht eingefroren werden <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        Blizzardkanone ist ein Spezialangriff, der ein schnelles Geschoss abfeuert, das 150 % Waffenschaden als Kälteschaden verursacht und mehrfach treffen kann. Getroffenen Gegnern wird der Kältewiderstand eine Sekunde lang um 50 % gesenkt, und der Effekt wirkt gegen kälteimmune Gegner mit 100 % Wirksamkeit. Dieser Effekt kann die Großen Übel einfrieren.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Duriels Klauen des faulenden Schmerzes
+                                        <br>
+                                        <a href="weapons.htm#m13">
+                                            Mythische Scheren Suwayyah
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/duriels_claws_of_festering_agony.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        Stufe (30 bis 50) Heilige Kälte Aura beim Anlegen<br>2% Chance, Level 60 Klingen des Eises Entladung beim Treffen zu wirken<br>17% Chance, Level 1 Ausführen Entladung bei Nahkampfangriff zu wirken<br>17% Chance, Level 60 Feuerfäuste Entladung zu wirken, wenn du einen Feind tötest<br>17% Chance, Level 60 Klingen des Donners Entladung bei Nahkampfangriff zu wirken<br>+(30 bis 50)% Schnellere Bewegung/Gang <br>+2% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>+75 zu Minimaler Schaden bei Angriffen <br>+125 zu Maximaler Schaden bei Angriffen
+                                        <br>-(20 bis 30) % auf gegnerischen Feuerwiderstand <br>-(20 bis 30) % auf gegnerischen Kältewiderstand <br>-(20 bis 30) % auf gegnerischen Blitzwiderstand <br>-(20 bis 30) % auf gegnerischen Giftwiderstand <br>+(40 bis 80)% zu Kälteschaden durch Zauber <br </font>
+                                    </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Eisklingen-Entladung ist ein Proc, der eine Entladung von Eisklingen mit 3 Ladungen simuliert.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Imperius' Unsterbliche Wut
+                                        <br>
+                                        <a href="weapons.htm#m07">
+                                            Mythischer Dimensionaler Splitter
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/imperius_undying_wrath.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Erhalte 1 % Blitzzauberschaden pro 100 Stärke, wenn du<br>Schaden erleidest, für 5 Sekunden<br>Dieser Effekt kann bis zu 25-mal gestapelt werden<br>Blitzzauberschaden durch Energie wirkt nicht mehr</FONT><br>+(2 bis 4) zu allen Fähigkeiten <br>+(80 bis 100)% Schnellere Bewegung/Gang
+                                        <br>+(40 bis 50)% Schnellere Zaubergeschwindigkeit <br>-(40 bis 50) % auf gegnerischen Blitzwiderstand <br>+(50 bis 65) zu Stärke <br>+(160 bis 200) zu Mana <br>Erhöhe Maximale Mana +(40 bis 50)% <br>+(8 bis 10)% zu maximalem Blitzwiderstand <br>+(25 bis 30)% Bonus auf Stärke <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Rathmas ewige Herrschaft
+                                        <br>
+                                        <a href="weapons.htm#m14">
+                                            Mythos Zeremonialdolch
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathmas_eternal_reign.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Wenn du mindestens 1000 Vitalität hast, können deine erweckten Skelette<br>und dein beschworener Skelettkönig Verstärkte Giftwaffe* einsetzen
+                                        </FONT><br>+(2 bis 4) zu allen Fähigkeiten <br>+(15 bis 25)% zu Beschwörung Physische und Magische Widerstände
+                                        <br>+(20 bis 30)% zu Beschwörung Leben <br>+(40 bis 50)% zu Beschwörungsschaden <br>-(40 bis 50) % auf gegnerischen Giftwiderstand <br>+1 zu Teleportieren<br>+(30 bis 50) zu allen Attributen
+                                        <br>+(40 bis 50)% Bonus auf Vitalität <br>Physischer Widerstand: +(15 bis 20)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Verstärkte Giftwaffe ist eine stärkere Version der normalen Giftwaffe.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Der Erntewagen des Grim Reapers
+                                        <br>
+                                        <a href="weapons.htm#m05">
+                                            Mythischer Seelenzerstörer
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src="./images/mythical-uniques/the grim reaper's harvester.png"
+                                        style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">Du kannst +(2 bis 3) zusätzliche Skelettkönige ohne Abklingzeit beschwören<br>Du kannst keine anderen Diener mehr beschwören oder erwecken<br>
+                                            Untote Raserei hat 0 Abklingzeit und Seelenernte gewährt<br>pro Stufe 15 % zusätzlichen physischen Schaden und 5 % Beschwörungsschaden<br></font>+(300 bis 400)% Verbesserter Schaden<br>+(4 bis 7) zu allen Fähigkeiten <br>+(60 bis 75)% Erhöhte Angriffsgeschwindigkeit <br>+100 zu Minimaler Schaden bei Angriffen <br>+150 zu Maximaler Schaden bei Angriffen
+                                        <br>+(10 bis 20)% zu Beschwörung Physische und Magische Widerstände <br>+(25 bis 30) zu Seelen ernten (Nur für Nekromanten)<br>Alle Widerstände +(50 bis 60) <br>+(8 bis 10) % Elementarabsorption <br>Fluchdauer um 100% reduziert <br>+(250 bis 300) Leben nach jedem Kill<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Alle anderen Beschwörungen schließen auch Beschwörungen anderer Klassen als des Totenbeschwörers ein.<br>
+                                    Beschwörungsschaden zählt nur im Moment der Beschwörung, daher musst du deine Skelettkönige erneut beschwören, während Seelenernte aktiv ist, damit der Bonus wirkt.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Mephistos Albtraum
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythische Magische Klinge
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/mephistos_nightmare.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Mit mindestens 1000 % Feuer-, Kälte- und Blitzwiderstand zusammen<br>kann diese Waffe bis zu fünfmal mehr Hydren beschwören</FONT><br>2 % Chance, Level 60 Blitz-Hydra beim Treffen zu wirken<br>+(40 bis 50)% Erhöhte Angriffsgeschwindigkeit <br>-(50 bis 65) % auf gegnerischen Blitzwiderstand <br>+(200 bis 300) zu Leben <br>+(200 bis 300) zu Mana
+                                        <br>Erhöhe Maximale Mana +(40 bis 50)% <br>+(4 bis 7)% zu maximaler Giftschutz <br>+(4 bis 7)% zu maximaler Kältewiderstand <br>+(4 bis 7)% zu maximalem Blitzwiderstand <br>+(4 bis 7)% zu maximaler Feuerwiderstand <br>Alle Widerstände +(80 bis 100) <br>Physischer Widerstand: +(20 bis 30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Der Vorbote der Apokalypse des Dreieinigen
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythischer Versteinerter Stab
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/the_triune_harbinger_of_apocalypse.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Dieser Gegenstand kann bis zu 10-mal verdorben werden<br>Erhöht den Schaden des Triumvirat-Orbs um 10 % pro Verderbnis</FONT><br>
+                                        +(2 bis 4) zu allen Fähigkeiten <br>+(80 bis 100)% Schnellere Bewegung/Gang <br>+(40 bis 50)% Schnellere Zaubergeschwindigkeit <br>Erhöhe Maximale Mana +(40 bis 50)% <br>Mana regenerieren +(200 bis 300)% <br>+(75 bis 100) zu Energie <br>
+                                        Feuerwiderstand +(50 bis 75)% <br>Kältewiderstand +(50 bis 75)% <br>Blitzwiderstand +(50 bis 75)% <br>
+                                        +(30 bis 40)% zu Feuerzauberschaden <br>+(30 bis 40)% zu Kälteschaden durch Zauber <br>+(30 bis 40)% zu Blitzzauberschaden <br>
+                                        -(15 bis 25) % auf gegnerischen Feuerwiderstand <br>-(15 bis 25) % auf gegnerischen Kältewiderstand <br>-(15 bis 25) % auf gegnerischen Blitzwiderstand <br>
+                                        +(10 bis 20) zu Triumvirat-Orb
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Der Triumvirat-Orb ist eine langsame Kugel, die dreielementare Strahlen auf nahe Gegner abfeuert. Verderbnisse anderer Gegenstände zählen ebenfalls zum Schaden des Triumvirat-Orbs.
+                                    <br><br>
+                                    Dieser Gegenstand wurde von TiltedPrimate im ESR-Discord als Gewinner des Wettbewerbs für mythische Unikate entworfen.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Orion
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythischer Alter Bogen
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orion.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            Angriffe haben eine 10% Chance, dreimal mehr Gesamtschaden zu verursachen.</FONT><br>15% Chance, Level 40 Blitzverstärkter Pfeil beim Treffen zu wirken<br>+3% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>+(100 bis 200) zu Maximaler Schaden bei Angriffen <br>+(500 bis 1000) zu Trefferwertung
+                                        <br>-(20 bis 30) % auf gegnerischen Blitzwiderstand
+                                        <br>+100% Tödlicher Schlag
+                                        <br>+(20 bis 30)% Bonus auf Geschicklichkeit <br>+(10 bis 20) zu Sternenriss<br>
+                                        +(10 bis 20) zu Sternenregen<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Sternenriss <font color="RED">kann keinen direkten Schaden verursachen.</font> Du musst leicht am Gegner vorbeizielen.<br><br>
+                                    Dieser Bogen ist inspiriert von der <a
+                                        href="https://ffylands.fandom.com/wiki/Orion">Orion</a>
+                                    Waffe aus dem Borderlands-2-Mod Fight For Your Life Lands, die wiederum von der gleichnamigen Waffe aus Borderlands 1 inspiriert war.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Athuluas letzter Hunt
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythische Matriarchale Wurfspieß
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/athulua_final_hunt.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            Scheiterhaufen-, Frost- und Pestspeer sowie Blitzwut werfen doppelt so viele Speere, wenn das Leben unter 33 % liegt
+                                        </FONT><br>
+                                        3% Chance, Level 40 Innerer Blick beim Treffen zu wirken<br>
+                                        +(2 bis 4) zu Wurf- und Speerfähigkeiten (Nur Amazone)<br>
+                                        +(2 bis 4) zu Amazonen-Fähigkeitsstufen<br>
+                                        +(80 bis 100)% Schnellere Bewegung/Gang<br>
+                                        +(30 bis 40)% Erhöhte Angriffsgeschwindigkeit<br>
+                                        -(20 bis 30) % auf gegnerischen Feuerwiderstand<br>
+                                        -(20 bis 30) % auf gegnerischen Kältewiderstand<br>
+                                        -(20 bis 30) % auf gegnerischen Blitzwiderstand<br>
+                                        -(20 bis 30) % auf gegnerischen Giftwiderstand<br>
+                                        +(5 bis 10)% Ausweichchance<br>
+                                        Elementarabsorption (2 bis 3)%<br>
+                                        +(50 bis 100) Leben nach jedem Kill<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Rathmas endlos blutende Wirbelsäule
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythischer Walfänger
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathma_endlessly_bleeding_spine.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Jeder Stapel von Blutermächtigung gewährt 10 maximalen Schaden, 2 % Angriffsgeschwindigkeit und 2 % Lebensraub auf Kosten von 10 Leben pro Sekunde pro Stapel. Hält 3 Sekunden<br>
+                                            Maximale Stapel: 500
+                                        </FONT><br>+(300 bis 400)% Verbesserter Schaden<br>15% Chance, Level 1 Blutermächtigung beim Treffen zu wirken<br>8% Chance, Level 1 Blutiger Speer beim Treffen zu wirken<br>2% Chance, Level 60 Schaden verstärken beim Treffen zu wirken<br>+75 zu Minimaler Schaden bei Angriffen
+                                        <br>+125 zu Maximaler Schaden bei Angriffen <br>+2 zu Maximaler Schaden bei Angriffen (Basierend auf Charakterlevel)<br>-(40 bis 50)% Zielverteidigung <br>+(20 bis 40)% Physischer Schaden als Leben entzogen
+                                        <br>Fluchdauer um (40 bis 50)% reduziert
+                                        <br>(20 bis 30) % Wiederbeleben als: Wiedergänger der Verderbnis<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Blutiger Speer ist ein Geschoss mit 125 % Waffenschaden, das standardmäßig durchschlägt.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Yaerius' Himmlisches Signalfeuer
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythologische alte Splitter
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/yaeriuscelestialbeacon.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Du hast beim Treffen eines Gegners eine geringe Chance, Feurige Leuchtfeuer des Lichts auf dem Schlachtfeld zu beschwören, die beim Aufheben 15 % physischen Gesamtschaden und 15 % maximales Leben gewähren<br>Dieser Effekt ist bis zu 20-mal stapelbar und hält 2 Sekunden
+                                        </FONT><br>1% Chance, Level 1 Himmlische Ermächtigung beim Treffen zu wirken<br>8% Chance, Level 60 Blitzverstärkter Pfeil beim Treffen zu wirken<br>8% Chance, Level 40 Feuerverstärkte Pfeile beim Treffen zu wirken<br>+(40 bis 50)% Erhöhte Angriffsgeschwindigkeit <br>+3% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>+3 zu Maximaler Schaden bei Angriffen (Basierend auf Charakterlevel)<br>+(200 bis 400)% Bonus auf Trefferwertung <br>-(20 bis 30) % auf gegnerischen Blitzwiderstand <br>-(20 bis 30) % auf gegnerischen Feuerwiderstand <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Uralter Totem von Scosglen
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythischer Shillelagh
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/ancient_totem_of_scosglen.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Alle 5 Angriffe erhältst du Resonanz mit einem bestimmten Element, die dieses Element verstärkt und Flammenstoß, Wirbelsturm bzw. Frostexplosion dreimal so viele Geschosse abfeuern lässt
+                                            <br>Elementarzauber erzeugen jetzt Synergien über alle Elemente hinweg
+                                        </FONT><br>100% Chance, Level 2 Zeitraffer zu wirken, wenn du einen Feind tötest<br>
+                                        Stufe (10 bis 15) Scosglen-Resonanz Aura beim Anlegen<br>
+                                        +(2 bis 4) zu allen Fähigkeiten<br>
+                                        +(40 bis 50)% Schnellere Zaubergeschwindigkeit<br>
+                                        +(20 bis 40)% zu Feuerzauberschaden<br>
+                                        +(20 bis 40)% zu Kälteschaden durch Zauber<br>
+                                        +(20 bis 40)% zu Physischem Zauberschaden<br>
+                                        Alle Widerstände +(40 bis 60)<br>
+                                        +(40 bis 60) zu Mana nach jedem Kill<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Solange du mit einem bestimmten Element in Resonanz bist, erhältst du außerdem 5 % Zauberschaden dieses Elements pro Stufe der Aura Scosglen-Resonanz.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        El'druin, Excalibur des Lichts
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythisches Himmlisches Schwert
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/eldruin_excalibur_of_the_light.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Von El'Druin ausgelöste heilige Fertigkeiten verursachen Waffenschaden als Magieschaden<br>Erhalte 25 % verbesserten Schaden pro Punkt Lichtradius
+                                        </FONT><br>+(300 bis 400)% Verbesserter Schaden<br>10% Chance, Level 1 Heiliger Bolzen bei Nahkampfangriff zu wirken<br>
+                                        10% Chance, Level 1 Gesegneter Hammer bei Nahkampfangriff zu wirken<br>
+                                        10% Chance, Level 1 Himmelshammer bei Nahkampfangriff zu wirken<br>
+                                        +(40 bis 50)% Erhöhte Angriffsgeschwindigkeit<br>
+                                        +100 zu Minimaler Schaden bei Angriffen<br>
+                                        +125 zu Maximaler Schaden bei Angriffen<br>
+                                        +(1 bis 2) Leben beim Schlagen<br>
+                                        Magieresistenz +(15 bis 30)%<br>
+                                        Physischer Widerstand: +(15 bis 30)%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Von dieser Klinge ausgelöster Heiliger Blitz und Gesegneter Hammer verursachen 20 % Waffenschaden als Magieschaden und keinen festen Magieschaden. Faust der Himmel verursacht 125 % Waffenschaden als Magieschaden, ihre Nebenblitze 20 % Waffenschaden als Magieschaden
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Orpheus' Säule der Hoffnung
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythischer Magierstab
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orpheus.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE"><br>Jeder Stapel von Unterwelt-Ermächtigung gewährt 2 Sekunden lang 5 % Gift-, Magie- und physischen Fertigkeitsschaden<br>Maximale Stapel: 40
+                                        </FONT><br>1% Chance, Level 50 Zeitraffer zu wirken, wenn getroffen<br>50% Chance, Level 1 Unterweltsermächtigung zu wirken, wenn du einen Feind tötest<br>+(0 bis 8) zu allen Fähigkeiten <br>+(0 bis 30)% Fertigkeits-Abklingzeitverringerung <br>+(5 bis 10) auf zufällige Zauberbeherrschung (Gift/Magie/Physisch)<br>+(10 bis 20) zu Reise in die Unterwelt<br>Erhöhe Maximale Lebenspunkte +(30 bis 50)% <br>Schaden reduziert um 50 <br>Magischer Schaden um 50 reduziert <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Tsukuyomi's Sterbendes Licht
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythische Katana
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tsukuyomi_dying_light.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Angriffe haben eine 3% Chance, fünfmal mehr Gesamtschaden zu verursachen.
+                                        </FONT><br>+(200 bis 300)% Verbesserter Schaden<br>50% Chance, Level 1 Ausführen Entladung bei Nahkampfangriff zu wirken<br>
+                                        +2% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>
+                                        +(100 bis 125) zu Maximaler Schaden bei Angriffen<br>
+                                        -(25 bis 75)% Zielverteidigung<br>
+                                        +(30 bis 50)% Tödlicher Schlag<br>
+                                        +(10 bis 20) zu Schattenabstieg<br>
+                                        +(20 bis 30) zu Drache Klinge (Nur für Assassinen)<br>
+                                        Magieresistenz +(10 bis 20)%<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Hinrichtungs-Entladung entlädt eine voll aufgeladene Hinrichtung auf aktueller Stufe
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Void-Mondsichel der Tausend Schnitte
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythos Arreats Axt
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/void_crescent_of_a_thousand_cuts.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Jeder Stapel von Spektraler Verstümmelung senkt den Magiewiderstand des Gegners um 0.2 %<br>und lässt ihn 1 Sekunde lang 5 zusätzlichen physischen Schaden erleiden<br>Maximale Stapel: 1000</FONT><br>+(300 bis 400)% Verbesserter Schaden<br>
+                                        100% Chance, Level 1 Spektrales Verstümmeln beim Treffen zu wirken<br>
+                                        8% Chance, Level 30 Geworfene Axt beim Treffen zu wirken<br>
+                                        8% Chance, Level 30 Magisch verbesserte Axt beim Treffen zu wirken<br>
+                                        Fügt Angriffen 150-200 physischen Schaden hinzu <br>
+                                        Fluchdauer um (40 bis 50)% reduziert<br>
+                                        +(20 bis 30)% Physischer Schaden als Leben entzogen<br>
+                                        +(400 bis 500) zu Trefferwertung<br>
+                                        +(80 bis 100) Bonus auf Angriffswert<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Der zusätzliche physische Schaden durch Spektrale Verstümmelung ist ein fester, nicht veränderbarer Betrag an physischem Bonusschaden.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Baals niederträchtiges Flüstern
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythischer Kagekiri
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/baals_vile_whisper_2.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Erhalte 1% Kälteschaden pro 50 Geschicklichkeit</FONT><br>
+                                        2% Chance, Level 60 Eiszähne beim Treffen zu wirken<br>
+                                        4% Chance, Level 60 Kalter Schlag beim Treffen zu wirken<br>
+                                        1% Chance, Level 60 Mythologische Verfluchung beim Treffen zu wirken<br>
+                                        Fügt 150-250 Schaden zu Angriffen hinzu<br>
+                                        Fügt 2000-3000 Kälteschaden zu Angriffen hinzu über 20 Sekunden<br>
+                                        +150% Tödlicher Schlag<br>
+                                        +(30 bis 50)% Bonus auf Geschicklichkeit<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 20px 50px 20px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Mythisches Altern ist normales Altern und Schaden verstärken, 2 in 1. Es verlangsamt so stark wie normales Altern und senkt den physischen Widerstand so stark wie normales Schaden verstärken (mit derselben Stufenprogression). Außerdem senkt es den Kältewiderstand um denselben Betrag wie den physischen Widerstand.<br><br>
+
+                                    Dieses Shuriken ist vom gleichnamigen einzigartigen Elite-Shuriken aus dem Mod Diablo 2 Immersion inspiriert.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Leerentschmiede
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            Mythische Abgrundklinge
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/voidforge.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Erhalte 100 % des physischen Schadens als zusätzlichen Schaden eines zufälligen<br>Elements aus Feuer, Kälte und Blitz<br>Dein Elementar-Angriffsschaden kann jetzt kritisch treffen</FONT><br>
+
+                                        +(250 bis 500)% Verbesserter Schaden<br>
+                                        Fügt 150-250 Schaden zu Angriffen hinzu<br>
+                                        Maximales Leben erhöht um +(30 bis 40) %<br>
+                                        +(8 bis 10) Leben beim Schlagen<br>
+                                        +(4 bis 5) Mana beim Treffen<br>
+                                        +30% Erhöhte Angriffsgeschwindigkeit<br>
+                                        +(1 bis 10) zu Elementar Wut<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mythische einzigartige Rüstung
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Name
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Werte
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Eigenschaften
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Anmerkungen
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Kopfgeldjäger
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Mythisches Hanfband
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/headhunter.png" style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        2% Chance, Level 1 Trophäe der Geschwindigkeit zu wirken, wenn du einen Feind tötest<br>2% Chance, Level 1 Trophäe des physischen Schadens zu wirken, wenn du einen Feind tötest<br>2% Chance, Level 1 Trophäe des Zauberschadens zu wirken, wenn du einen Feind tötest<br>2% Chance, Level 1 Trophäe der Ernährung zu wirken, wenn du einen Feind tötest<br>2% Chance, Level 1 Trophäe der Widerstände zu wirken, wenn du einen Feind tötest<br>2% Chance, Level 1 Statustrophäe zu wirken, wenn du einen Feind tötest<br>2% Chance, Level 1 Trophäe aller Fähigkeiten zu wirken, wenn du einen Feind tötest<br>+(80 bis 100) zu Stärke <br>+(80 bis 100) zu Geschicklichkeit <br>+(150 bis 200) zu Leben <br>Erhöhe Maximale Lebenspunkte +(25 bis 30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Jeder Trophäeneffekt hält 20 Sekunden.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Avatar der mit der Natur durchdrungenen Hörner
+                                        <br>
+                                        <a href="armors.htm#m15">
+                                            Mythischer Traumgeist
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/avatar_of_natures_infused_horns.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Wenn du mindestens 1000 Geschicklichkeit hast, können deine Wölfe Ansprung* einsetzen
+                                        </FONT><br>
+                                        <FONT COLOR="ORANGE">+(1 bis 2) zu Nicht-Einzigartigen Beschwörungen Limit</FONT> <br>2% Chance, Level 50 Zeitstopp zu wirken, wenn Schaden erlitten wird<br>+(1 bis 3) zu allen Fähigkeiten <br>+(80 bis 100)% Schnellere Bewegung/Gang <br>+(10 bis 20)% zu Beschwörung Physische und Magische Widerstände
+                                        <br>+(25 bis 35)% zu Beschwörung Leben <br>+(20 bis 30)% zu Beschwörungsschaden <br>+(400 bis 500) zu Leben
+                                        <br>+(40 bis 50)% Bonus auf Geschicklichkeit <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Sowohl Geisterwölfe als auch Schreckenswölfe können Ansprung einsetzen. Ansprung ist ein starker Flächen- und Einzelzielangriff, der den Wolf direkt auf sein Ziel teleportiert, um es zu treffen
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Aegis der Korruption
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mythische Edelsteinrüstung
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/aegisofcorruption.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Wenn du 20 oder mehr verdorbene Gegenstände angelegt hast, wird der Gesamtschaden deiner<br>Direktschadenszauber mit Basis-Abklingzeit verdoppelt
+                                        </FONT><br>5% Chance, Level 40 Zyklonrüstung zu wirken, wenn Schaden erlitten wird<br>+(2 bis 3) zu allen Fähigkeiten <br>-(20 bis 30) % auf gegnerischen Feuerwiderstand <br>-(20 bis 30) % auf gegnerischen Kältewiderstand <br>-(20 bis 30) % auf gegnerischen Blitzwiderstand <br>-(20 bis 30) % auf gegnerischen Giftwiderstand <br>+(20 bis 30)% Fertigkeits-Abklingzeitverringerung <br>+(2000 bis 2500) Verteidigung <br>+(80 bis 100) zu Vitalität <br>Erhöhe Maximale Mana +(40 bis 50)%
+                                        <br>+(1 bis 5)% zu maximaler Giftschutz <br>+(1 bis 5)% zu maximaler Kältewiderstand <br>+(1 bis 5)% zu maximalem Blitzwiderstand <br>+(1 bis 5)% zu maximaler Feuerwiderstand <br>Alle Widerstände +(50 bis 60) <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Direktschadenszauber sind Zauber, die direkt gewirkt werden können (z. B. Feuerregen). Der Schadensbonus ist ein Gesamtmultiplikator auf alle Boni (effektiv doppelter Schaden)<br>Verdorbene Gegenstände können sowohl angelegte Gegenstände als auch Zauber sein (einzigartig oder nicht)
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Tathamets Erwachen<br>
+                                        (<font color="red">Feuer</font> Variante)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mythisches Diadem
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Dein Teleportieren wirkt bei Benutzung jetzt automatisch Elementarnova<br>
+                                            So gewirkte Elementarnovas gelten als auf alle Elemente abgestimmt,<br>aber ihre Stufe richtet sich nach der Stufe von Teleportieren</FONT>
+                                        <br>+(3 bis 5) zu Feuerfähigkeiten<br>-(20 bis 30) % auf gegnerischen Feuerwiderstand
+                                        <br>Erhöhe Maximale Lebenspunkte +(30 bis 50)%<br>Feuerabsorption +(8 bis 10)% <br>Leben wiederherstellen +(800 bis 1000)<br>+(40 bis 50)% Schnellere Trefferwiederherstellung<br>+1 zu Feuerbeherrschung<br>+3 zu Elementar Nova<br>Sockel (0 bis 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Tathamets Erwachen<br>
+                                        (<font color="blue">Kältezauber</font> Variante)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mythisches Diadem
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Dein Teleportieren wirkt bei Benutzung jetzt automatisch Elementarnova<br>
+                                            So gewirkte Elementarnovas gelten als auf alle Elemente abgestimmt,<br>aber ihre Stufe richtet sich nach der Stufe von Teleportieren</FONT>
+                                        <br>+(3 bis 5) zu Kälteskills<br>-(20 bis 30) % auf gegnerischen Kältewiderstand <br>
+                                        +(15 bis 20)% Fertigkeits-Abklingzeitverringerung<br>Kälteabsorption +(8 bis 10)% <br>Mana regenerieren +(200 bis 300)%<br>Kann nicht eingefroren werden<br>+1 zu Kältebeherrschung<br>+3 zu Elementar Nova<br>Sockel (0 bis 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Tathamets Erwachen<br>
+                                        (<font color="yellow">Blitz</font> Variante)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            Mythisches Diadem
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Dein Teleportieren wirkt bei Benutzung jetzt automatisch Elementarnova<br>
+                                            So gewirkte Elementarnovas gelten als auf alle Elemente abgestimmt,<br>aber ihre Stufe richtet sich nach der Stufe von Teleportieren</FONT>
+                                        <br>+(3 bis 5) zu Blitzfähigkeiten<br>-(20 bis 30) % auf gegnerischen Blitzwiderstand
+                                        <br>
+                                        Erhöhe Maximale Mana +(30 bis 50)%<br>Blitzabsorption +(8 bis 10)% <br>Alle Widerstände +(40 bis 60)<br>+(5 bis 10)% Ausweichchance<br>+1 zu Blitzbeherrschung<br>+3 zu Elementar Nova<br>Sockel (0 bis 2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        Die Seelenmaschine<br>
+                                        <a href="armors.htm#m06">
+                                            Mythische leichte Rüstung
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_soul_engine.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Dein maximales Leben beträgt 1<br>
+                                            Du bist immun gegen Gift</FONT>
+                                        <br>17% Chance, Level 60 Kalte Welle zu wirken, wenn du einen Feind tötest<br>
+                                        Stufe (60-100) Energieschild Aura beim Anlegen<br>
+                                        +20% Fertigkeits-Abklingzeitverringerung<br>
+                                        +(5 bis 10)% Ausweichchance<br>
+                                        -(20 bis 40) % auf gegnerischen Kältewiderstand<br>
+                                        +(10 bis 20) zu Unterkühlung<br>
+                                        +1 zu Kältebeherrschung<br>
+                                        +(400 bis 500)% Verbesserte Verteidigung<br>
+                                        Maximales Mana erhöht um +(30 bis 50) %
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Unterkühlung ist das Kälte-Gegenstück zu Rechtschaffenem Feuer: Sie verbraucht Mana statt Leben, um sich zu erhalten, und lässt sich durch Kältewiderstand und Absorption abmildern.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mythischer einzigartiger Schmuck
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Name
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Werte
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Eigenschaften
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Anmerkungen
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Mythical Hochlord's Zorn
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Amulett
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mythical_highlords_wrath.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Du hast 10% Chance, dreimal mehr Gesamtschaden zu verursachen.
+                                        </FONT><br>+2 zu allen Fähigkeiten <br>Leben wiederherstellen +(800 bis 1500) <br>Mana regenerieren +(120 bis 200)% <br>Magieresistenz +(10 bis 15)% <br>Alle Widerstände +(30 bis 50)
+                                        <br>Physischer Widerstand: +(10 bis 15)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Der Effekt des dreifachen Schadens gilt für jeden verursachten Schaden aus allen Quellen. Dazu gehören Angriffe, Zauber, heilige Auren usw. Der Effekt wirkt multiplikativ mit kritischem und tödlichem Schlag, aber additiv mit dem Armbrust-Bonusschaden (sowie anderen ähnlichen Effekten, etwa den exklusiven Fertigkeiten der Zauberin).
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Die Bande, die verbinden<br>
+                                        <a href="armors.htm#m10">
+                                            Ring
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_ties_that_bind_fire.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Das Tragen zweier verschiedener Varianten von Die Bande, die binden<br>verdoppelt die Stärke ihrer Eigenschaften
+                                        </FONT><br>
+                                        Fügt 400-600 Feuerschaden zu Angriffen hinzu<br>
+                                        +30 % Feuerzauberschaden<br>
+                                        Feuerwiderstand +50%<br>
+                                        +15% Fertigkeits-Abklingzeitverringerung<br>
+                                        Erhöhe Maximale Lebenspunkte +30%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Den Ring gibt es in einer von 7 Varianten. Jede Variante hat einige Grundwerte (Elementarschaden, Widerstand, Zauberschaden) und einige Sonderwerte (z. B. maximales Leben, Abklingzeitverringerung usw.). Das Tragen zweier <strong>verschiedener</strong> Ringe verdoppelt die Stärke ihrer Modifikatoren.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Seelengefäß
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Amulett
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/vessel_of_souls.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            <FONT COLOR="ORANGE">Eine geheimnisvolle Kraft strömt von innen aus, du kannst die gefangenen Seelen hören...<br>Das Elend der Seelen ist so stark, dass du das Artefakt derzeit nicht anlegen kannst</FONT>
+                                        </FONT><br>
+                                        +(0 bis 2) zu Amazonen-Fähigkeitsstufen<br>
+                                        +(0 bis 2) zu Assassinen-Fähigkeitsstufen<br>
+                                        +(0 bis 2) zu Barbarian-Fähigkeitsstufen<br>
+                                        +(0 bis 2) zu Druiden-Fähigkeitsstufen<br>
+                                        +(0 bis 2) zu Nekromanten-Fähigkeitsstufen<br>
+                                        +(0 bis 2) zu Paladin-Fähigkeitsstufen<br>
+                                        +(0 bis 2) zu Zauberinnen-Fähigkeitsstufen<br>
+                                        Kann nicht eingefroren werden (50 % Chance, zu erscheinen)<br>
+                                        +(50 bis 200) zu Leben<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Das Seelengefäß ist ein besonderes mythisches Unikat, das Organe verzehren kann, um verschiedene Boni zu erhalten.<br>Sieh dir die <a href="./vessel_of_souls.htm">Seelengefäß</a> Seite an, dort findest du eine vollständige Liste der Boni.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Glut der Schöpfung
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            Juwel
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/ember of creation.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 60
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        +1 auf zufällige Klassenfertigkeit<br>
+                                        +20 auf benötigte Stufe
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Die Glut der Schöpfung kann die allermeisten Klassenfertigkeiten erhalten, außer einigen, die andere Klassen nicht nutzen können (z. B. Psychischer Hammer, Gedankenschlag, Fallen), weil diesen Klassen die nötigen Animationen fehlen, oder Fertigkeiten, die Klassenwaffen erfordern (z. B. Auflade-Fertigkeiten).
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Mythische Unikate mit festen Dropquellen
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Name
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Werte
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Eigenschaften
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    Anmerkungen
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Ewiger Sanduhr der zeitlosen Sande
+                                        <br>
+                                        <font color="#928A70" style="text-decoration: underline;">Großer Amulett</font>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/hgc.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Du hast eine kleine Chance, für 3 Sekunden die maximale Abklingzeitreduzierung bei einem Kill zu erhalten.
+                                        </FONT><br>5 % Chance, Level 1 Macht der zeitlosen Sande zu wirken, wenn du einen Gegner tötest<br>+1 zu allen Fähigkeiten<br>+(20 bis 40)% Schnellere Bewegung/Gang <br>+(20 bis 40)% Erhöhte Angriffsgeschwindigkeit
+                                        <br>+(20 bis 40)% Schnellere Zaubergeschwindigkeit <br>+(20 bis 40)% Schnellere Trefferwiederherstellung <br>+(20 bis 40)% Schnellere Blockrate <br>+(10 bis 15)% Fertigkeits-Abklingzeitverringerung<br>+(0 bis 2)% zu maximaler Giftschutz <br>+(0 bis 2)% zu maximaler Kältewiderstand <br>+(0 bis 2)% zu maximalem Blitzwiderstand <br>+(0 bis 2)% zu maximaler Feuerwiderstand <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Erhältlich, indem man alle ewigen Ahnen am Rand der Ewigkeit tötet und die fallengelassenen Sanduhrteile transmutiert
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        Essenz des Lichkönigs
+                                        <br>
+                                        <a>
+                                            <font color="#928A70" style="text-decoration: underline;">Amulett</font>
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lichkingessence.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">Wenn du 15 oder mehr gesalbte Gegenstände hast, hast du bei einem Tötungsschlag eine Chance von 25 %, Folgendes zu erhalten:<br>1 % Feuerzauberschaden und 3-6 Feuerschaden für Angriffe pro 1 % Feuerwiderstand, den du hast
+                                        </FONT><br>5 % Chance, Level 25 Feuerverbesserte Axt beim Treffen zu wirken<br>+(1 bis 2) zu allen Fähigkeiten
+                                        <br>+(15 bis 25)% zu Feuerzauberschaden <br>-(10 bis 15) % auf gegnerischen Feuerwiderstand
+                                        <br>+(5 bis 15) zu Ermächtigte Verzauberung<br>+(20 bis 40) zu allen Attributen <br>+(4 bis 8)% zu maximaler Feuerwiderstand <br>Feuerwiderstand +(40 bis 80)% <br>Schaden reduziert um (10 bis 50)
+                                        <br>Kann nicht eingefroren werden <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Erhältlich durch das Töten des Lichkönigs<br>
+                                    Das Amulett hat insgesamt 6 Varianten, eine für jedes Element<br>
+                                    Auch wenn der Effekt sichtbar angezeigt wird, wirkt er erst, wenn du 15 gesalbte Gegenstände hast
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Frostmourne
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            Mythos-Todesklinge
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/frostmourne.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        1 % Chance, Level 60 Ewiger Winter* beim Treffen zu wirken<br>Unzerstörbar <br>+(3 bis 6) zu allen Fähigkeiten <br>+(30 bis 60)% Erhöhte Angriffsgeschwindigkeit <br>+3% Verbesserter Maximaler Schaden (Basierend auf Charakterlevel)<br>+200 zu Minimaler Schaden bei Angriffen <br>+250 zu Maximaler Schaden bei Angriffen <br>-(30 bis 60) % auf gegnerischen Kältewiderstand <br>+(10 bis 20) zu Permafrost Sturm<br>+(30 bis 60)% Bonus auf Alle Attribute <br>Elementarabsorption (8 bis 10)% <br>+(200 bis 400) Leben nach jedem Kill <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Erhältlich durch das Töten des Lichkönigs<br>
+                                    Ewiger Winter ist ein mächtiger Flächenzauber, der über Zeit sehr hohen Kälteschaden verursacht, den Kältewiderstand betroffener Gegner um 50 % senkt (mit 100 % Wirksamkeit gegen immune Monster) und ihre Bewegungs- bzw. Angriffs-/Zaubergeschwindigkeit um 150 %/50 % senkt.<br>
+                                    Ewiger Winter profitiert von der Zauberschadenserhöhung der Ägide der Verderbnis.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Rathmas ewiger Schädel
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            Kleiner Zauber
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/rathma_eternal_skull.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    Gegenstandsstufe: 100
+                                    <br>
+                                    Benötigtes Level: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        1% Chance, Level 25 Zeitraffer zu wirken, wenn getroffen<br>+1 zu allen Fähigkeiten <br>+3 zu Untote Raserei<br>+17 zu Untote Raserei (Nur für Nekromanten)<br>+1 Zu <FONT
+                                            COLOR="RED">
+                                            Nur ein Exemplar tragbar<FONT COLOR="BLUE"></FONT>
+                                        </FONT><br>Fluchdauer um (20 bis 30)% reduziert <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    Erhältlich durch das Töten von Rathma.<br>
+                                    Kann aufgewertet werden, indem man Rathma und Kor'nac, den Hohlen Apostel, innerhalb einer Minute nacheinander tötet, und zwar auf <font color="RED">/players 8</font> und den Zauber mit sich selbst transmutiert. Der Zauber erhält +(10 bis 20) auf Kor'nac, den Hohlen Apostel, erwecken.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 3.6 資料庫
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35486;&#35328;"><select id="esr-lang-zhTW" aria-label="&#35486;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW" selected>&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhTW",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhTW');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本資訊</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日誌]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[護甲]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前綴]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[後綴]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金護甲]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話暗金]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套裝]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石/符文]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石之語]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之語]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[方塊配方]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地圖]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速計算器]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查詢]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系統</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化結果]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油結果]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[終局地圖]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[靈魂容器]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[進階職業]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[擊殺帳簿]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵與外部技能資訊]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器專精]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破壞神 II：獄火重生 全面轉換模組</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">昇華</font> 是能塑造你玩法的強大專精，會給予獨特的技能與加成。<br>
+                            昇華是透過一個名為 <font color="orange">統治之石</font> 的特殊護身符給予，而它只有在完成數場特殊戰鬥後才能取得。<br>
+                            統治之石可以透過完成特定挑戰進一步升級（也就是繼續昇華），其中一些挑戰與非常困難的終局內容有關。<br>
+                            昇華共有 5 個階層，每個挑戰都比前一個更難，但加成也更強。<br>
+                            統治之石 <font color="red"><strong>無法與其他角色共用</strong>
+                            </font>。同一時間只能裝備一顆統治之石。<br>
+                            不用說，每個階層都只能達成一次。不過你可以依任意順序達成。<br>
+                            統治之石無法以一般方式修改（無法墮落、受膏、拆解成楓葉等）。<br>
+                            由於引擎限制，死亡後 <font color="red">你必須重新裝備</font> 統治之石，才能恢復加成。<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[挑戰]</a>
+            <a href="#ascendancies">[進階職業]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>第 1 階層挑戰</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            若要取得 <font color="orange">統治之石</font>，你需要擊殺 5 個特殊的超級精英 <font color="red">（地獄難度）</font> ，牠們散布在庇護之地各處，<br>並轉化牠們各自掉落的元素寶珠，以取得
+                            <font color="orange">創造之球</font>.<br>
+                            接著可以把寶珠與特定顏色的寶石一起轉化，解鎖你選擇的昇華。提示：第 1、2、3 幕各有一個超級精英。第 5 幕有 2 個，第 4 幕沒有。
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            2 瑕疵藍寶石<br>
+                            2 瑕疵黑曜石<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">戰鬥法師升華石<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            1 瑕疵黑曜石<br>1 瑕疵藍寶石<br>1 瑕疵綠寶石<br>1 瑕疵紅寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">覺醒的升華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            2 瑕疵黑曜石<br>2 瑕疵綠寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">劍術大師崇拜之石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            2 瑕疵綠寶石<br>2 瑕疵紅寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">遊牧者的崛起石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            2 瑕疵黑曜石<br>2 瑕疵紅寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">鐵矛升華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            2 瑕疵綠寶石<br>2 瑕疵藍寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">秘法師崛起石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            2 瑕疵紅寶石<br>2 瑕疵藍寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">靈魂守護者崇高之石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            4 瑕疵綠寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">神射手升華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            4 瑕疵藍寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">星之出生的升華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            1 瑕疵紅寶石<br>1 瑕疵黑曜石<br>1 瑕疵藍寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">血法師的昇華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            4 瑕疵紅寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">生命破壞者崇高石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            1 瑕疵紅寶石<br>1 瑕疵黑曜石<br>1 瑕疵綠寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">世界塑造者的升華石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            1 瑕疵黑曜石<br>1 瑕疵綠寶石<br>1 瑕疵藍寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">姿態舞者的超越石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            1 瑕疵綠寶石<br>1 瑕疵紅寶石<br>1 瑕疵藍寶石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">法力守護者崇高石<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">創造之球</font><br>
+                            4 瑕疵黑曜石
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">狂戰士的崛起石<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 2 階層挑戰</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            在地獄難度擊殺尼拉塞克領域中的尼拉塞克，並把統治之石與其自身轉化，即可達成第二階層。<br>
+                            <font color="red">必須在角色身上的漩渦效果仍在時進行轉化。</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">統治之石</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            已升級為第 2 階層
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 3 階層挑戰</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            擊殺超級崔斯特姆的所有頭目 <font color="red">（彼此間隔不超過一分鐘，且不能死亡）， </font>並把統治之石與楓葉一起轉化，即可達成第三階層。<br>即使擊殺最後一個頭目後角色身上仍有漩渦效果，若距離擊殺第一個頭目已超過 1 分鐘，也不會成功。
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            楓葉
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            已升級為第 3 階層
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 4 階層挑戰</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            收集 10 顆從任何終局地圖頭目身上掉落的 <font color="ORANGE">原始靈魂石
+                            </font> ，即可達成第4階層。統治之石一次只能與一顆原始之石轉化。在統治之石中收集到 10 顆原始靈魂石後，就能與 2 片楓葉一起轉化，昇華到第 4 階層。<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            <font color="orange">捕獲的原始靈魂石：10/10</font><br>
+                            2 片楓葉
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            已升級為第 4 階層
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>第 5 階層挑戰</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            擊殺任何第 5 階層地圖的頭目，並把統治之石與 3 片楓葉一起轉化，即可達成第五階層。<br>
+                            <font color="red">必須在角色身上的漩渦效果仍在時進行轉化。</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸入</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> 輸出</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            3 片楓葉
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">統治之石</font><br>
+                            已升級為第 5 階層
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[挑戰]</a>
+            <a href="#ascendancies">[進階職業]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">昇華</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+60 力量<br>+60 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+25% 力量加成<br>+25% 能量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每2%致命攻擊和每2%粉碎打擊獲得1%法術傷害<br>+25% 機率造成粉碎打擊<br>+25% 致命一擊<br><br>
+                    <font color="orange">第 4 階層</font><br>每 3% 致命一擊與壓碎性打擊，獲得 1% 總防禦加成*<br>+10 生命在打擊上<br>+15% 物理傷害吸取為魔法值<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>+50% 所有速度提升<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">戰鬥法師昇華</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*總防禦加成會與你的全部護甲值相乘。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">劍術大師昇華</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+60 力量<br>+60 以敏捷<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+25% 力量加成<br>+25% 速度加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 1% 物理抗性，獲得 10% 傷害強化<br>20% 物理抗性<br><br>
+                    <font color="orange">第 4 階層</font><br>每1%物理抗性獲得1%物理傷害吸取為生命<br>+40 至攻擊的最小傷害<br>+50 最高傷害提升至攻擊<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>15% 機率在攻擊時施放等級 20 投擲斧<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+60 以敏捷<br>+60 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+25% 速度加成<br>+25% 能量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 1% 速度，獲得 5 點法力*<br>+30% 所有速度提升<br><br>
+                    <font color="orange">第 4 階層</font><br>每 25% 速度，獲得擊中時 1 點法力*<br>+20 元素之怒（所有職業）<br>+5% 所有最大抗性<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>5% 機率在攻擊時施放等級 20 火焰增強箭<br>5% 機率在攻擊時施放等級 20 寒冷增強箭<br>5% 機率在攻擊時施放等級 20 閃電增強箭矢<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">奧術師昇華</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*每種速度（格擋、施法、移動、攻擊、恢復）分別計算。例如 +1% 所有速度，在昇華加成中算作 +5%。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">血法師昇華</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+45 力量<br>+45 生命力<br>+45 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+20% 力量加成<br>+20% 生命值加成<br>+20% 能量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 250 點生命獲得 1% 法術傷害，每 400 點生命獲得 1% 召喚物傷害<br>能量不再影響法術傷害或召喚物傷害<br>血魔法*<br>+200 生命值<br><br>
+                    <font color="orange">第 4 階層</font><br>擊殺時恢復2%最大生命值<br>+50% 更快的擊中恢復<br>+25% 物理抗性<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>+25% 召喚生命<br>最大生命提高 50%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*血魔法表示你現在改用生命來施放法術。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+30 所有屬性<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+15% 所有屬性加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 1000 點屬性，獲得 +1 所有技能*<br>+20% 所有速度提升<br>+30 所有屬性<br><br>
+                    <font color="orange">第 4 階層</font><br>每 100 點屬性，獲得 1 點元素與魔法吸收*<br>每 2 點屬性，獲得 1 點防禦*<br>+20 力量壓倒一切（所有職業）<br>毒素持續時間減少 +75%<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>10% 機率在受到攻擊時施放等級 60 毀滅<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">覺醒者昇華</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*門檻依屬性總點數計算（例如每項屬性都達到 250 時，就能獲得 +1 所有技能）。</font><br>
+        <font size="-2">**毀滅是一種毀天滅地的 6 元素新星（火焰/冰寒/閃電/毒素/物理/魔法），作用範圍涵蓋整個畫面，每道新星會造成轉換為對應元素的 50% 武器傷害，並造成會隨屬性總點數提升的各類型可觀法術傷害。它會擊退敵人，並在 2 秒內降低其所有抗性 25%。毒素新星不會造成武器傷害。</font><br>
+        <font size="-2" color="red">**毀滅只有在你目前生命低於 30% 時才能觸發。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">鐵弩昇華</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+60 力量<br>+60 生命力<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+25% 力量加成<br>+25% 生命值加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 10 點力量，獲得 1%-2% 流血傷害<br>此流血的持續時間依十字弓裝填速度的比例而定*<br>+150 力量<br>
+                    <font color="orange">第 4 階層</font><br>每200點力量擊中時獲得1點生命<br>+20% 更快的十字弓裝填時間<br>弩裝填速度上限降低 20%<br>+500 攻擊評價<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>2% 機率在攻擊時施放等級 40 內視<br>+25 銳化專注（所有職業）<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*流血持續時間等同於十字弓裝填速度的比例。無論你是否使用十字弓都適用。鐵弩的流血可能會被其他流血來源稀釋（類似毒素效果會互相稀釋）。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+75 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+30% 能量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 400 點法力，獲得 -1% 敵人的火焰、冰寒與閃電抗性<br>+400 生命法力<br><br>
+                    <font color="orange">第 4 階層</font><br>每5點法力獲得1點生命回復<br>+20 全能（所有職業）<br>+25% 所有速度提升<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>+1 到 傳送<br>+1 到所有技能<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">星辰之子昇華</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">破命者昇華</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+75 生命力<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+30% 生命值加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每缺少100點生命值，獲得1%法術傷害<br>增加最大生命 +30%<br><br>
+                    <font color="orange">第 4 階層</font><br>每失去100點生命獲得1點魔法和物理傷害減免<br>+1 陷阱上限<br>減少傷害 50<br>魔法傷害減少 50<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>+10 生命契約*<br>魔法抗性 +15%<br>物理抗性: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*生命契約是一個可切換的技能，每秒吸取你最大生命的 25%，並每級給予 10% 最大生命。生命契約不會讓你死亡。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+45 力量<br>+45 以敏捷<br>+45 生命力<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+20% 力量加成<br>+20% 速度加成<br>+20% 生命值加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 1% 元素抗性，攻擊獲得 2 點最大火焰、冰寒與閃電傷害*<br>火焰抗性 +50%<br>冰冷抗性 +50%<br>閃電抗性 +50%<br><br>
+                    <font color="orange">第 4 階層</font><br>每 30% 元素抗性，獲得 1% 物理與魔法抗性*<br>每 5% 元素抗性，獲得 1% 毒素抗性*<br>法術傷害：+50%**<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>擊中時有 2% 機率施放 1 級創造之怒***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">塑界者昇華</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*每種抗性分別計入加成門檻。例如，火焰、冰寒與閃電抗性各有 10% 時，你就能獲得 1% 物理抗性。</font><br>
+        <font size="-2">**法術傷害指火焰/冰寒/閃電/毒素/魔法/物理法術傷害，並會提高攻擊的固定傷害（物理法術傷害除外，它不會提高攻擊的物理傷害）。
+        </font><br>
+        <font size="-2">***創造之怒是一個中等範圍的三重元素新星技能，每道新星造成轉換為對應元素的 50% 武器傷害，並使敵人的元素抗性降低 30%。
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">靈魂守衛昇華</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+60 生命力<br>+60 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+25% 生命值加成<br>+25% 能量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 40 點能量，獲得 1% 毒素、魔法與物理法術傷害<br>+150 於能量<br><br>
+                    <font color="orange">第 4 階層</font><br>每 3 點能量獲得 1 點生命<br>魔法吸收 +10%<br>無法被冰凍<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>+1 到非獨特召喚限制<br>減少傷害 50<br>魔法傷害減少 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+45 力量<br>+45 以敏捷<br>+45 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+20% 力量加成<br>+20% 速度加成<br>+20% 能量加成<br><br>
+                    <font color="orange">第 3 階層*</font><br>
+                    傷害架式（紅）：5% 傷害強化與 1% 法術傷害<br>
+                    （力量、敏捷與能量合計每 75 點）<br>
+                    閃避架式（綠）：10% 所有速度與 1% 閃避<br>
+                    （力量、敏捷與能量合計每 1000 點）<br>
+                    恢復架式（藍）：+1 所有技能與 150 生命與法力補充<br>
+                    （力量、敏捷與能量合計每 1500 點）<br><br>
+                    <font color="orange">第 4 階層</font><br>來自所有姿態的加成效果提高 25%<br>+30% 力量加成<br>+30% 速度加成<br>+30% 能量加成<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>+50% 提升攻擊速度<br>+50% 更快施法速度<br>每次擊殺後 +100 生命<br>每次擊殺後 +50 生命法力<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">架式舞者昇華</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*你必須在操作子選單中設定切換架式的快捷鍵。</font></font><br>
+        <font size="-2">**你可以隨時切換架式，但架式只會依以下順序循環：紅 -&gt; 綠 -&gt; 藍。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">遊牧者昇華</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+60 以敏捷<br>+60 生命力<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+25% 速度加成<br>+25% 生命值加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每5%奔跑/行走速度加成或1%基礎奔跑/行走速度，獲得5點最大傷害<br>+75% 更快的跑步/行走<br>在1秒內造成150%-250%流血傷害<br><br>
+                    <font color="orange">第 4 階層</font><br>每200%奔跑/行走速度加成或40%基礎奔跑/行走速度，獲得5%閃避機率<br>+300 生命值<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>20% 機率在受到攻擊時施放等級 1 奔跑<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*疾竄是持續 1 秒的增益效果，提供 33% 閃避、100% 基礎跑步/行走速度、25% 攻擊的總最大物理傷害，並在持續期間回復 10% 最大生命。</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+75 以敏捷<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+30% 速度加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 1% 穿透，獲得 2% 攻擊準確率加成<br>每 2% 穿透，獲得 1 點最大傷害<br>+30 到 最小 傷害<br>+20 穿透（所有職業）<br><br>
+                    <font color="orange">第 4 階層</font><br>每1%穿透獲得3點活力<br>+75% 更快的跑步/行走<br>+20 閃避（所有職業）<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>15% 機率在攻擊時施放等級 20 箭頭<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">神射手昇華</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">法力守衛昇華</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+45 以敏捷<br>+45 生命力<br>+45 於能量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+20% 速度加成<br>+20% 生命值加成<br>+20% 能量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每 20% 法力恢復，獲得 1% 法術傷害<br>每 5% 法力恢復，攻擊獲得 1 點最小傷害<br>+5 擊中時法力<br>法力再生 +100%<br><br>
+                    <font color="orange">第 4 階層</font><br>每2%法力再生獲得1點法力<br>+20 能量護盾（所有職業）<br>+10% 最高毒素抗性<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>20% 機率在受到攻擊時施放等級 50 時間停止<br>毒素抗性 +75%<br>+20 的光照半徑<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">第 1 階層</font><br>+1 職業技能等級<br>+75 力量<br><br>
+                    <font color="orange">第 2 階層</font><br>+1 職業技能等級<br>+30% 力量加成<br><br>
+                    <font color="orange">第 3 階層</font><br>每吸取1%物理傷害作為生命，獲得3%最大傷害<br>+30 到 最大 傷害<br>+25% 物理傷害吸取為生命<br><br>
+                    <font color="orange">第 4 階層</font><br>每吸取5%物理傷害作為生命，獲得1%物理和魔法抗性<br>詛咒持續時間減少 100%<br><br>
+                    <font color="orange">第 5 階層</font><br>+3 職業技能等級<br>近戰攻擊時有 25% 機率施放 1 級蹂躪**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">狂戰士昇華</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*蹂躪是小到中等範圍的技能，對所有受影響的敵人造成 150% 武器傷害的物理傷害，並在 2 秒內使其物理抗性降低 30%。</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

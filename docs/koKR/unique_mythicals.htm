@@ -1,0 +1,2124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected 데이터베이스
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+            <a href="./ias-calculator.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+        </div>
+        <div style="width:100%;">
+
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                신화 고유 아이템은 다른 모든 아이템과 다른 기본 아이템을 사용하므로 도박으로 얻을 수 없습니다.<br>
+                                신화 고유 아이템은 드롭 레벨이 100+이므로 엔드게임 지도 지역에서만 드롭됩니다.<br>
+                                대부분의 신화 고유 아이템에는 고유한 플레이 스타일을 가능하게 하거나 기존 스타일을 강화하는 특수 효과나 발동 효과가 있습니다.<br>
+                                일부 신화 고유 아이템은 드롭처가 정해져 있습니다(예: 리치 왕의 아이템). 모든 신화 기본 아이템은 능력치가 조금 더 좋습니다. 물리 공격용 무기는 보통 기본 피해가 10% 더 높습니다. 주문 시전자용 무기는 보통 요구치가 낮거나 다른 작은 보너스가 있습니다.<br>
+                                모든 신화 기본 아이템은 요구 레벨이 조금 더 높습니다(보통 원본 기본 아이템보다 +3. 예: 신화 타이탄 망치의 원본은 타이탄 망치).<br>
+                                신화 고유 아이템은 <b>다시 굴릴 수 없습니다</b> . 드롭된 그대로가 전부입니다.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        신화 고유 무기
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=400 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    이름
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    능력치
+                                </font>
+                            </td>
+                            <td width=600 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    속성
+                                </font>
+                            </td>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    참고
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        메피스토의 의지
+                                        <br>
+                                        <a href="weapons.htm#m04">
+                                            신화적인 악마 지팡이
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mephistos_will.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">해골 마법사를 +(100~150)% 더 일으킬 수 있습니다<br>해골 전사를 더 이상 일으킬 수 없습니다</font><br>모든 기술에 +(2~4) 추가
+                                        <br>+(20~30)% 소환 생명력 <br>+(12~15)% 소환 물리 및 마법 저항력
+                                        <br>소환수 저항 +(30~40)% <br>적의 화염 저항 -(40~50)%
+                                        <br>적의 냉기 저항 -(40~50)% <br>적의 번개 저항 -(40~50)% <br>적의 독 저항 -(40~50)% <br>+(80~100) 에너지 증가
+                                        <br>+(25~30)% 에너지 보너스 <br>물리 저항: +(15~20)% <br>(50~60) 만큼 피해 감소 <br>+(25~30)% 경험치 증가 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        이나리우스의 무한 사유의 지팡이
+                                        <br>
+                                        <a href="weapons.htm#m12">
+                                            신화적인 세라픽 홀대
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/inarius_rod_of_infinite_thought.png"
+                                        style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">신성 오라가 25% 확률로 치명타를 일으켜,<br>에너지 50마다 총 피해가 1% 증가합니다</FONT><br>적중 시 5% 확률로 레벨 60 천상의 주먹 시전<br>+(2~4) 공격 오라 증가 (팔라딘 전용)<br>+(30~50)% 시전 속도 증가 <br>적의 화염 저항 -(30~40)% <br>적의 냉기 저항 -(30~40)% <br>적의 번개 저항 -(30~40)% <br>적의 독 저항 -(30~40)% <br>+(80~100)% 마법 주문 피해 증가 <br>최대 독 저항 +(4~8)% 증가 <br>최대 냉기 저항 +(4~8)% <br>+(4~8)% 최대 번개 저항 증가 <br>최대 화염 저항 +(4~8)% 증가 <br>+(40~50)% 에너지 보너스 <br>+(10~40)의 빛 반경 <br>소켓 (1~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        이 무기를 쌍수로 들어도 효과는 중첩되지 않습니다.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        영원한 빛, 새벽의 희망
+                                        <br>
+                                        <a href="weapons.htm#m17">
+                                            신화적인 천상의 홀
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lux_aeterna_hope_of_dawn.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        기술 시전 시 25% 확률로 레벨 60 별의 낙하를 시전합니다.<br>장착 시 (20~30) 구속 오라<br>모든 기술에 +(2~4) 추가 <br>+(40~50)% 시전 속도 증가 <br>+(50~65)% 마법 주문 피해 증가 <br>+(10~30) to 별의 낙하<br>모든 능력치 +(30~40) 증가 <br>+(200~300) 생명력 증가 <br>+(200~300)의 마나
+                                        <br>모든 능력치에 +(20~30)% 보너스 <br>+(20~40)의 빛 반경 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        묠니르
+                                        <br>
+                                        <a href="weapons.htm#m03">
+                                            신화적인 타이탄의 망치
+                                        </a>
+                                    </b>
+                                    <br><br>
+                                    <img src=".././images/mythical-uniques/mjolnir.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">힘 1당 최대 번개 피해 3 증가
+                                        </FONT><br>번개 피해 1-5000 추가<br>공격 시 15% 확률로 레벨 50 판결 시전<br>적중 시 5% 확률로 레벨 1 신화적인 혼돈 번개* 시전<br>+(80~100)% 더 빠른 이동/걷기
+                                        <br>공격에 대한 최소 피해 +100 증가
+                                        <br>공격에 대한 최대 피해 +150 증가 <br>적의 번개 저항 -(40~50)% <br>+(400~500) 힘 증가 <br>번개 흡수 +(8~10)%
+                                        <br>요구 사항 +500% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        신화의 혼돈 번개는 특별한 연쇄 번개로, 무기 피해의 150%를 번개 피해로 주고 적중 시 번개 2개로 갈라집니다. 각 번개는 최대 3번 연쇄합니다.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        나탈랴의 피로 물든 집행자
+                                        <br>
+                                        <a href="weapons.htm#m16">
+                                            신화적인 레이피어
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/natalyas_bloodied_rapier.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        적을 처치할 때 50% 확률로 레벨 40 순간 이동 타격를 시전합니다.<br>+(30~50)% 공격 속도 증가 <br>+3% 최대 피해 증가 (캐릭터 레벨 기준)<br>공격에 대한 최소 피해 +125 증가 <br>공격에 대한 최대 피해 +150 증가
+                                        <br>1%-150% 출혈 피해를 0.2초에 걸쳐 추가<br><br>+1 to 순간 이동 타격<br>+(40~50)의 민첩성 <br>최대 생명 증가 +(30~40)% <br>+(20~30)% 민첩성 보너스 <br>(50~60) 만큼 피해 감소
+                                        <br>+(150~225) 처치 후 생명력 회복 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Tal 라샤의 마지막 속삭임
+                                        <br>
+                                        <a href="weapons.htm#m08">
+                                            신화적인 균형의 단검
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tal_rashas_last_whisper.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">공격에 화염 피해 3-4, 냉기 피해 2-5, 번개 피해 1-7 추가<br>민첩 4마다<br>그림자 망토가 물리 저항 대신 원소 저항을 두 배의 효과로 관통합니다</FONT><br>적중 시 1% 확률로 레벨 60 그림자 망토 시전<br>적중 시 8% 확률로 레벨 15 불 강화 화살 시전<br>적중 시 8% 확률로 레벨 15 냉기 강화 화살 시전<br>적중 시 8% 확률로 레벨 15 번개 강화 화살 시전<br>+(40~50)% 공격 속도 증가 <br>최대 독 저항 +(3~5)% 증가 <br>최대 냉기 저항 +(3~5)%
+                                        <br>+(3~5)% 최대 번개 저항 증가 <br>최대 화염 저항 +(3~5)% 증가
+                                        <br>+(30~40)% 민첩성 보너스 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        이 무기를 쌍수로 들어도 특수 효과는 중첩되지 않습니다.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        원숭이 왕의 바
+                                        <br>
+                                        <a href="weapons.htm#m11">
+                                            신화적인 비전 지팡이
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/monkey_king_bar.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="ORANGE">+(25~50)% 기본 달리기/걷기 속도</font><br>
+                                        +(200~300)% 증가된 피해<br>공격 시 25% 확률로 레벨 10 원숭이 왕의 분노 시전<br>+(50~70)% 공격 속도 증가
+                                        <br>공격에 대한 최소 피해 +150 증가 <br>공격에 대한 최대 피해 +250 증가
+                                        <br>+(40~60)% 물리 피해 생명력으로 흡수됨<br>400%-500% 출혈 피해를 2초에 걸쳐 추가<br>-100% 목표 방어력 <br>+(15~25)% 회피 확률<br>+1 to 원숭이 왕의 도약<br>+(40~50)% 민첩성 보너스<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        *원숭이 왕의 분노는 직선으로 바위 비를 내리는 특수 공격으로, 각 바위가 작은 범위에 무기 피해의 150%를 줍니다.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <br>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        둠플렛치의 프리즘
+                                        <br>
+                                        <a href="weapons.htm#m01">
+                                            신화적인 명사수 활
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/doomfletchsprism.png" style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">공격 물리 피해 보너스의 25%를 각 원소의 추가 피해로 획득<br>
+                                            치명타가 변환된 피해에도 적용될 수 있습니다
+                                        </FONT>
+                                        <br>+(100~200)% 증가된 피해<br>공격에 대한 최소 피해 +(50~100) 증가<br>공격에 대한 최대 피해 +(100~150) 증가<br>
+                                        적중 시 8% 확률로 레벨 20 불 강화 화살 시전<br>적중 시 8% 확률로 레벨 20 냉기 강화 화살 시전<br>적중 시 8% 확률로 레벨 20 번개 강화 화살 시전<br>모든 기술에 +(2~7) 추가 <br>+50% 공격 속도 증가 <br>모든 능력치 +(30~50) 증가
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        부리자-도 캐논
+                                        <br>
+                                        <a href="weapons.htm#m02">
+                                            신화적인 오디세우스 석궁
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/burizadokyanon.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        40초 동안 냉기 피해 2000-3000 추가<br>적중 시 5% 확률로 레벨 1 블리자드 캐논* 시전<br>적중 시 5% 확률로 레벨 20 냉기 플래시 시전<br>+200% 공격 속도 증가 <br>+3% 최대 피해 증가 (캐릭터 레벨 기준)<br>+3 to 최대 피해 (캐릭터 레벨 기준)<br>공격에 대한 최소 피해 +50 증가 <br>공격에 대한 최대 피해 +100 증가 <br>적의 냉기 저항 -(40~50)% <br>최대 석궁 볼트 수 -2<br>+(75~100)% 석궁 총 피해<br> 얼음에 갇히지 않음 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        눈보라 대포는 무기 피해의 150%를 냉기 피해로 주는 빠른 투사체를 발사하는 특수 공격으로, 여러 번 적중할 수 있습니다. 적중한 적은 1초 동안 냉기 저항이 50% 감소하며, 냉기 면역 적에게도 100% 효율로 작용합니다. 이 효과는 대악마도 얼릴 수 있습니다.
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        두리엘의 썩어가는 고통의 발톱
+                                        <br>
+                                        <a href="weapons.htm#m13">
+                                            신화적인 가위 수와야
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/duriels_claws_of_festering_agony.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        장착 시 (30~50) 신성한 동결 오라<br>2% 확률로 적중 시 레벨 60 얼음의 칼날 방출를 시전합니다.<br>근접 공격 시 17% 확률로 레벨 1 실행 방전 시전<br>적을 처치할 때 17% 확률로 레벨 60 불의 주먹 방출를 시전합니다.<br>근접 공격 시 17% 확률로 레벨 60 천둥의 발톱 방전 시전<br>+(30~50)% 더 빠른 이동/걷기 <br>+2% 최대 피해 증가 (캐릭터 레벨 기준)<br>공격에 대한 최소 피해 +75 증가 <br>공격에 대한 최대 피해 +125 증가
+                                        <br>적의 화염 저항 -(20~30)% <br>적의 냉기 저항 -(20~30)% <br>적의 번개 저항 -(20~30)% <br>적의 독 저항 -(20~30)% <br>냉기 주문 피해 +(40~80)% 증가 <br </font>
+                                    </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    얼음 칼날 방출은 3충전짜리 얼음 칼날 방출을 모의하는 발동 효과입니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        임페리우스의 불멸의 분노
+                                        <br>
+                                        <a href="weapons.htm#m07">
+                                            신화적인 차원 조각
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/imperius_undying_wrath.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">피해를 받을 때 힘 100마다 번개 주문 피해 1% 획득<br>(5초 동안)<br>이 효과는 최대 25번까지 중첩됩니다<br>에너지에 의한 번개 주문 피해가 더 이상 적용되지 않습니다</FONT><br>모든 기술에 +(2~4) 추가 <br>+(80~100)% 더 빠른 이동/걷기
+                                        <br>+(40~50)% 시전 속도 증가 <br>적의 번개 저항 -(40~50)% <br>+(50~65) 힘 증가 <br>+(160~200)의 마나 <br>최대 마나 증가 +(40~50)% <br>+(8~10)% 최대 번개 저항 증가 <br>+(25~30)% 힘 보너스 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        라스마의 영원한 통치
+                                        <br>
+                                        <a href="weapons.htm#m14">
+                                            신화적인 의식 단검
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathmas_eternal_reign.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">활력이 1000 이상이면 일으킨 해골<br>과 소환한 해골 왕이 강화된 독 무기*를 사용할 수 있습니다
+                                        </FONT><br>모든 기술에 +(2~4) 추가 <br>+(15~25)% 소환 물리 및 마법 저항력
+                                        <br>+(20~30)% 소환 생명력 <br>+(40~50)% 소환 피해 <br>적의 독 저항 -(40~50)% <br>+1 to 텔레포트<br>모든 능력치 +(30~50) 증가
+                                        <br>+(40~50)% 생명력 보너스 <br>물리 저항: +(15~20)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    강화된 독 무기는 일반 독 무기의 강력한 버전입니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        죽음의 수확자
+                                        <br>
+                                        <a href="weapons.htm#m05">
+                                            신화적인 영혼 파괴자
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src="./images/mythical-uniques/the grim reaper's harvester.png"
+                                        style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">재사용 대기시간 없이 해골 왕을 +(2~3)기 추가로 소환할 수 있습니다<br>다른 하수인은 더 이상 소환하거나 일으킬 수 없습니다<br>
+                                            언데드 광란의 재사용 대기시간이 0이 되고, 영혼 수확은 레벨당<br>추가 물리 피해 15%와 소환수 피해 5%를 줍니다<br></font>+(300~400)% 증가된 피해<br>모든 기술에 +(4~7) 추가 <br>+(60~75)% 공격 속도 증가 <br>공격에 대한 최소 피해 +100 증가 <br>공격에 대한 최대 피해 +150 증가
+                                        <br>+(10~20)% 소환 물리 및 마법 저항력 <br>+(25~30) to 영혼 수확 (네크로맨서 전용)<br>모든 저항 +(50~60) <br>원소 흡수 +(8~10)% <br>저주 지속시간 100% 감소 <br>+(250~300) 처치 후 생명력 회복<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    다른 모든 소환수에는 강령술사가 아닌 직업의 소환수도 포함됩니다.<br>
+                                    소환수 피해는 소환하는 순간에만 반영되므로, 보너스를 적용하려면 영혼 수확이 활성화된 동안 해골 왕을 다시 소환해야 합니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        메피스토의 악몽
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화의 마법 검
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/mephistos_nightmare.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">화염, 냉기, 번개 저항의 합이 1000% 이상이면<br>이 무기는 히드라를 최대 5배까지 소환할 수 있습니다</FONT><br>적중 시 2% 확률로 레벨 60 번개 하이드라 시전<br>+(40~50)% 공격 속도 증가 <br>적의 번개 저항 -(50~65)% <br>+(200~300) 생명력 증가 <br>+(200~300)의 마나
+                                        <br>최대 마나 증가 +(40~50)% <br>최대 독 저항 +(4~7)% 증가 <br>최대 냉기 저항 +(4~7)% <br>+(4~7)% 최대 번개 저항 증가 <br>최대 화염 저항 +(4~7)% 증가 <br>모든 저항 +(80~100) <br>물리 저항: +(20~30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        삼위일체의 종말의 전조
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 석화 지팡이
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/the_triune_harbinger_of_apocalypse.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">이 아이템은 최대 10번까지 타락시킬 수 있습니다<br>타락 1회마다 삼두정치 구슬의 피해가 10% 증가</FONT><br>
+                                        모든 기술에 +(2~4) 추가 <br>+(80~100)% 더 빠른 이동/걷기 <br>+(40~50)% 시전 속도 증가 <br>최대 마나 증가 +(40~50)% <br>마나 재생 +(200~300)% <br>+(75~100) 에너지 증가 <br>
+                                        화염 저항 +(50~75)% <br>냉기 저항 +(50~75)% <br>전기 저항 +(50~75)% <br>
+                                        +(30~40)% 화염 주문 피해 <br>냉기 주문 피해 +(30~40)% 증가 <br>+(30~40)% 번개 주문 피해 증가 <br>
+                                        적의 화염 저항 -(15~25)% <br>적의 냉기 저항 -(15~25)% <br>적의 번개 저항 -(15~25)% <br>
+                                        +(10~20) to 삼두정치 구슬
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    삼두정치 구슬은 천천히 움직이며 주변 적에게 세 원소의 광선을 쏘는 구슬입니다. 다른 아이템의 타락도 삼두정치 구슬의 피해에 포함됩니다.
+                                    <br><br>
+                                    이 아이템은 ESR 디스코드에서 열린 신화 고유 아이템 공모전 우승자 TiltedPrimate가 디자인했습니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        오리온
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 고대 활
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orion.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            공격은 10% 확률로 총 피해를 3배로 증가시킵니다.</FONT><br>15% 확률로 적중 시 레벨 40 번개 강화 화살를 시전합니다.<br>+3% 최대 피해 증가 (캐릭터 레벨 기준)<br>공격에 대한 최대 피해 +(100~200) 증가 <br>+(500~1000) 공격 등급 증가
+                                        <br>적의 번개 저항 -(20~30)%
+                                        <br>+100% 치명타
+                                        <br>+(20~30)% 민첩성 보너스 <br>+(10~20) to 별 파열<br>
+                                        +(10~20) to 별의 비<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    별 파열 <font color="RED">은(는) 직접 피해를 줄 수 없습니다.</font> 적에게서 살짝 빗겨 조준해야 합니다.<br><br>
+                                    이 활의 모티프는 <a
+                                        href="https://ffylands.fandom.com/wiki/Orion">오리온</a>
+                                    (Borderlands 2의 모드 Fight For Your Life Lands에 나오는 총)이며, 그 총은 Borderlands 1의 같은 이름의 총에서 영감을 받았습니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        아툴루아의 최후의 사냥
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 모계 자벨린
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/athulua_final_hunt.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            생명력이 33% 미만일 때 화장, 서리, 역병 투창과 번개 분노가 두 배의 투창을 던집니다
+                                        </FONT><br>
+                                        3% 확률로 적중 시 레벨 40 내면의 통찰를 시전합니다.<br>
+                                        +(2~4)의 창과 창 기술에 대한 보너스 (아마존 전용)<br>
+                                        +(2~4) 아마존 스킬 레벨 증가<br>
+                                        +(80~100)% 더 빠른 이동/걷기<br>
+                                        +(30~40)% 공격 속도 증가<br>
+                                        적의 화염 저항 -(20~30)%<br>
+                                        적의 냉기 저항 -(20~30)%<br>
+                                        적의 번개 저항 -(20~30)%<br>
+                                        적의 독 저항 -(20~30)%<br>
+                                        +(5~10)% 회피 확률<br>
+                                        원소 흡수 (2~3)%<br>
+                                        +(50~100) 처치 후 생명력 회복<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        라스마의 끝없이 흐르는 척추
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화의 고래 사냥꾼
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathma_endlessly_bleeding_spine.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">피의 강화는 중첩마다 최대 피해 10, 공격 속도 2%, 생명력 흡수 2%를 주지만, 중첩마다 초당 생명력 10을 소모합니다. 3초 동안 지속됩니다<br>
+                                            최대 중첩: 500
+                                        </FONT><br>+(300~400)% 증가된 피해<br>15% 확률로 적중 시 레벨 1 피의 강화를 시전합니다.<br>8% 확률로 적중 시 레벨 1 피의 창를 시전합니다.<br>2% 확률로 적중 시 레벨 60 피해 증폭를 시전합니다.<br>공격에 대한 최소 피해 +75 증가
+                                        <br>공격에 대한 최대 피해 +125 증가 <br>공격에 대한 최대 피해 +2 증가 (캐릭터 레벨 기준)<br>-(40~50)% 목표 방어력 <br>+(20~40)% 물리 피해 생명력으로 흡수됨
+                                        <br>저주 지속시간 (40~50)% 감소
+                                        <br>(20~30)% 되살리기: 타락의 망령<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    피의 창은 무기 피해의 125%를 주며 기본적으로 관통하는 투사체입니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        야에리우스의 천상의 신호灯
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 고대 조각
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/yaeriuscelestialbeacon.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">적을 타격할 때 낮은 확률로 전장에 빛의 불타는 봉화를 소환하며, 이를 주우면 총 물리 피해 15%와 최대 생명력 15%를 얻습니다<br>이 효과는 최대 20번 중첩되며 2초 동안 지속됩니다
+                                        </FONT><br>1% 확률로 적중 시 레벨 1 천상의 힘 강화를 시전합니다.<br>8% 확률로 적중 시 레벨 60 번개 강화 화살를 시전합니다.<br>8% 확률로 적중 시 레벨 40 불 강화 화살를 시전합니다.<br>+(40~50)% 공격 속도 증가 <br>+3% 최대 피해 증가 (캐릭터 레벨 기준)<br>공격에 대한 최대 피해 +3 증가 (캐릭터 레벨 기준)<br>+(200~400)% 공격 등급 보너스 <br>적의 번개 저항 -(20~30)% <br>적의 화염 저항 -(20~30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        고대 스코스글렌 토템
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 실레일리
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/ancient_totem_of_scosglen.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">공격 5회마다 특정 원소와 공명하여 그 원소를 강화하고, 화염 폭발, 회오리, 서리 폭발이 각각 세 배의 투사체를 발사하게 합니다
+                                            <br>원소 주문이 이제 모든 원소 사이에서 시너지를 이룹니다
+                                        </FONT><br>적을 처치할 때 100% 확률로 레벨 2 시간 경과를 시전합니다.<br>
+                                        장착 시 (10~15) 스코스글렌 공명 오라<br>
+                                        모든 기술에 +(2~4) 추가<br>
+                                        +(40~50)% 시전 속도 증가<br>
+                                        +(20~40)% 화염 주문 피해<br>
+                                        냉기 주문 피해 +(20~40)% 증가<br>
+                                        +(20~40)% 물리 주문 피해 증가<br>
+                                        모든 저항 +(40~60)<br>
+                                        +(40~60)의 처치 후 마나 회복<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    특정 원소와 공명하는 동안 스코스글렌 공명 오라 레벨당 그 원소의 주문 피해 5%도 얻습니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        El'드루인, 빛의 엑스칼리버
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 천상의 검
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/eldruin_excalibur_of_the_light.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">엘드루인이 발동한 신성 기술은 무기 피해를 마법 피해로 줍니다<br>빛 반경 1포인트마다 피해 강화 25% 획득
+                                        </FONT><br>+(300~400)% 증가된 피해<br>근접 공격 시 10% 확률로 레벨 1 신성한 화살 시전<br>
+                                        근접 공격 시 10% 확률로 레벨 1 축복받은 망치 시전<br>
+                                        근접 공격 시 10% 확률로 레벨 1 천상의 주먹 시전<br>
+                                        +(40~50)% 공격 속도 증가<br>
+                                        공격에 대한 최소 피해 +100 증가<br>
+                                        공격에 대한 최대 피해 +125 증가<br>
+                                        +(1~2) 타격 시 생명<br>
+                                        마법 저항 +(15~30)%<br>
+                                        물리 저항: +(15~30)%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    이 검이 발동한 신성한 화살과 축복받은 망치는 무기 피해의 20%를 마법 피해로 주며 고정 마법 피해는 주지 않습니다. 천상의 주먹은 무기 피해의 125%를 마법 피해로 주고, 그 보조 번개는 무기 피해의 20%를 마법 피해로 줍니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        오르페우스의 희망의 기둥
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 마법사 지팡이
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orpheus.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE"><br>저승의 강화는 중첩마다 2초 동안 독, 마법, 물리 기술 피해 5%를 줍니다<br>최대 중첩: 40
+                                        </FONT><br>맞았을 때 1% 확률로 레벨 50 시간 경과를 시전합니다.<br>적을 처치할 때 50% 확률로 레벨 1 지하 세계의 힘 강화를 시전합니다.<br>모든 기술에 +(0~8) 추가 <br>+(0~30)% 스킬 쿨타임 감소 <br>무작위 주문 숙련(독/마법/물리) +(5~10)<br>+(10~20) to 지하 세계로 여행하기<br>최대 생명 증가 +(30~50)% <br>50 만큼 피해 감소 <br>마법 피해 감소 50 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        츠쿠요미의 죽어가는 빛
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 카타나
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tsukuyomi_dying_light.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">공격은 3% 확률로 총 피해를 5배 더 입힙니다.
+                                        </FONT><br>+(200~300)% 증가된 피해<br>근접 공격 시 50% 확률로 레벨 1 실행 방전 시전<br>
+                                        +2% 최대 피해 증가 (캐릭터 레벨 기준)<br>
+                                        공격에 대한 최대 피해 +(100~125) 증가<br>
+                                        -(25~75)% 목표 방어력<br>
+                                        +(30~50)% 치명타<br>
+                                        +(10~20) to 그림자 강하<br>
+                                        +(20~30) to 드래곤 칼날 (암살자 전용)<br>
+                                        마법 저항 +(10~20)%<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    처형 방출은 완전히 충전된 현재 레벨의 처형을 방출합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        천 개의 베기 Void Crescent
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 아레앗의 도끼
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/void_crescent_of_a_thousand_cuts.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">유령 불구는 중첩마다 적의 마법 저항을 0.2% 낮추고<br>, 1초 동안 추가 물리 피해 5을 받게 합니다<br>최대 중첩: 1000</FONT><br>+(300~400)% 증가된 피해<br>
+                                        100% 확률로 적중 시 레벨 1 스펙트럴 마임를 시전합니다.<br>
+                                        8% 확률로 적중 시 레벨 30 던진 도끼를 시전합니다.<br>
+                                        8% 확률로 적중 시 레벨 30 마법 강화 도끼를 시전합니다.<br>
+                                        공격에 물리 피해 150-200 추가 <br>
+                                        저주 지속시간 (40~50)% 감소<br>
+                                        +(20~30)% 물리 피해 생명력으로 흡수됨<br>
+                                        +(400~500) 공격 등급 증가<br>
+                                        명중률 보너스 +(80~100)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    유령 불구가 주는 추가 물리 피해는 수정할 수 없는 고정량의 보너스 물리 피해입니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        바알의 사악한 속삭임
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화적인 카게키리
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/baals_vile_whisper_2.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">민첩성 50당 1% 냉기 주문 피해 증가</FONT><br>
+                                        2% 확률로 적중 시 레벨 60 얼음 송곳니를 시전합니다.<br>
+                                        4% 확률로 적중 시 레벨 60 냉기 폭발를 시전합니다.<br>
+                                        1% 확률로 적중 시 레벨 60 신화적인 쇠약를 시전합니다.<br>
+                                        공격에 150-250 피해를 추가합니다.<br>
+                                        공격에 2000-3000 냉기 피해를 추가합니다. (20초 동안)<br>
+                                        +150% 치명타<br>
+                                        +(30~50)% 민첩성 보너스<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 20px 50px 20px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    신화의 노쇠는 일반 노쇠와 피해 증폭을 2개로 합친 1개짜리 저주입니다. 일반 노쇠만큼 감속시키고 일반 피해 증폭만큼 물리 저항을 낮춥니다(레벨별 성장도 동일). 또한 물리 저항 감소량만큼 냉기 저항도 낮춥니다.<br><br>
+
+                                    이 수리검은 모드 Diablo 2 Immersion의 같은 이름의 정예 고유 수리검에서 영감을 받았습니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        보이드포지
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            신화의 심연 블레이드
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/voidforge.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">물리 피해의 100%를<br>화염, 냉기, 번개 중 무작위 원소의 추가 피해로 획득<br>원소 공격 피해가 이제 치명타를 낼 수 있습니다</FONT><br>
+
+                                        +(250~500)% 증가된 피해<br>
+                                        공격에 150-250 피해를 추가합니다.<br>
+                                        최대 생명력 +(30~40)% 증가<br>
+                                        +(8~10) 타격 시 생명<br>
+                                        +(4~5) 타격 시 마나<br>
+                                        +30% 공격 속도 증가<br>
+                                        +(1~10) to 원소 분노<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        신화 고유 방어구
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    이름
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    능력치
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    속성
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    참고
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        머리 사냥꾼
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            신화로운 대마 밴드
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/headhunter.png" style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        적을 처치할 때 2% 확률로 레벨 1 속도의 트로피를 시전합니다.<br>적을 처치할 때 2% 확률로 레벨 1 물리 피해의 트로피를 시전합니다.<br>적을 처치할 때 2% 확률로 레벨 1 주문 피해의 트로피를 시전합니다.<br>적을 처치할 때 2% 확률로 레벨 1 생존의 트로피를 시전합니다.<br>적을 처치할 때 2% 확률로 레벨 1 저항의 트로피를 시전합니다.<br>적을 처치할 때 2% 확률로 레벨 1 스탯의 트로피를 시전합니다.<br>적을 처치할 때 2% 확률로 레벨 1 모든 기술의 트로피를 시전합니다.<br>+(80~100) 힘 증가 <br>+(80~100)의 민첩성 <br>+(150~200) 생명력 증가 <br>최대 생명 증가 +(25~30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    각 전리품 효과는 20초 동안 지속됩니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        자연의 주입된 뿔의 아바타
+                                        <br>
+                                        <a href="armors.htm#m15">
+                                            신화적인 꿈의 정령
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/avatar_of_natures_infused_horns.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">민첩이 1000 이상이면 늑대가 덮치기*를 사용할 수 있습니다
+                                        </FONT><br>
+                                        <FONT COLOR="ORANGE">+(1~2) 비고유 소환 제한</FONT> <br>피해를 받을 때 2% 확률로 레벨 50 시간 정지를 시전합니다.<br>모든 기술에 +(1~3) 추가 <br>+(80~100)% 더 빠른 이동/걷기 <br>+(10~20)% 소환 물리 및 마법 저항력
+                                        <br>+(25~35)% 소환 생명력 <br>+(20~30)% 소환 피해 <br>+(400~500) 생명력 증가
+                                        <br>+(40~50)% 민첩성 보너스 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    영혼 늑대와 다이어 늑대 모두 덮치기를 사용할 수 있습니다. 덮치기는 강력한 범위 공격이자 단일 대상 공격으로, 늑대를 대상 위로 순간이동시켜 공격합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        부패의 에이지스
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            신화적인 보석 갑옷
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/aegisofcorruption.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">타락한 아이템을 20개 이상 착용하면,<br>기본 재사용 대기시간이 있는 직접 피해 주문의 총 피해가 두 배가 됩니다
+                                        </FONT><br>피해를 받을 때 5% 확률로 레벨 40 사이클론 갑옷를 시전합니다.<br>모든 기술에 +(2~3) 추가 <br>적의 화염 저항 -(20~30)% <br>적의 냉기 저항 -(20~30)% <br>적의 번개 저항 -(20~30)% <br>적의 독 저항 -(20~30)% <br>+(20~30)% 스킬 쿨타임 감소 <br>+(2000~2500) 방어력 <br>+(80~100) 생명력 증가 <br>최대 마나 증가 +(40~50)%
+                                        <br>최대 독 저항 +(1~5)% 증가 <br>최대 냉기 저항 +(1~5)% <br>+(1~5)% 최대 번개 저항 증가 <br>최대 화염 저항 +(1~5)% 증가 <br>모든 저항 +(50~60) <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    직접 피해 주문은 직접 시전할 수 있는 주문을 말합니다(예: 불의 비). 피해 보너스는 모든 보너스에 곱해지는 총 배율입니다(사실상 피해 두 배)<br>타락한 아이템에는 착용한 아이템과 부적(고유 여부와 무관)이 모두 포함됩니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        타타메트의 각성<br>
+                                        (<font color="red">불</font> 변형)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            신화적인 디아뎀
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">순간이동을 사용하면 자동으로 원소 회오리가 시전됩니다<br>
+                                            이렇게 시전된 원소 회오리는 모든 원소에 조율된 것으로 간주되지만,<br>레벨은 순간이동의 레벨을 따릅니다</FONT>
+                                        <br>+(3~5)의 화염 기술<br>적의 화염 저항 -(20~30)%
+                                        <br>최대 생명 증가 +(30~50)%<br>화염 흡수 +(8~10)% <br>생명력 회복 +(800~1000)<br>+(40~50)% 더 빠른 타격 회복<br>+1 to 화염 숙련<br>+3 to 원소 노바<br>소켓 (0~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        타타메트의 각성<br>
+                                        (<font color="blue">냉기</font> 변형)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            신화적인 디아뎀
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">순간이동을 사용하면 자동으로 원소 회오리가 시전됩니다<br>
+                                            이렇게 시전된 원소 회오리는 모든 원소에 조율된 것으로 간주되지만,<br>레벨은 순간이동의 레벨을 따릅니다</FONT>
+                                        <br>+(3~5) 냉기 기술에 추가<br>적의 냉기 저항 -(20~30)% <br>
+                                        +(15~20)% 스킬 쿨타임 감소<br>냉기 흡수 +(8~10)% <br>마나 재생 +(200~300)%<br>얼음에 갇히지 않음<br>+1 to 냉기 숙련<br>+3 to 원소 노바<br>소켓 (0~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        타타메트의 각성<br>
+                                        (<font color="yellow">번개</font> 변형)
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            신화적인 디아뎀
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">순간이동을 사용하면 자동으로 원소 회오리가 시전됩니다<br>
+                                            이렇게 시전된 원소 회오리는 모든 원소에 조율된 것으로 간주되지만,<br>레벨은 순간이동의 레벨을 따릅니다</FONT>
+                                        <br>+(3~5)의 번개 기술<br>적의 번개 저항 -(20~30)%
+                                        <br>
+                                        최대 마나 증가 +(30~50)%<br>번개 흡수 +(8~10)% <br>모든 저항 +(40~60)<br>+(5~10)% 회피 확률<br>+1 to 번개 숙련도<br>+3 to 원소 노바<br>소켓 (0~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        영혼의 엔진<br>
+                                        <a href="armors.htm#m06">
+                                            신화적 라이트 플레이트
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_soul_engine.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">최대 생명력이 1이 됩니다<br>
+                                            독에 면역입니다</FONT>
+                                        <br>적을 처치할 때 17% 확률로 레벨 60 차가운 물결를 시전합니다.<br>
+                                        장착 시 (60-100) 에너지 방패 오라<br>
+                                        +20% 스킬 쿨타임 감소<br>
+                                        +(5~10)% 회피 확률<br>
+                                        적의 냉기 저항 -(20~40)%<br>
+                                        +(10~20) to 저체온증<br>
+                                        +1 to 냉기 숙련<br>
+                                        +(400~500)% 향상된 방어력<br>
+                                        최대 마나 +(30~50)% 증가
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    저체온증은 정의의 불의 냉기 버전으로, 유지하기 위해 생명력 대신 마나를 소모하며 냉기 저항과 흡수로 완화할 수 있습니다.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        신화 고유 장신구
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    이름
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    능력치
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    속성
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    참고
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        신화적인 고위 군주의 분노
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            아뮬렛
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mythical_highlords_wrath.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">당신은 총 피해를 3배로 줄 확률이 10%입니다.
+                                        </FONT><br>모든 기술에 +2 추가 <br>생명력 회복 +(800~1500) <br>마나 재생 +(120~200)% <br>마법 저항 +(10~15)% <br>모든 저항 +(30~50)
+                                        <br>물리 저항: +(10~15)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    세 배 피해 효과는 모든 원천에서 주는 모든 피해에 적용됩니다. 공격, 주문, 신성 오라 등이 포함됩니다. 이 효과는 치명타 및 치명적 일격과는 곱연산으로 중첩되지만, 석궁 추가 피해(및 원소술사 전용 기술 같은 비슷한 효과)와는 합연산으로 중첩됩니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        묶는 유대<br>
+                                        <a href="armors.htm#m10">
+                                            반지
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_ties_that_bind_fire.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">'묶는 인연'의 서로 다른 두 변형을 착용하면<br>속성의 효과가 두 배가 됩니다
+                                        </FONT><br>
+                                        공격에 400-600 화염 피해를 추가합니다.<br>
+                                        화염 주문 피해 +30%<br>
+                                        화염 저항 +50%<br>
+                                        +15% 스킬 쿨타임 감소<br>
+                                        최대 생명 증가 +30%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    이 반지는 7가지 변형 중 하나로 나옵니다. 각 변형에는 기본 능력치(원소 피해, 저항, 주문 피해)와 특수 능력치(예: 최대 생명력, 재사용 대기시간 감소 등)가 있습니다. 서로 <strong>다른</strong> 반지 두 개를 착용하면 보정치의 효과가 두 배가 됩니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        영혼의 그릇
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            아뮬렛
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/vessel_of_souls.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            <FONT COLOR="ORANGE">내부에서 신비로운 힘이 발산되며, 갇힌 영혼들의 목소리가 들립니다...<br>영혼들의 고통이 너무 강해 지금은 이 유물을 착용할 수 없습니다</FONT>
+                                        </FONT><br>
+                                        +(0~2) 아마존 스킬 레벨 증가<br>
+                                        +(0~2)의 암살자 기술 레벨<br>
+                                        +(0~2)의 바바리안 스킬 레벨<br>
+                                        +(0~2) 드루이드 스킬 레벨 증가<br>
+                                        +(0~2)의 네크로맨서 스킬 레벨<br>
+                                        +(0~2)의 성기사 기술 레벨<br>
+                                        +(0~2)의 마법사 스킬 레벨<br>
+                                        얼지 않음(등장 확률 50%)<br>
+                                        +(50~200) 생명력 증가<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    영혼의 그릇은 장기를 소모해 다양한 보너스를 얻을 수 있는 특별한 신화 고유 아이템입니다.<br>보너스 전체 목록은 <a href="./vessel_of_souls.htm">영혼의 그릇</a> 페이지를 확인하세요.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        창조의 불씨
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            보석
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/ember of creation.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 60
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        무작위 직업 기술 +1<br>
+                                        요구 레벨 +20
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    창조의 불씨는 다른 직업이 쓸 수 없는 일부 기술(예: 사이킥 해머, 마인드 블라스트, 덫)을 제외한 대부분의 직업 기술을 얻을 수 있습니다. 다른 직업에는 그 기술에 필요한 애니메이션이 없기 때문이며, 직업 무기가 필요한 기술(예: 충전 기술)도 제외됩니다.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        드롭처가 정해진 신화 고유 아이템
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    이름
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    능력치
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    속성
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    참고
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        영원한 모래의 시간의 모래시계
+                                        <br>
+                                        <font color="#928A70" style="text-decoration: underline;">대형 부적</font>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/hgc.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">적을 처치할 때 3초 동안 최대 쿨타임 감소를 얻을 수 있는 작은 확률이 있습니다.
+                                        </FONT><br>적 처치 시 5% 확률로 레벨 1 시간을 초월한 모래의 힘 시전<br>모든 기술에 +1 추가<br>+(20~40)% 더 빠른 이동/걷기 <br>+(20~40)% 공격 속도 증가
+                                        <br>+(20~40)% 시전 속도 증가 <br>+(20~40)% 더 빠른 타격 회복 <br>+(20~40)% 더 빠른 차단 속도 <br>+(10~15)% 스킬 쿨타임 감소<br>최대 독 저항 +(0~2)% 증가 <br>최대 냉기 저항 +(0~2)% <br>+(0~2)% 최대 번개 저항 증가 <br>최대 화염 저항 +(0~2)% 증가 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    영원의 끝에서 모든 영원한 고대인을 처치하고 떨어진 모래시계 조각을 변환하면 얻을 수 있습니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        리치 왕의 정수
+                                        <br>
+                                        <a>
+                                            <font color="#928A70" style="text-decoration: underline;">아뮬렛</font>
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lichkingessence.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">성유를 부여한 아이템이 15개 이상이면 적 처치 시 25% 확률로 다음을 얻습니다:<br>화염 저항 1%마다 화염 주문 피해 1%와 공격 화염 피해 3-6
+                                        </FONT><br>적중 시 5% 확률로 레벨 25 불 강화 도끼 시전<br>모든 기술에 +(1~2) 추가
+                                        <br>+(15~25)% 화염 주문 피해 <br>적의 화염 저항 -(10~15)%
+                                        <br>+(5~15) to 강화된 마법 부여<br>모든 능력치 +(20~40) 증가 <br>최대 화염 저항 +(4~8)% 증가 <br>화염 저항 +(40~80)% <br>(10~50) 만큼 피해 감소
+                                        <br>얼음에 갇히지 않음 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    리치 왕을 처치하면 얻을 수 있습니다<br>
+                                    이 목걸이는 원소마다 하나씩 총 6가지 변형이 있습니다<br>
+                                    효과가 화면에 보이더라도 성유를 부여한 아이템이 15개 있어야 작동합니다
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        프로스트모른
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            신화적인 죽음의 검
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/frostmourne.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        적중 시 1% 확률로 레벨 60 영원한 겨울* 시전<br>파괴 불가능 <br>모든 기술에 +(3~6) 추가 <br>+(30~60)% 공격 속도 증가 <br>+3% 최대 피해 증가 (캐릭터 레벨 기준)<br>공격에 대한 최소 피해 +200 증가 <br>공격에 대한 최대 피해 +250 증가 <br>적의 냉기 저항 -(30~60)% <br>+(10~20) to 영구 동토 폭풍<br>모든 능력치에 +(30~60)% 보너스 <br>원소 흡수 (8~10)% <br>+(200~400) 처치 후 생명력 회복 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    리치 왕을 처치하면 얻을 수 있습니다<br>
+                                    영원한 겨울은 시간에 걸쳐 매우 높은 냉기 피해를 주는 강력한 범위 주문으로, 영향을 받은 적의 냉기 저항을 50%(면역 몬스터에게는 100% 효율) 낮추고, 이동 속도와 공격/시전 속도를 각각 150%/50% 낮춥니다.<br>
+                                    영원한 겨울은 타락의 방패가 주는 주문 피해 증가의 혜택을 받습니다.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        라스마의 영원한 해골
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            작은 부적
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/rathma_eternal_skull.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    아이템 레벨: 100
+                                    <br>
+                                    필요 레벨: 90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        맞았을 때 1% 확률로 레벨 25 시간 경과를 시전합니다.<br>모든 기술에 +1 추가 <br>+3 to 언데드 광란<br>+17 to 언데드 광란 (네크로맨서 전용)<br>+1 에게 <FONT
+                                            COLOR="RED">
+                                            하나만 지닐 수 있습니다<FONT COLOR="BLUE"></FONT>
+                                        </FONT><br>저주 지속시간 (20~30)% 감소 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    라스마를 처치하면 얻을 수 있습니다.<br>
+                                    라스마와 공허한 사도 코르낙을 1분 이내에 연달아 처치하면 업그레이드할 수 있습니다(조건: <font color="RED">/players 8</font> ). 그다음 부적을 그 자체와 변환합니다. 부적은 '공허한 사도 코르낙 일으키기' +(10~20)을 얻습니다.
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

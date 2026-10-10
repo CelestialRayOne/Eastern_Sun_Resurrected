@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pt">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Banco de dados do Eastern Sun Resurrected
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="Idioma"><select id="esr-lang-ptBR" aria-label="Idioma" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR" selected>Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="ptBR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-ptBR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informações básicas</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registro de alterações]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armaduras]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armas]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Prefixos]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Sufixos]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armaduras únicas]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Armas únicas]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Outros únicos]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Únicos míticos]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Conjuntos]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Gemas/Runas]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Palavras de gemas]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Palavras rúnicas]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receitas do cubo]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapas]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Recursos</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Resultados de corrupção]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Resultados de unção]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapas de fim de jogo]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptáculo de almas]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendências]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Registro de abates]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mercenários e habilidades externas]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Maestria em armas]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                Mod de conversão total para Diablo II: Resurrected</div>
+        </div>
+        <div style="width:100%;">
+
+            <br>
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                <font color="ORANGE">Mestre de Armas</font> é um sistema único que muda como as armas de classe interagem com as habilidades.<br>
+                                A maestria de armas é obtida transmutando uma <FONT color="#706850">Símbolo de Maestria em Armas
+                                </FONT> que pode cair de
+                                <FONT color="#706850">Zakarum corrompidos</FONT> e chefes de mapas de fim de jogo (25% de chance, não escala com /players).<br>
+                                <FONT color="#706850">Zakarum corrompidos</FONT> são inimigos únicos mortais que você encontra aleatoriamente na campanha em Pesadelo e Inferno; eles podem soltar uma ficha de maestria de armas (até 75%, não escala com /players) e têm chance maior de soltar únicos e armas.<br>
+                                Depois de transmutada, a ficha fica <font color="ORANGE">despertada</font> e você pode aplicá-la à arma transmutando-a com a arma e alguns ingredientes.<br>
+                                As especializações de maestria de armas não servem para inflar o poder nem necessariamente deixar o personagem mais forte, mas para mudar como as habilidades funcionam ou abrir novos caminhos de equipamento.<br>
+                                Você só pode aplicar uma maestria de armas por arma. As maestrias não acumulam (ao empunhar duas armas), salvo indicação explícita.<br>
+                                A maestria de armas pode ser aplicada a qualquer arma de classe, independentemente do nível (funciona também em bases excepcionais, de elite e míticas).<br>
+                                Mestre de Armas <FONT color="ORANGE">pode ser removida</FONT>, mas <font color="red">a ficha é perdida</font> na remoção.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <a name="recipes"></a>
+                        <a href="./weapon_mastery.html#recipes">[Receitas gerais]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[Especializações]</a>&nbsp;
+                    </tbody>
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                            <font face="arial,helvetica">
+                                <b>
+                                    Receitas gerais
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                Qualquer arma de classe<br>
+                                <FONT color="#706850">Símbolo de Maestria em Armas</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                Mesmo item*<br>
+                                <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br><br>
+                                <font color="gray">*Isso só desperta a ficha, não muda a arma</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                Qualquer arma de classe com maestria de armas<br>
+                                Forma de Pedra do Dragão específica da classe<br>
+                                3 poções de descongelamento
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                Mesmo item<br>
+                                Maestria de armas removida*<br><br>
+                                <font color="gray">*A ficha é perdida</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">Qualquer ficha de maestria de armas despertada</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">Ficha de maestria de armas*</FONT><br><br>
+                                <font color="gray">*Não despertada</font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <font size="-1" face="arial,helvetica">
+                    <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                        <tbody>
+                            <a name="specializations"></a>
+                            <a href="./weapon_mastery.html#recipes">[Receitas gerais]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[Especializações]</a>&nbsp;
+                        </tbody>
+                        <br><br>
+                        <tr>
+                            <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Especializações
+                                    </b><br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Arco de Cervo<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Seda de Aranha</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Flecha venenosa, de imolação, congelante e de raio</font><br>
+                                    Faz essas habilidades ativarem o efeito especial a cada 5 ataques<br>
+                                    em vez de 3, mas aumenta o dano total delas em 20%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Arco Reflexo<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Seda de Aranha</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Tiro Rápido</font><br>
+                                    Triplica o número de alvos, mas aplica uma penalidade de 2% na resistência física<br>
+                                    por flecha disparada por 2 segundos. Este efeito não tem limite<br>
+                                    <br>
+                                    <font color="orange">Tiro Múltiplo</font><br>
+                                    Faz o Tiro múltiplo disparar uma nova de flechas<br>mas ele não ganha mais bônus de dano por nível<br>
+                                    <br>
+                                    <font color="orange">Tiro Tornado</font><br>
+                                    Dispara em vez disso uma nova de 16 flechas, triplica sua penalidade<br>
+                                    especial de sinergia e ganha um tempo de recarga não modificável de 10 segundos<br>
+                                    <br>
+                                    <font color="orange">Flecha Lendária</font><br>
+                                    Não ganha mais taxa de ataque por<br>
+                                    nível nem por sinergia, mas o bônus de dano dobra
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Arco de Precisão<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Seda de Aranha</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Magia, Gelo, Flecha Explosiva</font><br>
+                                    Essas habilidades disparam uma flecha extra em um inimigo próximo a cada 3 ataques, mas<br>
+                                    perdem todo o dano e a taxa de ataque de níveis e sinergias
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lança da Donzela<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Seda de Aranha</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Tempestade de Lança</font><br>
+                                    Faz a Tempestade de lanças dobrar o número de fragmentos de lança<br>
+                                    a cada 3 ataques, mas não concede mais dano físico bônus<br>
+                                    <br>
+                                    <font color="orange">Fendão</font><br>
+                                    Faz o Repelir gerar só a nova de lanças pequena, que agora<br>
+                                    reduz a resistência física com 150% de eficiência, mas não desacelera mais*<br>
+                                    <br>
+                                    <font color="orange">Dança da Morte</font><br>
+                                    Substitui as novas convergentes por ondas de lanças teleguiadas<br>
+                                    Acertos críticos são substituídos por ondas extras
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lança da Donzela<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Seda de Aranha</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Tempestade de Lança</font><br>
+                                    Ganha 2 vezes menos fragmentos de lança por nível,<br>
+                                    mas o dano físico global dobra<br>
+                                    <br>
+                                    <font color="orange">Fendão</font><br>
+                                    Faz o Repelir gerar só a nova de lanças<br>
+                                    maior e dobra a eficiência da desaceleração*<br>
+                                    <br>
+                                    <font color="orange">Dança da Morte</font><br>
+                                    Dobra o dano total a cada 5 ataques com a sinergia<br>
+                                    especial em vez de 15% de chance de quadruplicar o dano
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lança de Donzela<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Seda de Aranha</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Pira, Peste, Dardo do gelo, Fúria relampejante</font><br>
+                                    Essas habilidades arremessam 2 dardos adicionais a cada 3 arremessos,<br>
+                                    mas o dano total é reduzido em 40%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Ninja-To<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="purple">Pedra do Dragão</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Lâmina do Dragão</font><br>
+                                    Reduz pela metade o número de alvos e acerta um inimigo<br>
+                                    próximo cerca de 60% da quantidade reduzida
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Machado Tribal<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="#706850">Martelo de Forjamento</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Fúria do Machadinho</font><br>
+                                    Não ricocheteia mais. Em vez disso, libera uma nova convergente de 4 machados<br>
+                                    que acerta de novo só o alvo principal<br>
+                                    <br>
+                                    <font color="orange">Machados Fantasmas</font><br>
+                                    Agora lança os machados em uma nova em espiral, que<br>
+                                    só pode acertar o terreno e então ricocheteia em até 4 inimigos próximos<br>
+                                    <br>
+                                    <font color="orange">Estampida</font><br>
+                                    Aumenta o número de projéteis mágicos em 50%,<br>
+                                    mas reduz os alvos buscados de 2 para 1<br>
+                                    <br>
+                                    <font color="orange">Fúria Berserker</font><br>
+                                    Projéteis mágicos se dividem instantaneamente em direção a inimigos próximos,<br>
+                                    mas não geram mais novas convergentes. Aumenta<br>
+                                    a velocidade dos projéteis e o número deles em 50%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Ramo de Carvalho<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="gray">Minério de Tyranium</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Lobos, Corvos, Pardo</font><br>
+                                    Reduz pela metade os lobos e corvos que você pode invocar e você ganha<br>
+                                    1 urso pardo adicional a cada 5 invocações normais<br>
+                                    perdidas. Dobra o número de acertos de todas as habilidades de mascote e o dano do Contágio.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Caçador de Almas<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="red">Blackmoor</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Frenesi dos Mortos-Vivos</font><br>
+                                    Esta habilidade não concede mais dano elemental,<br>
+                                    mas o dano físico dobra
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Adaga Ritualística<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="red">Blackmoor</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Maldições</font><br>
+                                    Todas as maldições ficam duas vezes mais fortes, mas a duração<br>
+                                    cai para 2 segundos e o raio para 4 metros
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Foice Miserável<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="red">Blackmoor</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Feitiços mágicos</font><br>
+                                    Os feitiços mágicos de dano direto do seu Necromante<br>
+                                    têm 1% de chance de se repetir a cada 1% de vida<br>
+                                    perdida. Sua resistência mágica é sempre 0
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lâmina Abençoada<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="white">Símbolo Sagrado</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Zelo</font><br>
+                                    Aumenta a chance total de fortalecimento em 50%,<br>
+                                    mas reduz a duração para 2 segundos
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Variante Lâmina de Mana<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="blue">Gema Esmagada</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Golpe Fanático</font><br>
+                                    Reduz o número de acertos para 1, mas a cada terceiro acerto<br>
+                                    libera efeitos elementais que causam dano de feitiço,<br>
+                                    escalando com todos os feitiços de dano direto do respectivo elemento
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Orbe da Feiticeira<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="blue">Gema Esmagada</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT><br>
+                                    <FONT color="red">Rubí Lascado</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Feitiços da Feiticeira</font><br>
+                                    Triplica o tempo de recarga dos seus feitiços de Feiticeira de nível 24<br>
+                                    e adiciona um tempo de recarga de 2 segundos à Hidra,<br>
+                                    mas aumenta seu dano total de feitiços em 20%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Orbe da Feiticeira<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="blue">Gema Esmagada</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT><br>
+                                    <FONT color="#f1e5ac">Cráneo Lascado</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Exclusivas da Feiticeira</font><br>
+                                    Aumenta os bônus das suas exclusivas em 50% e as desvantagens delas em 75%
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Garra da Assassina<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="purple">Pedra do Dragão</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT><br>
+                                    <FONT color="red">Rubí Lascado</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Habilidades de carga elementais</font><br>
+                                    Faz todas as habilidades de carga elementais descarregarem só a carga correspondente,<br>
+                                    mas aumenta o dano total em 50/70/100% conforme o nível de carga<br>
+                                    Este efeito não afeta procs e não acumula<br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Garra da Assassina<br>
+                                    <FONT color="#706850">Símbolo de Maestria em Armas Desperto</FONT><br>
+                                    <FONT color="purple">Pedra do Dragão</FONT><br>
+                                    <FONT color="purple">Pedra de Bigorna</FONT><br>
+                                    <FONT color="#f1e5ac">Cráneo Lascado</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Habilidades de carga elementais</font><br>
+                                    Reduz em 25% o dano base de todas as habilidades de carga elementais, mas cada<br>
+                                    carga diferente presente aumenta o dano total em 10%<br>
+                                    Este efeito acumula*
+                                </font>
+                                <br><br>
+                                <font size="-1" color="gray">*este bônus de dano não se aplica a procs de descarga</font>
+                            </td>
+                        </tr>
+                    </table>
+                </font>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ru">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            База данных Eastern Sun Resurrected 3.6
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;"><div class="esr-lang" style="position:fixed;top:10px;right:14px;z-index:2000;font-family:'Palatino Linotype',Palatino,serif" title="&#1071;&#1079;&#1099;&#1082;"><select id="esr-lang-ruRU" aria-label="&#1071;&#1079;&#1099;&#1082;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU" selected>&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="ruRU",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-ruRU');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script>
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Основная информация</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Списки изменений]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Доспехи]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Оружие]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Префиксы]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Суффиксы]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Уникальные доспехи]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Уникальное оружие]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Прочие уникальные]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Мифические уникальные]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Комплекты]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Самоцветы/Руны]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Слова самоцветов]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Рунные слова]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Рецепты куба]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Карты]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Калькулятор скорости атаки]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Особенности</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Результаты порчи]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Результаты помазания]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Карты эндгейма]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Сосуд душ]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Восхождения]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Книга убийств]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Наёмники и внеклассовые умения]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Мастерство оружия]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Мод полной конверсии для Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Возвышения</font> это мощные специализации, которые определяют ваш стиль игры и дают уникальные умения и бонусы.<br>
+                            Возвышения дает особый талисман под названием <font color="orange">Камень Возвышения</font> , который можно получить только после нескольких особых сражений.<br>
+                            Камни возвышения можно улучшать и дальше (то есть возвышаться выше), выполняя определенные испытания; некоторые из них связаны с очень сложным контентом эндгейма.<br>
+                            Всего есть 5 уровней возвышения; каждое испытание сложнее предыдущего, но и бонусы сильнее.<br>
+                            Камни возвышения <font color="red"><strong>нельзя передавать другим персонажам</strong>
+                            </font>. Одновременно можно носить только один камень возвышения.<br>
+                            Само собой, каждый уровень можно получить только один раз. Однако получать их можно в любом порядке.<br>
+                            Камни возвышения нельзя изменять обычными способами (их нельзя испортить, помазать, разобрать на кленовые листья и т. д.).<br>
+                            Из-за ограничения движка после смерти <font color="red">нужно заново надеть</font> Камень Возвышения, чтобы вернуть бонусы.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Испытания]</a>
+            <a href="#ascendancies">[Восхождения]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>Испытание 1 уровня</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Чтобы получить <font color="orange">Камень Возвышения</font>, нужно убить 5 особых суперуникальных монстров <font color="red">на сложности Ад</font> , разбросанных по Санктуарию,<br>и трансмутировать стихийные сферы, которые падают с каждого из них, чтобы получить:
+                            <font color="orange">Орб Творения</font>.<br>
+                            Затем сферу можно трансмутировать с самоцветами определенных цветов, чтобы открыть выбранное возвышение. Подсказка: в актах 1, 2 и 3 по одному суперуникальному монстру. В акте 5 их 2, в акте 4 ни одного.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Вход</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Результат</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            2 Запятнанный Сапфир<br>
+                            2 Запятнанный обсидиан<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Восхождения Битвомага<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            1 Запятнанный обсидиан<br>1 Запятнанный Сапфир<br>1 Запятнанный Изумруд<br>1 Порочный Рубин
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Пробуждённый камень восхождения<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            2 Запятнанный обсидиан<br>2 Запятнанный Изумруд
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Вознесения Мастера Клинка<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            2 Запятнанный Изумруд<br>2 Порочный Рубин
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Возвышения Кочевника<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            2 Запятнанный обсидиан<br>2 Порочный Рубин
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень восхождения Железного Болта<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            2 Запятнанный Изумруд<br>2 Запятнанный Сапфир
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Возвышения Арканиста<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            2 Порочный Рубин<br>2 Запятнанный Сапфир
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Вознесения Стража Души<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            4 Запятнанный Изумруд
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Превосходства Стрелка<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            4 Запятнанный Сапфир
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Звёздного Рождения<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            1 Порочный Рубин<br>1 Запятнанный обсидиан<br>1 Запятнанный Сапфир
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Возвышения Кровомага<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            4 Порочный Рубин
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Превосходства Ломателя Жизней<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            1 Порочный Рубин<br>1 Запятнанный обсидиан<br>1 Запятнанный Изумруд
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Восхождения Формирователя Мира<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            1 Запятнанный обсидиан<br>1 Запятнанный Изумруд<br>1 Запятнанный Сапфир
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Превосходства Танцора Позы<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            1 Запятнанный Изумруд<br>1 Порочный Рубин<br>1 Запятнанный Сапфир
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Возвышения Хранителя Маны<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Орб Творения</font><br>
+                            4 Запятнанный обсидиан
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень восхождения Берсерка<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Испытание 2 уровня</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Второй уровень достигается убийством Нихлатака в его владениях на сложности Ад и трансмутацией камня возвышения с самим собой.<br>
+                            <font color="red">Трансмутировать его нужно, пока на персонаже активны вихри.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Вход</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Результат</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">Камень Возвышения</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            Улучшен до 2 уровня
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Испытание 3 уровня</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Третий уровень достигается убийством всех боссов Убер-Тристрама <font color="red">с разницей не более минуты и без смертей </font>и трансмутацией камня возвышения с кленовым листом.<br>Даже если вихри активны на персонаже после убийства последнего босса, это не сработает, если с убийства первого прошло больше 1 минуты.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Вход</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Результат</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            Кленовый Лист
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            Улучшен до 3 уровня
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Испытание 4 уровня</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Четвертый уровень достигается сбором 10 <font color="ORANGE">Праматериальных душакамней
+                            </font> , которые падают с боссов любых карт эндгейма. Трансмутировать с Камнем Возвышения можно только по одному первородному камню за раз. Поймав в Камень Возвышения 10 праматериальных душакамней, вы сможете трансмутировать его с 2 кленовыми листьями, чтобы возвыситься до 4 уровня.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Вход</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Результат</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            <font color="orange">Захваченные первобытные душевые камни: 10/10</font><br>
+                            2 кленовых листа
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            Улучшен до 4 уровня
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Испытание 5 уровня</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Пятый уровень достигается убийством любого босса карты 5 уровня и трансмутацией камня возвышения с 3 кленовыми листьями.<br>
+                            <font color="red">Трансмутировать его нужно, пока на персонаже активны вихри.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Вход</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Результат</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            3 кленовых листа
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Камень Возвышения</font><br>
+                            Улучшен до 5 уровня
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Испытания]</a>
+            <a href="#ascendancies">[Восхождения]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">Возвышения</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+60 к Силе<br>+60 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+25% Бонус к Силе<br>+25% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3</font><br>Получите 1% к урону заклинаний за каждые 2% смертельного удара и за каждые 2% сокрушительного удара<br>+25% Шанс Крушящего Удара<br>+25% Смертельный удар<br><br>
+                    <font color="orange">Уровень 4</font><br>Вы получаете 1% бонуса к общей защите за каждые 3% смертельного удара и сокрушающего удара*<br>+10 Жизнь на Ударе<br>+15% Физический Урон, Откачиваемый как Мана<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>+50% ко Всем Скоростям<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Боевой маг</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Бонус к общей защите умножается на все значение вашей брони.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Мастер клинка</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+60 к Силе<br>+60 к Ловкости<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+25% Бонус к Силе<br>+25% Бонус к Ловкости<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 10% улучшенного урона за каждый 1% физического сопротивления<br>20% физического сопротивления<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 1% физического урона, отнятого как жизнь, за каждые 1% физического сопротивления<br>+40 к Минимальному Урону от Атак<br>+50 к Максимальному Урону от Атак<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>15% Шанс на применение Заклинания Уровня 20 Брошенный топор при ударе<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+60 к Ловкости<br>+60 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+25% Бонус к Ловкости<br>+25% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 5 маны за каждый 1% скорости*<br>+30% ко Всем Скоростям<br><br>
+                    <font color="orange">Уровень 4</font><br>Вы получаете 1 ману при ударе за каждые 25% скорости*<br>+20 к Элементальному Гневу (все классы)<br>+5% ко всем максимальным сопротивлениям<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>5% Шанс на применение Заклинания Уровня 20 Стрела с огненным усилением при ударе<br>5% Шанс на применение Заклинания Уровня 20 Холодная Улучшенная Стрела при ударе<br>5% Шанс на применение Заклинания Уровня 20 Улучшенная стрела молнии при ударе<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Арканист</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Каждый вид скорости (блок, чтение заклинаний, передвижение, атака, восстановление) считается отдельно. Например, +1% ко всем скоростям считается как +5% для бонусов возвышения.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Маг крови</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+45 к Силе<br>+45 к Живучести<br>+45 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+20% Бонус к Силе<br>+20% Бонус к Жизни<br>+20% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 1% урона заклинаний за каждые 250 здоровья и 1% урона призванных существ за каждые 400 здоровья<br>Энергия больше не влияет на урон заклинаний и призванных существ<br>Магия крови*<br>+200 к Жизни<br><br>
+                    <font color="orange">Уровень 4</font><br>Исцеление на 2% от Максимального Здоровья при Убийстве<br>+50% Более Быстрое Восстановление После Удара<br>+25% физического сопротивления<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>+25% к Призывной Жизни<br>Максимум здоровья увеличен на 50%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Магия крови означает, что теперь вы тратите здоровье на заклинания.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+30 ко Всем Атрибутам<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+15% Бонус ко всем атрибутам<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете +1 ко всем умениям за каждые 1000 очков характеристик*<br>+20% ко Всем Скоростям<br>+30 ко Всем Атрибутам<br><br>
+                    <font color="orange">Уровень 4</font><br>Вы получаете 1 к поглощению стихий и магии за каждые 100 очков характеристик*<br>Вы получаете 1 защиты за каждые 2 очка характеристик*<br>+20 к Подавляющему Могуществу (все классы)<br>Сокращение продолжительности яда на +75%<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>10% Шанс на применение уровня 60 Уничтожение при ударе<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Пробужденный</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Пороги считаются по общему числу очков характеристик (например, +1 ко всем умениям вы получаете, если у вас по 250 в каждой характеристике).</font><br>
+        <font size="-2">**Уничтожение это разрушительная нова 6 стихий (огонь/холод/молния/яд/физический/магия), умение на весь экран, которое за каждую нову наносит 50% урона оружия, преобразованного в соответствующую стихию, а также значительный урон заклинаний каждого типа, растущий от суммы характеристик. Оно отбрасывает врагов и снижает все их сопротивления на 25% на 2 секунды. Ядовитая нова не наносит урон оружием.</font><br>
+        <font size="-2" color="red">**Уничтожение срабатывает, только когда текущее здоровье ниже 30%.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Железный болт</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+60 к Силе<br>+60 к Живучести<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+25% Бонус к Силе<br>+25% Бонус к Жизни<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 1%-2% урона от кровотечения за каждые 10 силы<br>Длительность этого кровотечения зависит от масштабирования скорости перезарядки арбалета*<br>+150 к Силе<br>
+                    <font color="orange">Уровень 4</font><br>Получите 1 Жизнь при Ударе за каждые 200 Силы<br>+20% к скорости перезарядки арбалета<br>Предел скорости перезарядки арбалета снижен на 20%<br>+500 к Рейтингу Атаки<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>2% Шанс на применение Заклинания Уровня 40 Внутреннее Зрение при ударе<br>+25 к Заточенному Фокусу (все классы)<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Длительность кровотечения равна масштабированию скорости перезарядки арбалета. Это действует независимо от того, используете вы арбалет или нет. Кровотечение Железного болта может разбавляться другими источниками кровотечения (так же, как экземпляры яда разбавляют друг друга).</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+75 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+30% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете -1% к сопротивлению врага огню, холоду и молнии за каждые 400 маны<br>+400 к Мане<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 1 Восстановление Жизни за каждые 5 Маны<br>+20 к Всемогуществу (все классы)<br>+25% ко Всем Скоростям<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>+1 к Телепортация<br>+1 ко Всем Умениям<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Звездорожденный</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Сокрушитель жизни</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+75 к Живучести<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+30% Бонус к Жизни<br><br>
+                    <font color="orange">Уровень 3</font><br>Получите 1% Урона Заклинания за каждые 100 Пропавших Жизней<br>Увеличение Максимального Здоровья +30%<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 1 Магическую и Физическую Защиту от Урона за каждые 100 Пропавших Жизней<br>+1 к лимиту ловушек<br>Урон уменьшен на 50<br>Уменьшение магического урона на 50<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>+10 к Пакту Жизни*<br>Сопротивление магии +15%<br>Физическое Сопротивление: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Пакт Жизни это переключаемое умение, которое каждую секунду отнимает 25% максимума здоровья и дает 10% максимума здоровья за уровень. Пакт Жизни не может вас убить.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+45 к Силе<br>+45 к Ловкости<br>+45 к Живучести<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+20% Бонус к Силе<br>+20% Бонус к Ловкости<br>+20% Бонус к Жизни<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 2 максимального урона огнем, холодом и молнией к атакам за каждый 1% сопротивления стихиям*<br>Сопротивление Огню +50%<br>Сопротивление Холодu +50%<br>Сопротивление молнии +50%<br><br>
+                    <font color="orange">Уровень 4</font><br>Вы получаете 1% физического и магического сопротивления за каждые 30% сопротивления стихиям*<br>Вы получаете 1% сопротивления яду за каждые 5% сопротивления стихиям*<br>Урон заклинаний: +50%**<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>2% шанс применить Ярость Творения 1 ур. при ударе***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Творец миров</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Каждый тип сопротивления считается отдельно для порогов бонуса. Например, вы получаете 1% физического сопротивления, если у вас по 10% сопротивления огню, холоду и молнии.</font><br>
+        <font size="-2">**Урон заклинаний это урон заклинаний огня/холода/молнии/яда/магических/физических; он увеличивает фиксированный урон атак (кроме урона физических заклинаний, который не увеличивает физический урон атак).
+        </font><br>
+        <font size="-2">***Ярость Творения это тройная стихийная нова среднего радиуса; каждая нова наносит 50% урона оружия, преобразованного в соответствующую стихию, и снижает сопротивления врагов стихиям на 30%.
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Страж душ</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+60 к Живучести<br>+60 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+25% Бонус к Жизни<br>+25% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 1% урона заклинаний яда, магических и физических за каждые 40 энергии<br>+150 к Энергии<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 1 жизнь за каждые 3 энергии<br>Магическое поглощение +10%<br>Не может быть заморожен<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>+1 к лимиту неуникальных призывов<br>Урон уменьшен на 50<br>Уменьшение магического урона на 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+45 к Силе<br>+45 к Ловкости<br>+45 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+20% Бонус к Силе<br>+20% Бонус к Ловкости<br>+20% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3*</font><br>
+                    Стойка урона (красная): 5% улучшенного урона и 1% урона заклинаний<br>
+                    за каждые 75 очков силы, ловкости и энергии в сумме<br>
+                    Стойка уклонения (зеленая): 10% ко всем скоростям и 1% уклонения<br>
+                    за каждые 1000 очков силы, ловкости и энергии в сумме<br>
+                    Стойка восстановления (синяя): +1 ко всем умениям и 150 восполнения здоровья и маны<br>
+                    за каждые 1500 очков силы, ловкости и энергии в сумме<br><br>
+                    <font color="orange">Уровень 4</font><br>Бонусы от всех стоек увеличены на 25%<br>+30% Бонус к Силе<br>+30% Бонус к Ловкости<br>+30% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>+50% Увеличение Скорости Атаки<br>+50% Скорость Заклинаний<br>+100 Жизни после каждого Убийства<br>+50 к Мане после каждого Убийства<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Танцор стоек</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*В подменю управления нужно назначить клавишу смены стойки.</font></font><br>
+        <font size="-2">**Стойку можно менять когда угодно, но стойки сменяются только в таком порядке: красная -&gt; зеленая -&gt; синяя.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Кочевник</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+60 к Ловкости<br>+60 к Живучести<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+25% Бонус к Ловкости<br>+25% Бонус к Жизни<br><br>
+                    <font color="orange">Уровень 3</font><br>Получите 5 к максимальному урону за каждые 5% ускорения бега/ходьбы или 1% базовой скорости бега/ходьбы<br>+75% Более Быстрая Бег/Ходьба<br>Добавляет 150%-250% урона от кровотечения за 1 секунду<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 5% шанса уклонения за каждые 200% ускорения бега/ходьбы или 40% базовой скорости бега/ходьбы<br>+300 к Жизни<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>20% Шанс на применение уровня 1 Суетиться при ударе<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Юркость это усиление длительностью 1 секунда, которое дает 33% уклонения, 100% базовой скорости бега/ходьбы, 25% общего максимального физического урона к атакам и восстанавливает 10% максимума здоровья за время действия.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+75 к Ловкости<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+30% Бонус к Ловкости<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 2% бонуса к рейтингу атаки за каждый 1% пробивания<br>Вы получаете 1 максимального урона за каждые 2% пробивания<br>+30 к Минимум Урон<br>+20 к Пробиванию (все классы)<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 3 Жизни за каждые 1% Пронзания<br>+75% Более Быстрая Бег/Ходьба<br>+20 к Уклонению (все классы)<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>15% Шанс на применение Заклинания Уровня 20 Стрела при ударе<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Снайпер</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Страж маны</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+45 к Ловкости<br>+45 к Живучести<br>+45 к Энергии<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+20% Бонус к Ловкости<br>+20% Бонус к Жизни<br>+20% Бонус к Энергии<br><br>
+                    <font color="orange">Уровень 3</font><br>Вы получаете 1% урона заклинаний за каждые 20% регенерации маны<br>Вы получаете 1 минимального урона к атакам за каждые 5% регенерации маны<br>+5 Мана при ударе<br>Регенирация Маны +100%<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 1 Маны за каждые 2% восстановления Маны<br>+20 к Энергетическому щиту (все классы)<br>+10% к Максимальному Сопротивлению Яду<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>20% Шанс на применение уровня 50 Остановка времени при ударе<br>Сопротивление яду +75%<br>+20 к Радиусу Света<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Уровень 1</font><br>+1 к уровням классовых умений<br>+75 к Силе<br><br>
+                    <font color="orange">Уровень 2</font><br>+1 к уровням классовых умений<br>+30% Бонус к Силе<br><br>
+                    <font color="orange">Уровень 3</font><br>Получите 3% Максимального Урона за каждые 1% Физического Урона, Отсосанного как Жизнь<br>+30 к Максимум Урон<br>+25% Физический Урон, Откачиваемый как Жизнь<br><br>
+                    <font color="orange">Уровень 4</font><br>Получите 1% Сопротивления Физическому и Магическому Урону за каждые 5% Физического Урона, Отнятого как Жизнь<br>Длительность проклятия уменьшена на 100%<br><br>
+                    <font color="orange">Уровень 5</font><br>+3 к уровням классовых умений<br>25% шанс применить Опустошение 1 ур. при атаке в ближнем бою**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Возвышение: Берсерк</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Опустошение это умение малого или среднего радиуса, которое наносит всем пораженным врагам 150% урона оружия как физический урон и снижает их физическое сопротивление на 30% на 2 секунды.</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

@@ -1,0 +1,2124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected 資料庫
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35486;&#35328;"><select id="esr-lang-zhTW" aria-label="&#35486;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW" selected>&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhTW",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhTW');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本資訊</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[更新日誌]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[護甲]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[前綴]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[後綴]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金護甲]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[暗金武器]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[其他暗金]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[神話暗金]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[套裝]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石/符文]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[寶石之語]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[符文之語]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[方塊配方]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[地圖]</a>
+            <a href="./ias-calculator.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[攻速計算器]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[掉落查詢]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系統</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[腐化結果]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[塗油結果]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[終局地圖]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[靈魂容器]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[進階職業]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[擊殺帳簿]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[傭兵與外部技能資訊]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[武器專精]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                暗黑破壞神 II：獄火重生 全面轉換模組</div>
+        </div>
+        <div style="width:100%;">
+
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                神話暗金物品的底材與其他所有物品都不同，因此無法透過賭博取得。<br>
+                                神話暗金物品只會在終局地圖區域掉落，因為它們的掉落等級為 100+。<br>
+                                大多數神話暗金物品都有特殊效果或觸發，能帶來獨特玩法或強化既有玩法。<br>
+                                有些神話暗金物品有特定的掉落來源（例如巫妖王的那些）。所有神話底材的屬性都略有提升。物理攻擊武器通常多 10% 基礎傷害。施法者武器通常需求較低或有其他小加成。<br>
+                                所有神話底材的等級需求都略有提高（通常比其參考的底材高 +3；例如神話泰坦之錘參考泰坦之錘）。<br>
+                                神話暗金物品 <b>無法</b> 重擲。掉落什麼就是什麼。
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        神話暗金武器
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=400 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    名稱
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=600 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    備註
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        梅菲斯托的意志
+                                        <br>
+                                        <a href="weapons.htm#m04">
+                                            神話惡魔魔杖
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mephistos_will.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">你可以多喚起 +(100~150)% 的骷髏法師<br>你無法再喚起骷髏戰士</font><br>+(2~4) 到所有技能
+                                        <br>+(20~30)% 召喚生命 <br>+(12~15)% 召喚物理和魔法抗性
+                                        <br>+(30~40)% 召喚物抗性 <br>-(40~50)% 敵人的火焰抗性
+                                        <br>-(40~50)% 敵人的冰寒抗性 <br>-(40~50)% 敵人的閃電抗性 <br>-(40~50)% 敵人的毒素抗性 <br>+(80~100) 於能量
+                                        <br>+(25~30)% 能量加成 <br>物理抗性: +(15~20)% <br>減少傷害 (50~60) <br>+(25~30)% 獲得經驗值 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        伊納瑞斯的無限思維之杖
+                                        <br>
+                                        <a href="weapons.htm#m12">
+                                            神話天使權杖
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/inarius_rod_of_infinite_thought.png"
+                                        style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你的神聖靈氣有 25% 機率暴擊，<br>每 50 點能量，總傷害提高 1%</FONT><br>擊中時有 5% 機率施放 60 級天之拳<br>+(2~4) 到攻擊光環 （僧侶專用）<br>+(30~50)% 更快施法速度 <br>-(30~40)% 敵人的火焰抗性 <br>-(30~40)% 敵人的冰寒抗性 <br>-(30~40)% 敵人的閃電抗性 <br>-(30~40)% 敵人的毒素抗性 <br>+(80~100)% 於魔法傷害 <br>+(4~8)% 最高毒素抗性 <br>+(4~8)% 冷抗上限 <br>+(4~8)% 最高閃電抗性 <br>+(4~8)% 最高火焰抗性 <br>+(40~50)% 能量加成 <br>+(10~40) 的光照半徑 <br>插槽 (1~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        雙持此武器時，效果不會疊加。
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        永恆之光，黎明之希望
+                                        <br>
+                                        <a href="weapons.htm#m17">
+                                            神話天界權杖
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lux_aeterna_hope_of_dawn.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        25% 機率在你施放技能時施放等級 60 星陨<br>裝備時提供 (20~30) 級 救贖 光環<br>+(2~4) 到所有技能 <br>+(40~50)% 更快施法速度 <br>+(50~65)% 於魔法傷害 <br>+(10~30) 到 星陨<br>+(30~40) 所有屬性 <br>+(200~300) 生命值 <br>+(200~300) 生命法力
+                                        <br>+(20~30)% 所有屬性加成 <br>+(20~40) 的光照半徑 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        雷神之錘
+                                        <br>
+                                        <a href="weapons.htm#m03">
+                                            神話泰坦之錘
+                                        </a>
+                                    </b>
+                                    <br><br>
+                                    <img src=".././images/mythical-uniques/mjolnir.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">每1點力量獲得3點最大閃電傷害
+                                        </FONT><br>增加 1-5000 閃電傷害<br>攻擊時有 15% 機率施放 50 級審判<br>擊中時有 5% 機率施放 1 級神話混沌閃電*<br>+(80~100)% 更快的跑步/行走
+                                        <br>+100 至攻擊的最小傷害
+                                        <br>+150 最高傷害提升至攻擊 <br>-(40~50)% 敵人的閃電抗性 <br>+(400~500) 力量 <br>閃電吸收 +(8~10)%
+                                        <br>需求 +500% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        神話混沌閃電是一種特殊的連鎖閃電，造成 150% 武器傷害的閃電傷害，命中時分裂成另外 2 道閃電。每道閃電最多連鎖 3 次。
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        娜塔莉亞的血腥刽子手
+                                        <br>
+                                        <a href="weapons.htm#m16">
+                                            神話匕首
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/natalyas_bloodied_rapier.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        50% 機率在你擊殺敵人時施放等級 40 閃現打擊<br>+(30~50)% 提升攻擊速度 <br>+3% 提升最大傷害 （基於角色等級）<br>+125 至攻擊的最小傷害 <br>+150 最高傷害提升至攻擊
+                                        <br>增加 1%-150% 流血傷害，持續 0.2 秒<br><br>+1 到 閃現打擊<br>+(40~50) 以敏捷 <br>增加最大生命 +(30~40)% <br>+(20~30)% 速度加成 <br>減少傷害 (50~60)
+                                        <br>每次擊殺後 +(150~225) 生命 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        Tal 拉莎的最後低語
+                                        <br>
+                                        <a href="weapons.htm#m08">
+                                            神話平衡匕首
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tal_rashas_last_whisper.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">攻擊附加 3-4 火焰、2-5 冰寒、1-7 閃電傷害<br>每 4 點敏捷<br>暗影斗篷現在以兩倍效果穿透元素抗性，而不是物理抗性</FONT><br>擊中時有 1% 機率施放 60 級暗影斗篷<br>擊中時有 8% 機率施放 15 級火焰增強箭<br>擊中時有 8% 機率施放 15 級寒冷增強箭<br>擊中時有 8% 機率施放 15 級閃電增強箭矢<br>+(40~50)% 提升攻擊速度 <br>+(3~5)% 最高毒素抗性 <br>+(3~5)% 冷抗上限
+                                        <br>+(3~5)% 最高閃電抗性 <br>+(3~5)% 最高火焰抗性
+                                        <br>+(30~40)% 速度加成 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        雙持此武器時，特殊效果不會疊加。
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        猴王之杖
+                                        <br>
+                                        <a href="weapons.htm#m11">
+                                            神秘的奧術法杖
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/monkey_king_bar.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="ORANGE">+(25~50)% 基礎跑步/步行速度</font><br>
+                                        +(200~300)% 增強傷害<br>攻擊時有 25% 機率施放 10 級猴王之怒<br>+(50~70)% 提升攻擊速度
+                                        <br>+150 至攻擊的最小傷害 <br>+250 最高傷害提升至攻擊
+                                        <br>+(40~60)% 物理傷害吸取為生命<br>增加 400%-500% 流血傷害，持續 2 秒<br>-100% 目標防禦 <br>+(15~25)% 閃避機率<br>+1 到 猴王的跳躍<br>+(40~50)% 速度加成<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        *猴王之怒是一種特殊攻擊，沿直線降下一陣石雨，每顆石頭在小範圍內造成 150% 武器傷害。
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <br>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        厄運之弓的棱鏡
+                                        <br>
+                                        <a href="weapons.htm#m01">
+                                            神話射手弓
+                                        </a>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/doomfletchsprism.png" style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">獲得物理攻擊傷害加成的 25% 作為每種元素的額外傷害<br>
+                                            致命一擊可套用於轉換後的傷害
+                                        </FONT>
+                                        <br>+(100~200)% 增強傷害<br>+(50~100) 至攻擊的最小傷害<br>+(100~150) 最高傷害提升至攻擊<br>
+                                        擊中時有 8% 機率施放 20 級火焰增強箭<br>擊中時有 8% 機率施放 20 級寒冷增強箭<br>擊中時有 8% 機率施放 20 級閃電增強箭矢<br>+(2~7) 到所有技能 <br>+50% 提升攻擊速度 <br>+(30~50) 所有屬性
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        布里札-多卡農
+                                        <br>
+                                        <a href="weapons.htm#m02">
+                                            神話奧德修斯弩
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/burizadokyanon.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        在 40 秒內增加 2000-3000 冰寒傷害<br>擊中時有 5% 機率施放 1 級暴雪砲*<br>擊中時有 5% 機率施放 20 級寒冰閃光<br>+200% 提升攻擊速度 <br>+3% 提升最大傷害 （基於角色等級）<br>+3 到 最大 傷害 （基於角色等級）<br>+50 至攻擊的最小傷害 <br>+100 最高傷害提升至攻擊 <br>-(40~50)% 敵人的冰寒抗性 <br>-2 最大弩箭數量<br>+(75~100)% 弩總傷害<br> 無法被冰凍 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    <font>
+                                        暴風雪砲是一種特殊攻擊，發射一發快速投射物，造成 150% 武器傷害的冰寒傷害，且可多次命中。被命中的敵人冰寒抗性降低 50%，持續一秒，此效果對冰寒免疫的敵人有 100% 效率。此效果可以冰凍大魔王。
+                                    </font>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        杜瑞爾的腐爛痛苦之爪
+                                        <br>
+                                        <a href="weapons.htm#m13">
+                                            神話剪刀蘇瓦雅
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/duriels_claws_of_festering_agony.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        裝備時提供 (30~50) 級 神聖冰凍 光環<br>2% 機率在攻擊時施放等級 60 冰刃釋放<br>17% 機率在近戰攻擊時施放等級 1 執行釋放<br>17% 機率在你擊殺敵人時施放等級 60 火焰之拳釋放<br>17% 機率在近戰攻擊時施放等級 60 雷霆之爪釋放<br>+(30~50)% 更快的跑步/行走 <br>+2% 提升最大傷害 （基於角色等級）<br>+75 至攻擊的最小傷害 <br>+125 最高傷害提升至攻擊
+                                        <br>-(20~30)% 敵人的火焰抗性 <br>-(20~30)% 敵人的冰寒抗性 <br>-(20~30)% 敵人的閃電抗性 <br>-(20~30)% 敵人的毒素抗性 <br>+(40~80)% 冷卻法術傷害 <br </font>
+                                    </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    冰刃釋放是一種模擬 3 層冰刃釋放的觸發。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        英普瑞斯的不滅之怒
+                                        <br>
+                                        <a href="weapons.htm#m07">
+                                            神話維度碎片
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/imperius_undying_wrath.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">受到傷害時，每 100 點力量獲得 1% 閃電法術傷害，<br>持續 5 秒<br>此效果最多可疊加 25 次<br>能量帶來的閃電法術傷害不再生效</FONT><br>+(2~4) 到所有技能 <br>+(80~100)% 更快的跑步/行走
+                                        <br>+(40~50)% 更快施法速度 <br>-(40~50)% 敵人的閃電抗性 <br>+(50~65) 力量 <br>+(160~200) 生命法力 <br>增加最大法力 +(40~50)% <br>+(8~10)% 最高閃電抗性 <br>+(25~30)% 力量加成 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        拉斯瑪的永恆統治
+                                        <br>
+                                        <a href="weapons.htm#m14">
+                                            神話儀式匕首
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathmas_eternal_reign.png"
+                                        style="width: 50px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">若你至少有 1000 點體力，你喚起的骷髏<br>與召喚的骷髏王可以使用強化毒性武器*
+                                        </FONT><br>+(2~4) 到所有技能 <br>+(15~25)% 召喚物理和魔法抗性
+                                        <br>+(20~30)% 召喚生命 <br>+(40~50)% 召喚傷害 <br>-(40~50)% 敵人的毒素抗性 <br>+1 到 傳送<br>+(30~50) 所有屬性
+                                        <br>+(40~50)% 生命值加成 <br>物理抗性: +(15~20)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    強化毒性武器是普通毒性武器的強化版本。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        死神的收割者
+                                        <br>
+                                        <a href="weapons.htm#m05">
+                                            神話靈魂毀滅者
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src="./images/mythical-uniques/the grim reaper's harvester.png"
+                                        style="width: 100px" />
+                                    <br><br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <font color="orange">你可以額外召喚 +(2~3) 個骷髏王，且沒有冷卻時間<br>你無法再召喚或喚起其他僕從<br>
+                                            不死狂亂的冷卻時間為 0，而收割靈魂<br>每級提供 15% 額外物理傷害與 5% 召喚物傷害<br></font>+(300~400)% 增強傷害<br>+(4~7) 到所有技能 <br>+(60~75)% 提升攻擊速度 <br>+100 至攻擊的最小傷害 <br>+150 最高傷害提升至攻擊
+                                        <br>+(10~20)% 召喚物理和魔法抗性 <br>+(25~30) 到 收割靈魂 （只限死靈法師）<br>所有抗性 +(50~60) <br>+(8~10)% 元素吸收 <br>詛咒持續時間減少 100% <br>每次擊殺後 +(250~300) 生命<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    所有其他召喚物也包括非死靈法師的召喚物。<br>
+                                    召喚物傷害只在召喚當下計算，所以你需要在收割靈魂生效期間重新召喚骷髏王，召喚物傷害加成才會生效。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        梅菲斯托的噩夢
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話魔法刀
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/mephistos_nightmare.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">火焰、冰寒與閃電抗性合計至少 1000% 時，<br>此武器可召喚最多五倍數量的九頭蛇</FONT><br>擊中時有 2% 機率施放 60 級雷電海德拉<br>+(40~50)% 提升攻擊速度 <br>-(50~65)% 敵人的閃電抗性 <br>+(200~300) 生命值 <br>+(200~300) 生命法力
+                                        <br>增加最大法力 +(40~50)% <br>+(4~7)% 最高毒素抗性 <br>+(4~7)% 冷抗上限 <br>+(4~7)% 最高閃電抗性 <br>+(4~7)% 最高火焰抗性 <br>所有抗性 +(80~100) <br>物理抗性: +(20~30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        三位一體的末日先驅
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話石化法杖
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/the_triune_harbinger_of_apocalypse.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">此物品最多可墮落 10 次<br>每次墮落使三頭同盟寶珠的傷害提高 10%</FONT><br>
+                                        +(2~4) 到所有技能 <br>+(80~100)% 更快的跑步/行走 <br>+(40~50)% 更快施法速度 <br>增加最大法力 +(40~50)% <br>法力再生 +(200~300)% <br>+(75~100) 於能量 <br>
+                                        火焰抗性 +(50~75)% <br>冰冷抗性 +(50~75)% <br>閃電抗性 +(50~75)% <br>
+                                        +(30~40)% 火焰法術傷害 <br>+(30~40)% 冷卻法術傷害 <br>+(30~40)% 於雷電法術傷害 <br>
+                                        -(15~25)% 敵人的火焰抗性 <br>-(15~25)% 敵人的冰寒抗性 <br>-(15~25)% 敵人的閃電抗性 <br>
+                                        +(10~20) 到 三頭同盟寶珠
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    三頭同盟寶珠是一顆緩慢移動的寶珠，會朝附近敵人發射三元素光束。其他物品的墮落也會計入其傷害。
+                                    <br><br>
+                                    此物品由 TiltedPrimate 在 ESR Discord 上設計，是神話暗金物品競賽的優勝作品。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        獵戶座
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話古代弓
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orion.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            攻擊有10%的機率造成三倍的總傷害</FONT><br>15% 機率在攻擊時施放等級 40 閃電增強箭矢<br>+3% 提升最大傷害 （基於角色等級）<br>+(100~200) 最高傷害提升至攻擊 <br>+(500~1000) 攻擊評價
+                                        <br>-(20~30)% 敵人的閃電抗性
+                                        <br>+100% 致命一擊
+                                        <br>+(20~30)% 速度加成 <br>+(10~20) 到 星際破裂<br>
+                                        +(10~20) 到 星雨<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    星際破裂 <font color="RED">無法直接造成傷害。</font> 你需要稍微偏離敵人瞄準。<br><br>
+                                    這把弓的靈感來自 <a
+                                        href="https://ffylands.fandom.com/wiki/Orion">獵戶座</a>
+                                    《Borderlands 2》模組 Fight For Your Life Lands 中的槍，而它又是受到《Borderlands 1》同名槍械的啟發。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        阿圖魯亞的最後狩獵
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話母系長矛
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/athulua_final_hunt.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            生命低於 33% 時，柴堆、冰霜、瘟疫標槍與閃電之怒會投出兩倍的標槍
+                                        </FONT><br>
+                                        3% 機率在攻擊時施放等級 40 內視<br>
+                                        +(2~4) 於標槍和長矛技能 （亞馬遜專用）<br>
+                                        +(2~4) 亞馬遜技能等級<br>
+                                        +(80~100)% 更快的跑步/行走<br>
+                                        +(30~40)% 提升攻擊速度<br>
+                                        -(20~30)% 敵人的火焰抗性<br>
+                                        -(20~30)% 敵人的冰寒抗性<br>
+                                        -(20~30)% 敵人的閃電抗性<br>
+                                        -(20~30)% 敵人的毒素抗性<br>
+                                        +(5~10)% 閃避機率<br>
+                                        元素吸收 (2~3)%<br>
+                                        每次擊殺後 +(50~100) 生命<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        拉斯瑪的無盡流血脊椎
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話中的鯨魚獵人
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/rathma_endlessly_bleeding_spine.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">每層血之強化提供 10 點最大傷害、2% 攻擊速度與 2% 生命竊取，代價是每層每秒失去 10 點生命。持續 3 秒<br>
+                                            最大層數：500
+                                        </FONT><br>+(300~400)% 增強傷害<br>15% 機率在攻擊時施放等級 1 鮮血賦能<br>8% 機率在攻擊時施放等級 1 血腥之矛<br>2% 機率在攻擊時施放等級 60 放大傷害<br>+75 至攻擊的最小傷害
+                                        <br>+125 最高傷害提升至攻擊 <br>+2 最高傷害提升至攻擊 （基於角色等級）<br>-(40~50)% 目標防禦 <br>+(20~40)% 物理傷害吸取為生命
+                                        <br>詛咒持續時間減少 (40~50)%
+                                        <br>(20~30)% 復活為：墮落亡魂<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    血腥長矛是一發造成 125% 武器傷害、預設可穿透的投射物。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        雅瑞斯的天體燈塔
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話古代碎片
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/yaeriuscelestialbeacon.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">命中敵人時有小機率在戰場上召喚光之烈焰信標，拾取後提供 15% 總物理傷害與 15% 最大生命<br>此效果最多疊加 20 次，持續 2 秒
+                                        </FONT><br>1% 機率在攻擊時施放等級 1 天體賦能<br>8% 機率在攻擊時施放等級 60 閃電增強箭矢<br>8% 機率在攻擊時施放等級 40 火焰增強箭<br>+(40~50)% 提升攻擊速度 <br>+3% 提升最大傷害 （基於角色等級）<br>+3 最高傷害提升至攻擊 （基於角色等級）<br>+(200~400)% 攻擊評價加成 <br>-(20~30)% 敵人的閃電抗性 <br>-(20~30)% 敵人的火焰抗性 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        斯科斯格倫的古老圖騰
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話之木棍
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/ancient_totem_of_scosglen.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">每 5 次攻擊，你會與特定元素產生共鳴，強化該元素，並分別讓烈焰爆發、龍捲風或冰霜爆裂射出三倍的投射物
+                                            <br>元素法術現在可在所有元素之間產生協同
+                                        </FONT><br>100% 機率在你擊殺敵人時施放等級 2 時間延遲<br>
+                                        裝備時提供 (10~15) 級 索斯格蘭共鳴 光環<br>
+                                        +(2~4) 到所有技能<br>
+                                        +(40~50)% 更快施法速度<br>
+                                        +(20~40)% 火焰法術傷害<br>
+                                        +(20~40)% 冷卻法術傷害<br>
+                                        +(20~40)% 物理法術傷害<br>
+                                        所有抗性 +(40~60)<br>
+                                        每次擊殺後 +(40~60) 生命法力<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    與特定元素共鳴時，每級斯科斯格倫共鳴靈氣也會給你 5% 該元素的法術傷害。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        El'德魯伊，光之聖劍艾克斯卡利伯
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話天劍
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/eldruin_excalibur_of_the_light.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">由艾爾德魯因觸發的神聖技能，會以魔法傷害造成武器傷害<br>每點光照範圍獲得 25% 傷害強化
+                                        </FONT><br>+(300~400)% 增強傷害<br>10% 機率在近戰攻擊時施放等級 1 神聖之箭<br>
+                                        10% 機率在近戰攻擊時施放等級 1 祝福之錘<br>
+                                        10% 機率在近戰攻擊時施放等級 1 天之拳<br>
+                                        +(40~50)% 提升攻擊速度<br>
+                                        +100 至攻擊的最小傷害<br>
+                                        +125 最高傷害提升至攻擊<br>
+                                        +(1~2) 生命在打擊上<br>
+                                        魔法抗性 +(15~30)%<br>
+                                        物理抗性: +(15~30)%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    此劍觸發的神聖彈與祝福之錘會造成 20% 武器傷害的魔法傷害，且沒有固定魔法傷害。天堂之拳造成 125% 武器傷害的魔法傷害，其次級閃電造成 20% 武器傷害的魔法傷害
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        奧菲斯的希望之柱
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話法師杖
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/orpheus.png" style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE"><br>每層冥界強化提供 5% 毒素、魔法與物理技能傷害，持續 2 秒<br>最大層數：40
+                                        </FONT><br>1% 機率在受到攻擊時施放等級 50 時間延遲<br>50% 機率在你擊殺敵人時施放等級 1 冥界增能<br>+(0~8) 到所有技能 <br>+(0~30)% 技能冷卻時間減少 <br>+(5~10) 隨機法術精通（毒素/魔法/物理）<br>+(10~20) 到 前往冥界<br>增加最大生命 +(30~50)% <br>減少傷害 50 <br>魔法傷害減少 50 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        月讀的垂死之光
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話之刀
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/tsukuyomi_dying_light.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">攻擊有 3% 的機率造成五倍的總傷害
+                                        </FONT><br>+(200~300)% 增強傷害<br>50% 機率在近戰攻擊時施放等級 1 執行釋放<br>
+                                        +2% 提升最大傷害 （基於角色等級）<br>
+                                        +(100~125) 最高傷害提升至攻擊<br>
+                                        -(25~75)% 目標防禦<br>
+                                        +(30~50)% 致命一擊<br>
+                                        +(10~20) 到 影子降臨<br>
+                                        +(20~30) 到 龍 刀刃 （僧侶專用）<br>
+                                        魔法抗性 +(10~20)%<br>
+
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    處決釋放會釋放一個完全蓄滿、當前等級的處決
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        千刃虛無新月
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話阿瑞特的斧頭
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/void_crescent_of_a_thousand_cuts.png"
+                                        style="width: 50px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">每層幽魂殘殺使敵人的魔法抗性降低 0.2%<br>並使其在 1 秒內受到 5 點額外物理傷害<br>最大層數：1000</FONT><br>+(300~400)% 增強傷害<br>
+                                        100% 機率在攻擊時施放等級 1 幽靈重傷<br>
+                                        8% 機率在攻擊時施放等級 30 投擲斧<br>
+                                        8% 機率在攻擊時施放等級 30 魔法增強斧<br>
+                                        攻擊附加 150-200 物理傷害 <br>
+                                        詛咒持續時間減少 (40~50)%<br>
+                                        +(20~30)% 物理傷害吸取為生命<br>
+                                        +(400~500) 攻擊評價<br>
+                                        +(80~100) 攻擊準確率加成<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    幽魂殘殺造成的額外物理傷害是固定且無法修改的額外物理傷害量。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        巴爾的邪惡低語
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話的影切
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/baals_vile_whisper_2.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">每50點敏捷獲得1%冰冷法術傷害</FONT><br>
+                                        2% 機率在攻擊時施放等級 60 冰牙<br>
+                                        4% 機率在攻擊時施放等級 60 寒冰爆發<br>
+                                        1% 機率在攻擊時施放等級 60 神話的衰弱<br>
+                                        對攻擊增加 150-250 傷害<br>
+                                        對攻擊增加 2000-3000 冷傷害，持續 20 秒<br>
+                                        +150% 致命一擊<br>
+                                        +(30~50)% 速度加成<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 20px 50px 20px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    神話衰老是普通衰老與傷害加深的 2 合 1。它的緩速效果與普通衰老相同，降低物理抗性的幅度與普通傷害加深相同（等級成長也相同）。它也會降低等同物理抗性降幅的冰寒抗性。<br><br>
+
+                                    這把手裡劍的靈感來自 Diablo 2 Immersion 模組中同名的菁英暗金手裡劍。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        虛空之鍛
+                                        <br>
+                                        <a href="weapons.htm#m09">
+                                            神話深淵之刃
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <img src=".././images/mythical-uniques/voidforge.png" style="width: 100px" />
+                                </font>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">獲得 100% 的物理傷害作為隨機一種<br>火焰、冰寒或閃電元素的額外傷害<br>你的元素攻擊傷害現在可以暴擊</FONT><br>
+
+                                        +(250~500)% 增強傷害<br>
+                                        對攻擊增加 150-250 傷害<br>
+                                        最大生命提高 +(30~40)%<br>
+                                        +(8~10) 生命在打擊上<br>
+                                        +(4~5) 擊中時法力<br>
+                                        +30% 提升攻擊速度<br>
+                                        +(1~10) 到 元素 狂怒<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        神話暗金護甲
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    名稱
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    備註
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        獵首者
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            神話麻帶
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/headhunter.png" style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        2% 機率在你擊殺敵人時施放等級 1 速度獎杯<br>2% 機率在你擊殺敵人時施放等級 1 物理傷害獎杯<br>2% 機率在你擊殺敵人時施放等級 1 法術傷害獎杯<br>2% 機率在你擊殺敵人時施放等級 1 生存獎盃<br>2% 機率在你擊殺敵人時施放等級 1 抗性獎盃<br>2% 機率在你擊殺敵人時施放等級 1 數據獎盃<br>2% 機率在你擊殺敵人時施放等級 1 全技能獎盃<br>+(80~100) 力量 <br>+(80~100) 以敏捷 <br>+(150~200) 生命值 <br>增加最大生命 +(25~30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    每個戰利品效果持續 20 秒。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        自然之力的注入角化身
+                                        <br>
+                                        <a href="armors.htm#m15">
+                                            神話夢靈
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/avatar_of_natures_infused_horns.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">若你至少有 1000 點敏捷，你的狼可以使用撲擊*
+                                        </FONT><br>
+                                        <FONT COLOR="ORANGE">+(1~2) 到非獨特召喚限制</FONT> <br>2% 機率在受到傷害時施放等級 50 時間停止<br>+(1~3) 到所有技能 <br>+(80~100)% 更快的跑步/行走 <br>+(10~20)% 召喚物理和魔法抗性
+                                        <br>+(25~35)% 召喚生命 <br>+(20~30)% 召喚傷害 <br>+(400~500) 生命值
+                                        <br>+(40~50)% 速度加成 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    靈狼與惡狼都能使用撲擊。撲擊同時是強力的範圍攻擊與單體攻擊，會把狼傳送到目標身上進行攻擊
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        腐敗之盾
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            神話寶石盔甲
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/aegisofcorruption.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">若你裝備了 20 件以上的墮落物品，你的直接傷害<br>法術中有基礎冷卻時間者，總傷害加倍
+                                        </FONT><br>5% 機率在受到傷害時施放等級 40 旋風護甲<br>+(2~3) 到所有技能 <br>-(20~30)% 敵人的火焰抗性 <br>-(20~30)% 敵人的冰寒抗性 <br>-(20~30)% 敵人的閃電抗性 <br>-(20~30)% 敵人的毒素抗性 <br>+(20~30)% 技能冷卻時間減少 <br>+(2000~2500) 防禦 <br>+(80~100) 生命力 <br>增加最大法力 +(40~50)%
+                                        <br>+(1~5)% 最高毒素抗性 <br>+(1~5)% 冷抗上限 <br>+(1~5)% 最高閃電抗性 <br>+(1~5)% 最高火焰抗性 <br>所有抗性 +(50~60) <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    直接傷害法術是指可以直接施放的法術（例如火雨）。傷害加成是對所有加成的總乘數（實際上是傷害加倍）<br>墮落物品同時包括已裝備的物品與護身符（暗金或非暗金）
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        塔塔美特的覺醒<br>
+                                        (<font color="red">火</font> 變體）
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            神話冠冕
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你的傳送現在使用時會自動施放元素新星<br>
+                                            以這種方式施放的元素新星視為與所有元素相合，<br>但等級取決於傳送的等級</FONT>
+                                        <br>+(3~5) 火焰技能<br>-(20~30)% 敵人的火焰抗性
+                                        <br>增加最大生命 +(30~50)%<br>火焰吸收 +(8~10)% <br>恢復生命 +(800~1000)<br>+(40~50)% 更快的擊中恢復<br>+1 到 火焰精通<br>+3 到 元素 新星<br>插槽 (0~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        塔塔美特的覺醒<br>
+                                        (<font color="blue">冰寒</font> 變體）
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            神話冠冕
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你的傳送現在使用時會自動施放元素新星<br>
+                                            以這種方式施放的元素新星視為與所有元素相合，<br>但等級取決於傳送的等級</FONT>
+                                        <br>+(3~5) 冷卻技能<br>-(20~30)% 敵人的冰寒抗性 <br>
+                                        +(15~20)% 技能冷卻時間減少<br>冰冷吸收 +(8~10)% <br>法力再生 +(200~300)%<br>無法被冰凍<br>+1 到 寒冷精通<br>+3 到 元素 新星<br>插槽 (0~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        塔塔美特的覺醒<br>
+                                        (<font color="yellow">閃電</font> 變體）
+                                        <br>
+                                        <a href="armors.htm#m06">
+                                            神話冠冕
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/tathamets_awakening.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你的傳送現在使用時會自動施放元素新星<br>
+                                            以這種方式施放的元素新星視為與所有元素相合，<br>但等級取決於傳送的等級</FONT>
+                                        <br>+(3~5) 於雷電技能<br>-(20~30)% 敵人的閃電抗性
+                                        <br>
+                                        增加最大法力 +(30~50)%<br>閃電吸收 +(8~10)% <br>所有抗性 +(40~60)<br>+(5~10)% 閃避機率<br>+1 到 雷電精通<br>+3 到 元素 新星<br>插槽 (0~2)<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <br>
+                                    <b>
+                                        靈魂引擎<br>
+                                        <a href="armors.htm#m06">
+                                            神話輕型鎧甲
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_soul_engine.png" style="width: 100px" />
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你的最大生命值為 1<br>
+                                            你對毒素免疫</FONT>
+                                        <br>17% 機率在你擊殺敵人時施放等級 60 寒流<br>
+                                        裝備時提供 (60-100) 級 能量護盾 光環<br>
+                                        +20% 技能冷卻時間減少<br>
+                                        +(5~10)% 閃避機率<br>
+                                        -(20~40)% 敵人的冰寒抗性<br>
+                                        +(10~20) 到 體溫過低<br>
+                                        +1 到 寒冷精通<br>
+                                        +(400~500)% 增強防禦<br>
+                                        最大法力提高 +(30~50)%
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    失溫是正義之火的冰寒版本，靠消耗法力而非生命維持，並可透過冰寒抗性與吸收減輕。
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        神話暗金首飾
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    名稱
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    備註
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        神話高貴者的憤怒
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            護身符
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/mythical_highlords_wrath.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你有10%的機率造成三倍的總傷害
+                                        </FONT><br>+2 到所有技能 <br>恢復生命 +(800~1500) <br>法力再生 +(120~200)% <br>魔法抗性 +(10~15)% <br>所有抗性 +(30~50)
+                                        <br>物理抗性: +(10~15)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    三倍傷害效果適用於所有來源造成的所有傷害，包括攻擊、法術、神聖靈氣等。此效果與暴擊及致命一擊以乘法疊加，但與十字弓額外傷害（以及其他類似效果，例如魔法師專屬技能）以加法疊加。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        束縛的羈絆<br>
+                                        <a href="armors.htm#m10">
+                                            戒指
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/the_ties_that_bind_fire.png"
+                                        style="width: 125px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">同時配戴兩個不同變體的「束縛之結」<br>會使它們的屬性效果加倍
+                                        </FONT><br>
+                                        對攻擊增加 400-600 火焰傷害<br>
+                                        +30% 火焰法術傷害<br>
+                                        火焰抗性 +50%<br>
+                                        +15% 技能冷卻時間減少<br>
+                                        增加最大生命 +30%<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    這枚戒指有 7 種變體。每種變體都有一些基礎屬性（元素傷害、抗性、法術傷害）與一些特殊屬性（例如最大生命、冷卻時間縮短等）。配戴兩枚 <strong>不同的</strong> 戒指會使它們的修正效果加倍。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        靈魂之器
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            護身符
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/vessel_of_souls.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">
+                                            <FONT COLOR="ORANGE">一股神秘的力量從內部散發出來，你可以聽到被困的靈魂……<br>靈魂的苦難太過強大，你目前無法裝備這件神器</FONT>
+                                        </FONT><br>
+                                        +(0~2) 亞馬遜技能等級<br>
+                                        +(0~2) 到刺客技能等級<br>
+                                        +(0~2) 到野蠻人技能等級<br>
+                                        +(0~2) 到德魯伊技能等級<br>
+                                        +(0~2) 到死靈法師技能等級<br>
+                                        +(0~2) 到 聖騎士技能等級<br>
+                                        +(0~2) 到女巫技能等級<br>
+                                        無法被冰凍（50% 出現機率）<br>
+                                        +(50~200) 生命值<br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    靈魂之器是一件特殊的神話暗金物品，可以吞噬器官來獲得各種加成。<br>完整的加成清單請見 <a href="./vessel_of_souls.htm">靈魂之器</a> 頁面。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        創世餘燼
+                                        <br>
+                                        <a href="armors.htm#m10">
+                                            寶石
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/ember of creation.png" style="width: 125px" />
+                                </font>
+                                <br><br>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：60
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        +1 隨機職業技能<br>
+                                        +20 等級需求
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    創造餘燼可以擲出絕大多數職業技能，只有少數其他職業無法使用的技能除外（例如念力之錘、心靈衝擊、陷阱），因為非本職業缺少這些技能所需的動畫，或是需要職業武器的技能（例如蓄力技能）。
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" bgcolor="#402040" align="center">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        特定掉落的神話暗金物品
+                                    </b>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width=300 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    名稱
+                                </font>
+                            </td>
+                            <td width=200 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    屬性
+                                </font>
+                            </td>
+                            <td width=500 bgcolor="#402040" align="center">
+                                <font size="-1" face="arial,helvetica">
+                                    備註
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        永恆沙漏
+                                        <br>
+                                        <font color="#928A70" style="text-decoration: underline;">大型護身符</font>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/hgc.png" style="width: 50px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">你有小機率在擊殺時獲得最大冷卻時間減少3秒
+                                        </FONT><br>擊殺敵人時有 5% 機率施放 1 級永恆之沙的力量<br>+1 到所有技能<br>+(20~40)% 更快的跑步/行走 <br>+(20~40)% 提升攻擊速度
+                                        <br>+(20~40)% 更快施法速度 <br>+(20~40)% 更快的擊中恢復 <br>+(20~40)% 更快的格擋率 <br>+(10~15)% 技能冷卻時間減少<br>+(0~2)% 最高毒素抗性 <br>+(0~2)% 冷抗上限 <br>+(0~2)% 最高閃電抗性 <br>+(0~2)% 最高火焰抗性 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    擊殺永恆的邊緣中所有永恆遠古戰士，並轉化掉落的沙漏碎片即可取得
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        巫妖王的精華
+                                        <br>
+                                        <a>
+                                            <font color="#928A70" style="text-decoration: underline;">護身符</font>
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/lichkingessence.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        <FONT COLOR="ORANGE">若你有 15 件以上受膏物品，擊殺時有 25% 機率獲得<br>你每有 1% 火焰抗性，就獲得 1% 火焰法術傷害與 3-6 攻擊火焰傷害
+                                        </FONT><br>擊中時有 5% 機率施放 25 級火焰增強斧<br>+(1~2) 到所有技能
+                                        <br>+(15~25)% 火焰法術傷害 <br>-(10~15)% 敵人的火焰抗性
+                                        <br>+(5~15) 到 強化附魔<br>+(20~40) 所有屬性 <br>+(4~8)% 最高火焰抗性 <br>火焰抗性 +(40~80)% <br>減少傷害 (10~50)
+                                        <br>無法被冰凍 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    擊殺巫妖王即可取得<br>
+                                    這條護身符共有 6 種變體，每種元素一種<br>
+                                    即使效果在畫面上顯示，也要有 15 件受膏物品才會生效
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        冰霜之刃
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            神話死亡之刃
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/frostmourne.png" style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        擊中時有 1% 機率施放 60 級永恆的冬天*<br>不可摧毀 <br>+(3~6) 到所有技能 <br>+(30~60)% 提升攻擊速度 <br>+3% 提升最大傷害 （基於角色等級）<br>+200 至攻擊的最小傷害 <br>+250 最高傷害提升至攻擊 <br>-(30~60)% 敵人的冰寒抗性 <br>+(10~20) 到 永凍土 風暴<br>+(30~60)% 所有屬性加成 <br>元素吸收 (8~10)% <br>每次擊殺後 +(200~400) 生命 <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    擊殺巫妖王即可取得<br>
+                                    永恆寒冬是一個強大的範圍法術，會持續造成極高的冰寒傷害，使受影響敵人的冰寒抗性降低 50%（對免疫怪物有 100% 效率），並分別使其移動速度與攻擊/施法速度降低 150%/50%。<br>
+                                    永恆寒冬會受益於墮落神盾的法術傷害提升。
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <b>
+                                        <br>
+                                        拉斯瑪的永恆骷髏
+                                        <br>
+                                        <a href="weapons.htm#m18">
+                                            小飾品
+                                        </a>
+                                        <br>
+                                    </b>
+                                    <br>
+                                    <img src=".././images/mythical-uniques/rathma_eternal_skull.png"
+                                        style="width: 100px" />
+                                </font>
+                                <br>
+                                <br>
+
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    物品等級：100
+                                    <br>
+                                    所需等级：90
+                                    <br>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322>
+                                <font face=arial,helvetica size=-1>
+                                    <font color=4850B8>
+                                        1% 機率在受到攻擊時施放等級 25 時間延遲<br>+1 到所有技能 <br>+3 到 不死族 狂怒<br>+17 到 不死族 狂怒 （只限死靈法師）<br>+1 到 <FONT
+                                            COLOR="RED">
+                                            只能攜帶一件<FONT COLOR="BLUE"></FONT>
+                                        </FONT><br>詛咒持續時間減少 (20~30)% <br>
+                                    </font>
+                                </font>
+                            </td>
+                            <td align=center bgcolor=#262322 style="padding: 0px 50px 0px 50px">
+                                <font face=arial,helvetica size=-1>
+                                    擊殺拉斯瑪即可取得。<br>
+                                    在以下條件中，於一分鐘內先後擊殺拉斯瑪與空洞使徒 Kor'nac 即可升級： <font color="RED">/players 8</font> 並將護身符與其自身轉化。護身符會獲得 +(10~20) 喚起空洞使徒 Kor'nac。
+                                </font>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

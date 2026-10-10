@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Baza danych Eastern Sun Resurrected 3.6
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Dziennik zmian]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Pancerze]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Broń]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przedrostki]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przyrostki]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowe pancerze]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowa broń]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Inne unikaty]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mityczne unikaty]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Zestawy]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Klejnoty/Runy]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa klejnotów]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa runiczne]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptury kostki]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Kalkulator szybkości ataku]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyszukiwarka łupów]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki skażenia]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki namaszczenia]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy końcowe]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Naczynie dusz]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendencje]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Księga zabójstw]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Najemnicy i umiejętności spoza klasy]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Biegłość w broni]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod całkowitej konwersji do Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Wzniesienia</font> to potężne specjalizacje, które kształtują twój styl gry, dając unikatowe umiejętności i premie.<br>
+                            Wzniesienia nadaje specjalny urok o nazwie <font color="orange">Kamień Władzy</font> , który można zdobyć dopiero po ukończeniu kilku specjalnych starć.<br>
+                            Kamienie wzniesienia można dalej ulepszać (czyli wznosić się wyżej), wykonując określone wyzwania, z których część wiąże się z bardzo trudną zawartością końcową.<br>
+                            Istnieje 5 progów wzniesienia; każde wyzwanie jest trudniejsze od poprzedniego, ale premie też są silniejsze.<br>
+                            Kamieni wzniesienia <font color="red"><strong>nie można dzielić z innymi postaciami</strong>
+                            </font>. Naraz możesz mieć założony tylko jeden kamień wzniesienia.<br>
+                            Rzecz jasna, każdy próg można osiągnąć tylko raz. Możesz je jednak zdobywać w dowolnej kolejności.<br>
+                            Kamieni wzniesienia nie można modyfikować zwykłymi sposobami (nie można ich skazić, namaścić, rozłożyć na liście klonowe itp.).<br>
+                            Z powodu ograniczenia silnika po śmierci <font color="red">musisz ponownie założyć</font> Kamień Władzy, aby odzyskać premie.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Wyzwania]</a>
+            <a href="#ascendancies">[Ascendencje]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>Wyzwanie progu 1</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Aby zdobyć <font color="orange">Kamień Władzy</font>, musisz zabić 5 specjalnych superunikatów <font color="red">na poziomie trudności Piekło</font> rozsianych po Sanktuarium<br>i transmutować kule żywiołów, które upuszcza każdy z nich, aby otrzymać:
+                            <font color="orange">Kula Stworzenia</font>.<br>
+                            Kulę można następnie transmutować z klejnotami w określonych kolorach, aby odblokować wybrane wzniesienie. Wskazówka: akty 1, 2 i 3 mają po jednym superunikacie. Akt 5 ma 2, a akt 4 żadnego.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wejście</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wynik</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            2 Zabrudzony Szafir<br>
+                            2 Zabrudzony Obsidian<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wstąpienia Wojownika<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            1 Zabrudzony Obsidian<br>1 Zabrudzony Szafir<br>1 Zabrudzony Szmaragd<br>1 Zabrudzony Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Obudzony Kamień Wzniesienia<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            2 Zabrudzony Obsidian<br>2 Zabrudzony Szmaragd
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Mistrza Ostrzy<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            2 Zabrudzony Szmaragd<br>2 Zabrudzony Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Nomady<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            2 Zabrudzony Obsidian<br>2 Zabrudzony Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Żelaznego Bełtu<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            2 Zabrudzony Szmaragd<br>2 Zabrudzony Szafir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Arcanisty<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            2 Zabrudzony Rubin<br>2 Zabrudzony Szafir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Władcy Dusz<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            4 Zabrudzony Szmaragd
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wstąpienia Strzelca<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            4 Zabrudzony Szafir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wstąpienia Urodzonych z Gwiazd<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            1 Zabrudzony Rubin<br>1 Zabrudzony Obsidian<br>1 Zabrudzony Szafir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Krwi<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            4 Zabrudzony Rubin
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Łamacza Życia<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            1 Zabrudzony Rubin<br>1 Zabrudzony Obsidian<br>1 Zabrudzony Szmaragd
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Władcy Świata<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            1 Zabrudzony Obsidian<br>1 Zabrudzony Szmaragd<br>1 Zabrudzony Szafir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Tancerza Postawy<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            1 Zabrudzony Szmaragd<br>1 Zabrudzony Rubin<br>1 Zabrudzony Szafir
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Władcy Many<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kula Stworzenia</font><br>
+                            4 Zabrudzony Obsidian
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Wzniesienia Berserkera<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Wyzwanie progu 2</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Drugi próg osiągasz, zabijając Nihlathaka w jego domenie na poziomie Piekło i transmutując kamień wzniesienia z samym sobą.<br>
+                            <font color="red">Musisz go transmutować, gdy wiry są aktywne na twojej postaci.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wejście</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wynik</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">Kamień Władzy</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            Ulepszony do progu 2
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Wyzwanie progu 3</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Trzeci próg osiągasz, zabijając wszystkich bossów Uber Tristram <font color="red">w odstępie nie większym niż minuta i bez śmierci, </font>a następnie transmutując kamień wzniesienia z liściem klonowym.<br>Nawet jeśli wiry są aktywne na twojej postaci po zabiciu ostatniego bossa, nie zadziała to, jeśli od zabicia pierwszego minęła ponad 1 minuta.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wejście</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wynik</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            Liść klonowy
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            Ulepszony do progu 3
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Wyzwanie progu 4</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Czwarty próg osiągasz, zbierając 10 <font color="ORANGE">Pierwotnych Kamieni Duszy
+                            </font> , które wypadają z bossów dowolnych map końcowych. Z Kamieniem Władzy możesz transmutować tylko jeden Pierwotny Kamień naraz. Gdy uwięzisz w nim 10 Pierwotnych Kamieni Duszy, będziesz mógł transmutować go z 2 liśćmi klonowymi, aby wznieść się na próg 4.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wejście</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wynik</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            <font color="orange">Złapane Kamienie Duszy Pramaterii: 10/10</font><br>
+                            2 liście klonowe
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            Ulepszony do progu 4
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Wyzwanie progu 5</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Piąty próg osiągasz, zabijając dowolnego bossa mapy progu 5 i transmutując kamień wzniesienia z 3 liśćmi klonowymi.<br>
+                            <font color="red">Musisz go transmutować, gdy wiry są aktywne na twojej postaci.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wejście</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Wynik</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            3 liście klonowe
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Kamień Władzy</font><br>
+                            Ulepszony do progu 5
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Wyzwania]</a>
+            <a href="#ascendancies">[Ascendencje]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">Wzniesienia</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+60 do Siły<br>+60 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+25% Bonus do Siły<br>+25% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskaj 1% obrażeń od zaklęć za każde 2% zabójczego uderzenia i za każde 2% druzgocącego uderzenia<br>+25% Szansa na Zmiażdżenie Ciosu<br>+25% Śmiertelny Cios<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskujesz 1% premii do całkowitej obrony za każde 3% zabójczego ciosu i miażdżącego ciosu*<br>+10 Życie na Uderzeniu<br>+15% Fizycznych obrażeń kradzionych jako Mana<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>+50% do Wszystkich Prędkości<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Mag bitewny</font><br>
+                <img src=".././images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Premia do całkowitej obrony mnoży się z całą wartością twojego pancerza.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Mistrz ostrzy</font><br>
+                <img src=".././images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+60 do Siły<br>+60 do Zręczności<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+25% Bonus do Siły<br>+25% Bonus do Zręczności<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 10% zwiększonych obrażeń za każdy 1% odporności fizycznej<br>20% odporności fizycznej<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 1% obrażeń fizycznych pochłoniętych jako życie za każde 1% oporu fizycznego<br>+40 do Minimalnych Obrażeń w Atakach<br>+50 do Maksymalnych Obrażeń w Atakach<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>15% szans na rzucenie poziomu 20 Rzucona siekiera przy trafieniu<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+60 do Zręczności<br>+60 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+25% Bonus do Zręczności<br>+25% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 5 many za każdy 1% szybkości*<br>+30% do Wszystkich Prędkości<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskujesz 1 manę przy uderzeniu za każde 25% szybkości*<br>+20 do Furii Żywiołów (wszystkie klasy)<br>+5% do wszystkich maksymalnych odporności<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>5% szans na rzucenie poziomu 20 Strzała Wzmocniona Ognieniem przy trafieniu<br>5% szans na rzucenie poziomu 20 Strzała Wzmocniona Zimnem przy trafieniu<br>5% szans na rzucenie poziomu 20 Strzała Wzmocniona Piorunem przy trafieniu<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Arkanista</font><br>
+                <img src=".././images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Każdy rodzaj szybkości (blok, rzucanie czarów, ruch, atak, regeneracja) liczy się osobno. Na przykład +1% do wszystkich szybkości liczy się jako +5% do premii wzniesienia.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Mag krwi</font><br>
+                <img src=".././images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+45 do Siły<br>+45 do Witalności<br>+45 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+20% Bonus do Siły<br>+20% Bonus do Witalności<br>+20% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 1% obrażeń zaklęć za każde 250 punktów życia i 1% obrażeń przywołańców za każde 400 punktów życia<br>Energia nie wpływa już na obrażenia zaklęć ani przywołańców<br>Magia krwi*<br>+200 do Życia<br><br>
+                    <font color="orange">Próg 4</font><br>Leczenie za 2% Maksymalnego Życia przy Zabiciu<br>+50% Szybszy Powrót po Trafieniu<br>+25% odporności fizycznej<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>+25% do Życia Przywołania<br>Maksymalne życie zwiększone o 50%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Magia krwi oznacza, że teraz rzucasz zaklęcia, zużywając życie.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+30 do Wszystkich Atrybutów<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+15% Bonus do Wszystkich Atrybutów<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz +1 do wszystkich umiejętności za każde 1000 punktów atrybutów*<br>+20% do Wszystkich Prędkości<br>+30 do Wszystkich Atrybutów<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskujesz 1 absorpcji żywiołów i magii za każde 100 punktów atrybutów*<br>Zyskujesz 1 obrony za każde 2 punkty atrybutów*<br>+20 do Mocy Przytłaczającej (wszystkie klasy)<br>Czas trwania trucizny zmniejszony o +75%<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>10% Szansa na Rzucenie Poziomu 60 Anihilacja po Uderzeniu<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Przebudzony</font><br>
+                <img src=".././images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Progi liczy się dla łącznej liczby punktów atrybutów (np. zyskujesz +1 do wszystkich umiejętności, jeśli masz po 250 w każdym atrybucie).</font><br>
+        <font size="-2">**Anihilacja to niszczycielska nowa 6 żywiołów (ogień/zimno/błyskawice/trucizna/fizyczne/magia), umiejętność obejmująca cały ekran, która na każdą nowę zadaje 50% obrażeń broni przekształconych w odpowiedni żywioł oraz znaczne obrażenia zaklęć każdego rodzaju, skalujące się z łącznymi atrybutami. Odrzuca wrogów i obniża wszystkie ich odporności o 25% na 2 sekundy. Nowa trucizny nie zadaje obrażeń broni.</font><br>
+        <font size="-2" color="red">**Anihilacja może się aktywować tylko wtedy, gdy twoje obecne życie spadnie poniżej 30%.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Żelazny bełt</font><br>
+                <img src=".././images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+60 do Siły<br>+60 do Witalności<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+25% Bonus do Siły<br>+25% Bonus do Witalności<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 1%-2% obrażeń od krwawienia za każde 10 siły<br>Czas tego krwawienia zależy od skalowania szybkości przeładowania kuszy*<br>+150 do Siły<br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 1 Życie przy Uderzeniu za każde 200 Siły<br>+20% Szybszy czas przeładowania kuszy<br>Limit prędkości przeładowania kuszy zmniejszony o 20%<br>+500 do Oceny Ataku<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>2% szans na rzucenie poziomu 40 Wewnętrzny Wzrok przy trafieniu<br>+25 do Ostrzonej Koncentracji (wszystkie klasy)<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Czas krwawienia odpowiada skalowaniu szybkości przeładowania kuszy. Działa to niezależnie od tego, czy używasz kuszy. Krwawienie Żelaznego bełtu może być rozcieńczane przez inne źródła krwawienia (podobnie jak instancje trucizny rozcieńczają się nawzajem).</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+75 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+30% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz -1% do odporności przeciwnika na ogień, zimno i błyskawice za każde 400 many<br>+400 do Many<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 1 Odnowienie Życia za każde 5 Many<br>+20 do Wszechmocy (wszystkie klasy)<br>+25% do Wszystkich Prędkości<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>+1 do Teleportacja<br>+1 do Wszystkich Umiejętności<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Zrodzony z gwiazd</font><br>
+                <img src=".././images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Łamacz życia</font><br>
+                <img src=".././images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+75 do Witalności<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+30% Bonus do Witalności<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskaj 1% obrażeń od zaklęć za każde 100 brakujących punktów życia<br>Zwiększa Maksymalne Życie +30%<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 1 Magię i Redukcję Obrażeń Fizycznych za każde 100 Brakujących Punktów Życia<br>+1 do Limitu Pułapek<br>Zredukowane obrażenia o 50<br>Zredukowane obrażenia magiczne o 50<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>+10 do Paktu Życia*<br>Odporność na magię +15%<br>Odpornność na fizyczne obrażenia: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Pakt Życia to przełączana umiejętność, która co sekundę wysysa 25% twojego maksymalnego życia i daje 10% maksymalnego życia na poziom. Pakt Życia nie może cię zabić.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+45 do Siły<br>+45 do Zręczności<br>+45 do Witalności<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+20% Bonus do Siły<br>+20% Bonus do Zręczności<br>+20% Bonus do Witalności<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 2 maksymalnych obrażeń od ognia, zimna i błyskawic do ataków za każdy 1% odporności na żywioły*<br>Odpornność na ogień +50%<br>Odporność na zimno +50%<br>Odpornność na błyskawice +50%<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskujesz 1% odporności fizycznej i na magię za każde 30% odporności na żywioły*<br>Zyskujesz 1% odporności na truciznę za każde 5% odporności na żywioły*<br>Obrażenia zaklęć: +50%**<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>2% szansy na rzucenie Furii Stworzenia poz. 1 przy trafieniu***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Kształtujący świat</font><br>
+                <img src=".././images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Każdy rodzaj odporności liczy się osobno do progów premii. Na przykład zyskujesz 1% odporności fizycznej, jeśli masz po 10% odporności na ogień, zimno i błyskawice.</font><br>
+        <font size="-2">**Obrażenia zaklęć to obrażenia zaklęć ognia/zimna/błyskawic/trucizny/magicznych/fizycznych; zwiększają one stałe obrażenia ataków (poza obrażeniami zaklęć fizycznych, które nie zwiększają obrażeń fizycznych ataków).
+        </font><br>
+        <font size="-2">***Furia Stworzenia to potrójna nowa żywiołów o średnim obszarze działania; każda nowa zadaje 50% obrażeń broni przekształconych w odpowiedni żywioł i obniża odporności wrogów na żywioły o 30%.
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Strażnik dusz</font><br>
+                <img src=".././images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+60 do Witalności<br>+60 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+25% Bonus do Witalności<br>+25% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 1% obrażeń zaklęć trucizny, magicznych i fizycznych za każde 40 energii<br>+150 do Energii<br><br>
+                    <font color="orange">Próg 4</font><br>Gain 1 Life for every 3 Energy<br>Magiczna Absorpcja +10%<br>Nie można zamarznąć<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>+1 do limitu nieunikalnych przyzwań<br>Zredukowane obrażenia o 50<br>Zredukowane obrażenia magiczne o 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+45 do Siły<br>+45 do Zręczności<br>+45 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+20% Bonus do Siły<br>+20% Bonus do Zręczności<br>+20% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3*</font><br>
+                    Postawa obrażeń (czerwona): 5% zwiększonych obrażeń i 1% obrażeń zaklęć<br>
+                    za każde łączne 75 punktów siły, zręczności i energii<br>
+                    Postawa uników (zielona): 10% do wszystkich szybkości i 1% uniku<br>
+                    za każde łączne 1000 punktów siły, zręczności i energii<br>
+                    Postawa regeneracji (niebieska): +1 do wszystkich umiejętności i 150 odnawiania życia i many<br>
+                    za każde łączne 1500 punktów siły, zręczności i energii<br><br>
+                    <font color="orange">Próg 4</font><br>Premie ze wszystkich postaw są zwiększone o 25%<br>+30% Bonus do Siły<br>+30% Bonus do Zręczności<br>+30% Bonus do Energii<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>+50% Zwiększona Prędkość Ataku<br>+50% Szybszy Wskaźnik Rzucania<br>+100 Życia po każdym zabójstwie<br>+50 do Many po każdym zabójstwie<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Tancerz postaw</font><br>
+                <img src=".././images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*W podmenu sterowania musisz ustawić klawisz zmiany postawy.</font></font><br>
+        <font size="-2">**Postawę możesz zmieniać w dowolnej chwili, ale postawy zmieniają się tylko w tej kolejności: czerwona -&gt; zielona -&gt; niebieska.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Nomada</font><br>
+                <img src=".././images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+60 do Zręczności<br>+60 do Witalności<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+25% Bonus do Zręczności<br>+25% Bonus do Witalności<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskaj 5 maksymalnych obrażeń za każde 5% szybszego biegu/chodu lub 1% bazowej prędkości biegu/chodu<br>+75% Szybszy Bieg/Chód<br>Dodaje 150%-250% obrażeń od krwawienia w ciągu 1 sekundy<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 5% szansy na unik za każde 200% szybszego biegu/chodu lub 40% bazowej prędkości biegu/chodu<br>+300 do Życia<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>20% Szansa na Rzucenie Poziomu 1 Biegnij po Uderzeniu<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Pierzchnięcie to wzmocnienie trwające 1 sekundę, które daje 33% uniku, 100% bazowej szybkości biegu/chodu, 25% całkowitych maksymalnych obrażeń fizycznych ataków i odnawia 10% maksymalnego życia przez czas działania.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+75 do Zręczności<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+30% Bonus do Zręczności<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 2% premii do celności za każdy 1% przebicia<br>Zyskujesz 1 maksymalne obrażenie za każde 2% przebicia<br>+30 do Minimalna Obrażenia<br>+20 do Przebicia (wszystkie klasy)<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 3 Witalności za każdy 1% Przebicia<br>+75% Szybszy Bieg/Chód<br>+20 do Uniku (wszystkie klasy)<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>15% szans na rzucenie poziomu 20 Strzała przy trafieniu<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Strzelec wyborowy</font><br>
+                <img src=".././images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Strażnik many</font><br>
+                <img src=".././images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+45 do Zręczności<br>+45 do Witalności<br>+45 do Energii<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+20% Bonus do Zręczności<br>+20% Bonus do Witalności<br>+20% Bonus do Energii<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskujesz 1% obrażeń zaklęć za każde 20% regeneracji many<br>Zyskujesz 1 minimalne obrażenie ataków za każde 5% regeneracji many<br>+5 Mana przy Uderzeniu<br>Regeneracja Many +100%<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 1 Many za każdy 2% Regeneracji Many<br>+20 do Tarczy Energetycznej (wszystkie klasy)<br>+10% do Maksymalnego Oporu na Trucizny<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>20% Szansa na Rzucenie Poziomu 50 Zatrzymanie Czasu po Uderzeniu<br>Odpornność na truciznę +75%<br>+20 do Promienia Światła<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Próg 1</font><br>+1 do poziomów umiejętności klasowych<br>+75 do Siły<br><br>
+                    <font color="orange">Próg 2</font><br>+1 do poziomów umiejętności klasowych<br>+30% Bonus do Siły<br><br>
+                    <font color="orange">Próg 3</font><br>Zyskaj 3% Maksymalnego Obrażenia za każde 1% Fizycznych Obrażeń Kradzionych jako Życie<br>+30 do Maksymalna Obrażenia<br>+25% Fizyczne obrażenia kradzione jako życie<br><br>
+                    <font color="orange">Próg 4</font><br>Zyskaj 1% Odporności na Fizyczne i Magiczne obrażenia za każde 5% Fizycznych obrażeń, które zostały przekształcone w życie<br>Czas trwania klątwy zmniejszony o 100%<br><br>
+                    <font color="orange">Próg 5</font><br>+3 do poziomów umiejętności klasowych<br>25% szansy na rzucenie Spustoszenia poz. 1 przy ataku wręcz**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Wzniesienie: Berserker</font><br>
+                <img src=".././images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Spustoszenie to umiejętność o małym lub średnim obszarze działania, która zadaje 150% obrażeń broni jako obrażenia fizyczne wszystkim trafionym wrogom i obniża ich odporność fizyczną o 30% na 2 sekundy.</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

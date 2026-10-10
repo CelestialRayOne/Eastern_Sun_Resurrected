@@ -1,0 +1,877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[변경 내역]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[방어구]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접두사]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[접미사]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 방어구]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[유니크 무기]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[기타 유니크]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[신화 유니크]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[세트]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석/룬]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[보석어]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[룬어]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[큐브 조합법]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[지도]</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[공격 속도 계산기]</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[드롭 찾기]</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[타락 결과]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[성유 결과]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[엔드게임 지도]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[영혼의 그릇]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[전직]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[처치 장부]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[용병 및 외부 기술 정보]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[무기 숙련]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>순간이동 제한</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" bgcolor="#272727">
+            <table cellpadding="5" border="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">잊혀진 탑 5층</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">벽 너머로 순간이동 불가</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">지하묘지 4층</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">벽 너머로 순간이동 불가</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">죽은 자의 전당 2층</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">벽 너머로 순간이동 불가</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">증오의 던전 3층</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">벽 너머로 순간이동 불가</font>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">혼돈의 성소</font>
+                  </td>
+                  <td bgcolor="#272727">
+                    <font face="arial,helvetica" size="-1">벽 너머로 순간이동 불가</font>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="3" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>특수 던전/지역</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center" bgcolor="#300000">
+            <table width="560" cellpadding="5" border="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#300000">
+                    <font face="arial,helvetica" size="-1">
+                      비밀 소 레벨 같은 특수 지역으로, 최고의 경험치와 드롭을 얻을 수 있습니다. 기본적으로 해당 난이도를 클리어한 뒤 방문하는 것을 권장하지만, 숙련된 플레이어라면 낮은 레벨의 캐릭터로 방문하는 것도 재미있고 보상도 클 수 있습니다.<br>
+                      독사의 부적은 잃어버린 농장(옛 잃어버린 도시)에 가지 않고도 얻을 수 있으며, 책을 얻기 위한 사리나 서점(옛 파괴된 사원)은 바알을 처치한 뒤에도 방문할 수 있습니다. </font>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 비밀 소 레벨</b></font><br>
+            <font face="arial,helvetica" size="-1"> 넓은 들판<br>
+              <font color="FFFF99"> 위치: 1막 비밀 소 레벨</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 피의 까마귀의 작업장</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1층과 2층<br>
+              <font color="FFFF99"> 위치: 1막 타모에 고원</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 어둠의 마법사의 방</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1층과 2층<br>
+              <font color="FFFF99"> 위치: 2막 바위 폐허</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 안다리엘의 탈의실</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 2막 잃어버린 도시</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 잃어버린 농장</b></font><br>
+            <font face="arial,helvetica" size="-1"> 넓은 들판<br>
+              <font color="FFFF99"> 위치: 2막 잃어버린 도시</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 고통의 늪</b></font><br>
+            <font face="arial,helvetica" size="-1"> 넓은 들판<br>
+              <font color="FFFF99"> 위치: 3막 위대한 늪</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 사리나 서점</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1층과 2층<br>
+              <font color="FFFF99"> 위치: 3막 쿠라스트 바자르</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 하피의 둥지</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1층과 2층<br>
+              <font color="FFFF99"> 위치: 3막 쿠라스트 도로</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 밀주 양조장</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 차가운 고원</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 위조지폐 공장</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 아레앗 고원</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 양귀비 농장</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 얼어붙은 툰드라</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 나락</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1-3층<br>
+              <font color="FFFF99"> 위치: 5막 고대인의 길</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> GFraizer Dome</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 나락 1층과 2층</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 빌 로퍼 기념 야구장</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 나락 2층</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 막다른 길</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 나락 3층</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 어디에도 없다</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 막다른 길</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica"><b> 니흘라탁의 영역</b></font><br>
+            <font face="arial,helvetica" size="-1"> 1 레벨<br>
+              <font color="FFFF99"> 위치: 5막 아무 데도 없는 곳</font><br>
+              <font color="9999FF"> </font>
+            </font>
+          </td>
+          <td align="center" height="120" width="33%" bgcolor="#272727">
+            <font face="arial,helvetica" size="-1"> 주의: 나락 이하는 매우<br>
+              어려운 지역으로, 엄청난 부자 전문가용입니다. 그곳에서는<br>
+              최상급 플레이어만 살아남습니다. 난이도를 클리어하려고<br>
+              니흘라탁을 처치할 필요는 없으며,<br>
+              99%의 사람들은 개인화를 쓰지 않는다고 생각합니다. ;) </font> <br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>2막</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica"> <b>먼 오아시스</b> </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>룻 골레인</b><br>
+              <font size="-1"> 하수도<br>
+                남쪽 입구 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>구더기 소굴</b><br>
+              <font size="-1" color="red">왕의 지팡이 </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>구더기 터널</b> </font>
+          </td>
+          <td colspan="3" align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>지하 미로</b> </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>구더기 통로</b>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td rowspan="2" align="center" width="20%" bgcolor="#444433">
+            <font face="arial,helvetica"> <b>사원 통로</b><br>
+              <font size="-1">1 레벨 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>부정한 제단</b><br>
+              <font size="-1" color="red">독사의 부적 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#444433">
+            <font face="arial,helvetica">
+              <b>사원 통로</b><br>
+              <font size="-1">2 레벨<br>
+                <i>순간이동진</i>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>클로우 바이퍼 사원</b><br>
+              <font size="-1">1 레벨 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>뱀의 계곡</b>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>3막</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#226622">
+            <font face="arial,helvetica"> <b>거미 숲</b><br>
+              <font size="-1"><i>순간이동진</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#226622">
+            <font face="arial,helvetica">
+              <b>플레어 정글</b><br>
+              <font size="-1"><i>순간이동진</i><br>
+                <font color="eebb22">돌아올 수 없습니다<br>
+                  (하수도 1층에서) </font>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>플레어 터널</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td rowspan="3" colspan="2" align="center" width="20%" bgcolor="#444433">
+            <font face="arial,helvetica"> <b>하수도</b><br>
+              <font size="-1">1 레벨<br>
+                <br>
+                <table cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td align="center" bgcolor="#000000">
+                        <table cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td align="center" height="105" width="160" bgcolor="#444433">
+                                <font face="arial,helvetica"> <b>하수도</b><br>
+                                  <font size="-1">2 레벨<br>
+                                    <font color="DD4422">칼림의 심장 </font>
+                                  </font>
+                                </font>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </font>
+            </font>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>망가진 성소</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#226622">
+            <font face="arial,helvetica"> <b>플레어 정글</b><br>
+              <font size="-1"><i>기드빈 마을</i></font><br>
+              <font size="-1" color="EE2222">기드빈</font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>쿠라스트 바자르</b><br>
+            </font>
+          </td>
+          <td colspan="2" align="center" height="100" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica"> <b>상부 쿠라스트</b><br>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>사리나 서점</b><br>
+              <font size="-1">1 레벨<br>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>늪지 구덩이</b>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>플레어 던전</b><br>
+              <font size="-1">1 레벨<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>사리나 서점</b><br>
+              <font size="-1">2 레벨<br>
+                <font color="FF0000">람 에센의 서적 </font>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>플레어 던전</b><br>
+              <font size="-1">2 레벨<br>
+                <font color="red">칼림의 두뇌 </font>
+              </font>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="+1"><b>5막</b></font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>피로 물든 구릉지</b><br>
+              <font size="-1"> <i>순간이동진</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica"> <b>밀주 양조장</b><br>
+              <font size="-1"> </font>
+            </font>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica"> <b>차가운 고원</b><br>
+              <font size="-1"> <i>순간이동진</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>아레앗 고원</b><br>
+              <font size="-1"> <i>순간이동진</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica">
+              <b>위조지폐 공장</b><br>
+              <font size="-1"> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" height="110" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>얼어붙은 강</b><br>
+              <font size="-1" color="red">안야 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>차원 게이트</b><br>
+              <font size="-1" color="red"> 핀들스킨<br>
+              </font>
+              <font size="-1"> <i>순간이동진*</i><br>
+                *이 순간이동진을 사용하면<br>
+                빨간 차원문이 사라집니다.<br>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica"> <b>양귀비 농장</b><br>
+              <font size="-1"> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666644">
+            <font face="arial,helvetica">
+              <b>얼어붙은 툰드라</b><br>
+              <font size="-1"> <i>순간이동진</i> </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>고대인의 길</b><br>
+              <font size="-1"> <i>순간이동진</i> </font>
+            </font>
+          </td>
+          <td colspan="2" align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>나락</b><br>
+              <font size="-1"> 1 레벨<br>
+                <font size="-1" color="red"> 트리안트 왕<br>
+                </font> <i>순간이동진</i><br>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>GFraizer Dome</b><br>
+              <font size="-1" color="red"> 레지아르프<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>아레앗 정상</b><br>
+              <font size="-1" color="red">고대 야만용사 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td colspan="2" align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>나락</b><br>
+              <font size="-1"> 2 레벨<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>세계석 요새</b><br>
+              <font size="-1"> 1 레벨<br>
+                <i>순간이동진</i>
+              </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td rowspan="2" align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica"> <b>나락</b><br>
+              <font size="-1"> 3 레벨<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>세계석 요새</b><br>
+              <font size="-1"> 2 레벨 </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666688">
+            <font face="arial,helvetica">
+              <b>빌 로퍼<br>
+                기념 야구장 </b><br>
+              <font size="-1" color="red"> 리포르브<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica">
+              <b>파괴의 왕좌</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>막다른 골목</b><br>
+              <font size="-1"> 아래로 가는 계단은<br>
+                숨겨져 있지만, 항상<br>
+                표식이 있습니다. ;)<br>
+                (힌트: Sp***ling C***t) </font>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" height="110" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#BB2222">
+            <font face="arial,helvetica">
+              <b>세계석의 방</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#000000"><br>
+          </td>
+          <td align="center" width="20%" bgcolor="#666666">
+            <font face="arial,helvetica">
+              <b>어디에도 없다</b><br>
+            </font>
+          </td>
+          <td align="center" width="20%" bgcolor="#666622">
+            <font face="arial,helvetica">
+              <b>니흘라탁의 영역</b><br>
+              <font size="-1" color="red"> 니흘라탁<br>
+              </font>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table width="840" cellpadding="5" border="0">
+      <tbody>
+        <tr>
+          <td colspan="5" align="center" bgcolor="#300000">
+            <font face="arial,helvetica" size="-1"> 다음 층이 삭제되었습니다: 2막 하수도 1층, 궁전 1층, 지하묘지 4층(3층을 4층으로 대체), 세계석 요새 3층(2층을 3층으로 대체), 감옥 3층(2층을 3층으로 대체).
+            </font>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+                </div>
+            </a>
+        
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

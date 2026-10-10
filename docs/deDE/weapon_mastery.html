@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="de">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4320295333912588">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-YFKD8ZR9BX');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://d2esrdb.github.io">
+    <meta property="og:title" content="Eastern Sun Resurrected Database">
+    <meta property="og:description"
+        content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+    <title>
+        Eastern Sun Resurrected Datenbank
+    </title>
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="../esricon.png" type="image/png">
+    <style>
+        /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+    style="padding: 0; padding-left: 170px; padding-right: 170px;">
+    <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Sprache"><select id="esr-lang-deDE" aria-label="Sprache" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE" selected>Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="deDE",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-deDE');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Grundlagen</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href=".././changelogs.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Änderungsprotokolle]</a>
+            <a href="./armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Rüstungen]</a>
+            <a href="./weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffen]</a>
+            <a href="./prefixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Präfixe]</a>
+            <a href="./suffixes.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Suffixe]</a>
+            <a href="./unique_armors.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Rüstungen]</a>
+            <a href="./unique_weapons.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartige Waffen]</a>
+            <a href="./unique_others.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Einzigartiges Sonstiges]</a>
+            <a href="./unique_mythicals.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mythische Einzigartige]</a>
+            <a href="./sets.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Sets]</a>
+            <a href="./gems.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteine/Runen]</a>
+            <a href="./gemwords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Edelsteinwörter]</a>
+            <a href="./runewords.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Runenwörter]</a>
+            <a href="./Eastern Sun Resurrected Cube Recipes.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Würfelrezepte]</a>
+            <a href="./Eastern Sun Resurrected Maps.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Karten]</a>
+            <a href="./drop-finder.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Beutefinder]</a>
+        </div>
+    </nav>
+    <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+        <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+            <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funktionen</span>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+            <a href="./corruptions.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Verderbnis-Ergebnisse]</a>
+            <a href="./anointments.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Salbungs-Ergebnisse]</a>
+            <a href="./endgame_maps.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Endgame-Karten]</a>
+            <a href="./vessel_of_souls.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Seelengefäß]</a>
+            <a href="./ascendancies.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Aszendenzen]</a>
+            <a href="./kill_ledger.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Tötungsbuch]</a>
+            <a href="./skill_information.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Söldner- und O-Fertigkeiten-Infos]</a>
+            <a href="./weapon_mastery.html"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Waffenbeherrschung]</a>
+        </div>
+    </nav>
+
+    <center>
+        <div
+            style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+            <h1
+                style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                Eastern Sun Resurrected</h1>
+            <div
+                style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">
+                Total-Conversion-Mod für Diablo II: Resurrected</div>
+        </div>
+        <div style="width:100%;">
+
+            <br>
+            <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                <tbody>
+                    <tr>
+                        <td colspan="2" align="center" bgcolor="#300000">
+                            <font face="arial,helvetica" size="-1">
+                                <font color="ORANGE">Waffenmeisterschaft</font> ist ein einzigartiges System, das verändert, wie Klassenwaffen mit Fertigkeiten interagieren.<br>
+                                Waffenmeisterschaft erhält man durch Transmutieren eines <FONT color="#706850">Waffenbeherrschungs-Token
+                                </FONT> , der von
+                                <FONT color="#706850">Verderbten Zakarum</FONT> und Endgame-Kartenbossen fallen kann (25 % Chance, nicht durch /players skaliert).<br>
+                                <FONT color="#706850">Verderbten Zakarum</FONT> sind tödliche einzigartige Gegner, denen du in der Kampagne auf Alptraum und Hölle zufällig begegnest; sie können ein Waffenmeisterschafts-Token fallen lassen (bis zu 75 %, nicht durch /players skaliert) und haben eine erhöhte Chance auf Unikate und Waffen.<br>
+                                Nach dem Transmutieren ist das Token <font color="ORANGE">erweckt</font> , und du kannst es auf die Waffe anwenden, indem du es mit der Waffe und einigen Zutaten transmutierst.<br>
+                                Spezialisierungen der Waffenmeisterschaft sollen nicht die Macht aufblähen oder den Charakter unbedingt stärker machen, sondern verändern, wie Fertigkeiten mechanisch funktionieren, oder bieten neue Ausrüstungswege für Charaktere.<br>
+                                Du kannst pro Waffe nur eine Waffenmeisterschaft anwenden. Waffenmeisterschaften sind (beim Kampf mit zwei Waffen) nicht stapelbar, sofern nicht ausdrücklich anders angegeben.<br>
+                                Waffenmeisterschaft kann auf jede Klassenwaffe angewendet werden, unabhängig von ihrer Stufe (funktioniert auch bei außergewöhnlichen, Elite- und mythischen Basen).<br>
+                                Waffenmeisterschaft <FONT color="ORANGE">kann entfernt werden</FONT>, aber <font color="red">das Token geht</font> beim Entfernen verloren.
+                            </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <font size="-1" face="arial,helvetica">
+                <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                    <tbody>
+                        <a name="recipes"></a>
+                        <a href="./weapon_mastery.html#recipes">[Allgemeine Rezepte]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[Spezialisierungen]</a>&nbsp;
+                    </tbody>
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                            <font face="arial,helvetica">
+                                <b>
+                                    Allgemeine Rezepte
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                Beliebige Klassenwaffe<br>
+                                <FONT color="#706850">Waffenbeherrschungs-Token</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                Derselbe Gegenstand*<br>
+                                <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br><br>
+                                <font color="gray">*Dies erweckt nur das Token, die Waffe wird nicht verändert</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                Beliebige Klassenwaffe mit Waffenmeisterschaft<br>
+                                Klassenspezifische Drachenstein-Form<br>
+                                3 Auftautränke
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                Derselbe Gegenstand<br>
+                                Waffenmeisterschaft entfernt*<br><br>
+                                <font color="gray">*Das Token geht verloren</font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">Beliebiges erwecktes Waffenmeisterschafts-Token</FONT>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center" style="padding: 15px">
+                            <font size="-1" face="arial,helvetica">
+                                <FONT color="#706850">Waffenmeisterschafts-Token*</FONT><br><br>
+                                <font color="gray">*Nicht erweckt</font>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <font size="-1" face="arial,helvetica">
+                    <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+                        <tbody>
+                            <a name="specializations"></a>
+                            <a href="./weapon_mastery.html#recipes">[Allgemeine Rezepte]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[Spezialisierungen]</a>&nbsp;
+                        </tbody>
+                        <br><br>
+                        <tr>
+                            <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
+                                <font face="arial,helvetica">
+                                    <b>
+                                        Spezialisierungen
+                                    </b><br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Hirschbogen-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Spinnenseide</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Gift-, Feuerbrand-, Frost-, Blitzpfeil</font><br>
+                                    Lässt diese Fertigkeiten ihren Spezialeffekt alle 5 Angriffe auslösen<br>
+                                    statt alle 3, erhöht aber ihren Gesamtschaden um 20 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Reflexbogen-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Spinnenseide</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Streifen</font><br>
+                                    Verdreifacht die Anzahl der Ziele, verhängt aber pro abgefeuertem Pfeil einen Malus von 2 % auf physischen Widerstand<br>
+                                    für 2 Sekunden. Dieser Effekt hat keine Obergrenze<br>
+                                    <br>
+                                    <font color="orange">Mehrfachschuss</font><br>
+                                    Lässt Mehrfachschuss stattdessen eine Pfeilnova abfeuern,<br>aber keinen Schadensbonus pro Stufe mehr erhalten<br>
+                                    <br>
+                                    <font color="orange">Tornado-Schuss</font><br>
+                                    Feuert stattdessen eine Nova aus 16 Pfeilen ab, verdreifacht seinen besonderen<br>
+                                    Synergie-Schwächungseffekt und erhält eine unveränderliche Abklingzeit von 10 Sekunden<br>
+                                    <br>
+                                    <font color="orange">Legendäre Pfeil</font><br>
+                                    Erhält keinen Angriffswert mehr pro<br>
+                                    Stufe oder aus Synergien, dafür wird der Schadensbonus verdoppelt
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Präzisionsbogen-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Spinnenseide</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Magie, Kältezauber, Explodierender Pfeil</font><br>
+                                    Diese Fertigkeiten feuern alle 3 Angriffe einen zusätzlichen Pfeil auf einen nahen Gegner ab, verlieren aber<br>
+                                    allen Schaden und Angriffswert aus Stufen und Synergien
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Jungfrauenspeer-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Spinnenseide</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Speersturm</font><br>
+                                    Lässt Speersturm die Anzahl der Speersplitter<br>
+                                    alle 3 Angriffe verdoppeln, gewährt aber keinen physischen Bonusschaden mehr<br>
+                                    <br>
+                                    <font color="orange">Speerwurf</font><br>
+                                    Lässt Abwehr nur die kleine Speernova erzeugen, die jetzt<br>
+                                    den physischen Widerstand mit 150 % Wirksamkeit senkt, aber nicht mehr verlangsamt*<br>
+                                    <br>
+                                    <font color="orange">Tanz des Todes</font><br>
+                                    Ersetzt zusammenlaufende Novas durch Wellen zielsuchender Speere<br>
+                                    Kritische Treffer werden durch zusätzliche Wellen ersetzt
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Jungfrauen-Pike-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Spinnenseide</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Speersturm</font><br>
+                                    Erhält pro Stufe 2-mal weniger Speersplitter,<br>
+                                    aber der gesamte physische Schaden wird verdoppelt<br>
+                                    <br>
+                                    <font color="orange">Speerwurf</font><br>
+                                    Lässt Abwehr nur die größere Speernova<br>
+                                    erzeugen und verdoppelt die Wirksamkeit der Verlangsamung*<br>
+                                    <br>
+                                    <font color="orange">Tanz des Todes</font><br>
+                                    Verdoppelt alle 5 Angriffe den Gesamtschaden mit der besonderen<br>
+                                    Synergie statt einer Chance von 15 %, den Schaden zu vervierfachen
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Jungfrau-Javelin-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Spinnenseide</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Scheiterhaufen-, Pest-, Frostspeer, Blitzwut</font><br>
+                                    Diese Fertigkeiten werfen alle 3 Würfe 2 zusätzliche Speere,<br>
+                                    aber der Gesamtschaden wird um 40 % verringert
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Ninja-To-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="purple">Drachenstein</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Drachenklinge</font><br>
+                                    Halbiert die Anzahl der Ziele und trifft einen nahen<br>
+                                    Gegner etwa so oft wie 60 % der verringerten Anzahl
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Stammesbeil-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="#706850">Schmiedehammer</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Axtwirbel</font><br>
+                                    Prallt nicht mehr ab. Setzt stattdessen eine zusammenlaufende Nova aus 4 Äxten frei,<br>
+                                    die nur das Hauptziel erneut trifft<br>
+                                    <br>
+                                    <font color="orange">Phantom-Haue</font><br>
+                                    Wirft die Äxte stattdessen in einer spiralförmigen Nova, die<br>
+                                    nur Gelände treffen kann und dann auf bis zu 4 nahe Gegner abprallt<br>
+                                    <br>
+                                    <font color="orange">Stampede</font><br>
+                                    Erhöht die Anzahl magischer Geschosse um 50 %,<br>
+                                    senkt aber die Anzahl gesuchter Ziele von 2 auf 1<br>
+                                    <br>
+                                    <font color="orange">Berserkerwut</font><br>
+                                    Magische Geschosse teilen sich sofort auf nahe Gegner auf,<br>
+                                    erzeugen aber keine zusammenlaufenden Novas mehr. Erhöht<br>
+                                    Geschossgeschwindigkeit und Anzahl der Geschosse um 50 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Eichenast-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="gray">Tyraniumerz</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Wölfe, Raben, Grizzly</font><br>
+                                    Halbiert die beschwörbaren Wölfe und Raben; du erhältst<br>
+                                    1 zusätzlichen Grizzlybären pro 5<br>
+                                    verlorene normale Beschwörungen. Verdoppelt die Anzahl der Treffer aller Begleiterfertigkeiten und den Schaden durch Ansteckung.
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Seelenjäger-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="red">Schwarzmoor</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Untote Raserei</font><br>
+                                    Diese Fertigkeit gewährt keinen Elementarschaden mehr,<br>
+                                    dafür wird der physische Schaden verdoppelt
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Ritualistische Klinge-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="red">Schwarzmoor</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Flüche</font><br>
+                                    Alle Flüche sind doppelt so stark, aber ihre Dauer<br>
+                                    sinkt auf 2 Sekunden und ihr Radius auf 4 Meter
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Elende Sense-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="red">Schwarzmoor</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Magiezauber</font><br>
+                                    Die Magiezauber deines Totenbeschwörers mit direktem Schaden<br>
+                                    haben eine Chance von 1 %, sich pro 1 %<br>
+                                    fehlendem Leben zu wiederholen. Dein Magiewiderstand ist immer 0
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Gesegneter Rand-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="white">Heiliges Symbol</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Eifer</font><br>
+                                    Erhöht die Gesamtchance auf Ermächtigung um 50 %,<br>
+                                    verkürzt aber die Dauer auf 2 Sekunden
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Mana-Klinge-Variante<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="blue">Zerschlagener Edelstein</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Fanatischer Schwung</font><br>
+                                    Verringert die Anzahl der Treffer auf 1, aber jeder dritte Treffer<br>
+                                    entfesselt jetzt Elementareffekte, die Zauberschaden verursachen<br>
+                                    und mit allen Direktschadenszaubern ihres jeweiligen Elements skalieren
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Zauberinnen-Kugel<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="blue">Zerschlagener Edelstein</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT><br>
+                                    <FONT color="red">Abgebrochener Rubin</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Zauberinnen-Zauber</font><br>
+                                    Verdreifacht die Abklingzeit deiner Zauberinnen-Zauber der Stufe 24<br>
+                                    und fügt Hydra eine Abklingzeit von 2 Sekunden hinzu,<br>
+                                    erhöht aber deinen gesamten Zauberschaden um 20 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Zauberinnen-Kugel<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="blue">Zerschlagener Edelstein</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT><br>
+                                    <FONT color="#f1e5ac">Abgeschlagener Schädel</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Exklusive Zauberinnen-Fertigkeiten</font><br>
+                                    Erhöht die Boni deiner exklusiven Fertigkeiten um 50 % und ihre Nachteile um 75 %
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Assassinen-Klaue<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="purple">Drachenstein</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT><br>
+                                    <FONT color="red">Abgebrochener Rubin</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Elementare Auflade-Fertigkeiten</font><br>
+                                    Lässt alle elementaren Auflade-Fertigkeiten nur die passende Ladung entladen,<br>
+                                    erhöht aber den Gesamtschaden je Ladungsstufe um 50/70/100 %<br>
+                                    Dieser Effekt wirkt nicht auf Procs und ist nicht stapelbar<br>
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    Assassinen-Klaue<br>
+                                    <FONT color="#706850">Erwachter Waffenbeherrschungs-Token</FONT><br>
+                                    <FONT color="purple">Drachenstein</FONT><br>
+                                    <FONT color="purple">Ambossstein</FONT><br>
+                                    <FONT color="#f1e5ac">Abgeschlagener Schädel</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Elementare Auflade-Fertigkeiten</font><br>
+                                    Senkt den Basisschaden aller elementaren Auflade-Fertigkeiten um 25 %, aber jede<br>
+                                    vorhandene unterschiedliche Ladung erhöht den Gesamtschaden um 10 %<br>
+                                    Dieser Effekt ist stapelbar*
+                                </font>
+                                <br><br>
+                                <font size="-1" color="gray">*Dieser Schadensbonus gilt nicht für Entladungsprocs</font>
+                            </td>
+                        </tr>
+                    </table>
+                </font>
+
+        </div>
+        </a>
+    </center>
+</body>
+
+</html>

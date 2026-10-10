@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Baza danych Eastern Sun Resurrected
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href=".././changelogs.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;transition:background 0.15s,color 0.15s;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Dziennik zmian]</a>
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Pancerze]</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Broń]</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przedrostki]</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Przyrostki]</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowe pancerze]</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Unikatowa broń]</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Inne unikaty]</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mityczne unikaty]</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Zestawy]</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Klejnoty/Runy]</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa klejnotów]</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Słowa runiczne]</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Receptury kostki]</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy]</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Kalkulator szybkości ataku]</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyszukiwarka łupów]</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./corruptions.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki skażenia]</a>
+                <a href="./anointments.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Wyniki namaszczenia]</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Mapy końcowe]</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Naczynie dusz]</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Ascendencje]</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Księga zabójstw]</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Najemnicy i umiejętności spoza klasy]</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">[Biegłość w broni]</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod całkowitej konwersji do Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <br>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            Ta <font color="ORANGE">Zabij Księgę</font> to specjalna księga, która liczy, ilu wrogów zabiłeś.<br>
+                            Poza liczeniem księga może otrzymywać różne premie po osiągnięciu określonych progów zabójstw.<br>
+                            Ta <font color="ORANGE">Zabij Księgę</font> może też chwytać dusze bossów z map końcowych. Zabijanie bossów map pozwala transmutować księgę w zamian za specjalne premie.<br>
+                            Premie nie są tak ważne ani przełomowe jak premie wzniesienia, ale zwykle łatwiej je zdobyć i są głównie symboliczne, by śledzić twoje postępy.<br>
+                            <font color="706850">Premie za zabójstwa</font> trzeba zdobywać po kolei. Na przykład próba transmutacji dla wszystkich umiejętności bez wszystkich poprzednich premii się nie uda.<br>
+                            Ta <font color="ORANGE">Zabij Księgę</font> jest też niezbędna do działania losowych efektów umiejętności, więc musisz <font color="RED">cały czas trzymać ją w ekwipunku</font>.<br>
+                            <font color="purple">Premie za bossów</font> można zdobywać w dowolnej kolejności.<br>
+                            Ta <font color="ORANGE">Zabij Księgę</font> <font color="red">nie można przenosić</font> między postaciami.<br>
+                            Rzecz jasna, każdą premię można zdobyć tylko raz.<br>
+                        </font>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font size="-1" face="arial,helvetica">
+            <table cellpadding="5" border="0" style="width: 1200px">
+                <tbody>
+                    <a name="killbonuses"></a>
+                    <a href="./kill_ledger.htm#killbonuses">[Premie za zabójstwa]</a>&nbsp;
+                    <a href="./kill_ledger.htm#bossbonuses">[Premie za bossów]</a>&nbsp;
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center">
+                            <font face="arial,helvetica">
+                                <b>
+                                    Premie za zabójstwa
+                                </b><br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 500 zabójstw)<br>
+                                Dowolny klejnot bez skazy<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +10% do wszystkich odporności<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 5000 zabójstw)<br>
+                                Dowolny splamiony klejnot<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +10% do Wszystkich Prędkości<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 10000 zabójstw)<br>
+                                Dowolny doskonały klejnot<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +5% Bonus do Wszystkich Atrybutów<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 50000 zabójstw)<br>
+                                Dowolny doskonały klejnot x2<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Zwiększa Maksymalne Życie +10% <br>
+                                Zwiększa Maksymalną Manę +10% <br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 100000 zabójstw)<br>
+                                Dowolny doskonały klejnot x3<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +10% Fizyczne obrażenia kradzione jako życie <br>
+                                +10% Fizycznych obrażeń kradzionych jako Mana <br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 1000000 zabójstw)<br>
+                                Dowolny doskonały klejnot x4<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +10 Wchłanianie Ognia<br>
+                                +10 Wchłanianie Zimna<br>
+                                +10 Wchłanianie Błyskawic<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                (Co najmniej 10000000 zabójstw)<br>
+                                Liść klonowy<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +1 do Wszystkich Umiejętności<br>
+                            </font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </font>
+        <br>
+        <font size="-1" face="arial,helvetica">
+            <table cellpadding="5" border="0" style="width: 1200px">
+                <tbody>
+                    <a name="bossbonuses"></a>
+                    <a href="./kill_ledger.htm#killbonuses">[Premie za zabójstwa]</a>&nbsp;
+                    <a href="./kill_ledger.htm#bossbonuses">[Premie za bossów]</a>&nbsp;
+                    <br><br>
+                    <tr>
+                        <td colspan="2" bgcolor="#402040" align="center">
+                            <font face="arial,helvetica">
+                                <b>
+                                    Premie za bossów
+                                </b><br>
+                                <font face="arial,helvetica" size="-1">Po zabiciu bossa masz 60 sekund, aby transmutować swoją <font color="ORANGE">Zabij Księgę</font>
+                                    z odpowiednimi składnikami i otrzymać premię.
+                                </font>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="RED">2x Zniekształcony Enigmatyczny Cinnabar</font><br>
+                                Szept Luciona właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Odnów Życie +500<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="PURPLE">2x Zniekształcony Zatruty Turmalin</font><br>
+                                Piekielny Pies Diablo właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +10% do obrażeń od zaklęć<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="ORANGE">2x Zniekształcony Bursztyn Burzy</font><br>
+                                Starożytny Upadły Anioł właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +50% Zwiększone obrażenia<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="GREEN">2x Zniekształcony Gorzki Peridot</font><br>
+                                Terror W Cieniach właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Czas trwania trucizny zmniejszony o +25%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="WHITE">2x Zniekształcony Stały Rtęć</font><br>
+                                Awatar Nocy właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Zredukowane obrażenia o 20<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="GOLD">2x Zniekształcony Pulsujący Opal</font><br>
+                                Herold Zagłady właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                -5% do odporności przeciwnika na żywioły i truciznę<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="BLUE">2x Zniekształcona Zamarznięta Dusza</font><br>
+                                Behemot Lodowy właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +5% Redukcja Czasu Odnowienia Umiejętności<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="GREEN">2x Zniekształcony Jadeit Grobowca</font><br>
+                                Mistrz Zadań właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +10% obrażeń przywołańców<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="LIGHTGRAY">2x Zniekształcony Cień Kwarcu</font><br>
+                                Zniekształcony Harbinger Zniszczenia Baala właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Zredukowane obrażenia magiczne o 20<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="BLUE">2x Zniekształcony Ciemny Azyryt</font><br>
+                                Sędzia Dusz właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Magiczna Absorpcja +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="YELLOW">2x Zniekształcony Płonący Siarkowy</font><br>
+                                <font color="YELLOW">Perfekcyjny Topaz</font><br>
+                                Mephisto Niezwyciężony właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Pochłanianie błyskawic +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="RED">2x Zniekształcony Krwawiący Kamień</font><br>
+                                <font color="RED">Perfekcyjny Rubin</font><br>
+                                Diablo Niezwyciężony właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Odbicie Ognia +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="BLUE">2x Zniekształcony Ciemny Azyryt</font><br>
+                                <font color="BLUE">Perfekcyjny Szafir</font><br>
+                                Baal Niezwyciężony właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Zimna Absorpcja +2%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="#928A70">Liść klonowy</font><br>
+                                <font color="PURPLE">Skażony turmalin</font><br>
+                                Dowolny wieczny Pradawny właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Odpornność na fizyczne obrażenia: +5%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="#928A70">Liść klonowy</font><br>
+                                <font color="BLUE">Zniekształcona Zamarznięta Dusza</font><br>
+                                Król Lichów właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Nie można zamarznąć<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="#928A70">Liść klonowy</font><br>
+                                <font color="LIGHTGRAY">Zniekształcony Cień Kwarcu</font><br>
+                                Rathma właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                Czas trwania klątwy zmniejszony o 15%<br>
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#101010" align="center" style="width: 35%;">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                <font color="#928A70">Liść klonowy</font><br>
+                                <font color="RED">Zniekształcony Krwawiący Kamień</font><br>
+                                Lucion właśnie zabity<br>
+                            </font>
+                        </td>
+                        <td bgcolor="#101010" align="center">
+                            <font size="-1" face="arial,helvetica">
+                                <font color="ORANGE">Zabij Księgę</font><br>
+                                +100 do Życia<br>
+                            </font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </font>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>
