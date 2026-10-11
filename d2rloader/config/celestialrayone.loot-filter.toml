@@ -2,13 +2,15 @@
 #
 # Loot Filter
 #   D2RLAN-style loot filters in JSON. A filter can rename items, hide ground
-#   labels, color label backgrounds and borders, print chat lines and play
-#   sounds when an item drops.
+#   labels, color label backgrounds and borders, recolor item names by quality,
+#   print chat lines and play sounds when an item drops, every time it drops.
+#   Filter texts can use the game's own translated strings.
 #
 # Where filters live
 #   Filters that ship with the mod:   <game>\mods\<mod>\LootFilters\
 #   Your own and imported filters:    <Saved Games>\Diablo II Resurrected\mods\<mod>\LootFilters\
-#   Sound files a filter plays sit in a "sounds" folder next to that filter.
+#   Sound files a filter plays sit in a "sounds" folder next to that filter,
+#   and the .sprite files its minimap icons use in an "icons" folder.
 #   The launcher's Loot Filter tab manages all of this. Which filter is active,
 #   its level for each filter and whether sounds play are kept in
 #   selection.json in your own filters folder. Changing a filter or the
@@ -39,13 +41,26 @@ default_filter = ""
 # Your own filters folder. Empty: <Saved Games>\Diablo II Resurrected\mods\<mod>\LootFilters
 user_folder = ""
 
-# Volume for sound files, 0 to 100. Sounds from sounds.txt follow the game's
-# own volume settings.
+# The overlay.txt row (its "overlay" name) a filter's droplight is attached
+# as. The mod needs one looping row for it; its legacy graphics are unused,
+# the plugin supplies the HD effect and its color.
+droplight_overlay = "droplight"
+
+# Volume for sound files, 0 to 100. A filter's soundVolume (per rule, or for
+# the whole filter) scales it further. Sounds from sounds.txt follow the game's
+# own sound volume, scaled by the same soundVolume.
 file_sound_volume = 80
 
 # Print the filter's title and level in chat when a game starts and when the
-# filter or its level changes.
+# filter changes. The level key, and a level picked in the launcher during a
+# game, always print the filter's level change line.
 announce = true
 
 # Text added to the label of a hidden item while Show Hidden Items is on.
 hidden_marker = " ÿcO[H]"
+
+# Write one line per item to the plugin log saying what the filter decided and
+# why: the item's facts, the rules that matched, whether its label shows and
+# who hid it (a rule or the game's own loot filter). For finding out why a
+# rule does or does not apply. Leave off for normal play.
+debug_log = false
