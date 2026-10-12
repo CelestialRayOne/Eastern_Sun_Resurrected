@@ -22,9 +22,12 @@
 #   The game's own loot filter toggle also shows every label while it is off.
 #
 # Hiding
-#   A hidden item gets no ground label, like the game's own loot filter does.
-#   The item itself stays on the ground and can still be hovered and picked
-#   up. Only items on the ground are ever hidden.
+#   A hidden item gets no ground label, like the game's own loot filter does,
+#   and cannot be hovered, targeted or picked up, with the mouse or a
+#   controller. Gold is the exception: it stays pickable, since it is picked
+#   up automatically anyway. Show Hidden Items, or turning the game's own loot
+#   filter off, shows hidden items again and makes them pickable. Only items
+#   on the ground are ever hidden.
 #
 # Console
 #   lootfilter          shows the active filter, its level and any problems.
@@ -43,8 +46,20 @@ user_folder = ""
 
 # The overlay.txt row (its "overlay" name) a filter's droplight is attached
 # as. The mod needs one looping row for it; its legacy graphics are unused,
-# the plugin supplies the HD effect and its color.
+# the plugin supplies the HD effect.
 droplight_overlay = "droplight"
+
+# The droplight beam, inside the mod's data folder. The mod ships a copy of
+# the game's own fx_horadric_light.particles here; for every droplight color
+# a filter uses, the plugin makes a recolored copy of it. Without the file,
+# droplights keep the game's white beam.
+droplight_beam = "hd/vfx/particles/overlays/object/horadric_light/fx_horadric_light.particles"
+
+# Brightness of colored droplight beams, 1 to 100 (percent of the game's
+# white beam). The game's beam is so bright that its core clips to white; a
+# colored beam at full brightness clips too and loses its color (purple turns
+# pinkish white). Lower keeps the color, higher is brighter.
+droplight_brightness = 50
 
 # Volume for sound files, 0 to 100. A filter's soundVolume (per rule, or for
 # the whole filter) scales it further. Sounds from sounds.txt follow the game's

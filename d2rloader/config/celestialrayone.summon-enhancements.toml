@@ -1,0 +1,191 @@
+# Summon Enhancements (celestialrayone.summon-enhancements)
+#
+# Formerly "Bind Demon Persistence and Auras". Four features, each with its
+# own switch below. Read when the game starts: restart the game after
+# editing.
+#
+# ---------------------------------------------------------------------------
+# 1. SAVE EVERY BOUND DEMON (save_every_demon)
+# ---------------------------------------------------------------------------
+# Every bound demon is saved with the character and comes back in the next
+# game, not only the first one.
+#
+# The game's own save rules still decide whether a demon is saved:
+#   - the character is a Warlock (feature 2 lifts this rule)
+#   - the demon is a pet of pettype.txt row 21 (binddemon)
+#   - the demon has states.txt row 207 (bind_demon)
+#   - the monster has a row in monpet.txt
+#   - the character save still has room for it
+# Without the plugin the game only looks at the first binddemon pet and
+# saves at most that one. The plugin goes through all of them.
+#
+# Coming back into a game:
+#   Bind Demon's petmax is worked out while the character is still loading,
+#   before items and +skills count, so it can come out lower than the number
+#   of saved demons, and the game would remove the extra demons right away.
+#   While the character loads, the plugin raises the cap just enough to fit
+#   every saved demon. Once you are in game, your normal petmax applies the
+#   next time you bind a demon.
+#
+# Save file:
+#   Each demon is stored as its own copy of the game's normal demon block.
+#   If the plugin is ever removed, the game reads the first block and
+#   ignores the rest, so the character still loads with its first demon.
+#
+# Game limit, not changed by this plugin: the game only puts a saved demon's
+# monster mods back when the monster was a champion, unique, superunique or
+# minion. A plain monster comes back without its calc2-calc5 mods, Aura
+# Enchanted included, so it has no aura after a relog.
+#
+# ---------------------------------------------------------------------------
+# 2. BOUND DEMONS OF ANY CLASS (demon_all_classes)
+# ---------------------------------------------------------------------------
+# The game only saves a bound demon when the character is a Warlock. With
+# this on, every class saves its bound demons by the same rules.
+#
+# Coming back into a game: the game only rebuilds a saved demon when the
+# character has Bind Demon while the save loads, and item stats do not count
+# yet at that point. A character that has Bind Demon only from items (the
+# Arion's Augury set bonus, for example) would lose its demons there. For
+# such a character the plugin keeps the demons and rebuilds them with the
+# game's own code when the character enters the world, where items count.
+# They appear at your side.
+# If the character has no Bind Demon yet at that moment, the plugin tries
+# again when D2RLoader reports you ready, and on every later world entry in
+# that game (after changing act, for example). Leaving the game drops
+# demons that never got rebuilt, as the game itself would at load.
+#
+# ---------------------------------------------------------------------------
+# 3. SAVE SUMMONS (save_summons, summon_skills)
+# ---------------------------------------------------------------------------
+# The summons of the skills in summon_skills are saved with the character
+# and come back when you enter the world.
+#
+# How a summon comes back:
+#   - It is summoned again at your feet by the skill's own summon code, at
+#     your current level in that skill, items and +skills included. It
+#     starts with full life and has the stats the skill gives it now.
+#   - Nothing is spent: no mana, no corpse, no cooldown.
+#   - The skill's petmax applies. If petmax is now lower than the number of
+#     saved summons, the game keeps as many as petmax allows.
+#   - A summon whose skill the character does not have yet (an item skill
+#     that does not count yet) is tried again the same way as a kept bound
+#     demon, see feature 2. Leaving the game drops it.
+#   - A summon is not brought back when the skill's petmax works out to 0
+#     now.
+#
+# Which skills can be listed: skills.txt rows with a pettype and a summon
+# monster, made by srvdofunc 16 (Valkyrie), 31 (Raise Skeleton, Raise
+# Skeletal Mage), 56 (golems, Warlock demons, Raise Kornac, Skeleton King)
+# or 119 (druid summons, Shadow Warrior, Shadow Master, Holy Defender).
+# A summon of another srvdofunc is named in the log and not brought back.
+# Bind Demon does not belong here: its demons use features 1 and 2.
+#
+# How a saved summon is matched to a listed skill: by the skill's pettype.
+# When several listed skills share a pettype (the golems share one, the
+# Warlock demons share another), by the skill's summon monster.
+#
+# Raise Skeleton and Raise Skeletal Mage come back as if raised from a
+# corpse with no montype.txt element, which is every corpse in ESR today
+# (the element column is empty).
+#
+# Save file: the summons are stored after the bound demon blocks, 4 bytes
+# per summon. Without the plugin the game ignores them.
+#
+# ---------------------------------------------------------------------------
+# 4. AURA LIST (aura_list, auras)
+# ---------------------------------------------------------------------------
+# Picks the aura of a bound demon from the auras list instead of
+# D2RLoader's built-in Aura Enchanted lists.
+#
+# Which demons get an aura: only demons with the Aura Enchanted monster mod
+# (monumod.txt row 30):
+#   - a new bind whose Bind Demon skills.txt calc2-calc5 add mod 30;
+#   - champions, uniques, superuniques and minions that already had Aura
+#     Enchanted before they were bound.
+# A demon is rolled when it is bound and again when it is restored from the
+# save. It works with both values of d2rloader.toml
+# d2rcore.game_rules.aura_enchanted_selection ("3.1" and "3.2").
+#
+# How the roll works:
+#   - Every entry the demon qualifies for is equally likely. List a skill
+#     twice to make it twice as likely.
+#   - The pick comes from the demon's monster seed. A restored demon keeps the
+#     seed it was saved with, so it comes back with the same aura.
+#   - Level = monster level / divisor, kept between 1 and 99. The monster
+#     level is the demon's level stat at the end of the bind.
+#   - The aura becomes the demon's active aura, the same way Aura Enchanted
+#     sets it.
+#   - If no entry qualifies (empty list, or every min_level is above the
+#     demon's level), the plugin gives no aura.
+#
+# Each entry:
+#   skill      skills.txt *Id of the aura (required, must be an aura skill)
+#   divisor    level = monster level / divisor (default 6)
+#   min_level  the entry only counts for demons of at least this monster
+#              level (default 0)
+#
+# The default list below is D2RLoader's own "3.2" Bind Demon list, so nothing
+# changes until you edit it. The names are the vanilla skills.txt rows.
+# Not affected: monsters that are not bound demons, and the herald extra aura.
+#
+# ---------------------------------------------------------------------------
+# Console
+# ---------------------------------------------------------------------------
+#   summonsave    what the last save wrote, what the last load restored or
+#                 kept, what came back on entering the world, and why a
+#                 demon or a summon was left out
+#   summonauras   the aura list, the counters and the last rolls
+# The same lines go to this plugin's log, along with every aura roll.
+
+# Set to false to turn the whole plugin off.
+enabled = true
+
+# Save and restore every bound demon (feature 1).
+save_every_demon = true
+
+# Bound demons of every class (feature 2).
+demon_all_classes = true
+
+# Save and restore the summons of the skills below (feature 3).
+save_summons = true
+
+# skills.txt *Id of every skill whose summons are saved. The names are
+# ESR's skills.txt rows.
+summon_skills = [
+    440,  # Valkyrie
+    493,  # Raise Skeleton
+    504,  # Raise Skeletal Mage
+    498,  # Clay Golem
+    506,  # Blood Golem
+    510,  # Iron Golem
+    514,  # Fire Golem
+    518,  # Summon Skeleton King
+    552,  # Summon Holy Defender
+    593,  # Raven
+    594,  # Summon Spirit Wolf
+    600,  # Summon Dire Wolf
+    612,  # Spirit of Nature
+    626,  # Summon Grizzly
+    641,  # Shadow Warrior
+    644,  # Shadow Master
+    663,  # Summon Goatman
+    675,  # Summon Tainted
+    680,  # Summon Defiler
+    688,  # Summon Abyss Knight
+    385,  # Raise Kornac
+]
+
+# Pick bound demons' aura from the list below (feature 4). false leaves the
+# aura to D2RLoader's aura_enchanted_selection.
+aura_list = true
+
+auras = [
+    { skill = 113, divisor = 6 },                  # Concentration
+    { skill = 115, divisor = 6 },                  # Vigor
+    { skill = 103, divisor = 10 },                 # Thorns
+    { skill = 365, divisor = 7 },                  # Holy Freeze (MonHolyFreeze)
+    { skill = 122, divisor = 8 },                  # Fanaticism
+    { skill = 122, divisor = 8 },                  # Fanaticism
+    { skill = 115, divisor = 6, min_level = 20 },  # Vigor
+]

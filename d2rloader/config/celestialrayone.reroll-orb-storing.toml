@@ -1,0 +1,56 @@
+# Rerolling Orb Storing
+#
+# A hotkey that feeds rings, amulets, jewels, charms and quivers into a
+# Rerolling Orb through the Horadric Cube, one transmute per item, the same
+# way you would do it by hand.
+#
+# Player settings live in ESRLauncher, not here
+#   The Rerolling Orb tab in ESRLauncher sets the hotkey and the checkboxes,
+#   and saves them per player in
+#     <Saved Games>\Diablo II Resurrected\mods\<mod>\reroll-orb-storing.json
+#   so updates never reset them. Everything applies at once, the hotkey
+#   included: a change saved in the launcher is picked up at the next key
+#   press, while the game runs. The hotkey still reaches the game too, and it
+#   does nothing while the chat input is open.
+#
+# How a run works
+#   1. Press the hotkey. The cube must be empty and nothing may be on the
+#      cursor, otherwise nothing happens (the reason goes to the plugin log).
+#   2. The plugin finds your Horadric Cube (inventory or personal stash) and a
+#      Rerolling Orb (any item of the orb_types below). Inventory is searched
+#      first, then the personal stash, then the shared stash tabs.
+#   3. The orb goes into the cube. Every matching item then goes into the cube
+#      next to it and is transmuted, one item at a time.
+#   4. The orb goes back to the exact cell and tab it came from.
+#   - No mouse movement and no clicking: the plugin sends the game's own
+#     item and transmute requests, so the cube and stash panels do not need to
+#     be open and screen size does not matter.
+#   - Stash items (personal and shared tabs) are only used while the stash is
+#     open, because the game only allows stash moves near the stash.
+#   - If an item is not consumed by the transmute (no recipe matched, for
+#     example a full orb), it goes back where it came from and the run stops.
+#   - The server checks every request, so it works in single player and as a
+#     TCP/IP host.
+#
+# Which items are stored
+#   An item is stored when its quality and category are both ticked in the
+#   launcher. Categories go by itemtypes.txt codes, child types included: a
+#   type listed here also matches every item type that has it as an
+#   Equiv1/Equiv2 parent.
+#
+# Console command
+#   rerollorbstoring   status, the launcher settings it read, the resolved item
+#                      types, and what the last run did
+#
+[reroll_orb_storing]
+
+# Master switch. false installs nothing.
+enabled = true
+
+# itemtypes.txt codes for each category and for the orb itself.
+ring_types   = ["ring"]
+amulet_types = ["amul"]
+jewel_types  = ["jewl"]
+charm_types  = ["char"]
+quiver_types = ["bowq", "xboq"]
+orb_types    = ["can7"]
