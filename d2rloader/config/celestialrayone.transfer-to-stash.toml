@@ -8,18 +8,24 @@
 #       keyboard/mouse  right edge 27 px (at 1080p) inside the grid's right edge
 #       controller      right edge on the grid frame's outer edge; a bigger
 #                       button with the next font size up
-#   - Pressing it does what Ctrl+click does with the stash open, for every item
-#     in the inventory and in the Horadric Cube at once. The game picks the
-#     stash tab for each item.
+#   - Left click: does what Ctrl+click does with the stash open, for every
+#     Advanced Stash item in the inventory and in the Horadric Cube at once.
+#     The game picks the stash tab for each item.
+#   - Shift + left click: the same, then every other item in the inventory and
+#     in the cube goes to the shared stash (see below). Hovering the button
+#     shows this as a tooltip, in two gray lines. Its text is the string
+#     celestialrayone.transfer-to-stash:TransferButtonTooltip; a mod can change
+#     it from its own string files with that full key.
+#   - Controller: tap A on the button for a left click, hold A for a
+#     Shift + left click.
 #   - The position comes from the inventory layout the game loaded, so a mod's
 #     own inventory layout needs no numbers here. Where the gold display sits
 #     is up to the mod's layout; the plugin does not move it.
 #   - On a controller the d-pad reaches the button from the gold button, once
 #     the mod's controller inventory layout points gold_button's "right"
-#     navigation at celestialrayone.transfer-to-stash/TransferButtonController;
-#     A presses it.
+#     navigation at celestialrayone.transfer-to-stash/TransferButtonController.
 #   - Keyboard key: Options > Controls > Stash > Transfer to Stash, no default
-#     key. It does the same as the button, and only while the stash is open.
+#     key. It does the same as a left click, and only while the stash is open.
 #     Holding it down counts as one press.
 #   - The button art is inside the DLL. A mod can replace it with its own files
 #     under data/hd/global/ui/d2rloader/celestialrayone.transfer-to-stash/:
@@ -29,7 +35,7 @@
 #         4 frames of 404x82 (202x41 for lowend)
 #     Frame order: normal, pressed, disabled, hovered.
 #
-# Which items move
+# Which items move on a left click
 #   - Items whose misc.txt row has AdvancedStashStackable = 1 and that have a
 #     slot in the stash layout (bankexpansionlayouthd.json). That is the same
 #     rule Ctrl+click uses.
@@ -38,13 +44,38 @@
 #   - The server still checks every item. A stash slot that is full keeps its
 #     items where they are.
 #
+# Shift + left click (and a controller hold)
+#   - First everything a left click does, then the rest of the inventory and
+#     the cube goes to the shared stash, the way Ctrl+click moves an item into
+#     a shared page.
+#   - One item at a time: the server picks the free spot itself and refuses a
+#     request for any other spot, so each item waits for the server's answer
+#     to the one before it. A full inventory takes a couple of seconds, a bit
+#     more in a TCP/IP game.
+#   - Shared tabs are filled in order, from the first one. An item that does not
+#     fit on a tab tries the next one. Remove-only and inactive tabs are
+#     skipped.
+#   - Materials whose Advanced Stash slot is full go to the shared stash too.
+#   - These stay where they are:
+#       equipped items and the belt (only the inventory and the cube are read)
+#       Tome of Town Portal and Tome of Identify
+#       the Horadric Cube itself (what is inside it does move)
+#       items the game does not allow in the shared stash, such as quest items
+#       items that fit on no shared tab
+#   - The cursor must be empty: while an item is on it the server refuses every
+#     shared stash request, so the transfer stops.
+#   - Closing the stash stops the transfer. What was already sent stays sent.
+#
 # Limits
-#   - Works in single player and in TCP/IP games: the requests are the game's
-#     own Ctrl+click requests, so the host checks them as usual.
+#   - Works in single player and in TCP/IP games, on the host and on the
+#     clients. Every request is one of the game's own Ctrl+click requests, so
+#     the host checks them as usual, and only the player who presses the
+#     button needs the plugin.
 #
 # Console command
 #   transfertostash   status, where the button was placed, the Controls key,
-#                     and what the last press sent
+#                     the controller hold, and what the last press sent to the
+#                     Advanced Stash and to the shared stash
 #
 [transfer_to_stash]
 
