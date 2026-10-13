@@ -1,0 +1,31 @@
+# Summon Resist Diag
+#
+# Read-only diagnostic. It changes nothing in the game unless you ask for a
+# refresh, and then it only calls the game's own passive refresh.
+#
+# Console:
+#   summonresdiag            dump every server monster that has the hidden
+#                            state 279 or skill 153 (Summon Resistance
+#                            Passive Ele)
+#   summonresdiag 1234       dump only monster unit 1234 (the id is the one
+#                            'monsterdisplay' prints as 'Last hovered: unit')
+#   summonresdiag refresh    as above, then force the game's passive refresh
+#   summonresdiag 1234 refresh
+#                            on each pet and dump it again
+#
+# Output: d2rloader\logs\celestialrayone.summon-resist-diag.log
+#
+# Per pet it prints: monstats row, level, its own passive_summ_phys_resist
+# (267) and passive_summ_elemental_resist (265), damageresist (36),
+# magicresist (37), fireresist (39), whether it has state 279 and 214, skill
+# 153 and its level, and the stats inside the state 279 list (36, 37, 39 and
+# the 350/351 skill id and level the passive was last applied at).
+# It also prints your own 267, 366 (-enemy physical) and 358 (-enemy magic).
+
+[general]
+# false: the plugin loads but the command does nothing.
+enabled = true
+
+[scan]
+# Highest monster unit id the full scan looks at.
+max_unit_id = 131072

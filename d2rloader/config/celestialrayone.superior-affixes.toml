@@ -1,0 +1,199 @@
+# Superior Affixes
+#
+# Picks the superior affix row (qualityitems.txt) of every Superior item the
+# game creates, with a weight per row, and removes the stock row limit.
+#
+# ---------------------------------------------------------------------------
+# What happens when an item rolls Superior
+# ---------------------------------------------------------------------------
+#   The server picks ONE qualityitems.txt row the item is allowed to use and
+#   applies that row's mod1 and mod2 to the item. Each value is rolled once
+#   between min and max and stored on the item as an ordinary stat, in the
+#   same place as magic and rare affixes. Nothing ever re-reads
+#   qualityitems.txt for that item afterwards.
+#
+#   Stock D2R gives every allowed row the same odds. This plugin gives each
+#   row the odds set below. With every weight equal, the odds are exactly
+#   the stock ones.
+#
+# ---------------------------------------------------------------------------
+# Row limit
+# ---------------------------------------------------------------------------
+#   The stock picker remembers the rows it already tried in a 10-slot list.
+#   With more than 10 rows it reads and writes past that list: rows 10 to
+#   15 get skipped at random, and rows 16 and up can crash the game or
+#   corrupt it silently. This plugin keeps no such list. qualityitems.txt
+#   can have up to 65535 rows; rows past that are never picked, and the log
+#   says so.
+#
+# ---------------------------------------------------------------------------
+# Saves
+# ---------------------------------------------------------------------------
+#   Nothing in the save format changes, and existing characters and stashes
+#   load exactly as before.
+#   - The affixes are saved as ordinary item stats, as they always were.
+#   - The item also saves which row it rolled, in a 3-bit field (0 to 7;
+#     any higher row is written as 7). The game never reads that number back
+#     for anything: the only code that turns a row number into affixes is
+#     the picker itself, when the item is created. So a Superior item that
+#     rolled row 200 keeps its row-200 affixes after a reload; only that
+#     unused label says 7.
+#
+# ---------------------------------------------------------------------------
+# Which rows an item may use (stock rules, unchanged by this plugin)
+# ---------------------------------------------------------------------------
+#   The columns test the item's OWN type, the "type" column of weapons.txt or
+#   armor.txt, not its parent types:
+#   - weapon: every weapon EXCEPT own type scep, wand, staf, bow, xbow. So
+#     Amazon bows (abow), orbs, claws, Amazon spears and javelins, and
+#     throwing weapons all use the weapon column.
+#   - armor: every armor EXCEPT own type shie, boot, glov, belt. So Paladin
+#     shields, Necromancer heads, helms, circlets, pelts and body armor all
+#     use the armor column.
+#   - shield, scepter, wand, staff, boots, gloves, belt: only items whose own
+#     type is exactly shie, scep, wand, staf, boot, glov, belt.
+#   - bow: own type exactly bow or xbow. Amazon bows (abow) do NOT count.
+#   (The game checks these by itemtypes.txt row position. The codes above
+#   are the vanilla rows at those positions.)
+#
+#   mod2 is applied only when mod1code is filled in. A row with an empty
+#   mod1code still makes the item Superior, with no bonus at all.
+#
+# ---------------------------------------------------------------------------
+# Rows are numbered from 0
+# ---------------------------------------------------------------------------
+#   Row 0 is the first line under the header of qualityitems.txt, row 1 the
+#   second, and so on. Adding or removing a line in the middle of the file
+#   moves every row below it, so update the weights below when you do.
+#
+#
+# ---------------------------------------------------------------------------
+# Item-type columns in qualityitems.txt (optional, no setting needed)
+# ---------------------------------------------------------------------------
+#   Add any of these columns to qualityitems.txt:
+#     itype1 itype2 itype3 itype4 itype5 itype6 itype7
+#     etype1 etype2 etype3 etype4 etype5
+#   They take itemtypes.txt codes and work exactly like the same columns of
+#   magicprefix.txt: an item matches a code when its type, or its type2, is
+#   that type or any type below it in itemtypes.txt (Equiv1/Equiv2).
+#   - A row with any itype filled rolls only on items matching one of its
+#     itypes; its armor..belt columns are then ignored.
+#   - A row with no itype keeps the armor..belt columns.
+#   - etype always excludes: a row never rolls on an item matching one of its
+#     etypes, whichever way the row includes items.
+#   Example, spears only, without Amazon spears: itype1 = spea, etype1 = aspe.
+#   Example, every weapon the weapon column allows except spears:
+#     weapon = 1, etype1 = spea.
+#   The game itself skips columns it does not know, so the file stays valid.
+#   The plugin reads the same file the game loaded and, before using it,
+#   checks it row by row against what the game loaded (row count, the ten
+#   item-class columns and every mod param/min/max). If anything differs, or
+#   a code is unknown, the log says exactly where, and the columns are not
+#   used for that table. Console command superior shows the result.
+#
+# Console command: superior (status, rows seen, items made, rolls per row)
+
+[superior_affixes]
+
+# Master switch. false installs nothing: the stock picker runs, with its
+# 10-row limit.
+enabled = true
+
+# Weight of every row that is not listed under [superior_affixes.weights].
+# 0 to 65535.
+default_weight = 100
+
+# Stock rule: items whose own type has Throwable = 1 in itemtypes.txt, and
+# items with nodurability = 1 in weapons.txt or armor.txt, only ever look at
+# rows 0 to 3. true keeps the stock behaviour. false lets them use every row,
+# by the same rules and weights as any other item.
+first_four_rows_for_throwing_and_nodurability = false
+
+[superior_affixes.weights]
+
+# One line per row: row = weight, 0 to 65535. A row's odds on a given item
+# are its weight divided by the sum of the weights of every row that item may
+# use. Weight 0 means the row never rolls.
+#
+# Example with the default weight 100:
+#   5 = 25     # row 5 rolls a quarter as often as a default row
+#   7 = 0      # row 7 never rolls
+
+0 = 25
+1 = 25
+2 = 25
+3 = 25
+4 = 25
+5 = 25
+7 = 50
+8 = 25
+9 = 10
+10 = 50
+11 = 25
+12 = 25
+13 = 10
+14 = 25
+15 = 25
+17 = 50
+19 = 25
+20 = 10
+21 = 50
+22 = 1
+23 = 1
+24 = 1
+25 = 25
+26 = 10
+27 = 25
+28 = 10
+30 = 50
+31 = 25
+32 = 5
+33 = 25
+34 = 5
+36 = 25
+38 = 50
+40 = 50
+41 = 25
+42 = 5
+43 = 1
+44 = 25
+45 = 5
+46 = 1
+48 = 25
+50 = 25
+51 = 5
+52 = 3
+53 = 3
+54 = 3
+55 = 3
+56 = 3
+57 = 3
+58 = 3
+59 = 3
+60 = 3
+61 = 3
+62 = 3
+63 = 3
+64 = 3
+65 = 3
+66 = 3
+67 = 3
+68 = 3
+69 = 25
+70 = 5
+71 = 25
+72 = 5
+73 = 1
+74 = 1
+75 = 25
+76 = 5
+77 = 25
+78 = 5
+79 = 5
+80 = 5
+81 = 25
+82 = 5
+83 = 1
+84 = 1
+85 = 1
+86 = 1

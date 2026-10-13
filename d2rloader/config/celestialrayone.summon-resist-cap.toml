@@ -33,10 +33,17 @@
 # capped: it resolves its resistances like an ordinary monster, so it can pass
 # 100% and become immune to that damage type.
 #
-#   monster id  the monstats.txt row id, the same number summon-resist-probe
-#               prints.
+#   monster id  the monstats.txt row id (the *hcIdx column), the same number
+#               summon-resist-probe prints.
 #   stat id     the itemstatcost.txt row id, 0 to 32767. Any non-zero value of
 #               the stat on the player counts.
+#
+# Writing pairs:
+#   pairs = [423, 511]                 one pair, short form
+#   pairs = [[423, 511]]               one pair
+#   pairs = [[423, 511], [357, 511]]   two pairs
+# Anything else (three numbers in one pair, loose numbers next to pairs) is
+# named in the log and skipped.
 #
 #   - The owner is the player who summoned or hired the monster. A minion owned
 #     by another of that player's minions belongs to the same player.
@@ -47,6 +54,16 @@
 #
 # Example: Valkyries (row 357) pass the cap while their owner has stat 511.
 #   pairs = [[357, 511]]
+#
+# LOG (<scope>\d2rloader\logs\celestialrayone.summon-resist-cap.log)
+#   - At load: the pairs read from this file, or "none".
+#   - A key this plugin does not know, or a key under the wrong [section],
+#     is named with its section. Nothing is ignored silently.
+#   - For a paired summon, one line each time its result changes, e.g.
+#       row 423, unit 5: owner player unit 1, stat 511 = 1 -> uncapped
+#       row 423, unit 5: owner player unit 1, stat 511 = 0 -> capped
+#       row 423, unit 5: no player owner (owner link: type 1, id 7) -> capped
+#     summon-resist-cap shows the latest of these lines too.
 #
 # HOW IT WORKS
 # Inside SUNITDMG_ApplyResistancesAndAbsorb (RVA 0x4523E0) a single flag at
@@ -88,8 +105,9 @@ extra_monster_ids = []
 # all on one line or one pair per line:
 #   pairs = [
 #       [357, 511],
-#       [358, 512],
+#       [423, 511],
 #   ]
+# A single pair can also be written flat: pairs = [423, 511]
 pairs = [423, 511]
 
 

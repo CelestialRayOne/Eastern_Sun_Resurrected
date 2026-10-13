@@ -1,0 +1,123 @@
+# Evil Urn
+#
+# Three evil urn features in one plugin. Each section below switches one on
+# or off on its own. A feature whose checks against the game fail is left
+# out and reported in the log and by the console command; the other two
+# still install.
+#
+#   [spawn_chance]  per-room chance of a random urn, by difficulty
+#   [boss_affixes]  extra random affixes for the boss an urn spawns
+#   [blocklist]     monster types an urn must never spawn
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: evilurn (status, settings and counters of all three)
+#
+# Read when the plugin loads. Restart the game after editing.
+
+[spawn_chance]
+
+# HOW URNS ARE PLACED (txt side)
+#   levels.txt gives every zone with monsters object group 131 (objgroup.txt
+#   "evilurn": the urn alone, DENSITY 127, PROB 100) with ObjPrb 5. The game
+#   rolls 0-99 per room and fires a group when the roll is <= ObjPrb, so
+#   ObjPrb 5 is 6% per room. Siege 1, Barricade 1 and Barricade 2 have no free
+#   ObjGrp slot, so their urn sits in group 103 at PROB 6 instead, with that
+#   group firing every room: also 6%. The urn uses objects.txt PopulateFn 9,
+#   which places at most one urn per room.
+#
+# WHAT THIS DOES
+#   The txt files alone give txt_percent on every difficulty. When the game
+#   is about to place one of the objects below, the placement is kept only
+#   part of the time, rolled on the room's own seed:
+#     kept = difficulty percent / txt_percent
+#   so the chance per room becomes exactly the difficulty percent. With the
+#   defaults: Normal 2/6, Nightmare 4/6, Hell 6/6, so 2%, 4% and 6%.
+#
+#   This can only lower the txt chance, never raise it. To raise the Hell
+#   chance, raise the txt chance first (ObjPrb of group 131 in levels.txt is
+#   chance - 1, and the urn's PROB in group 103 is the chance itself), then
+#   set txt_percent to match.
+#
+#   Rooms roll when they are first populated, so a change shows up in newly
+#   created games.
+
+# false leaves the txt chance on every difficulty.
+enabled = true
+
+# The per-room chance the txt files give, 1 to 100. Must match the txt
+# setup above, or every difficulty is scaled from the wrong base.
+txt_percent = 6
+
+# Per-room chance on each difficulty, 0 to txt_percent.
+normal_percent = 2
+nightmare_percent = 4
+hell_percent = 6
+
+# objects.txt row ids this applies to, 0 to 65535. Only objects that use
+# PopulateFn 9 pass through here. 466 = IceCaveEvilUrn.
+object_ids = [466]
+
+[boss_affixes]
+
+# HOW AN URN BOSS GETS ITS AFFIXES
+#   When an urn spawns its pack, the game first rolls monumod.txt constants
+#   row 0 (20 in ESR, "Champion chance to spawn instead of Unique"): on a
+#   hit it is a champion pack with one champion affix. Otherwise the leader
+#   is a unique boss with (difficulty + 1) random affixes: 1 on Normal, 2 on
+#   Nightmare, 3 on Hell.
+#
+# WHAT THIS DOES
+#   Adds extra_affixes to that count for urn bosses only. The default of 1
+#   gives 2, 3 and 4. Champion packs and bosses from any other source are
+#   unchanged.
+#   - A monster holds at most 9 affixes; the game stops there.
+#   - Affixes are drawn without repeats. If nothing is left to draw, the
+#     boss ends up with fewer.
+#   - The minions copy the boss's transferable affixes (monumod.txt xfer)
+#     as usual, extra ones included.
+
+# false leaves urn bosses at the vanilla count.
+enabled = true
+
+# Extra random affixes for an urn boss, 0 to 8. 0 = vanilla.
+extra_affixes = 1
+
+[blocklist]
+
+# How an urn picks: when its objects.txt Parm4 roll succeeds (255 on the urn
+# row, so always), the urn walks the monster types the game rolled for its
+# level from levels.txt, and spawns the FIRST one that has a walk mode
+# (monstats2.txt mWL) as a boss pack.
+#
+# A blocked type is passed over exactly like a type that cannot walk: the urn
+# moves on to the next type, so a boss pack still spawns from whatever else
+# the level holds. When every type in the level is blocked or cannot walk,
+# the urn spawns nothing, the same as vanilla.
+#
+# Only urn spawns change. Blocked monsters still spawn everywhere else.
+
+# false installs nothing for the blocklist.
+enabled = true
+
+# The monsters an urn must never spawn, as monstats.txt hcIdx values,
+# 0 to 32767. An empty list, [], blocks nothing and installs no hook.
+# The list may be written on one line or spread over several, and may
+# carry # comments:
+#
+#   blocked_monster_ids = [1121, 1122]
+#
+#   blocked_monster_ids = [
+#     1121,   # corruptedzakarumarcher
+#     1122,
+#   ]
+#
+# The default is the list the ESR 2.4 patch blocked.
+blocked_monster_ids = [
+    1121,   # corruptedzakarumarcher
+    1122,   # corruptedzakarumpriest
+    1123,   # corruptedzakarumtrickster
+    1124,   # corruptedzakarumfanatic
+    1125,   # corruptedzakarumvenomancer
+]

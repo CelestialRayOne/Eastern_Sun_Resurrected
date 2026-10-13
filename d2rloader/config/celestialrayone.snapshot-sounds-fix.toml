@@ -1,0 +1,38 @@
+# celestialrayone.snapshot-sounds-fix
+#
+# Snapshot Sounds Fix
+#
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). Read when the plugin
+# loads; restart the game after editing.
+#
+# What goes wrong without it
+#   D2RLoader keeps a snapshot of the unmodded game tables in
+#   d2rloader/data/compiler. It rebuilds that snapshot on the first launch on a
+#   machine, after a D2R patch, after a D2RLoader update that changes its
+#   compiler, or when the snapshot is damaged. During that rebuild it loads the
+#   tables twice: first from the base game for the snapshot, then from the mod.
+#   sounds.txt is loaded from the base game in the first pass and never loaded
+#   again, so for that whole session the game uses the base game's sounds.txt
+#   with the mod's other tables.
+#   Every sound the mod added to sounds.txt is missing in that session. Taunts in
+#   monsounds.txt, sounds in skills.txt and every other sound column point at
+#   rows that do not exist. The first boss whose Taunt is a mod-added sound (King
+#   Leoric, Lachdanan, the Black Knight boss, the Lich King, Rathma, Lucion, the
+#   treasure goblin) crashes the game when it taunts.
+#   Sessions that do not rebuild the snapshot were always fine, which is why it
+#   only hits some players and only once in a while.
+#
+# What the plugin does
+#   Before the game loads the mod's tables, it checks where sounds.txt came from.
+#   If it came from the base game while the mod is mounted, it loads the mod's
+#   sounds.txt first, the same way the game reloads sounds itself. Nothing else
+#   changes, and sessions that never rebuild the snapshot are not touched.
+#   The plugin log says when this happened and how many sound rows the reload
+#   brought back.
+#
+# Console
+#   soundbanks   where each table bank's sounds.txt came from, its row count,
+#                and how many reloads were needed this session.
+
+# Turn the fix on or off. Off leaves the game exactly as stock D2RLoader runs it.
+enabled = true
