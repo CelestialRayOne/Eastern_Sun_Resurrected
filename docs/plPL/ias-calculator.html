@@ -52,6 +52,20 @@ select:focus,input:focus{outline:2px solid var(--azure);outline-offset:1px;borde
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{opacity:.35}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .hint{font-size:11px;color:var(--faint);margin-top:5px;line-height:1.45}
+/* weapon search fields, as on the Drop Finder */
+.cwrap{position:relative;display:block}
+.cwrap input{padding-right:32px}
+.clr{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:24px;height:24px;padding:0;border:0;background:none;
+  color:var(--dim);font-size:18px;line-height:24px;text-align:center;cursor:pointer}
+.clr:hover{color:var(--gold)}
+input:placeholder-shown+.clr,input:disabled+.clr{display:none}
+.dd{position:absolute;left:0;right:0;top:100%;z-index:50;background:var(--panel2);border:1px solid var(--rule);max-height:320px;overflow:auto;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);display:none}
+.dd.open{display:block}
+.dd div{padding:6px 9px;cursor:pointer;font-family:var(--mono);font-size:13px;border-bottom:1px solid rgba(61,51,39,.5)}
+.dd div.hl,.dd div[data-i]:hover{background:#3a2f22}
+.dd .grp{cursor:default;font-family:var(--body);font-weight:600;font-size:12px;color:var(--dim);background:var(--panel)}
+.dd .none{cursor:default;color:var(--faint)}
 .hint code{font-family:var(--mono);font-size:10.5px;color:var(--dim)}
 
 .chk{display:flex;align-items:center;gap:7px;margin-top:9px;font-size:12px;color:var(--dim);cursor:pointer}
@@ -144,14 +158,17 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         <select id="skill"></select>
       </div>
       <div class="field" id="wepwrap">
-        <label for="wep">Główna ręka</label>
-        <select id="wep"></select>
+        <label for="wep-q">Główna ręka</label>
+        <div class="cwrap"><input id="wep-q" autocomplete="off" spellcheck="false"><button type="button" class="clr" id="wep-x" tabindex="-1" title="Clear">&#215;</button><div class="dd" id="wep-dd"></div></div>
+        <select id="wep" hidden></select>
         <div class="hint">Liczba w nawiasach to modyfikator szybkości broni. Mniej znaczy szybciej.</div>
       </div>
       <div class="field" id="wep2wrap">
-        <label for="wep2">Druga ręka</label>
-        <select id="wep2"></select>
+        <label for="wep2-q">Druga ręka</label>
+        <div class="cwrap"><input id="wep2-q" autocomplete="off" spellcheck="false"><button type="button" class="clr" id="wep2-x" tabindex="-1" title="Clear">&#215;</button><div class="dd" id="wep2-dd"></div></div>
+        <select id="wep2" hidden></select>
         <div class="hint" id="wep2hint"></div>
+        <span id="t-nomatch" hidden>Brak wyników.</span>
       </div>
       <div class="field" id="wrap-ias">
         <label for="ias">Zwiększona szybkość ataku <span style="color:var(--faint)">cały ekwipunek</span></label>
@@ -208,7 +225,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         <div class="aps"><div class="n" id="atk-aps">—</div><div class="l" id="atk-lbl2">ataki / s</div></div>
       </div>
       <table>
-        <thead><tr><th id="th-atk">Wymagane IAS</th><th>Klatki</th><th>Ataki / s</th><th>Od tego miejsca</th></tr></thead>
+        <thead><tr><th id="th-atk">Wymagane IAS</th><th>Klatki</th><th id="th-aps">Ataki / s</th><th>Od tego miejsca</th></tr></thead>
         <tbody id="atk-body"></tbody>
       </table>
       <div class="note" id="atk-note"></div>
@@ -235,7 +252,9 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   <code>effective = 120 × IAS ÷ (120 + IAS)</code>, zaokrąglone w stronę zera. Ujemna szybkość ataku przechodzi przez tę samą krzywą, więc kara uderza mocniej niż jej nominalna wartość, a dokładnie −120 sprawia, że gra dzieli przez zero i się zawiesza. Bazowa szybkość ataku i modyfikator szybkości broni są potem dodawane w pełni i ograniczane tak, by wynikowe tempo mieściło się między 15% a 175%, lub 250% w postaci zwierzęcej. Animacja działa wtedy z tempem <code>rate = floor(AnimationSpeed × (100 + total) ÷ 100)</code> i trwa
   <code>ceil(256 × BaseFrames ÷ rate) − 1</code> klatek. Rzucanie czarów ma ten sam schemat z własnym limitem:
   <code>rate = min(120 × FCR ÷ (FCR + 120) + 100, 196)</code>, potem <code>animSpeed = rate × AnimationSpeed ÷ 100</code>. Limit 196 to wartość krzywej przy 500 szybszego rzucania czarów, czyli limicie ustawionym przez Eastern Sun, a zaokrąglenie osiąga go już przy 480, więc <b>nic powyżej 480 szybszego rzucania czarów niczego nie zmienia</b>. Między −55 a −119 szybszego rzucania czarów arytmetyka gry się przepełnia i czar staje się natychmiastowy.</p>
-  <p><b style="color:var(--dim)">Trąba powietrzna trafia w twojej klatce ataku.</b> Czas między trafieniami Trąby powietrznej to klatka, w której trafiłby twój zwykły atak: klatka ataku twojej animacji ataku dla trzymanej broni, odtwarzanej z twoją szybkością ataku, <code>floor(256 × AttackFrame ÷ floor(AnimationSpeed × rate ÷ 100))</code>. Tempo jest takie samo jak przy każdym innym ataku, więc liczy się cały ekwipunek, umiejętności, aury, wzmocnienia i spowolnienia, osłabione jak zwykle, tyle że Trąba powietrzna nigdy nie dostaje kary sekwencji −30. Animacja pochodzi z klasy samej broni, więc miecze dwuręczne nadal są taktowane według animacji jednoręcznej. Pierwsze trafienie następuje w chwili, gdy zaczynasz wirować.</p>
+  <p id="ww-vanilla" hidden><b style="color:var(--dim)">Trąba powietrzna trafia w twojej klatce ataku.</b> Czas między trafieniami Trąby powietrznej to klatka, w której trafiłby twój zwykły atak: klatka ataku twojej animacji ataku dla trzymanej broni, odtwarzanej z twoją szybkością ataku, <code>floor(256 × AttackFrame ÷ floor(AnimationSpeed × rate ÷ 100))</code>. Tempo jest takie samo jak przy każdym innym ataku, więc liczy się cały ekwipunek, umiejętności, aury, wzmocnienia i spowolnienia, osłabione jak zwykle, tyle że Trąba powietrzna nigdy nie dostaje kary sekwencji −30. Animacja pochodzi z klasy samej broni, więc miecze dwuręczne nadal są taktowane według animacji jednoręcznej. Pierwsze trafienie następuje przy pierwszym cięciu obrotu, kilka klatek po rozpoczęciu, a potem jedno trafienie przypada na każdy odstęp.</p>
+  <p id="ww-esr"><b style="color:var(--dim)">Trąba powietrzna trafia w twojej klatce ataku.</b> Czas między trafieniami Trąby powietrznej wychodzi od klatki, w której trafiłby twój zwykły atak: klatki ataku twojej animacji ataku dla trzymanej broni. Eastern Sun wydłuża go o 70% i odtwarza we własnym tempie Trąby powietrznej,
+  <code>floor(256 × AttackFrame × 170 ÷ 100 ÷ floor(AnimationSpeed × rate ÷ 100))</code>. To tempo liczy zwiększoną szybkość ataku w pełni, osłabioną jak zwykle, ale bazową szybkość ataku, modyfikator szybkości broni i spowolnienia tylko w 50% ich wartości. Zatrzymuje się na 300 bez względu na przemianę, nigdy nie dostaje kary sekwencji −30, a żaden zestaw nie schodzi poniżej 6 klatek między trafieniami. Animacja pochodzi z klasy samej broni, więc miecze dwuręczne nadal są taktowane według animacji jednoręcznej. Pierwsze trafienie następuje przy pierwszym cięciu obrotu, kilka klatek po rozpoczęciu, a potem jedno trafienie przypada na każdy odstęp.</p>
   <p><b style="color:var(--dim)">Postacie zwierzęce.</b> Przemiana nie daje liczby klatek danej postaci. Silnik przelicza tempo według stosunku klatek postaci do twoich ludzkich, więc <b>twoje progi to ludzkie progi dla broni, którą trzymasz</b>, z dokładnością do klatki zaokrąglenia, którą tabela liczy dokładnie. Przemiana naprawdę daje wyższy limit: ograniczenie szybkości rośnie z 175 do 250, więc szybkość ataku opłaca się długo po tym, jak bez przemiany przestaje mieć znaczenie.</p>
   <p><b style="color:var(--dim)">Strzał</b> cofa animację po każdej strzale do
   <code>releaseFrame × (100 − Param6) ÷ 100</code>, więc każdy strzał po pierwszym odtwarza tylko resztę. ESR wszędzie używa Param6 = 15.</p>
@@ -244,13 +263,15 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   <code>1or2handed</code> w weapons.txt, łącznie 39 sztuk, od Miecza dwuręcznego po Ostrze kolosa. Miecz trzymany w jednej ręce przechodzi na animację jednoręczną, zwykle szybszą od dwuręcznej.</p>
   <p><b style="color:var(--dim)">Co robi druga broń.</b> Gra włącza statystyki tylko jednej broni naraz, więc z bronią w każdej ręce każda ręka jest liczona na podstawie własnej broni: zwiększonej szybkości ataku, bazowej szybkości ataku i modyfikatora szybkości tej broni, plus wszystkiego innego, co nosisz. Szał i ciosy ładujące uśredniają oba tempa i dopiero potem stosują −30 i ograniczenie, więc szybkość na jednej broni liczy się w połowie, a rękawice i pierścienie w całości. Trąba powietrzna uśrednia natomiast oba odstępy, zaokrąglając w górę, a obie bronie trafiają przy każdym trafieniu. W podstawowej grze druga broń musi znaleźć innego wroga; Eastern Sun pozwala obu trafić tego samego.</p>
   <p><b style="color:var(--dim)">Kusze.</b> Eastern Sun ustala każdą animację ataku kuszą na 5 klatek niezależnie od szybkości ataku, a Lustrzane ostrza z kuszą trwają tyle samo, 5 klatek, przez cały atak. Przedmioty dodające lub odejmujące klatki ataku kuszą zmieniają to bezpośrednio. Trąba powietrzna nie jest objęta.</p>
+  <p><b style="color:var(--dim)">Szał.</b> Premia klatek Szału w Eastern Sun odejmuje za każdy punkt jedną klatkę każdemu z dwóch ciosów Szału, czyli dwie z całego cyklu, aż do 3 klatek, najkrótszego cyklu, w którym oba trafienia nadal dochodzą. Ujemna premia zamiast tego dodaje dwie klatki za punkt. Nic innego się nie zmienia, a tabele pokazują Szał bez premii.</p>
   <p>Klatki bazowe i szybkości animacji są odczytywane z tego pliku wersji: <code>animdata.txt</code>; modyfikatory szybkości broni z <code>weapons.txt</code>. Wartości nie będą zgodne z kalkulatorami do oryginalnej gry tam, gdzie Eastern Sun zmienił tabele.</p>
 </footer>
 </div>
-<script>window.__DATA__={"c":[{"n":"Amazon","a1":{"hth":[13,232,8],"1hs":[16,239,10],"1ht":[15,222,9],"2hs":[20,288,12],"2ht":[18,256,11],"stf":[20,288,12],"bow":[14,256,6],"xbw":[6,256,3]},"sc":[14,256,7],"kk":[12,256,5],"s1":[9,4096,2],"s2":null},{"n":"Assassin","a1":{"hth":[11,208,6],"1hs":[15,256,7],"1ht":[15,256,7],"2hs":[23,368,11],"2ht":[23,352,10],"stf":[19,304,9],"bow":[16,272,7],"xbw":[21,256,10],"ht1":[11,208,6],"ht2":[11,208,6]},"sc":[14,256,7],"kk":[13,256,4],"s1":[17,256,10],"s2":[8,128,4]},{"n":"Barbarian","a1":{"hth":[12,228,6],"1hs":[16,256,7],"1ht":[16,256,7],"2hs":[18,288,8],"2ht":[19,304,9],"stf":[19,304,9],"bow":[15,256,7],"xbw":[20,256,10],"1js":[16,256,7],"1jt":[16,256,7],"1ss":[16,256,7],"1st":[16,256,7]},"sc":[14,256,9],"kk":[12,256,4],"s1":[15,256,15],"s2":null},{"n":"Druid","a1":{"hth":[16,288,8],"1hs":[19,304,9],"1ht":[19,304,8],"2hs":[21,336,10],"2ht":[23,328,9],"stf":[17,272,9],"bow":[16,272,8],"xbw":[20,256,10]},"sc":[14,256,7],"kk":[12,256,5],"s1":[15,256,8],"s2":null},{"n":"Necromancer","a1":{"hth":[15,272,8],"1hs":[19,304,9],"1ht":[19,304,9],"2hs":[23,368,11],"2ht":[24,360,10],"stf":[20,320,11],"bow":[18,304,9],"xbw":[20,264,11]},"sc":[14,256,7],"kk":[12,256,6],"s1":[16,256,8],"s2":null},{"n":"Paladin","a1":{"hth":[14,264,7],"1hs":[15,256,7],"1ht":[17,272,8],"2hs":[18,288,8],"2ht":[20,294,8],"stf":[18,288,9],"bow":[14,256,6],"xbw":[20,256,9]},"sc":[14,256,7],"kk":[12,256,5],"s1":[12,256,7],"s2":null},{"n":"Sorceress","a1":{"hth":[16,256,9],"1hs":[20,288,12],"1ht":[19,272,11],"2hs":[24,352,14],"2ht":[23,336,13],"stf":[18,256,11],"bow":[17,288,9],"xbw":[20,264,11]},"sc":[14,256,7],"kk":[12,256,6],"s1":[14,256,7],"s2":null},{"n":"Warlock","a1":{"hth":[16,256,9],"1hs":[16,256,9],"1ht":[16,256,8],"2hs":[19,256,11],"2ht":[21,256,11],"stf":[17,256,10],"bow":[17,256,11],"xbw":[18,256,10]},"sc":[14,256,8],"kk":[12,256,6],"s1":[16,256,8],"s2":null}],"f":[{"n":"Werewolf","a1":[13,256,7],"sc":[14,256,5]},{"n":"Werebear","a1":[19,256,15],"sc":[19,256,16]},{"n":"Elemental Form","a1":[13,256,6],"sc":[13,256,6]}],"w":[["Ashwood Bow",-10,"bow","bow",1,"abow","Amazon Bow",0],["Ceremonial Bow",10,"bow","bow",1,"abow","Amazon Bow",0],["Elven Bow",0,"bow","bow",1,"pbow","Amazon Bow",0],["Grand Matron Bow",10,"bow","bow",1,"abow","Amazon Bow",0],["Matriarchal Bow",-10,"bow","bow",1,"abow","Amazon Bow",0],["Mythical Elven Bow",0,"bow","bow",1,"pbow","Amazon Bow",0],["Mythical Grand Matron Bow",10,"bow","bow",1,"abow","Amazon Bow",0],["Mythical Matriarchal Bow",-10,"bow","bow",1,"abow","Amazon Bow",0],["Precision Bow",0,"bow","bow",1,"pbow","Amazon Bow",0],["Reflex Bow",10,"bow","bow",1,"abow","Amazon Bow",0],["Stag Bow",-10,"bow","bow",1,"abow","Amazon Bow",0],["Tuigan Bow",0,"bow","bow",1,"pbow","Amazon Bow",0],["Ceremonial Javelin",-10,"1ht","1ht",0,"ajav","Amazon Javelin",0],["Maiden Javelin",-10,"1ht","1ht",0,"ajav","Amazon Javelin",0],["MatriarchalJavelin",-10,"1ht","1ht",0,"ajav","Amazon Javelin",0],["Mythical Matriarchal Javelin",-10,"1ht","1ht",0,"ajav","Amazon Javelin",0],["Ceremonial Pike",20,"2ht","2ht",1,"aspe","Amazon Spear",0],["Ceremonial Spear",0,"2ht","2ht",1,"aspe","Amazon Spear",0],["Maiden Pike",10,"2ht","2ht",1,"aspe","Amazon Spear",0],["Maiden Spear",10,"2ht","2ht",1,"aspe","Amazon Spear",0],["Matriarchal Pike",20,"2ht","2ht",1,"aspe","Amazon Spear",0],["Matriarchal Spear",-10,"2ht","2ht",1,"aspe","Amazon Spear",0],["Matriarchal Spear",0,"2ht","2ht",1,"aspe","Amazon Spear",0],["Mythical Matriarchal Pike",20,"2ht","2ht",1,"aspe","Amazon Spear",0],["Mythical Matriarchal Spear",-10,"2ht","2ht",1,"aspe","Amazon Spear",0],["Ninja To (Old)",-30,"1hs","1hs",0,"asns","Assassin 1H Katana",0],["Wakizashi (Old)",-30,"1hs","1hs",0,"asns","Assassin 1H Katana",0],["Katana",-30,"1hs","1hs",1,"asnx","Assassin 2H Katana",0],["Mythical Katana",-30,"1hs","1hs",1,"asnx","Assassin 2H Katana",0],["Ninja To",-30,"1hs","1hs",1,"asnx","Assassin 2H Katana",0],["Wakizashi",-30,"1hs","1hs",1,"asnx","Assassin 2H Katana",0],["Ancient Axe",10,"stf","stf",1,"axe","Axe",0],["Axe",5,"1hs","1hs",0,"axe","Axe",0],["Barbarian Tomahawk",0,"1hs","1hs",0,"axe","Axe",0],["Battle Axe",10,"stf","stf",1,"axe","Axe",0],["Bearded Axe",0,"stf","stf",1,"axe","Axe",0],["Berserker Axe",10,"1hs","1hs",0,"axe","Axe",0],["Brawn Axe",-15,"stf","stf",1,"axe","Axe",0],["Broad Axe",0,"stf","stf",1,"axe","Axe",0],["Champion Axe",-10,"stf","stf",1,"axe","Axe",0],["Cleaver",5,"1hs","1hs",0,"axe","Axe",0],["Crowbill",-10,"1hs","1hs",0,"axe","Axe",0],["Decapitator",10,"stf","stf",1,"axe","Axe",0],["Double Axe",10,"1hs","1hs",0,"axe","Axe",0],["Duo-Axe",10,"1hs","1hs",0,"axe","Axe",0],["Ettin Axe",10,"1hs","1hs",0,"axe","Axe",0],["Feral Axe",-15,"stf","stf",1,"axe","Axe",0],["Giant Axe",10,"stf","stf",1,"axe","Axe",0],["Glorious Axe",10,"stf","stf",1,"axe","Axe",0],["Gothic Axe",-10,"stf","stf",1,"axe","Axe",0],["Great Axe",-10,"stf","stf",1,"axe","Axe",0],["Guillotine Axe",-10,"stf","stf",1,"axe","Axe",0],["Hand Axe",0,"1hs","1hs",0,"axe","Axe",0],["Hatchet",0,"1hs","1hs",0,"axe","Axe",0],["Heavy Axe",-10,"stf","stf",1,"axe","Axe",0],["Large Axe",-15,"stf","stf",1,"axe","Axe",0],["Military Axe",-15,"stf","stf",1,"axe","Axe",0],["Military Pick",-10,"1hs","1hs",0,"axe","Axe",0],["Mythical Razor Axe",-10,"1hs","1hs",0,"axe","Axe",0],["Mythical Slayer Axe",10,"stf","stf",1,"axe","Axe",0],["Naga",0,"1hs","1hs",0,"axe","Axe",0],["Precision Cleaver",5,"1hs","1hs",0,"axe","Axe",0],["Razor Axe",-10,"1hs","1hs",0,"axe","Axe",0],["Silver Edged Axe",10,"stf","stf",1,"axe","Axe",0],["Slayer Axe",10,"stf","stf",1,"axe","Axe",0],["Small Crescent",5,"1hs","1hs",0,"axe","Axe",0],["Split Axe",10,"stf","stf",1,"axe","Axe",0],["Tabar",10,"stf","stf",1,"axe","Axe",0],["Tomahawk",-10,"1hs","1hs",0,"axe","Axe",0],["Twin Axe",10,"1hs","1hs",0,"axe","Axe",0],["Viking Axe",-10,"1hs","1hs",0,"axe","Axe",0],["War Axe",0,"1hs","1hs",0,"axe","Axe",0],["War Spike",-10,"1hs","1hs",0,"axe","Axe",0],["Highland Javelin",-20,"1hs","1hs",0,"bjav","Barbarian Javs",0],["Mountain Clan Spear",-20,"1hs","1hs",0,"bjav","Barbarian Javs",0],["Mythical Arreat's Hatchet",-20,"1hs","1hs",0,"bjav","Barbarian Javs",0],["Tribal Spear",-20,"1hs","1hs",0,"bjav","Barbarian Javs",0],["Ancient Bow",10,"bow","bow",1,"bow","Bow",0],["Arcane Bow",0,"bow","bow",1,"bow","Bow",0],["Blade Bow",-10,"bow","bow",1,"bow","Bow",0],["Cedar Bow",0,"bow","bow",1,"bow","Bow",0],["Composite Bow",-10,"bow","bow",1,"bow","Bow",0],["Crusader Bow",10,"bow","bow",1,"bow","Bow",0],["Dark Bow",-10,"bow","bow",1,"bow","Bow",0],["Diamond Bow",-10,"bow","bow",1,"bow","Bow",0],["Double Bow",-10,"bow","bow",1,"bow","Bow",0],["Edge Bow",5,"bow","bow",1,"bow","Bow",0],["Gothic Bow",10,"bow","bow",1,"bow","Bow",0],["Great Bow",-10,"bow","bow",1,"bow","Bow",0],["Hunter's Bow",-10,"bow","bow",1,"bow","Bow",0],["Hydra Bow",10,"bow","bow",1,"bow","Bow",0],["Long Battle Bow",10,"bow","bow",1,"bow","Bow",0],["Long Bow",0,"bow","bow",1,"bow","Bow",0],["Long Siege Bow",10,"bow","bow",1,"bow","Bow",0],["Long War Bow",10,"bow","bow",1,"bow","Bow",0],["Marksman Bow",10,"bow","bow",1,"bow","Bow",0],["Mythical Ancient Bow",10,"bow","bow",1,"bow","Bow",0],["Mythical Marksman Bow",10,"bow","bow",1,"bow","Bow",0],["Mythical Shade Bow",0,"bow","bow",1,"bow","Bow",0],["Razor Bow",-10,"bow","bow",1,"bow","Bow",0],["Rogue Bow",0,"bow","bow",1,"bow","Bow",0],["Rune Bow",0,"bow","bow",1,"bow","Bow",0],["Shade Bow",0,"bow","bow",1,"bow","Bow",0],["Shadow Bow",0,"bow","bow",1,"bow","Bow",0],["Sharp Bow",-10,"bow","bow",1,"bow","Bow",0],["Short Battle Bow",0,"bow","bow",1,"bow","Bow",0],["Short Bow",5,"bow","bow",1,"bow","Bow",0],["Short Siege Bow",0,"bow","bow",1,"bow","Bow",0],["Short War Bow",0,"bow","bow",1,"bow","Bow",0],["Spider Bow",5,"bow","bow",1,"bow","Bow",0],["Spiderwoven Bow",5,"bow","bow",1,"bow","Bow",0],["Ward Bow",10,"bow","bow",1,"bow","Bow",0],["Magic Arrows",0,"","",0,"arrm","Bow Quiver2",0],["Magic Arrows (soc)",0,"","",0,"arrm","Bow Quiver2",0],["Barbed Club",-5,"1hs","1hs",0,"club","Club",0],["Club",-10,"1hs","1hs",0,"club","Club",0],["Cranium Basher",-10,"1hs","1hs",0,"club","Club",0],["Cudgel",-10,"1hs","1hs",0,"club","Club",0],["Mythical Thorned Club",-5,"1hs","1hs",0,"club","Club",0],["Spiked Club",-5,"1hs","1hs",0,"club","Club",0],["Thorned Club",-5,"1hs","1hs",0,"club","Club",0],["Truncheon",-10,"1hs","1hs",0,"club","Club",0],["Tyrant Club",-5,"1hs","1hs",0,"club","Club",0],["Wirt's Leg",-10,"1hs","1hs",0,"club","Club",0],["Arbalest",-20,"xbw","xbw",1,"xbow","Crossbow",0],["Assassin Crossbow",-40,"xbw","xbw",1,"xbow","Crossbow",0],["Balista",0,"xbw","xbw",1,"xbow","Crossbow",0],["Choice Crossbow",-20,"xbw","xbw",1,"xbow","Crossbow",0],["Chu-Ko-Nu",-40,"xbw","xbw",1,"xbow","Crossbow",0],["Colossus Crossbow",0,"xbw","xbw",1,"xbow","Crossbow",0],["Crossbow",-10,"xbw","xbw",1,"xbow","Crossbow",0],["Demon Crossbow",-40,"xbw","xbw",1,"xbow","Crossbow",0],["Gorgon Crossbow",-10,"xbw","xbw",1,"xbow","Crossbow",0],["Heavy Crossbow",0,"xbw","xbw",1,"xbow","Crossbow",0],["Light Crossbow",-20,"xbw","xbw",1,"xbow","Crossbow",0],["Marksman Crossbow",-10,"xbw","xbw",1,"xbow","Crossbow",0],["Mythical Marksman Crossbow",-10,"xbw","xbw",1,"xbow","Crossbow",0],["Mythical Odysseus Crossbow",0,"xbw","xbw",1,"xbow","Crossbow",0],["Odysseus Crossbow",0,"xbw","xbw",1,"xbow","Crossbow",0],["Pellet Bow",-20,"xbw","xbw",1,"xbow","Crossbow",0],["Repeating Crossbow",-40,"xbw","xbw",1,"xbow","Crossbow",0],["Siege Crossbow",-10,"xbw","xbw",1,"xbow","Crossbow",0],["Magic Bolts",0,"","",0,"boqm","Crossbow Quiver2",0],["Magic Bolts (soc)",0,"","",0,"boqm","Crossbow Quiver2",0],["Mythical Shillelagh",0,"1hs","1hs",0,"dclb","Druid Club",0],["Oak Branch",0,"1hs","1hs",0,"dclb","Druid Club",0],["Shaman Wand",0,"1hs","1hs",0,"dclb","Druid Club",0],["Shillelagh",0,"1hs","1hs",0,"dclb","Druid Club",0],["Ancient Maul",10,"stf","stf",1,"hamm","Hammer",0],["Battle Hammer",20,"1hs","1hs",0,"hamm","Hammer",0],["Great Maul",20,"stf","stf",1,"hamm","Hammer",0],["Hellforge Hammer",0,"1hs","1hs",0,"hamm","Hammer",0],["Horadric Malus",20,"1hs","1hs",0,"hamm","Hammer",0],["Legendary Mallet",20,"1hs","1hs",0,"hamm","Hammer",0],["Martel de Fer",20,"stf","stf",1,"hamm","Hammer",0],["Maul",10,"stf","stf",1,"hamm","Hammer",0],["Military Hammer",20,"1hs","1hs",0,"hamm","Hammer",0],["Mythical Ancient Maul",10,"stf","stf",1,"hamm","Hammer",0],["Mythical Military Hammer",20,"1hs","1hs",0,"hamm","Hammer",0],["Mythical Titan's Maul",20,"stf","stf",1,"hamm","Hammer",0],["Ogre Maul",10,"stf","stf",1,"hamm","Hammer",0],["Thunder Maul",20,"stf","stf",1,"hamm","Hammer",0],["Titan's Maul",20,"stf","stf",1,"hamm","Hammer",0],["War Club",10,"stf","stf",1,"hamm","Hammer",0],["War Hammer",20,"1hs","1hs",0,"hamm","Hammer",0],["Blade Talons",-30,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Cestus",-10,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Claws",-20,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Fascia",0,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Hatchet Hands",0,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Katar",0,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Quhab",0,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Scissors Katar",-10,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Wrist Blade",-10,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Wrist Spike",-10,"ht1","ht1",0,"h2h1","Hand to Hand 1",0],["Battle Cestus",-10,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Feral Claws",-20,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Greater Claws",-20,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Greater Talons",-30,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Hand Scythe",-10,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Mythical Runic Talons",-30,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Mythical Scissors Suwayyah",-10,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Runic Talons",-30,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Scissors Quhab",-10,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Scissors Suwayyah",-10,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Suwayyah",0,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["War Fist",0,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Wrist Sword",-10,"ht1","ht1",0,"h2h2","Hand to Hand 2",0],["Ahab Spear",20,"1ht","1ht",0,"jave","Javelin",0],["Ancient Shards",-10,"1ht","1ht",0,"jave","Javelin",0],["Balrog Spear",10,"1ht","1ht",0,"jave","Javelin",0],["Dire Pilum",0,"1ht","1ht",0,"jave","Javelin",0],["Ghost Glaive",20,"1ht","1ht",0,"jave","Javelin",0],["Glaive",20,"1ht","1ht",0,"jave","Javelin",0],["Great Pilum",0,"1ht","1ht",0,"jave","Javelin",0],["Harpoon",-10,"1ht","1ht",0,"jave","Javelin",0],["Hyperion Javelin",-10,"1ht","1ht",0,"jave","Javelin",0],["Javelin",-10,"1ht","1ht",0,"jave","Javelin",0],["Lissom Spear",10,"1ht","1ht",0,"jave","Javelin",0],["Mythical Ancient Shards",-10,"1ht","1ht",0,"jave","Javelin",0],["Mythical Whale Hunter",-10,"1ht","1ht",0,"jave","Javelin",0],["Pilum",0,"1ht","1ht",0,"jave","Javelin",0],["Short Spear",10,"1ht","1ht",0,"jave","Javelin",0],["Simbilan",10,"1ht","1ht",0,"jave","Javelin",0],["Spiculum",20,"1ht","1ht",0,"jave","Javelin",0],["Stygian Pilum",-5,"1ht","1ht",0,"jave","Javelin",0],["Throwing Spear",-10,"1ht","1ht",0,"jave","Javelin",0],["War Javelin",-10,"1ht","1ht",0,"jave","Javelin",0],["Whale Hunter",-10,"1ht","1ht",0,"jave","Javelin",0],["Winged Harpoon",-10,"1ht","1ht",0,"jave","Javelin",0],["Ancient Spike",-10,"1ht","1ht",0,"knif","Knife",0],["Blade",-10,"1ht","1ht",0,"knif","Knife",0],["Bone Knife",-20,"1ht","1ht",0,"knif","Knife",0],["Carved Bone",-20,"1ht","1ht",0,"knif","Knife",0],["Cinquedeas",-30,"1ht","1ht",0,"knif","Knife",0],["Dagger",-20,"1ht","1ht",0,"knif","Knife",0],["Dirk",0,"1ht","1ht",0,"knif","Knife",0],["Fang Knife",-30,"1ht","1ht",0,"knif","Knife",0],["Fanged Knife",-30,"1ht","1ht",0,"knif","Knife",0],["Gidbinn",-20,"1ht","1ht",0,"knif","Knife",0],["Kriss",-30,"1ht","1ht",0,"knif","Knife",0],["Legend Spike",-10,"1ht","1ht",0,"knif","Knife",0],["Mithral Knife",0,"1ht","1ht",0,"knif","Knife",0],["Mithral Point",0,"1ht","1ht",0,"knif","Knife",0],["Mythical Ancient Spike",-10,"1ht","1ht",0,"knif","Knife",0],["Poignard",-20,"1ht","1ht",0,"knif","Knife",0],["Rondel",0,"1ht","1ht",0,"knif","Knife",0],["Stilleto",-10,"1ht","1ht",0,"knif","Knife",0],["decoy dagger",-20,"1ht","1ht",0,"knif","Knife",0],["Battering Arm",0,"hth","hth",1,"knuc","Knuckle",0],["Brass Knuckle",-10,"hth","hth",0,"knuc","Knuckle",0],["Mythical Raging Knuckle",-10,"hth","hth",0,"knuc","Knuckle",0],["Mythical Wrecking Arm",0,"hth","hth",1,"knuc","Knuckle",0],["Raging Knuckle",-10,"hth","hth",0,"knuc","Knuckle",0],["Rock Buster",0,"hth","hth",1,"knuc","Knuckle",0],["Tekko",-10,"hth","hth",0,"knuc","Knuckle",0],["Wrecking Arm",0,"hth","hth",1,"knuc","Knuckle",0],["Arcane Mace",-30,"1hs","1hs",0,"mace","Mace",0],["Devil Star",10,"1hs","1hs",0,"mace","Mace",0],["Dire Flail",-10,"1hs","1hs",0,"mace","Mace",0],["Flail",-10,"1hs","1hs",0,"mace","Mace",0],["Flanged Mace",0,"1hs","1hs",0,"mace","Mace",0],["Jagged Star",10,"1hs","1hs",0,"mace","Mace",0],["KhalimFlail",-10,"1hs","1hs",0,"mace","Mace",0],["Knout",-10,"1hs","1hs",0,"mace","Mace",0],["Mace",0,"1hs","1hs",0,"mace","Mace",0],["Morning Star",10,"1hs","1hs",0,"mace","Mace",0],["Mythical Dire Flail",-10,"1hs","1hs",0,"mace","Mace",0],["Reinforced Mace",-10,"1hs","1hs",0,"mace","Mace",0],["Scourge",-10,"1hs","1hs",0,"mace","Mace",0],["Serrated Star",10,"1hs","1hs",0,"mace","Mace",0],["SuperKhalimFlail",-10,"1hs","1hs",0,"mace","Mace",0],["Choking Gas Potion",0,"1ht","1ht",0,"tpot","Missile Potion",0],["Exploding Potion",0,"1ht","1ht",0,"tpot","Missile Potion",0],["Fulminating Potion",0,"1ht","1ht",0,"tpot","Missile Potion",0],["Oil Potion",0,"1ht","1ht",0,"tpot","Missile Potion",0],["Rancid Gas Potion",0,"1ht","1ht",0,"tpot","Missile Potion",0],["Strangling Gas Potion",0,"1ht","1ht",0,"tpot","Missile Potion",0],["Ceremonial Dagger",-30,"1ht","1ht",0,"ndgr","Necromancer Dagger",0],["Mythical Ceremonial Dagger",-30,"1ht","1ht",0,"ndgr","Necromancer Dagger",0],["Ritualistic Dagger",-30,"1ht","1ht",0,"ndgr","Necromancer Dagger",0],["Sacrificial Dagger",-30,"1ht","1ht",0,"ndgr","Necromancer Dagger",0],["Dire Scythe",-20,"stf","stf",1,"npol","Necromancer Polearm",0],["Doom Blade",-10,"stf","stf",1,"npol","Necromancer Polearm",0],["Dread Scythe",-10,"stf","stf",1,"npol","Necromancer Polearm",0],["Mythical Demonic Scythe",-20,"stf","stf",1,"npol","Necromancer Polearm",0],["Mythical Soul Destroyer",-10,"stf","stf",1,"npol","Necromancer Polearm",0],["Soul Destroyer",-10,"stf","stf",1,"npol","Necromancer Polearm",0],["Soul Scythe",-20,"stf","stf",1,"npol","Necromancer Polearm",0],["Wretched Scythe",-20,"stf","stf",1,"npol","Necromancer Polearm",0],["Clasped Orb",0,"1hs","1hs",0,"orb","Orb",0],["Cloudy Sphere",-10,"1hs","1hs",0,"orb","Orb",0],["Crystalline Globe",-10,"1hs","1hs",0,"orb","Orb",0],["Demon Heart",0,"1hs","1hs",0,"orb","Orb",0],["Dimensional Shard",10,"1hs","1hs",0,"orb","Orb",0],["Dragon Stone",10,"1hs","1hs",0,"orb","Orb",0],["Eagle Orb",-10,"1hs","1hs",0,"orb","Orb",0],["Eldritch Orb",-10,"1hs","1hs",0,"orb","Orb",0],["Glowing Orb",-10,"1hs","1hs",0,"orb","Orb",0],["Heavenly Stone",-10,"1hs","1hs",0,"orb","Orb",0],["Mythical Dimensional Shard",10,"1hs","1hs",0,"orb","Orb",0],["Sacred Globe",-10,"1hs","1hs",0,"orb","Orb",0],["Smoked Sphere",-10,"1hs","1hs",0,"orb","Orb",0],["Sparkling Ball",-10,"1hs","1hs",0,"orb","Orb",0],["Swirling Crystal",10,"1hs","1hs",0,"orb","Orb",0],["Vortex Orb",10,"1hs","1hs",0,"orb","Orb",0],["Blessed Edge",-10,"1hs","2hs",1,"bedg","Paladin Sword",0],["Celestial Blade",-10,"1hs","2hs",1,"bedg","Paladin Sword",0],["Divine Blade",-10,"1hs","2hs",1,"bedg","Paladin Sword",0],["Mythical Celestial Blade",-10,"1hs","2hs",1,"bedg","Paladin Sword",0],["Bardiche",0,"stf","stf",1,"pole","Polearm",0],["Bardiche",10,"stf","stf",1,"pole","Polearm",0],["Battle Scythe",-10,"stf","stf",1,"pole","Polearm",0],["Bec-de-Corbin",0,"stf","stf",1,"pole","Polearm",0],["Bill",10,"stf","stf",1,"pole","Polearm",0],["Bill",0,"stf","stf",1,"pole","Polearm",0],["Colossus Voulge",10,"stf","stf",1,"pole","Polearm",0],["Cryptic Axe",10,"stf","stf",1,"pole","Polearm",0],["Death Reaper",-10,"stf","stf",1,"pole","Polearm",0],["Giant Thresher",-10,"stf","stf",1,"pole","Polearm",0],["Great Poleaxe",-10,"stf","stf",1,"pole","Polearm",0],["Grim Scythe",-10,"stf","stf",1,"pole","Polearm",0],["Guardian",0,"stf","stf",1,"pole","Polearm",0],["Halberd",0,"stf","stf",1,"pole","Polearm",0],["Lochaber Axe",10,"stf","stf",1,"pole","Polearm",0],["Lochaber Axe",0,"stf","stf",1,"pole","Polearm",0],["Mythical Death Reaper",-10,"stf","stf",1,"pole","Polearm",0],["Ogre Axe",10,"stf","stf",1,"pole","Polearm",0],["Partizan",10,"stf","stf",1,"pole","Polearm",0],["Pole Gauche",10,"stf","stf",1,"pole","Polearm",0],["Poleaxe",10,"stf","stf",1,"pole","Polearm",0],["Royal Partizan",10,"stf","stf",1,"pole","Polearm",0],["Scythe",-10,"stf","stf",1,"pole","Polearm",0],["Shadow Scythe",-10,"stf","stf",1,"pole","Polearm",0],["Thresher",-10,"stf","stf",1,"pole","Polearm",0],["Urgrosh",0,"stf","stf",1,"pole","Polearm",0],["Voulge",10,"stf","stf",1,"pole","Polearm",0],["Voulge",0,"stf","stf",1,"pole","Polearm",0],["War Scythe",-10,"stf","stf",1,"pole","Polearm",0],["Blessed Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Caduceus",-10,"1hs","1hs",0,"scep","Scepter",0],["Celestial Scepter",0,"1hs","1hs",0,"scep","Scepter",0],["Consecrated Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Divine Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Grand Scepter",10,"1hs","1hs",0,"scep","Scepter",0],["Great Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Holy Scepter",10,"1hs","1hs",0,"scep","Scepter",0],["Holy Water Sprinkler",10,"1hs","1hs",0,"scep","Scepter",0],["Mighty Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Mythical Blessed Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Mythical Celestial Scepter",0,"1hs","1hs",0,"scep","Scepter",0],["Mythical Seraphic Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Rune Scepter",0,"1hs","1hs",0,"scep","Scepter",0],["Scepter",0,"1hs","1hs",0,"scep","Scepter",0],["Seraph Rod",10,"1hs","1hs",0,"scep","Scepter",0],["Seraphic Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["War Scepter",-10,"1hs","1hs",0,"scep","Scepter",0],["Fuma Shuriken",-30,"1ht","1ht",0,"srkn","Shuriken",0],["Kagekiri",-30,"1ht","1ht",0,"srkn","Shuriken",0],["Mythical Kagekiri",-30,"1ht","1ht",0,"srkn","Shuriken",0],["Shuriken",-30,"1ht","1ht",0,"srkn","Shuriken",0],["Energy Blade",-10,"1hs","1hs",0,"mana","Sorceress Mana Blade",0],["Magic Blade",-10,"1hs","1hs",0,"mana","Sorceress Mana Blade",0],["Mana Blade",-10,"1hs","1hs",0,"mana","Sorceress Mana Blade",0],["Mythical Magic Blade",-10,"1hs","1hs",0,"mana","Sorceress Mana Blade",0],["Brandistock",-20,"2ht","2ht",1,"spea","Spear",0],["Dragon Spear",-20,"2ht","2ht",1,"spea","Spear",0],["Fuscina",0,"2ht","2ht",1,"spea","Spear",0],["Ghost Spear",0,"2ht","2ht",1,"spea","Spear",0],["Grapnel",0,"2ht","2ht",1,"spea","Spear",0],["Guisarme",-10,"2ht","2ht",1,"spea","Spear",0],["Hyperion Spear",-10,"2ht","2ht",1,"spea","Spear",0],["Impaler",20,"2ht","2ht",1,"spea","Spear",0],["Lance",20,"2ht","2ht",1,"spea","Spear",0],["Mancatcher",-20,"2ht","2ht",1,"spea","Spear",0],["Mythical Impaler",20,"2ht","2ht",1,"spea","Spear",0],["Pike",20,"2ht","2ht",1,"spea","Spear",0],["Ranseur",0,"2ht","2ht",1,"spea","Spear",0],["Spear",-10,"2ht","2ht",1,"spea","Spear",0],["Spetum",0,"2ht","2ht",1,"spea","Spear",0],["Stygian Pike",10,"2ht","2ht",1,"spea","Spear",0],["Trident",0,"2ht","2ht",1,"spea","Spear",0],["War Fork",-20,"2ht","2ht",1,"spea","Spear",0],["War Pike",20,"2ht","2ht",1,"spea","Spear",0],["War Spear",-10,"2ht","2ht",1,"spea","Spear",0],["Yari",0,"2ht","2ht",1,"spea","Spear",0],["Arcane Staff",0,"stf","stf",1,"staf","Staff",0],["Archon Staff",10,"stf","stf",1,"staf","Staff",0],["Battle Staff",-10,"stf","stf",1,"staf","Staff",0],["Cedar Staff",10,"stf","stf",1,"staf","Staff",0],["Elder Cane",-10,"stf","stf",1,"staf","Staff",0],["Elder Staff",10,"stf","stf",1,"staf","Staff",0],["Gnarled Staff",10,"stf","stf",1,"staf","Staff",0],["Gothic Staff",-10,"stf","stf",1,"staf","Staff",0],["Horadric Staff",0,"stf","stf",1,"staf","Staff",0],["Jo Staff",-10,"stf","stf",1,"staf","Staff",0],["Long Staff",0,"stf","stf",1,"staf","Staff",0],["Mage Staff",-10,"stf","stf",1,"staf","Staff",0],["Mystic Staff",0,"stf","stf",1,"staf","Staff",0],["Mythical Arcane Staff",0,"stf","stf",1,"staf","Staff",0],["Mythical Mage Staff",-10,"stf","stf",1,"staf","Staff",0],["Mythical Mystic Staff",0,"stf","stf",1,"staf","Staff",0],["Mythical Petrified Staff",10,"stf","stf",1,"staf","Staff",0],["Petrified Staff",10,"stf","stf",1,"staf","Staff",0],["Quarterstaff",0,"stf","stf",1,"staf","Staff",0],["Rune Staff",0,"stf","stf",1,"staf","Staff",0],["Shillelah",-10,"stf","stf",1,"staf","Staff",0],["Short Staff",-10,"stf","stf",1,"staf","Staff",0],["Staff of the Kings",0,"stf","stf",1,"staf","Staff",0],["Stalagmite",-5,"stf","stf",1,"staf","Staff",0],["Walking Stick",-10,"stf","stf",1,"staf","Staff",0],["War Staff",0,"stf","stf",1,"staf","Staff",0],["Ancient Sword",0,"1hs","1hs",0,"swor","Sword",0],["Arcane Sword",-10,"1hs","1hs",0,"swor","Sword",0],["Ataghan",-20,"1hs","1hs",0,"swor","Sword",0],["Balrog Blade",-30,"1hs","2hs",1,"swor","Sword",1],["Bastard Sword",10,"1hs","2hs",1,"swor","Sword",1],["Battle Sword",0,"1hs","1hs",0,"swor","Sword",0],["Broad Sword",0,"1hs","1hs",0,"swor","Sword",0],["Champion Sword",-10,"1hs","2hs",1,"swor","Sword",1],["Claymore",10,"1hs","2hs",1,"swor","Sword",1],["Colossal Sword",10,"1hs","2hs",1,"swor","Sword",1],["Colossus Blade",5,"1hs","2hs",1,"swor","Sword",1],["Conquest Sword",0,"1hs","1hs",0,"swor","Sword",0],["Cryptic Sword",-10,"1hs","1hs",0,"swor","Sword",0],["Crystal Sword",0,"1hs","1hs",0,"swor","Sword",0],["Crystal Sword_old",0,"1hs","1hs",0,"swor","Sword",0],["Cutlass",-30,"1hs","1hs",0,"swor","Sword",0],["Dacian Falx",10,"1hs","2hs",1,"swor","Sword",1],["Dark Sword",-10,"1hs","2hs",1,"swor","Sword",1],["Death Blade",5,"1hs","2hs",1,"swor","Sword",1],["Desert Sword",-20,"1hs","1hs",0,"swor","Sword",0],["Dimensional Blade",0,"1hs","1hs",0,"swor","Sword",0],["Elegant Blade",-10,"1hs","1hs",0,"swor","Sword",0],["Espadon",0,"1hs","2hs",1,"swor","Sword",1],["Executioner Sword",10,"1hs","2hs",1,"swor","Sword",1],["Falcata",-10,"1hs","1hs",0,"swor","Sword",0],["Falchion",20,"1hs","1hs",0,"swor","Sword",0],["Flamberge",-10,"1hs","2hs",1,"swor","Sword",1],["Giant Sword",0,"1hs","2hs",1,"swor","Sword",1],["Gladiator Blade",-10,"1hs","1hs",0,"swor","Sword",0],["Gladius",0,"1hs","1hs",0,"swor","Sword",0],["Gothic Sword",10,"1hs","2hs",1,"swor","Sword",1],["Great Sword",10,"1hs","2hs",1,"swor","Sword",1],["Hellfire Sword",10,"1hs","2hs",1,"swor","Sword",1],["Highland Blade",-5,"1hs","2hs",1,"swor","Sword",1],["Hydra Edge",10,"1hs","1hs",0,"swor","Sword",0],["Jeweled Edge",-30,"1hs","1hs",0,"swor","Sword",0],["Judgement Blade",-15,"1hs","2hs",1,"swor","Sword",1],["Legend Sword",-15,"1hs","2hs",1,"swor","Sword",1],["Lithe Blade",-30,"1hs","2hs",1,"swor","Sword",1],["Long Sword",-10,"1hs","1hs",0,"swor","Sword",0],["Mythical Death Blade",5,"1hs","2hs",1,"swor","Sword",1],["Mythical Death Blade Frostmourne",5,"1hs","2hs",1,"swor","Sword",1],["Mythical Hellfire Sword",10,"1hs","2hs",1,"swor","Sword",1],["Mythical Jeweled Edge",-30,"1hs","1hs",0,"swor","Sword",0],["Mythical Rapier",-10,"1hs","1hs",0,"swor","Sword",0],["Mythical Sword",10,"1hs","1hs",0,"swor","Sword",0],["Okrist",10,"1hs","1hs",0,"swor","Sword",0],["Phase Blade",-30,"1hs","1hs",0,"swor","Sword",0],["Rapier",-10,"1hs","1hs",0,"swor","Sword",0],["Rune Sword",-10,"1hs","1hs",0,"swor","Sword",0],["Saber",-10,"1hs","1hs",0,"swor","Sword",0],["Scimitar",-20,"1hs","1hs",0,"swor","Sword",0],["Shamshir",-10,"1hs","1hs",0,"swor","Sword",0],["Short Sword",0,"1hs","1hs",0,"swor","Sword",0],["Titan's Dagger",-5,"1hs","2hs",1,"swor","Sword",1],["Trojan Sword",-30,"1hs","1hs",0,"swor","Sword",0],["Tulwar",20,"1hs","1hs",0,"swor","Sword",0],["Tusk Sword",0,"1hs","2hs",1,"swor","Sword",1],["Two-Handed Sword",0,"1hs","2hs",1,"swor","Sword",1],["Viking Sword",-10,"1hs","1hs",0,"swor","Sword",0],["War Sword",0,"1hs","1hs",0,"swor","Sword",0],["Zweihander",-10,"1hs","2hs",1,"swor","Sword",1],["Balanced Axe",-15,"1hs","1hs",0,"taxe","Throwing Axe",0],["Balanced Hatchet",-15,"1hs","1hs",0,"taxe","Throwing Axe",0],["Flying Axe",10,"1hs","1hs",0,"taxe","Throwing Axe",0],["Francisca",10,"1hs","1hs",0,"taxe","Throwing Axe",0],["Hurlbat",-15,"1hs","1hs",0,"taxe","Throwing Axe",0],["Mythical Balanced Hatchet",-15,"1hs","1hs",0,"taxe","Throwing Axe",0],["Throwing Axe",0,"1hs","1hs",0,"taxe","Throwing Axe",0],["Throwing Hatchet",10,"1hs","1hs",0,"taxe","Throwing Axe",0],["Winged Axe",-10,"1hs","1hs",0,"taxe","Throwing Axe",0],["Balanced Dagger",-20,"1ht","1ht",0,"tkni","Throwing Knife",0],["Balanced Knife",-20,"1ht","1ht",0,"tkni","Throwing Knife",0],["Battle Dart",0,"1ht","1ht",0,"tkni","Throwing Knife",0],["Flying Knife",-10,"1ht","1ht",0,"tkni","Throwing Knife",0],["Mythical Balanced Dagger",-20,"1ht","1ht",0,"tkni","Throwing Knife",0],["Throwing Dagger",0,"1ht","1ht",0,"tkni","Throwing Knife",0],["Throwing Knife",0,"1ht","1ht",0,"tkni","Throwing Knife",0],["War Dart",-20,"1ht","1ht",0,"tkni","Throwing Knife",0],["Winged Knife",-20,"1ht","1ht",0,"tkni","Throwing Knife",0],["Bone Wand",-20,"1hs","1hs",0,"wand","Wand",0],["Burnt Wand",0,"1hs","1hs",0,"wand","Wand",0],["Callous Wand",-20,"1hs","1hs",0,"wand","Wand",0],["Demonic Wand",-10,"1hs","1hs",0,"wand","Wand",0],["Ghost Wand",10,"1hs","1hs",0,"wand","Wand",0],["Grave Wand",-10,"1hs","1hs",0,"wand","Wand",0],["Grim Wand",-10,"1hs","1hs",0,"wand","Wand",0],["Lich Wand",-20,"1hs","1hs",0,"wand","Wand",0],["Mythical Demonic Wand",-10,"1hs","1hs",0,"wand","Wand",0],["Mythical Sepulcher Wand",10,"1hs","1hs",0,"wand","Wand",0],["Petrified Wand",10,"1hs","1hs",0,"wand","Wand",0],["Polished Wand",-10,"1hs","1hs",0,"wand","Wand",0],["Sacred Wand",-30,"1hs","1hs",0,"wand","Wand",0],["Sepulcher Wand",10,"1hs","1hs",0,"wand","Wand",0],["Tomb Wand",-20,"1hs","1hs",0,"wand","Wand",0],["Unearthed Wand",-10,"1hs","1hs",0,"wand","Wand",0],["Wand",0,"1hs","1hs",0,"wand","Wand",0],["Yew Wand",10,"1hs","1hs",0,"wand","Wand",0]]};</script>
+<script src="../ias-calculator-data.js?v=91c04f4cc00d"></script>
 <script>(function(){
   var D = window.__DATA__;
   var $ = function(id){ return document.getElementById(id); };
+  var TH_APS_TEXT = $('th-aps').textContent;   // the page's own (translated) column title
 
   // ---------- engine ----------------------------------------------------
   // Everything below is transcribed from D2R 3.3 (D2RLoader image).
@@ -329,12 +350,41 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   // The row comes from the weapon's wclass column, never 2handedwclass. rate is
   // attackrate + diminish(IAS) clamped 15..175 (250 shapeshifted), with no -30.
   // A missing animation row gives a flat 10. An interval of 0 still waits a frame.
+  //
+  // Eastern Sun's Whirlwind plugin replaces the rate and the interval inside that
+  // helper (hook at 56AD23, [whirlwind_hit_interval] in celestialrayone.whirlwind.toml).
+  // attackrate is 100, minus the weapon speed modifier, plus base attack speed:
+  //   rate     = 100 + trunc((attackrate - 100) * attackrate_weight / 100) + diminish(IAS),
+  //              clamped min_rate..max_rate, shapeshifted or not
+  //   interval = trunc(256 * AttackFrame * interval_stretch
+  //                    / (100 * floor(AnimationSpeed * rate / 100))), at least min_frames
+  // The missing-row 10 is untouched. The footer has a paragraph for each formula;
+  // the page shows the one WW_HIT_INTERVAL selects, and the plugin one repeats these numbers.
+  var WW_HIT_INTERVAL      = true;   // enabled
+  var WW_ATTACKRATE_WEIGHT = 50;     // attackrate_weight
+  var WW_STRETCH           = 170;    // interval_stretch
+  var WW_MIN_FRAMES        = 6;      // min_frames
+  var WW_MAX_RATE          = 300;    // max_rate
+  var WW_MIN_RATE          = 15;     // min_rate
   var WW_NO_ANIM = 10;
+  // Whirlwind's rate for one hand, before (raw) and after its clamp
+  function wwRate(d, flat, wsm, shifted){
+    if (WW_HIT_INTERVAL){
+      var raw = 100 + Math.trunc((flat - wsm) * WW_ATTACKRATE_WEIGHT / 100) + d;
+      return { rate:Math.max(WW_MIN_RATE, Math.min(WW_MAX_RATE, raw)), raw:raw };
+    }
+    return { rate:100 + clampEias(d + flat - wsm, shifted), raw:100 + d + flat - wsm };
+  }
   function wwRaw(anim, ias, flat, wsm){
     if (!anim.rec) return WW_NO_ANIM;
     var d = diminish(ias);
     if (d === null) return null;
-    var r = rateOf(anim.spd, clampEias(d + flat - wsm, anim.shifted));
+    var rate = wwRate(d, flat, wsm, anim.shifted).rate;
+    if (WW_HIT_INTERVAL){
+      var step = Math.max(1, Math.floor(anim.spd * rate / 100));
+      return Math.max(WW_MIN_FRAMES, Math.trunc(256 * anim.af * WW_STRETCH / (100 * step)));
+    }
+    var r = rateOf(anim.spd, rate - 100);
     return r <= 0 ? null : Math.floor(256 * anim.af / r);
   }
 
@@ -510,7 +560,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
   }
 
   // ---------- table -----------------------------------------------------
-  function render(bodyId, noteId, rows, statNow, unit, extraNote, hits){
+  function render(bodyId, noteId, rows, statNow, unit, extraNote, hits, fixed){
     hits = hits || 1;
     var tb = $(bodyId);
     tb.innerHTML = '';
@@ -543,7 +593,7 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
     });
 
     var last = rows[rows.length - 1], n;
-    if (rows.length === 1) n = 'Attack speed does not change this.';
+    if (rows.length === 1 && fixed) n = 'Attack speed does not change this.';
     else if (hereIdx === rows.length - 1) n = 'You are at the fastest tier this setup can reach.';
     else if (nextIdx >= 0) n = 'Next tier costs <b>' + (rows[nextIdx].stat - statNow) + '%</b> more ' +
         unit + ' and saves a frame. Floor is <b>' + last.f + ' frames</b> at <b>' + last.stat + '%</b>.';
@@ -587,13 +637,21 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
 
     var anim = animFor(sk), note = '';
     if (isWW)
-      note = '<b>Whirlwind hits on the frame your normal attack would land.</b> The interval is the attack frame of ' +
-             'your attack animation for the weapon, played at your attack speed, so all gear, skills, auras, buffs ' +
-             'and slows count, diminished as usual, and the \u221230 sequence penalty never applies. ' +
-             'Two-handed swords are still timed on their one-handed animation.' +
+      note = (WW_HIT_INTERVAL
+               ? '<b>Whirlwind hits on the frame your normal attack would land, made ' + (WW_STRETCH - 100) +
+                 '% longer.</b> Increased attack speed counts in full, diminished as usual, while base attack speed, ' +
+                 'the weapon speed modifier and slows count at ' + WW_ATTACKRATE_WEIGHT + '% of their value. The rate ' +
+                 'stops at ' + WW_MAX_RATE + ' whether you are shapeshifted or not, the \u221230 sequence penalty never ' +
+                 'applies, and no setup goes below <b>' + WW_MIN_FRAMES + ' frames</b> between hits. Two-handed swords ' +
+                 'are still timed on their one-handed animation.'
+               : '<b>Whirlwind hits on the frame your normal attack would land.</b> The interval is the attack frame of ' +
+                 'your attack animation for the weapon, played at your attack speed, so all gear, skills, auras, buffs ' +
+                 'and slows count, diminished as usual, and the \u221230 sequence penalty never applies. ' +
+                 'Two-handed swords are still timed on their one-handed animation.') +
              (dualNow
                ? ' <b>With a weapon in each hand</b> each hand is timed on its own weapon and the two intervals are ' +
-                 'averaged, rounding up. Both weapons strike every hit, and Eastern Sun lets both strike the same enemy.'
+                 'averaged, rounding up. Each strike lands two hits in the same frame, one per weapon, and Eastern Sun lets ' +
+                 'both hit the same enemy, so there are twice as many hits as strikes.'
                : '');
     else if (sk === 'strafe' && anim)
       note = '<b>Only the first arrow plays the whole animation.</b> Each shot restarts it at ' +
@@ -613,11 +671,16 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
       note += (note ? ' ' : '') + '<b>Eastern Sun fixes crossbow attacks at ' + XBOW_FRAMES + ' frames</b> whatever ' +
               'the attack speed' + (anim.seq ? ', for the whole attack' : '') + '. Items that add or remove crossbow ' +
               'attack frames move it directly.';
+    if (sk === 'frenzy' && anim)
+      note += (note ? ' ' : '') + '<b>Eastern Sun\u2019s Frenzy frames bonus</b> takes one frame off each of the two ' +
+              'swings for every point, two off this cycle, down to 3 frames, the shortest cycle where both hits still ' +
+              'land. A negative bonus adds two frames per point. The table shows the cycle without it.';
 
     if (!anim){
       $('atk-fpa').textContent = '\u2014'; $('atk-aps').textContent = '\u2014';
       $('ro-anim').textContent = '\u2014';
       $('atk-solo').textContent = '';
+      $('th-aps').textContent = TH_APS_TEXT;
       render('atk-body','atk-note', null, ias, 'IAS', 'No animation for this class.');
     } else {
       var cur, rows, eTxt, eWarn = false;
@@ -633,10 +696,10 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         var dm = diminish(ias + wias), dO = diminish(ias + oias);
         if (dm === null || dO === null){ eTxt = 'game crashes (\u2212120 IAS)'; eWarn = true; }
         else if (isWW){
-          var em = dm + ar + mar - wsm, eo = dO + ar + oar - wsmO;
-          var cm = clampEias(em, anim.shifted), co = clampEias(eo, anim.shifted);
-          eTxt = 'main ' + signed(cm) + ', off ' + signed(co) + ((cm !== em || co !== eo) ? '  (clamped)' : '');
-          eWarn = (cm !== em || co !== eo);
+          var wm = wwRate(dm, ar + mar, wsm, anim.shifted), wo = wwRate(dO, ar + oar, wsmO, anim.shifted);
+          eTxt = 'main ' + signed(wm.rate - 100) + ', off ' + signed(wo.rate - 100) +
+                 ((wm.rate !== wm.raw || wo.rate !== wo.raw) ? '  (clamped)' : '');
+          eWarn = (wm.rate !== wm.raw || wo.rate !== wo.raw);
         } else {
           var avg = Math.trunc(((100 + dm + ar + mar - wsm) + (100 + dO + ar + oar - wsmO)) / 2) - 100 - SEQ_PENALTY;
           var ca = clampEias(avg, anim.shifted);
@@ -648,6 +711,11 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
         rows = ladderBy(function(q){ return skillFrames(sk, anim, q, atkFlat, wsm); });
         var d = diminish(ias);
         if (d === null){ eTxt = 'game crashes (\u2212120 IAS)'; eWarn = true; }
+        else if (isWW){
+          var wr = wwRate(d, atkFlat, wsm, anim.shifted);
+          eTxt = signed(wr.rate - 100) + (wr.rate !== wr.raw ? '  (clamped)' : '');
+          eWarn = (wr.rate !== wr.raw);
+        }
         else {
           var eRaw = d + atkFlat - wsm - (anim.seq ? SEQ_PENALTY : 0);
           var e = clampEias(eRaw, anim.shifted);
@@ -669,13 +737,16 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
       if (dualActive(sk) && w[4] && w[7])
         note += ' <b>Held in one hand,</b> so it uses the one-handed animation rather than the two-handed one.';
       $('atk-fpa').textContent  = cur === null ? '\u2014' : cur;
-      $('atk-solo').textContent = '';
+      $('atk-solo').textContent = (isWW && hits > 1) ? hits + ' hits per strike' : '';
       $('atk-aps').textContent  = cur === null ? '\u2014' : (fps(cur) * hits).toFixed(2);
       $('atk-lbl').textContent = (anim.seq && hits > 1) ? 'frames per cycle'
-                               : isWW ? 'frames between hits' : 'frames per attack';
+                               : isWW ? (hits > 1 ? 'frames between strikes' : 'frames between hits') : 'frames per attack';
       $('atk-lbl2').textContent = hits > 1 ? 'hits / sec' : 'attacks / sec';
+      $('th-aps').textContent = hits > 1 ? 'Hits / sec' : TH_APS_TEXT;
+      // only a fixed timing (crossbows, a Whirlwind without an animation row) ignores attack speed;
+      // a single row anywhere else means the speed cap is already reached
       render('atk-body','atk-note', rows, splitHands ? wias : ias,
-             splitHands ? 'main-hand IAS' : 'IAS', note, hits);
+             splitHands ? 'main-hand IAS' : 'IAS', note, hits, !!anim.xbow || (!!anim.ww && !anim.rec));
     }
 
     var ca = f ? { fpd:f.sc[0], spd:f.sc[1] } : { fpd:c.sc[0], spd:c.sc[1] };
@@ -719,13 +790,17 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
           : c.n === 'Barbarian' ? 'The Barbarian can pair any one-handed weapon, and two-handed swords.'
           : 'Only the Barbarian and the Assassin dual wield.')
       : !offhand() ? 'Leave empty to swing one weapon.'
-      : isWW ? 'Each hand is timed on its own weapon, the two intervals averaged rounding up. Both weapons strike every hit.'
+      : isWW ? 'Each hand is timed on its own weapon, the two intervals averaged rounding up. Each strike lands one hit per weapon.'
              : 'Each hand is read on its own weapon\u2019s stats and the two rates are averaged.';
 
-    $('formhint').textContent = f
+    $('formhint').textContent = f && isWW && WW_HIT_INTERVAL
+      ? 'Whirlwind is timed on your weapon\u2019s human animation, with its own speed ceiling of ' + WW_MAX_RATE +
+        ' whether you are shapeshifted or not.'
+      : f
       ? 'Attack timing follows your weapon\u2019s human animation: the engine rescales the form\u2019s animation to it, '
         + 'within a frame\u2019s rounding. Shapeshifted also raises the speed ceiling from 175 to 250.'
       : '';
+    weaponFields.forEach(function(field){ field.sync(); });
   }
 
   // ---------- controls --------------------------------------------------
@@ -773,6 +848,99 @@ footer code{font-family:var(--mono);color:var(--dim);font-size:11px}
     $(id).addEventListener('input', update);
     $(id).addEventListener('change', update);
   });
+  // the footer explains whichever Whirlwind formula the page uses
+  $('ww-vanilla').hidden = WW_HIT_INTERVAL;
+  $('ww-esr').hidden = !WW_HIT_INTERVAL;
+
+  // ---------- weapon search fields -------------------------------------
+  // Each hand's <select> stays the page's state. Its search field lists the same
+  // options, grouped by weapon type, filters them as you type and writes the pick back.
+  var NO_MATCH = $('t-nomatch').textContent;
+  function fold(s){ return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').toLowerCase(); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
+  function weaponSearch(sel, inp, dd, clear){
+    var opts = [], hl = -1, cancel = false;
+    clear.setAttribute('aria-label', clear.title);
+    function current(){ var o = sel.options[sel.selectedIndex]; return o && o.value !== '' ? o.text : ''; }
+    function sync(){
+      inp.placeholder = sel.options.length ? sel.options[0].text : '';
+      inp.disabled = sel.disabled;
+      if (document.activeElement !== inp) inp.value = current();
+    }
+    function pick(value){
+      dd.classList.remove('open');
+      sel.value = value;
+      sel.dispatchEvent(new Event('change'));
+      inp.blur();
+      sync();
+    }
+    function rows(q){
+      var out = [];
+      [].forEach.call(sel.children, function(node){
+        if (node.tagName === 'OPTGROUP'){
+          var all = !q || fold(node.label).indexOf(q) >= 0;
+          var hits = [].filter.call(node.children, function(o){ return all || fold(o.text).indexOf(q) >= 0; });
+          if (hits.length){
+            out.push({ group:node.label });
+            hits.forEach(function(o){ out.push({ v:o.value, label:o.text }); });
+          }
+        } else if (!q || fold(node.text).indexOf(q) >= 0) out.push({ v:node.value, label:node.text });
+      });
+      return out;
+    }
+    function mark(){
+      [].forEach.call(dd.children, function(c){ c.classList.toggle('hl', c.dataset.i !== undefined && +c.dataset.i === hl); });
+      var row = dd.querySelector('.hl');
+      if (row && (row.offsetTop < dd.scrollTop || row.offsetTop + row.offsetHeight > dd.scrollTop + dd.clientHeight))
+        dd.scrollTop = row.offsetTop - (dd.clientHeight - row.offsetHeight) / 2;
+    }
+    function show(text){
+      var q = fold(text).trim();
+      opts = rows(q);
+      hl = -1;
+      for (var i = 0; i < opts.length; i++) if (!opts[i].group && (q || opts[i].v === sel.value)){ hl = i; break; }
+      if (hl < 0) for (i = 0; i < opts.length; i++) if (!opts[i].group){ hl = i; break; }
+      dd.innerHTML = opts.length ? opts.map(function(o, i){
+        return o.group ? '<div class="grp">' + esc(o.group) + '</div>' : '<div data-i="' + i + '">' + esc(o.label) + '</div>';
+      }).join('') : '<div class="none">' + esc(NO_MATCH) + '</div>';
+      dd.classList.add('open');
+      dd.scrollTop = 0;
+      mark();
+    }
+    function step(by){
+      for (var i = hl + by; i >= 0 && i < opts.length; i += by) if (!opts[i].group){ hl = i; break; }
+      mark();
+    }
+    inp.addEventListener('focus', function(){ inp.select(); show(''); });
+    inp.addEventListener('input', function(){ show(inp.value); });
+    inp.addEventListener('keydown', function(e){
+      if (!dd.classList.contains('open')){ if (e.key === 'ArrowDown'){ show(''); e.preventDefault(); } return; }
+      if (e.key === 'ArrowDown'){ step(1); e.preventDefault(); }
+      else if (e.key === 'ArrowUp'){ step(-1); e.preventDefault(); }
+      else if (e.key === 'Enter'){ if (hl >= 0) pick(opts[hl].v); e.preventDefault(); }
+      else if (e.key === 'Escape'){ cancel = true; dd.classList.remove('open'); inp.blur(); }
+    });
+    dd.addEventListener('mousedown', function(e){
+      e.preventDefault();
+      var row = e.target.closest('[data-i]');
+      if (row) pick(opts[+row.dataset.i].v);
+    });
+    clear.addEventListener('mousedown', function(e){ e.preventDefault(); inp.value = ''; pick(''); });
+    inp.addEventListener('blur', function(){
+      setTimeout(function(){
+        if (document.activeElement === inp) return;
+        dd.classList.remove('open');
+        if (cancel){ cancel = false; sync(); }
+        else if (!inp.value.trim() && sel.value !== '') pick('');
+        else sync();
+      }, 120);
+    });
+    return { sync:sync };
+  }
+  var weaponFields = [
+    weaponSearch($('wep'), $('wep-q'), $('wep-dd'), $('wep-x')),
+    weaponSearch($('wep2'), $('wep2-q'), $('wep2-dd'), $('wep2-x')),
+  ];
   update();
 })();
 </script>

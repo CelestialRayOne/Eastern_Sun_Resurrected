@@ -1,0 +1,81 @@
+# Uber Affixes
+#
+# Sets the affixes (monumod.txt unique monster mods) of the six uber bosses.
+# The game hardcodes a fixed list for each of them by monstats.txt row and
+# adds it every time the boss spawns. A boss listed below gets exactly the
+# list written here instead. A boss not listed keeps the game's own list, and
+# no other monster is touched.
+#
+# Only these six monstats.txt rows (*hcIdx) can be listed, because they are
+# the ones the game gives nothing but affixes:
+#   704 Uber Mephisto     game's list: 22, 30, 17, 8, 6
+#   705 Uber Diablo       game's list: 22, 8, 6
+#   706 Uber Izual        game's list: 6, 18
+#   707 Lilith            game's list: 23, 6, 29
+#   708 Uber Duriel       game's list: 6, 18
+#   709 Uber Baal         game's list: 22, 18, 8, 6
+#
+# monumod.txt ids (the "id" column) useful here:
+#   5 Extra Strong        17 Lightning Enchanted    27 Spectral Hit
+#   6 Extra Fast          18 Cold Enchanted         28 Stone Skin
+#   7 Cursed              22 questcomplete          29 Multiple Shots
+#   8 Magic Resistant     23 poisonhit              30 Aura Enchanted
+#   9 Fire Enchanted      25 Mana Burn
+#                         26 Teleportation
+#
+# Rules
+#   - 22 (questcomplete) is not an affix and shows no name. On Uber Mephisto,
+#     Uber Diablo and Uber Baal it is what runs the uber Tristram death
+#     handling when they die (the Standard of Heroes drop). Keep it on those
+#     three.
+#   - Uber Mephisto's Conviction comes from Aura Enchanted (30): the game
+#     forces Conviction level 20 on row 704 whenever it has that affix.
+#   - Every boss listed here is still made a unique (unique rank, counted as
+#     a unique in its level), even with an empty list, exactly like the game
+#     does today.
+#   - What each affix does is decided by the game and by the monster-affixes
+#     plugin, not here. This file only decides who gets which.
+#   - At most 9 affixes per boss, ids 1 to 42. An id listed twice counts once.
+#   - Any mistake (a row other than 704-709, a row listed twice, a bad id)
+#     stops the plugin from installing, and the plugin log says why. The
+#     game then keeps all six of its own lists.
+#
+# Server side only. Single player hosts its own server, so it applies there.
+# Takes effect for bosses that spawn after the game starts.
+#
+# Console command: uberaffixes (status, the lists, how often each was applied)
+
+[uber_affixes]
+
+# Master switch. false installs nothing: every uber keeps the game's list.
+enabled = true
+
+# Uber Mephisto: keeps his Conviction aura.
+[[uber_affixes.boss]]
+monster = 704
+affixes = [22, 30]
+
+# Uber Diablo: Spectral Hit.
+[[uber_affixes.boss]]
+monster = 705
+affixes = [22, 27]
+
+# Uber Izual: Cold Enchanted.
+[[uber_affixes.boss]]
+monster = 706
+affixes = [18]
+
+# Lilith: Mana Burn.
+[[uber_affixes.boss]]
+monster = 707
+affixes = [25]
+
+# Uber Duriel: Stone Skin.
+[[uber_affixes.boss]]
+monster = 708
+affixes = [28]
+
+# Uber Baal: Magic Resistant and Mana Burn.
+[[uber_affixes.boss]]
+monster = 709
+affixes = [22, 8]

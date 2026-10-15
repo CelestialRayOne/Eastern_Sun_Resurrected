@@ -254,3 +254,65 @@ enabled = true
 # potions_while_whirlwinding).
 # Default: true
 enabled = true
+
+
+[whirlwind_hit_interval]
+
+# Replaces the formula for how many frames pass between a player's Whirlwind
+# hits. Off by default: with it off the game's own formula runs untouched.
+#
+# Vanilla:
+#   rate     = attack rate + diminished IAS, kept between 15 and 175
+#              (250 while shapeshifted)
+#   interval = 256 * attack frame / (animation speed * rate / 100)
+# With this on:
+#   rate     = 100 + (attack rate - 100) * attackrate_weight / 100
+#              + diminished IAS, kept between min_rate and max_rate
+#   interval = 256 * attack frame * interval_stretch / 100
+#              / (animation speed * rate / 100), never below min_frames
+#
+# attack rate      the character's attack rate: 100, minus the weapon's speed,
+#                  plus attack rate from skills and auras, minus slows.
+# diminished IAS   the game's own 120 * IAS / (120 + IAS), IAS from all gear.
+# attack frame and animation speed come from animdata: the class's normal
+#                  attack (A1) row for the weapon's wclass. The attack frame
+#                  is the first frame with an event, the frame the normal
+#                  attack lands its hit.
+# Divisions round toward zero, as in the game. With a weapon in each hand each
+# hand is worked out on its own weapon and the game averages the two, rounding
+# up, as before. Players only: monster Whirlwind never uses this formula.
+# Setting the five values below to 100, 100, 0, 175 and 15 gives the vanilla
+# numbers back (shapeshifted forms aside).
+# The whirlwind console command shows how many intervals were worked out and
+# the numbers that went into the last one.
+# Site: RVA 0056AD23, inside the interval helper at RVA 0056AC00 (server).
+# Default: false
+enabled = true
+
+# How much the attack rate counts, in percent of its distance from 100. Weapon
+# speed, skill and aura attack rate and slows all go through it. 100 counts it
+# in full like vanilla, 50 counts it half. IAS is not affected.
+# Default: 50
+attackrate_weight = 50
+
+# Stretches every interval, in percent. 100 is vanilla. 170 makes every
+# interval 70% longer, so every breakpoint needs more speed.
+# Default: 170
+interval_stretch = 170
+
+# The fewest frames between hits. Nothing goes faster, whatever the speed.
+# 0 means no floor, like vanilla.
+# Default: 6
+min_frames = 6
+
+# Highest rate Whirlwind can use. Vanilla stops at 175, or 250 while
+# shapeshifted; this one value replaces both. It only blocks, it never adds
+# speed: with the defaults two-handed weapons need a rate of 185 to reach 6
+# frames, so anything below 185 stops them at 7.
+# Default: 300
+max_rate = 300
+
+# Lowest rate Whirlwind can use, for heavy slows. Vanilla is 15. A value above
+# max_rate is lowered to max_rate.
+# Default: 15
+min_rate = 15

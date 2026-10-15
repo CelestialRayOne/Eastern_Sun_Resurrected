@@ -83,7 +83,7 @@ cursed_skills = [495, 508, 515, 520]
 #   strong_spell_damage_percent: added to each of passive_fire_mastery,
 #   passive_ltng_mastery, passive_cold_mastery, passive_pois_mastery,
 #   passive_mag2_mastery and passive_wind_mastery (stats 329 to 332, 482, 483)
-strong_damage_percent = 150
+strong_damage_percent = 100
 strong_spell_damage_percent = 100
 
 # EXTRA FAST (at spawn)
@@ -105,6 +105,66 @@ fast_cast_rate_stat = 105
 #   mana. Missiles count, and minions that inherit the affix burn too.
 #   -1 keeps the stock mana drain.
 mana_burn_percent = 20
+
+# AURA ENCHANTED (at spawn)
+#   Replaces the game's own Aura Enchanted roll, the one D2RLoader runs while
+#   d2rloader.toml has d2rcore.game_rules.aura_enchanted_selection = "3.1".
+#   At "3.2" D2RLoader rolls its own built-in list and none of this applies.
+#   With none of the keys below set, the game's roll runs untouched.
+#
+#   List entries are { skill = N, divisor = N, min_level = N } or a bare
+#   skills.txt *Id (divisor 6, min_level 0). -1 entries are skipped.
+#     skill      skills.txt *Id of the aura
+#     divisor    aura level = monster level / divisor, kept between 1 and 99
+#     min_level  the entry only counts for monsters of at least this level
+#   Every entry that counts is equally likely; list a skill twice to make it
+#   twice as likely. The pick comes from the monster's name seed, as before.
+#   A list that is missing, empty or cannot be read uses the game's own:
+#     aura list    98, 368, 108, 365, 123, 122 and 369 (369 from level 20)
+#     herald list  113, 115 and 428 (or what a static patch put there)
+#   Those are vanilla 3.3 rows; ESR has other skills at most of them.
+#   A skill that is not a skills.txt row is never given. One whose aura column
+#   is 0 is given, but runs no aura. The plugin log names each such skill once.
+#   The console command lists both lists and counts each kind of roll.
+
+# Every Aura Enchanted monster rolls one aura from this list.
+aura_enchanted_skills = [
+    { skill = 540, divisor = 6 },                  # Might
+    { skill = 529, divisor = 5 },                  # Blessed Aim
+    { skill = 555, divisor = 8 },                  # Conviction
+    { skill = 554, divisor = 7 },                  # Fanaticism
+    { skill = 531, divisor = 6 },                  # Sanctuary
+    { skill = 1560, divisor = 5 },                 # Defiance Mon
+    { skill = 537, divisor = 8 },                  # Cleansing
+    { skill = 543, divisor = 8 },                  # Concentration
+    { skill = 545, divisor = 8 },                  # Vigor
+    { skill = 557, divisor = 8 },                  # Salvation
+]
+
+# Heralds roll one more aura from this list, given the way an item gives an
+# aura (stat 151, item_aura).
+aura_enchanted_skills = [
+    { skill = 540, divisor = 6 },                  # Might
+    { skill = 529, divisor = 5 },                  # Blessed Aim
+    { skill = 555, divisor = 8 },                  # Conviction
+    { skill = 554, divisor = 7 },                  # Fanaticism
+    { skill = 531, divisor = 6 },                  # Sanctuary
+    { skill = 1560, divisor = 5 },                 # Defiance Mon
+    { skill = 537, divisor = 8 },                  # Cleansing
+    { skill = 543, divisor = 8 },                  # Concentration
+    { skill = 545, divisor = 8 },                  # Vigor
+    { skill = 557, divisor = 8 },                  # Salvation
+]
+
+# Fixed auras that skip the roll. -1 keeps the game's own.
+#   Uber Mephisto (monstats.txt row 704): the game gives skill 123 at level
+#   20. He gets no herald aura.
+#   Lord De Seis (superuniques.txt row 37): the game gives the 6th entry of
+#   its own aura list (skill 122, level = monster level / 8).
+uber_mephisto_aura_skill = 555
+uber_mephisto_aura_level = 20
+lord_de_seis_aura_skill = 554
+lord_de_seis_aura_divisor = 8
 
 # RESISTANCE (always on, nothing to configure)
 #   No affix grants resistance any more. Removed: Fire / Cold / Lightning

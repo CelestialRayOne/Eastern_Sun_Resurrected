@@ -1,0 +1,32 @@
+# auto-waypoint - default settings.
+#
+# D2RLoader copies this file to <scope>/d2rloader/config/auto-waypoint.toml the
+# first time the plugin loads. It never overwrites an existing copy, so edit the
+# file in d2rloader/config, not this one.
+
+# Master switch. false starts nothing: waypoints have to be clicked again.
+enabled = true
+
+# How near a player has to come, in subtiles (5 subtiles make one floor tile).
+# 20 is a little under half the screen in either direction. Kept between 3 and 60.
+radius = 20
+
+# Play the waypoint's lighting animation when it activates, as a click would.
+# The bit is set either way.
+light_waypoint = true
+
+# Write "Waypoint activated: <area>" in the chat box. Only the player on this
+# machine sees it; players who joined a host or a dedicated server see the
+# waypoint light up instead.
+announce = true
+
+# How often to look, in milliseconds. Kept between 100 and 2000.
+interval_ms = 250
+
+# What D2RLoader compares between host and joining players: activating a
+# waypoint without touching it is a game rule, so a join is refused when
+# `enabled` or `radius` differs from the host's. On a ladder launch both keep
+# their built-in values whatever this file says.
+# Reserved for D2RLoader; the plugin ignores this table.
+[d2rl]
+match = ["enabled", "radius"]
