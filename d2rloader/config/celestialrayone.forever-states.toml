@@ -1,0 +1,32 @@
+# ===========================================================================
+# Forever States (celestialrayone.forever-states)
+# ===========================================================================
+# Makes a state that a skill grants last while the player has a stat.
+#
+# Each rule is [skill id, stat id]:
+#   skill id  The skills.txt row (*Id) whose aurastate should last.
+#   stat id   The itemstatcost.txt row (*ID). While the player has this stat
+#             above 0, from any source (items, skills, states):
+#               - the skill's state does not run out,
+#               - it comes back after save and exit,
+#               - for Consume, binding demons no longer ends it.
+#
+# When the player loses the stat (the item is unequipped or swapped out),
+# a state the plugin was keeping ends on the next frame. A state cast while
+# the player never had the stat keeps its normal timer.
+#
+# Several rules may name the same skill: any of their stats keeps it.
+# A stat id of -1 means "not set yet" and the rule does nothing.
+#
+# Death is untouched: the game's own death cleanup still applies.
+# Console command: foreverstates (rules, kept states, last save and load).
+# ===========================================================================
+
+[forever-states]
+enabled = true
+
+rules = [
+    [691, 523],
+    [691, 525],
+    [691, 527],
+]

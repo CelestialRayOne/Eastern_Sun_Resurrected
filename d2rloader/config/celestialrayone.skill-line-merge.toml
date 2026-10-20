@@ -1,0 +1,41 @@
+# Skill Line Merge
+#
+# Item tooltips show the plain line and the class-only line of the same
+# skill as one line with their sum:
+#   +3 to Leap
+#   +27 to Leap (Barbarian Only)
+# shows as
+#   +30 to Leap (All Classes)
+# Any class that has the skill gets both bonuses, so the sum is what the
+# character gets.
+#
+# Which lines
+#   - The plain line is item_nonclassskill (itemstatcost.txt row 97). The
+#     class-only line is item_singleskill (row 107). Only these two merge,
+#     and only for the same skill: +3 to Leap and +27 to Bash stay two lines.
+#   - Each tooltip block merges on its own: the item's properties (with its
+#     socketed gems, jewels and runes, which the game already adds in), the
+#     green partial set bonuses and the gold full set bonuses. A pair split
+#     across two blocks stays two lines.
+#   - The merged line takes the place of the class-only line, in the block's
+#     own color, with the game's skill name. The plain line disappears.
+#   - If the two values add up to 0, neither line shows.
+#
+# The text
+#   - The merged line uses the string key allclasses: one whole number
+#     written as %+d (or %d), then the skill name written as %s, in that
+#     order, for example "%+d to %s (All Classes)".
+#   - If the key is missing, or its text in the current language does not
+#     have that shape, both lines stay as they are and the log says why.
+#
+# The rows
+#   - Rows 97 and 107 must leave valshift empty and use no op from 2 to 5,
+#     as in the base game. Otherwise the number in the tooltip is not the
+#     stat value, and both lines stay as they are.
+#
+# Console command: skillmerge (status and counters)
+
+[skill-line-merge]
+
+# Master switch.
+enabled = true

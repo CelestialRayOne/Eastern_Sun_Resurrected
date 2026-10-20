@@ -1,0 +1,26 @@
+// Live loot filters: GitHub repositories whose filters every player gets, kept up to
+// date by the launcher. Each lands in its own folder inside the player's filters folder,
+//   <Saved Games>\Diablo II Resurrected\mods\Eastern_Sun_Resurrected\LootFilters\<folder>\
+// and shows in the launcher's Loot Filter tab marked LIVE.
+//
+// The launcher checks every repository when it starts and every 10 minutes while it is
+// open. A new commit is downloaded and, with the game running, applies in game at once.
+// A commit whose filter .json is not valid JSON is skipped; players keep the last good one.
+//
+// What a filter repository holds (everything else in it is ignored):
+//   <name>.json at the top   the filters
+//   sounds\                  their .wav, .mp3 and .flac files (subfolders allowed)
+//   icons\                   their .sprite minimap icons
+//
+// Each repository:
+//   url      https://github.com/<owner>/<repository>
+//   branch   optional. Default: the repository's default branch.
+//   folder   optional. Default: the repository name. Only needed when two repositories
+//            share a name.
+// Taking a repository out of this list deletes its folder for every player.
+{
+  "formatVersion": 1,
+  "repositories": [
+    { "url": "https://github.com/Thisisnotsully/QoL-Filter" }
+  ]
+}

@@ -1,0 +1,43 @@
+# celestialrayone.vfx-restart-fix
+#
+# VFX Restart Fix
+#
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). Read when the plugin
+# loads; restart the game after editing.
+#
+# What goes wrong without it
+#   Every HD visual effect on a unit (state and aura overlays, skill, missile
+#   and death visuals and so on) plays a particle effect and asks that particle
+#   effect to call it back when it dies.
+#   When the game restarts a visual effect (an animation state-machine event
+#   can do that), it starts a fresh particle effect and lets the old one play
+#   out on its own, but it never cancels the old one's callback. The old
+#   particle effect keeps running with a callback to a visual effect that has
+#   moved on.
+#   When that old particle effect finally dies, for example when its particle
+#   file is unloaded, the callback reaches a visual effect that may no longer
+#   hold any particle effect, or that no longer exists, and the game crashes:
+#   access violation writing address 0x20 at D2RLoader.exe+0xA4696A, called
+#   from D2RLoader.exe+0xF6A04F. It needs an unlucky order of events, so it
+#   hits some players once in a while, often around a death, when many
+#   effects end at once.
+#   When the visual effect still holds its new particle effect instead, the
+#   stale callback cancels the NEW particle effect's callback by mistake, so
+#   that one never reports its own death.
+#
+# What the plugin does
+#   Right before the game replaces or restarts the particle effect of a visual
+#   effect, it cancels that visual effect's callback on the particle effect it
+#   is about to let go, with the game's own cancel routine. The old particle
+#   effect still plays out exactly as before. Nothing else changes.
+#
+# Console
+#   vfxrestart   how many stale callbacks were cancelled this session, and on
+#                which particle files.
+
+# Turn the fix on or off. Off leaves the game exactly as stock D2RLoader runs it.
+enabled = true
+
+# Write each particle file to the plugin log the first time one of its stale
+# callbacks is cancelled in a session.
+log_effect_files = true

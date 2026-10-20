@@ -1,0 +1,27 @@
+# Monster Life Cap
+#
+# Keeps the life of every monster, summon and bound demon at or below
+# 8,388,607, the most a D2R life stat can hold. Without it, life that goes
+# past that number wraps around: the monster ends up with garbage life, or
+# dies on the spot.
+#
+# Held at the cap by this plugin:
+#   - champion, unique, minion, Possessed and Herald life bonuses
+#   - Bind Demon's bound life and max life
+#   - the monster level life multiplier (monlvl.txt HP), when it would wrap
+#   - life gained from heals, leech and regeneration, also when a skill or
+#     item sets life to "life + heal" (Engorge, life steal, monster heals)
+#   - current life when max life changes (Battle Orders, auras): it keeps its
+#     share instead of dropping to 1 near the cap
+# Already held at the cap by the game, D2RLoader and D2RCore: a monster's
+# life when it spawns, summon life, percent and flat max life bonuses.
+#
+# Below the cap everything behaves exactly as before. Do not load it together
+# with Monster Life Bars: both change the same places.
+#
+# Console command: lifecap (installed parts and counters).
+
+version = 1
+
+# false = install nothing.
+enabled = true

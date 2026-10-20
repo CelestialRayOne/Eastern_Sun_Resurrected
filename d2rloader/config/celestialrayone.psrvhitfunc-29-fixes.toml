@@ -1,0 +1,109 @@
+# =============================================================================
+# pSrvHitFunc 29 Fixes 1.0.0
+# Engine fixes for Missiles.txt pSrvHitFunc 29 in Diablo II: Resurrected.
+#
+# Built against D2RLoader 1.3.1: Diablo II: Resurrected 3.3 inside
+# D2RLoader.exe.
+# =============================================================================
+#
+# WHAT THIS IS
+#
+#   pSrvHitFunc 29 is the burst used by Frozen Orb and everything built on it:
+#   at the end of the missile's life it spawns a ring of the missile's
+#   HitSubMissile. The two fixes below correct engine bugs in how a missile
+#   reaches that burst. They are not crash fixes, so they DO change gameplay:
+#   they make the engine apply what its own data already says. Turning one off
+#   restores stock behaviour.
+#
+#   Split out of engine-stability 0.12.0. Its skill_freeze_ai_resume fix is
+#   not carried over, and celestialrayone.engine-stability.toml is not read.
+#
+# SAFETY MODEL
+#
+#   Every site is verified byte for byte before anything is written. On a build
+#   the plugin does not recognise it installs nothing, no matter what this file
+#   says, logs the reason and stays loaded so it can still answer for itself.
+#   An unrecognised build is a no-op, never a mis-patch.
+#
+#   "Turned off in the config" and "this build was not recognised" are reported
+#   as different things, in the log and in the console command. They are not
+#   the same problem and never look the same.
+#
+# USING THIS FILE
+#
+#   Location: <scope>\d2rloader\config\celestialrayone.psrvhitfunc-29-fixes.toml
+#             where <scope> is the game root for a global install, or
+#             mods\<mod>\ for a mod-scoped one. Never both.
+#
+#   Read once at plugin load, so restart the game after editing.
+#   Delete the file to have it recreated with these defaults.
+#   A missing key keeps its default. An unknown key is ignored.
+#   Values are true or false. Anything else is ignored and the default stands.
+#
+#   Type `psrvhitfunc-29-fixes` in the console to see what is actually live,
+#   which is not the same question as what this file asks for.
+
+
+[psrvhitfunc-29-fixes]
+
+# Master switch for the whole plugin.
+#   true   The fixes are installed as configured below.
+#   false  The DLL stays loaded and the console command still answers, but
+#          nothing is patched. Use this to rule the plugin out while chasing a
+#          problem, without moving the DLL out of the folder.
+# Default: true
+enabled = true
+
+# =============================================================================
+[fixes]
+# =============================================================================
+# Missile burst skipped when the missile dies on a wall.
+#   Site:     RVA 0045FB6D and RVA 0045FBB5, in Missiles.txt pSrvHitFunc 29.
+#   Bug:      pSrvHitFunc 29 is the burst used by Frozen Orb and everything
+#             built on it: at the end of the missile's life it spawns a ring of
+#             the missile's HitSubMissile. It is a hit function, so the engine
+#             calls it on every collision, and it decides whether this is the
+#             end of life by checking how many frames the missile has left. A
+#             missile stopped by a wall still has frames left, so the test
+#             refuses and the ring is never spawned. The missile dies silently
+#             against the wall and every sub-missile it should have released,
+#             with all the damage they carry, is lost. Only a missile that
+#             lives out its full Range ever bursts.
+#   Fix:      The burst is refused only when the missile still has frames left
+#             AND the hit is against a unit, which is the case the frame test
+#             was really there to catch. The engine already tells the hit
+#             function which of the two it is. Hitting a monster in mid-flight
+#             behaves as before, running out of Range behaves as before, dying
+#             on a wall now bursts.
+#   Scope:    This is a pSrvHitFunc 29 change, not a Frozen Orb change. Every
+#             missile in your Missiles.txt using pSrvHitFunc 29 starts bursting
+#             on walls. Server side only; pCltHitFunc is untouched.
+#   Cost:     One compare per pSrvHitFunc 29 collision.
+# Default: true
+frozen_orb_burst_on_wall = true
+# A burst missile is deleted when its to-hit roll misses.
+#   Site:     RVA 0045FBB9 in Missiles.txt pSrvHitFunc 29, or the same
+#             instruction inside the frozen_orb_burst_on_wall relay when that
+#             fix is on. Works with that fix on or off.
+#   Bug:      For a Missiles.txt row with ToHit, the engine rolls to hit before
+#             anything else. A miss never looks at CollideKill: the missile is
+#             deleted on the spot, the way a missed arrow is, unless the row has
+#             AlwaysExplode and the hit function, run once for the miss, asks to
+#             keep it. pSrvHitFunc 29 answers a mid-flight touch on a unit with
+#             "no burst yet, keep flying", but in a form only a hit reads as
+#             keep. So a pSrvHitFunc 29 missile that misses dies there, with no
+#             damage and no burst, while the same missile hitting flies on and
+#             bursts at the end of its Range. Frozen Orb never rolls to hit,
+#             which is why vanilla never showed it.
+#   Fix:      That mid-flight answer also carries the engine's own "keep me
+#             after a miss" flag, which a hit never reads. A hit behaves exactly
+#             as before. A miss now flies on and bursts where it would have.
+#   Scope:    Every Missiles.txt row with pSrvHitFunc 29 and ToHit. A row
+#             without ToHit never misses and is unaffected. Server side only.
+#   Note:     The miss still stamps LastCollide. With LastCollide set, the unit
+#             it missed is not rolled again by the same missile. Without it,
+#             the missile rolls again every frame it overlaps that unit, the
+#             same way a hit without LastCollide strikes again.
+#   Cost:     Nothing per hit: one value in the function changes.
+# Default: true
+burst_missile_survives_miss = true

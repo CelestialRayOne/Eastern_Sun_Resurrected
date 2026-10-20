@@ -1,0 +1,64 @@
+# celestialrayone.treasure-goblin
+#
+# Treasure Goblin
+#   A new monster AI for treasure goblins, selected through its own row in
+#   monai.txt, and a timed escape: after despawn_seconds the goblin stops, a
+#   town portal opens next to it, and 3 seconds later the goblin and the
+#   portal are gone. The goblin does not die, so it drops no loot and gives
+#   no experience. Killing it before then works as usual.
+#
+# Setting it up in the txt files
+#   1. Add one row at the END of data/global/excel/monai.txt with
+#      TreasureGoblin in the AI column. The aip comment columns can stay
+#      empty. Never insert it in the middle: every row after the insert would
+#      get the wrong AI.
+#   2. In monstats.txt, set the AI column of every goblin row to
+#      TreasureGoblin, spelled exactly like the monai.txt row.
+#   The game has 155 built-in AI routines, monai.txt rows 0 to 154. The new
+#   row has to come after them; a row inside that range is refused.
+#   When the tables load, the plugin finds the row by name in the monai.txt
+#   the game loaded, checks that its row count matches the loaded table, and
+#   logs the row number and how many monsters use it.
+#
+# What the AI does
+#   - Runs from the nearest enemy without stopping. Each run goes about three
+#     tiles straight away from the enemy, and the next run starts the moment
+#     the last one ends. The run animation is used when the monster has one
+#     (monstats2.txt mRN), otherwise the walk animation.
+#   - Before every run it checks the ground ahead. When the way straight away
+#     from the enemy is blocked, it takes the free direction that turns away
+#     from it the least. In a 90 degree corner that means running along one
+#     of the two walls.
+#   - Every second it checks whether it actually moved. If it did not, the
+#     direction it was trying is skipped for 2 seconds and it runs the closest
+#     free direction instead.
+#   - With no enemy in reach it waits, checking again every 8 frames.
+#   - monstats.txt aip1 to aip8 and aidel are not used by this AI.
+#
+# Escaping
+#   - The clock starts the first time the goblin's AI runs, which is when a
+#     player first comes near it. It is counted in game time and keeps running
+#     while players are away.
+#   - When it runs out the goblin stops and a town portal opens beside it, with
+#     the same opening and open animations as a player's town portal. The
+#     portal cannot be clicked or used.
+#   - 3 seconds later both disappear. If the goblin is killed during those 3
+#     seconds it dies normally and the portal still closes on time.
+#
+# Console
+#   treasuregoblin   shows whether the plugin is active, the monai.txt row it
+#                    found for each table bank, and every goblin it is
+#                    running, with the time each has left.
+
+[treasure_goblin]
+
+# true runs the TreasureGoblin AI and the escape. false leaves the game stock:
+# monsters pointed at the TreasureGoblin row then get the do-nothing AI.
+enabled = true
+
+# The monai.txt AI name this plugin runs. Must match the monai.txt row and the
+# monstats.txt AI column exactly.
+ai_name = "TreasureGoblin"
+
+# Seconds before a goblin escapes through its portal. 0 means never.
+despawn_seconds = 30

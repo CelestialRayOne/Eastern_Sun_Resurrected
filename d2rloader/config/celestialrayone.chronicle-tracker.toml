@@ -1,0 +1,52 @@
+# celestialrayone.chronicle-tracker
+#
+# Chronicle Tracker
+#
+# 1. Completing entries
+#   A Set item, Unique item or Runeword completes its Chronicle entry the moment
+#   the character comes into possession of it already identified:
+#     - picked up from the ground, to the cursor or straight into the inventory
+#     - received from a Horadric Cube transmute, including socketed items a
+#       recipe takes out of an item
+#   The game itself completes an entry only when an item gets identified, or
+#   when a Runeword is made by socketing. A transmute output arrives already
+#   identified, so the game never completed it. That was the cube bug.
+#   Unidentified items stay with the game: it completes them when they get
+#   identified, as before.
+#   The entry is written by the game's own routine, the same one identifying an
+#   item uses, and is saved with the shared stash like any other entry.
+#
+# 2. The ground label
+#   A Set item, Unique item or Runeword on the ground whose entry this
+#   character has not completed gets a second line under its label:
+#       Shako
+#       Not in Chronicle
+#   The line shows on the Alt labels and on the name shown while hovering the
+#   item. An unidentified item keeps its base name, so the line never tells
+#   which Set or Unique item it is.
+#
+# Which items count
+#   Exactly the items the game itself puts in the Chronicle: the plugin runs
+#   the check the game runs on every new drop. An item the game keeps out of
+#   the Chronicle never gets the line and never gets an entry.
+#
+# Text
+#   The line is the string Key ChronicleTrackerLabel, shipped in every
+#   language. To reword it, add the same Key to the mod's string files.
+#
+# Console command
+#   chronicletracker   installation state and the entries completed this
+#                         session
+
+[chronicle-tracker]
+# The whole plugin. false installs nothing.
+enabled = true
+
+# Part 1: complete the entry on pickup and on Horadric Cube outputs.
+complete_on_acquire = true
+
+# Part 2: the "Not in Chronicle" line under ground labels.
+mark_ground_labels = true
+
+# Color of that line, as a color code from the string files.
+label_color = "ÿc1"

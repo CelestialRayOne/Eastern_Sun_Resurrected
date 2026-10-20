@@ -1,0 +1,44 @@
+# celestialrayone.conditioncalc-killer
+#
+# ConditionCalc Killer
+#   Lets treasureclassex.txt ConditionCalc read the player who got the kill.
+#
+# What changes in a ConditionCalc formula
+#   stat('x'.accr)            reads the player who got the kill
+#   skill('Name'.lvl), sklvl  read the player who got the kill
+#   cond(...)                 still tests the monster and the area, as stock
+#                             (MonsterTestElite, Desecrated and the rest)
+#   everything else           as stock
+#
+#   Examples (the treasure class only drops when the formula is not 0):
+#     (stat('item_magicbonus'.accr)>=100)
+#     (stat('level'.accr)>=90)
+#     (skill('Some Skill'.lvl)>0)
+#
+# Who counts as the player who got the kill
+#   - A player's own kill: that player.
+#   - A summon's or hireling's kill: its owner, when credit_minion_owner is on.
+#   - No player at all (a monster killed by a trap or another monster, or a
+#     minion whose owner is not a player): the formula reads the monster
+#     exactly like the stock game.
+#
+# Scope
+#   Both places treasureclassex.txt ConditionCalc is checked: the monster's own
+#   treasure class, and conditional treasure-class entries inside other
+#   treasure classes. DropConditionCalc in weapons.txt, armor.txt and misc.txt
+#   is a different column and is not changed.
+#
+# Built for D2RLoader 1.3.1 (D2R 3.3). On any other build the byte checks fail
+# and the plugin loads without changing the game; the console command
+# "conditioncalc" says why.
+
+# Master switch. false loads the plugin without changing the game.
+enabled = true
+
+# true: a summon's or hireling's kill reads its owner's stats.
+# false: such kills read the monster, like stock.
+credit_minion_owner = true
+
+# true writes the first evaluations to the plugin log (who was read and the
+# result). Keep false for play.
+diagnostics = false

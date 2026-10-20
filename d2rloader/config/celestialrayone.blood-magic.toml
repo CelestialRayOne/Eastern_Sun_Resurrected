@@ -1,0 +1,45 @@
+# celestialrayone.blood-magic
+#
+# Blood Magic
+#
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). Read when the plugin
+# loads; restart the game after editing.
+#
+# What goes wrong without it
+#   State 114 (blood_mana) makes skills cost life instead of mana. The engine
+#   still runs it as the old Blood Mana monster curse, which ends itself:
+#     - a cost higher than current life: state 114 is removed, life is set
+#       to 1, and the cost is not paid;
+#     - a payment that leaves life below a threshold taken from the skill
+#       that granted state 114: state 114 is removed.
+#   With state 114 gone, skills cost mana again. A player whose life is below
+#   a skill's cost can then keep casting it, paying mana.
+#   Skill casts and auras that cost something every tick both work this way.
+#   The aura one also crashes the game when state 114 is still set but its
+#   stat list is already gone.
+#
+# What the plugin does
+#   While a player has state 114, every skill and aura cost is paid from life:
+#     - life below the cost: refused, nothing is taken, no mana either;
+#     - otherwise the cost is taken from life.
+#   A payment never removes state 114 and never sets life to 1. The state
+#   still ends when whatever gave it removes it.
+#
+# Not changed
+#   The cast check, which already refuses a cast when life is below the cost
+#   while state 114 is on. Players without state 114, monsters, and skills
+#   cast from item charges.
+#
+# Note
+#   State 114 is also the Blood Mana curse cast by Succubi and Baal. It now
+#   lasts its full duration instead of ending at low life.
+#
+# Console
+#   bloodmagic   which parts are installed, and how many costs were paid in
+#                life or refused this session.
+#
+# Log: d2rloader\logs\celestialrayone.blood-magic.log
+
+# Turn the plugin on or off. Off leaves the game exactly as stock D2RLoader
+# runs it.
+enabled = true

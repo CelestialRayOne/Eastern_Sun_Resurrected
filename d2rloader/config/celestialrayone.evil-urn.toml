@@ -121,3 +121,59 @@ blocked_monster_ids = [
     1124,   # corruptedzakarumfanatic
     1125,   # corruptedzakarumvenomancer
 ]
+
+[monster_roll]
+ 
+# HOW AN URN PICKS ITS MONSTER IN VANILLA
+#   When a game is created, every zone gets its list of monster types:
+#   levels.txt NumMon types drawn from Mon1-Mon25 (Normal) or NMon1-NMon25
+#   (Nightmare and Hell), keeping monsters with monstats.txt isSpawn. An
+#   opened urn spawns the FIRST type in that list that has a walk mode
+#   (monstats2.txt mWL). So every urn in a zone spawns the same monster for
+#   the whole game; it only changes in the next game.
+#
+# WHAT THIS DOES
+#   Every opened urn rolls one of its zone's types instead:
+#   - only types with a walk mode take part, as in vanilla;
+#   - with [blocklist] on, its blocked_monster_ids never take part;
+#   - a type's chance is its weight divided by the total weight of the
+#     types taking part.
+#   Example: a zone with three types, all at the default 100, gives each
+#   one a third. Set one of them to 50 and the odds become 40%, 40% and
+#   20%: half the weight, half as often as each of the others.
+#
+#   - Weights only change the odds between the types a zone already has.
+#     They never add a monster to a zone.
+#   - When no type is left, or every one left weighs 0, the urn spawns
+#     nothing, the same as vanilla when no type can walk.
+#   - The pack itself is spawned by the game as before: champion or unique
+#     leader, minions, affixes and [boss_affixes] are unchanged.
+#   - The roll uses the game's own random seed, the one the urn already
+#     rolls its spawn chance with.
+#   - The console command shows how often each monster id was picked.
+ 
+# false keeps the vanilla pick: the first type that can walk.
+enabled = true
+ 
+# Weight of every type not listed in monster_weights, 0 to 1000000.
+default_weight = 100
+ 
+# [monster id, weight] pairs. The monster id is the monstats.txt hcIdx, 0 to
+# 32767. The weight is 0 to 1000000, and 0 means never from an urn. With
+# the default weight of 100, a type at 50 is twice as rare as an unlisted
+# one and a type at 200 is twice as common.
+#
+#   monster_weights = [[1234, 50], [1235, 200]]
+#
+#   monster_weights = [
+#       [963, 25],
+#       [984, 25],
+#       [985, 25],
+#       [1120, 25],
+#       [1126, 25],
+#   ]
+#
+# A single pair can also be written flat: monster_weights = [1234, 50]
+# A pair that is not two valid numbers is named in the log and skipped;
+# the rest still load. An id listed twice keeps its last weight.
+monster_weights = []
