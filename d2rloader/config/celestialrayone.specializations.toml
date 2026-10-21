@@ -1,0 +1,209 @@
+# Specializations
+#
+# A specialization system: a "Specialization" entry on the character sheet
+# opens a specialization window where the character spends specialization
+# points on perks. Learning a perk writes the perk's stat on the character,
+# saved with it. The perks do nothing by themselves: give their stats a
+# meaning in softcode or in other plugins. The plugin also adds Magic and
+# Physical resistance rows to the character sheet.
+#
+# Rules
+#   - Points are the character's own value of points_stat: what a misc.txt
+#     pSpell, a quest or another plugin adds. Points granted by items do not
+#     count. Learning a perk costs 1 point.
+#   - A perk is learned when the character's own value of its stat is above
+#     0. Learning writes perk_value into it.
+#   - The first perk picks the specialization: the others are locked.
+#   - Rows are taken in order, one perk per row.
+#   - The host checks every rule again before it writes anything, so the
+#     host and every client need this plugin.
+#
+# itemstatcost.txt rows (points_stat and every perk stat)
+#   - CSvBits above 0. Required: D2RLoader's extended character save writes a
+#     character's own stat only then. 8 holds 0 to 255.
+#   - Saved = 1. Required: the game sends a change of the character's own
+#     value to its client only for rows with Saved = 1. Without it the host
+#     learns the perk but the window and the sheet never see it.
+#   - CSvParam blank: the stats use layer 0.
+#   - Add new rows at the end of the file. Changing CSvBits later stops
+#     existing characters from loading.
+#   The plugin log reports this check every time the tables load.
+#
+# Character sheet (characterstatspanelhd.json, keyboard/mouse)
+#   MagicText, PhysicalText    TextBoxWidgets the plugin fills every frame:
+#     Magic = magicresist, capped at 75 + maxmagicresist and at most 95.
+#     Physical = damageresist, capped at the game's physical cap (50).
+#     Same floor, format and colours as the four stock resistance rows (gold
+#     at the cap, red below 0). No difficulty penalty, as in the damage code.
+#   SpecializationButton       one button, six frames: + (normal, hovered,
+#                              pressed) while the character has points, then
+#                              - (normal, hovered, pressed) once it learned a
+#                              perk and has no point; hidden otherwise. Its
+#                              click sends PanelManager:OpenPanel:SpecializationsOpen.
+#   SpecializationTitle        shown with the button
+#
+# HUD (hudpanelhd.json)
+#   SpecializationAlert        a button the plugin shows while the character
+#                              has points, the window is closed and the
+#                              character sheet is closed, like the stock New
+#                              Skill alert. Its click sends
+#                              PanelManager:OpenPanel:SpecializationsOpen.
+#
+# Specialization window
+#   The layout is built into the plugin. A mod can replace it with its own
+#   data/global/ui/layouts/celestialrayone.specializations/SpecializationPanelhd.json
+#   (root type Panel, root name celestialrayone.specializations/SpecializationPanel).
+#   Every text in it must be a full reference such as @d2r:Key (strings from
+#   the mod's own string files are d2r: strings), or D2RLoader refuses it.
+#   Widgets (s = specialization, r = row, p = perk, all from 1):
+#     Tab<s>, TabActive<s>, TabChosen<s>, TabLocked<s>, Page<s>
+#     inside Page<s> (images only): Glow<r>_<p>, Learned<r>_<p>, Locked<r>_<p>
+#     in the window, shared by every page: Hover<r>_<p> (hover area; a click
+#     on it learns, Shift + click unlearns), Tip<r>_<p> (tooltip: TipBack1 to
+#     TipBack14 for 1 to 14 text lines, TipTitle, TipText), PointsAvailable
+#   Click messages, PanelManager:OpenPanel:<text>:
+#     SpecializationsOpen / SpecializationsClose / SpecializationsTab<s> /
+#     SpecializationsPerk.<r>.<p> (the specialization on screen)
+#   The plugin breaks the tooltip text into lines that fit TipText and
+#   shows the TipBack of that many lines.
+#   Perk icons: one sprite sheet per specialization, one frame per perk in
+#   row order (row 1 perks 1-3 are frames 0-2, row 2 is 3-5, ...), each frame
+#   the size of a skill icon. The layout points every Perk button at its frame.
+#
+# Console command
+#   specializations   status, the itemstatcost check, your points and perks,
+#                     the live resistance numbers and counters.
+
+[specializations]
+
+# Master switch.
+enabled = true
+
+# itemstatcost.txt row of the specialization points.
+points_stat = 926
+
+# Value written into a perk's stat when it is learned.
+perk_value = 1
+
+# Perks per row. The rows of a specialization are its stats split in groups
+# of this size.
+perks_per_row = 3
+
+# Unlearning: Shift + click on a learned perk while the character has at
+# least unlearn_cost of respec_stat (its own value). The perk's stat goes
+# back to 0, the point is refunded and unlearn_cost is taken from
+# respec_stat. Any learned perk can be unlearned; the freed row can then be
+# learned again. -1 turns unlearning off.
+respec_stat = 237
+unlearn_cost = 5
+
+# Gray line under every perk's description, so the cost of unlearning is
+# always known. %d is replaced by unlearn_cost.
+unlearn_hint = "@d2r:SpecializationsUnlearnHint"
+
+# Sounds (sounds.txt names) played when a learn or unlearn click goes out.
+# cursor_stat_point_one_hd is the game's sound for spending a stat point.
+# An empty text plays nothing.
+learn_sound = "cursor_stat_point_one_hd"
+unlearn_sound = "cursor_stat_point_one_hd"
+
+# One block per specialization, in tab order (the first block is Tab1).
+# name: for the log and the console only; the tab text is in the layout.
+# stats: itemstatcost.txt rows of the perks, row by row.
+# titles, descriptions: one text per perk, in the same order as stats.
+#   "@namespace:Key" is a string: @d2r:Key for strings in the mod's own
+#   string files, @celestialrayone.specializations:Key for this plugin's.
+#   Anything else is shown as written. \n starts a new line. Both lists
+#   are optional; a missing key shows the key itself.
+
+[[specialization]]
+name = "Alchemist"
+stats = [
+    927,928,929,930,931,932,933,934,935,936,937,938,939,940,941
+]
+titles = [
+    "@d2r:SpecializationsAlchemist1_1Title", "@d2r:SpecializationsAlchemist1_2Title", "@d2r:SpecializationsAlchemist1_3Title",
+    "@d2r:SpecializationsAlchemist2_1Title", "@d2r:SpecializationsAlchemist2_2Title", "@d2r:SpecializationsAlchemist2_3Title",
+    "@d2r:SpecializationsAlchemist3_1Title", "@d2r:SpecializationsAlchemist3_2Title", "@d2r:SpecializationsAlchemist3_3Title",
+    "@d2r:SpecializationsAlchemist4_1Title", "@d2r:SpecializationsAlchemist4_2Title", "@d2r:SpecializationsAlchemist4_3Title",
+    "@d2r:SpecializationsAlchemist5_1Title", "@d2r:SpecializationsAlchemist5_2Title", "@d2r:SpecializationsAlchemist5_3Title",
+]
+descriptions = [
+    "@d2r:SpecializationsAlchemist1_1Desc", "@d2r:SpecializationsAlchemist1_2Desc", "@d2r:SpecializationsAlchemist1_3Desc",
+    "@d2r:SpecializationsAlchemist2_1Desc", "@d2r:SpecializationsAlchemist2_2Desc", "@d2r:SpecializationsAlchemist2_3Desc",
+    "@d2r:SpecializationsAlchemist3_1Desc", "@d2r:SpecializationsAlchemist3_2Desc", "@d2r:SpecializationsAlchemist3_3Desc",
+    "@d2r:SpecializationsAlchemist4_1Desc", "@d2r:SpecializationsAlchemist4_2Desc", "@d2r:SpecializationsAlchemist4_3Desc",
+    "@d2r:SpecializationsAlchemist5_1Desc", "@d2r:SpecializationsAlchemist5_2Desc", "@d2r:SpecializationsAlchemist5_3Desc",
+]
+
+[[specialization]]
+name = "Blacksmith"
+stats = [
+    1016, 1017, 1018,
+    1019, 1020, 1021,
+    1022, 1023, 1024,
+    1025, 1026, 1027,
+    1028, 1029, 1030,
+]
+titles = [
+    "@d2r:SpecializationsBlacksmith1_1Title", "@d2r:SpecializationsBlacksmith1_2Title", "@d2r:SpecializationsBlacksmith1_3Title",
+    "@d2r:SpecializationsBlacksmith2_1Title", "@d2r:SpecializationsBlacksmith2_2Title", "@d2r:SpecializationsBlacksmith2_3Title",
+    "@d2r:SpecializationsBlacksmith3_1Title", "@d2r:SpecializationsBlacksmith3_2Title", "@d2r:SpecializationsBlacksmith3_3Title",
+    "@d2r:SpecializationsBlacksmith4_1Title", "@d2r:SpecializationsBlacksmith4_2Title", "@d2r:SpecializationsBlacksmith4_3Title",
+    "@d2r:SpecializationsBlacksmith5_1Title", "@d2r:SpecializationsBlacksmith5_2Title", "@d2r:SpecializationsBlacksmith5_3Title",
+]
+descriptions = [
+    "@d2r:SpecializationsBlacksmith1_1Desc", "@d2r:SpecializationsBlacksmith1_2Desc", "@d2r:SpecializationsBlacksmith1_3Desc",
+    "@d2r:SpecializationsBlacksmith2_1Desc", "@d2r:SpecializationsBlacksmith2_2Desc", "@d2r:SpecializationsBlacksmith2_3Desc",
+    "@d2r:SpecializationsBlacksmith3_1Desc", "@d2r:SpecializationsBlacksmith3_2Desc", "@d2r:SpecializationsBlacksmith3_3Desc",
+    "@d2r:SpecializationsBlacksmith4_1Desc", "@d2r:SpecializationsBlacksmith4_2Desc", "@d2r:SpecializationsBlacksmith4_3Desc",
+    "@d2r:SpecializationsBlacksmith5_1Desc", "@d2r:SpecializationsBlacksmith5_2Desc", "@d2r:SpecializationsBlacksmith5_3Desc",
+]
+
+[[specialization]]
+name = "Jeweler"
+stats = [
+    1031, 1032, 1033,
+    1034, 1035, 1036,
+    1037, 1038, 1039,
+    1040, 1041, 1042,
+    1043, 1044, 1045,
+]
+titles = [
+    "@d2r:SpecializationsJeweler1_1Title", "@d2r:SpecializationsJeweler1_2Title", "@d2r:SpecializationsJeweler1_3Title",
+    "@d2r:SpecializationsJeweler2_1Title", "@d2r:SpecializationsJeweler2_2Title", "@d2r:SpecializationsJeweler2_3Title",
+    "@d2r:SpecializationsJeweler3_1Title", "@d2r:SpecializationsJeweler3_2Title", "@d2r:SpecializationsJeweler3_3Title",
+    "@d2r:SpecializationsJeweler4_1Title", "@d2r:SpecializationsJeweler4_2Title", "@d2r:SpecializationsJeweler4_3Title",
+    "@d2r:SpecializationsJeweler5_1Title", "@d2r:SpecializationsJeweler5_2Title", "@d2r:SpecializationsJeweler5_3Title",
+]
+descriptions = [
+    "@d2r:SpecializationsJeweler1_1Desc", "@d2r:SpecializationsJeweler1_2Desc", "@d2r:SpecializationsJeweler1_3Desc",
+    "@d2r:SpecializationsJeweler2_1Desc", "@d2r:SpecializationsJeweler2_2Desc", "@d2r:SpecializationsJeweler2_3Desc",
+    "@d2r:SpecializationsJeweler3_1Desc", "@d2r:SpecializationsJeweler3_2Desc", "@d2r:SpecializationsJeweler3_3Desc",
+    "@d2r:SpecializationsJeweler4_1Desc", "@d2r:SpecializationsJeweler4_2Desc", "@d2r:SpecializationsJeweler4_3Desc",
+    "@d2r:SpecializationsJeweler5_1Desc", "@d2r:SpecializationsJeweler5_2Desc", "@d2r:SpecializationsJeweler5_3Desc",
+]
+
+[[specialization]]
+name = "Archaeologist"
+stats = [
+    1046, 1047, 1048,
+    1049, 1050, 1051,
+    1052, 1053, 1054,
+    1055, 1056, 1057,
+    1058, 1059, 1060,
+]
+titles = [
+    "@d2r:SpecializationsArchaeologist1_1Title", "@d2r:SpecializationsArchaeologist1_2Title", "@d2r:SpecializationsArchaeologist1_3Title",
+    "@d2r:SpecializationsArchaeologist2_1Title", "@d2r:SpecializationsArchaeologist2_2Title", "@d2r:SpecializationsArchaeologist2_3Title",
+    "@d2r:SpecializationsArchaeologist3_1Title", "@d2r:SpecializationsArchaeologist3_2Title", "@d2r:SpecializationsArchaeologist3_3Title",
+    "@d2r:SpecializationsArchaeologist4_1Title", "@d2r:SpecializationsArchaeologist4_2Title", "@d2r:SpecializationsArchaeologist4_3Title",
+    "@d2r:SpecializationsArchaeologist5_1Title", "@d2r:SpecializationsArchaeologist5_2Title", "@d2r:SpecializationsArchaeologist5_3Title",
+]
+descriptions = [
+    "@d2r:SpecializationsArchaeologist1_1Desc", "@d2r:SpecializationsArchaeologist1_2Desc", "@d2r:SpecializationsArchaeologist1_3Desc",
+    "@d2r:SpecializationsArchaeologist2_1Desc", "@d2r:SpecializationsArchaeologist2_2Desc", "@d2r:SpecializationsArchaeologist2_3Desc",
+    "@d2r:SpecializationsArchaeologist3_1Desc", "@d2r:SpecializationsArchaeologist3_2Desc", "@d2r:SpecializationsArchaeologist3_3Desc",
+    "@d2r:SpecializationsArchaeologist4_1Desc", "@d2r:SpecializationsArchaeologist4_2Desc", "@d2r:SpecializationsArchaeologist4_3Desc",
+    "@d2r:SpecializationsArchaeologist5_1Desc", "@d2r:SpecializationsArchaeologist5_2Desc", "@d2r:SpecializationsArchaeologist5_3Desc",
+]

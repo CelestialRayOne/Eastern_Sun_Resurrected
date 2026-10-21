@@ -2,16 +2,60 @@ Treasure Class	group	level	Picks	Unique	Set	Rare	Magic	NoDrop	Item1	Prob1	Item2	
 Gold			1						"gld,mul=256"	1																												0
 Nothing			0																																			0
 Ammo			1						aq2	1	cq2	1	Nothing	2																								0
-Misc 0			1						key	6	tsc	4	isc	4	vps	1	yps	2	wms	1																		0
-Misc 1			1						key	6	tsc	4	isc	4	vps	1	yps	2	wms	1																		0
-Misc 2			1						key	6	tsc	4	isc	4	vps	1	yps	2	wms	1																		0
-Potion 1			1						hp1	12	hp2	4	mp1	6	mp2	2	rvs	1																				0
-Potion 2			1						hp1	4	hp2	8	hp3	4	mp1	2	mp2	4	mp3	2	rvs	1																0
-Potion 3			1						hp2	8	hp3	8	mp2	4	mp3	4	rvs	1																				0
-Potion 4			1						hp2	4	hp3	8	hp4	4	mp2	2	mp3	4	mp4	2	rvs	1																0
-Potion 5			1						hp4	8	mp4	4	rvs	1																								0
-Potion 6			1						hp3	4	hp4	8	hp5	4	mp3	2	mp4	4	mp5	2	rvs	1																0
-Potion 7			1						hp4	6	hp5	6	mp4	3	mp5	3	rvs	7	Nothing	25																		0
+Utility Elixir Regular A			1						01p	1	02p	1	03p	1	04p	1	05p	1	06p	1	07p	1																0
+Utility Elixir Regular B			1						08p	1	09p	1	10p	1	11p	1	12p	1	13p	1																		0
+Utility Elixir Regular Hidden			1						14p	1	15p	1	16p	1	17p	1																(stat('alchemy_4'.accr)>0)						0
+Utility Elixir Regular			1						Utility Elixir Regular A	7	Utility Elixir Regular B	6	Utility Elixir Regular Hidden	4																								0
+Utility Elixir Greater A			1						18p	1	19p	1	20p	1	21p	1	22p	1	23p	1	24p	1																0
+Utility Elixir Greater B			1						25p	1	26p	1	27p	1	28p	1	29p	1	30p	1																		0
+Utility Elixir Greater Hidden			1						31p	1	32p	1	33p	1	34p	1																(stat('alchemy_4'.accr)>0)						0
+Utility Elixir Greater			1						Utility Elixir Greater A	7	Utility Elixir Greater B	6	Utility Elixir Greater Hidden	4																		(stat('alchemy_12'.accr)>0)						0
+Utility Elixir			1						Utility Elixir Regular	3	Utility Elixir Greater	1																										0
+Unstable Mixtures			1						Utility Elixir	1																						(stat('alchemy_5'.accr)>0)						0
+Rejuvenation Regular			1						rvs	85	Unstable Mixtures	15																										0
+Rejuvenation Full			1						rvl	85	Unstable Mixtures	15																										0
+Rejuvenation Transmutation Regular			1						Rejuvenation Regular	1																						stat('alchemy_3'.accr)>0						0
+Rejuvenation Transmutation Full			1						Rejuvenation Full	1																						stat('alchemy_3'.accr)>0						0
+Healing and Mana Potions 1			1						hp1	6	hp2	2	mp1	3	mp2	1	Rejuvenation Transmutation Regular	12																				0
+Healing and Mana Potions 2			1						hp1	2	hp2	4	hp3	2	mp1	1	mp2	2	mp3	1	Rejuvenation Transmutation Regular	12																0
+Healing and Mana Potions 3			1						hp2	2	hp3	2	mp2	1	mp3	1	Rejuvenation Transmutation Regular	6																				0
+Healing and Mana Potions 4			1						hp2	2	hp3	4	hp4	2	mp2	1	mp3	2	mp4	1	Rejuvenation Transmutation Regular	12																0
+Healing and Mana Potions 5			1						hp4	2	mp4	1	Rejuvenation Transmutation Regular	3																								0
+Healing and Mana Potions 6			1						hp3	2	hp4	4	hp5	2	mp3	1	mp4	2	mp5	1	Rejuvenation Transmutation Regular	6	Rejuvenation Transmutation Full	6														0
+Healing and Mana Potions 7			1						hp4	2	hp5	2	mp4	1	mp5	1	Rejuvenation Transmutation Full	6																				0
+Healing and Mana Potions 8			1						hp4	4	hp5	8	mp4	2	mp5	4	Rejuvenation Transmutation Full	18																				0
+Potion 1 Regular			1						Healing and Mana Potions 1	20	Rejuvenation Regular	1																										0
+Potion 1 Single			1						Potion 1 Regular	99	Utility Elixir	1																										0
+Potion 1 Double			2						Potion 1 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 2 Regular			1						Healing and Mana Potions 2	20	Rejuvenation Regular	1																										0
+Potion 2 Single			1						Potion 2 Regular	99	Utility Elixir	1																										0
+Potion 2 Double			2						Potion 2 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 3 Regular			1						Healing and Mana Potions 3	20	Rejuvenation Regular	1																										0
+Potion 3 Single			1						Potion 3 Regular	98	Utility Elixir	2																										0
+Potion 3 Double			2						Potion 3 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 4 Regular			1						Healing and Mana Potions 4	20	Rejuvenation Regular	1																										0
+Potion 4 Single			1						Potion 4 Regular	97	Utility Elixir	3																										0
+Potion 4 Double			2						Potion 4 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 5 Regular			1						Healing and Mana Potions 5	20	Rejuvenation Regular	1																										0
+Potion 5 Single			1						Potion 5 Regular	97	Utility Elixir	3																										0
+Potion 5 Double			2						Potion 5 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 6 Regular			1						Healing and Mana Potions 6	40	Rejuvenation Regular	1	Rejuvenation Full	1																								0
+Potion 6 Single			1						Potion 6 Regular	96	Utility Elixir	4																										0
+Potion 6 Double			2						Potion 6 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 7 Regular			1						Healing and Mana Potions 7	20	Rejuvenation Full	1																										0
+Potion 7 Single			1						Potion 7 Regular	95	Utility Elixir	5																										0
+Potion 7 Double			2						Potion 7 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 8 Regular			1						Healing and Mana Potions 8	18	Rejuvenation Full	6																										0
+Potion 8 Single			1						Potion 8 Regular	95	Utility Elixir	5																										0
+Potion 8 Double			2						Potion 8 Single	1																						(stat('alchemy_6'.accr)>0)						0
+Potion 1			1						Potion 1 Single	1	Potion 1 Double	1																										0
+Potion 2			1						Potion 2 Single	1	Potion 2 Double	1																										0
+Potion 3			1						Potion 3 Single	1	Potion 3 Double	1																										0
+Potion 4			1						Potion 4 Single	1	Potion 4 Double	1																										0
+Potion 5			1						Potion 5 Single	1	Potion 5 Double	1																										0
+Potion 6			1						Potion 6 Single	1	Potion 6 Double	1																										0
+Potion 7			1						Potion 7 Single	1	Potion 7 Double	1																										0
+Potion 8			1						Potion 8 Single	1	Potion 8 Double	1																										0
 Act 1 Junk			1					25	Potion 1	8	Ammo	3																										0
 Act 2 Junk			1					25	Potion 2	8	Ammo	3																										0
 Act 3 Junk			1					25	Potion 3	8	Ammo	3																										0
@@ -427,13 +471,13 @@ A4B (H)	7	80	1					60	Gold	9	Act 4 (H) Equip B	42	Act 4 (H) Good	10	Nothing	45		
 A5A (H)	7	82	1					60	Gold	9	Act 5 (H) Equip A	42	Act 5 (H) Good	10	Nothing	45																						0
 A5B (H)	7	83	1					60	Gold	9	Act 5 (H) Equip B	42	Act 5 (H) Good	10	Nothing	45																						0
 A5C (H)	7	85	1					60	Gold	9	Act 5 (H) Equip C	42	Act 5 (H) Good	10	Nothing	45																						0
-Cpot 1	12	0	2					1	Potion 1	1																												0
-Cpot 2	12	12	2					1	Potion 2	1																												0
-Cpot 3	12	20	2					1	Potion 3	1																												0
-Cpot 4	12	26	2					1	Potion 4	1																												0
-Cpot 5	12	32	2					1	Potion 5	1																												0
-Cpot 6	12	38	2					15	Potion 6	14	rvs	1																										0
-Cpot 7	12	63	2					15	Potion 7	14	rvl	1																										0
+Cpot 1	12	0	2						Potion 1	1																												0
+Cpot 2	12	12	2						Potion 2	1																												0
+Cpot 3	12	20	2						Potion 3	1																												0
+Cpot 4	12	26	2						Potion 4	1																												0
+Cpot 5	12	32	2						Potion 5	1																												0
+Cpot 6	12	38	2						Potion 6	1																												0
+Cpot 7	12	63	2						Potion 7	1																												0
 Act 1 Citem A	11	0	1	384	512	768	1024	0	"gld,mul=384"	60	Act 1 Equip A	36	Act 1 Good	4																								0
 Act 1 Citem B	11	5	1	384	512	768	1024	0	"gld,mul=384"	60	Act 1 Equip B	36	Act 1 Good	4																								0
 Act 1 Citem C	11	9	1	384	512	768	1024	0	"gld,mul=384"	60	Act 1 Equip C	36	Act 1 Good	4																								0
@@ -1666,54 +1710,48 @@ Izual_Clone (H)			5						Clone (H)	250																												0
 Seal_Clone			3						Clone	1																												0
 Seal_Clone (N)			3						Clone (N)	1																												0
 Seal_Clone (H)			3						Clone (H)	1																												0
-Hpotion 1			1						hp1	8	hp2	3	mp1	3	mp2	2	rvs	1																				0
-Hpotion 2			1						hp1	1	hp2	4	hp3	3	mp2	2	mp3	2	rvs	1																		0
-Hpotion 3			1						hp2	1	hp3	4	hp4	3	mp3	2	mp4	2	rvs	1																		0
-Hpotion 4			1						hp3	1	hp4	4	hp5	3	mp4	2	mp5	2	rvs	1																		0
-Hpotion 5			1						hp3	1	hp4	4	hp5	4	mp5	4	rvs	1																				0
-Hpotion 6			1						hp4	4	hp5	6	mp4	2	mp5	4	rvs	1																				0
-Act 1 Cpot A	12	0	2					0	Hpotion 1	1																												0
-Act 1 Cpot B	12	5	2					0	Hpotion 1	1																												0
-Act 1 Cpot C	12	9	2					0	Hpotion 1	1																												0
-Act 2 Cpot A	12	12	2					0	Hpotion 2	1																												0
-Act 2 Cpot B	12	15	2					0	Hpotion 2	1																												0
-Act 2 Cpot C	12	18	2					0	Hpotion 2	1																												0
-Act 3 Cpot A	12	20	2					0	Hpotion 3	1																												0
-Act 3 Cpot B	12	22	2					0	Hpotion 3	1																												0
-Act 3 Cpot C	12	24	2					0	Hpotion 3	1																												0
-Act 4 Cpot A	12	26	2					0	Hpotion 3	1	Hpotion 4	2																										0
-Act 4 Cpot B	12	29	2					0	Hpotion 3	1	Hpotion 4	2																										0
-Act 5 Cpot A	12	32	2					0	Hpotion 4	1	Hpotion 5	2																										0
-Act 5 Cpot B	12	34	2					0	Hpotion 4	1	Hpotion 5	2																										0
-Act 5 Cpot C	12	36	2					0	Hpotion 4	1	Hpotion 5	2																										0
-Act 1 (N) Cpot A	12	38	2					0	Hpotion 4	1	Hpotion 5	2	Hpotion 6	4																								0
-Act 1 (N) Cpot B	12	40	2					0	Hpotion 4	1	Hpotion 5	2	Hpotion 6	4																								0
-Act 1 (N) Cpot C	12	41	2					0	Hpotion 4	1	Hpotion 5	2	Hpotion 6	4																								0
-Act 2 (N) Cpot A	12	42	2					0	Hpotion 4	1	Hpotion 5	2	Hpotion 6	4																								0
-Act 2 (N) Cpot B	12	44	2					0	Hpotion 4	1	Hpotion 5	2	Hpotion 6	4																								0
-Act 2 (N) Cpot C	12	45	2					0	Hpotion 4	1	Hpotion 5	2	Hpotion 6	4																								0
-Act 3 (N) Cpot A	12	46	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 3 (N) Cpot B	12	48	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 3 (N) Cpot C	12	50	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 4 (N) Cpot A	12	51	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 4 (N) Cpot B	12	54	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 5 (N) Cpot A	12	57	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 5 (N) Cpot B	12	60	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 5 (N) Cpot C	12	62	2					0	rvs	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 1 (H) Cpot A	12	63	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 1 (H) Cpot B	12	66	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 1 (H) Cpot C	12	68	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 2 (H) Cpot A	12	69	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 2 (H) Cpot B	12	71	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 2 (H) Cpot C	12	72	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 3 (H) Cpot A	12	74	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 3 (H) Cpot B	12	75	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 3 (H) Cpot C	12	77	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 4 (H) Cpot A	12	78	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8												5										0
-Act 4 (H) Cpot B	12	80	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8												5										0
-Act 5 (H) Cpot A	12	81	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 5 (H) Cpot B	12	83	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
-Act 5 (H) Cpot C	12	85	2					0	rvl	1	Hpotion 4	2	Hpotion 5	4	Hpotion 6	8																						0
+Act 1 Cpot A	12	0	2					0	Potion 1	1																												0
+Act 1 Cpot B	12	5	2					0	Potion 1	1																												0
+Act 1 Cpot C	12	9	2					0	Potion 1	1																												0
+Act 2 Cpot A	12	12	2					0	Potion 2	1																												0
+Act 2 Cpot B	12	15	2					0	Potion 2	1																												0
+Act 2 Cpot C	12	18	2					0	Potion 2	1																												0
+Act 3 Cpot A	12	20	2					0	Potion 3	1																												0
+Act 3 Cpot B	12	22	2					0	Potion 3	1																												0
+Act 3 Cpot C	12	24	2					0	Potion 3	1																												0
+Act 4 Cpot A	12	26	2					0	Potion 4	1																												0
+Act 4 Cpot B	12	29	2					0	Potion 4	1																												0
+Act 5 Cpot A	12	32	2					0	Potion 5	1																												0
+Act 5 Cpot B	12	34	2					0	Potion 5	1																												0
+Act 5 Cpot C	12	36	2					0	Potion 5	1																												0
+Act 1 (N) Cpot A	12	38	2					0	Potion 6	1																												0
+Act 1 (N) Cpot B	12	40	2					0	Potion 6	1																												0
+Act 1 (N) Cpot C	12	41	2					0	Potion 6	1																												0
+Act 2 (N) Cpot A	12	42	2					0	Potion 6	1																												0
+Act 2 (N) Cpot B	12	44	2					0	Potion 6	1																												0
+Act 2 (N) Cpot C	12	45	2					0	Potion 6	1																												0
+Act 3 (N) Cpot A	12	46	2					0	Potion 6	2																												0
+Act 3 (N) Cpot B	12	48	2					0	Potion 6	2																												0
+Act 3 (N) Cpot C	12	50	2					0	Potion 6	2																												0
+Act 4 (N) Cpot A	12	51	2					0	Potion 6	2																												0
+Act 4 (N) Cpot B	12	54	2					0	Potion 6	2																												0
+Act 5 (N) Cpot A	12	57	2					0	Potion 6	2																												0
+Act 5 (N) Cpot B	12	60	2					0	Potion 6	2																												0
+Act 5 (N) Cpot C	12	62	2					0	Potion 6	2																												0
+Act 1 (H) Cpot A	12	63	2					0	Potion 7	2																												0
+Act 1 (H) Cpot B	12	66	2					0	Potion 7	2																												0
+Act 1 (H) Cpot C	12	68	2					0	Potion 7	2																												0
+Act 2 (H) Cpot A	12	69	2					0	Potion 7	2																												0
+Act 2 (H) Cpot B	12	71	2					0	Potion 7	2																												0
+Act 2 (H) Cpot C	12	72	2					0	Potion 7	2																												0
+Act 3 (H) Cpot A	12	74	2					0	Potion 7	2																												0
+Act 3 (H) Cpot B	12	75	2					0	Potion 7	2																												0
+Act 3 (H) Cpot C	12	77	2					0	Potion 7	2																												0
+Act 4 (H) Cpot A	12	78	2					0	Potion 7	2																												0
+Act 4 (H) Cpot B	12	80	2					0	Potion 7	2																												0
+Act 5 (H) Cpot A	12	81	2					0	Potion 7	2																												0
+Act 5 (H) Cpot B	12	83	2					0	Potion 7	2																												0
+Act 5 (H) Cpot C	12	85	2					0	Potion 7	2																												0
 Act 1 Super Ax	19	0	-4	512	654	972	1024	0	Act 1 Uitem A	2	Act 1 Cpot A	2																										0
 Act 1 Super Bx	19	5	-4	512	654	972	1024	0	Act 1 Uitem B	2	Act 1 Cpot B	2																										0
 Act 1 Super Cx	19	9	-4	512	654	972	1024	0	Act 1 Uitem C	2	Act 1 Cpot C	2																										0
@@ -1888,7 +1926,7 @@ Endgame Map Lich King Unique			1	1024				0	Frostmourne	1	Lich King Essence Fire	
 Endgame Map Rathma Unique			1	1024				0	Rathma Eternal Skull	1																												0
 Endgame Map Lucion Unique			1					0	u18	1																												0
 Endgame Map Uber Lucion Unique			1					0	u17	1																												0
-Endgame Map Potion			2						hp4	4	hp5	8	mp4	2	mp5	4	rvl	6	Nothing	24																		0
+Endgame Map Potion			2						Potion 8	24	Nothing	24																										0
 Class Items Tier 29 Subclass			1						06j	2	50d	4	11j	2	12j	2	51d	4																				0
 Class Items Tier 30 Subclass			1						03h	2	03e	2	45e	10	64k	2																						0
 Class Items Tier 31 Subclass			1						12k	2	63k	2																										0
