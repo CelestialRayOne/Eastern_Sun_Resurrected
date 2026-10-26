@@ -1,0 +1,94 @@
+# Alchemy (celestialrayone.alchemy)
+#
+# The Alchemist perks that need engine code. Each perk is the saved perk stat
+# the Specializations plugin writes; a perk works while its stat is above 0.
+# Set a perk stat to -1 to switch that perk off.
+#
+#   Blessed Vials       While a Healing Potion effect runs: less damage taken.
+#                       Shrine Rework applies it at the same point as the Armor
+#                       shrine's reduction, so it needs Shrine Rework 1.2.0 with
+#                       its Armor effect on. While a Mana Potion effect runs:
+#                       immune to Mana Burn, which needs Monster Affixes 1.6.0.
+#   Compounded Synergy  Every potion effect is stronger by
+#                       compounded_synergy_percent for each different potion
+#                       effect running on the player, itself included. Effects
+#                       already running grow and shrink as other potion effects
+#                       start and end. The potion effects are the states of the
+#                       healing_mana and utility items below. Rejuvenation
+#                       potions heal that much more too.
+#   Savvy Elixirs       A utility potion has a chance not to be used up; its
+#                       effect still applies.
+#   Endless Vials       Healing and Mana Potion effects no longer end when life
+#                       or mana is full; they run their whole duration.
+#   Bottomless Vials    Healing and Mana Potions are never used up.
+#   Serendipity         A utility potion has a chance to also give the effect of
+#                       one random shrine from [serendipity] shrine_codes.
+#
+# Elixir of Reincarnation needs no perk stat here: while the [reincarnation]
+# state is on a player, a hit that would kill instead restores full life and
+# mana, removes that state (and the elixir stat on it), makes the player
+# invulnerable for a moment and starts the cooldown: the cooldown stat holds the
+# seconds left and counts down to 0, also after a reload when the stat is
+# saved. misc.txt's UsageConditionCalc does the rest; [cooldown_sweep] shows it
+# on the elixirs.
+#
+# Console: "alchemy" prints the plugin state and the counters.
+
+enabled = true
+
+[perks]
+blessed_vials      = 933
+compounded_synergy = 935
+savvy_elixirs      = 936
+endless_vials      = 937
+bottomless_vials   = 940
+serendipity        = 941
+
+[values]
+blessed_vials_reduction    = 5   # percent less damage taken (1 to 100)
+compounded_synergy_percent = 5   # percent stronger per running potion effect (1 to 100)
+savvy_elixirs_chance       = 25  # percent chance a utility potion is kept (1 to 100)
+serendipity_chance         = 15  # percent chance of a shrine effect (1 to 100)
+
+[serendipity]
+# shrines.txt Code values Serendipity picks from, each equally likely.
+#   1 Refilling   6 Armor   7 Combat   8 Fire resist   9 Cold resist
+#   10 Lightning resist   11 Poison resist   12 Skill   13 Mana Recharge
+#   14 Stamina   15 Experience
+# The effect is the one the shrine itself gives (with Shrine Rework's changes),
+# on the drinking player only.
+shrine_codes = [1, 6, 7, 8, 9, 10, 11, 12, 13, 15]
+
+[states]
+# The potion effect states Blessed Vials looks for. (Endless Vials works inside
+# the game's own potion code, which always uses healthpot 100 and manapot 106.)
+healing_potion = 100  # states.txt healthpot
+mana_potion    = 106  # states.txt manapot
+
+[reincarnation]
+state               = 677  # the elixir's state
+cooldown_stat       = 945  # the seconds of cooldown left: cooldown_seconds when it saves a player, 0 when ready
+cooldown_seconds    = 300
+invulnerable_frames = 25   # 25 frames = 1 second
+
+[cooldown_sweep]
+# While the cooldown runs, a cooldown sweep is drawn over these items wherever
+# the game draws their icon (inventory, belt, stash, cube), shrinking as the
+# seconds run out. By default it is the Crossbow Charges sweep with the same
+# color and opacity, so it looks like the skill buttons' one. HD graphics only.
+enabled = true
+items   = ["35p"]
+sprite  = "PANEL/CrossbowCharges/Sweep"  # under data/hd/global/ui/, like an ImageWidget filename
+color   = [0, 0, 0]                      # RGB, 0 to 255
+opacity = 45                             # percent
+
+[items]
+# misc.txt codes the potion perks act on.
+# healing_mana: Endless Vials, Bottomless Vials, Compounded Synergy.
+# utility: Savvy Elixirs, Serendipity, Compounded Synergy.
+# rejuvenation: Compounded Synergy's extra healing only.
+healing_mana = ["hp1", "hp2", "hp3", "hp4", "hp5", "mp1", "mp2", "mp3", "mp4", "mp5"]
+utility = ["01p", "02p", "03p", "04p", "05p", "06p", "07p", "08p", "09p", "10p", "11p", "12p",
+           "13p", "14p", "15p", "16p", "17p", "18p", "19p", "20p", "21p", "22p", "23p", "24p",
+           "25p", "26p", "27p", "28p", "29p", "30p", "31p", "32p", "33p", "34p", "vps", "yps", "wms"]
+rejuvenation = ["rvs", "rvl"]

@@ -1,0 +1,528 @@
+# celestialrayone.archaeology
+#
+# Archaeology
+#   The Archaeologist perks of the specialization system that need code. A
+#   perk counts while the character's own value of its stat is above 0 (the
+#   value the specializations plugin writes when the perk is learned). Each
+#   perk below names its stat, so the stat ids follow your itemstatcost.txt.
+#
+# Built for D2RLoader 1.3.1 (D2R 3.3). Every native site is checked byte for
+# byte before anything is written; on any other build the plugin changes
+# nothing and the console command "archaeology" says why. "archaeology items"
+# lists the bonus on each item and on your character.
+
+[archaeology]
+
+# Master switch. false loads the plugin without changing the game.
+enabled = true
+
+# true writes the first perk events to the plugin log (the first 200 lines).
+# Keep false for play.
+diagnostics = false
+
+# Who a drop belongs to (Superior Finds, Gold Find, Identified Drops): the
+# player who got the kill or opened the container. true: a summon's or
+# hireling's kill counts for its owner. false: only the player's own kills.
+credit_minion_owner = true
+
+# Archaeology perk 4 (+10% quantity of items dropped) needs no setting here:
+# the perk's node gives extra_items (426), which Item Quantity acts on.
+
+# Containers Opened (archaeology_1)
+#   Every container the character opens adds percent_per_container to each
+#   stat in total_damage_stats for window_seconds: three containers opened
+#   within the window give three times the bonus. A container counts once,
+#   when it is opened and rolls its loot: chests, caskets, sarcophagi, urns,
+#   jars, baskets, barrels, bodies, corpses, crates, coffins, the evil urn and
+#   the other looted objects. Exploding barrels, armor stands, weapon racks and
+#   bookshelves drop their items another way and do not count.
+#   The bonus sits on the character itself, as a hidden stat list that is
+#   never saved. Combat always uses it. show_on_character_sheet: the character
+#   sheet shows it too, when the game's host runs on this PC (single player,
+#   or you host the game).
+#   total_damage_stats: the stats that make up "total damage", the same ones
+#   Unbreakable Gear raises. Each is its own multiplier layer.
+[containers]
+enabled = true
+perk_stat = 976
+percent_per_container = 5
+window_seconds = 15
+show_on_character_sheet = true
+total_damage_stats = [
+  398,  # generictotalmultiplier
+  1012, # item_maxdamage_percent4
+  1013, # item_mindamage_percent4
+  489,  # total_elemental_min_damage
+  493,  # total_elemental_max_damage
+  495,  # total_poison_magic_min_damage
+  496,  # total_poison_magic_max_damage
+]
+
+# Superior Finds (archaeology_2)
+#   A dropped item whose quality roll ends in low or normal quality is
+#   superior instead chance_percent of the time. The perk steps into the
+#   game's own quality roll right after its superior roll fails, so only items
+#   the game can roll superior are affected (weapons, armor and any other type
+#   without the itemtypes.txt Normal or Magic flag); gems, runes, potions and
+#   other always-normal items never are, and neither is anything made by
+#   vendors, gambling, the Horadric Cube or quests. The item then gets its
+#   superior modifiers (qualityitems.txt) like any superior drop.
+#   Drops count for the player who got the kill or opened the container.
+[superior_drops]
+enabled = true
+perk_stat = 977
+chance_percent = 25
+
+# Socketed Runes (archaeology_3)
+#   Every stat listed in stats is raised by bonus_percent on every rune
+#   socketed in anything whose stats reach the character: equipped gear in the
+#   active weapon set and anything else the game merges into the character.
+#   Only the runes' own modifiers (gems.txt) count, never a runeword's bonus or
+#   the host item's own modifiers.
+#   Pooling: the runes' values are added up per stat and parameter, the
+#   percent is taken once from the sum and rounded once, so nothing is lost to
+#   rounding rune by rune: three runes with +7 strength give +1 at 5%, where
+#   each alone gives 0. The pooled bonus is split back over the host items so
+#   each tooltip shows its own share, and the point the pooling gains goes to
+#   the item that lost the most to rounding. Rounding follows the game: toward
+#   zero. An equipped item that does not count right now (the inactive weapon
+#   set, a broken item) still gets its own bonus but adds nothing to the pool.
+#   For a stat with a parameter (a skill, a class, an aura, a proc) only the
+#   value rises and the parameter stays. item_charged_skill (204) is never
+#   raised: its value packs the charges and the maximum charges.
+#   item_codes: the runes that count, by their misc.txt code: the gems.txt rows
+#   named Rune. The crystals in gems.txt (Frozen Soul to Tainted Tourmarine,
+#   every grade) carry the same misc.txt type "rune", so the item type cannot
+#   tell them apart; they are not listed and never raised. Delete a code to
+#   leave that rune out.
+#   show_in_tooltips = true shows the bonus in the host item's tooltip: the
+#   game draws an item's blue lines only from the item's own modifier lists,
+#   so on your screen the bonus is written into them (and taken back out the
+#   moment the perk or the item no longer counts). The game itself keeps the
+#   bonus in a list that is never saved. false keeps it apart on screen too: it
+#   still counts, it just does not show.
+#   per_item_stats: stats that only change the item they sit in (itemstatcost
+#   op 13: enhanced defense, enhanced damage, maximum durability). Pooling
+#   never moves them between items: each host pools its own.
+#   stats: one itemstatcost.txt id per line; delete a line to stop raising
+#   that stat.
+[socketed_runes]
+enabled = true
+perk_stat = 978
+bonus_percent = 5
+item_codes = [
+  "r01", "r02", "r03", "r04", "r05", "r06", "r07", "r08",   # I U Shi Ka N Ku Yo Ki
+  "r09", "r10", "r11", "r12", "r13", "r14", "r15", "r16",   # Ri Mi Ya A Tsu Chi Sa Yu
+  "r17", "r18", "r19", "r20", "r21", "r22", "r23", "r24",   # Ke E Ko Ra O Ho Me Ru
+  "r25", "r26", "r27", "r28", "r29", "r30", "r31", "r32",   # Ta To Wa Ha Na Ni Se Fu
+  "r33", "r34", "r35", "r36", "r37", "r38", "r39", "r40",   # Ma Hi Mo No Te Ro So Mu
+  "r41", "r42", "r43", "r44", "r45", "r46", "r50", "r51",   # Ne Re Su He Nu Wo Nul El
+  "r52", "r53", "r54", "r55", "r56", "r57", "r58", "r59",   # Eld Tir Nef Eth Ith Tal Ral Ort
+  "r60", "r61", "r62", "r63", "r64", "r65", "r66", "r67",   # Thul Amn Sol Shael Dol Hel Io Lum
+  "r68", "r69", "r70", "r71", "r72", "r73", "r74", "r75",   # Ko Fal Lem Pul Um Mal Ist Gul
+  "r76", "r77", "r78", "r79", "r80", "r81", "r82", "r83",   # Vex Ohm Lo Sur Ber Jah Cham Zod
+  "r84", "r85", "r86", "r87", "r88", "r89", "r90", "r91",   # Moon Fire Water Wood Metal Earth Sun Thunder
+  "r92", "r93", "r94", "r95", "r96", "r97",                 # Wind Dragon Life Death Heaven God
+]
+show_in_tooltips = true
+per_item_stats = [
+  16,   # item_armor_percent
+  17,   # item_maxdamage_percent
+  18,   # item_mindamage_percent
+  75,   # item_maxdurability_percent
+]
+stats = [
+  0,    # strength
+  1,    # energy
+  2,    # dexterity
+  3,    # vitality
+  7,    # maxhp
+  9,    # maxmana
+  11,   # maxstamina
+  16,   # item_armor_percent
+  17,   # item_maxdamage_percent
+  18,   # item_mindamage_percent
+  19,   # tohit
+  20,   # toblock
+  21,   # mindamage
+  22,   # maxdamage
+  23,   # secondary_mindamage
+  24,   # secondary_maxdamage
+  27,   # manarecoverybonus
+  28,   # staminarecoverybonus
+  31,   # armorclass
+  32,   # armorclass_vs_missile
+  33,   # armorclass_vs_hth
+  34,   # normal_damage_reduction
+  35,   # magic_damage_reduction
+  36,   # damageresist
+  37,   # magicresist
+  38,   # maxmagicresist
+  39,   # fireresist
+  40,   # maxfireresist
+  41,   # lightresist
+  42,   # maxlightresist
+  43,   # coldresist
+  44,   # maxcoldresist
+  45,   # poisonresist
+  46,   # maxpoisonresist
+  48,   # firemindam
+  49,   # firemaxdam
+  50,   # lightmindam
+  51,   # lightmaxdam
+  52,   # magicmindam
+  53,   # magicmaxdam
+  54,   # coldmindam
+  55,   # coldmaxdam
+  57,   # poisonmindam
+  58,   # poisonmaxdam
+  60,   # lifedrainmindam
+  62,   # manadrainmindam
+  67,   # velocitypercent
+  68,   # attackrate
+  74,   # hpregen
+  76,   # item_maxhp_percent
+  77,   # item_maxmana_percent
+  78,   # item_attackertakesdamage
+  79,   # item_goldbonus
+  80,   # item_magicbonus
+  83,   # item_addclassskills
+  85,   # item_addexperience
+  86,   # item_healafterkill
+  87,   # item_reducedprices
+  89,   # item_lightradius
+  93,   # item_fasterattackrate
+  96,   # item_fastermovevelocity
+  97,   # item_nonclassskill
+  99,   # item_fastergethitrate
+  102,  # item_fasterblockrate
+  105,  # item_fastercastrate
+  107,  # item_singleskill
+  109,  # curse_resistance
+  110,  # item_poisonlengthresist
+  111,  # item_normaldamage
+  112,  # item_howl
+  114,  # item_damagetomana
+  116,  # item_fractionaltargetac
+  119,  # item_tohit_percent
+  120,  # item_damagetargetac
+  121,  # item_demondamage_percent
+  122,  # item_undeaddamage_percent
+  123,  # item_demon_tohit
+  124,  # item_undead_tohit
+  126,  # item_elemskill
+  127,  # item_allskills
+  128,  # item_attackertakeslightdamage
+  134,  # item_freeze
+  135,  # item_openwounds
+  136,  # item_crushingblow
+  138,  # item_manaafterkill
+  141,  # item_deadlystrike
+  142,  # item_absorbfire_percent
+  143,  # item_absorbfire
+  144,  # item_absorblight_percent
+  145,  # item_absorblight
+  146,  # item_absorbmagic_percent
+  147,  # item_absorbmagic
+  148,  # item_absorbcold_percent
+  149,  # item_absorbcold
+  150,  # item_slow
+  151,  # item_aura
+  155,  # item_reanimate
+  156,  # item_pierce
+  158,  # item_explosivearrow
+  159,  # item_throw_mindamage
+  160,  # item_throw_maxdamage
+  182,  # armor_override_percent
+  187,  # item_pierce_cold_immunity
+  188,  # item_addskill_tab
+  189,  # item_pierce_fire_immunity
+  190,  # item_pierce_light_immunity
+  191,  # item_pierce_poison_immunity
+  192,  # item_pierce_damage_immunity
+  193,  # item_pierce_magic_immunity
+  195,  # item_skillonattack
+  196,  # item_skillonkill
+  197,  # item_skillondeath
+  198,  # item_skillonhit
+  200,  # item_charge_noconsume
+  201,  # item_skillongethit
+  214,  # item_armor_perlevel
+  216,  # item_hp_perlevel
+  217,  # item_mana_perlevel
+  218,  # item_maxdamage_perlevel
+  219,  # item_maxdamage_percent_perlevel
+  220,  # item_strength_perlevel
+  221,  # item_dexterity_perlevel
+  222,  # item_energy_perlevel
+  223,  # item_vitality_perlevel
+  224,  # item_tohit_perlevel
+  225,  # item_tohitpercent_perlevel
+  226,  # item_cold_damagemax_perlevel
+  227,  # item_fire_damagemax_perlevel
+  228,  # item_ltng_damagemax_perlevel
+  229,  # item_pois_damagemax_perlevel
+  230,  # item_resist_cold_perlevel
+  231,  # item_resist_fire_perlevel
+  232,  # item_resist_ltng_perlevel
+  233,  # item_resist_pois_perlevel
+  238,  # item_thorns_perlevel
+  239,  # item_find_gold_perlevel
+  240,  # item_find_magic_perlevel
+  242,  # item_stamina_perlevel
+  244,  # item_damage_undead_perlevel
+  247,  # item_crushingblow_perlevel
+  250,  # item_deadlystrike_perlevel
+  255,  # strengthpercent
+  256,  # dexteritypercent
+  257,  # vitalitypercent
+  258,  # energypercent
+  265,  # passive_summ_elemental_resist
+  266,  # passive_summ_life
+  267,  # passive_summ_phys_resist
+  287,  # item_skeleton_trade
+  288,  # item_max_skeleton_king
+  303,  # passive_summ_mastery_total
+  329,  # passive_fire_mastery
+  330,  # passive_ltng_mastery
+  331,  # passive_cold_mastery
+  332,  # passive_pois_mastery
+  333,  # passive_fire_pierce
+  334,  # passive_ltng_pierce
+  335,  # passive_cold_pierce
+  336,  # passive_pois_pierce
+  338,  # passive_dodge
+  339,  # passive_avoid
+  340,  # passive_evade
+  358,  # passive_mag_pierce
+  366,  # passive_dmg_pierce
+  371,  # item_skill_cooldown
+  372,  # trap_limit
+  373,  # twister_limit
+  374,  # blade_nova_max_res
+  376,  # item_skillontakedmg
+  377,  # item_skillontakedmg_hidden
+  378,  # item_skillonkill_hidden
+  379,  # passive_summ_limit
+  391,  # total_fire_resist
+  392,  # total_cold_resist
+  393,  # total_lightning_resist
+  394,  # total_poison_resist
+  398,  # generictotalmultiplier
+  400,  # total_magic_resist
+  404,  # item_skillonattack_hidden
+  405,  # item_skillonhit_hidden
+  409,  # totalattackspeed
+  413,  # potionmultiplier
+  415,  # item_skillongethit_hidden
+  422,  # item_skilloncast
+  423,  # item_skilloncast_hidden
+  426,  # extra_items
+  434,  # criticaldamage
+  435,  # bleedmindam
+  436,  # bleedmaxdam
+  466,  # item_maxdamage_percent2
+  467,  # item_mindamage_percent2
+  482,  # passive_mag2_mastery
+  483,  # passive_wind_mastery
+  486,  # passive_summ_mastery
+  489,  # total_elemental_min_damage
+  493,  # total_elemental_max_damage
+  495,  # total_poison_magic_min_damage
+  496,  # total_poison_magic_max_damage
+  498,  # item_elemskillcold
+  499,  # item_elemskilllight
+  500,  # item_elemskillpoison
+  501,  # item_elemskillmagic
+  502,  # item_elemskillfire
+  505,  # lifeonstriking
+  506,  # manaonstriking
+  516,  # projectilespeed
+  519,  # consumeeffect
+  520,  # sigillimit
+  522,  # miasmachainslimit
+]
+
+# Gold Find (archaeology_5)
+#   Every gold pile dropped for the character holds percent more gold. The
+#   game first adds Gold Find (item_goldbonus, the killer's and its owner's)
+#   and this multiplies the result, so the two multiply: +100% Gold Find and
+#   +20% here turn 1000 gold into 2400. Monster kills and opened containers
+#   count; gold from anything else (vendors, quests, the cube) does not.
+[gold_find]
+enabled = true
+perk_stat = 980
+percent = 20
+
+# Identified Drops (archaeology_6)
+#   Every item dropped for the character (monster kills and opened
+#   containers) drops identified, so magic, rare, set and unique items show
+#   their modifiers on the ground. Items made any other way are untouched.
+[identified_drops]
+enabled = true
+perk_stat = 981
+
+# Magic Runewords (archaeology_13)
+#   The character can make runewords in magic items exactly as in normal and
+#   superior ones: the game's runeword check (ITEMS_GetRunesTxtRecordFromItem)
+#   lets a magic item through while this character socket items. The item
+#   keeps its magic modifiers and gains the runeword's. Once made, a magic
+#   runeword stays one for everyone (saved, traded, shown).
+[magic_runewords]
+enabled = true
+perk_stat = 988
+
+# Mass Dig (archaeology_14)
+#   A server skill function of its own, srvdofunc below (D2R 3.3 fills 0 to
+#   171; the plugin puts Mass Dig in this empty slot of the same table). Give
+#   the Mass Dig row of skills.txt this srvdofunc. When it is cast, every
+#   monster corpse within radius is searched exactly as Find Item searches
+#   one, with Find Item's own routines: the corpse must be searchable and not
+#   searched before (Find Item and Mass Dig share the mark), the find chance
+#   is the Mass Dig row's calc1, and what drops is picked by its Param1 to
+#   Param4, so copying Find Item's calc1 and Params gives Find Item's odds.
+#   Find Item itself is untouched.
+#   radius: in subtiles (the unit of skills.txt aura ranges). -1 uses the
+#   Mass Dig row's own aurarangecalc at the skill's level instead, evaluated the
+#   way Static Field and the curses evaluate theirs; a row without one searches
+#   nothing. Either way the radius stays within 1 to 100.
+#   chance_percent: -1 uses the row's calc1; 0 to 100 overrides it.
+#   The perk gives the skill: while the character has perk_stat, it holds
+#   item_nonclassskill (97) for skill_id at skill_level, the way an item gives
+#   an oskill, so the skill shows up and can be bound like one. Nothing is
+#   saved; unlearning the perk takes the skill away. skill_id is the Mass Dig
+#   row's *Id in skills.txt (0 gives no skill).
+[mass_dig]
+enabled = true
+srvdofunc = 172
+radius = 10
+chance_percent = -1
+perk_stat = 989
+skill_id = 0
+skill_level = 1
+
+# Skill Scrolls
+#   Using one of these items casts a skill and uses the item up, as a scroll
+#   is. Each entry is "item code,skill id,skill level". The skill runs on the
+#   server as an item-cast skill (skills.txt ItemEffect applies), centered on
+#   the player: buffs, novas, summons and area effects work as they are;
+#   aimed skills go toward the player's current target. Give the item a misc.txt
+#   pSpell the client uses at once, with no target cursor (Town Portal's 2
+#   does); the plugin replaces that pSpell's effect for these items only.
+[skill_scrolls]
+enabled = true
+scrolls = []
+
+# Sockets (archaeology_7)
+#   A dropped item of item_types with no socket gets one chance_percent of
+#   the time, through the game's own socket routine (ITEMS_AddSockets), so the
+#   base's and the quality's socket limits still hold: an item that can take
+#   no socket gets none. Items that already rolled sockets keep them.
+#   item_types: the equippable types that count (charms are left out):
+#   weapons, armor, rings, amulets, the four quiver types, the mercenary
+#   helms, the caster and combat scepters and the combat staves.
+#   socketed_twins: "base:twin" pairs for bases that cannot hold a socket
+#   themselves (items.txt gemsockets 0, no hasinv) but have a socketed twin, as
+#   the quivers do: when the roll hits, the twin drops instead, with its
+#   socket, exactly what the Adds Socket cube recipes turn them into.
+[sockets]
+enabled = true
+perk_stat = 982
+chance_percent = 50
+item_types = ["weap", "armo", "ring", "amul", "bowq", "xboq", "arrm", "boqm", "merc", "casce", "cosce", "csta"]
+socketed_twins = ["aq2:aq0", "cq2:cq0"]
+
+# Sell Value (archaeology_8)
+#   A dropped magic item of item_types drops as a gold pile worth what a
+#   vendor pays for it, computed by the game's own vendor price routine (the
+#   call selling uses): the item's price, npc.txt "buy mult" of that vendor
+#   (256 for every ESR vendor, a quarter of the price) and its "max buy" cap
+#   for the difficulty. The pile holds exactly that: neither Gold Find nor the
+#   Gold Find perk above is added to it.
+#   vendor: the monstats.txt row (hcIdx) of the vendor whose prices count.
+#   511 is Larzuk; every ESR vendor has the same buy mult, and the Act 5
+#   vendors have the highest max buy (25000 / 50000 / 50000).
+[sell_value]
+enabled = true
+perk_stat = 983
+vendor = 511
+item_types = ["weap", "armo"]
+
+# Coupon Ethereal (archaeology_9)
+#   An item made by a Horadric Cube recipe with a coupon or wild card among
+#   its inputs turns ethereal chance_percent of the time. Only items the game
+#   itself lets drop ethereal can turn: weapons and armor with durability,
+#   not low quality, not set items; jewelry never does. It goes through the
+#   game's own ethereal routine, so it gets the ethereal damage or defense
+#   and half its maximum durability, like an ethereal drop.
+#   coupon_types: input item types that make a recipe a coupon recipe.
+#   exclude_item_types: types that never turn ethereal ("miss" is every bow
+#   and crossbow).
+[coupon_ethereal]
+enabled = true
+perk_stat = 984
+chance_percent = 5
+coupon_types = ["coup"]
+exclude_item_types = ["miss"]
+
+# Mythical Uniques (archaeology_10)
+#   A dropped item on a mythical base is unique bonus_percent more often:
+#   after the game's unique roll fails, a second roll on the same seed gives
+#   exactly bonus_percent more of the unique chance (capped at 100%). It
+#   multiplies with magic find and Relic Hunter.
+#   item_codes: the mythical bases (every base named "Mythical", plus mrn
+#   and mam).
+[mythical_uniques]
+enabled = true
+perk_stat = 985
+bonus_percent = 25
+item_codes = [
+  "7wd", "m01", "m02", "m03",                         # Sword, Marksman Bow, Odysseus Crossbow, Titan's Maul
+  "m04", "m05", "m07", "m08",                         # Demonic Wand, Soul Destroyer, Dimensional Shard, Balanced Dagger
+  "m09", "m11", "m12", "m13",                         # Magic Blade, Arcane Staff, Seraphic Scepter, Scissors Suwayyah
+  "m14", "m16", "m17", "m18",                         # Ceremonial Dagger, Rapier, Celestial Scepter, Death Blade
+  "dd1", "m21", "m22", "m23",                         # Death Blade Frostmourne, Razor Axe, Hellfire Sword, Sepulcher Wand
+  "m24", "m25", "m26", "m27",                         # Shade Bow, Marksman Crossbow, Balanced Hatchet, Balanced Dagger
+  "m28", "m29", "m30", "m31",                         # Whale Hunter, Petrified Staff, Ancient Bow, Matriarchal Javelin
+  "m32", "m33", "m34", "m35",                         # Whale Hunter, Ancient Shards, Shillelagh, Celestial Blade
+  "m36", "m37", "m38", "m39",                         # Mage Staff, Katana, Arreat's Hatchet, Kagekiri
+  "m40", "m41", "m42", "m43",                         # Slayer Axe, Thorned Club, Blessed Scepter, Dire Flail
+  "m44", "m45", "m46", "m47",                         # Military Hammer, Ancient Maul, Jeweled Edge, Ancient Spike
+  "m48", "m49", "m50", "m51",                         # Impaler, Death Reaper, Mystic Staff, Raging Knuckle
+  "m52", "m53", "m54", "m55",                         # Wrecking Arm, Matriarchal Bow, Grand Matron Bow, Elven Bow
+  "m56", "m57", "m58", "m59",                         # Matriarchal Spear, Matriarchal Pike, Runic Talons, Demonic Scythe
+  "m61", "m06", "m10", "m15",                         # Abyssal Blade, Gemstoned Armor, Hemp Band, Dream Spirit
+  "m20", "m60", "mam", "mrn",                         # Diadem, Light Plate, Amulet, Ring
+  "mjw",                                              # Jewel
+]
+
+# Coupon Upgrade (archaeology_11)
+#   A dropped normal coupon becomes a random exceptional coupon
+#   exceptional_chance of the time, and an exceptional coupon (dropped as one
+#   or just upgraded) becomes a random elite coupon elite_chance of the time.
+#   Every coupon of the tier has the same chance; the tiers are the
+#   itemtypes.txt types below (blank coupons are part of their tier, the
+#   wild card of none).
+[coupon_upgrade]
+enabled = true
+perk_stat = 986
+exceptional_chance = 25
+elite_chance = 15
+normal_type = "cpn1"
+exceptional_type = "cpn2"
+elite_type = "cpn3"
+
+# Crystal Upgrade (archaeology_12)
+#   A dropped chipped or flawed crystal is the normal crystal of the same kind
+#   chance_percent of the time: a code xr* or xl* becomes xt* with the same
+#   last character. item_codes: the crystals that can upgrade.
+[crystal_upgrade]
+enabled = true
+perk_stat = 987
+chance_percent = 2
+item_codes = [
+  "xr0", "xr1", "xr2", "xr3", "xr4", "xr5",           # Chipped Crystal 1, Chipped Crystal 2, Chipped Crystal 3, Chipped Crystal 4, Chipped Crystal 5, Chipped Crystal 6
+  "xr6", "xr7", "xr8", "xr9", "xrx", "xry",           # Chipped Crystal 7, Chipped Crystal 8, Chipped Crystal 9, Chipped Crystal 10, Chipped Crystal 11, Chipped Crystal 12
+  "xl0", "xl1", "xl2", "xl3", "xl4", "xl5",           # Flawed Crystal 1, Flawed Crystal 2, Flawed Crystal 3, Flawed Crystal 4, Flawed Crystal 5, Flawed Crystal 6
+  "xl6", "xl7", "xl8", "xl9", "xlx", "xly",           # Flawed Crystal 7, Flawed Crystal 8, Flawed Crystal 9, Flawed Crystal 10, Flawed Crystal 11, Flawed Crystal 12
+]

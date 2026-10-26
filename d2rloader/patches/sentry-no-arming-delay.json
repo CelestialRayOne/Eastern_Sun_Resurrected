@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Sentry traps: no arming delay",
+  "description": "Assassin sentries (every skills.txt srvdofunc 45 skill: Charged Bolt, Lightning, Wake of Fire, Inferno and Death Sentry, plus any custom srvdofunc 45 trap) run their first AI think on the frame after they are placed instead of 25 frames (1 second) later. The trap goes straight to neutral mode, so its skills.txt summode spawn animation no longer plays. Blade Sentinel shares the trap creator but already reschedules its own first think to the next frame, so it is effectively unchanged. No other summon is touched.",
+  "patches": [
+    {
+      "description": "Trap creator tail (0x56E6A0, called only by srvdofunc 44 and 45). Stock code: MONSTERMODE_GetModeChangeInfo(trap, spawnMode) at 0x4471E0 + ModeChange(game, info, 1) at 0x4475C0, which leaves the 25-frame AI think scheduled by the shared summon routine 0x4350E0 in place. New code: AITACTICS_IdleInNeutralMode(game=r15, trap=rdi, 1) at 0x4A6D10, which switches the trap to neutral when needed, deletes the pending AI think (event type 2) and schedules it at game frame + 1. Remaining 14 bytes NOP up to mov rax,rdi at 0x56E9D4.",
+      "op": "bytes",
+      "rva": "0x56E9B5",
+      "expected": "8B 55 9B 4C 8D 45 D7 48 8B CF E8 1C 88 ED FF 45 8D 46 01 49 8B CF 48 8D 55 D7 E8 EC 8B ED FF",
+      "bytes": "4C 89 F9 48 89 FA 41 B8 01 00 00 00 E8 4A 83 F3 FF 90 90 90 90 90 90 90 90 90 90 90 90 90 90"
+    }
+  ]
+}

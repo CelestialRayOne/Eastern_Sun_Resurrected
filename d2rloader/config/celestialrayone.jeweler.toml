@@ -1,0 +1,834 @@
+# celestialrayone.jeweler
+#
+# Jeweler
+#   The Jeweler perks of the specialization system that need code. A perk
+#   counts while the character's own value of its stat is above 0 (the value
+#   the specializations plugin writes when the perk is learned). Each perk
+#   below names its stat, so the stat ids follow your itemstatcost.txt.
+#
+# How a bonus works
+#   Every perk raises modifiers the way One's Favorite does in the blacksmith
+#   plugin: the bonus is a hidden extra stat list on the item, never saved,
+#   so the item's tooltip shows the raised values and the game treats them
+#   like the item's own. For a stat with a parameter (a skill, a class, an
+#   aura, a proc) only the value rises and the parameter stays.
+#   item_charged_skill (204) is never raised: its value packs the charges and
+#   the maximum charges. Bonuses other plugins put on an item (the
+#   blacksmith's Unbreakable Gear and Extended Reach can ride on a ring or the
+#   amulet) are not the item's modifiers and are never raised.
+#
+# Which items count
+#   An item counts while its stats reach the character: equipped gear in the
+#   active weapon set, and every charm the game lets count. An equipped item
+#   that does not count right now (the inactive weapon set, a broken item)
+#   still gets its own bonus, shown in its tooltip, but adds nothing to the
+#   pools until it counts again.
+#
+# Pooling
+#   Rings of Power and Amplification add the modifiers of every counting item
+#   up per stat and parameter, take the percent once from the sum and round
+#   once, so nothing is lost to rounding item by item: six gems with +10 life
+#   give +3 life at 5%, where each gem alone would give 0. The pooled bonus
+#   is split back over the items so each tooltip shows its own share, and the
+#   point the pooling gains goes to the item that lost the most to rounding.
+#   Rounding follows the game: toward zero.
+#
+# Item types
+#   item_types takes itemtypes.txt codes. A parent code covers every type
+#   below it: "ring" covers the class rings, "amul" the class amulets, "gem"
+#   every gem and "jewl" every jewel, Colossal Jewels included.
+#
+# Built for D2RLoader 1.3.1 (D2R 3.3). Every native function the plugin calls
+# is checked byte for byte at load; on any other build the plugin changes
+# nothing and the console command "jeweler" says why. "jeweler items" lists
+# the bonus on each item of your character.
+
+[jeweler]
+
+# Master switch. false loads the plugin without changing the game.
+enabled = true
+
+# true writes every bonus change to the plugin log (the first 200 lines).
+# Keep false for play.
+diagnostics = false
+
+# true shows every plugin bonus in item tooltips: the item's blue lines and
+# the lines of what is socketed in it include the bonuses (Primordial Jewels'
+# modifier too, and the blacksmith's bonuses). The game draws an item's lines
+# only from its own modifier list, so while a tooltip is built the bonuses are
+# added into that list and taken back out right after. false leaves tooltips
+# as the game draws them; the bonuses still count.
+show_in_tooltips = true
+
+# Stats that only change the item they sit in (itemstatcost op 13: enhanced
+# defense, enhanced damage, maximum durability). Pooling never moves them
+# between items: each item pools its own.
+per_item_stats = [
+  16,   # item_armor_percent
+  17,   # item_maxdamage_percent
+  18,   # item_mindamage_percent
+  75,   # item_maxdurability_percent
+]
+
+# Arcane Infusion (jeweler_1)
+#   Every stat listed in stats is raised by bonus_percent on the character's
+#   amulet: its affixes, unique or set item modifiers, active green set bonus
+#   lines, a gemword's bonus, and the jewels and gems socketed in it. Values
+#   under 10 gain nothing at 10%.
+#   One itemstatcost.txt id per line; delete a line to stop raising that stat.
+[amulet_modifiers]
+enabled = true
+perk_stat = 961
+bonus_percent = 10
+item_types = ["amul"]
+stats = [
+  0,    # strength
+  1,    # energy
+  2,    # dexterity
+  3,    # vitality
+  7,    # maxhp
+  9,    # maxmana
+  11,   # maxstamina
+  16,   # item_armor_percent
+  17,   # item_maxdamage_percent
+  18,   # item_mindamage_percent
+  19,   # tohit
+  20,   # toblock
+  21,   # mindamage
+  22,   # maxdamage
+  23,   # secondary_mindamage
+  24,   # secondary_maxdamage
+  27,   # manarecoverybonus
+  28,   # staminarecoverybonus
+  31,   # armorclass
+  32,   # armorclass_vs_missile
+  33,   # armorclass_vs_hth
+  34,   # normal_damage_reduction
+  35,   # magic_damage_reduction
+  36,   # damageresist
+  37,   # magicresist
+  38,   # maxmagicresist
+  39,   # fireresist
+  40,   # maxfireresist
+  41,   # lightresist
+  42,   # maxlightresist
+  43,   # coldresist
+  44,   # maxcoldresist
+  45,   # poisonresist
+  46,   # maxpoisonresist
+  48,   # firemindam
+  49,   # firemaxdam
+  50,   # lightmindam
+  51,   # lightmaxdam
+  52,   # magicmindam
+  53,   # magicmaxdam
+  54,   # coldmindam
+  55,   # coldmaxdam
+  57,   # poisonmindam
+  58,   # poisonmaxdam
+  60,   # lifedrainmindam
+  62,   # manadrainmindam
+  67,   # velocitypercent
+  68,   # attackrate
+  74,   # hpregen
+  76,   # item_maxhp_percent
+  77,   # item_maxmana_percent
+  78,   # item_attackertakesdamage
+  79,   # item_goldbonus
+  80,   # item_magicbonus
+  83,   # item_addclassskills
+  85,   # item_addexperience
+  86,   # item_healafterkill
+  87,   # item_reducedprices
+  89,   # item_lightradius
+  93,   # item_fasterattackrate
+  96,   # item_fastermovevelocity
+  97,   # item_nonclassskill
+  99,   # item_fastergethitrate
+  102,  # item_fasterblockrate
+  105,  # item_fastercastrate
+  107,  # item_singleskill
+  109,  # curse_resistance
+  110,  # item_poisonlengthresist
+  111,  # item_normaldamage
+  112,  # item_howl
+  114,  # item_damagetomana
+  116,  # item_fractionaltargetac
+  119,  # item_tohit_percent
+  120,  # item_damagetargetac
+  121,  # item_demondamage_percent
+  122,  # item_undeaddamage_percent
+  123,  # item_demon_tohit
+  124,  # item_undead_tohit
+  126,  # item_elemskill
+  127,  # item_allskills
+  128,  # item_attackertakeslightdamage
+  134,  # item_freeze
+  135,  # item_openwounds
+  136,  # item_crushingblow
+  138,  # item_manaafterkill
+  141,  # item_deadlystrike
+  142,  # item_absorbfire_percent
+  143,  # item_absorbfire
+  144,  # item_absorblight_percent
+  145,  # item_absorblight
+  146,  # item_absorbmagic_percent
+  147,  # item_absorbmagic
+  148,  # item_absorbcold_percent
+  149,  # item_absorbcold
+  150,  # item_slow
+  151,  # item_aura
+  155,  # item_reanimate
+  156,  # item_pierce
+  158,  # item_explosivearrow
+  159,  # item_throw_mindamage
+  160,  # item_throw_maxdamage
+  182,  # armor_override_percent
+  187,  # item_pierce_cold_immunity
+  188,  # item_addskill_tab
+  189,  # item_pierce_fire_immunity
+  190,  # item_pierce_light_immunity
+  191,  # item_pierce_poison_immunity
+  192,  # item_pierce_damage_immunity
+  193,  # item_pierce_magic_immunity
+  195,  # item_skillonattack
+  196,  # item_skillonkill
+  197,  # item_skillondeath
+  198,  # item_skillonhit
+  200,  # item_charge_noconsume
+  201,  # item_skillongethit
+  214,  # item_armor_perlevel
+  216,  # item_hp_perlevel
+  217,  # item_mana_perlevel
+  218,  # item_maxdamage_perlevel
+  219,  # item_maxdamage_percent_perlevel
+  220,  # item_strength_perlevel
+  221,  # item_dexterity_perlevel
+  222,  # item_energy_perlevel
+  223,  # item_vitality_perlevel
+  224,  # item_tohit_perlevel
+  225,  # item_tohitpercent_perlevel
+  226,  # item_cold_damagemax_perlevel
+  227,  # item_fire_damagemax_perlevel
+  228,  # item_ltng_damagemax_perlevel
+  229,  # item_pois_damagemax_perlevel
+  230,  # item_resist_cold_perlevel
+  231,  # item_resist_fire_perlevel
+  232,  # item_resist_ltng_perlevel
+  233,  # item_resist_pois_perlevel
+  238,  # item_thorns_perlevel
+  239,  # item_find_gold_perlevel
+  240,  # item_find_magic_perlevel
+  242,  # item_stamina_perlevel
+  244,  # item_damage_undead_perlevel
+  247,  # item_crushingblow_perlevel
+  250,  # item_deadlystrike_perlevel
+  255,  # strengthpercent
+  256,  # dexteritypercent
+  257,  # vitalitypercent
+  258,  # energypercent
+  265,  # passive_summ_elemental_resist
+  266,  # passive_summ_life
+  267,  # passive_summ_phys_resist
+  287,  # item_skeleton_trade
+  288,  # item_max_skeleton_king
+  303,  # passive_summ_mastery_total
+  329,  # passive_fire_mastery
+  330,  # passive_ltng_mastery
+  331,  # passive_cold_mastery
+  332,  # passive_pois_mastery
+  333,  # passive_fire_pierce
+  334,  # passive_ltng_pierce
+  335,  # passive_cold_pierce
+  336,  # passive_pois_pierce
+  338,  # passive_dodge
+  339,  # passive_avoid
+  340,  # passive_evade
+  358,  # passive_mag_pierce
+  366,  # passive_dmg_pierce
+  371,  # item_skill_cooldown
+  372,  # trap_limit
+  373,  # twister_limit
+  374,  # blade_nova_max_res
+  376,  # item_skillontakedmg
+  377,  # item_skillontakedmg_hidden
+  378,  # item_skillonkill_hidden
+  379,  # passive_summ_limit
+  391,  # total_fire_resist
+  392,  # total_cold_resist
+  393,  # total_lightning_resist
+  394,  # total_poison_resist
+  398,  # generictotalmultiplier
+  400,  # total_magic_resist
+  404,  # item_skillonattack_hidden
+  405,  # item_skillonhit_hidden
+  409,  # totalattackspeed
+  413,  # potionmultiplier
+  415,  # item_skillongethit_hidden
+  422,  # item_skilloncast
+  423,  # item_skilloncast_hidden
+  426,  # extra_items
+  434,  # criticaldamage
+  435,  # bleedmindam
+  436,  # bleedmaxdam
+  466,  # item_maxdamage_percent2
+  467,  # item_mindamage_percent2
+  482,  # passive_mag2_mastery
+  483,  # passive_wind_mastery
+  486,  # passive_summ_mastery
+  489,  # total_elemental_min_damage
+  493,  # total_elemental_max_damage
+  495,  # total_poison_magic_min_damage
+  496,  # total_poison_magic_max_damage
+  498,  # item_elemskillcold
+  499,  # item_elemskilllight
+  500,  # item_elemskillpoison
+  501,  # item_elemskillmagic
+  502,  # item_elemskillfire
+  505,  # lifeonstriking
+  506,  # manaonstriking
+  516,  # projectilespeed
+  519,  # consumeeffect
+  520,  # sigillimit
+  522,  # miasmachainslimit
+]
+
+# Rings of Power (jeweler_2)
+#   Every stat listed in stats is raised by bonus_percent on the character's
+#   rings (affixes, unique or set item modifiers, active green set bonus
+#   lines, gemword bonuses, socketed jewels and gems), pooled over both rings:
+#   two rings with +15 life each give +1 life, where each alone gives 0.
+[ring_modifiers]
+enabled = true
+perk_stat = 962
+bonus_percent = 5
+item_types = ["ring"]
+stats = [
+  0,    # strength
+  1,    # energy
+  2,    # dexterity
+  3,    # vitality
+  7,    # maxhp
+  9,    # maxmana
+  11,   # maxstamina
+  16,   # item_armor_percent
+  17,   # item_maxdamage_percent
+  18,   # item_mindamage_percent
+  19,   # tohit
+  20,   # toblock
+  21,   # mindamage
+  22,   # maxdamage
+  23,   # secondary_mindamage
+  24,   # secondary_maxdamage
+  27,   # manarecoverybonus
+  28,   # staminarecoverybonus
+  31,   # armorclass
+  32,   # armorclass_vs_missile
+  33,   # armorclass_vs_hth
+  34,   # normal_damage_reduction
+  35,   # magic_damage_reduction
+  36,   # damageresist
+  37,   # magicresist
+  38,   # maxmagicresist
+  39,   # fireresist
+  40,   # maxfireresist
+  41,   # lightresist
+  42,   # maxlightresist
+  43,   # coldresist
+  44,   # maxcoldresist
+  45,   # poisonresist
+  46,   # maxpoisonresist
+  48,   # firemindam
+  49,   # firemaxdam
+  50,   # lightmindam
+  51,   # lightmaxdam
+  52,   # magicmindam
+  53,   # magicmaxdam
+  54,   # coldmindam
+  55,   # coldmaxdam
+  57,   # poisonmindam
+  58,   # poisonmaxdam
+  60,   # lifedrainmindam
+  62,   # manadrainmindam
+  67,   # velocitypercent
+  68,   # attackrate
+  74,   # hpregen
+  76,   # item_maxhp_percent
+  77,   # item_maxmana_percent
+  78,   # item_attackertakesdamage
+  79,   # item_goldbonus
+  80,   # item_magicbonus
+  83,   # item_addclassskills
+  85,   # item_addexperience
+  86,   # item_healafterkill
+  87,   # item_reducedprices
+  89,   # item_lightradius
+  93,   # item_fasterattackrate
+  96,   # item_fastermovevelocity
+  97,   # item_nonclassskill
+  99,   # item_fastergethitrate
+  102,  # item_fasterblockrate
+  105,  # item_fastercastrate
+  107,  # item_singleskill
+  109,  # curse_resistance
+  110,  # item_poisonlengthresist
+  111,  # item_normaldamage
+  112,  # item_howl
+  114,  # item_damagetomana
+  116,  # item_fractionaltargetac
+  119,  # item_tohit_percent
+  120,  # item_damagetargetac
+  121,  # item_demondamage_percent
+  122,  # item_undeaddamage_percent
+  123,  # item_demon_tohit
+  124,  # item_undead_tohit
+  126,  # item_elemskill
+  127,  # item_allskills
+  128,  # item_attackertakeslightdamage
+  134,  # item_freeze
+  135,  # item_openwounds
+  136,  # item_crushingblow
+  138,  # item_manaafterkill
+  141,  # item_deadlystrike
+  142,  # item_absorbfire_percent
+  143,  # item_absorbfire
+  144,  # item_absorblight_percent
+  145,  # item_absorblight
+  146,  # item_absorbmagic_percent
+  147,  # item_absorbmagic
+  148,  # item_absorbcold_percent
+  149,  # item_absorbcold
+  150,  # item_slow
+  151,  # item_aura
+  155,  # item_reanimate
+  156,  # item_pierce
+  158,  # item_explosivearrow
+  159,  # item_throw_mindamage
+  160,  # item_throw_maxdamage
+  182,  # armor_override_percent
+  187,  # item_pierce_cold_immunity
+  188,  # item_addskill_tab
+  189,  # item_pierce_fire_immunity
+  190,  # item_pierce_light_immunity
+  191,  # item_pierce_poison_immunity
+  192,  # item_pierce_damage_immunity
+  193,  # item_pierce_magic_immunity
+  195,  # item_skillonattack
+  196,  # item_skillonkill
+  197,  # item_skillondeath
+  198,  # item_skillonhit
+  200,  # item_charge_noconsume
+  201,  # item_skillongethit
+  214,  # item_armor_perlevel
+  216,  # item_hp_perlevel
+  217,  # item_mana_perlevel
+  218,  # item_maxdamage_perlevel
+  219,  # item_maxdamage_percent_perlevel
+  220,  # item_strength_perlevel
+  221,  # item_dexterity_perlevel
+  222,  # item_energy_perlevel
+  223,  # item_vitality_perlevel
+  224,  # item_tohit_perlevel
+  225,  # item_tohitpercent_perlevel
+  226,  # item_cold_damagemax_perlevel
+  227,  # item_fire_damagemax_perlevel
+  228,  # item_ltng_damagemax_perlevel
+  229,  # item_pois_damagemax_perlevel
+  230,  # item_resist_cold_perlevel
+  231,  # item_resist_fire_perlevel
+  232,  # item_resist_ltng_perlevel
+  233,  # item_resist_pois_perlevel
+  238,  # item_thorns_perlevel
+  239,  # item_find_gold_perlevel
+  240,  # item_find_magic_perlevel
+  242,  # item_stamina_perlevel
+  244,  # item_damage_undead_perlevel
+  247,  # item_crushingblow_perlevel
+  250,  # item_deadlystrike_perlevel
+  255,  # strengthpercent
+  256,  # dexteritypercent
+  257,  # vitalitypercent
+  258,  # energypercent
+  265,  # passive_summ_elemental_resist
+  266,  # passive_summ_life
+  267,  # passive_summ_phys_resist
+  287,  # item_skeleton_trade
+  288,  # item_max_skeleton_king
+  303,  # passive_summ_mastery_total
+  329,  # passive_fire_mastery
+  330,  # passive_ltng_mastery
+  331,  # passive_cold_mastery
+  332,  # passive_pois_mastery
+  333,  # passive_fire_pierce
+  334,  # passive_ltng_pierce
+  335,  # passive_cold_pierce
+  336,  # passive_pois_pierce
+  338,  # passive_dodge
+  339,  # passive_avoid
+  340,  # passive_evade
+  358,  # passive_mag_pierce
+  366,  # passive_dmg_pierce
+  371,  # item_skill_cooldown
+  372,  # trap_limit
+  373,  # twister_limit
+  374,  # blade_nova_max_res
+  376,  # item_skillontakedmg
+  377,  # item_skillontakedmg_hidden
+  378,  # item_skillonkill_hidden
+  379,  # passive_summ_limit
+  391,  # total_fire_resist
+  392,  # total_cold_resist
+  393,  # total_lightning_resist
+  394,  # total_poison_resist
+  398,  # generictotalmultiplier
+  400,  # total_magic_resist
+  404,  # item_skillonattack_hidden
+  405,  # item_skillonhit_hidden
+  409,  # totalattackspeed
+  413,  # potionmultiplier
+  415,  # item_skillongethit_hidden
+  422,  # item_skilloncast
+  423,  # item_skilloncast_hidden
+  426,  # extra_items
+  434,  # criticaldamage
+  435,  # bleedmindam
+  436,  # bleedmaxdam
+  466,  # item_maxdamage_percent2
+  467,  # item_mindamage_percent2
+  482,  # passive_mag2_mastery
+  483,  # passive_wind_mastery
+  486,  # passive_summ_mastery
+  489,  # total_elemental_min_damage
+  493,  # total_elemental_max_damage
+  495,  # total_poison_magic_min_damage
+  496,  # total_poison_magic_max_damage
+  498,  # item_elemskillcold
+  499,  # item_elemskilllight
+  500,  # item_elemskillpoison
+  501,  # item_elemskillmagic
+  502,  # item_elemskillfire
+  505,  # lifeonstriking
+  506,  # manaonstriking
+  516,  # projectilespeed
+  519,  # consumeeffect
+  520,  # sigillimit
+  522,  # miasmachainslimit
+]
+
+# Amplification (jeweler_3)
+#   Every stat listed in stats is raised by bonus_percent on every jewel and
+#   gem socketed in anything that counts: weapons, armor, rings, the amulet
+#   and charms. Only the jewels' and gems' own modifiers count, never the
+#   host item's or a gemword's bonus. All of them are pooled together, and
+#   each host's tooltip shows its share. A jewel or gem in the amulet or a
+#   ring also gets that item's perk, added: +15% in the amulet with both.
+#   item_types are the socketed item types that count.
+[socketed_gems]
+enabled = true
+perk_stat = 963
+bonus_percent = 5
+item_types = ["gem", "jewl"]
+stats = [
+  0,    # strength
+  1,    # energy
+  2,    # dexterity
+  3,    # vitality
+  7,    # maxhp
+  9,    # maxmana
+  11,   # maxstamina
+  16,   # item_armor_percent
+  17,   # item_maxdamage_percent
+  18,   # item_mindamage_percent
+  19,   # tohit
+  20,   # toblock
+  21,   # mindamage
+  22,   # maxdamage
+  23,   # secondary_mindamage
+  24,   # secondary_maxdamage
+  27,   # manarecoverybonus
+  28,   # staminarecoverybonus
+  31,   # armorclass
+  32,   # armorclass_vs_missile
+  33,   # armorclass_vs_hth
+  34,   # normal_damage_reduction
+  35,   # magic_damage_reduction
+  36,   # damageresist
+  37,   # magicresist
+  38,   # maxmagicresist
+  39,   # fireresist
+  40,   # maxfireresist
+  41,   # lightresist
+  42,   # maxlightresist
+  43,   # coldresist
+  44,   # maxcoldresist
+  45,   # poisonresist
+  46,   # maxpoisonresist
+  48,   # firemindam
+  49,   # firemaxdam
+  50,   # lightmindam
+  51,   # lightmaxdam
+  52,   # magicmindam
+  53,   # magicmaxdam
+  54,   # coldmindam
+  55,   # coldmaxdam
+  57,   # poisonmindam
+  58,   # poisonmaxdam
+  60,   # lifedrainmindam
+  62,   # manadrainmindam
+  67,   # velocitypercent
+  68,   # attackrate
+  74,   # hpregen
+  76,   # item_maxhp_percent
+  77,   # item_maxmana_percent
+  78,   # item_attackertakesdamage
+  79,   # item_goldbonus
+  80,   # item_magicbonus
+  83,   # item_addclassskills
+  85,   # item_addexperience
+  86,   # item_healafterkill
+  87,   # item_reducedprices
+  89,   # item_lightradius
+  93,   # item_fasterattackrate
+  96,   # item_fastermovevelocity
+  97,   # item_nonclassskill
+  99,   # item_fastergethitrate
+  102,  # item_fasterblockrate
+  105,  # item_fastercastrate
+  107,  # item_singleskill
+  109,  # curse_resistance
+  110,  # item_poisonlengthresist
+  111,  # item_normaldamage
+  112,  # item_howl
+  114,  # item_damagetomana
+  116,  # item_fractionaltargetac
+  119,  # item_tohit_percent
+  120,  # item_damagetargetac
+  121,  # item_demondamage_percent
+  122,  # item_undeaddamage_percent
+  123,  # item_demon_tohit
+  124,  # item_undead_tohit
+  126,  # item_elemskill
+  127,  # item_allskills
+  128,  # item_attackertakeslightdamage
+  134,  # item_freeze
+  135,  # item_openwounds
+  136,  # item_crushingblow
+  138,  # item_manaafterkill
+  141,  # item_deadlystrike
+  142,  # item_absorbfire_percent
+  143,  # item_absorbfire
+  144,  # item_absorblight_percent
+  145,  # item_absorblight
+  146,  # item_absorbmagic_percent
+  147,  # item_absorbmagic
+  148,  # item_absorbcold_percent
+  149,  # item_absorbcold
+  150,  # item_slow
+  151,  # item_aura
+  155,  # item_reanimate
+  156,  # item_pierce
+  158,  # item_explosivearrow
+  159,  # item_throw_mindamage
+  160,  # item_throw_maxdamage
+  182,  # armor_override_percent
+  187,  # item_pierce_cold_immunity
+  188,  # item_addskill_tab
+  189,  # item_pierce_fire_immunity
+  190,  # item_pierce_light_immunity
+  191,  # item_pierce_poison_immunity
+  192,  # item_pierce_damage_immunity
+  193,  # item_pierce_magic_immunity
+  195,  # item_skillonattack
+  196,  # item_skillonkill
+  197,  # item_skillondeath
+  198,  # item_skillonhit
+  200,  # item_charge_noconsume
+  201,  # item_skillongethit
+  214,  # item_armor_perlevel
+  216,  # item_hp_perlevel
+  217,  # item_mana_perlevel
+  218,  # item_maxdamage_perlevel
+  219,  # item_maxdamage_percent_perlevel
+  220,  # item_strength_perlevel
+  221,  # item_dexterity_perlevel
+  222,  # item_energy_perlevel
+  223,  # item_vitality_perlevel
+  224,  # item_tohit_perlevel
+  225,  # item_tohitpercent_perlevel
+  226,  # item_cold_damagemax_perlevel
+  227,  # item_fire_damagemax_perlevel
+  228,  # item_ltng_damagemax_perlevel
+  229,  # item_pois_damagemax_perlevel
+  230,  # item_resist_cold_perlevel
+  231,  # item_resist_fire_perlevel
+  232,  # item_resist_ltng_perlevel
+  233,  # item_resist_pois_perlevel
+  238,  # item_thorns_perlevel
+  239,  # item_find_gold_perlevel
+  240,  # item_find_magic_perlevel
+  242,  # item_stamina_perlevel
+  244,  # item_damage_undead_perlevel
+  247,  # item_crushingblow_perlevel
+  250,  # item_deadlystrike_perlevel
+  255,  # strengthpercent
+  256,  # dexteritypercent
+  257,  # vitalitypercent
+  258,  # energypercent
+  265,  # passive_summ_elemental_resist
+  266,  # passive_summ_life
+  267,  # passive_summ_phys_resist
+  287,  # item_skeleton_trade
+  288,  # item_max_skeleton_king
+  303,  # passive_summ_mastery_total
+  329,  # passive_fire_mastery
+  330,  # passive_ltng_mastery
+  331,  # passive_cold_mastery
+  332,  # passive_pois_mastery
+  333,  # passive_fire_pierce
+  334,  # passive_ltng_pierce
+  335,  # passive_cold_pierce
+  336,  # passive_pois_pierce
+  338,  # passive_dodge
+  339,  # passive_avoid
+  340,  # passive_evade
+  358,  # passive_mag_pierce
+  366,  # passive_dmg_pierce
+  371,  # item_skill_cooldown
+  372,  # trap_limit
+  373,  # twister_limit
+  374,  # blade_nova_max_res
+  376,  # item_skillontakedmg
+  377,  # item_skillontakedmg_hidden
+  378,  # item_skillonkill_hidden
+  379,  # passive_summ_limit
+  391,  # total_fire_resist
+  392,  # total_cold_resist
+  393,  # total_lightning_resist
+  394,  # total_poison_resist
+  398,  # generictotalmultiplier
+  400,  # total_magic_resist
+  404,  # item_skillonattack_hidden
+  405,  # item_skillonhit_hidden
+  409,  # totalattackspeed
+  413,  # potionmultiplier
+  415,  # item_skillongethit_hidden
+  422,  # item_skilloncast
+  423,  # item_skilloncast_hidden
+  426,  # extra_items
+  434,  # criticaldamage
+  435,  # bleedmindam
+  436,  # bleedmaxdam
+  466,  # item_maxdamage_percent2
+  467,  # item_mindamage_percent2
+  482,  # passive_mag2_mastery
+  483,  # passive_wind_mastery
+  486,  # passive_summ_mastery
+  489,  # total_elemental_min_damage
+  493,  # total_elemental_max_damage
+  495,  # total_poison_magic_min_damage
+  496,  # total_poison_magic_max_damage
+  498,  # item_elemskillcold
+  499,  # item_elemskilllight
+  500,  # item_elemskillpoison
+  501,  # item_elemskillmagic
+  502,  # item_elemskillfire
+  505,  # lifeonstriking
+  506,  # manaonstriking
+  516,  # projectilespeed
+  519,  # consumeeffect
+  520,  # sigillimit
+  522,  # miasmachainslimit
+]
+
+# Prismatic Resonance (jeweler_9)
+#   Every socketed gem gets percent_per_color more effect for each different
+#   gem color socketed across everything that counts (weapons, armor, rings,
+#   the amulet and charms): 4 colors give every gem +24%. It adds to Socketed
+#   Gems for gems (+5% and +24% make +29%) and is pooled with it, so the two
+#   are rounded together. It raises the stats in Amplification's stats list.
+#   Jewels only get Amplification.
+#   gem_types: the socketed item types that are gems.
+#   color_types: one itemtypes.txt code per color; a gem counts as the first
+#   color it matches. Note: in misc.txt the obsidian gems (gck to gbk) have
+#   type gema (Amethyst), so they count as amethyst until they get gemk.
+[prismatic_resonance]
+enabled = true
+perk_stat = 969
+percent_per_color = 6
+gem_types = ["gem"]
+color_types = ["gema", "gemt", "gems", "geme", "gemr", "gemd", "gemz", "gemk"]
+
+# Mirrored Ring (jeweler_10)
+#   The character wears one ring, mirrored in the other ring slot. While the
+#   allowed slot holds a ring and the other slot is empty, the ring's
+#   modifiers are raised by bonus_percent (100 doubles them), its Ring
+#   Modifiers share counts twice and the jewels and gems in it are pooled
+#   twice, exactly as a second identical ring would add.
+#   In the inventory the other slot shows the ring as a ghost, the way a
+#   two-handed weapon shows in the shield slot: its tooltip is the ring's,
+#   clicking it picks the ring up, and dropping a ring on it swaps the rings.
+#   With no ring worn, a ring dropped on the other slot answers "Impossible".
+#   A ring already in the other slot from before keeps working as a normal
+#   ring, and the perk waits until that slot is empty.
+#   ring_slot: the slot the ring goes in. 6 is the left ring slot on the
+#   inventory screen (the game calls it the right ring), 7 the right one.
+#   exclude_stats: itemstatcost ids that are never doubled: the ring's
+#   requirements, the bookkeeping stat 356, and 204, whose value packs the
+#   charges of a charged skill.
+[mirrored_ring]
+enabled = true
+perk_stat = 970
+bonus_percent = 100
+ring_slot = 6
+item_types = ["ring"]
+exclude_stats = [
+  91,   # item_req_percent
+  92,   # item_levelreq
+  204,  # item_charged_skill
+  356,  # questitemdifficulty
+]
+
+# Six Peas in a Pod (jeweler_12)
+#   Every socketed gem gets percent_per_gem more effect for each gem of its
+#   color socketed in the same item, itself included (any grade): an item
+#   with 5 rubies gives each of them +30%. Colors and gem types come from
+#   Prismatic Resonance's color_types and gem_types. It adds to Amplification
+#   and Prismatic Resonance and is pooled with them.
+[kindred_gems]
+enabled = true
+perk_stat = 972
+percent_per_gem = 6
+
+# Primordial Jewels (jeweler_13)
+#   A socketed jewel gains one modifier of the perfect gem it shows. The
+#   jewel's sprite number (1 to 8) picks the gem below; that gem's gems.txt
+#   weapon, helm and shield mods, property groups opened, are the choices, and
+#   the jewel's saved seed picks one, so re-socketing the same jewel always
+#   gives the same modifier. The game applies it the way it applies a gem's
+#   mod, on a list that is never saved, for jewels socketed in any item the
+#   character carries. Amplification, Arcane Infusion, Rings of Power and
+#   Mirrored Ring raise it; Six Peas in a Pod and Prismatic Resonance do not.
+#   gems: the perfect gem code for each sprite number, 1 to 8.
+#   exclude_stats: itemstatcost ids a chosen property may never set.
+[primordial_jewels]
+enabled = true
+perk_stat = 973
+item_types = ["jewl"]
+gems = ["gvb", "gbb", "gyb", "ggb", "grb", "gwb", "gbk", "skb"]
+exclude_stats = [
+  692,  # gemmaster
+]
+
+# Steady Pliers (jeweler_15)
+#   The modifiers a gemword adds (its runes.txt T1 codes, propertygroups
+#   included) are raised by bonus_percent. The gems' own modifiers are not:
+#   the other gem perks cover those. An item counts as a gemword when it holds
+#   a runeword and every item in its sockets is one of socket_types. Uses
+#   Amplification's stats list and is pooled with the gem perks.
+#   (Unsocketing gemwords without losing the gems is a cube recipe, not
+#   this plugin.)
+[steady_pliers]
+enabled = true
+perk_stat = 975
+bonus_percent = 20
+socket_types = ["gem"]

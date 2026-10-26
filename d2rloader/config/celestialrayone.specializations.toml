@@ -107,6 +107,28 @@ unlearn_hint = "@d2r:SpecializationsUnlearnHint"
 learn_sound = "cursor_stat_point_one_hd"
 unlearn_sound = "cursor_stat_point_one_hd"
 
+# Points by character level. A character is unlocked once it owns any
+# point, unspent or spent on a perk (the specialization token's pSpell gives
+# the first ones). From then on the plugin keeps the character's points at
+# unlock_points plus one for every level in point_levels it has reached: it
+# adds the missing points when the character reaches such a level, and when
+# it enters a game. The token should give unlock_points plus one for every
+# point level already passed (3 at level 63 with these values), so the total
+# never goes past unlock_points + the number of point levels (5 here).
+# Points from other sources count too and are never taken away.
+point_levels = [45, 60, 75, 90]
+unlock_points = 1
+
+# The stat the specialization token raises when it is used (its cap stat).
+# With it set, a character is unlocked once that stat is 1 or more, even if
+# its points were lost; -1 counts any owned point as unlocked instead.
+unlock_stat = 942
+
+# Hard cap on owned points (unspent plus learned perks), whatever gives them:
+# the host takes unspent points above it away when the character enters a
+# game, levels up, gains points or sends a learn or unlearn click.
+max_points = 5
+
 # One block per specialization, in tab order (the first block is Tab1).
 # name: for the log and the console only; the tab text is in the layout.
 # stats: itemstatcost.txt rows of the perks, row by row.
@@ -139,11 +161,7 @@ descriptions = [
 [[specialization]]
 name = "Blacksmith"
 stats = [
-    1016, 1017, 1018,
-    1019, 1020, 1021,
-    1022, 1023, 1024,
-    1025, 1026, 1027,
-    1028, 1029, 1030,
+    946,947,948,949,950,951,952,953,954,955,956,957,958,959,960
 ]
 titles = [
     "@d2r:SpecializationsBlacksmith1_1Title", "@d2r:SpecializationsBlacksmith1_2Title", "@d2r:SpecializationsBlacksmith1_3Title",
@@ -163,11 +181,7 @@ descriptions = [
 [[specialization]]
 name = "Jeweler"
 stats = [
-    1031, 1032, 1033,
-    1034, 1035, 1036,
-    1037, 1038, 1039,
-    1040, 1041, 1042,
-    1043, 1044, 1045,
+    961,962,963,964,965,966,967,968,969,970,971,972,973,974,975
 ]
 titles = [
     "@d2r:SpecializationsJeweler1_1Title", "@d2r:SpecializationsJeweler1_2Title", "@d2r:SpecializationsJeweler1_3Title",
@@ -187,11 +201,7 @@ descriptions = [
 [[specialization]]
 name = "Archaeologist"
 stats = [
-    1046, 1047, 1048,
-    1049, 1050, 1051,
-    1052, 1053, 1054,
-    1055, 1056, 1057,
-    1058, 1059, 1060,
+    976,977,978,979,980,981,982,983,984,985,986,987,988,989,990
 ]
 titles = [
     "@d2r:SpecializationsArchaeologist1_1Title", "@d2r:SpecializationsArchaeologist1_2Title", "@d2r:SpecializationsArchaeologist1_3Title",
