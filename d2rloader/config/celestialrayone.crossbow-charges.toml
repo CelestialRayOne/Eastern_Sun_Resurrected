@@ -13,6 +13,17 @@
 #     fires. A skill's own `localdelay` still applies on top.
 #   - Each spent bolt reloads for the `globaldelay` frames of the skill that
 #     spent it. Bolts come back one at a time, in the order they were spent.
+#   - Standing still reloads faster. While the player stands still (player
+#     mode 1, neutral, or 5, town neutral) bolts reload standing_reload_bonus
+#     percent faster. Walking, running, attacking, casting, getting hit and
+#     every other mode reload at the normal speed. The mode is checked every
+#     game frame (25 a second), so the faster reload starts on the first frame
+#     the player stands still and ends on the first frame he does anything
+#     else. It counts whatever weapon is held, like the rest of the reload.
+#   - The standing bonus speeds up the reload itself, after `globaldelay` was
+#     worked out, so it goes past any limit inside the `globaldelay` formula.
+#     At 25, a 1 second reload takes 0.8 seconds and a 0.8 second reload
+#     0.64 seconds while standing still the whole time.
 #   - With no bolts left, crossbow skills cannot be cast.
 #   - Maximum bolts is default_max_bolts plus the max bolts stat, at least 1.
 #   - The pool keeps reloading whatever weapon is held. Maximum bolts is only
@@ -50,7 +61,8 @@
 #   While any bolt is reloading, the shadow image on the button clocks down the
 #   bolt that comes back next, over that bolt's own reload time, then restarts
 #   for the one after it. It goes away when the pool is full. At 0 bolts the button keeps its normal colour; the
-#   shadow is the only sign.
+#   shadow is the only sign. Standing still speeds the shadow up with the
+#   reload.
 #   The shadow is an ImageWidget child of the skill button, named as below, in
 #   hudpanelhd.json and controller/hudpanelhd.json. A button without that
 #   child still shows the number.
@@ -70,6 +82,8 @@ enabled = true
 # which cast it belongs to, whether that is a crossbow cast and why, and for
 # hits the damage before and after the bonus. At most 60 lines per second;
 # the rest are counted and reported. Also switchable in game (see above).
+# While a bolt reloads it also logs every switch between standing still and
+# not, with the player's mode and the reload speed.
 debug = false
 
 # itemtypes.txt codes that count as crossbows. Child types count too.
@@ -77,6 +91,10 @@ crossbow_item_types = ["xbow"]
 
 # Bolts every crossbow user has. The max bolts stat adds to it.
 default_max_bolts = 3
+
+# Percent faster bolts reload while the player stands still (player modes 1
+# and 5). 25 turns a 1 second reload into 0.8 seconds. 0 turns it off.
+standing_reload_bonus = 25
 
 # Frames every crossbow attack takes. The attack frames stat adds to it.
 default_attack_frames = 5
@@ -97,7 +115,7 @@ attack_frames_stat_id = 517
 
 # Percent always added to the bonus, before the damage stat.
 # 25 with a +50 item gives 175% damage.
-damage_base = 150
+damage_base = 100
 
 # Name of the shadow ImageWidget inside each skill button.
 sweep_widget_name = "CrossbowSweep"

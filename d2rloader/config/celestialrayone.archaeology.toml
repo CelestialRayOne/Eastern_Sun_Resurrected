@@ -395,23 +395,35 @@ perk_stat = 988
 [mass_dig]
 enabled = true
 srvdofunc = 172
-radius = 10
+radius = -1
 chance_percent = -1
 perk_stat = 989
-skill_id = 0
+skill_id = 1566
 skill_level = 1
 
 # Skill Scrolls
 #   Using one of these items casts a skill and uses the item up, as a scroll
-#   is. Each entry is "item code,skill id,skill level". The skill runs on the
-#   server as an item-cast skill (skills.txt ItemEffect applies), centered on
-#   the player: buffs, novas, summons and area effects work as they are;
-#   aimed skills go toward the player's current target. Give the item a misc.txt
-#   pSpell the client uses at once, with no target cursor (Town Portal's 2
-#   does); the plugin replaces that pSpell's effect for these items only.
+#   is. Each entry is "item code,skill id,skill level", for example
+#   scrolls = ["a01,479,1", "a02,623,20"]. The skill runs on the server as an
+#   item-cast skill (skills.txt ItemEffect applies), centered on the player:
+#   buffs, novas, summons and area effects work as they are; aimed skills go
+#   toward the player's current target. Give the item a misc.txt pSpell the
+#   client uses at once, with no target cursor (Town Portal's 2 does); the
+#   plugin replaces that pSpell's effect for these items only.
+#   Cooldown: once used, an entry's items can't be used again until its
+#   skill's skills.txt localdelay (at the entry's level) has run out. Every
+#   entry has its own cooldown per character, apart from the other entries and
+#   from the character's own skills. A skill with no localdelay has none.
+#   sweep: while a cooldown runs, a sweep is drawn over that entry's items
+#   wherever the game draws their icon, like the Elixir of Reincarnation's:
+#   the same sprite, color and opacity by default. HD graphics only.
 [skill_scrolls]
 enabled = true
-scrolls = []
+scrolls = ["aa1,1567,1","aa2,1568,1","aa3,1569,1","aa4,1570,1","aa5,1571,1"]
+sweep = true
+sweep_sprite = "PANEL/CrossbowCharges/Sweep"
+sweep_color = [0, 0, 0]
+sweep_opacity = 45
 
 # Sockets (archaeology_7)
 #   A dropped item of item_types with no socket gets one chance_percent of
@@ -477,11 +489,11 @@ enabled = true
 perk_stat = 985
 bonus_percent = 25
 item_codes = [
-  "7wd", "m01", "m02", "m03",                         # Sword, Marksman Bow, Odysseus Crossbow, Titan's Maul
+  "m01", "m02", "m03",                                # Marksman Bow, Odysseus Crossbow, Titan's Maul
   "m04", "m05", "m07", "m08",                         # Demonic Wand, Soul Destroyer, Dimensional Shard, Balanced Dagger
   "m09", "m11", "m12", "m13",                         # Magic Blade, Arcane Staff, Seraphic Scepter, Scissors Suwayyah
   "m14", "m16", "m17", "m18",                         # Ceremonial Dagger, Rapier, Celestial Scepter, Death Blade
-  "dd1", "m21", "m22", "m23",                         # Death Blade Frostmourne, Razor Axe, Hellfire Sword, Sepulcher Wand
+  "m21", "m22", "m23",                                # Razor Axe, Hellfire Sword, Sepulcher Wand
   "m24", "m25", "m26", "m27",                         # Shade Bow, Marksman Crossbow, Balanced Hatchet, Balanced Dagger
   "m28", "m29", "m30", "m31",                         # Whale Hunter, Petrified Staff, Ancient Bow, Matriarchal Javelin
   "m32", "m33", "m34", "m35",                         # Whale Hunter, Ancient Shards, Shillelagh, Celestial Blade
