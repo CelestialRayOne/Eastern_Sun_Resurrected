@@ -1,0 +1,252 @@
+"""Builds a runeword's stat lines from its runes.txt row, in row order, using the game's own wording.
+
+A line is a (colour code, text) string such as "ÿc3+25% Skill Cooldown Reduction". Grouped stats (spell
+damage, max resists...) expand to one line per stat, as the game tooltip shows them. Returns None for a
+row it cannot fully render, so the caller keeps that card's text.
+"""
+import csv
+import glob
+import json
+import re
+from pathlib import Path
+
+BLUE = "ÿc3"
+ORANGE = "ÿc8"
+
+HIDDEN = {"unsocketable"}
+HIDDEN_SUFFIX = "-hidden"
+# Properties whose text is a client-side description (not in any string table); the caller keeps the
+# card's existing description lines for these.
+DESCRIPTION_CODES = {"mythicaldesc"}
+
+TAB_NAMES = {
+    0: "Bow and Crossbow Skills", 1: "Passive and Magic Skills", 2: "Javelin and Spear Skills",
+    3: "Fire Skills", 4: "Lightning Skills", 5: "Cold Skills", 6: "Curses",
+    7: "Poison and Bone Skills", 8: "Summoning Skills", 9: "Combat Skills", 10: "Offensive Auras",
+    11: "Defensive Auras", 12: "Combat Skills", 13: "Masteries", 14: "Warcries",
+    15: "Summoning Skills", 16: "Shape Shifting Skills", 17: "Elemental Skills", 18: "Traps",
+    19: "Shadow Disciplines", 20: "Martial Arts", 21: "Demon Skills", 22: "Eldritch Skills",
+    23: "Chaos Skills",
+}
+CLASS_NAMES = {"ama": "Amazon", "sor": "Sorceress", "nec": "Necromancer", "pal": "Paladin",
+               "bar": "Barbarian", "dru": "Druid", "ass": "Assassin", "war": "Warlock"}
+
+
+def rows_of(path):
+    with open(path, encoding="utf-8", errors="replace", newline="") as handle:
+        return list(csv.DictReader(handle, delimiter="\t"))
+
+
+def num(text):
+    """'25' -> 25, '1.5' -> 1.5, '' -> None."""
+    try:
+        value = float(text)
+    except (TypeError, ValueError):
+        return None
+    return int(value) if value == int(value) else value
+
+
+def fmt(x):
+    return ("%.4f" % x).rstrip("0").rstrip(".")
+
+
+def rng(lo, hi):
+    """Min-max text; a single number when they are equal."""
+    return lo if lo == hi else "%s-%s" % (lo, hi)
+
+
+def signed(text):
+    return text if text.startswith("-") else "+" + text
+
+
+class Generator:
+    def __init__(self, folder, strings_folder):
+        folder = Path(folder)
+        self.templates = {}
+        for row in rows_of(folder / "properties.txt"):
+            code = (row.get("code") or "").strip()
+            if code:
+                self.templates[code] = (row.get("*Tooltip") or "").strip()
+        self.skill_class = {}
+        for row in rows_of(folder / "skills.txt"):
+            name = (row.get("skill") or "").strip().lower()
+            if name:
+                self.skill_class[name] = CLASS_NAMES.get((row.get("charclass") or "").strip(), "")
+
+    # -- helpers -------------------------------------------------------------------------------
+    @staticmethod
+    def stat(prefix_fmt, lo, hi, colour=BLUE):
+        """Fills a game string like '%+d%% Dodge Chance' with the min-max value."""
+        value = rng(lo, hi)
+        text = prefix_fmt.replace("%+d", signed(value)).replace("%d", value).replace("%%", "%")
+        return colour + text
+
+    def lines(self, code, param, lo, hi):
+        """Stat lines for one row cell, [] for a hidden stat, or None when it cannot be rendered."""
+        if code in HIDDEN or code.endswith(HIDDEN_SUFFIX) or code in DESCRIPTION_CODES:
+            return []
+        s = self.stat
+        simple = {
+            "item-skill-cooldown": "%+d%% Skill Cooldown Reduction",
+            "dodge": "%+d%% Dodge Chance",
+            "strpercent": "%+d%% Bonus to Strength", "dexpercent": "%+d%% Bonus to Dexterity",
+            "vitpercent": "%+d%% Bonus to Vitality", "enepercent": "%+d%% Bonus to Energy",
+            "attackrate": "%+d%% Base Attack Speed", "velocitypercent": "%+d%% Base Run/Walk Speed",
+            "curse-res": "Curse Duration Reduced by %d%%",
+            "extra-mag2": "%+d%% to Magic Spell Damage", "extra-wind": "%+d%% to Physical Spell Damage",
+            "life-on-striking": "%+d Life on Striking", "mana-on-striking": "%+d Mana on Striking",
+            "extra-summ": "%+d%% to Summon Damage", "passive-summ-life": "%+d%% to Summon Life",
+            "passive-summ-limit": "%+d to Non-Unique Summons Limit",
+            "passive-summ-elemental-resist": "%+d%% to Summon All Resists",
+            "passive-summ-phys-resist": "%+d%% to Summon Physical and Magic Resists",
+            "generic-total-multiplier": "%+d%% Total Spell Damage",
+            "total-ac%": "%+d%% Total Defense", "quantity": "%+d%% Increased Quantity of Items Found",
+            "pierce": "%+d%% Piercing Attack",
+        }
+        if code in simple:
+            return [s(simple[code], lo, hi)]
+        orange = {
+            "ignore-demon-resist": "Attacks Ignore All Resists of Demons",
+            "ignore-undead-resist": "Attacks Ignore All Resists of the Undead",
+        }
+        if code in orange:
+            return [ORANGE + orange[code]]
+        if code == "trap-limit":
+            return [s("%+d to Trap Limit", lo, hi, ORANGE)]
+        if code == "twister-limit":
+            return [s("Increase Twister Count by %+d%%", lo, hi, ORANGE)]
+        multi = {
+            "spell-damage": ["%+d%% to Fire Spell Damage", "%+d%% to Cold Spell Damage",
+                             "%+d%% to Lightning Spell Damage", "%+d%% to Poison Spell Damage",
+                             "%+d%% to Magic Spell Damage", "%+d%% to Physical Spell Damage"],
+            "spell-elemental-damage": ["%+d%% to Fire Spell Damage", "%+d%% to Cold Spell Damage",
+                                       "%+d%% to Lightning Spell Damage"],
+            "total-physical-damage%": ["%+d%% Total Minimum Physical Attack Damage",
+                                       "%+d%% Total Maximum Physical Attack Damage"],
+            "res-all-max": ["%+d%% to Maximum Fire Resist", "%+d%% to Maximum Lightning Resist",
+                            "%+d%% to Maximum Cold Resist", "%+d%% to Maximum Poison Resist",
+                            "%+d%% to Maximum Magic Resist"],
+            "pierce-ele-res": ["-%d%% to Enemy Fire Resistance", "-%d%% to Enemy Cold Resistance",
+                               "-%d%% to Enemy Lightning Resistance"],
+            "pierce-res-all": ["-%d%% to Enemy Fire Resistance", "-%d%% to Enemy Cold Resistance",
+                               "-%d%% to Enemy Lightning Resistance", "-%d%% to Enemy Poison Resistance"],
+            "abs-elem%": ["Fire Absorb %+d%%", "Cold Absorb %+d%%", "Lightning Absorb %+d%%"],
+            "abs-elem": ["%+d Fire Absorb", "%+d Cold Absorb", "%+d Lightning Absorb"],
+            "res-elem": ["Fire Resist %+d%%", "Lightning Resist %+d%%", "Cold Resist %+d%%"],
+            "passive-summ-all-resists": ["%+d%% to Summon All Resists",
+                                         "%+d%% to Summon Physical and Magic Resists"],
+        }
+        if code in multi:
+            return [s(f, lo, hi) for f in multi[code]]
+        if code == "total-all-magic-resists":
+            return [s(f, lo, hi, ORANGE) for f in ("%+d%% Total Fire Resist", "%+d%% Total Cold Resist",
+                                                    "%+d%% Total Lightning Resist", "%+d%% Total Poison Resist")]
+        if code == "dmg-bleed":
+            seconds = num(param)
+            if seconds is None:
+                return None
+            span = fmt(seconds / 25)
+            amount = ("%s%%" % lo) if lo == hi else ("%s%%-%s%%" % (lo, hi))
+            return [BLUE + "Adds %s Bleed Damage over %s seconds" % (amount, span)]
+        if code == "dmg-pois":
+            duration, low, high = num(param), num(lo), num(hi)
+            if duration is None or low is None or high is None:
+                return None
+            a, b = int(low * duration / 256), int(high * duration / 256)
+            return [BLUE + "Adds %s Poison Damage over %s seconds" % (rng(str(a), str(b)), fmt(duration / 25))]
+        if code.endswith("/lvl"):
+            return self.per_level(code, param)
+        if code == "skilltab":
+            tab = num(param)
+            name = TAB_NAMES.get(int(tab)) if tab is not None else None
+            if name is None:
+                return None
+            return [s("%+d to " + name, lo, hi)]
+        if code in ("skill", "oskill", "att-skill", "hit-skill", "kill-skill", "gethit-skill", "cast-skill",
+                    "aura", "charged"):
+            return self.skill_line(code, param, lo, hi)
+        template = self.templates.get(code)
+        if not template:
+            return None
+        return self.from_template(template, param, lo, hi)
+
+    def per_level(self, code, param):
+        value = num(param)
+        if value is None:
+            return None
+        v = fmt(value / 8)
+        tail = " (Based on Character Level)"
+        forms = {
+            "dmg/lvl": "+%s to Maximum Damage", "dmg%/lvl": "+%s% Enhanced Maximum Damage",
+            "thorns/lvl": "Attacker Takes Damage of %s", "stam/lvl": "+%s Maximum Stamina",
+            "dex/lvl": "+%s to Dexterity", "str/lvl": "+%s to Strength", "enr/lvl": "+%s to Energy",
+            "vit/lvl": "+%s to Vitality", "ac/lvl": "+%s Defense", "hp/lvl": "+%s to Life",
+            "mana/lvl": "+%s to Mana", "gold%/lvl": "%s% Extra Gold from Monsters",
+            "mag%/lvl": "%s% Better Chance of Getting Magic Items", "deadly/lvl": "%s% Deadly Strike",
+            "att/lvl": "+%s to Attack Rating", "dmg-ltng/lvl": "+%s to Maximum Lightning Damage",
+            "dmg-fire/lvl": "+%s to Maximum Fire Damage", "dmg-cold/lvl": "+%s to Maximum Cold Damage",
+            "dmg-pois/lvl": "+%s to Maximum Poison Damage", "all-stats/lvl": "+%s to All Attributes",
+            "res-all/lvl": "All Resistances +%s%", "crush/lvl": "%s% Chance of Crushing Blow",
+        }
+        form = forms.get(code)
+        if form is None:
+            return None
+        return [BLUE + form.replace("%s", v) + tail]
+
+    def skill_line(self, code, param, lo, hi):
+        if not param:
+            return None
+        if code in ("skill", "oskill"):
+            if code == "skill":
+                cls = self.skill_class.get(param.lower(), "")
+                suffix = " (%s only)" % cls if cls else ""
+            else:
+                suffix = ""
+            return [BLUE + "%s to %s%s" % (signed(rng(lo, hi)), param, suffix)]
+        if code == "aura":
+            return [BLUE + "Level %s %s Aura When Equipped" % (rng(lo, hi), param)]
+        if code == "charged":
+            return None
+        phrases = {"att-skill": "on attack", "hit-skill": "on striking", "gethit-skill": "when struck",
+                   "kill-skill": "when you Kill an Enemy", "cast-skill": "on cast"}
+        if not lo or not hi:
+            return None
+        return [BLUE + "%s%% Chance to Cast Level %s %s %s" % (lo, hi, param, phrases[code])]
+
+    def from_template(self, template, param, lo, hi):
+        text = template
+        if "[Skill]" in text:
+            if not param:
+                return None
+            text = text.replace("[Skill]", param)
+        if "[Class" in text or "[Returned]" in text:
+            return None
+        if "#" not in text:
+            return [BLUE + text]
+        if text.count("#") == 2 and "#-#" in text:
+            return [BLUE + text.replace("#-#", rng(lo, hi))]
+        if text.count("#") != 1:
+            return None
+        return [BLUE + text.replace("#", rng(lo, hi)).replace("+-", "-")]
+
+    def row_lines(self, row):
+        """(lines, has_description_codes) for a runes.txt row; lines is None when it cannot be built."""
+        out = []
+        description = False
+        for i in range(1, 8):
+            code = (row.get("T1Code%d" % i) or "").strip()
+            if not code:
+                continue
+            if code in DESCRIPTION_CODES or code.endswith(HIDDEN_SUFFIX):
+                description = True
+            param = (row.get("T1Param%d" % i) or "").strip()
+            lo = (row.get("T1Min%d" % i) or "").strip()
+            hi = (row.get("T1Max%d" % i) or "").strip() or lo
+            if not lo and code not in DESCRIPTION_CODES and not code.endswith("/lvl") \
+                    and not code.endswith(HIDDEN_SUFFIX) and not self.templates.get(code, "x"):
+                return None, description
+            got = self.lines(code, param, lo, hi)
+            if got is None:
+                return None, description
+            out.extend(got)
+        return out, description

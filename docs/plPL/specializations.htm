@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="pl">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Baza danych Eastern Sun Resurrected
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="J&#281;zyk"><select id="esr-lang-plPL" aria-label="J&#281;zyk" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL" selected>Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="plPL",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-plPL');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Informacje podstawowe</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Pancerze</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Broń</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Przedrostki</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Przyrostki</a>
+                <a href="./quality_affixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Afiksy jakości</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Unikatowe pancerze</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Unikatowa broń</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Inne unikaty</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Mityczne unikaty</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Zestawy</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Klejnoty/Runy</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Słowa klejnotów</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Słowa runiczne</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Receptury kostki</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Mapy</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Kalkulator szybkości ataku</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Wyszukiwarka łupów</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Funkcje</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./special_crafting_outcomes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Wyniki specjalnego rzemiosła</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Mapy końcowe</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Naczynie dusz</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Ascendencje</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Księga zabójstw</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Najemnicy i umiejętności spoza klasy</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Biegłość w broni</a>
+                <a href="./specializations.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Specjalizacje</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Mod całkowitej konwersji do Diablo II: Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+<style>
+    .spw-wrap { margin: 24px 0 250px 0; }
+    .spw { position: relative; width: 639.5px; height: 720px; margin: 0 auto; text-align: center;
+        font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif; color: #ebebeb;
+        background-color: #121110; background-image: url(".././images/specializations/background.jpg");
+        background-size: 639.5px 720px; background-repeat: no-repeat; }
+    .spw-radio { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+    .spw-title { position: absolute; left: 47.5px; top: 28px; width: 544.5px;
+        height: 35.5px; line-height: 35.5px; font-size: 23px; letter-spacing: 2px;
+        text-transform: uppercase; color: #e2ba68; text-shadow: 1px 1px 2px #000; }
+    .spw-tab { position: absolute; top: 75px; width: 140px; height: 42px;
+        line-height: 39px; box-sizing: border-box; cursor: pointer; white-space: nowrap; overflow: hidden;
+        font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; color: #dec896; text-shadow: 1px 1px 1px #000;
+        border: 1.5px solid rgb(118, 92, 56); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.78);
+        background-color: rgb(39, 37, 35); background-image: linear-gradient(to bottom, rgb(52, 50, 47), rgb(26, 25, 23)); }
+    .spw-tab:hover { border-color: rgb(152, 120, 74); background-image: linear-gradient(to bottom, rgb(70, 66, 60), rgb(34, 32, 29)); }
+    .spw-points { position: absolute; left: 170px; top: 654.5px; width: 300px;
+        height: 29px; box-sizing: border-box; padding: 0 6px; overflow: hidden;
+        color: #dec896; text-shadow: 1px 1px 1px #000; }
+    .spw-page { display: none; }
+    #spw-tab1:checked ~ .spw-page1 { display: block; }
+    #spw-tab1:checked ~ .spw-tab1 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-alchemist { background-image: url(".././images/specializations/alchemist.png"); }
+    #spw-tab2:checked ~ .spw-page2 { display: block; }
+    #spw-tab2:checked ~ .spw-tab2 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-blacksmith { background-image: url(".././images/specializations/blacksmith.png"); }
+    #spw-tab3:checked ~ .spw-page3 { display: block; }
+    #spw-tab3:checked ~ .spw-tab3 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-jeweler { background-image: url(".././images/specializations/jeweler.png"); }
+    #spw-tab4:checked ~ .spw-page4 { display: block; }
+    #spw-tab4:checked ~ .spw-tab4 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-archaeologist { background-image: url(".././images/specializations/archaeologist.png"); }
+    .spw-perk { position: absolute; width: 66px; height: 65px; }
+    .spw-perk:hover { z-index: 20; }
+    .spw-socket { position: absolute; left: -11px; top: -11.5px; width: 88px; height: 88px;
+        background-image: url(".././images/specializations/socket.png"); background-size: 88px 88px;
+        background-repeat: no-repeat; pointer-events: none; }
+    .spw-icon { position: absolute; left: 0; top: 0; width: 66px; height: 65px;
+        background-repeat: no-repeat; background-size: 990px 65px; }
+    .spw-tip { display: none; position: absolute; width: 360px; box-sizing: border-box; padding: 0 12px 11px 12px;
+        background: rgba(10, 9, 8, 0.93); border: 1px solid rgb(118, 92, 56); z-index: 30; pointer-events: none; }
+    .spw-tip:before { content: ""; position: absolute; left: 1.5px; top: 1.5px; right: 1.5px; bottom: 1.5px;
+        border: 1px solid rgba(0, 0, 0, 0.86); }
+    .spw-perk:hover .spw-tip { display: block; }
+    .spw-tip-title { position: relative; min-height: 28px; margin-top: 6px; padding-bottom: 3px; margin-bottom: 6px;
+        border-bottom: 1px solid rgba(118, 92, 56, 0.6); font-size: 22px; line-height: 28px; color: #e8c470;
+        text-shadow: 1px 1px 1px #000; }
+    .spw-tip-text { position: relative; font-size: 19px; line-height: 21px; color: #ebebeb; }
+    .spw-tip-hint { position: relative; margin-top: 21px; font-size: 19px; line-height: 21px; color: #8c8c8c; }
+    .spw-tip-text:lang(zh), .spw-tip-hint:lang(zh), .spw-tip-text:lang(ja), .spw-tip-hint:lang(ja),
+    .spw-tip-text:lang(ko), .spw-tip-hint:lang(ko) { font-size: 16px; }
+</style>
+<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+    <tbody>
+        <tr>
+            <td colspan="2" align="center" bgcolor="#300000">
+                <font face="arial,helvetica" size="-1">
+                    Mistyczne Odłamki wypadają z silnych potworów w strefach końcowej fazy gry.<br>
+                    Transmutuj 10 Mistycznych Odłamków, aby stworzyć Mistyczny Tesserakt, który odblokowuje specjalizacje i daje punkt specjalizacji.<br>
+                    Kolejne punkty odblokowują się automatycznie na poziomach 45, 60, 75 i 90.<br>
+                    Jeśli twoja postać ma już wyższy poziom, Mistyczny Tesserakt daje punkty zależnie od poziomu (np. otrzymasz 3 punkty, jeśli użyjesz go na poziomie 63).<br>
+                    <br>
+                    Dostępne są 4 specjalizacje:<br>
+                    <font color="orange">Alchemik</font> - Specjalizuje się w miksturach.<br>
+                    <font color="orange">Kowal</font> - Specjalizuje się w broni i pancerzach.<br>
+                    <font color="orange">Jubiler</font> - Specjalizuje się w biżuterii, kamieniach szlachetnych i klejnotach.<br>
+                    <font color="orange">Archeolog</font> - Specjalizuje się w łupach, kuponach, runach i specjalnych artefaktach.<br>
+                    <br>
+                    Każda specjalizacja ma 15 atutów, po 3 w rzędzie. W każdym rzędzie możesz wybrać 1 atut z 3.<br>
+                    Możesz mieć maksymalnie 5 punktów.<br>
+                    Pojedyncze atuty możesz zresetować, klikając je z wciśniętym Shift. Wymaga to 5 punktów resetu (równowartość 20 Kamieni Smoka).<br>
+                    Aby zmienić specjalizację, musisz zresetować wszystkie atuty starej specjalizacji. Potem możesz wybrać nową.<br>
+                </font>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="spw-wrap">
+    <div class="spw">
+        <input type="radio" name="spw-tab" id="spw-tab1" class="spw-radio" checked>
+        <input type="radio" name="spw-tab" id="spw-tab2" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab3" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab4" class="spw-radio">
+        <div class="spw-title">Specjalizacje</div>
+        <label for="spw-tab1" class="spw-tab spw-tab1" style="left:32px;">Alchemik</label>
+        <label for="spw-tab2" class="spw-tab spw-tab2" style="left:177px;">Kowal</label>
+        <label for="spw-tab3" class="spw-tab spw-tab3" style="left:322px;">Jubiler</label>
+        <label for="spw-tab4" class="spw-tab spw-tab4" style="left:467px;">Archeolog</label>
+        <div class="spw-points" style="font-size:15px;line-height:29px;white-space:nowrap;">Najedź na atut, aby zobaczyć, co robi.</div>
+        <div class="spw-page spw-page1">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Skuteczne lekarstwa</div>
+                    <div class="spw-tip-text">Zwiększa działanie mikstur leczenia i many o 20%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Lotne mikstury</div>
+                    <div class="spw-tip-text">Zwiększa działanie mikstur użytkowych o 5%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Transmutacja</div>
+                    <div class="spw-tip-text">Mikstury leczenia i many mają 50% szansy, że zamiast tego wypadną jako mikstury odnowy.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Ukryte eliksiry</div>
+                    <div class="spw-tip-text">Możesz znajdować mikstury użytkowe, które normalnie nie wypadają.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Niestabilne mieszanki</div>
+                    <div class="spw-tip-text">Mikstury odnowy mają 15% szansy, że zamiast tego wypadną jako losowa mikstura użytkowa.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Obfite wywary</div>
+                    <div class="spw-tip-text">Zwiększa liczbę wypadających mikstur o 50%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Błogosławione fiolki</div>
+                    <div class="spw-tip-text">Mikstury leczenia zapewniają 5% redukcji całkowitych obrażeń, a mikstury many dają odporność na efekty wypalania many.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Infuzja kamieni</div>
+                    <div class="spw-tip-text">Możesz wytworzyć losową miksturę użytkową, transmutując doskonały kamień szlachetny z Kamieniem losowości.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Złożona synergia</div>
+                    <div class="spw-tip-text">Działanie wszystkich mikstur wzrasta o 5% za każdy różny aktywny na tobie efekt mikstury.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Sprytne eliksiry</div>
+                    <div class="spw-tip-text">Masz 25% szansy na uzyskanie efektów mikstury użytkowej bez jej zużycia.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Niekończące się fiolki</div>
+                    <div class="spw-tip-text">Efekty mikstur leczenia i many nie wygasają już przy pełnym życiu lub manie.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Alchemiczna doskonałość</div>
+                    <div class="spw-tip-text">Mikstury użytkowe, które wypadają lub które wytwarzasz, mają 25% szansy, że zamiast tego staną się większym wariantem.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Eliksir reinkarnacji</div>
+                    <div class="spw-tip-text">Możesz wytworzyć Eliksir reinkarnacji, transmutując 5 Kamieni Smoka. Po otrzymaniu śmiertelnych obrażeń przywraca pełne życie i manę oraz zapewnia 1 sekundę niewrażliwości. Czas odnowienia: 300 sekund.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Bezdenne fiolki</div>
+                    <div class="spw-tip-text">Zwiększa działanie mikstur leczenia i many o 100%. Mikstury leczenia i many nie są już zużywane podczas używania. Wszystkie mikstury odnowy leczą cię w pełni.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Szczęśliwy traf</div>
+                    <div class="spw-tip-text">Twoje mikstury użytkowe mają 15% szansy na zapewnienie ci efektu losowego sanktuarium.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page2">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Hartowana stal</div>
+                    <div class="spw-tip-text">Zwiększa modyfikatory obrażeń fizycznych, żywiołów i od zaklęć twojej broni o 10%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Mithrilowy splot</div>
+                    <div class="spw-tip-text">Zwiększa bazową obronę twojego ekwipunku o 10%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Nieważki</div>
+                    <div class="spw-tip-text">Zmniejsza całkowite wymagania atrybutów broni i pancerzy o 25%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Widmowy arsenał</div>
+                    <div class="spw-tip-text">Broń ma dwukrotnie większą szansę, by wypaść jako eteryczna.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Błogosławiony ekwipunek</div>
+                    <div class="spw-tip-text">Broń i pancerze mają 10% szansy, by wypaść o jeden poziom wyżej.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Łowca relikwii</div>
+                    <div class="spw-tip-text">Zwiększa całkowitą szansę na znalezienie unikatowej broni i pancerzy o 5%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Błogosławieństwo skryby</div>
+                    <div class="spw-tip-text">Magiczna, rzadka i wytworzona broń oraz pancerze mają 25% szansy na otrzymanie dodatkowego modyfikatora.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Ignorowanie bólu</div>
+                    <div class="spw-tip-text">Każda założona część pancerza zyskuje 1% dodatkowej bazowej obrony za każdy punkt wytrzymałości.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Ulubienica</div>
+                    <div class="spw-tip-text">Zwiększa siłę wszystkich modyfikatorów twojej założonej broni o 10%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Eteryczne mistrzostwo</div>
+                    <div class="spw-tip-text">Założona eteryczna broń zyskuje 25% więcej bazowych obrażeń fizycznych, a ty zyskujesz 10% więcej całkowitych obrażeń od zaklęć, dopóki masz założoną eteryczną broń.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Niezniszczalny</div>
+                    <div class="spw-tip-text">Założony ekwipunek nie traci już wytrzymałości, a ty zyskujesz 1% całkowitych obrażeń za każde 25 punktów wytrzymałości całego ekwipunku.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Doskonała równowaga</div>
+                    <div class="spw-tip-text">Masz 3 dodatkowego zasięgu z bronią do walki wręcz i 25% większą prędkość pocisków.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Prawdziwy mistrz</div>
+                    <div class="spw-tip-text">Możesz używać żetonów mistrzostwa we władaniu bronią na dowolnym typie broni.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Sekretny tygiel</div>
+                    <div class="spw-tip-text">Możesz wykuć swoją broń i pancerz jeszcze jeden raz.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Świętoszkowaty</div>
+                    <div class="spw-tip-text">Możesz namaścić swoją broń i pancerz jeszcze jeden raz.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page3">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Tajemna infuzja</div>
+                    <div class="spw-tip-text">Zwiększa działanie modyfikatorów twojego amuletu o 10%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Pierścienie władzy</div>
+                    <div class="spw-tip-text">Zwiększa działanie modyfikatorów twoich pierścieni o 5%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Wzmocnienie</div>
+                    <div class="spw-tip-text">Zwiększa działanie osadzonych klejnotów i kamieni szlachetnych o 5%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Obfita biżuteria</div>
+                    <div class="spw-tip-text">Zwiększa liczbę wypadających pierścieni, amuletów i klejnotów o 15%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Deszcz diamentów</div>
+                    <div class="spw-tip-text">Zwiększa liczbę wypadających kamieni szlachetnych o 25%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Sekretna kieszeń</div>
+                    <div class="spw-tip-text">Zwiększa całkowitą szansę na znalezienie unikatowych pierścieni, amuletów i klejnotów o 5%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Ukryty potencjał</div>
+                    <div class="spw-tip-text">Magiczne, rzadkie i wytworzone pierścienie oraz amulety mają 25% szansy na otrzymanie dodatkowego modyfikatora.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Olśniewająca jakość</div>
+                    <div class="spw-tip-text">Upuszczone lub stworzone klejnoty mają 15% szansy, że jeden z ich modyfikatorów będzie miał podwojoną siłę.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Pryzmatyczny rezonans</div>
+                    <div class="spw-tip-text">Zyskujesz 6% większe działanie kamieni szlachetnych za każdy osadzony kamień innego koloru.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Rezonujące obręcze</div>
+                    <div class="spw-tip-text">Zwiększa działanie modyfikatorów twoich magicznych pierścieni i amuletów o 25%, a działanie modyfikatorów rzadkich pierścieni i amuletów o 15%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Polerowanie pamiątek</div>
+                    <div class="spw-tip-text">Zwiększa działanie modyfikatorów unikatowych pierścieni i amuletów o 10%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Precyzja szlifierza</div>
+                    <div class="spw-tip-text">Kamienie szlachetne zyskują 6% zwiększonego efektu za każdy identyczny kamień osadzony w tym samym przedmiocie.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Pierwotny kamień szlachetny</div>
+                    <div class="spw-tip-text">Każdy klejnot po osadzeniu zyskuje losowy modyfikator idealnego kamienia szlachetnego, który wyświetla.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Doskonała forma</div>
+                    <div class="spw-tip-text">Możesz osadzać unikatowe małe i wielkie uroki za pomocą sekretnych receptur, bez zmieniania ich w większą wersję.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Pewne szczypce</div>
+                    <div class="spw-tip-text">Możesz wyjmować słowa kamieni bez niszczenia kamieni w środku. Słowa kamieni zyskują 20% większe działanie.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page4">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Szał łupieżcy</div>
+                    <div class="spw-tip-text">Zyskujesz 5% premii do całkowitych obrażeń za każdy pojemnik otwarty w ciągu ostatnich 15 sekund.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Bystra wycena</div>
+                    <div class="spw-tip-text">Przedmioty niskiej i zwykłej jakości mają 25% szansy, że zamiast tego wypadną jako przedmioty lepszej jakości.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Runiczny wgląd</div>
+                    <div class="spw-tip-text">Zwiększa działanie osadzonych run o 5%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Głębokie kieszenie</div>
+                    <div class="spw-tip-text">Zwiększa liczbę wypadających przedmiotów o 10%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Poszukiwacz złota</div>
+                    <div class="spw-tip-text">Zwiększa całkowitą ilość znajdowanego złota o 20%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Trzecie oko</div>
+                    <div class="spw-tip-text">Wszystkie przedmioty wypadają już zidentyfikowane.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Ukryte gniazda</div>
+                    <div class="spw-tip-text">Wszystkie przedmioty do założenia mają 50% szansy, by wypaść z co najmniej 1 gniazdem.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Śmieci jednego</div>
+                    <div class="spw-tip-text">Magiczne pancerze i broń wypadają jako złoto o wartości ich ceny sprzedaży.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Eteryczna wymiana</div>
+                    <div class="spw-tip-text">Przedmioty utworzone z kuponów mają 5% szansy, by stać się eteryczne.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Starożytne znaleziska</div>
+                    <div class="spw-tip-text">Zwiększa szansę na wypadnięcie mitycznych przedmiotów unikatowych o 25%.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Edycja kolekcjonerska</div>
+                    <div class="spw-tip-text">Zwykłe kupony mają 25% szansy na ulepszenie do wyjątkowych, a wyjątkowe kupony 15% szansy na ulepszenie do elitarnych.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Czysta formacja</div>
+                    <div class="spw-tip-text">Skruszone i skażone kryształy mają 2% szansy na ulepszenie do zwykłego stopnia.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">Przytłaczająca moc</div>
+                    <div class="spw-tip-text">Możesz tworzyć słowa runiczne w przedmiotach magicznych.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">Masowe kopanie</div>
+                    <div class="spw-tip-text">Zyskujesz umiejętność Masowe kopanie, która pozwala przeszukiwać pobliskie zwłoki w poszukiwaniu dodatkowych przedmiotów.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">Obce artefakty</div>
+                    <div class="spw-tip-text">Każdy zabity przez ciebie rzadki potwór oraz boss ma 2% szansy na upuszczenie bardzo potężnego starożytnego artefaktu.</div>
+                    <div class="spw-tip-hint">Shift + Klik, aby zapomnieć.<br>Kosztuje 5 punktów resetu.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

@@ -832,3 +832,41 @@ enabled = true
 perk_stat = 975
 bonus_percent = 20
 socket_types = ["gem"]
+
+
+# Gem Effect (stats, not perks)
+#   A gem effect stat raises the modifiers of the socketed items of its
+#   types by the character's value of the stat, in percent: at 10, a gem's
+#   +100 life gives +110. The value is the character's total from every
+#   source (gear, charms, skills, the socketed items themselves), as
+#   stat('...'.accr) reads it, so it works without any Jeweler perk. It adds
+#   to Amplification, Prismatic Resonance and Six Peas in a Pod and is
+#   pooled with them, so they are all rounded once. It raises the stats in
+#   Amplification's stats list, never a gem effect stat itself. A negative
+#   value lowers the effect; an item lowered by 100% or more gives nothing,
+#   never the opposite.
+#   Each [[gem_effect]] block is one stat. Copy the block for another stat
+#   with other types. A socketed item matching several blocks gets all of
+#   their values added up; a stat named in several blocks still counts once
+#   per item. For example, one stat for gems and one for jewels:
+#     [[gem_effect]]
+#     stat_id = <your gem stat>
+#     item_types = ["gem"]
+#     [[gem_effect]]
+#     stat_id = <your jewel stat>
+#     item_types = ["jewl"]
+#   stat_id: the itemstatcost.txt row of the stat (0 to 32767). Add the row
+#   and put its id here; -1 leaves the block off.
+#   item_types: the socketed item types it raises ("gem" is every gem,
+#   "jewl" every jewel).
+#   enabled: false switches just this block off.
+
+[[gem_effect]]
+enabled = true
+stat_id = 1022
+item_types = ["gem"]
+
+[[gem_effect]]
+enabled = true
+stat_id = 1023
+item_types = ["rune"]

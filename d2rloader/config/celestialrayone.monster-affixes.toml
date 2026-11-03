@@ -28,7 +28,7 @@
 #   skill's localdelay in skills.txt, in frames (25 = 1 second). localdelay is
 #   evaluated as a formula for the monster at the cast level, so lvl and other
 #   calc terms work. Blank or 0 means no lockout. Teleportation uses its own
-#   cooldown below instead.
+#   cooldown below (with -1 there, localdelay too).
 
 # FIRE / COLD / LIGHTNING ENCHANTED (when struck)
 #   Fire Enchanted's death explosion and Cold Enchanted's death nova are
@@ -46,11 +46,13 @@ stone_skin_skill = 1547
 #   The affix still gives the monster its teleport skill (skills.txt Id 184)
 #   as before. On top of that, each struck hit has teleport_chance percent to
 #   cast teleport_skill at the attacker. After a cast nothing fires for
-#   teleport_cooldown_frames (25 = 1 second). While the cooldown runs no roll
-#   is made. -1 for teleport_skill turns this part off.
+#   teleport_cooldown_frames (25 = 1 second). -1 uses the teleport skill's
+#   skills.txt localdelay instead, evaluated for the monster at its level like
+#   the other affix lockouts (blank or 0 there means no cooldown). While the
+#   cooldown runs no roll is made. -1 for teleport_skill turns this part off.
 teleport_skill = 184
 teleport_chance = 100
-teleport_cooldown_frames = 100
+teleport_cooldown_frames = -1
 
 # SPECTRAL HIT (attack and cast animations)
 #   Each time the monster starts an attack or cast animation (A1, A2, SC,
@@ -74,7 +76,17 @@ spectral_hit_skill_4 = 1551
 #   Monsters with the special rank flag 800h (bound demons) keep the stock
 #   routine untouched: Amplify Damage (skills.txt Id 66) with its own chance.
 #   An empty list keeps the stock routine for every monster.
-cursed_skills = [495, 508, 515, 520]
+cursed_skills = [1604,1605,1606,1607]
+
+# HIGH LEVEL MONSTERS
+#   Extra Strong, Extra Fast, Mana Burn and Magic Resistant get stronger for
+#   every monster level past high_level_start (monster level = stat 12: at
+#   spawn for Extra Strong, Extra Fast and Magic Resistant, the burning
+#   monster's level at the hit for Mana Burn). Each affix has its own percent
+#   per level below; 0 turns that part off. The growth is linear: 5 percent
+#   per level with the start at 100 is +35% at level 107 (with the start at
+#   99 the same level counts 8 levels, +40%).
+high_level_start = 100
 
 # EXTRA STRONG (at spawn)
 #   Flat bonuses, the same for every difficulty, for uniques and for minions
@@ -85,6 +97,10 @@ cursed_skills = [495, 508, 515, 520]
 #   passive_mag2_mastery and passive_wind_mastery (stats 329 to 332, 482, 483)
 strong_damage_percent = 100
 strong_spell_damage_percent = 100
+#   strong_percent_per_level: both bonuses grow by this percent of their own
+#   value for every level past high_level_start (5: level 107 gets 135% of
+#   both).
+strong_percent_per_level = 5
 
 # EXTRA FAST (at spawn)
 #   Walk speed is unchanged. On top of it, flat attack rate (stat 68,
@@ -99,12 +115,41 @@ fast_cast_rate_nightmare = 50
 fast_cast_rate_hell = 75
 fast_cast_rate_stat = 105
 
+# EXTRA FAST FRAMES (high level monsters)
+#   An Extra Fast monster past high_level_start plays its actions in fewer
+#   frames: fast_frames_percent_per_level percent fewer for every level past
+#   the start (at most 100%), never fewer than fast_frames_minimum frames;
+#   an action already at or below that minimum is left alone. It covers
+#   attack (A1, A2), skill (S1 to S4), cast (SC), block (BL), get hit (GH)
+#   and sequence (SQ) animations, on top of every other speed bonus. A
+#   sequence keeps every hit it has: when the shorter length would lose one,
+#   the closest length that keeps them all is used. Two hits of one attack
+#   animation that land on the same frame count once, as with any fast
+#   animation in the game.
+#   Walk and run are not changed: their animation speed and the ground speed
+#   come from the same movement percent, so a shorter walk cycle would only
+#   make the legs slide. Extra Fast keeps the game's own movement bonus.
+#   The amount reaches every client in a stat, so the animation and the
+#   game's timing match:
+#     fast_frames_stat  itemstatcost.txt *ID of a stat added for this, with
+#                       Send Other = 1, Send Bits = 8, UpdateAnimRate = 1
+#                       and no Save Bits. -1 turns this part off.
+fast_frames_stat = 1029
+fast_frames_percent_per_level = 5
+fast_frames_minimum = 5
+
 # MANA BURN (when the monster lands a hit)
 #   No mana drain damage any more. Instead every successful hit on a player
 #   burns mana_burn_percent of that player's maximum mana from the current
 #   mana. Missiles count, and minions that inherit the affix burn too.
 #   -1 keeps the stock mana drain.
 mana_burn_percent = 20
+mana_burn_cooldown_frames = 50
+#   mana_burn_cooldown_percent_per_level: the cooldown gets this percent
+#   shorter for every level the burning monster has past high_level_start
+#   (5: at level 110 it is half as long). It cannot go below 0, which burns
+#   on every hit.
+mana_burn_cooldown_percent_per_level = 5
 
 # AURA ENCHANTED (at spawn)
 #   Replaces the game's own Aura Enchanted roll, the one D2RLoader runs while
@@ -129,31 +174,31 @@ mana_burn_percent = 20
 
 # Every Aura Enchanted monster rolls one aura from this list.
 aura_enchanted_skills = [
-    { skill = 540, divisor = 6 },                  # Might
-    { skill = 529, divisor = 5 },                  # Blessed Aim
-    { skill = 555, divisor = 8 },                  # Conviction
-    { skill = 554, divisor = 7 },                  # Fanaticism
-    { skill = 531, divisor = 6 },                  # Sanctuary
-    { skill = 1560, divisor = 5 },                 # Defiance Mon
-    { skill = 537, divisor = 8 },                  # Cleansing
-    { skill = 543, divisor = 8 },                  # Concentration
-    { skill = 545, divisor = 8 },                  # Vigor
-    { skill = 557, divisor = 8 },                  # Salvation
+    { skill = 1608, divisor = 1 },                 # Defiance Mon
+    { skill = 1609, divisor = 1 },                 # Blessed Aim Mon
+    { skill = 1610, divisor = 1 },                 # Sanctuary Mon
+    { skill = 1611, divisor = 1 },                 # Cleansing Mon
+    { skill = 1612, divisor = 1 },                 # Might Mon
+    { skill = 1613, divisor = 1 },                 # Concentration Mon
+    { skill = 1614, divisor = 1 },                 # Vigor Mon
+    { skill = 1615, divisor = 1 },                 # Fanaticism Mon
+    { skill = 1616, divisor = 1 },                 # Conviction Mon
+    { skill = 1617, divisor = 1 },                 # Salvation Mon
 ]
 
 # Heralds roll one more aura from this list, given the way an item gives an
 # aura (stat 151, item_aura).
-aura_enchanted_skills = [
-    { skill = 540, divisor = 6 },                  # Might
-    { skill = 529, divisor = 5 },                  # Blessed Aim
-    { skill = 555, divisor = 8 },                  # Conviction
-    { skill = 554, divisor = 7 },                  # Fanaticism
-    { skill = 531, divisor = 6 },                  # Sanctuary
-    { skill = 1560, divisor = 5 },                 # Defiance Mon
-    { skill = 537, divisor = 8 },                  # Cleansing
-    { skill = 543, divisor = 8 },                  # Concentration
-    { skill = 545, divisor = 8 },                  # Vigor
-    { skill = 557, divisor = 8 },                  # Salvation
+herald_aura_skills = [
+    { skill = 1608, divisor = 1 },                 # Defiance Mon
+    { skill = 1609, divisor = 1 },                 # Blessed Aim Mon
+    { skill = 1610, divisor = 1 },                 # Sanctuary Mon
+    { skill = 1611, divisor = 1 },                 # Cleansing Mon
+    { skill = 1612, divisor = 1 },                 # Might Mon
+    { skill = 1613, divisor = 1 },                 # Concentration Mon
+    { skill = 1614, divisor = 1 },                 # Vigor Mon
+    { skill = 1615, divisor = 1 },                 # Fanaticism Mon
+    { skill = 1616, divisor = 1 },                 # Conviction Mon
+    { skill = 1617, divisor = 1 },                 # Salvation Mon
 ]
 
 # Fixed auras that skip the roll. -1 keeps the game's own.
@@ -163,8 +208,8 @@ aura_enchanted_skills = [
 #   its own aura list (skill 122, level = monster level / 8).
 uber_mephisto_aura_skill = 555
 uber_mephisto_aura_level = 20
-lord_de_seis_aura_skill = 554
-lord_de_seis_aura_divisor = 8
+lord_de_seis_aura_skill = 1615
+lord_de_seis_aura_divisor = 1
 
 # RESISTANCE (always on, nothing to configure)
 #   No affix grants resistance any more. Removed: Fire / Cold / Lightning
@@ -173,7 +218,7 @@ lord_de_seis_aura_divisor = 8
 #   (+50 physical) and the old Magic Resistant (+40 fire, cold, lightning).
 #   Ghostly champions keep their 80% physical resist (a separate routine).
 #
-# MAGIC RESISTANT (always on, nothing to configure)
+# MAGIC RESISTANT (always on)
 #   At spawn, each resist separately gets +50, capped at 95.
 #   What the cap leaves unused is converted:
 #     fire, cold, lightning, magic: 1% absorb of that element per 2 points
@@ -182,3 +227,8 @@ lord_de_seis_aura_divisor = 8
 #   A resist already at 95 or more gets no boost and converts all 50.
 #   Applied once at spawn, never re-evaluated. Same monsters as vanilla:
 #   minions that inherit the affix get nothing.
+#   magic_resistant_percent_per_level: the +50 grows by this percent for
+#   every level past high_level_start (5: level 107 gets +67). The 95 cap and
+#   the conversion rates stay, so the extra points mostly become absorb,
+#   dodge, avoid, evade and poison length reduction.
+magic_resistant_percent_per_level = 5

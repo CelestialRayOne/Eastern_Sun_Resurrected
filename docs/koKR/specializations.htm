@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ko">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 데이터베이스
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#50616;&#50612;"><select id="esr-lang-koKR" aria-label="&#50616;&#50612;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR" selected>&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="koKR",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-koKR');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기본 정보</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">방어구</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">무기</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">접두사</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">접미사</a>
+                <a href="./quality_affixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">품질 접사</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">유니크 방어구</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">유니크 무기</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">기타 유니크</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">신화 유니크</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">세트</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">보석/룬</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">보석어</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">룬어</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">큐브 조합법</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">지도</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">공격 속도 계산기</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">드롭 찾기</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">기능</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./special_crafting_outcomes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">특수 제작 결과</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">엔드게임 지도</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">영혼의 그릇</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">전직</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">처치 장부</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">용병 및 외부 기술 정보</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">무기 숙련</a>
+                <a href="./specializations.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">전문화</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">디아블로 II: 레저렉션 토탈 컨버전 모드</div>
+            </div>                
+                                <div style="width:100%;">
+
+<style>
+    .spw-wrap { margin: 24px 0 250px 0; }
+    .spw { position: relative; width: 639.5px; height: 720px; margin: 0 auto; text-align: center;
+        font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif; color: #ebebeb;
+        background-color: #121110; background-image: url(".././images/specializations/background.jpg");
+        background-size: 639.5px 720px; background-repeat: no-repeat; }
+    .spw-radio { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+    .spw-title { position: absolute; left: 47.5px; top: 28px; width: 544.5px;
+        height: 35.5px; line-height: 35.5px; font-size: 23px; letter-spacing: 2px;
+        text-transform: uppercase; color: #e2ba68; text-shadow: 1px 1px 2px #000; }
+    .spw-tab { position: absolute; top: 75px; width: 140px; height: 42px;
+        line-height: 39px; box-sizing: border-box; cursor: pointer; white-space: nowrap; overflow: hidden;
+        font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; color: #dec896; text-shadow: 1px 1px 1px #000;
+        border: 1.5px solid rgb(118, 92, 56); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.78);
+        background-color: rgb(39, 37, 35); background-image: linear-gradient(to bottom, rgb(52, 50, 47), rgb(26, 25, 23)); }
+    .spw-tab:hover { border-color: rgb(152, 120, 74); background-image: linear-gradient(to bottom, rgb(70, 66, 60), rgb(34, 32, 29)); }
+    .spw-points { position: absolute; left: 170px; top: 654.5px; width: 300px;
+        height: 29px; box-sizing: border-box; padding: 0 6px; overflow: hidden;
+        color: #dec896; text-shadow: 1px 1px 1px #000; }
+    .spw-page { display: none; }
+    #spw-tab1:checked ~ .spw-page1 { display: block; }
+    #spw-tab1:checked ~ .spw-tab1 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-alchemist { background-image: url(".././images/specializations/alchemist.png"); }
+    #spw-tab2:checked ~ .spw-page2 { display: block; }
+    #spw-tab2:checked ~ .spw-tab2 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-blacksmith { background-image: url(".././images/specializations/blacksmith.png"); }
+    #spw-tab3:checked ~ .spw-page3 { display: block; }
+    #spw-tab3:checked ~ .spw-tab3 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-jeweler { background-image: url(".././images/specializations/jeweler.png"); }
+    #spw-tab4:checked ~ .spw-page4 { display: block; }
+    #spw-tab4:checked ~ .spw-tab4 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-archaeologist { background-image: url(".././images/specializations/archaeologist.png"); }
+    .spw-perk { position: absolute; width: 66px; height: 65px; }
+    .spw-perk:hover { z-index: 20; }
+    .spw-socket { position: absolute; left: -11px; top: -11.5px; width: 88px; height: 88px;
+        background-image: url(".././images/specializations/socket.png"); background-size: 88px 88px;
+        background-repeat: no-repeat; pointer-events: none; }
+    .spw-icon { position: absolute; left: 0; top: 0; width: 66px; height: 65px;
+        background-repeat: no-repeat; background-size: 990px 65px; }
+    .spw-tip { display: none; position: absolute; width: 360px; box-sizing: border-box; padding: 0 12px 11px 12px;
+        background: rgba(10, 9, 8, 0.93); border: 1px solid rgb(118, 92, 56); z-index: 30; pointer-events: none; }
+    .spw-tip:before { content: ""; position: absolute; left: 1.5px; top: 1.5px; right: 1.5px; bottom: 1.5px;
+        border: 1px solid rgba(0, 0, 0, 0.86); }
+    .spw-perk:hover .spw-tip { display: block; }
+    .spw-tip-title { position: relative; min-height: 28px; margin-top: 6px; padding-bottom: 3px; margin-bottom: 6px;
+        border-bottom: 1px solid rgba(118, 92, 56, 0.6); font-size: 22px; line-height: 28px; color: #e8c470;
+        text-shadow: 1px 1px 1px #000; }
+    .spw-tip-text { position: relative; font-size: 19px; line-height: 21px; color: #ebebeb; }
+    .spw-tip-hint { position: relative; margin-top: 21px; font-size: 19px; line-height: 21px; color: #8c8c8c; }
+    .spw-tip-text:lang(zh), .spw-tip-hint:lang(zh), .spw-tip-text:lang(ja), .spw-tip-hint:lang(ja),
+    .spw-tip-text:lang(ko), .spw-tip-hint:lang(ko) { font-size: 16px; }
+</style>
+<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+    <tbody>
+        <tr>
+            <td colspan="2" align="center" bgcolor="#300000">
+                <font face="arial,helvetica" size="-1">
+                    신비한 파편은 엔드게임 지역의 강력한 몬스터에게서 떨어집니다.<br>
+                    신비한 파편 10개를 변환하면 신비한 테서랙트를 만들 수 있습니다. 신비한 테서랙트는 전문화를 해금하고 전문화 포인트 하나를 부여합니다.<br>
+                    45, 60, 75, 90 레벨에 도달하면 추가 포인트가 자동으로 해금됩니다.<br>
+                    캐릭터가 이미 해당 레벨을 넘었다면 신비한 테서랙트가 레벨에 따라 포인트를 부여합니다(예: 63 레벨에서 사용하면 3포인트를 얻습니다).<br>
+                    <br>
+                    전문화는 4가지입니다:<br>
+                    <font color="orange">연금술사</font> - 물약에 특화되어 있습니다.<br>
+                    <font color="orange">대장장이</font> - 무기와 방어구에 특화되어 있습니다.<br>
+                    <font color="orange">보석세공사</font> - 장신구, 보석, 주얼에 특화되어 있습니다.<br>
+                    <font color="orange">고고학자</font> - 드롭, 쿠폰, 룬, 특별한 유물에 특화되어 있습니다.<br>
+                    <br>
+                    각 전문화에는 특성이 15개 있으며 한 줄에 3개씩 있습니다. 각 줄에서 3개 중 1개를 선택할 수 있습니다.<br>
+                    포인트는 최대 5개까지 가질 수 있습니다.<br>
+                    Shift + 클릭으로 특성을 하나씩 재분배할 수 있습니다. 재분배 포인트 5개가 필요합니다(드래곤 스톤 20개에 해당).<br>
+                    전문화를 바꾸려면 기존 전문화의 특성을 모두 재분배해야 하며, 그 후에 새 전문화를 선택할 수 있습니다.<br>
+                </font>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="spw-wrap">
+    <div class="spw">
+        <input type="radio" name="spw-tab" id="spw-tab1" class="spw-radio" checked>
+        <input type="radio" name="spw-tab" id="spw-tab2" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab3" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab4" class="spw-radio">
+        <div class="spw-title">전문화</div>
+        <label for="spw-tab1" class="spw-tab spw-tab1" style="left:32px;">연금술사</label>
+        <label for="spw-tab2" class="spw-tab spw-tab2" style="left:177px;">대장장이</label>
+        <label for="spw-tab3" class="spw-tab spw-tab3" style="left:322px;">보석세공사</label>
+        <label for="spw-tab4" class="spw-tab spw-tab4" style="left:467px;">고고학자</label>
+        <div class="spw-points" style="font-size:12px;line-height:29px;white-space:nowrap;">특성 위에 커서를 올리면 효과를 볼 수 있습니다.</div>
+        <div class="spw-page spw-page1">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">효율적인 치료제</div>
+                    <div class="spw-tip-text">치유 및 마나 물약의 효과가 20% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">휘발성 조제약</div>
+                    <div class="spw-tip-text">유틸리티 물약의 효과가 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">변성</div>
+                    <div class="spw-tip-text">치유 및 마나 물약이 50% 확률로 대신 회복 물약으로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">숨겨진 엘릭서</div>
+                    <div class="spw-tip-text">일반적으로 떨어지지 않는 유틸리티 물약을 발견할 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">불안정한 혼합물</div>
+                    <div class="spw-tip-text">회복 물약이 15% 확률로 대신 무작위 유틸리티 물약으로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">풍성한 양조</div>
+                    <div class="spw-tip-text">떨어지는 물약의 수량이 50% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">축복받은 약병</div>
+                    <div class="spw-tip-text">치유 물약은 총 피해를 5% 감소시키고, 마나 물약은 마나 연소 효과에 면역이 되게 합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">보석 주입</div>
+                    <div class="spw-tip-text">완벽한 보석과 무작위의 돌을 변환하여 무작위 유틸리티 물약을 제작할 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">복합 상승 효과</div>
+                    <div class="spw-tip-text">자신에게 활성화된 서로 다른 물약 효과 하나당 모든 물약의 효과가 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">노련한 엘릭서</div>
+                    <div class="spw-tip-text">25% 확률로 유틸리티 물약을 소모하지 않고 그 효과를 얻습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">끝없는 약병</div>
+                    <div class="spw-tip-text">생명력이나 마나가 가득 찼을 때 치유 및 마나 물약의 효과가 더 이상 만료되지 않습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">연금술의 정수</div>
+                    <div class="spw-tip-text">떨어지거나 제작한 유틸리티 물약이 25% 확률로 대신 상위 변형이 됩니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">환생의 엘릭서</div>
+                    <div class="spw-tip-text">드래곤 스톤 5개를 변환하여 환생의 엘릭서를 제작할 수 있습니다. 치명적인 피해를 받으면 생명력과 마나를 완전히 회복하고 1초 동안 무적 상태가 됩니다. 재사용 대기시간: 300초.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">바닥없는 약병</div>
+                    <div class="spw-tip-text">치유 및 마나 물약의 효과가 100% 증가합니다. 치유 및 마나 물약이 더 이상 사용 시 소모되지 않습니다. 모든 회복 물약이 생명력을 완전히 회복시킵니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">뜻밖의 행운</div>
+                    <div class="spw-tip-text">유틸리티 물약이 15% 확률로 무작위 성소의 효과를 부여합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page2">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">담금질한 강철</div>
+                    <div class="spw-tip-text">무기의 물리, 원소 및 주문 피해 옵션이 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">미스릴 직조</div>
+                    <div class="spw-tip-text">장비의 기본 방어력이 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">무중력</div>
+                    <div class="spw-tip-text">무기와 방어구의 총 능력치 요구치가 25% 감소합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">유령 무기고</div>
+                    <div class="spw-tip-text">무기가 무형으로 떨어질 확률이 두 배가 됩니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">축복받은 장비</div>
+                    <div class="spw-tip-text">무기와 방어구가 10% 확률로 한 단계 높은 등급으로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">유물 사냥꾼</div>
+                    <div class="spw-tip-text">고유 무기와 방어구를 발견할 총 확률이 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">필경사의 축복</div>
+                    <div class="spw-tip-text">마법, 희귀 및 제작 무기와 방어구가 25% 확률로 추가 옵션을 얻습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">고통 무시</div>
+                    <div class="spw-tip-text">착용한 방어구마다 내구도 포인트당 기본 방어력이 1% 추가로 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">애용 무기</div>
+                    <div class="spw-tip-text">착용한 무기의 모든 옵션 수치가 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">무형 숙련</div>
+                    <div class="spw-tip-text">착용한 무형 무기의 기본 물리 피해가 25% 증가하고, 무형 무기를 착용하는 동안 총 주문 피해가 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">파괴 불가</div>
+                    <div class="spw-tip-text">착용한 장비의 내구도가 더 이상 감소하지 않으며, 전체 장비의 내구도 25포인트마다 총 피해가 1% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">완벽한 균형</div>
+                    <div class="spw-tip-text">근접 무기의 사거리가 3 증가하고 투사체 속도가 25% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">진정한 달인</div>
+                    <div class="spw-tip-text">모든 무기 유형에 무기 숙련 토큰을 사용할 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">비밀의 도가니</div>
+                    <div class="spw-tip-text">무기와 방어구를 한 번 더 단조할 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">독실한 척</div>
+                    <div class="spw-tip-text">무기와 방어구에 한 번 더 성유를 바를 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page3">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">비전 주입</div>
+                    <div class="spw-tip-text">아뮬렛 옵션의 효과가 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">권능의 반지</div>
+                    <div class="spw-tip-text">반지 옵션의 효과가 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">증폭</div>
+                    <div class="spw-tip-text">장착된 주얼과 보석의 효과가 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">풍성한 장신구</div>
+                    <div class="spw-tip-text">떨어지는 반지, 아뮬렛, 주얼의 수량이 15% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">다이아몬드 비</div>
+                    <div class="spw-tip-text">떨어지는 보석의 수량이 25% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">비밀 주머니</div>
+                    <div class="spw-tip-text">고유 반지, 아뮬렛, 주얼을 발견할 총 확률이 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">숨겨진 잠재력</div>
+                    <div class="spw-tip-text">마법, 희귀 및 제작 반지와 목걸이가 25% 확률로 추가 옵션을 얻습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">찬란한 품질</div>
+                    <div class="spw-tip-text">획득하거나 제작한 주얼은 15% 확률로 옵션 중 하나의 수치가 두 배가 됩니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">프리즘 공명</div>
+                    <div class="spw-tip-text">장착한 서로 다른 색상의 보석 하나당 보석 효과가 6% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">공명하는 고리</div>
+                    <div class="spw-tip-text">마법 반지와 아뮬렛의 옵션 효과가 25% 증가하고, 희귀 반지와 아뮬렛의 옵션 효과가 15% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">가보 광택</div>
+                    <div class="spw-tip-text">고유 반지와 아뮬렛의 옵션 효과가 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">보석 세공사의 정밀함</div>
+                    <div class="spw-tip-text">동일한 아이템에 장착된 동일한 보석 하나당 보석 효과가 6% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">태고의 보석</div>
+                    <div class="spw-tip-text">각 주얼은 장착 시 표시되는 완벽한 보석의 무작위 옵션 하나를 얻습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">완벽한 형태</div>
+                    <div class="spw-tip-text">비밀 레시피를 사용해 고유 작은 부적과 대형 부적을 더 큰 버전으로 바뀌지 않게 장착할 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">흔들림 없는 집게</div>
+                    <div class="spw-tip-text">안의 보석을 파괴하지 않고 보석어를 제거할 수 있습니다. 보석어의 효과가 20% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page4">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">약탈자의 질주</div>
+                    <div class="spw-tip-text">최근 15초 동안 연 상자 하나당 총 피해 보너스를 5% 얻습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">날카로운 감정</div>
+                    <div class="spw-tip-text">저품질 및 일반 품질 아이템이 25% 확률로 대신 우수한 품질로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">룬의 통찰</div>
+                    <div class="spw-tip-text">장착된 룬의 효과가 5% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">깊은 주머니</div>
+                    <div class="spw-tip-text">떨어지는 아이템의 수량이 10% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">금광꾼</div>
+                    <div class="spw-tip-text">획득하는 총 골드가 20% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">세 번째 눈</div>
+                    <div class="spw-tip-text">모든 아이템이 이미 감정된 상태로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">숨겨진 홈</div>
+                    <div class="spw-tip-text">장착 가능한 모든 아이템이 50% 확률로 홈이 최소 1개 있는 상태로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">누군가의 쓰레기</div>
+                    <div class="spw-tip-text">마법 방어구와 무기가 판매 가격만큼의 골드로 떨어집니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">무형 교환</div>
+                    <div class="spw-tip-text">쿠폰으로 생성된 아이템이 5% 확률로 무형이 됩니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">고대의 발견</div>
+                    <div class="spw-tip-text">신화 고유 아이템의 드롭 확률이 25% 증가합니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">수집가 에디션</div>
+                    <div class="spw-tip-text">일반 쿠폰이 25% 확률로 특급으로, 특급 쿠폰이 15% 확률로 엘리트로 업그레이드됩니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">순수한 형성</div>
+                    <div class="spw-tip-text">이빨 빠진 크리스탈 및 결점 있는 크리스탈이 2% 확률로 일반 등급으로 업그레이드됩니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">압도적인 힘</div>
+                    <div class="spw-tip-text">마법 아이템에 룬어를 만들 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">대량 발굴</div>
+                    <div class="spw-tip-text">대량 발굴 기술을 얻어 주변 시체를 뒤져 추가 아이템을 찾을 수 있습니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">외계 유물</div>
+                    <div class="spw-tip-text">처치한 모든 희귀 몬스터 및 보스가 2% 확률로 매우 강력한 고대 유물을 떨어뜨립니다.</div>
+                    <div class="spw-tip-hint">Shift + 클릭으로 습득 취소.<br>재분배 포인트 5 소모.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

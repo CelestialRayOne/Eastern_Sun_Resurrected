@@ -354,6 +354,23 @@ enabled = true
 perk_stat = 980
 percent = 20
 
+# Total Gold Found (a stat, not a perk)
+#   Every gold pile dropped for the character holds the character's value of
+#   this stat in percent more gold. It joins the Gold Find perk above: the
+#   two add up and multiply the pile after the game's Gold Find, so the
+#   perk's 20 and this stat at 10 make +30%, and +100% Gold Find turns 1000
+#   gold into 2600. The value is the character's total from every source
+#   (gear, charms, skills), as stat('...'.accr) reads it, so it works without
+#   the perk; a minion's kill uses its owner's value when credit_minion_owner
+#   is true. Like the perk, only monster kills and opened containers count,
+#   and Sell Value piles are left alone. A negative value lowers the gold;
+#   lowered by 100% or more in total, a pile holds nothing.
+#   stat_id: the itemstatcost.txt row of the stat (0 to 32767). Add the row
+#   and put its id here; -1 leaves it off.
+[total_gold_found]
+enabled = true
+stat_id = 1025
+
 # Identified Drops (archaeology_6)
 #   Every item dropped for the character (monster kills and opened
 #   containers) drops identified, so magic, rare, set and unique items show

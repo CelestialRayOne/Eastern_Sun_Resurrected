@@ -1,0 +1,100 @@
+# ============================================================================
+# Trap Owner Credit
+# ============================================================================
+#
+# WHAT IT DOES
+# A trap is a monster, so in the stock game its kills and its hits belong to
+# the trap. The owner's own "on kill" and "on hit" effects never fire for
+# them. This plugin credits them to the player who owns the trap.
+#
+# Kills: the owner gets the kill instead of the trap.
+#   - Life after each Kill, Mana after each Kill, Life after each Demon Kill
+#   - Chance to cast on kill, Reanimate As, Slain Monsters Rest in Peace
+#   - Any skills.txt auraevent set to kill on the owner
+#   - Combat kills and kills by poison, bleed, burning and Open Wounds alike
+#   - Rest in Peace on the owner now also stops corpses of trap kills from
+#     being used, Death Sentry's corpse explosion included
+#
+# On hit: the owner's on-hit effects also fire on the trap's hits.
+#   - Crushing Blow, Open Wounds, chance to cast on striking, Knockback,
+#     Slows Target, Freezes Target, Hit Blinds Target, Hit Causes Monster
+#     to Flee
+#   - Any skills.txt auraevent set to domeleedamage or domissiledamage on
+#     the owner
+#   - Only hits that carry weapon damage count (SrcDam). That is the rule
+#     the game already applies to every missile hit; the plugin applies it
+#     to melee-type trap hits as well.
+#   - The trap keeps its own on-hit effects, if it has any.
+#
+# Every effect keeps its own native rules, exactly as when the owner makes
+# the hit or the kill herself:
+#   - Chance to cast on kill needs the killing hit to carry weapon damage.
+#     A kill by poison, bleed or burning counts.
+#   - Procs are cast by the owner, so they start from her position.
+#
+# Experience, magic find and gold find already go to the owner in the stock
+# game. The plugin does not touch them.
+#
+# WHICH MONSTERS
+# monster_ids lists monstats.txt rows (the *hcIdx column). A listed unit is
+# credited to its owner only while the owner is a live player. A minion owned
+# by another of that player's minions belongs to the same player. Anything
+# else, or an owner that is dead or gone, keeps the stock behaviour. Any
+# monstats row can be listed, so other summons work the same way.
+#
+# Vanilla trap rows (check ESR's rows with the console command below):
+#   410 wakeofdestruction  Wake of Fire
+#   411 chargeboltsentry   Charged Bolt Sentry
+#   412 lightningsentry    Lightning Sentry
+#   413 bladecreeper       Blade Sentinel
+#   415 infernosentry      Wake of Inferno
+#   416 deathsentry        Death Sentry
+#
+# CONSOLE
+#   trapcredit   settings, the state of each patched call, counters, and
+#                every monstats row that made a kill while owned by a player
+#                (listed or not), so you can see which rows your traps use
+#
+# LOG (<scope>\d2rloader\logs\celestialrayone.trap-owner-credit.log)
+#   - At load: the rows read from this file and the state of each part.
+#   - A key this plugin does not know, or a key under the wrong [section],
+#     is named with its section. Nothing is ignored silently.
+#   - The first 8 credited kills and the first 8 credited hits, with the
+#     row, the trap and the owner.
+#
+# HOW IT WORKS
+# The game fires kill, domeleedamage and domissiledamage from four calls:
+# three in the damage commit (0x44CFC5, 0x44CFE4, 0x44D535) and one in the
+# monster life tick for poison, bleed and burning deaths (0x448F36). The
+# plugin changes only the target of those four calls. For a listed monster
+# with a live player owner it hands the event to the owner; everything else
+# goes through unchanged.
+#
+# Changes take effect the next time the game starts.
+#
+# ============================================================================
+
+# File format version. Leave this value unchanged.
+config_version = 1
+
+# Master switch. false loads without patching anything.
+enabled = true
+
+
+[credit]
+# The owner gets the kill instead of the trap.
+kills = true
+
+# The owner's on-hit effects also fire on the trap's weapon-damage hits.
+on_hit = true
+
+
+[monsters]
+# monstats.txt rows (*hcIdx). Any separators: [410, 411] and 410 411 both
+# parse. Up to 256 rows, on one line or across several.
+monster_ids = [410, 411, 412, 413, 415, 416, 1141, 1142, 1267]
+
+
+# Lets D2RLoader verify that multiplayer peers use matching settings.
+[d2rl]
+match = true

@@ -1,0 +1,6 @@
+// Embedded D2RLoader plugin manifest. Without it the loader rejects the DLL
+// as "not compatible" (it reports an old alpha plugin). Must declare the ABI.
+#include <D2RLPlugin/resource.h>
+#include <D2RLPlugin/version.h>
+
+D2RL_PLUGIN_MANIFEST_RESOURCE_ID RCDATA { D2RL_PLUGIN_RESOURCE_DWORD(D2RL_PLUGIN_ABI_VERSION) }

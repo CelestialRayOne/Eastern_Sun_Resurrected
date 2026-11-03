@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected データベース
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35328;&#35486;"><select id="esr-lang-jaJP" aria-label="&#35328;&#35486;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP" selected>&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="jaJP",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-jaJP');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本情報</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">防具</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">武器</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">接頭辞</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">接尾辞</a>
+                <a href="./quality_affixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">品質接辞</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">ユニーク防具</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">ユニーク武器</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">その他のユニーク</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">神話ユニーク</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">セット</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">宝石/ルーン</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">ジェムワード</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">ルーンワード</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">キューブレシピ</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">マップ</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">攻撃速度計算機</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">ドロップ検索</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">機能</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./special_crafting_outcomes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">特殊クラフトの結果</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">エンドゲームマップ</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">魂の器</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">アセンダンシー</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">討伐台帳</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">傭兵と他クラススキル情報</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">武器熟練</a>
+                <a href="./specializations.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">専門化</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">ディアブロ II リザレクテッド用トータルコンバージョンMOD</div>
+            </div>                
+                                <div style="width:100%;">
+
+<style>
+    .spw-wrap { margin: 24px 0 250px 0; }
+    .spw { position: relative; width: 639.5px; height: 720px; margin: 0 auto; text-align: center;
+        font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif; color: #ebebeb;
+        background-color: #121110; background-image: url(".././images/specializations/background.jpg");
+        background-size: 639.5px 720px; background-repeat: no-repeat; }
+    .spw-radio { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+    .spw-title { position: absolute; left: 47.5px; top: 28px; width: 544.5px;
+        height: 35.5px; line-height: 35.5px; font-size: 23px; letter-spacing: 2px;
+        text-transform: uppercase; color: #e2ba68; text-shadow: 1px 1px 2px #000; }
+    .spw-tab { position: absolute; top: 75px; width: 140px; height: 42px;
+        line-height: 39px; box-sizing: border-box; cursor: pointer; white-space: nowrap; overflow: hidden;
+        font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; color: #dec896; text-shadow: 1px 1px 1px #000;
+        border: 1.5px solid rgb(118, 92, 56); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.78);
+        background-color: rgb(39, 37, 35); background-image: linear-gradient(to bottom, rgb(52, 50, 47), rgb(26, 25, 23)); }
+    .spw-tab:hover { border-color: rgb(152, 120, 74); background-image: linear-gradient(to bottom, rgb(70, 66, 60), rgb(34, 32, 29)); }
+    .spw-points { position: absolute; left: 170px; top: 654.5px; width: 300px;
+        height: 29px; box-sizing: border-box; padding: 0 6px; overflow: hidden;
+        color: #dec896; text-shadow: 1px 1px 1px #000; }
+    .spw-page { display: none; }
+    #spw-tab1:checked ~ .spw-page1 { display: block; }
+    #spw-tab1:checked ~ .spw-tab1 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-alchemist { background-image: url(".././images/specializations/alchemist.png"); }
+    #spw-tab2:checked ~ .spw-page2 { display: block; }
+    #spw-tab2:checked ~ .spw-tab2 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-blacksmith { background-image: url(".././images/specializations/blacksmith.png"); }
+    #spw-tab3:checked ~ .spw-page3 { display: block; }
+    #spw-tab3:checked ~ .spw-tab3 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-jeweler { background-image: url(".././images/specializations/jeweler.png"); }
+    #spw-tab4:checked ~ .spw-page4 { display: block; }
+    #spw-tab4:checked ~ .spw-tab4 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-archaeologist { background-image: url(".././images/specializations/archaeologist.png"); }
+    .spw-perk { position: absolute; width: 66px; height: 65px; }
+    .spw-perk:hover { z-index: 20; }
+    .spw-socket { position: absolute; left: -11px; top: -11.5px; width: 88px; height: 88px;
+        background-image: url(".././images/specializations/socket.png"); background-size: 88px 88px;
+        background-repeat: no-repeat; pointer-events: none; }
+    .spw-icon { position: absolute; left: 0; top: 0; width: 66px; height: 65px;
+        background-repeat: no-repeat; background-size: 990px 65px; }
+    .spw-tip { display: none; position: absolute; width: 360px; box-sizing: border-box; padding: 0 12px 11px 12px;
+        background: rgba(10, 9, 8, 0.93); border: 1px solid rgb(118, 92, 56); z-index: 30; pointer-events: none; }
+    .spw-tip:before { content: ""; position: absolute; left: 1.5px; top: 1.5px; right: 1.5px; bottom: 1.5px;
+        border: 1px solid rgba(0, 0, 0, 0.86); }
+    .spw-perk:hover .spw-tip { display: block; }
+    .spw-tip-title { position: relative; min-height: 28px; margin-top: 6px; padding-bottom: 3px; margin-bottom: 6px;
+        border-bottom: 1px solid rgba(118, 92, 56, 0.6); font-size: 22px; line-height: 28px; color: #e8c470;
+        text-shadow: 1px 1px 1px #000; }
+    .spw-tip-text { position: relative; font-size: 19px; line-height: 21px; color: #ebebeb; }
+    .spw-tip-hint { position: relative; margin-top: 21px; font-size: 19px; line-height: 21px; color: #8c8c8c; }
+    .spw-tip-text:lang(zh), .spw-tip-hint:lang(zh), .spw-tip-text:lang(ja), .spw-tip-hint:lang(ja),
+    .spw-tip-text:lang(ko), .spw-tip-hint:lang(ko) { font-size: 16px; }
+</style>
+<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+    <tbody>
+        <tr>
+            <td colspan="2" align="center" bgcolor="#300000">
+                <font face="arial,helvetica" size="-1">
+                    神秘の欠片はエンドゲームのゾーンにいる強力なモンスターからドロップします。<br>
+                    神秘の欠片を10個合成すると神秘のテッセラクトを作成でき、専門化が解放されて専門化ポイントをひとつ獲得します。<br>
+                    レベル45、60、75、90で追加のポイントが自動的に解放されます。<br>
+                    キャラクターがすでにそれらのレベルを超えている場合、神秘のテッセラクトはレベルに応じたポイントを与えます（例：レベル63で使うと3ポイント獲得）。<br>
+                    <br>
+                    専門化は4種類あります：<br>
+                    <font color="orange">錬金術師</font> - ポーションに特化しています。<br>
+                    <font color="orange">鍛冶師</font> - 武器と防具に特化しています。<br>
+                    <font color="orange">宝石職人</font> - アクセサリー、宝石、ジュエルに特化しています。<br>
+                    <font color="orange">考古学者</font> - ドロップ、クーポン、ルーン、特別なアーティファクトに特化しています。<br>
+                    <br>
+                    各専門化には15個のパークがあり、各列に3個ずつ並んでいます。各列で3個の中から1個を選べます。<br>
+                    ポイントは最大5まで所持できます。<br>
+                    Shift + クリックでパークを個別に振り直せます。振り直しポイントが5必要です（ドラゴンストーン20個分）。<br>
+                    専門化を変更したい場合は、元の専門化のパークをすべて振り直す必要があります。その後、新しい専門化を選べます。<br>
+                </font>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="spw-wrap">
+    <div class="spw">
+        <input type="radio" name="spw-tab" id="spw-tab1" class="spw-radio" checked>
+        <input type="radio" name="spw-tab" id="spw-tab2" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab3" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab4" class="spw-radio">
+        <div class="spw-title">専門化</div>
+        <label for="spw-tab1" class="spw-tab spw-tab1" style="left:32px;">錬金術師</label>
+        <label for="spw-tab2" class="spw-tab spw-tab2" style="left:177px;">鍛冶師</label>
+        <label for="spw-tab3" class="spw-tab spw-tab3" style="left:322px;">宝石職人</label>
+        <label for="spw-tab4" class="spw-tab spw-tab4" style="left:467px;">考古学者</label>
+        <div class="spw-points" style="font-size:12px;line-height:29px;white-space:nowrap;">パークにカーソルを合わせると効果が表示されます。</div>
+        <div class="spw-page spw-page1">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">効率的な治療薬</div>
+                    <div class="spw-tip-text">治癒とマナのポーションの効果が20%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">揮発性の調合薬</div>
+                    <div class="spw-tip-text">ユーティリティポーションの効果が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">変成</div>
+                    <div class="spw-tip-text">治癒とマナのポーションが50%の確率で代わりに回復ポーションとしてドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">隠された霊薬</div>
+                    <div class="spw-tip-text">通常はドロップしないユーティリティポーションを見つけられるようになる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">不安定な混合物</div>
+                    <div class="spw-tip-text">回復ポーションが15%の確率で代わりにランダムなユーティリティポーションとしてドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">豊かな醸造</div>
+                    <div class="spw-tip-text">ドロップするポーションの数が50%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">祝福された薬瓶</div>
+                    <div class="spw-tip-text">治癒ポーションは総ダメージを5%軽減し、マナポーションはマナバーン効果を無効にする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">宝石の注入</div>
+                    <div class="spw-tip-text">完璧な宝石とランダム化の石を合成すると、ランダムなユーティリティポーションを作成できる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">複合シナジー</div>
+                    <div class="spw-tip-text">自身に有効な異なるポーション効果ごとに、すべてのポーションの効果が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">賢明な霊薬</div>
+                    <div class="spw-tip-text">25%の確率で、ユーティリティポーションを消費せずにその効果を得る。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">尽きぬ薬瓶</div>
+                    <div class="spw-tip-text">ライフまたはマナが最大のときでも、治癒とマナのポーションの効果が切れなくなる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">錬金術の極致</div>
+                    <div class="spw-tip-text">ドロップした、または作成したユーティリティポーションが25%の確率で代わりに上位版になる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">転生のエリクサー</div>
+                    <div class="spw-tip-text">ドラゴンストーン5個を合成すると転生のエリクサーを作成できる。致命的なダメージを受けると、ライフとマナが完全に回復し、1秒間無敵になる。クールダウン:300秒。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">底なしの薬瓶</div>
+                    <div class="spw-tip-text">治癒とマナのポーションの効果が100%増加する。治癒とマナのポーションは使用しても消費されなくなる。すべての回復ポーションがライフを完全に回復する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">セレンディピティ</div>
+                    <div class="spw-tip-text">ユーティリティポーションが15%の確率でランダムな神殿の効果を付与する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page2">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">焼き入れ鋼</div>
+                    <div class="spw-tip-text">武器の物理、属性、呪文ダメージの特性が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">ミスリル織り</div>
+                    <div class="spw-tip-text">装備の基本防御力が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">無重量</div>
+                    <div class="spw-tip-text">武器と防具の能力値要件の合計が25%減少する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">霊体の武器庫</div>
+                    <div class="spw-tip-text">武器がエセリアルとしてドロップする確率が倍になる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">祝福された装備</div>
+                    <div class="spw-tip-text">武器と防具が10%の確率で一段階上のティアでドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">遺物ハンター</div>
+                    <div class="spw-tip-text">ユニーク武器と防具を見つける確率の合計が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">書記の祝福</div>
+                    <div class="spw-tip-text">魔法、レア、およびクラフトの武器と防具が25%の確率で追加の特性を得る。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">痛みの無視</div>
+                    <div class="spw-tip-text">装備中の防具はそれぞれ、耐久度ポイントごとに基本防御力が1%追加される。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">愛用の一振り</div>
+                    <div class="spw-tip-text">装備中の武器のすべての特性の数値が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">エセリアルの熟練</div>
+                    <div class="spw-tip-text">装備中のエセリアル武器の基本物理ダメージが25%増加し、エセリアル武器を装備している間、呪文ダメージの合計が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">不壊</div>
+                    <div class="spw-tip-text">装備品の耐久度が減らなくなり、装備全体の耐久度25ポイントごとに総ダメージが1%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">完璧な均衡</div>
+                    <div class="spw-tip-text">近接武器の射程が3増加し、投射物の速度が25%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">真の達人</div>
+                    <div class="spw-tip-text">あらゆる武器タイプに武器マスタリーのトークンを使用できる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">秘密の坩堝</div>
+                    <div class="spw-tip-text">武器と防具をもう一度鍛造できる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">聖人ぶり</div>
+                    <div class="spw-tip-text">武器と防具をもう一度聖別できる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page3">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">秘術の注入</div>
+                    <div class="spw-tip-text">アミュレットの特性の効果が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">力の指輪</div>
+                    <div class="spw-tip-text">指輪の特性の効果が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">増幅</div>
+                    <div class="spw-tip-text">ソケットに装着したジュエルと宝石の効果が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">豊かな宝飾品</div>
+                    <div class="spw-tip-text">ドロップする指輪、アミュレット、ジュエルの数が15%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">ダイヤモンドの雨</div>
+                    <div class="spw-tip-text">ドロップする宝石の数が25%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">秘密のポケット</div>
+                    <div class="spw-tip-text">ユニークの指輪、アミュレット、ジュエルを見つける確率の合計が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">秘めた潜在力</div>
+                    <div class="spw-tip-text">魔法、レア、およびクラフトの指輪とアミュレットが25%の確率で追加の特性を得る。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">輝く品質</div>
+                    <div class="spw-tip-text">ドロップまたは作成されたジュエルは15%の確率で特性のひとつの数値が倍になる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">プリズムの共鳴</div>
+                    <div class="spw-tip-text">ソケットに装着した異なる色の宝石ごとに、宝石の効果が6%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">共鳴する環</div>
+                    <div class="spw-tip-text">マジックの指輪とアミュレットの特性の効果が25%、レアの指輪とアミュレットの特性の効果が15%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">家宝の艶出し</div>
+                    <div class="spw-tip-text">ユニークの指輪とアミュレットの特性の効果が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">宝石職人の精密さ</div>
+                    <div class="spw-tip-text">同じアイテムに装着されている同じ宝石1つにつき、宝石の効果が6%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">原初の宝石</div>
+                    <div class="spw-tip-text">各ジュエルは装着時、表示されている完璧な宝石のランダムな特性を1つ獲得する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">完璧な形</div>
+                    <div class="spw-tip-text">秘密のレシピを使えば、ユニークのスモールチャームとグランドチャームを大きな版にせずに装着できる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">揺るがぬやっとこ</div>
+                    <div class="spw-tip-text">中の宝石を壊さずにジェムワードを取り外せる。ジェムワードの効果が20%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page4">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">略奪者の勢い</div>
+                    <div class="spw-tip-text">直近15秒間に開けたコンテナごとに、総ダメージボーナスを5%得る。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">鋭い鑑定眼</div>
+                    <div class="spw-tip-text">低品質と通常品質のアイテムが25%の確率で代わりに上質でドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">ルーンの洞察</div>
+                    <div class="spw-tip-text">ソケットに装着したルーンの効果が5%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">深いポケット</div>
+                    <div class="spw-tip-text">ドロップするアイテムの数が10%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">金鉱掘り</div>
+                    <div class="spw-tip-text">見つけるゴールドの合計が20%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">第三の目</div>
+                    <div class="spw-tip-text">すべてのアイテムが鑑定済みの状態でドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">隠されたソケット</div>
+                    <div class="spw-tip-text">装備可能なすべてのアイテムが50%の確率で1つ以上のソケット付きでドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">ある者のゴミ</div>
+                    <div class="spw-tip-text">マジックの防具と武器が売却額分のゴールドとしてドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">エセリアル交換</div>
+                    <div class="spw-tip-text">クーポンで作成したアイテムが5%の確率でエセリアルになる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">古代の発見</div>
+                    <div class="spw-tip-text">神話のユニークアイテムのドロップ率が25%増加する。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">コレクターズエディション</div>
+                    <div class="spw-tip-text">ノーマルのクーポンが25%の確率でエクセプショナルに、エクセプショナルのクーポンが15%の確率でエリートにアップグレードされる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">純粋な形成</div>
+                    <div class="spw-tip-text">欠けたクリスタルと傷のあるクリスタルが2%の確率でノーマル等級にアップグレードされる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">圧倒的な力</div>
+                    <div class="spw-tip-text">マジックアイテムにルーンワードを作成できる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">大量発掘</div>
+                    <div class="spw-tip-text">大量発掘スキルを習得し、周囲の死体を探って追加のアイテムを見つけられる。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">異界の遺物</div>
+                    <div class="spw-tip-text">倒したすべてのレアモンスターおよびボスが2%の確率で非常に強力な古代のアーティファクトをドロップする。</div>
+                    <div class="spw-tip-hint">Shift + クリックで習得を取り消す。<br>振り直しポイントを5消費。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

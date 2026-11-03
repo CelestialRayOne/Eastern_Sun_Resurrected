@@ -1,0 +1,205 @@
+{
+  "_comment": "Pages shown by the overlay, in tab order. mode 'guide': each heading becomes a list entry. mode 'cards': each node whose name matches cardPattern is an item, grouped into list categories by its group code (categories maps codes to display names, in order). mode 'runes': headings named in categories become list entries; rune icons under them are items. 'excel' names the table lookup for item fields (unique, set, runeword).",
+  "pages": [
+    {
+      "id": "welcome",
+      "title": "Welcome",
+      "group": "Wiki",
+      "mode": "guide",
+      "sources": [
+        "data/wikiwelcomehd.json"
+      ]
+    },
+    {
+      "id": "ascendancy",
+      "title": "Ascendancy",
+      "group": "Wiki",
+      "mode": "guide",
+      "sources": [
+        "data/wikiascendancyhd.json"
+      ],
+      "ascendancyNotes": true
+    },
+    {
+      "id": "runes",
+      "title": "Runes",
+      "group": "Wiki",
+      "mode": "runes",
+      "style": "compact",
+      "categories": [
+        "Kanji Runes",
+        "LoD Runes",
+        "Elemental Runes"
+      ],
+      "sources": [
+        "data/wikiruneshd.json"
+      ]
+    },
+    {
+      "id": "runewords",
+      "title": "Runewords",
+      "group": "Wiki",
+      "mode": "cards",
+      "cardPattern": "^card_",
+      "excel": "runeword",
+      "categories": {
+        "Weapon": "Weapons",
+        "Helm": "Helms",
+        "Torso": "Torso",
+        "Shield": "Shields",
+        "Belt": "Belts",
+        "Boots": "Boots",
+        "Gloves": "Gloves",
+        "Charm": "Charms"
+      },
+      "sortable": true
+    },
+    {
+      "id": "gemwords",
+      "title": "Gemwords",
+      "group": "Wiki",
+      "mode": "cards",
+      "cardPattern": "^card_",
+      "subtitleFromNameParts": true,
+      "compactCategories": [
+        "Weapon",
+        "BodyArmor",
+        "Charm"
+      ],
+      "categories": {
+        "Weapon": "Weapons",
+        "BodyArmor": "Body Armor",
+        "Charm": "Charms",
+        "Named": "Named"
+      },
+      "sources": [
+        "data/gemwordscarouselhd.json"
+      ]
+    },
+    {
+      "id": "item-bases",
+      "title": "Item Bases",
+      "group": "Wiki",
+      "mode": "baseItemCards",
+      "source": "data/base-items-raw.json"
+    },
+    {
+      "id": "uniques",
+      "title": "Uniques",
+      "group": "Wiki",
+      "mode": "cards",
+      "cardPattern": "^card_",
+      "excel": "unique",
+      "sortable": true,
+      "mythicalGroup": "Mythical",
+      "wideCategories": [
+        "Mythical"
+      ],
+      "categories": {
+        "Mythical": "Mythical Uniques",
+        "Weapon": "Weapons",
+        "Helm": "Helms",
+        "Torso": "Torso",
+        "Shield": "Shields",
+        "Belt": "Belts",
+        "Boots": "Boots",
+        "Gloves": "Gloves",
+        "Ring": "Rings",
+        "Amulet": "Amulets",
+        "Jewel": "Jewels",
+        "Charm": "Charms",
+        "Quiver": "Quivers",
+        "Other": "Other"
+      },
+      "sources": [
+        "data/uniquescarouselhd.json"
+      ],
+      "modOnly": true
+    },
+    {
+      "id": "set-items",
+      "title": "Set Items",
+      "group": "Wiki",
+      "mode": "cards",
+      "cardPattern": "^card_",
+      "excel": "set",
+      "categories": {
+        "Generic": "Generic",
+        "ama": "Amazon",
+        "bar": "Barbarian",
+        "nec": "Necromancer",
+        "pal": "Paladin",
+        "sor": "Sorceress",
+        "ass": "Assassin",
+        "dru": "Druid",
+        "war": "Warlock",
+        "hire": "Hireling"
+      },
+      "sources": [
+        "data/setitemscarouselhd.json"
+      ],
+      "difficultyGroup": "hire"
+    },
+    {
+      "id": "class-crafting",
+      "title": "Class Crafting",
+      "group": "Wiki",
+      "mode": "guide",
+      "itemPerButton": true,
+      "sources": [
+        "data/wikiclasscrafthd.json"
+      ]
+    },
+    {
+      "id": "endgame-maps",
+      "title": "Endgame Maps",
+      "group": "Endgame",
+      "mode": "endgame",
+      "source": "data/endgame-maps.txt"
+    },
+    {
+      "id": "weapon-mastery",
+      "title": "Weapon Mastery",
+      "group": "Endgame",
+      "mode": "endgame",
+      "source": "data/weapon-mastery.txt"
+    },
+    {
+      "id": "corruption",
+      "title": "Special Craft",
+      "group": "Endgame",
+      "mode": "dataTables",
+      "source": "data/special-crafting-outcomes.json",
+      "groupByItem": true
+    },
+    {
+      "id": "vessel-of-souls",
+      "title": "Vessel of Souls",
+      "group": "Endgame",
+      "mode": "endgame",
+      "source": "data/vessel-of-souls.txt"
+    },
+    {
+      "id": "kill-ledger",
+      "title": "Kill Ledger",
+      "group": "Endgame",
+      "mode": "endgame",
+      "source": "data/kill-ledger.txt"
+    },
+    {
+      "id": "merc-oskill",
+      "title": "Mercenary/O-Skill",
+      "group": "Endgame",
+      "mode": "endgame",
+      "source": "data/merc-oskill.txt"
+    },
+    {
+      "id": "item-bases-cards",
+      "title": "Item Bases (sections, backup)",
+      "group": "Endgame",
+      "mode": "baseItems",
+      "source": "data/base-items.json",
+      "disabled": true
+    }
+  ]
+}
