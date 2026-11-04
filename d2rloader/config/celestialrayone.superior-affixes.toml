@@ -1,7 +1,7 @@
 # Superior Affixes
 #
 # Picks the superior affix row (qualityitems.txt) of every Superior item the
-# game creates, with a weight per row, and removes the stock row limit.
+# game creates by the row's frequency, and removes the stock row limit.
 #
 # ---------------------------------------------------------------------------
 # What happens when an item rolls Superior
@@ -13,8 +13,25 @@
 #   qualityitems.txt for that item afterwards.
 #
 #   Stock D2R gives every allowed row the same odds. This plugin gives each
-#   row the odds set below. With every weight equal, the odds are exactly
-#   the stock ones.
+#   row the odds of its frequency column (below). Without a frequency
+#   column, every row has the same odds, exactly the stock ones.
+#
+# ---------------------------------------------------------------------------
+# frequency column in qualityitems.txt
+# ---------------------------------------------------------------------------
+#   Works like frequency in magicprefix.txt and magicsuffix.txt: a row's
+#   odds on a given item are its frequency divided by the sum of the
+#   frequencies of every row that item may use.
+#   - A whole number from 0 to 65535.
+#   - 0 or an empty cell: the row never rolls.
+#   - Anything else (text, a sign, a decimal point, more than 65535): the
+#     row never rolls, and the log names the row and the cell.
+#   - No frequency column in the file: every row has the same odds (stock).
+#   Example: an item may use three rows, with frequency 100, 25 and 0. They
+#   roll 80%, 20% and never.
+#   If every row an item may use has frequency 0, the item drops as a
+#   Normal item instead of Superior (the game's own fallback when no row
+#   fits).
 #
 # ---------------------------------------------------------------------------
 # Row limit
@@ -62,10 +79,8 @@
 # ---------------------------------------------------------------------------
 # Rows are numbered from 0
 # ---------------------------------------------------------------------------
-#   Row 0 is the first line under the header of qualityitems.txt, row 1 the
-#   second, and so on. Adding or removing a line in the middle of the file
-#   moves every row below it, so update the weights below when you do.
-#
+#   The console command and the log name rows by number. Row 0 is the first
+#   line under the header of qualityitems.txt, row 1 the second, and so on.
 #
 # ---------------------------------------------------------------------------
 # Item-type columns in qualityitems.txt (optional, no setting needed)
@@ -84,116 +99,30 @@
 #   Example, spears only, without Amazon spears: itype1 = spea, etype1 = aspe.
 #   Example, every weapon the weapon column allows except spears:
 #     weapon = 1, etype1 = spea.
+#   An unknown code is skipped, and the log names its row and column. A row
+#   whose itypes are all unknown never rolls.
+#
+# ---------------------------------------------------------------------------
+# How the plugin reads the frequency, itype and etype columns
+# ---------------------------------------------------------------------------
 #   The game itself skips columns it does not know, so the file stays valid.
 #   The plugin reads the same file the game loaded and, before using it,
 #   checks it row by row against what the game loaded (row count, the ten
-#   item-class columns and every mod param/min/max). If anything differs, or
-#   a code is unknown, the log says exactly where, and the columns are not
-#   used for that table. Console command superior shows the result.
+#   item-class columns and every mod param/min/max). If anything differs,
+#   the log says exactly where, and none of these columns are used for that
+#   table: every row has the same odds and the armor..belt columns decide.
+#   Console command superior shows the result.
 #
 # Console command: superior (status, rows seen, items made, rolls per row)
 
 [superior_affixes]
 
 # Master switch. false installs nothing: the stock picker runs, with its
-# 10-row limit.
+# 10-row limit, and the frequency, itype and etype columns are not used.
 enabled = true
-
-# Weight of every row that is not listed under [superior_affixes.weights].
-# 0 to 65535.
-default_weight = 100
 
 # Stock rule: items whose own type has Throwable = 1 in itemtypes.txt, and
 # items with nodurability = 1 in weapons.txt or armor.txt, only ever look at
 # rows 0 to 3. true keeps the stock behaviour. false lets them use every row,
-# by the same rules and weights as any other item.
+# by the same rules and frequencies as any other item.
 first_four_rows_for_throwing_and_nodurability = false
-
-[superior_affixes.weights]
-
-# One line per row: row = weight, 0 to 65535. A row's odds on a given item
-# are its weight divided by the sum of the weights of every row that item may
-# use. Weight 0 means the row never rolls.
-#
-# Example with the default weight 100:
-#   5 = 25     # row 5 rolls a quarter as often as a default row
-#   7 = 0      # row 7 never rolls
-
-0 = 25
-1 = 25
-2 = 25
-3 = 25
-4 = 25
-5 = 25
-7 = 50
-8 = 25
-9 = 10
-10 = 50
-11 = 25
-12 = 25
-13 = 10
-14 = 25
-15 = 25
-17 = 50
-19 = 25
-20 = 10
-21 = 50
-22 = 1
-23 = 1
-24 = 1
-25 = 25
-26 = 10
-27 = 25
-28 = 10
-30 = 50
-31 = 25
-32 = 5
-33 = 25
-34 = 5
-36 = 25
-38 = 50
-40 = 50
-41 = 25
-42 = 5
-43 = 1
-44 = 25
-45 = 5
-46 = 1
-48 = 25
-50 = 25
-51 = 5
-52 = 3
-53 = 3
-54 = 3
-55 = 3
-56 = 3
-57 = 3
-58 = 3
-59 = 3
-60 = 3
-61 = 3
-62 = 3
-63 = 3
-64 = 3
-65 = 3
-66 = 3
-67 = 3
-68 = 3
-69 = 25
-70 = 5
-71 = 25
-72 = 5
-73 = 1
-74 = 1
-75 = 25
-76 = 5
-77 = 25
-78 = 5
-79 = 5
-80 = 5
-81 = 25
-82 = 5
-83 = 1
-84 = 1
-85 = 1
-86 = 1

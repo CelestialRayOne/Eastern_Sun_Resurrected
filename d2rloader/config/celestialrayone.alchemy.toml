@@ -100,3 +100,22 @@ utility = ["01p", "02p", "03p", "04p", "05p", "06p", "07p", "08p", "09p", "10p",
            "13p", "14p", "15p", "16p", "17p", "18p", "19p", "20p", "21p", "22p", "23p", "24p",
            "25p", "26p", "27p", "28p", "29p", "30p", "31p", "32p", "33p", "34p", "vps", "yps", "wms"]
 rejuvenation = ["rvs", "rvl"]
+
+[find_potion]
+# Find Rejuvenation (srvdofunc 69, the game's Find Potion) picks its potion
+# from a fixed table and drops it straight onto the corpse, so no treasure
+# class ever sees it. Each line below sends one potion it picks to a
+# treasureclassex.txt class instead:  misc.txt code = "Treasure Class".
+# The class drops at the corpse with the caster as the killer, so (with
+# ConditionCalc Killer) its ConditionCalc rows read the caster's perks exactly
+# as on a kill: Unstable Mixtures, and Hidden Elixirs and Alchemical
+# Excellence on the elixir it rolls.
+#   One item per find, as before: Item Quantity adds nothing to a find.
+#   NoDrop is ignored, as Find Treasure ignores it, so a find always drops
+#   something: put a ConditionCalc only on classes inside the listed one.
+#   A potion with no line, or whose class is not in the tables (the log names
+#   it), drops as before.
+#   Listing any line replaces these defaults; enabled = false turns it off.
+enabled = true
+rvs = "Rejuvenation Regular"
+rvl = "Rejuvenation Full"
