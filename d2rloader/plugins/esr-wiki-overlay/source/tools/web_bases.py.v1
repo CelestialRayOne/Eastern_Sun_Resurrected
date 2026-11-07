@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+"""Item Bases page built from the armors and weapons pages of the ESR website.
+
+    python web_bases.py <armors.htm> <weapons.htm> <wiki-data.txt> [web-base-art.txt]
+
+Reads the base item tables of https://easternsunresurrected.com/armors.htm and weapons.htm and replaces the
+"item-bases" page of wiki-data.txt with a page built from them. The pictures, tiers (Normal, Exceptional, Elite) and
+weapon families are not on the website: they come from web-base-art.txt (next to wiki-data.txt unless given), which the
+extractor writes from the mod's own tables. Standard library only. Anything that goes wrong leaves wiki-data.txt
+untouched and exits 1.
+
+How the pages are read (the C++ twin is src/web_bases_live.cpp; change both together):
+  * each table is headed by a one-cell row with the section's name (Armor, Helm, Sword, ...) and a row of column labels;
+    the weapons' "Damage" label spans three columns (Hands, Damage, Average). A note row inside a table is not a title.
+  * an item is a row; cells that span rows (a javelin's second line, its missile damage) repeat in the rows below it
+  * one card per item: the website's cells as fields (empty ones left out), "Missile" or "Two-Handed" damage as one more
+    field, the quality level (Qlvl) as the card's level; items of one section that are the same but for their code
+    (same name, tier and cells) are one card
+"""
+import re
+import sys
+from pathlib import Path
+
+from web_uniques import clean
+
+PAGE_ID = "item-bases"
+PAGE_TITLE = "Item Bases"
+ALTERNATE_LABEL = {"Mis": "Missile", "2H": "Two-Handed"}
+KINDS = (("armor", "Armor"), ("weapons", "Weapons"))
+MIN_ITEMS = {"armor": 200, "weapons": 300}
+HEADER_COLOR = "#402040"
+MAX_TITLE = 40
+
+
+def text_of(cell):
+    cell = re.sub(r"<br\s*/?>", " ", cell, flags=re.I)
+    return clean(re.sub(r"<[^>]+>", "", cell))
+
+
+def parse_sections(html, kind):
+    """[{title, headers, items: [{name, code, rows}]}] for the tables of the page, in page order."""
+    sections, current, pending, held = [], None, [], []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S | re.I):
+        cells = re.findall(r"<td([^>]*)>(.*?)</td>", tr, re.S | re.I)
+        if not cells:
+            continue
+        if len(cells) == 1 and HEADER_COLOR in cells[0][0] and len(text_of(cells[0][1])) <= MAX_TITLE:
+            current = {"title": text_of(cells[0][1]), "headers": [], "items": []}
+            sections.append(current)
+            continue
+        if current is None or len(cells) == 1:
+            continue
+        if HEADER_COLOR in cells[0][0]:
+            headers = []
+            for attrs, cell in cells:
+                span = re.search(r'colspan="(\d+)"', attrs)
+                count = int(span.group(1)) if span else 1
+                label = text_of(cell)
+                headers += ["Hands", "Damage", "Average"] if label == "Damage" and count == 3 else [label] * count
+            current["headers"] = headers
+            pending, held = [0] * len(headers), [None] * len(headers)
+            continue
+        if not current["headers"]:
+            continue
+        row, at = [], 0
+        for i in range(len(current["headers"])):
+            if pending[i] > 0:
+                row.append("" if i == 0 else held[i])
+                pending[i] -= 1
+            elif at < len(cells):
+                attrs, cell = cells[at]
+                at += 1
+                span = re.search(r'rowspan="(\d+)"', attrs)
+                if span and int(span.group(1)) > 1:
+                    pending[i], held[i] = int(span.group(1)) - 1, cell
+                row.append(cell)
+            else:
+                row.append("")
+        if row[0] == "" and current["items"]:
+            current["items"][-1]["rows"].append([text_of(c) for c in row])
+            continue
+        if kind == "weapons":
+            pieces = re.split(r"<br\s*/?>", row[0], flags=re.I)
+            name = text_of(pieces[0])
+            code = text_of(pieces[1]) if len(pieces) > 1 else ""
+            first = [text_of(c) for c in row]
+            first[0] = (name + " " + code).strip()
+        else:
+            name, code = text_of(row[0]), text_of(row[1])
+            first = [text_of(c) for c in row]
+        current["items"].append({"name": name, "code": code, "rows": [first]})
+    return [s for s in sections if s["headers"] and s["items"]]
+
+
+def read_art(text):
+    """({code: (tier, family, image)}, {section title: image}) from web-base-art.txt."""
+    codes, sections = {}, {}
+    for line in text.split("\n"):
+        parts = line.split("\t")
+        if parts[0] == "BASE" and len(parts) >= 5:
+            codes[parts[1]] = (parts[2], parts[3], parts[4])
+        elif parts[0] == "SECTION" and len(parts) >= 3:
+            sections[parts[1]] = parts[2]
+    return codes, sections
+
+
+def out_text(value):
+    return re.sub(r"_lod\b", "", clean(value))
+
+
+def build_page(armor, weapons, art):
+    codes, sections = art
+    out = ["PAGE\t%s\t%s\tWiki" % (PAGE_ID, PAGE_TITLE)]
+    for (kind, title), found in zip(KINDS, (armor, weapons)):
+        blocks = []
+        for section in found:
+            headers = section["headers"]
+            qlvl_at = headers.index("Qlvl") if "Qlvl" in headers else None
+            seen = set()
+            for item in section["items"]:
+                tier, family, image = codes.get(item["code"], ("", "", ""))
+                key = (item["name"], tier, tuple(tuple(c for label, c in zip(headers, row) if label not in ("Name", "Code"))
+                                                  for row in item["rows"]))
+                if key in seen:
+                    continue
+                seen.add(key)
+                first = item["rows"][0]
+                fields = [(label, value) for label, value in zip(headers, first)
+                          if label not in ("Name", "Code") and value.strip()]
+                for row in item["rows"][1:]:
+                    if row[2].strip():  # a Missile or Two-Handed alternate: its damage
+                        fields.append((ALTERNATE_LABEL.get(row[1], row[1] or "Alternate"), row[2] + " (" + row[3] + ")"))
+                level = 0
+                if qlvl_at is not None:
+                    qlvl = first[qlvl_at]
+                    level = int(qlvl) if qlvl.lstrip("-").isdigit() else 0
+                if not family:
+                    family = section["title"]
+                image = image or sections.get(section["title"], "")
+                block = ["BLOCK\t1\t%s\t%s\t%s\t%s\t%s\t%d" % (
+                    out_text(item["name"]), out_text(" ".join(x for x in (tier, item["code"]) if x)),
+                    out_text(section["title"]), out_text(tier), out_text(family if kind == "weapons" else section["title"]), level)]
+                block += ["FIELD\t%s\t%s" % (out_text(label), out_text(value)) for label, value in fields]
+                if image:
+                    block.append("IMG\t%s" % image)
+                blocks.append(block)
+        out.append("ENTRY\t%s\t%d items\tsortable\tfiveacross" % (title, len(blocks)))
+        for block in blocks:
+            out += block
+    return out
+
+
+def splice(lines, page_lines):
+    """lines with the page whose id is PAGE_ID replaced; a file without one gets it after 'gemwords' (else last)."""
+    starts = [i for i, l in enumerate(lines) if l.startswith("PAGE\t")]
+    spans = {}
+    for n, i in enumerate(starts):
+        spans[lines[i].split("\t")[1]] = (i, starts[n + 1] if n + 1 < len(starts) else len(lines))
+    if PAGE_ID in spans:
+        a, b = spans[PAGE_ID]
+        return lines[:a] + page_lines + lines[b:]
+    at = spans["gemwords"][1] if "gemwords" in spans else len(lines)
+    return lines[:at] + page_lines + lines[at:]
+
+
+def main(argv):
+    if len(argv) not in (4, 5):
+        print(__doc__)
+        return 2
+    armors_path, weapons_path, target = Path(argv[1]), Path(argv[2]), Path(argv[3])
+    try:
+        found = []
+        for (kind, _), path in zip(KINDS, (armors_path, weapons_path)):
+            html = path.read_text(encoding="utf-8", errors="replace")
+            if "</html" not in html.lower():
+                raise SystemExit("%s is incomplete" % path.name)
+            sections = parse_sections(html, kind)
+            count = sum(len(s["items"]) for s in sections)
+            if count < MIN_ITEMS[kind]:
+                raise SystemExit("only %d %s found; the website page looks broken" % (count, kind))
+            found.append(sections)
+        art_path = Path(argv[4]) if len(argv) > 4 else target.parent / "web-base-art.txt"
+        art = read_art(art_path.read_text(encoding="utf-8") if art_path.exists() else "")
+        lines = target.read_text(encoding="utf-8").split("\n")
+        trailing = bool(lines) and lines[-1] == ""
+        if trailing:
+            lines = lines[:-1]
+        merged = splice(lines, build_page(found[0], found[1], art))
+    except SystemExit as stop:
+        print("Website item bases: %s" % stop)
+        return 1
+    tmp = target.with_suffix(target.suffix + ".new")
+    tmp.write_text("\n".join(merged) + ("\n" if trailing else ""), encoding="utf-8", newline="\n")
+    tmp.replace(target)
+    print("Website item bases: %d armor and %d weapon items" % tuple(sum(len(s["items"]) for s in f) for f in found))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

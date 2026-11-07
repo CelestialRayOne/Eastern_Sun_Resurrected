@@ -1,0 +1,981 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 3.6 Database
+        </title>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="Language"><select id="esr-lang-enUS" aria-label="Language" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS" selected>English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN">&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="enUS",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-enUS');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Base Information</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Armor</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Weapons</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Prefixes</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Suffixes</a>
+                <a href="./quality_affixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Quality Affixes</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Uni Armor</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Uni Weapons</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Uni Other</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Uni Mythicals</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Sets</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Gems/Runes</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Gemwords</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Runewords</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Cube Recipes</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Maps</a>
+               	<a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">IAS Calculator</a>
+               	<a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Drop Finder</a>
+           </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">Features</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./special_crafting_outcomes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Special Crafting Outcomes</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Endgame Maps</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Vessel of Souls</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Ascendancies</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Kill Ledger</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Mercenary and Oskill Information</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">Weapon Mastery</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">Total Conversion Mod for Diablo II Resurrected</div>
+            </div>                
+                                <div style="width:100%;">
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancies</font> are powerful specializations that shape how you
+                            play, granting unique skills and bonuses.<br>
+                            Ascendancies are granted through a special charm called the <font color="orange">Ascendancy
+                                Stone</font> that can only be obtained after completing several special encounters.<br>
+                            Ascendancy stones can be further upgraded (meaning you can further ascend) by completing
+                            specific challenges, some of which are tied to very hard endgame content.<br>
+                            There are 5 ascendancy tiers you can attain, each challenge being harder than the previous
+                            one, but the bonuses being stronger as well.<br>
+                            Ascendancy Stones <font color="red"><strong>cannot be shared to other characters</strong>
+                            </font>. You can only have one ascendancy stone equipped at any time.<br>
+                            Needless to say, each tier can only be achieved once. However, you can achieve them in any
+                            order.<br>
+                            Ascendancy stones cannot be modified by regular means (they cannot be corrupted, anointed,
+                            broken down for maple leaves etc.).<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Challenges]</a>
+            <a href="#ascendancies">[Ascendancies]</a>
+        </font>
+        <a name="challenge"></a>
+        <h3>Tier 1 Challenge</h3>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            In order to get an <font color="orange">Ascendancy Stone</font>, you need to kill 5 special
+                            superuniques <font color="red">on hell difficulty</font> scattered around Sanctuary<br>and
+                            transmute the elemental orbs each of them drop to obtain the
+                            <font color="orange">Orb of Creation</font>.<br>
+                            The orb can then be transmuted with specific colored gems to unlock the ascendancy of your
+                            choice.
+                            Clue: Act 1, 2, 3 each have a superunique. Act 5 has 2, while act 4 has none.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Input</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Output</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            2 Blemished Sapphire<br>
+                            2 Blemished Obsidian<br>
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Battlemage Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            1 Blemished Obsidian<br>1 Blemished Sapphire<br>1 Blemished Emerald<br>1 Blemished Ruby
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Awakened Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            2 Blemished Obsidian<br>2 Blemished Emerald
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Blademaster Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            2 Blemished Emerald<br>2 Blemished Ruby
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Nomad Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            2 Blemished Obsidian<br>2 Blemished Ruby
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Ironbolt Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            2 Blemished Emerald<br>2 Blemished Sapphire
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Arcanist Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            2 Blemished Ruby<br>2 Blemished Sapphire
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Soul Warden Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            4 Blemished Emerald
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Sharpshooter Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            4 Blemished Sapphire
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Starborn Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            1 Blemished Ruby<br>1 Blemished Obsidian<br>1 Blemished Sapphire
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Bloodmage Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            4 Blemished Ruby
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Lifebreaker Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            1 Blemished Ruby<br>1 Blemished Obsidian<br>1 Blemished Emerald
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Worldshaper Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            1 Blemished Obsidian<br>1 Blemished Emerald<br>1 Blemished Sapphire
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Stance Dancer Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            1 Blemished Emerald<br>1 Blemished Ruby<br>1 Blemished Sapphire
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Mana Warden Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Orb of Creation</font><br>
+                            4 Blemished Obsidian
+                        </font>
+                    </td>
+                    <td align="center" bgcolor="#181818">
+                        <font face="arial,helvetica" size="-1" color="orange">Berserker Ascendancy Stone<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tier 2 Challenge</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            The second tier is achieved by killing Nihalthak in his domain on hell difficulty and
+                            transmuting the
+                            ascendancy stone with itself.<br>
+                            <font color="red">You need to transmute it while you have the swirls active on your
+                                character.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Input</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Output</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1" color="orange">Ascendancy Stone</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            Upgraded to Tier 2
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tier 3 Challenge</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            The third tier is achieved by killing all of Uber Tristram bosses <font color="red">within
+                                one minute of each other without dying </font>and transmuting the
+                            ascendancy stone with a Maple Leaf.<br>Even if you have the swirls active on your character
+                            after you killed the last boss, it will not work if it passed more than 1 minute since you
+                            killed the first one.
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Input</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Output</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            Maple Leaf
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            Upgraded to Tier 3
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tier 4 Challenge</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            The fourth tier is achieved by collecting 10 <font color="ORANGE">Primordial Soulstones
+                            </font> that drop from any endgame map boss. You can only transmute one
+                            Primordial Stone at a time with the Ascendancy Stone. Once you have captured 10 Primordial
+                            Soulstones in the Ascendancy Stone, you will be able to transmute it with 2 Maple Leaves to
+                            ascend to tier 4.<br>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Input</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Output</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            <font color="orange">Primordial Soulstones Captured: 10/10</font><br>
+                            2 Maple Leaves
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            Upgraded to Tier 4
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tier 5 Challenge</h3>
+
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            The fifth tier is achieved by killing any tier 5 map boss and transmuting the ascendancy
+                            stone with 3 Maple Leaves.<br>
+                            <font color="red">You need to transmute it while you have the swirls active on your
+                                character.</font>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+            <tbody>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Input</font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1"> Output</font>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            3 Maple Leaves
+                        </font>
+                    </td>
+                    <td align="center" width="50%" bgcolor="#300000">
+                        <font face="arial,helvetica" size="-1">
+                            <font color="orange">Ascendancy Stone</font><br>
+                            Upgraded to Tier 5
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <font face="arial,helvetica" size="-1">
+            <a href="#challenge">[Challenges]</a>
+            <a href="#ascendancies">[Ascendancies]</a>
+        </font>
+        <a name="ascendancies"></a>
+
+        <h3>
+            <font color="orange" size="5">Ascendancies</font>
+        </h3>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+60 to Strength<br>+60 to
+                    Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>25% Bonus to Strength<br>25% Bonus
+                    to Energy<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1% Spell Damage for every 2% Deadly Strike and for every 2% Crushing
+                    Blow<br>25% Chance of Crushing Blow<br>25% Deadly Strike<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1% Total Defense Bonus for every 3% Deadly Strike and
+                    Crushing Blow*<br>+10 Life on Striking<br>+15% Physical Damage Leeched as Mana<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>+50% to All Speeds<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Battlemage Ascendancy</font><br>
+                <img src="./images/ascendancies/battlemage.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Total Defense Bonus is multiplicative with your entire armor value.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Blademaster Ascendancy</font><br>
+                <img src="./images/ascendancies/blademaster.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+60 to Strength<br>+60 to
+                    Dexterity<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>25% Bonus to Strength<br>25% Bonus
+                    to Dexterity<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 10% Enhanced Damage for every 1% Physical Resist<br>20%
+                    Physical Resist<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1% Physical Damage Leeched as Life for every 1% Physical
+                    Resist<br>+40 to Minimum Damage to Attacks<br>+50 to Maximum Damage to Attacks<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>15% Chance to Cast Level 20 Thrown
+                    Axe on Striking<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+60 to Dexterity<br>+60 to
+                    Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>25% Bonus to Dexterity<br>25%
+                    Bonus to Energy<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 5 Mana for every 1% Speed*<br>30% to All Speeds<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Mana on Striking for every 25% Speed*<br>+20 to
+                    Elemental Fury (All Classes)<br>+5% All Maximum Resistances<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>5% Chance to Cast Level 20 Fire
+                    Enhanced Arrow on Striking<br>5% Chance to Cast Level 20 Cold Enhanced Arrow on Striking<br>5%
+                    Chance to Cast Level 20 Lightning Enhanced Arrow on Striking<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Arcanist Ascendancy</font><br>
+                <img src="./images/ascendancies/arcanist.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Each type of speed (block, cast, move, attack, recovery) is counted separately. E.g. +1% to All
+            Speeds counts as +5% to ascendancy bonuses.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Bloodmage Ascendancy</font><br>
+                <img src="./images/ascendancies/bloodmage.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+45 to Strength<br>+45 to
+                    Vitality<br>+45 to Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>20% Bonus to Strength<br>20% Bonus
+                    to Vitality<br>20% Bonus to Energy<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1% Spell Damage for every 250 Life and 1% Summon Damage
+                    for every 400 Life<br>Energy has no effect on Spell or Summon Damage anymore<br>Blood Magic*<br>+200
+                    to
+                    Life<br><br>
+                    <font color="orange">Tier 4</font><br>Heal for 2% of Maximum Life on Kill<br>+50% Faster Hit
+                    Recovery<br>+25% Physical Resist<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>+25% to Summon Life<br>50%
+                    Increased Maximum Life<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Blood Magic means you use life to cast spells now.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+30 to All Attributes<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>15% Bonus to All
+                    Attributes<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1 All Skills for every 1000 Attributes*<br>20% to All
+                    Speeds<br>+30 to All Attributes<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Elemental and Magic Absorb for every 100
+                    Attributes*<br>Gain 1 Defense for every 2 Attributes*<br>+20 to Power Overwhelming (All Classes)<br>Poison
+                    Length Reduced by +75%<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>10% Chance to Cast Level 60
+                    Annihilation when Struck<font color="red">**</font><br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Awakened Ascendancy</font><br>
+                <img src="./images/ascendancies/awakened.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Breakpoints are reached for total number of attributes (e.g. you gain +1 to All Skills if you
+            have 250 of each attribute).</font><br>
+        <font size="-2">**Annihilation is a devastating 6 elemental nova (F/C/L/P/Phys/Magic), entire screen area of
+            effect skill that deals 50% weapon damage converted to each respective element per nova as well as
+            significant spell damage of each damage type which gets scaled by total attributes, knockbacks enemies
+            and lowers all of their resistances by 25% for 2 seconds. The poison nova does not deal weapon damage.</font><br>
+        <font size="-2" color="red">**Annihilation can proc only when you are below 30% current life.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Ironbolt Ascendancy</font><br>
+                <img src="./images/ascendancies/ironbolt.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+60 to Strength<br>+60 to
+                    Vitality<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>25% Bonus to Strength<br>25% Bonus
+                    to Vitality<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1%-2% Bleed Damage for every 10 Strength<br>This bleed duration follows crossbow reload speed scaling*<br>+150 to Strength<br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Life on Striking for every 200 Strength<br>+20%
+                    Faster Crossbow Reload Time<br>Crossbow Reload Speed Limit Reduced by 20%<br>+500 to Attack Rating<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>2% Chance to Cast Level 40 Inner
+                    Sight on Striking<br>+25 To Sharpened Focus (All Classes)<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Bleed length is equal to the crossbow reload speed scaling. This still applies regardless if you use a crossbow or not. The bleed granted by ironbolt can still be dilluted by other bleed sources (similar to how poison instances dillute each other).</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+75 to Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>30% Bonus to Energy<br><br>
+                    <font color="orange">Tier 3</font><br>Gain -1% to Fire, Cold and Lightning Enemy Resistance for every 400 Mana<br>+400 to Mana<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Replenish Life for every 5 Mana<br>+20 to Omnipotence (All Classes)<br>+25% to All Speeds<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>+1 to Teleport<br>+1 to All
+                    Skills<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Starborn Ascendancy</font><br>
+                <img src="./images/ascendancies/starborn.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Lifebreaker Ascendancy</font><br>
+                <img src="./images/ascendancies/lifebreaker.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+75 to Vitality<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>30% Bonus to Vitality<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1% Spell Damage for every 100 Missing Life<br>Increase
+                    Maximum Life +30%<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Magic and Physical Damage Reduction for every 100
+                    Missing Life<br>+1 to Trap Limit<br>Damage Reduced by 50<br>Magic Damage Reduced by 50<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>+10 to Life Pact*<br>Magic Resist
+                    +15%<br>Physical Resist: +15%<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Life Pact is a toggleable skill that drains 25% of your maximum health every second and that
+            grants 10% maximum health per level. Life Pact cannot kill you.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+45 to Strength<br>+45 to
+                    Dexterity<br>+45 to Vitality<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>20% Bonus to Strength<br>20% Bonus
+                    to Dexterity<br>20% Bonus to Vitality<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 2 Maximum Fire, Cold and Lightning Damage to Attacks for
+                    every 1% Elemental Resist*<br>Fire Resist +50%<br>Cold Resist +50%<br>Lightning Resist +50%<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1% Physical and Magic Resist for every 30% Elemental
+                    Resist*<br>Gain 1% Poison Resist for every 5% Elemental Resist*<br>Spell Damage: +50%**<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>2% Chance to Cast Level 1 Fury of
+                    Creation on Striking***<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Worldshaper Ascendancy</font><br>
+                <img src="./images/ascendancies/worldshaper.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Each resist type counts separately towards bonus breakpoints. For example, you get 1% physical
+            resist if you have 10% fire/cold/lightning resistance each.</font><br>
+        <font size="-2">**Spell Damage is fire/cold/lightning/poison/magic/physical Spell Damage and it increases flat
+            damage to attacks (except physical spell damage which does not increase physical damage to attacks).
+        </font><br>
+        <font size="-2">***Fury of Creation is a medium area of effect triple elemental nova skill, each nova dealing
+            50%
+            weapon damage converted to the respective element and reducing elemental resistances of enemies by 30%.
+        </font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Soul Warden Ascendancy</font><br>
+                <img src="./images/ascendancies/soulwarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+60 to Vitality<br>+60 to
+                    Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>25% Bonus to Vitality<br>25% Bonus
+                    to Energy<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1% Poison and Magic and Physical Spell Damage for every 40
+                    Energy<br>+150 to Energy<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Life for every 3 Energy<br>Magic Absorb +10%<br>Cannot
+                    be Frozen<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>+1 to Non-Unique Summons
+                    Limit<br>Damage Reduced by 50<br>Magic Damage Reduced by 50<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+45 to Strength<br>+45 to
+                    Dexterity<br>+45 to Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>20% Bonus to Strength<br>20% Bonus
+                    to Dexterity<br>20% Bonus to Energy<br><br>
+                    <font color="orange">Tier 3*</font><br>
+                    Damage Stance (Red): 5% Enhanced Damage and 1% Spell Damage<br>
+                    per 75 combined Strength, Dexterity and Energy<br>
+                    Evade Stance (Green): 10% to All Speeds and 1% Dodge<br>
+                    per 1000 combined Strength, Dexterity and Energy<br>
+                    Recovery Stance (Blue): +1 to All Skills and 150 Replenish Life and Mana<br>
+                    per 1500 combined Strength, Dexterity and Energy<br>
+                    +90 to Strength<br>+90 to
+                    Dexterity<br>+90 to Energy<br><br>
+                    <font color="orange">Tier 4</font><br>Bonuses from all stances are increased by 25%<br>30% Bonus to Strength<br>30% Bonus to Dexterity<br>30% Bonus to Energy<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>+50% Increased Attack
+                    Speed<br>+50% Faster Cast Rate<br>+100 Life after each Kill<br>+50 to Mana after each Kill<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Stance Dancer Ascendancy</font><br>
+                <img src="./images/ascendancies/stancedancer.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2" color="RED">*You need to set a hotkey for stance dancing in the controls submenu.</font></font><br>
+        <font size="-2">**You can change the stance at will, but stances will only cycle in the following order: Red -> Green -> Blue.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Nomad Ascendancy</font><br>
+                <img src="./images/ascendancies/nomad.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+60 to Dexterity<br>+60 to
+                    Vitality<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>25% Bonus to Dexterity<br>25%
+                    Bonus to Vitality<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 5 Maximum Damage per 5% Faster Run/Walk or 1% Base Run/Walk Speed<br>+75% Faster Run/Walk<br>Adds 150%-250% Bleed Damage over 1 second<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 5% Dodge Chance per 200% Faster Run/Walk or 40% Base Run/Walk Speed<br>+300 to
+                    Life<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>20% Chance to Cast Level 1 Scurry
+                    when Struck<br><br>
+                </font>
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Scurry is a 1 second duration buff that grants 33% dodge, 100% Base Run/Walk
+            speed, 25% total maximum physical damage to attacks and regenerates 10% of maximum life over its duration.</font><br>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+75 to Dexterity<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>30% Bonus to Dexterity<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 2% Bonus to Attack Rating for every 1% Pierce<br>Gain 1
+                    Maximum Damage for every 2% Pierce<br>+30 to Minimum Damage<br>+20 to
+                    Pierce (All Classes)<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 3 Vitality for every 1% Pierce<br>+75% Faster
+                    Run/Walk<br>+20 to Dodge (All Classes)<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>15% Chance to Cast Level 20 Arrow
+                    on Striking<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Sharpshooter Ascendancy</font><br>
+                <img src="./images/ascendancies/sharpshooter.png" style="width: 300px" />
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Mana Warden Ascendancy</font><br>
+                <img src="./images/ascendancies/manawarden.png" style="width: 300px" />
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+45 to Dexterity<br>+45 to
+                    Vitality<br>+45 to Energy<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>20% Bonus to Dexterity<br>20%
+                    Bonus to Vitality<br>20% Bonus to Energy<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 1% Spell Damage for every 20% Regenerate Mana<br>Gain 1
+                    Minimum Damage to Attacks for every 5% Regenerate Mana<br>+5 Mana on Striking<br>Regenerate Mana
+                    +100%<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1 Mana for every 2% Regenerate Mana<br>+20 to Energy
+                    Shield (All Classes)<br>+10% to Maximum Poison Resist<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>20% Chance to Cast Level 50 Time
+                    Stop when Struck<br>Poison Resist +75%<br>+20 to Light Radius<br><br>
+                </font>
+            </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        <div style="display: flex; justify-content: space-around; width: 1025px">
+            <div style="display: flex; align-items: center; justify-content: center; width: 50%;">
+                <font face="arial,helvetica" size="-1" style="width: 100%">
+                    <font color="orange">Tier 1</font><br>+1 to Class Skill Levels<br>+75 to Strength<br><br>
+                    <font color="orange">Tier 2</font><br>+1 to Class Skill Levels<br>30% Bonus to Strength<br><br>
+                    <font color="orange">Tier 3</font><br>Gain 3% Maximum Damage for every 1% Physical Damage Leeched as
+                    Life<br>+30 to Maximum Damage<br>+25% Physical Damage Leeched as Life<br><br>
+                    <font color="orange">Tier 4</font><br>Gain 1% Physical and Magic Resist for every 5% Physical Damage
+                    Leeched as Life<br>Curse Duration Reduced by 100%<br><br>
+                    <font color="orange">Tier 5</font><br>+3 to Class Skill Levels<br>25% Chance to Cast Level 1 Ravage
+                    on Melee Attack**<br><br>
+                </font>
+            </div>
+            <div
+                style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50%;">
+                <font color="orange" size="4">Berserker Ascendancy</font><br>
+                <img src="./images/ascendancies/berserker.png" style="width: 300px" />
+            </div>
+        </div>
+        <br>
+        <font size="-2">*Ravage is a small-to-medium area of effect skill that deals 150% weapon damage as physical to
+            all enemies affected and lowers their physical resist by 30% for 2 seconds.</font><br>
+
+        <br><br><br><br><br>
+
+        </a>
+    
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

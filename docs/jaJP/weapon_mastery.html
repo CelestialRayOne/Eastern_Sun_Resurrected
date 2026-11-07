@@ -203,6 +203,10 @@
                 style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
                 onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
                 onmouseout="this.style.color='#a07040';this.style.background='transparent'">武器熟練</a>
+            <a href="./specializations.htm"
+                style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;"
+                onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'"
+                onmouseout="this.style.color='#a07040';this.style.background='transparent'">専門化</a>
         </div>
     </nav>
 
@@ -246,7 +250,7 @@
                     <tbody>
                         <a name="recipes"></a>
                         <a href="./weapon_mastery.html#recipes">[一般レシピ]</a>&nbsp;
-                        <a href="./weapon_mastery.html#specializations">[特化]</a>&nbsp;
+                        <a href="./weapon_mastery.html#specializations">[専門化]</a>&nbsp;
                     </tbody>
                     <br><br>
                     <tr>
@@ -309,14 +313,14 @@
                         <tbody>
                             <a name="specializations"></a>
                             <a href="./weapon_mastery.html#recipes">[一般レシピ]</a>&nbsp;
-                            <a href="./weapon_mastery.html#specializations">[特化]</a>&nbsp;
+                            <a href="./weapon_mastery.html#specializations">[専門化]</a>&nbsp;
                         </tbody>
                         <br><br>
                         <tr>
                             <td colspan="2" bgcolor="#402040" align="center" style="padding: 15px">
                                 <font face="arial,helvetica">
                                     <b>
-                                        特化
+                                        専門化
                                     </b><br>
                                 </font>
                             </td>
@@ -357,12 +361,12 @@
                                     マルチショットが代わりに矢のノヴァを放つようになりますが、<br>レベルごとのダメージボーナスは得られなくなります<br>
                                     <br>
                                     <font color="orange">トルネードショット</font><br>
-                                    代わりに16本の矢のノヴァを放ち、特殊な<br>
-                                    シナジーのデバフが3倍になり、変更不可の10秒クールダウンが付きます<br>
+                                    Pulls nearby targets towards the tornadoes<br>
+                                    but reduces weapon damage by 2%.<br>
                                     <br>
                                     <font color="orange">伝説の矢</font><br>
-                                    レベルやシナジーによる命中率の上昇が<br>
-                                    なくなる代わりに、ダメージボーナスが2倍になります
+                                    Releases 25% more projectiles after a 2.4 seconds delay<br>
+                                    but the weapon damage is reduced by 5%<br>
                                 </font>
                             </td>
                         </tr>
@@ -400,7 +404,7 @@
                                     <br>
                                     <font color="orange">フェンド</font><br>
                                     フェンドが小さな槍のノヴァだけを生成するようになり、<br>
-                                    物理耐性を150%の効率で下げますが、減速はしなくなります*<br>
+                                    reduces physical resistance at 150% effectiveness, but no longer slows<br>
                                     <br>
                                     <font color="orange">死の舞踏</font><br>
                                     収束するノヴァの代わりに追尾する槍の波を放ちます<br>
@@ -425,7 +429,7 @@
                                     <br>
                                     <font color="orange">フェンド</font><br>
                                     フェンドが大きな槍の<br>
-                                    ノヴァだけを生成し、減速効果が2倍になります*<br>
+                                    nova and double the slow effectiveness<br>
                                     <br>
                                     <font color="orange">死の舞踏</font><br>
                                     特殊なシナジーにより、5回攻撃ごとに総ダメージが2倍になります<br>
@@ -615,8 +619,8 @@
                             <td bgcolor="#101010" align="center" style="padding: 15px">
                                 <font size="-1" face="arial,helvetica">
                                     <font color="orange">ソーサレスの呪文</font><br>
-                                    レベル24のソーサレス呪文のクールダウンが3倍になり<br>
-                                    、ハイドラに2秒のクールダウンが追加されますが、<br>
+                                    Triples the cooldown of your direct damage dealing<br>
+                                    spells and adds a 2 second cooldown to Hydra,<br>
                                     呪文の総ダメージが20%増加します
                                 </font>
                             </td>
@@ -676,6 +680,42 @@
                                 </font>
                                 <br><br>
                                 <font size="-1" color="gray">*このダメージボーナスはディスチャージの発動には適用されません</font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    ヴォイドブレード<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="purple">ヴォイドシャード</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT><br>
+                                    <FONT color="gray">欠けた黒曜石</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">黒魔法</font><br>
+                                    Now provides total attack damage instead of total spell damage<br>
+                                    and attacking steadily increases the attack damage bonus
+                                </font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="#101010" align="center" style="width: 35%; padding: 15px;">
+                                <font size="-1" face="arial,helvetica">
+                                    ヴォイドブレード<br>
+                                    <FONT color="#706850">覚醒した武器マスタリーのトークン</FONT><br>
+                                    <FONT color="purple">ヴォイドシャード</FONT><br>
+                                    <FONT color="purple">アンビルストーン</FONT><br>
+                                    <FONT color="blue">欠けたサファイア</FONT>
+                                </font>
+                            </td>
+                            <td bgcolor="#101010" align="center" style="padding: 15px">
+                                <font size="-1" face="arial,helvetica">
+                                    <font color="orange">Fire and Magic Skills</font><br>
+                                    Hellfire Lance, Flame Wave, Seeking Flames and Apocalypse deal lightning damage instead<br>
+                                    Miasma Bolt, Miasma Chains and Abyss deal cold damage instead
+                                </font>
                             </td>
                         </tr>
                     </table>

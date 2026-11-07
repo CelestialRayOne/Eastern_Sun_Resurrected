@@ -1,0 +1,33 @@
+# celestialrayone.herald-bosses
+#
+# Monsters that become heralds count as bosses and as prime evils: every
+# game rule that asks "is this a boss" or "is this a prime evil" answers yes
+# for them, as if their monstats.txt row had boss = 1 and primeevil = 1.
+# A monster counts from the moment it becomes a herald.
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3) and its D2RCore.dll.
+# Console command: heraldbosses (which parts are installed).
+
+# herald_boss
+#   Heralds follow the game's boss rules, for example: they cannot be
+#   stunned, they get chilled instead of frozen, Crushing Blow and
+#   difficultylevels.txt PetDamagePercentVSBoss treat them as bosses, skills
+#   and aura filters that skip bosses skip them, and Conversion, Revive and
+#   the other AI switches leave them alone.
+herald_boss = true
+
+# herald_prime_evil
+#   Heralds follow the prime evil rules: the difficultylevels.txt columns
+#   PlayerDamagePercentVSPrimeEvil, PrimeEvilDamagePercentVSPlayer,
+#   PrimeEvilDamagePercentVSMercenary and PrimeEvilDamagePercentVSPet, the
+#   aura filters and AI rules for prime evils, and D2RCore's prime evil
+#   threat on the players who hit them.
+herald_prime_evil = true
+
+# Not changed by this plugin:
+#   - A herald's treasure class is still upgraded by its level like any
+#     other monster's (a boss's never is), and its spawn level stays the
+#     one it got before it became a herald.
+#   - D2RCore's own herald choices (boss heralds versus replaced monsters).
+#   - Plugins that read the monstats.txt flags themselves instead of asking
+#     the game, for example Monster Display's prime evil bar.

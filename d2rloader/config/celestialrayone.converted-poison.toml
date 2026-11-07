@@ -1,0 +1,43 @@
+# Converted Poison (celestialrayone.converted-poison)
+#
+# Poison that a hit gets from converted weapon damage lasts the poison length
+# of the skill that converted it, and nothing else: no averaging with the other
+# poison on the hit and no minimum.
+#
+# Without the plugin the converted damage joins the hit's poison and lasts as
+# long as all of the hit's poison sources together: the skill's own length
+# plus every poison item's length, divided by the number of poison items when
+# there are two or more. A very short converted poison next to a long item
+# poison was stretched to the item poison's length and dealt many times its
+# intended damage.
+#
+# With the plugin, a hit that carries converted poison has the converting
+# skill's length: skills.txt ELen plus ELevLen1/2/3 for its level plus
+# ELenSymPerCalc, the same length the skill's own poison gets. The target's
+# poison length reduction still shortens it like any poison.
+#
+# Everything else works as before. The hit carries one poison whose damage per
+# frame is unchanged (the converted damage plus the other poison on the hit).
+# With states.txt canstack 0 the target keeps one poison, and any poison with
+# an equal or higher damage per frame replaces it. The other poison carried by
+# that same hit (poison items, the skill's own poison) runs for the same
+# length. With canstack 1 the poison items keep their own poison and length,
+# and the rest of the hit gets the skill's length.
+#
+# A skill whose length is 0 leaves the hit with no poison over time. A missile
+# that belongs to no skill (missiles.txt Skill empty and the row not driven by
+# a skill) is left to the game.
+#
+# Console:  convertedpoison      status and counters
+#           convertedpoison log  toggles a log line per retimed hit
+
+# Master switch.
+enabled = true
+
+# Missiles with missiles.txt pSrvDmgFunc 1 (DmgCalc1 percent of the physical
+# damage converted to the missile's element).
+missile_conversion = true
+
+# Melee skills with a skills.txt calc4 conversion and EType pois, or the
+# random element when it rolls poison.
+melee_conversion = true

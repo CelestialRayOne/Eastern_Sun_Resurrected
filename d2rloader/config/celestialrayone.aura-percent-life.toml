@@ -1,0 +1,41 @@
+# Aura Percent Life Damage
+#
+# Every skill whose skills.txt srvdofunc is 66 (Holy Fire, Holy Shock in
+# vanilla) or 81 (Holy Freeze in vanilla) can deal damage based on the current
+# life of each target it pulses over, the way Static Field (srvdofunc 20) does.
+#
+# The percent comes from one calc column of the skill's row (calc_column
+# below). On every pulse, for every target, the aura's element damage becomes
+# the higher of:
+#   - its own EMin..EMax roll, with everything the game already adds to it
+#   - that percent of the target's current life, worked out like Static
+#     Field's own percent part:
+#       the percent part never takes the target's last point of life,
+#       a target at or below difficultylevels.txt StaticFieldMin percent of its
+#       max life gets no percent part (static_field_min below),
+#       a negative resistance to the element does not amplify it.
+# A blank column, or one that evaluates to 0 or less, leaves the row vanilla.
+#
+# The calc is evaluated for the caster, like every aura calc, once per target
+# per pulse. Values above 100 act like 100 because of the last-point rule.
+# The percent lands in the row's EType slot, the same one the roll went to, so
+# resistances, immunities, absorbs and the difficultylevels.txt damage
+# percents treat it exactly like the roll. EType 6 to 9 (life, mana, stamina,
+# stun) rows get no percent part.
+#
+# Console command: aurapercent (status, counters and the last percent hit)
+
+[aura_percent_life]
+
+# Master switch. False leaves both srvdofuncs completely vanilla.
+enabled = true
+
+# skills.txt calc column that holds the percent, 1 to 10 (calc1 to calc10).
+# The two aura functions read none of these columns themselves; this plugin is
+# the only reader. Keep the column free of anything else on every srvdofunc 66
+# and 81 row, because any value in it is taken as a percent.
+calc_column = 4
+
+# Apply difficultylevels.txt StaticFieldMin to the percent part, the same way
+# Static Field applies it. The aura's own roll is never affected by it.
+static_field_min = true

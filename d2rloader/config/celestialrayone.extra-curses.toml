@@ -1,0 +1,82 @@
+# ============================================================================
+# Extra Curses
+# ============================================================================
+#
+# WHAT IT DOES
+# Every point of the stat set below lets its owner keep one more curse on the
+# same target:
+#
+#   curses a caster can keep on one target = 1 + the caster's value of the stat
+#
+# With 0 points nothing changes: a new curse replaces the target's curse, the
+# way the game always worked.
+#
+#   - Recasting a curse the target already has refreshes it, exactly as
+#     before, and a lower-level recast is still refused. It never needs a
+#     free slot.
+#   - A new curse on a target with room is added. Nothing is removed.
+#   - A new curse on a full target replaces one curse, chosen by "replace"
+#     below. A curse that lands never removes more than one curse.
+#   - The replaced curse ends the normal way, as if it had run out: its state
+#     is turned off, its timer is cancelled and its end-of-curse code runs.
+#   - Everything the game checks before a curse lands still applies to
+#     every curse: the target's stat 109 shortens it by that percentage and
+#     blocks it at 100 or more, a target with state 57 takes no new curse,
+#     and the monster checks are unchanged.
+#   - The count belongs to whoever casts. Players, hirelings, summons and
+#     monsters that have the stat all get it. A monster without it keeps the
+#     game's single curse when it curses you.
+#   - The game draws one overhead curse graphic per unit, so only the newest
+#     curse's graphic shows. The other curses stay active.
+#
+# STAT
+# Add a row for the stat to itemstatcost.txt and put its row id in stat_id
+# (0 to 32767). -1 leaves the plugin idle.
+#
+# CONSOLE
+#   extra-curses       settings, hook state, counters and the last decision
+#
+# LOG (<scope>\d2rloader\logs\celestialrayone.extra-curses.log)
+#   At load: the stat, the replace policy and the hook state.
+#   With [log] decisions = true, one line per curse that lands, e.g.
+#     state 9 on monster 37 by player 1: cap 3 (stat 600 = 2), 2 other curses -> added
+#     state 61 on monster 37 by player 1: cap 3 (stat 600 = 2), 3 other curses -> replaces state 19 (40 frames left)
+#     state 9 on monster 37 by player 1: cap 3 (stat 600 = 2), 2 other curses -> same curse, refreshed or refused by the game
+#
+# HOW IT WORKS
+# The game applies every curse through one timed-state builder (D2RLoader's
+# copy lives in D2RCore.dll). Before adding a curse it asks "which curse does
+# this target already have?" and removes the answer. This plugin answers that
+# one question from the caster's stat. Nothing else in the game is changed.
+#
+# ============================================================================
+
+# File format version. Leave this value unchanged.
+config_version = 1
+
+# Master switch. false loads without hooking anything.
+enabled = true
+
+
+[curses]
+# itemstatcost.txt row id of the extra-curses stat, 0 to 32767.
+# -1 = not set: the plugin stays idle and every caster keeps one curse.
+stat_id = 1016
+
+# Which curse a new one replaces when the target is full:
+#   "shortest_remaining"  the curse with the least time left. A curse you just
+#                         refreshed is never the one lost. Curses without a
+#                         timer go last.
+#   "oldest"              the curse applied first. Refreshing a curse does not
+#                         make it newer.
+replace = "oldest"
+
+
+[log]
+# One log line per curse that lands. Meant for testing.
+decisions = false
+
+
+# Lets D2RLoader verify that multiplayer peers use matching settings.
+[d2rl]
+match = true

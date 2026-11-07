@@ -1,0 +1,66 @@
+# Terror Zone Density
+#
+# Terrorized levels spawn more monsters and more champion and unique packs.
+#
+# How it works:
+# - The game does not create monsters when a game starts. A room gets its
+#   monsters the first time a player comes near it, and the game reads the
+#   level's monster density (levels.txt MonDen) and pack counts (MonUMin,
+#   MonUMax) at that moment.
+# - Right before a room gets its monsters, this plugin checks whether that
+#   room's level is terrorized. If it is, the level uses the boosted values
+#   below. When the terror zone moves on, the level goes back to its
+#   levels.txt values.
+# - Rooms that already have their monsters keep them. Only rooms nobody has
+#   reached yet are affected.
+# - Each difficulty uses its own columns: MonDen, MonDen(N), MonDen(H), and
+#   the matching MonUMin and MonUMax columns.
+# - Multiplayer: monsters are created where the game is hosted, so only the
+#   host needs this plugin. Players who join need nothing.
+#
+# Level groups:
+# - Endgame maps (map_levels) are never changed.
+# - Endgame levels: every other level whose MonLvlEx(H) is at least
+#   endgame_monster_level, plus the levels listed in endgame_levels.
+# - Campaign levels: everything else.
+#
+# Rules:
+# - Density: the levels.txt value plus density_add, never above density_cap.
+#   A level already above density_cap keeps its own value. A level with
+#   density 0 (no random monsters) stays at 0.
+# - Packs: MonUMin and MonUMax are multiplied by packs_multiplier and
+#   rounded, .5 rounds up (9 x 1.5 = 14). The game stores pack counts in one
+#   byte, so 255 is the most a level can have.
+# - More monsters also means more herald rolls: every kill rolls for one.
+#
+# Console command: tzdensity (state, settings, counters, recent changes).
+
+[terror_zone_density]
+
+# Master switch.
+enabled = true
+
+# Write one log line for every level the plugin boosts or puts back.
+log_changes = true
+
+# No boosted density goes above this, 0 to 10000. The game itself stops at 10000.
+density_cap = 3000
+
+# Levels whose MonLvlEx(H) is at least this count as endgame levels.
+endgame_monster_level = 92
+
+# Campaign levels. density_add 0 to 10000, packs_multiplier 0 to 10.
+campaign_density_add = 1500
+campaign_packs_multiplier = 3.0
+
+# Endgame levels. density_add 0 to 10000, packs_multiplier 0 to 10.
+endgame_density_add = 500
+endgame_packs_multiplier = 1.5
+
+# More endgame levels, whatever their MonLvlEx(H). levels.txt Id.
+# 115 Naraku Level 1, 214 Naraku Level 2.
+endgame_levels = [115, 214]
+
+# Endgame maps, never changed. levels.txt Id: single ids or [first, last] ranges.
+# 139 to 212: Chasm of Horrors through The Altar of Doomed Salvation and Infernal Nexus.
+map_levels = [[139, 212]]

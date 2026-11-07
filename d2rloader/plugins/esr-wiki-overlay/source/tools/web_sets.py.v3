@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+"""Set Items page of wiki-data.txt, from the saved sets page of the ESR website (sets.htm).
+
+    python web_sets.py <sets.htm> <wiki-data.txt>
+
+The website gives every set piece its name, base, levels, stats and the item-count bonuses, and every set its partial and
+full bonuses. The Hireling sets come in Normal, Nightmare and Hell groups. The website has no pictures, so each piece and
+set card keeps the picture it already has in the wiki data (matched by title and difficulty); a card without a match is
+written without one. Standard library only. Anything that goes wrong leaves wiki-data.txt untouched and exits 1.
+"""
+import re
+import sys
+from pathlib import Path
+
+from web_uniques import clean
+
+PAGE_ID = "set-items"
+PAGE_TITLE = "Set Items"
+PAGE_GROUP = "Wiki"
+ORDER = ["General", "Amazon", "Barbarian", "Necromancer", "Paladin", "Sorceress", "Assassin", "Druid", "Warlock", "Hireling"]
+ENTRY_NAME = {"General": "Generic"}
+CLASSES = set(ORDER)
+DIFFICULTY = {"N": "Normal", "NM": "Nightmare", "H": "Hell"}
+TITLE_COLOR = "ÿcC"    # set and piece titles, and the item-count bonus lines
+STAT_COLOR = "ÿc3"     # stat lines
+HEADING_COLOR = "ÿc4"  # "Partial Set Bonus", "Full Set Bonus", "(2 items)"
+REQ_COLOR = "ÿc5"      # "Required Level: n"
+MIN_PIECES = 200
+MIN_SETS = 60
+
+SECTION = re.compile(r'<a name="([A-Za-z]+)"></a>')
+CELL = re.compile(r'<td([^>]*)>(.*?)</td>', re.S | re.I)
+BR = re.compile(r"<br\s*/?>", re.I)
+MARKER = re.compile(r"^\((\d+) items?\)$")
+DIFF_SUFFIX = re.compile(r"^(.*)-(N|NM|H) \(merc only\)$")
+
+
+def text(fragment):
+    return clean(re.sub(r"<[^>]+>", "", fragment))
+
+
+def lines_of(fragment):
+    return [t for t in (text(part) for part in BR.split(fragment)) if t]
+
+
+def parse_piece(left, right):
+    name_match = re.search(r'<font color="#48B850">(.*?)</font>', left, re.S)
+    base_match = re.search(r'<a href="[^"]*">(.*?)</a>', left, re.S)
+    level = re.search(r"Lvl\s+(\d+)\s*/\s*Req\s+Lvl\s+(\d+)", text(left))
+    stats_match = re.search(r'<font color="8080E6">(.*?)</font>', left, re.S)
+    if not (name_match and level):
+        raise SystemExit("a set piece could not be read: %s" % text(left)[:60])
+    name = text(name_match.group(1))
+    if base_match:
+        base = re.sub(r"\s*\([^)]*\)$", "", text(base_match.group(1)))
+    else:
+        # the base is written on the line under the name, as "Ring (rin)"
+        before = lines_of(left.split('<font color="8080E6">')[0])
+        at = before.index(name) if name in before else -1
+        code = re.match(r"^(.*)\s\([^)]*\)$", before[at + 1]) if 0 <= at + 1 < len(before) else None
+        if not code:
+            raise SystemExit("a set piece has no base: %s" % name)
+        base = code.group(1)
+    bonus = []  # (item count, lines)
+    pending = []
+    for part in BR.split(right):
+        line = text(part)
+        if not line:
+            continue
+        marker = MARKER.match(line)
+        if marker:
+            bonus.append((int(marker.group(1)), pending))
+            pending = []
+        else:
+            pending.append(line)
+    return {
+        "name": name,
+        "base": base,
+        "lvl": int(level.group(1)),
+        "req": int(level.group(2)),
+        "stats": lines_of(stats_match.group(1)) if stats_match else [],
+        "bonus": bonus,
+    }
+
+
+def parse_partial(cell):
+    lines = [t for t in (text(part) for part in BR.split(cell)) if t]
+    start = lines.index("Partial Set Bonus") + 1
+    stats, count = [], 2
+    for line in lines[start:]:
+        marker = MARKER.match(line)
+        if marker:
+            count = int(marker.group(1))
+            break
+        stats.append(line)
+    return stats, count
+
+
+def parse_full(cell):
+    lines = [t for t in (text(part) for part in BR.split(cell)) if t]
+    return lines[lines.index("Full Set Bonus") + 1:]
+
+
+def parse_sections(html):
+    marks = [(m.group(1), m.start()) for m in SECTION.finditer(html)]
+    if not marks:
+        raise SystemExit("the sets page has no sections")
+    result = {}
+    for n, (name, start) in enumerate(marks):
+        if name not in CLASSES:
+            continue
+        end = marks[n + 1][1] if n + 1 < len(marks) else len(html)
+        cells = CELL.findall(html[start:end])
+        records = []
+        current = None
+        i = 0
+        while i < len(cells):
+            attrs, content = cells[i]
+            if "colspan" in attrs and "#402040" in attrs:
+                header = text(content)
+                i += 1
+                if header == name:
+                    current = None
+                    continue
+                current = {"header": header, "pieces": [], "partial": [], "partial_count": 2, "full": []}
+                records.append(current)
+                continue
+            if current is None:
+                i += 1
+                continue
+            if "Lvl" in text(content) and "48B850" in content and i + 1 < len(cells):
+                current["pieces"].append(parse_piece(content, cells[i + 1][1]))
+                i += 2
+                continue
+            if "Partial Set Bonus" in content and i + 1 < len(cells):
+                current["partial"], current["partial_count"] = parse_partial(content)
+                current["full"] = parse_full(cells[i + 1][1])
+                i += 2
+                continue
+            i += 1
+        result[name] = records
+    missing = [name for name in ORDER if name not in result]
+    if missing:
+        raise SystemExit("the sets page has no %s section" % missing[0])
+    return result
+
+
+def key_of(title, subtitle):
+    """Titles compare without case, spacing or punctuation (the website writes "Lim-Dul's" where the game has "Lim Dul's")."""
+    return (re.sub(r"[^a-z0-9]", "", title.lower()), subtitle)
+
+
+def existing_pictures(lines):
+    """(title, subtitle) key -> the picture keys the wiki data already gives that card."""
+    pictures = {}
+    title = subtitle = None
+    for line in lines:
+        parts = line.split("\t")
+        if parts[0] == "BLOCK" and len(parts) > 2:
+            title, subtitle = parts[2], parts[3] if len(parts) > 3 else ""
+        elif parts[0] == "IMG" and title is not None:
+            pictures.setdefault(key_of(title, subtitle), []).append(parts[1])
+    return pictures
+
+
+def set_blocks(section, record, pictures, report):
+    hireling = section == "Hireling"
+    pieces = record["pieces"]
+    if not pieces:
+        return [], []
+    diff = ""
+    if hireling:
+        suffixes = {DIFF_SUFFIX.match(p["name"]).group(2) if DIFF_SUFFIX.match(p["name"]) else None for p in pieces}
+        if len(suffixes) != 1 or None in suffixes:
+            raise SystemExit("set %s has pieces from more than one difficulty" % record["header"])
+        diff = DIFFICULTY[suffixes.pop()]
+    lvl = pieces[0]["lvl"]
+    display = record["header"] + (" (%s, Lvl %d)" % (diff, lvl) if hireling else "")
+    blocks = []
+    count = 0
+    for piece in pieces:
+        title = piece["name"]
+        if hireling:
+            match = DIFF_SUFFIX.match(title)
+            title = match.group(1) if match else title
+        count += 1
+        keys = pictures.get(key_of(title, diff), [])
+        if not keys:
+            report.append("no picture: %s" % title)
+        blocks.append("BLOCK\t1\t%s\t%s\t%s\t%s\t\t%d" % (title, diff, display, diff, piece["req"]))
+        blocks.append("FIELD\tSet\t%s" % record["header"])
+        blocks.append("FIELD\tBase\t%s" % piece["base"])
+        blocks.append("FIELD\tRequired Level\t%d" % piece["req"])
+        if hireling:
+            blocks.append("FIELD\tItem Level\t%d" % piece["lvl"])
+        blocks.append("FIELD\tSet pieces\t%d" % len(pieces))
+        blocks += ["IMG\t%s" % key for key in keys]
+        head = TITLE_COLOR + title + (" " + diff if hireling else "")
+        blocks.append("LINE\tS\t" + head)
+        blocks += ["LINE\tS\t" + STAT_COLOR + s for s in piece["stats"]]
+        for items, lines in piece["bonus"]:
+            blocks.append("LINE\tS\t%s(%d Items)" % (TITLE_COLOR, items))
+            blocks += ["LINE\tS\t" + TITLE_COLOR + s for s in lines]
+        blocks.append("LINE\tS\t%sRequired Level: %d" % (REQ_COLOR, piece["req"]))
+    # the set card: its partial and full bonuses
+    keys = pictures.get(key_of(record["header"], diff), [])
+    if not keys:
+        report.append("no picture: %s" % record["header"])
+    blocks.append("BLOCK\t1\t%s\t%s\t%s\t%s\t\t0" % (record["header"], diff, display, diff))
+    blocks += ["IMG\t%s" % key for key in keys]
+    blocks.append("LINE\tH\tSet bonus")
+    blocks.append("LINE\tS\t" + TITLE_COLOR + record["header"])
+    blocks.append("LINE\tS\t" + HEADING_COLOR + "Partial Set Bonus")
+    blocks += ["LINE\tS\t" + STAT_COLOR + s for s in record["partial"]]
+    blocks.append("LINE\tS\t%s(%d items)" % (HEADING_COLOR, record["partial_count"]))
+    blocks.append("LINE\tS\t" + HEADING_COLOR + "Full Set Bonus")
+    blocks += ["LINE\tS\t" + STAT_COLOR + s for s in record["full"]]
+    return blocks, count
+
+
+def build_page(sections, pictures, report):
+    out = ["PAGE\t%s\t%s\t%s" % (PAGE_ID, PAGE_TITLE, PAGE_GROUP)]
+    total_pieces = 0
+    total_sets = 0
+    for section in ORDER:
+        entry_lines = []
+        pieces = 0
+        for record in sections[section]:
+            blocks, count = set_blocks(section, record, pictures, report)
+            entry_lines += blocks
+            pieces += count
+            total_sets += 1 if blocks else 0
+        total_pieces += pieces
+        cards = sum(1 for line in entry_lines if line.startswith("BLOCK\t"))
+        out.append("ENTRY\t%s\t%d items" % (ENTRY_NAME.get(section, section), cards))
+        out += entry_lines
+    if total_pieces < MIN_PIECES or total_sets < MIN_SETS:
+        raise SystemExit("only %d pieces in %d sets; the website page looks broken" % (total_pieces, total_sets))
+    return out
+
+
+def splice(current, page):
+    lines = current.split("\n")
+    trailing = bool(lines) and lines[-1] == ""
+    if trailing:
+        lines = lines[:-1]
+    starts = [i for i, line in enumerate(lines) if line.startswith("PAGE\t")]
+    for n, i in enumerate(starts):
+        if lines[i].split("\t")[1] == PAGE_ID:
+            end = starts[n + 1] if n + 1 < len(starts) else len(lines)
+            merged = lines[:i] + page + lines[end:]
+            return "\n".join(merged) + ("\n" if trailing else "")
+    raise SystemExit("wiki-data.txt has no %s page" % PAGE_ID)
+
+
+def main(argv):
+    if len(argv) != 3:
+        print(__doc__)
+        return 2
+    sets_path, target = Path(argv[1]), Path(argv[2])
+    report = []
+    try:
+        html = sets_path.read_text(encoding="utf-8", errors="replace")
+        if "</html" not in html.lower():
+            raise SystemExit("%s is incomplete" % sets_path.name)
+        current = target.read_text(encoding="utf-8")
+        sections = parse_sections(html)
+        page = build_page(sections, existing_pictures(current.split("\n")), report)
+        merged = splice(current, page)
+    except SystemExit as stop:
+        print("Website sets: %s" % stop)
+        return 1
+    tmp = target.with_suffix(target.suffix + ".new")
+    tmp.write_text(merged, encoding="utf-8", newline="\n")
+    tmp.replace(target)
+    pieces = sum(len(r["pieces"]) for records in sections.values() for r in records)
+    sets = sum(len(records) for records in sections.values())
+    print("Website sets: %d sets, %d pieces, %d without a picture" % (sets, pieces, len(report)))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

@@ -1,0 +1,57 @@
+# Summit Door Guardians
+#
+# Opens the way-back door of a custom level once that level's guardians
+# are dead, the way the Arreat Summit door opens once the campaign
+# Ancients are dead.
+#
+# The door is the Arreat Summit's way back: objects.txt row 564
+# (SummitDoor), or any objects.txt row with InitFn 76 and OperateFn 71.
+# In the campaign it shuts when the level loads and only opens once the
+# Rite of Passage Ancients are dead. That condition belongs to the
+# campaign quest, so a custom level built on the same map preset keeps its
+# door shut forever.
+#
+# In every level listed below the door follows that level's own monsters
+# instead:
+#   - It shuts when the level loads, like the campaign door.
+#   - It opens the moment the last listed monster dies. If the door is
+#     far away and not loaded at that moment, it is open when you get
+#     back to it.
+#   - Clicking it works like the campaign door: while it is shut you get
+#     the same refusal sound, once it is open it takes you through.
+#   - The campaign quest is never read or changed for these doors, so the
+#     real Arreat Summit (level 120) and its Ancients are not affected.
+# Levels that are not listed keep the game's own behaviour.
+#
+# Progress
+#   - A kill counts when a listed monster dies inside its level, whoever
+#     or whatever killed it.
+#   - Counted per game, in memory only. Leaving the game clears it, and
+#     the next game starts with the door shut again.
+#
+# Server side only. Single player hosts its own server, so it applies there.
+#
+# Console command: summitdoor (status, the levels, and the progress and
+# door state in the current game)
+
+[summit_door_guardians]
+
+# Master switch. false installs nothing and every door works as in vanilla.
+enabled = true
+
+# One block per level:
+#   level     the levels.txt Id column of the level, 1 to 32767.
+#   monsters  the monstats.txt *hcIdx values (the row id) that must die,
+#             0 to 32767, on one line or several, # comments allowed.
+#             List an id once for every monster of that kind that has to
+#             die: [976, 976] needs two of them.
+#
+# Any mistake (a missing key, an id that is not a number, a level listed
+# twice, ...) stops the plugin from installing and is written to the
+# plugin log, so a typo can never open a door early. The doors then keep
+# the game's own behaviour.
+
+# Tier 5 Map - The Edge of Eternity: Talic, Madawc and Korlic the Eternal.
+[[summit_door_guardians.level]]
+level = 203
+monsters = [976, 977, 978]

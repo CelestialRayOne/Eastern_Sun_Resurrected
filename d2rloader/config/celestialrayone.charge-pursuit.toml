@@ -1,0 +1,87 @@
+# Charge Pursuit
+#
+# Monster Charge (skills.txt srvstfunc 31 + srvdofunc 67) keeps going
+# until it hits an enemy, instead of stopping a few frames in and jittering
+# on the spot.
+#
+# The first three switches are about monsters whose monstats.txt skill
+# mode for the charge names a sequence (seq_...). That puts the charge in
+# monster mode 14, and mode 14 ends a charge early in ways the plain modes
+# (A1, S1, ...) do not. With every switch on, a charge ends only when it
+# connects with an enemy, when its target dies or disappears, or when
+# terrain leaves no route at all.
+#
+# Players are never affected: everything here is monster only.
+# Console: type charge-pursuit for the live state and counters.
+
+[charge_pursuit]
+
+# Master switch. false installs nothing.
+enabled = true
+
+# The sequence running out.
+#   Cause    a mode 14 charge ends when its monseq.txt sequence has played
+#            once. The engine's own attempt to restart the animation only
+#            works for plain modes, so a 5 row sequence means 5 frames of
+#            charge, then the monster stops.
+#   Fix      while the charge lasts, the sequence keeps looping.
+#   Default  true
+keep_sequence_alive = true
+
+# The charge freezing on the server.
+#   Cause    once the charge's per frame logic has run, it alone books the
+#            monster's next frame, but mode 14 only runs it on rows whose
+#            monseq.txt event column is 1, 2 or 4. The first row with event
+#            0, or a slowed monster spending two frames on one row, leaves
+#            no next frame booked and the monster freezes in place.
+#   Fix      while the charge lasts, every frame counts as an action
+#            frame, so the charge logic runs every frame whatever the
+#            event column says.
+#   Default  true
+skill_every_tick = true
+
+# The hit not landing.
+#   Cause    on contact the charge hands its hit to a later frame that it
+#            expects the sequence's rows after frame 8 to book. A short
+#            sequence has no such rows, so the mode ends without the hit
+#            (and without anything the hit triggers, such as
+#            charge-aoe-hits' missiles).
+#   Fix      when the charge makes contact and nothing is booked to deliver
+#            the hit, it is delivered on the same frame.
+#   Default  true
+impact_on_contact = true
+
+# Packmates blocking the charge.
+#   Cause    the charge moves with the monster's walking rules, which treat
+#            every other monster as a wall. The first packmate on the line
+#            ends the charge.
+#   Fix      while a hostile monster charges, other hostile monsters no
+#            longer block it, the same way Whirlwind passes through units.
+#            Players, hirelings, summons, walls, objects and doors still
+#            stop it, and touching an enemy is what triggers the hit.
+#            Normal walking is untouched. Charging pets (bound demons,
+#            summons) keep the vanilla rules.
+#   Default  true
+pass_through_allies = true
+
+# The distance budget.
+#   Cause    the launch gives every monster charge a hardcoded budget of 20
+#            steps, one per subtile moved. When it runs out the charge
+#            cannot re-aim at a moving target and stops.
+#   Fix      the budget is refilled every frame while the charge lasts.
+#   Default  true
+unlimited_distance = true
+
+# Apply the movement rules and the sequence looping to the client's own copy
+# of the charging monster as well. The client predicts monster movement and
+# animation with the same code; left on the vanilla rules it would stop the
+# monster on screen while the server carries on.
+#   Default  true
+client_mirror = true
+
+# Writes one line per charge launch, per contact, and each time charge
+# movement ends (what it touched, where, and the remaining budget) to this
+# plugin's log. Touching mask 0x0080 (player) or 0x2000 (pet) is a normal
+# hit. Capped at 400 lines per session. Leave off for normal play.
+#   Default  false
+debug_log = false

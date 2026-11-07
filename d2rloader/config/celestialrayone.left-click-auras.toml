@@ -2,7 +2,10 @@
 #
 # Left Click Auras
 #   An aura on the left mouse button runs the same way an aura on the right
-#   mouse button does, and both can be active at the same time.
+#   mouse button does, and both can be active at the same time. With a
+#   controller, auras can be switched on and two of them can run at once. An
+#   aura that comes back at a higher level keeps its state instead of blinking
+#   off, on either button.
 #
 # Changes are read when the plugin loads. Restart the game after editing.
 # Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
@@ -32,12 +35,20 @@ enabled = true
 #   does: aura state, real skill level, a timer of its own. The left and right
 #   auras keep separate timers, so two auras run side by side.
 #
+#   The left aura's timer works like the right button's timer: every tick it
+#   checks the left button, casts the aura and sets itself again. It does not
+#   depend on who else applies the same aura state to you. A hireling, a bound
+#   demon, a party member or an item with the same aura, or another aura that
+#   uses the same aurastate, can no longer switch it off. The same aura from
+#   another unit does not even make it blink (takeover_in_place). Another
+#   aura that uses the same aurastate can still make its bonuses blink until
+#   its next tick, exactly as on the right button.
+#
 #   The left aura stops, and its state and bonuses are removed, when
 #     - another skill goes on the left button,
 #     - the aura is no longer on the left button for any other reason (an item
 #       or weapon swap took the skill away, the game reset the button),
-#     - its timer finds the aura invalid (the skill is gone, its state was
-#       taken over).
+#     - the character is dead, or the skill is no longer an aura.
 #
 #   Selecting the same aura again keeps it running. After a resurrect, a
 #   weapon swap back or entering a game, the game selects the left skill again
@@ -52,8 +63,7 @@ enabled = true
 #   aura start           call at 0x43B8FD, arms the left aura's own timer
 #   right aura removal   calls at 0x438C02 and 0x438C33, keep a state the left
 #                        aura still uses
-#   aura timer           0x437460, stops a left aura that left the button
-#   aura timer failure   0x432450, removes the state and bonuses
+#   aura timer           0x437460, runs the left aura's timer
 left_slot_auras = true
 
 # -----------------------------------------------------------------------------
@@ -69,7 +79,7 @@ left_slot_auras = true
 #   If the right button changes, the left timer performs again on its own.
 #
 # Where
-#   call at 0x4377BC in the aura timer
+#   the left aura's timer at 0x437460
 #
 # Needs left_slot_auras.
 single_emanation = true
@@ -96,17 +106,13 @@ move_only_clicks = true
 # live_level
 #
 # The problem
-#   The left aura runs on the game's timer for cast skills, which keeps casting
-#   at the level the aura had when it started (stat 351, modifierlist_level,
-#   on the aura's state). The right button's timer re-reads its skill level
-#   every tick instead. So on the left:
+#   Without this, the left aura keeps the level it had when it started, while
+#   the right button's timer re-reads its skill level every tick. So on the
+#   left:
 #     - an aura that grants skill levels to itself never compounds (Divinity
 #       gives its +all skills once and never counts them toward itself),
 #     - gear or points added after the aura started never raise it, and gear
-#       removed afterwards never lowers it,
-#     - another application of the same aura onto you (an item with that aura,
-#       another unit's aura that reaches you) stores its own level, and the
-#       left aura takes that level on its next tick.
+#       removed afterwards never lowers it.
 #
 # What changes
 #   Every tick the left aura takes its level from the skill on the left
@@ -115,18 +121,125 @@ move_only_clicks = true
 #   does on the right button: Divinity gives back 1 level for every 6 of its
 #   own and settles within a few ticks. An aura that gives itself 1 level or
 #   more per level of its own would keep climbing, on either button. If the
-#   skill reports no level, the stored level is kept. Timers the game starts
-#   itself (monsters, cast skills) keep the stored level.
+#   skill reports no level, the level of the previous tick is kept.
 #
 # Where
-#   call at 0x4376B5 in the aura timer (0x437460), where the timer reads the
-#   stored level
+#   the left aura's timer at 0x437460
 #
 # Needs left_slot_auras.
 live_level = true
 
+# -----------------------------------------------------------------------------
+# level_up_in_place
+#
+# The problem
+#   An aura applies its state again on every tick. When the same unit's aura
+#   comes back one or more levels higher than the state holds (Divinity
+#   climbing, live_level following +skills gear, a skill point spent), the
+#   game throws the state's stats away and builds them again. For that moment
+#   the state is off and every bonus it gives is gone: the state visibly
+#   blinks, and anything that looks at the character in that moment sees the
+#   bonuses missing.
+#
+# What changes
+#   The state keeps its stats. Its level is raised and the aura's new values
+#   are written over the old ones, so each bonus goes straight from the old
+#   value to the new one. This works on both mouse buttons and for every unit
+#   that runs an aura, not only for left button auras. An aura at a lower
+#   level than the state holds is still refused, as in the unmodded game. An
+#   aurastatcalc that works out to 0 removes its stat only with
+#   celestialrayone.aura-zero-branch installed, as before.
+#
+# Where
+#   The aura callback 0x5616F0 calls the state applier at 0x561778. The
+#   applier 0x433D20 is a D2RLoader thunk through the pointer at 0x3E2A440;
+#   the plugin points it at its own function and passes every other caller
+#   straight through. No game code byte changes, so the byte checks
+#   celestialrayone.aura-zero-branch makes on the same callback still pass.
+level_up_in_place = true
+
+# -----------------------------------------------------------------------------
+# takeover_in_place
+#
+# The problem
+#   Another unit's copy of the same aura (same skills.txt row) reaches the
+#   character at a higher level than the state holds: a hireling, a summon, a
+#   bound demon or another player. The game throws the state's stats away
+#   and builds them again for the new owner. When the state belonged to
+#   another unit, the game also recounts the player's summon limits in that
+#   moment, while the bonuses are missing. An aura that grants +skills, like
+#   Divinity, lowers every summon skill's limit for that instant, and the
+#   game kills the summons above it.
+#
+# What changes
+#   The state keeps its stats and changes hands: the new owner's level and
+#   values replace the old ones. When it was the character's own aura, that
+#   aura's passive stats (skills.txt passivestat columns) are still removed,
+#   because only the character's own aura writes them.
+#   Two different auras (two skills.txt rows) that use the same state still
+#   replace each other with a blink. Give them separate states if they should
+#   not fight.
+#
+# Where
+#   The same place as level_up_in_place.
+takeover_in_place = true
+
+# -----------------------------------------------------------------------------
+# controller_aura_activation
+#
+# The problem
+#   With a controller, every skill is bound to a side, and the side comes from
+#   the skills.txt leftskill column: leftskill = 1 skills go to the left side.
+#   Auras are toggle skills on a controller. Whenever the server confirms a
+#   toggle skill on either side, the game checks whether that skill is bound
+#   on the RIGHT side only. An aura with leftskill = 1 is bound on the left,
+#   fails that check, and the game puts Attack back on that side at once. The
+#   aura switches off the moment it switches on, so auras could not be
+#   activated at all.
+#
+# What changes
+#   The check looks at the side the server confirmed, so an aura bound on the
+#   left stays on. The check only runs with a controller; mouse play is not
+#   affected.
+#
+# Where
+#   call at 0x12BBDF in the client's skill confirmation handler (0x12BB40)
+controller_aura_activation = true
+
+# -----------------------------------------------------------------------------
+# controller_two_auras
+#
+# The problem
+#   A controller has one skill slot per side, and the side of every skill is
+#   fixed by leftskill. With leftskill = 1 on every aura, all of them land on
+#   the left side, so only one can run at a time, however many are bound to
+#   buttons.
+#
+# What changes
+#   When you press a button that holds an aura:
+#     - an aura that is already running stays as it is,
+#     - otherwise it goes to the right side if no aura runs there, else to the
+#       left side if no aura runs there,
+#     - when both sides already run an aura, it replaces the one that was
+#       switched on earlier.
+#   So at most two auras run at once, one per side, the same limit as with the
+#   mouse, no matter how many auras are bound to buttons. An aura only goes to
+#   the left side when its row has leftskill = 1.
+#
+#   As in the unmodded game, using another skill bound to the same side as a
+#   running aura takes the aura off that side while the skill is used and puts
+#   it back afterwards.
+#
+# Where
+#   call at 0x144B00, where the controller starts a button press (0x144AC0
+#   calling 0x14A5A0); it sets the side stored with the button's binding
+#
+# Needs controller_aura_activation.
+controller_two_auras = true
+
 # Writes a line to the plugin log for the first 64 aura starts, stops, skipped
-# emanations and left aura level changes. Keep false for normal play. The
-# console command "leftclickauras" always shows what is installed and the
-# counters.
+# emanations, left aura level changes, controller side choices, auras kept in
+# place (level ups, takeovers), refused lower levels and two auras fighting
+# over one state. Keep false for normal play. The console command
+# "leftclickauras" always shows what is installed and the counters.
 diagnostics = false

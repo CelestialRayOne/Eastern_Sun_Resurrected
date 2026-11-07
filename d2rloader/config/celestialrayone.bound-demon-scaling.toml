@@ -1,0 +1,56 @@
+# ============================================================================
+# Bound Demon Scaling
+# ============================================================================
+#
+# WHAT IT DOES
+# Bound demons scale like a normal summon. Every bound demon takes its stats
+# from one monstats.txt row (the "pseudo row" below) instead of from the
+# monster it was before you bound it. It keeps that monster's looks, AI,
+# skills, level and affixes.
+#
+# FROM THE PSEUDO ROW (the columns of the game's difficulty)
+#   Life           MinHP..MaxHP, scaled by monlvl.txt at the demon's level
+#                  unless the row has noRatio. It replaces the original life
+#                  completely: champion, unique and player count bonuses do
+#                  not carry over. Bind Demon's skills.txt calc1 and its
+#                  passivestats are added on top, as for any summon.
+#   Resistances    ResDm..ResPo, AC and ToBlock. The original row's values are
+#   AC, ToBlock    swapped for the pseudo row's; whatever affixes and monprop
+#                  added on top of them stays.
+#   Damage and     A1MinD/A1MaxD/A1TH, A2..., S1..., and El1..El3, worked out
+#   attack rating  on every attack at the demon's level (unless noRatio).
+#   Regeneration   DamageRegen. Bind Demon's calc7 still decides who
+#                  regenerates.
+#   MonProp        The pseudo row's monprop is added to the original monster's
+#                  own monprop, rolled like a spawn (chance columns). Put the
+#                  Kill Tracker kill-skill here to count bound demon kills.
+#   Align          With Summon Resist Cap 3.4.0 or later, a bound demon is
+#                  capped as the pseudo row: its Align, extra_monster_ids and
+#                  [uncap] pairs use the pseudo row's id.
+#
+# UNCHANGED
+# Level (its own, lowered to yours when you bind it), skills, AI, appearance,
+# affixes, and everything Bind Demon's skills.txt row adds.
+#
+# SAVING
+# The game saves a bound demon's stats and puts them back after it binds the
+# restored demon again, so a demon comes back with the stats it was saved
+# with. One bound before this plugin was installed keeps its old life and
+# resistances until you bind a new one. Damage, attack rating and the resist
+# cap are worked out live and apply to every bound demon at once.
+#
+# This plugin only reads the pseudo row; it never spawns it.
+#
+# CONSOLE
+# bounddemonscaling shows whether each part is installed, the row it found,
+# its counters and the last demon it changed.
+# ============================================================================
+
+# Set to false to turn the plugin off.
+enabled = true
+
+# monstats.txt Id of the row every bound demon takes its stats from.
+pseudo_row = "bounddemon"
+
+# Write one line to the plugin log for every demon bound or restored.
+log_binds = true

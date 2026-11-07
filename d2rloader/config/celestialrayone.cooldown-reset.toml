@@ -1,0 +1,21 @@
+# Cooldown Reset
+#
+# When a player gains the state below, every skill cooldown he has running
+# ends at once:
+#   - each skill's own cooldown (skills.txt localdelay), which the game keeps
+#     per skill in stat 359 (skill_cooldown) under state 185 (cooldown)
+#   - the shared delay (skills.txt globaldelay), state 121 (skilldelay)
+# It happens once each time he gains the state, on the server and on his own
+# client, so his skill buttons clear too. It runs right after the cast or
+# effect that gave the state, so a skill that gives the state comes off its
+# own cooldown as well. Cooldowns started after the reset run normally.
+#
+# The state must reach the client: leave its states.txt nosend empty.
+# Not touched: Crossbow Charges' bolt pool, and cooldowns other plugins keep
+# themselves (the Elixir of Reincarnation, artefacts).
+#
+# state: the states.txt row id (the *ID column). 0 turns it off.
+# The console command "cooldownreset" shows the state and counters.
+
+enabled = true
+state = 680

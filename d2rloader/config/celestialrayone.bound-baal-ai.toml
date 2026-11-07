@@ -1,0 +1,42 @@
+# Bound Baal AI
+#
+# Baal's AI was written for a Baal who always fights the players. While he
+# fights on their side (bound with Bind Demon, or converted), three of his
+# behaviours still treat you as the enemy. This plugin fixes all three. A
+# normal, hostile Baal is never touched: every change below only applies
+# while Baal is on the players' side.
+#
+#   targeting  Baal picks targets with his own routine, which only ever looks
+#              at players, their pets, hirelings and other allies. A bound Baal
+#              therefore attacks you or your allies and never a hostile
+#              monster. With this on he picks his target the same way every
+#              other bound demon does: the nearest enemy, never in town. He
+#              then fights it with his full normal skill logic, and his threat
+#              score and the number of enemies around him still decide which
+#              skill he uses.
+#
+#   clone      Baal's clone is meant for a Baal nobody owns. A bound Baal still
+#              clones once his owner is dead or gone: the clone spawns as a
+#              hostile Baal, and the bound Baal stops belonging to you. With
+#              this on a bound Baal never clones, the same way the game's own
+#              spawning monsters, like the Vile Mother, only spawn while evil.
+#
+#   tentacles  Festering Appendages spawns its tentacles as ordinary hostile
+#              monsters, so a bound Baal's tentacles attack you. With this on
+#              they take the side of the Baal that cast them, the rule the game
+#              already applies to Hydras cast by monsters, and fight for you.
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: boundbaal (status and counters)
+
+[bound_baal_ai]
+
+# Master switch. false installs nothing at all.
+enabled = true
+
+# Each fix can be turned off on its own (true or false).
+targeting = true
+clone = true
+tentacles = true

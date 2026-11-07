@@ -56,6 +56,20 @@ boss_height_multiplier = 1.25
 # frame sprites (the shipped ones are 101 tall).
 frame_height = 101
 
+[nameplate]
+# The controller nameplate over the hovered monster's head (TargetAttached in
+# the controller layout). The game makes its bar exactly as wide as the
+# monster's name; the bar is shrunk to these percentages of that width
+# (around its centre) and of the bar's height in the layout (keeping the
+# stock bar's bottom edge). The frame follows it: its art is scaled with the
+# bar's height. 100 keeps the game's own size.
+# The name's size is the layout's pointSize. A text box named NameBold in
+# TargetAttached gets the name's text and colour on every update; placed a
+# pixel or two beside Name it draws the name bold. Without it the name is
+# drawn once.
+width_percent = 85
+height_percent = 50
+
 [text]
 # Level in front of the type line: "<level_label> <level>".
 show_level = true

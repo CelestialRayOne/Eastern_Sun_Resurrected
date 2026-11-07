@@ -3,8 +3,8 @@
     "name": "charm-inv/CharmInvControllerPanel",
     "fields": {
         "priority": 10,
-        "rect": "$ConsoleLeftPanelRect",
-        "anchor": "$LeftPanelAnchor"
+        "rect": { "x": -1676, "y": 182, "width": 1636, "height": 1868 },
+        "anchor": { "x": 0.5, "y": 0.0 }
     },
     "children": [
         {
@@ -19,15 +19,23 @@
             "type": "ImageWidget",
             "name": "charm-inv/Background",
             "fields": {
-                "rect": { "x": 0, "y": 0, "width": 1305, "height": 1409 },
+                "rect": { "x": 0, "y": 0, "width": 1636, "height": 1868 },
                 "filename": "d2rloader/charm-inv/charminv_controller_bg"
+            }
+        },
+        {
+            "type": "ImageWidget",
+            "name": "charm-inv/TopBarCover",
+            "fields": {
+                "rect": { "x": 1566, "y": -172, "width": 212, "height": 96 },
+                "filename": "d2rloader/charm-inv/charminv_controller_topbar"
             }
         },
         {
             "type": "InventoryGridWidget",
             "name": "charm-inv/InventoryGrid",
             "fields": {
-                "rect": { "x": 261, "y": 501 },
+                "rect": { "x": 426, "y": 791 },
                 "cellCount": { "x": 8, "y": 8 },
                 "cellSize": "$ItemCellSize",
                 "gemSocketFilename": "PANEL\\gemsocket",

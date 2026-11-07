@@ -1,927 +1,1058 @@
-Stat	*ID	Send Other	Signed	Send Bits	Send Param Bits	UpdateAnimRate	Saved	CSvSigned	CSvBits	CSvParam	fCallback	fMin	MinAccr	Encode	Add	Multiply	ValShift	1.09-Save Bits	1.09-Save Add	Save Bits	Save Add	Save Param Bits	keepzero	op	op param	op base	op stat1	op stat2	op stat3	direct	maxstat	damagerelated	itemevent1	itemeventfunc1	itemevent2	itemeventfunc2	descpriority	descfunc	descval	descstrpos	descstrneg	descstr2	dgrp	dgrpfunc	dgrpval	dgrpstrpos	dgrpstrneg	dgrpstr2	stuff	advdisplay	*eol
-strength	0	1		16			1	0	24			1	1		31	13		10	150	14	1000																67	19		ModStr1a	ModStr1a		1	19		Moditem2allattrib	Moditem2allattrib		6		0
-energy	1			16			1	0	24			1	1		25	13		10	150	14	1000			8			maxmana										61	19		ModStr1d	ModStr1d		1	19		Moditem2allattrib	Moditem2allattrib				0
-dexterity	2	1		16			1	0	24			1	1		31	13		10	150	14	1000																65	19		ModStr1b	ModStr1b		1	19		Moditem2allattrib	Moditem2allattrib				0
-vitality	3			16			1	0	24			1	1		25	13		10	150	14	1000			9			maxhp	maxstamina									63	19		ModStr1c	ModStr1c		1	19		Moditem2allattrib	Moditem2allattrib				0
-statpts	4			9			1	0	16																																										0
-newskills	5			9			1	0	12																																										0
-hitpoints	6			32			1	0	32								8													1	maxhp																				0
-maxhp	7			32			1	0	32		1	1	1		14	5	8	8	32	14	1000																59	19		ModStr1u	ModStr1u										0
-mana	8			32			1	0	32								8						1							1	maxmana																				0
-maxmana	9			32			1	0	32		1	1	0		20	5	8	8	32	14	1000																55	19		ModStr1e	ModStr1e										0
-stamina	10			32			1	0	32								8						1							1	maxstamina																				0
-maxstamina	11			32			1	0	32		1	1	0		18	5	8	8	32	14	1000																51	19		ModStr5d	ModStr5d										0
-level	12			9			1	0	7																																										0
-experience	13			32			1	0	32																																										0
-gold	14			32			1	0	32																																										0
-goldbank	15			32			1	0	32																																										0
-item_armor_percent	16		1	11											11	5		9	11	9	11			13			armorclass	item_armorpercent_perlevel	item_armor_perlevel								74	19		Modstr2v	Modstr2v										0
-item_maxdamage_percent	17		1	12											11	5		9	11	9	11			13			maxdamage	secondary_maxdamage	item_throw_maxdamage			1					129	19		ModStr2j	ModStr2j										0
-item_mindamage_percent	18		1	12											11	5		9	11	9	11			13			mindamage	secondary_mindamage	item_throw_mindamage			1					130	19		ModStr2k	ModStr2k										0
-tohit	19		1	32											3	2		10		14	1000											1					115	19		ModStr1h	ModStr1h										0
-toblock	20		1	10											22	51		8	50	10	200																134	19		ModStr3g	ModStr3g										0
-mindamage	21		1	16											30	6		8	0	12	0											1					127	19		ModStr1g	ModStr1g										0
-maxdamage	22		1	16											23	4		9	0	12	0											1					126	19		ModStr1f	ModStr1f										0
-secondary_mindamage	23		1	16											24	3		8	0	12	0											1					124	19		ModStr1g	ModStr1g										0
-secondary_maxdamage	24		1	16											21	2		9	0	12	0											1					123	19		ModStr1f	ModStr1f										0
-damagepercent	25		1	24											11	10		8	0	12	0											1					123	19		strModEnhancedDamage	strModEnhancedDamage										0
-manarecovery	26			32														8	0	12	0																														0
-manarecoverybonus	27		1	16														10	250	20	10000																52	19		ModStr4g	ModStr4g									2	0
-staminarecoverybonus	28		1	16														8	0	14	1000																48	19		ModStr3v	ModStr3v									2	0
-lastexp	29			32																																															0
-nextexp	30			32																																															0
-armorclass	31		1	32											4	2		10	10	12	1000																71	19		ModStr1i	ModStr1i										0
-armorclass_vs_missile	32		1	16											2	1		8	0	10	0																69	19		ModStr6a	ModStr6a										0
-armorclass_vs_hth	33		1	16											3	1		8	0	10	0																70	19		ModStr6b	ModStr6b										0
-normal_damage_reduction	34		1	16											47	50		6	0	16	1000																22	19		ModStr2u	ModStr2u									2	0
-magic_damage_reduction	35		1	16											99	85		6	0	16	1000																21	19		ModStr2t	ModStr2t									2	0
-damageresist	36		1	12											38	17		8	0	10	100																22	19		bonusphysicalresist	bonusphysicalresist									2	0
-magicresist	37		1	12											41	17		8	0	10	100																41	19		ModStr1m	ModStr1m									2	0
-maxmagicresist	38		1	9											2500	250		5	0	8	100																46	19		ModStr5x	ModStr5x									2	0
-fireresist	39		1	12											10	5		8	50	12	500																36	19		ModStr1j	ModStr1j		2	19		strModAllResistances	strModAllResistances				0
-maxfireresist	40		1	9											2500	250		5	0	8	100																42	19		ModStr5u	ModStr5u		7	19		allmaximumresistances	allmaximumresistances			2	0
-lightresist	41		1	12											10	5		8	50	12	500																38	19		ModStr1l	ModStr1l		2	19		strModAllResistances	strModAllResistances				0
-maxlightresist	42		1	9											2500	250		5	0	8	100																43	19		ModStr5w	ModStr5w		7	19		allmaximumresistances	allmaximumresistances			2	0
-coldresist	43		1	12											10	5		8	50	12	500																40	19		ModStr1k	ModStr1k		2	19		strModAllResistances	strModAllResistances				0
-maxcoldresist	44		1	9											2500	250		5	0	8	100																44	19		ModStr5v	ModStr5v		7	19		allmaximumresistances	allmaximumresistances			2	0
-poisonresist	45		1	12											10	5		8	50	12	500																34	19		ModStr1n	ModStr1n		2	19		strModAllResistances	strModAllResistances				0
-maxpoisonresist	46		1	9											2500	250		5	0	8	100																45	19		ModStr5y	ModStr5y		7	19		allmaximumresistances	allmaximumresistances			2	0
-damageaura	47		1	16																																															0
-firemindam	48		1	32											300	1		11	0	16	0											1					102	19		ModStr1p	ModStr1p		6	19		minelementaldamage	minelementaldamage			2	0
-firemaxdam	49		1	32											300	1		12	0	16	0											1					101	19		ModStr1o	ModStr1o		6	19		maxelementaldamage	maxelementaldamage			2	0
-lightmindam	50		1	32											300	1		11	0	16	0											1					99	19		ModStr1r	ModStr1r		6	19		minelementaldamage	minelementaldamage			2	0
-lightmaxdam	51		1	32											300	1		12	0	20	0											1					98	19		ModStr1q	ModStr1q		6	19		maxelementaldamage	maxelementaldamage			2	0
-magicmindam	52		1	32											300	1		11	0	16	0											1					104	19		strModMagicDamageMin	strModMagicDamageMin		15	19		strModMagicDamage	strModMagicDamage			2	0
-magicmaxdam	53		1	32											300	1		12	0	16	0											1					103	19		strModMagicDamageMax	strModMagicDamageMax		15	19		strModMagicDamage	strModMagicDamage			2	0
-coldmindam	54		1	32											300	1		11	0	16	0											1					96	19		ModStr1t	ModStr1t		6	19		minelementaldamage	minelementaldamage			2	0
-coldmaxdam	55		1	32											300	1		12	0	16	0											1					95	19		ModStr1s	ModStr1s		6	19		maxelementaldamage	maxelementaldamage			2	0
-coldlength	56		1	32											300	1		8	0	10	0											1																			0
-poisonmindam	57		1	32											300	1		9	0	20	0											1					92	19		ModStr4i	ModStr4i									2	0
-poisonmaxdam	58		1	32											300	1		9	0	22	0											1					91	19		ModStr4h	ModStr4h									2	0
-poisonlength	59		1	16														8	0	10	0											1																			0
-lifedrainmindam	60		1	16											261	85		7	0	10	100											1					88	19		ModStr2z	ModStr2z									2	0
-lifedrainmaxdam	61		1	16																												1																			0
-manadrainmindam	62		1	16											294	85		7	0	10	100											1					89	19		ModStr2y	ModStr2y									2	0
-manadrainmaxdam	63		1	16																												1																			0
-stamdrainmindam	64		1	16																												1																			0
-stamdrainmaxdam	65		1	16																												1																			0
-stunlength	66			16																												1																			0
-velocitypercent	67	1	1	16		1												8	50	10	200																293	19		basemovementspeed	basemovementspeed									2	0
-attackrate	68	1	1	16		1												8	50	10	200											1					293	19		baseattackspeed	baseattackspeed									2	0
-other_animrate	69	1	1	16		1																																													0
-quantity	70		1	16																												1																			0
-value	71		1	9														8	100	8	100																														0
-durability	72		1	9														8	0	9	0									1	maxdurability																				0
-maxdurability	73		1	9											2	1		8	0	8	0																														0
-hpregen	74			32							1				2	2		12	1000	20	10000																56	19		ModStr2l	ModStr2w									2	0
-item_maxdurability_percent	75		1	7											29	2		7	20	7	20			13			maxdurability										3	19		ModStr2i	ModStr2i										0
-item_maxhp_percent	76		1	16											1000	100		8	100	16	1000			11			maxhp	item_hp_perlevel									58	19		ModStr2g	ModStr2g									2	0
-item_maxmana_percent	77		1	16											1000	100		8	100	16	1000			11			maxmana	item_mana_perlevel									54	19		ModStr2h	ModStr2h									2	0
-item_attackertakesdamage	78		1	16							1				125			11	0	20	0												attackedinmelee	6	damagedbymissile	6	13	19		ModStr1v	ModStr1v									2	0
-item_goldbonus	79		1	16											144	25		10	100	16	1000																10	19		ModStr1w	ModStr1w									2	0
-item_magicbonus	80		1	16											144	25		10	100	16	1000																8	19		ModStr1x	ModStr1x									2	0
-item_knockback	81		1	8							1				26			7	0	7	0											1	domeleedamage	7	domissiledamage	7	76	19		ModStr1y	ModStr1y									2	0
-item_timeduration	82		1	10														9	20	9	20																														0
-item_addclassskills	83		1	14	3						1				2500	250		5	0	10	50	3															150	13		ModStr3a	ModStr3a										0
-unsentparam1	84			32														3	0																																0
-item_addexperience	85		1	9											2000	100		3	0	16	1000																11	19		Moditem2ExpG	Moditem2ExpG									2	0
-item_healafterkill	86		1	16							1				7	25		3	0	10	0												kill	28			16	19		ModitemHPaK	ModitemHPaK									2	0
-item_reducedprices	87			8											5000	250		3	0	7	0																8	19		ModitemRedVendP	ModitemRedVendP									2	0
-item_doubleherbduration	88		1	2														1	0	1	0																														0
-item_lightradius	89		1	11							1				3	12		6	20	16	1000																6	19		ModStr3f	ModStr3f									2	0
-item_lightcolor	90		1	24							1				38			5	0	24	0																														0
-item_req_percent	91		1	11											6	-8		10	100	10	100																0	19		ModStr3h	ModStr3h										0
-item_levelreq	92		1	32														10	100	10	100																0	19		moditemreqflat	moditemreqflat										0
-item_fasterattackrate	93	1	1	10											260	39		9	150	16	1000											1					145	19		ModStr4m	ModStr4m		11	19		allspeeds	allspeeds			2	0
-placeholder94	94			32														7	20	8	64																														0
-lastblockframe	95			32														6	20																																0
-item_fastermovevelocity	96	1	1	16											1020	39		9	100	16	1000																148	19		ModStr4s	ModStr4s		11	19		allspeeds	allspeeds			2	0
-item_nonclassskill	97		1	16	14						1			1				8	20	8	20	14																													0
-state	98	1		1	12						1				103	16		6	20	1		14																													0
-item_fastergethitrate	99	1	1	16											266	18		8	100	16	1000																139	19		ModStr4p	ModStr4p		11	19		allspeeds	allspeeds			2	0
-monster_playercount	100			32														7	20																																0
-skill_poison_override_length	101			8														6	20																																0
-item_fasterblockrate	102	1	1	16											371	18		8	100	16	1000																136	19		ModStr4y	ModStr4y		11	19		allspeeds	allspeeds			2	0
-skill_bypass_undead	103			1														7	20	1	0																298	19		ignoreundeadphysicalresist	ignoreundeadphysicalresist									2	0
-skill_bypass_demons	104			1														6	20	1	0																298	19		ignoredemonphysicalresist	ignoredemonphysicalresist									2	0
-item_fastercastrate	105	1	1	16											969	39		9	100	16	1000																142	19		ModStr4v	ModStr4v		11	19		allspeeds	allspeeds			2	0
-skill_bypass_beasts	106			1														7	20	1	0																298	19		ignorebeastphysicalresist	ignorebeastphysicalresist									2	0
-item_singleskill	107		1	16	11						1			1				14	0	7	0	14															81	27		ItemModifierClassSkill	ItemModifierClassSkill										0
-item_restinpeace	108			1							1				5000			14	0	1	0											1	kill	29			81	19		ModitemSMRIP	ModitemSMRIP									2	0
-curse_resistance	109			9											1000	20		14	0	10	500																18	19		StrSkill184	StrSkill184									2	0
-item_poisonlengthresist	110		1	9											6	2		8	20	16	1000																18	19		ModStr3r	ModStr3r									2	0
-item_normaldamage	111		1	16											23	25		11	100	16	1000											1					122	19		ModStr5b	ModStr5b										0
-item_howl	112		1	8							1				13	2		7	-1	7	-1											1	domeleedamage	8	domissiledamage	8	79	5		ModStr3u	ModStr3u									2	0
-item_stupidity	113		1	8							1				83	256		7	0	7	0											1	domeleedamage	9	domissiledamage	9	80	12	2	ModStr6d	ModStr6d									2	0
-item_damagetomana	114		1	7							1				10	5		10	100	10	100												damagedinmelee	13	damagedbymissile	13	11	19		ModStr3w	ModStr3w									2	0
-item_ignoretargetac	115		1	2											272	100		1	0	1	0											1					119	19		ModStr3y	ModStr3y									2	0
-item_fractionaltargetac	116		1	10											16	5		9	100	16	1000											1					118	19		ModStr5o	ModStr5o									2	0
-item_preventheal	117		1	8											48	50		7	0	7	0											1					81	19		ModStr4a	ModStr4a									2	0
-item_halffreezeduration	118		1	2											1274	100		1	0	1	0																19	19		ModStr4b	ModStr4b									2	0
-item_tohit_percent	119		1	12											245	10		10	500	16	1000											1					117	19		ModStr4c	ModStr4c									2	0
-item_damagetargetac	120		1	10											6	-5		9	200	16	1000											1					75	19		ModStr4d	ModStr4d									2	0
-item_demondamage_percent	121		1	12											4	3		11	1000	16	1000											1					112	19		ModStr4e	ModStr4e									2	0
-item_undeaddamage_percent	122		1	12											3	3		11	1000	16	1000											1					108	19		ModStr4f	ModStr4f									2	0
-item_demon_tohit	123		1	13											3	1		11	1000	16	1000											1					110	19		ModStr4j	ModStr4j									2	0
-item_undead_tohit	124		1	13											2	1		11	1000	16	1000											1					106	19		ModStr4k	ModStr4k									2	0
-item_throwable	125		1	2											20	256		1	0	1	0																5	19		ModStr5a	ModStr5a										0
-item_elemskill	126		1	8	4						1				19	256		6	20	7	20	4																													0
-item_allskills	127		1	8							1				10000	250		6	20	16	1000																158	19		ModStr3k	ModStr3k									2	0
-item_attackertakeslightdamage	128		1	16							1				1	25		11	0	11	0												attackedinmelee	10	damagedbymissile	10	14	19		ModStr3j	ModStr3j									2	0
-ironmaiden_level	129		1	10																																															0
-lifetap_level	130		1	10																																															0
-thorns_percent	131			12																																															0
-bonearmor	132		1	32																																															0
-bonearmormax	133		1	32																																															0
-item_freeze	134		1	10							1				166	3		5	0	12	100											1	domeleedamage	14	domissiledamage	14	78	12	2	ModStr3l	ModStr3l									2	0
-item_openwounds	135		1	10							1				5	2		9	100	16	1000																83	19		ModStr3m	ModStr3m									2	0
-item_crushingblow	136		1	10							1				24	10		9	100	16	1000											1	domeleedamage	16	domissiledamage	16	87	19		ModStr5c	ModStr5c									2	0
-item_kickdamage	137		1	10											19	12		10	100	10	100																121	19		ModStr5e	ModStr5e										0
-item_manaafterkill	138		1	16							1				4	25		10	500	16	1000												kill	17			16	19		ModStr5f	ModStr5f									2	0
-item_healafterdemonkill	139		1	10							1				4	25		10	500	16	1000												kill	18			15	19		ModStr6c	ModStr6c									2	0
-item_extrablood	140		1	7											3	2		9	100	9	100											1																			0
-item_deadlystrike	141		1	12											7	6		9	100	16	1000											1					85	19		ModStr5q	ModStr5q									2	0
-item_absorbfire_percent	142		1	7											1000	100		7	0	7	0																23	19		ModStr5g	ModStr5g		5	19		strModAbsorbElemental	strModAbsorbElemental			2	0
-item_absorbfire	143		1	12											200	50		7	0	16	0																27	19		ModStr5h	ModStr5h									2	0
-item_absorblight_percent	144		1	7											1000	100		7	0	7	0																24	19		ModStr5i	ModStr5i		5	19		strModAbsorbElemental	strModAbsorbElemental			2	0
-item_absorblight	145		1	12											200	50		7	0	16	0																29	19		ModStr5j	ModStr5j									2	0
-item_absorbmagic_percent	146		1	7											1000	100		7	0	7	0																26	19		ModStr5k	ModStr5k									2	0
-item_absorbmagic	147		1	12											200	50		7	0	16	0																33	19		ModStr5l	ModStr5l									2	0
-item_absorbcold_percent	148		1	7											1000	100		7	0	7	0																25	19		ModStr5m	ModStr5m		5	19		strModAbsorbElemental	strModAbsorbElemental			2	0
-item_absorbcold	149		1	12											200	50		7	0	16	0																31	19		ModStr5n	ModStr5n									2	0
-item_slow	150		1	7							1				25	10		7	0	7	0											1	domeleedamage	19	domissiledamage	19	77	19		ModStr5r	ModStr5r									2	0
-item_aura	151		1	32							1							8	0	8	0	14																													0
-item_indesctructible	152		1	1														7	0	1																	160	19		ModStre9s	ModStre9s										0
-item_cannotbefrozen	153		1	2											3752	512		1		4																	20	19		ModStr5z	ModStr5z									2	0
-item_staminadrainpct	154		1	7											25	5		7	20	7	20											1					49	19		ModStr6e	ModStr6e									2	0
-item_reanimate	155			7	11						1							7	0	7	0	11										1	kill	31			17	23		Moditemreanimas	Moditemreanimas									2	0
-item_pierce	156		1	12											481	100		9	100	16	1000											1					132	19		ModStr6g	ModStr6g									2	0
-item_magicarrow	157		1	7											127	256		7	0	7	0																131	19		ModStr6h	ModStr6h										0
-item_explosivearrow	158		1	7											123	384		7	0	7	0																133	19		ModStr6i	ModStr6i										0
-item_throw_mindamage	159		1	10											19	32		8	0	16	1000											1																			0
-item_throw_maxdamage	160		1	10											22	32		8	0	16	1000											1																			0
-skill_handofathena	161		1	12																																															0
-skill_staminapercent	162		1	13																				11			maxstamina	item_stamina_perlevel																							0
-kill_base	163			32			1	0	32																					1																					0
-skill_concentration	164		1	12																8	100																														0
-skill_enchant	165		1	12																																															0
-skill_pierce	166		1	12	16																																132	19		skillpiercingattack	skillpiercingattack									2	0
-skill_conviction	167		1	12																																															0
-skill_chillingarmor	168		1	12																																															0
-skill_frenzy	169		1	12																																															0
-skill_decrepify	170		1	12																																															0
-skill_armor_percent	171		1	16																																															0
-alignment	172	1		2																																															0
-target0	173			32																																															0
-target1	174			32																																															0
-goldlost	175			24																																															0
-conversion_level	176			8																																															0
-conversion_maxhp	177			16																																															0
-unit_dooverlay	178			16																																															0
-attack_vs_montype	179			9	10										4	3		3	0	9		10										1					108	22		ModitemAttratvsM	ModitemAttratvsM									2	0
-damage_vs_montype	180			9	10										6	4		3	0	9		10										1					106	22		Moditemdamvsm	Moditemdamvsm									2	0
-fade	181	1		7														14	0	3																															0
-armor_override_percent	182	1	1	10														14	0	16	1000																162	19		totalarmor	totalarmor									2	0
-lasthitreactframe	183																	14	0																																0
-create_season	184																	14	0																																0
-junk_03	185		1	16																16	0																97	3	2	jr3	jr3										0
-junk_04	186		1	16																16	0																96	3	2	jr4	jr4										0
-item_pierce_cold_immunity	187		1	16																12	0																														0
-item_addskill_tab	188		1	16	16						1				2760	192		10	0	7	0	16															151	14		StrSklTabItem1	StrSklTabItem1										0
-item_pierce_fire_immunity	189		1	16																16	0																														0
-item_pierce_light_immunity	190			16											358	128				16																															0
-item_pierce_poison_immunity	191		1	16											269	42				16	0																														0
-item_pierce_damage_immunity	192			16											358	128				16																															0
-item_pierce_magic_immunity	193		1	16																16	0																														0
-item_numsockets	194		1	10											9	42		4	0	4	0																														0
-item_skillonattack	195		1	10	20						1			2				21	0	8	0	18										1	domeleeattack	20	domissileattack	20	160	15		ItemExpansiveChancX	ItemExpansiveChancX									2	0
-item_skillonkill	196		1	10	20						1			2				21	0	8	0	18										1	kill	30			160	15		ModitemskonKill	ModitemskonKill									2	0
-item_skillondeath	197		1	10	20						1			2				21	0	8	0	18											killed	30			160	15		Moditemskondeath	Moditemskondeath									2	0
-item_skillonhit	198		1	10	20						1			2				21	0	8	0	18										1	domeleedamage	20	domissiledamage	20	160	15		ItemExpansiveChanc1	ItemExpansiveChanc1									2	0
-item_skillonlevelup	199		1	10	20						1			2				21	0	8	0	18											levelup	30			160	15		ModitemskonLevel	ModitemskonLevel									2	0
-item_charge_noconsume	200			7											106	256				10	100																159	19		ModStr6k	ModStr6k									2	0
-item_skillongethit	201		1	10	20						1			2				21	0	8	0	18											damagedinmelee	21	damagedbymissile	21	160	15		ItemExpansiveChanc2	ItemExpansiveChanc2									2	0
-modifierlist_castid	202																																																		0
-passive_mastery_item_req_percent	203		1	8	16						1																																								0
-item_charged_skill	204		1	30							1			3				30	0	16	0	18															1	24		ModStre10d	ModStre10d										0
-item_noconsume	205		1	8											26	64				8	0											1																			0
-passive_mastery_noconsume	206		1	9	16															8	0																														0
-passive_mastery_replenish_oncrit	207		1	9	16															8	0																														0
-missile_thorns_percent	208			12																																															0
-passive_mastery_item_level_req_percent	209		1	8	16						1																																								0
-ua_escalation	210			8														8	0																																0
-ua_defeated	211			8														8	0																																0
-gem_k	212		1	16																16	0																1	3	2	gsk	gsk										0
-item_fear	213		1	8							1				18	1				7	-1												damagedinmelee	8			79	5	2	ModStr3u2	ModStr3u2										0
-item_armor_perlevel	214		1	16											10	10		6	0	12	100			4	3	level	armorclass										72	19		ModStr1i	ModStr1i	increaseswithplaylevelX									0
-item_armorpercent_perlevel	215		1	16											21	25		6	0	12	100			5	3	level	armorclass										73	19		Modstr2v	Modstr2v	increaseswithplaylevelX									0
-item_hp_perlevel	216		1	16											23	16	8	6	0	12	100			2	3	level	maxhp										57	19		ModStr1u	ModStr1u	increaseswithplaylevelX									0
-item_mana_perlevel	217		1	16											22	32	8	6	0	12	100			2	3	level	maxmana										53	19		ModStr1e	ModStr1e	increaseswithplaylevelX									0
-item_maxdamage_perlevel	218		1	16							1				13	51		9	0	12	100			4	3	level	maxdamage	secondary_maxdamage	item_throw_maxdamage			1					125	19		ModStr1f	ModStr1f	increaseswithplaylevelX									0
-item_maxdamage_percent_perlevel	219		1	16											21	25		9	0	12	100			5	3	level	maxdamage	secondary_maxdamage	item_throw_maxdamage			1					128	19		ModStr2j	ModStr2j	increaseswithplaylevelX									0
-item_strength_perlevel	220		1	16											33	32		9	0	12	100			2	3	level	strength										66	19		ModStr1a	ModStr1a	increaseswithplaylevelX									0
-item_dexterity_perlevel	221		1	16											33	32		9	0	12	100			2	3	level	dexterity										64	19		ModStr1b	ModStr1b	increaseswithplaylevelX									0
-item_energy_perlevel	222		1	16											26	32		9	0	12	100			2	3	level	energy										60	19		ModStr1d	ModStr1d	increaseswithplaylevelX									0
-item_vitality_perlevel	223		1	16											26	32		9	0	12	100			2	3	level	vitality										62	19		ModStr1c	ModStr1c	increaseswithplaylevelX									0
-item_tohit_perlevel	224		1	16											13	5		10	0	12	100			2	3	level	tohit					1					114	19		ModStr1h	ModStr1h	increaseswithplaylevelX									0
-item_tohitpercent_perlevel	225		1	16											2	64		10	0	12	100			2	3	level	item_tohit_percent					1					116	19		ModStr4c	ModStr4c	increaseswithplaylevelX									0
-item_cold_damagemax_perlevel	226		1	16											264	85		12	0	12	100			2	3	level	coldmaxdam					1					94	19		ModStr1s	ModStr1s	increaseswithplaylevelX									0
-item_fire_damagemax_perlevel	227		1	16											12	32		12	0	12	100			2	3	level	firemaxdam					1					100	19		ModStr1o	ModStr1o	increaseswithplaylevelX									0
-item_ltng_damagemax_perlevel	228		1	16											12	32		12	0	12	100			2	3	level	lightmaxdam					1					97	19		ModStr1q	ModStr1q	increaseswithplaylevelX									0
-item_pois_damagemax_perlevel	229		1	16											12	32		12	0	12	100			2	3	level	poisonmaxdam					1					90	19		ModStr4h	ModStr4h	increaseswithplaylevelX									0
-item_resist_cold_perlevel	230		1	6											25	32		6	0	12	100			2	3	level	coldresist										39	19		ModStr1k	ModStr1k	increaseswithplaylevelX									0
-item_resist_fire_perlevel	231		1	6											25	32		6	0	12	100			2	3	level	fireresist										35	19		ModStr1j	ModStr1j	increaseswithplaylevelX									0
-item_resist_ltng_perlevel	232		1	6											25	32		6	0	12	100			2	3	level	lightresist										37	19		ModStr1l	ModStr1l	increaseswithplaylevelX									0
-item_resist_pois_perlevel	233		1	6											25	32		6	0	12	100			2	3	level	poisonresist										33	19		ModStr1n	ModStr1n	increaseswithplaylevelX									0
-item_sanctification	234		1	12														8	0	12	100																300	20		Sanctified	Sanctified										0
-relic_of_knowledge	235		1	10			1	0	32		1																										28	19		reliclearned	reliclearned									2	0
-item_sanctification_dummy	236		1	12														8	0	12	100																299	20		SanctifyIt	SanctifyIt										0
-respecpoints	237		1	32			1	0	32		1																																								0
-item_thorns_perlevel	238		1	16											13	64		6	0	12	100			2	3	level	item_attackertakesdamage										12	19		ModStr1v	ModStr1v	increaseswithplaylevelX									0
-item_find_gold_perlevel	239		1	16											10	64		6	0	12	100			2	3	level	item_goldbonus										9	19		ModStr1w	ModStr1w	increaseswithplaylevelX								2	0
-item_find_magic_perlevel	240		1	16											203	256		6	0	12	100			2	3	level	item_magicbonus										7	19		ModStr1x	ModStr1x	increaseswithplaylevelX								2	0
-unused241	241		1	16											19	64		6	0	12	100			2	3	level	staminarecoverybonus										47	19		ModStr3v	ModStr3v	increaseswithplaylevelX								2	0
-item_stamina_perlevel	242		1	16											26	16	8	6	0	12	100			2	3	level	maxstamina										50	19		ModStr5d	ModStr5d	increaseswithplaylevelX									0
-unused243	243		1	16											14	2		6	0	12	100			2	3	level	item_demondamage_percent					1					111	19		ModStr4e	ModStr4e	increaseswithplaylevelX								2	0
-item_damage_undead_perlevel	244		1	16											22	2		6	0	12	100			2	3	level	item_undeaddamage_percent					1					107	19		ModStr4f	ModStr4f	increaseswithplaylevelX								2	0
-unused245	245		1	16																																															0
-item_tohit_undead_perlevel_TOREMOVE	246		1	16																12																															0
-item_crushingblow_perlevel	247		1	16											53	256		6	0	12	100			2	3	level	item_crushingblow					1					86	19		ModStr5c	ModStr5c	increaseswithplaylevelX								2	0
-unused248	248		1	16											45	32		6	0	6	0			2	3	level	item_openwounds					1					82	19		ModStr3m	ModStr3m	increaseswithplaylevelX								2	0
-unused249	249		1	16											26	32		6	0	8	0			2	3	level	item_kickdamage					1					120	19		ModStr5e	ModStr5e	increaseswithplaylevelX									0
-item_deadlystrike_perlevel	250		1	16											29	128		6	0	12	100			2	3	level	item_deadlystrike					1					84	19		ModStr5q	ModStr5q	increaseswithplaylevelX								2	0
-item_meldflag	251		1	4																12	100																														0
-item_replenish_durability	252		1	5											26	64		5	0	6	0																1	11		ModStre9t	ModStre9t										0
-item_replenish_quantity	253		1	5											26	64		5	0	6	0																2	19		ModStre9v	ModStre9v										0
-item_extra_stack	254		1	32											24	2		8	0	8	0																4	19		ModStre9i	ModStre9i										0
-strengthpercent	255		1	16											312	75				16	1000			11			strength	item_strength_perlevel									61	19		strModStrengthPercent	strModStrengthPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
-dexteritypercent	256		1	16											250	75				16	1000			11			dexterity	item_dexterity_perlevel									61	19		strModDexterityPercent	strModDexterityPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
-vitalitypercent	257		1	16											312	75				16	1000			11			vitality	item_vitality_perlevel									61	19		strModVitalityPercent	strModVitalityPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
-energypercent	258		1	16											250	75				16	1000			11			energy	item_energy_perlevel									61	19		strModEnergyPercent	strModEnergyPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
-progressive_execute	259		1	4																																															0
-randomgenerator	260		1	12																																															0
-gem_v	261		1	16																16	0																8	3	2	gsv2	gsv2										0
-gem_y	262		1	16																16	0																7	3	2	gsy2	gsy2										0
-gem_b	263		1	16																16	0																6	3	2	gsb2	gsb2										0
-item_aura_display	264		1	32							1							8	0	8	0	14															159	16	0	ModitemAura	ModitemAura									2	0
-passive_summ_elemental_resist	265		1	10											250	75		8	0	16	1000																89	19		summoningskillelementalresist	summoningskillelementalresist									2	0
-passive_summ_life	266		1	10											250	75		8	0	16	1000																89	19		summoningskilllife	summoningskilllife									2	0
-passive_summ_phys_resist	267		1	10											250	75		8	0	16	1000																89	19		summoningskillphysicalresist	summoningskillphysicalresist									2	0
-gem_g	268		1	16																16	0																5	3	2	gsg2	gsg2										0
-gem_r	269		1	16																16	0																4	3	2	gsr2	gsr2										0
-gem_w	270		1	16																16	0																3	3	2	gsw2	gsw2										0
-gem_s	271		1	16																16	0																2	3	2	sku	sku										0
-sigilrancorskillcontrol	272		1	14																																															0
-sigillethargyskillcontrol	273		1	8																																															0
-sigildeathskillcontrol	274		1	8							1				250	75		6	0	8	0												domeleedamage	17	domissiledamage	17	53	1	1	manaonstriking	manaonstriking										0
-deathmarksummonlevel	275			7	12						1							7	0	7	0	12																													0
-placeholder276	276																																																		0
-placeholder277	277		1	8											12	12		7	0	7	0											1					81	19		ModStr4a	ModStr4a									2	0
-junk_05	278		1	16																16	0																95	3	2	jr5	jr5										0
-junk_06	279		1	16																16	0																94	3	2	jr6	jr6										0
-item_craftflag	280		1	10																16	1000																163	3	0	Forged Equ	Forged Equ										0
-vitality_hidden2	281		1	16																16	1000			9			hpregen																								0
-maxhpflag	282		1	32																16	1000																														0
-maxmanaflag	283		1	32																16	1000																														0
-item_upgraded	284		1	12																16	0																299	20		torchupgraded	torchupgraded										0
-item_anointed	285		1	12																4	0																300	20		Anointed	Anointed										0
-item_anointed_dummy	286		1	12																8	0																299	20		AnointIt	AnointIt										0
-item_skeleton_trade	287			12																9	0																298	19	2	moreskeletalmages	moreskeletalmages									2	0
-item_max_skeleton_king	288			12																4	0																298	19	2	moreskeletonkings	moreskeletonkings									2	0
-placeholder289	289			12																1	0																298	20		aegisofcorruptiondesc	aegisofcorruptiondesc									2	0
-placeholder290	290			12																1	0																298	20		hydracapincrease	hydracapincrease									2	0
-placeholder291	291			12																1	0																298	20		holyauratickrate	holyauratickrate									2	0
-placeholder292	292			12																1	0																298	20		chargeupduration	chargeupduration										0
-placeholder293	293			12																1	0																298	20		necrosummonsextraskills	necrosummonsextraskills									2	0
-placeholder294	294			12																1	0																298	20		druidsummonspounce	druidsummonspounce									2	0
-placeholder295	295			12																1	0																298	20		teleportimmo	teleportimmo									2	0
-item_crossbowpassive	296		1	12																1	0																														0
-placeholder297	297		1	12											310	62				9	100											1																			0
-placeholder298	298		1	12											310	62				9	100											1																			0
-crossbowreloadspeed	299		1	16																16	1000																51	19		fastercrossbowreload	fastercrossbowreload										0
-skillcontrol2	300		1	12																																															0
-kill_dummy	301			32																																															0
-kill_display	302			32																1				2	0	kill_base	kill_dummy										305	3	2	killtracker	killtracker									2	0
-passive_summ_mastery_total	303		1	10											125	250				16	1000			1			passive_summ_mastery										297	19		ModitemdamSummskTotal	ModitemdamSummskTotal									2	0
-stancedance	304		1	3																																															0
-hexsiphoncontrol	305		1	9											358	100				16	1000																88	19		Moditemenrescoldsk	Moditemenrescoldsk									2	0
-gluttonycontrol	306		1	9											310	100				16	1000																88	19		Moditemenresfiresk	Moditemenresfiresk									2	0
-irongolemthornscontrol	307		1	5																																															0
-irongolemthornscontrolvalue	308		1	20																																															0
-junk_11	309		1	16																16	0																89	3	2	jr11	jr11										0
-junk_12	310		1	16																16	0																88	3	2	jr12	jr12										0
-junk_13	311		1	16																16	0																87	3	2	jr13	jr13										0
-junk_14	312		1	16																16	0																86	3	2	jr14	jr14										0
-junk_15	313		1	16																16	0																85	3	2	jr15	jr15										0
-junk_16	314		1	16																16	0																84	3	2	jr16	jr16										0
-firelength	315		1	16																																															0
-burningmin	316		1	16																																															0
-burningmax	317		1	16																																															0
-progressive_damage	318		1	3																																															0
-progressive_steal	319		1	3																																															0
-progressive_other	320		1	3																																															0
-progressive_fire	321		1	3																																															0
-progressive_cold	322		1	3																																															0
-progressive_lightning	323		1	3																																															0
-item_extra_charges	324		1	6														6	0	6	0											1																			0
-progressive_tohit	325		1	16																																															0
-poison_count	326		1	5																												1																			0
-damage_framerate	327		1	8																																															0
-pierce_idx	328		1	6																																															0
-passive_fire_mastery	329		1	20											279	50		8	0	16	1000																88	19		ModitemdamFiresk	ModitemdamFiresk		4	19		strModSpellDamage	strModSpellDamage			2	0
-passive_ltng_mastery	330		1	20											263	50		8	0	16	1000																88	19		ModitemdamLtngsk	ModitemdamLtngsk		4	19		strModSpellDamage	strModSpellDamage			2	0
-passive_cold_mastery	331		1	20											323	50		8	0	16	1000																88	19		ModitemdamColdsk	ModitemdamColdsk		4	19		strModSpellDamage	strModSpellDamage			2	0
-passive_pois_mastery	332		1	20											244	50		8	0	16	1000																88	19		ModitemdamPoissk	ModitemdamPoissk		4	19		strModSpellDamage	strModSpellDamage			2	0
-passive_fire_pierce	333		1	9												100		8	0	16	1000																88	19		Moditemenresfiresk	Moditemenresfiresk		16	19		strModPierceResAll	strModPierceResAll			2	0
-passive_ltng_pierce	334		1	9												100		8	0	16	1000																88	19		Moditemenresltngsk	Moditemenresltngsk		16	19		strModPierceResAll	strModPierceResAll			2	0
-passive_cold_pierce	335		1	9												100		8	0	16	1000																88	19		Moditemenrescoldsk	Moditemenrescoldsk		16	19		strModPierceResAll	strModPierceResAll			2	0
-passive_pois_pierce	336		1	9												100		8	0	16	1000																88	19		Moditemenrespoissk	Moditemenrespoissk		16	19		strModPierceResAll	strModPierceResAll			2	0
-item_attackertakesfiredamage	337		1	16							1				1	25		11	0	16	1000												attackedinmelee	11	damagedbymissile	11	13	19		attackertakesfire	attackertakesfire									2	0
-passive_dodge	338		1	9														7	0	16	1000																88	19		passivedodgedesc	passivedodgedesc		12	19		passivedodgedesc	passivedodgedesc			2	0
-passive_avoid	339		1	9														7	0	16	1000																88	19		passiveavoiddesc	passiveavoiddesc		12	19		passivedodgedesc	passivedodgedesc			2	0
-passive_evade	340		1	9														7	0	16	1000																88	19		passiveevadedesc	passiveevadedesc		12	19		passivedodgedesc	passivedodgedesc			2	0
-passive_warmth	341		1	9														8	0	16	1000																														0
-passive_mastery_melee_th	342		1	11	16													8	0	16	1000																														0
-passive_mastery_melee_dmg	343		1	11	16													8	0	16	1000																														0
-passive_mastery_melee_crit	344		1	9	16													8	0	16	1000																														0
-passive_mastery_throw_th	345		1	11	16													8	0	16	1000																														0
-passive_mastery_throw_dmg	346		1	11	16													8	0	16	1000																														0
-passive_mastery_throw_crit	347		1	9	16													8	0	16	1000																														0
-passive_weaponblock	348		1	9	16													8	0	16	1000																														0
-passive_summon_resist	349		1	9														8	0	16	1000																														0
-modifierlist_skill	350			16																																															0
-modifierlist_level	351			16																																															0
-last_sent_hp_pct	352		1	8																																															0
-source_unit_type	353			5																																															0
-source_unit_id	354			32																																															0
-shortparam1	355			16																																															0
-questitemdifficulty	356			32																2	0																														0
-passive_mag_mastery	357		1	12											1211	431		8	0	16	1000																88	19		ModStrMagMastery	ModStrMagMastery									2	0
-passive_mag_pierce	358		1	14												2812		8	0	16	1000																88	19		ModStrMagPierce	ModStrMagPierce									2	0
-skill_cooldown	359			32	16																																														0
-skill_missile_damage_scale	360			32	16																																														0
-psychicward	361		1	32																																															0
-psychicwardmax	362		1	32																																															0
-skill_channeling_tick	363																																																		0
-customization_index	364			32																																															0
-item_magic_damagemax_perlevel	365		1	6											49	128		6	0	16	1000			2	3	level	magicmaxdam					1					100	19		MaxMagDmgPerLvl	MaxMagDmgPerLvl	increaseswithplaylevelX									0
-passive_dmg_pierce	366		1	14												2812		8	0	16	1000																88	19		ModStrDamPierce	ModStrDamPierce									2	0
-heraldtier	367		1	32							1																																								0
-rune_lod_medium	368		1	32																32	0																41	3	2	runelodmedium	runelodmedium										0
-rune_lod_high	369		1	32																32	0																40	3	2	runelodhigh	runelodhigh										0
-item_nonclassskill_display	370		1	16	11						1			1				8	20	8	20	14															81	28		ItemModifierNonClassSkill	ItemModifierNonClassSkill										0
-item_skill_cooldown	371		1	10											250	75		8	0	16	1000																88	19		skillcooldownreduction	skillcooldownreduction									2	0
-trap_limit	372		1	6											250	75		6	0	16	1000																298	19		traplimitpositive	traplimitpositive									2	0
-twister_limit	373		1	12											250	75		10	200	16	1000																298	19		twisterlimit	twisterlimit									2	0
-blade_nova_max_res	374		1	10							1				250	75		6	0	16	1000																298	19		bladenovamaxres	bladenovamaxres									2	0
-item_mythicaldesc	375			7	12						1							7	0	3	0	12															330	23		mythicalitemdesc	mythicalitemdesc									2	0
-item_skillontakedmg	376		1	10	20						1			2				21	0	8	0	18											absorbdamage	21			160	15		ItemExpansiveChanc3	ItemExpansiveChanc3									2	0
-item_skillontakedmg_hidden	377		1	10	20						1			2				21	0	8	0	18											absorbdamage	21																	0
-item_skillonkill_hidden	378		1	10	20						1			2				21	0	8	0	18										1	kill	30																	0
-passive_summ_limit	379		1	10											250	75		6	0	16	1000																297	19		maxsummons	maxsummons									2	0
-summon_ele_mastery_base	380		1	14																12	0																														0
-mosaic_repeat_chance	381		1	14																4	0																298	20		mosaicrepeatchance	mosaicrepeatchance										0
-summon_ac_ar_base	382		1	24																12	0																														0
-has_shuriken	383		1	1																1	0																														0
-blackmagiccontrol	384		1	24																12	0																														0
-skillcontrolcold1	385		1	10																																															0
-exclusiveskill	386		1	3																																															0
-exclusiveskillcontrol	387		1	8																																															0
-skillcontrollightning1	388		1	10																																															0
-skillcontrolfire1	389		1	10																																															0
-firecontrolprogressive	390		1	10																																															0
-total_fire_resist	391		1	8											312	300				16	1000			11			fireresist	item_resist_fire_perlevel									293	19		modtotalfireresist	modtotalfireresist		13	19		modtotalallresist	modtotalallresist			2	0
-total_cold_resist	392		1	8											250	300				16	1000			11			coldresist	item_resist_cold_perlevel									293	19		modtotalcoldresist	modtotalcoldresist		13	19		modtotalallresist	modtotalallresist			2	0
-total_lightning_resist	393		1	8											312	300				16	1000			11			lightresist	item_resist_ltng_perlevel									293	19		modtotallightningresist	modtotallightningresist		13	19		modtotalallresist	modtotalallresist			2	0
-total_poison_resist	394		1	8											250	300				16	1000			11			poisonresist	item_resist_pois_perlevel									293	19		modtotalpoisonresist	modtotalpoisonresist		13	19		modtotalallresist	modtotalallresist			2	0
-elemental_resists_mask	395		1	32																																															0
-aether_resists_mask	396		1	32																																															0
-lifepactactive	397		1	4																																															0
-generictotalmultiplier	398		1	10																16	1000																293	19		totalspelldamage	totalspelldamage									2	0
-weaponmastery	399		1	8																16	1000																301	3		weaponmastery	weaponmastery										0
-total_magic_resist	400		1	8											250	300				16	1000			11			magicresist																								0
-item_attackertakescolddamage	401		1	16							1				1	25		11	0	11	0												attackedinmelee	12	damagedbymissile	12	13	19		attackertakescold	attackertakescold									2	0
-skillcontrol5	402		1	14																																															0
-goldexplosioncontrol	403		1	2																																															0
-item_skillonattack_hidden	404		1	10	20						1			2				21	0	8	0	18										1	domeleeattack	20	domissileattack	20															0
-item_skillonhit_hidden	405		1	10	20						1			2				21	0	8	0	18										1	domeleedamage	20	domissiledamage	20															0
-whirlwindcontrol	406		1	24																																	293	19		modtotalpoisonresist	modtotalpoisonresist									2	0
-cyclicstate	407		1	3																																															0
-skillcontrolcounter	408		1	24																																															0
-totalattackspeed	409		1	10																16	1000			11			item_fasterattackrate																								0
-playermode	410		1	10																																															0
-skillcontrol6	411		1	10																																															0
-skillcontrolhelm	412		1	24																																															0
-potionmultiplier	413		1	20																16	1000																50	19		potioneffectiveness	potioneffectiveness										0
-skillcontrolbodyarmor	414		1	10																																															0
-item_skillongethit_hidden	415		1	10	20						1			2				21	0	8	0	18											damagedinmelee	21	damagedbymissile	21															0
-skillcontrolshield	416		1	10																																															0
-skillcontrolgloves	417		1	10																																															0
-skillcontrolboots	418		1	10																																															0
-skillcontrolbelt	419		1	10																																															0
-skillcontrolamulet	420		1	10																																															0
-runemaster	421		1	14							1									10																															0
-item_skilloncast	422		1	10	20						1			2				21	0	8	0	18											doactive	20			160	15		Moditemskoncast	Moditemskoncast									2	0
-item_skilloncast_hidden	423		1	10	20						1			2				21	0	8	0	18											doactive	20																	0
-branded	424		1	3																16	1000																1	19		branded	branded										0
-totalmaxhp	425		1	16																16	1000			11			maxhp																								0
-extra_items	426		1	14																16	1000																15	19		itemquantity	itemquantity									2	0
-total_physical_resist	427		1	8											250	300				16	1000			11			damageresist										293	19		modtotalphysicalresist	modtotalphysicalresist		13	19		modtotalallresist	modtotalallresist			2	0
-skillcontrolstrafe	428		1	14																																															0
-junk_01	429		1	16																16	0																99	3	2	jr1	jr1										0
-junk_02	430		1	16																16	0																98	3	2	jr2	jr2										0
-item_randomize	431		1	16																16	0																														0
-junk_17	432		1	16																16	0																83	3	2	jr17	jr17										0
-junk_18	433		1	16																16	0																82	3	2	jr18	jr18										0
-criticaldamage	434		1	14																16	1000																85	19		critdamage	critdamage									2	0
-bleedmindam	435		1	20																13	0																92	19		bleedmindam	bleedmindam									2	0
-bleedmaxdam	436		1	20																14	0																91	19		bleedmaxdam	bleedmaxdam									2	0
-bleedlength	437		1	20																10	0																														0
-item_01	438		1	16																16	0																24	3	2	map	map										0
-item_02	439		1	16																16	0																23	3	2	ddd	ddd										0
-item_03	440		1	16																16	0																22	3	2	yyy	yyy										0
-item_04	441		1	16																16	0																20	3	2	zzz	zzz										0
-item_05	442		1	16																16	0																19	3	2	brz	brz										0
-item_06	443		1	16																16	0																18	3	2	eyz	eyz										0
-item_07	444		1	16																16	0																17	3	2	qll	qll										0
-item_08	445		1	16																16	0																16	3	2	spe	spe										0
-item_09	446		1	16																16	0																15	3	2	tal	tal										0
-item_10	447		1	16																16	0																14	3	2	jaw	jaw										0
-item_11	448		1	16																16	0																13	3	2	fng	fng										0
-item_12	449		1	16																16	0																12	3	2	hrn	hrn										0
-item_13	450		1	16																16	0																11	3	2	scz	scz										0
-item_14	451		1	16																16	0																10	3	2	hrt	hrt										0
-item_15	452		1	16																16	0																9	3	2	sol	sol										0
-item_16	453		1	16																16	0																8	3	2	wss2	wss2										0
-item_17	454		1	16																16	0																7	3	2	flg	flg										0
-item_18	455		1	16																16	0																6	3	2	sdo	sdo										0
-item_19	456		1	16																16	0																2	3	2	99j2	99j2										0
-item_20	457		1	16																16	0																1	3	2	rvs2	rvs2										0
-item_21	458		1	16																16	0																5	3	2	bcpn1	bcpn1										0
-item_22	459		1	16																16	0																4	3	2	bcpn2	bcpn2										0
-item_23	460		1	16																16	0																3	3	2	bcpn3	bcpn3										0
-junk_07	461		1	16																16	0																93	3	2	jr7	jr7										0
-junk_08	462		1	16																16	0																92	3	2	jr8	jr8										0
-item_craftflag2	463		1	10																11	0																162	3	0	Forged Jew	Forged Jew										0
-item_tinkerflag2	464		1	12																11	0																1	19		tinkeringpoints	tinkeringpoints										0
-item_24	465		1	16																16	0																21	3	2	qqq	qqq										0
-item_maxdamage_percent2	466		1	11											16	2				10	123			11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1					293	19		totalmaxdamage	totalmaxdamage		14	19		totalphysicaldamage	totalphysicaldamage			2	0
-item_mindamage_percent2	467		1	11											16	2				10	123			11			mindamage	secondary_mindamage	item_throw_mindamage			1					293	19		totalmindamage	totalmindamage		14	19		totalphysicaldamage	totalphysicaldamage			2	0
-junk_09	468		1	16																16	0																70	3	2	jr9	jr9										0
-hexbanecontrol	469		1	6																																															0
-xtal_00	470		1	18																12	8																12	3	2	xt0	xt0										0
-xtal_01	471		1	18																12	8																11	3	2	xt1	xt1										0
-xtal_02	472		1	18																12	8																10	3	2	xt2	xt2										0
-xtal_03	473		1	18																12	8																9	3	2	xt3	xt3										0
-xtal_04	474		1	18																12	8																8	3	2	xt4	xt4										0
-xtal_05	475		1	18																12	8																7	3	2	xt5	xt5										0
-xtal_06	476		1	18																12	8																6	3	2	xt6	xt6										0
-xtal_07	477		1	18																12	8																5	3	2	xt7	xt7										0
-xtal_08	478		1	18																12	8																4	3	2	xt8	xt8										0
-xtal_09	479		1	18																12	8																3	3	2	xt9	xt9										0
-xtal_10	480		1	18																12	8																2	3	2	xtx	xtx										0
-xtal_11	481		1	18																12	8																1	3	2	xty	xty										0
-passive_mag2_mastery	482		1	20											307	53				16	200			11			magicmindam	magicmaxdam									88	19		ModitemdamMagsk	ModitemdamMagsk		4	19		strModSpellDamage	strModSpellDamage			2	0
-passive_wind_mastery	483		1	20											307	53				16	200																88	19		ModitemdamWindsk	ModitemdamWindsk		4	19		strModSpellDamage	strModSpellDamage			2	0
-item_jewelflag	484		1	4																16	1000																														0
-item_mercflag	485		1	4																16	1000																161	3	0	Merc Forged	Merc Forged										0
-passive_summ_mastery	486		1	20											307	53				16	1000																88	19		ModitemdamSummsk	ModitemdamSummsk									2	0
-item_summskills	487		1	10							1				1895	256				16	1000																158	1	1	ModStr3kSum	ModStr3kSum										0
-item_bigcraftflag	488		1	4																32	0																														0
-total_elemental_min_damage	489		1	12							1				16	12				10	100			11			firemindam	coldmindam	lightmindam																						0
-spelldamagesummons	490			14																																															0
-skillcontrol	491		1	12																32																															0
-skillcontrol3	492		1	32																32																															0
-total_elemental_max_damage	493		1	12							1				16	12				16	1000			11			firemaxdam	lightmaxdam	coldmaxdam																						0
-progressive_physical	494		1	3																																															0
-total_poison_magic_min_damage	495		1	12							1				16	12				16	1000			11			poisonmindam	magicmindam																							0
-total_poison_magic_max_damage	496		1	12							1				16	12				16	1000			11			poisonmaxdam	magicmaxdam																							0
-skillcontrol4	497		1	32																32																															0
-item_elemskillcold	498		1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrcoldskill	ModStrcoldskill									2	0
-item_elemskilllight	499		1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrlightningskill	ModStrlightningskill									2	0
-item_elemskillpoison	500		1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrpoisonskill	ModStrpoisonskill									2	0
-item_elemskillmagic	501		1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrmagicskill	ModStrmagicskill									2	0
-item_elemskillfire	502		1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrfireskill	ModStrfireskill									2	0
-item_corrupted	503		1	12									0					8	0	8	0																300	20		Corrupted	Corrupted										0
-item_corrupted_dummy	504		1	12									0					8	0	8	0																299	20		SlamIt	SlamIt										0
-lifeonstriking	505		1	12							1				250	75		6	0	8	0												domeleedamage	28	domissiledamage	28	52	1	1	lifeonstriking	lifeonstriking									2	0
-manaonstriking	506		1	12							1				250	75		6	0	8	0												domeleedamage	17	domissiledamage	17	53	1	1	manaonstriking	manaonstriking									2	0
-soul_counter	507			32																32																	290	19	2	soulcounter	soulcounter										0
-kill_check	508		1	12																32																															0
-ascendancy_upgrade	509			12							1									10	0																														0
-headofthecerberuscontrol	510			4							1																																								0
-summonexceedcap	511			4							1									12	0																														0
-maxlifeone	512			2							1									2																	297	20		maxlifeone	maxlifeone									2	0
-totalcrossbowbolts	513			14							1									16	1000																199	19		maxcrossbowbolts	maxcrossbowbolts									2	0
-currentcrossbowbolts	514			14							1									10																															0
-totalcrossbowdamage	515			14							1									16	1000																250	19		totalcrossbowdamage	totalcrossbowdamage									2	0
-projectilespeed	516			14							1									16	1000																133	19		projectilespeed	projectilespeed									2	0
-crossbowfpa	517			14							1									10																															0
-crossbowreloadspeedlimit	518		1	12																16	1000																51	19		maximumcrossbowreloadspeed	maximumcrossbowreloadspeed									2	0
-consumeeffect	519			12							1									16	1000																125	19		consumeeffect	consumeeffect									2	0
-sigillimit	520			12							1									7	10																126	19		sigillimit	sigillimit									2	0
-passive_mag_crit	521		1	14																16	1000			11			magicmindam	magicmaxdam																							0
-miasmachainslimit	522			12							1									7	10																125	19		miasmachainslimit	miasmachainslimit									2	0
-arsdulmephistoscontrol	523			4							1									2	0																														0
-arsdulmephistosaura	524			4							1																																								0
-arsaldiaboloscontrol	525			4							1									2	0																														0
-arsaldiaboloseffect	526			4							1																																								0
-arstorbaaloscontrol	527			4							1									2	0																														0
-arstorbaaloseffect	528			4							1																																								0
-lethalsacrifice	529			4							1									2	0																														0
-phasing	530			4							1									2	0																330	20		phasing	phasing									2	0
-strength_cap	531	1		16																14	500																														0
-energy_cap	532			16																14	500																														0
-dexterity_cap	533	1		16																14	500																														0
-vitality_cap	534			16																14	500																														0
-maxhp_cap	535			32																14	500																														0
-maxmana_cap	536			32																14	500																														0
-maxstamina_cap	537			32																14	500																														0
-item_armor_percent_cap	538		1	16																14	500																														0
-tohit_cap	539		1	16																14	500																														0
-toblock_cap	540		1	16																14	500																														0
-mindamage_cap	541		1	16																14	500																														0
-maxdamage_cap	542		1	16																14	500																														0
-damagepercent_cap	543		1	16																14	500																														0
-manarecoverybonus_cap	544		1	16																14	500																														0
-armorclass_cap	545		1	16																14	500																														0
-normal_damage_reduction_cap	546		1	16																14	500																														0
-magic_damage_reduction_cap	547		1	16																14	500																														0
-damageresist_cap	548		1	16																14	500																														0
-magicresist_cap	549		1	16																14	500																														0
-maxmagicresist_cap	550		1	16																14	500																														0
-fireresist_cap	551		1	16																14	500																														0
-maxfireresist_cap	552		1	16																14	500																														0
-lightresist_cap	553		1	16																14	500																														0
-maxlightresist_cap	554		1	16																14	500																														0
-coldresist_cap	555		1	16																14	500																														0
-maxcoldresist_cap	556		1	16																14	500																														0
-poisonresist_cap	557		1	16																14	500																														0
-maxpoisonresist_cap	558		1	16																14	500																														0
-firemindam_cap	559		1	16																14	500																														0
-firemaxdam_cap	560		1	16																14	500																														0
-lightmindam_cap	561		1	16																14	500																														0
-lightmaxdam_cap	562		1	16																14	500																														0
-magicmindam_cap	563		1	16																14	500																														0
-magicmaxdam_cap	564		1	16																14	500																														0
-coldmindam_cap	565		1	16																14	500																														0
-coldmaxdam_cap	566		1	16																14	500																														0
-poisonmindam_cap	567		1	16																14	500																														0
-poisonmaxdam_cap	568		1	16																14	500																														0
-lifedrain_cap	569		1	16																14	500																														0
-manadrain_cap	570		1	16																14	500																														0
-velocitypercent_cap	571	1	1	16																14	500																														0
-attackrate_cap	572	1	1	16																14	500																														0
-hpregen_cap	573			16																14	500																														0
-item_maxhp_percent_cap	574		1	16																14	500																														0
-item_maxmana_percent_cap	575		1	16																14	500																														0
-item_attackertakesdamage_cap	576		1	16																14	500																														0
-item_goldbonus_cap	577		1	16																14	500																														0
-item_magicbonus_cap	578		1	16																14	500																														0
-item_addclassskills_cap_defunct	579		1	16																14	500																														0
-item_addexperience_cap	580		1	16																14	500																														0
-item_healafterkill_cap	581		1	16																14	500																														0
-item_reducedprices_cap	582			16																14	500																														0
-item_lightradius_cap	583		1	16																14	500																														0
-item_fasterattackrate_cap	584	1	1	16																14	500																														0
-item_fastermovevelocity_cap	585	1	1	16																14	500																														0
-item_nonclassskill_cap	586		1	16																14	500																														0
-item_fastergethitrate_cap	587	1	1	16																14	500																														0
-item_fasterblockrate_cap	588	1	1	16																14	500																														0
-item_fastercastrate_cap	589	1	1	16																14	500																														0
-item_singleskill_cap	590		1	16																14	500																														0
-curse_resistance_cap	591			16																14	500																														0
-item_poisonlengthresist_cap	592		1	16																14	500																														0
-item_fractionaltargetac_cap	593		1	16																14	500																														0
-item_tohit_percent_cap	594		1	16																14	500																														0
-item_damagetargetac_cap	595		1	16																14	500																														0
-item_demondamage_percent_cap	596		1	16																14	500																														0
-item_undeaddamage_percent_cap	597		1	16																14	500																														0
-item_demon_tohit_cap	598		1	16																14	500																														0
-item_undead_tohit_cap	599		1	16																14	500																														0
-item_allskills_cap	600		1	16																14	500																														0
-item_attackertakeslightdamage_cap	601		1	16																14	500																														0
-item_freeze_cap	602		1	16																14	500																														0
-item_crushingblow_cap	603		1	16																14	500																														0
-item_manaafterkill_cap	604		1	16																14	500																														0
-item_deadlystrike_cap	605		1	16																14	500																														0
-item_absorbfire_percent_cap	606		1	16																14	500																														0
-item_absorbfire_cap	607		1	16																14	500																														0
-item_absorblight_percent_cap	608		1	16																14	500																														0
-item_absorblight_cap	609		1	16																14	500																														0
-item_absorbmagic_percent_cap	610		1	16																14	500																														0
-item_absorbmagic_cap	611		1	16																14	500																														0
-item_absorbcold_percent_cap	612		1	16																14	500																														0
-item_absorbcold_cap	613		1	16																14	500																														0
-item_slow_cap	614		1	16																14	500																														0
-item_pierce_cap	615		1	16																14	500																														0
-armor_override_percent_cap	616	1	1	16																14	500																														0
-item_addskill_tab_cap	617		1	16																14	500																														0
-item_charge_noconsume_cap	618			16																14	500																														0
-strengthpercent_cap	619		1	16																14	500																														0
-dexteritypercent_cap	620		1	16																14	500																														0
-vitalitypercent_cap	621		1	16																14	500																														0
-energypercent_cap	622		1	16																14	500																														0
-passive_summ_elemental_resist_cap	623		1	16																14	500																														0
-passive_summ_life_cap	624		1	16																14	500																														0
-passive_summ_phys_resist_cap	625		1	16																14	500																														0
-passive_fire_mastery_cap	626		1	16																14	500																														0
-passive_ltng_mastery_cap	627		1	16																14	500																														0
-passive_cold_mastery_cap	628		1	16																14	500																														0
-passive_pois_mastery_cap	629		1	16																14	500																														0
-passive_fire_pierce_cap	630		1	16																14	500																														0
-passive_ltng_pierce_cap	631		1	16																14	500																														0
-passive_cold_pierce_cap	632		1	16																14	500																														0
-passive_pois_pierce_cap	633		1	16																14	500																														0
-item_attackertakesfiredamage_cap	634		1	16																14	500																														0
-passive_dodge_cap	635		1	16																14	500																														0
-passive_mag_pierce_cap	636		1	16																14	500																														0
-passive_dmg_pierce_cap	637		1	16																14	500																														0
-item_skill_cooldown_cap	638		1	16																14	500																														0
-item_attackertakescolddamage_cap	639		1	16																14	500																														0
-passive_mag2_mastery_cap	640		1	16																14	500																														0
-passive_wind_mastery_cap	641		1	16																14	500																														0
-passive_summ_mastery_cap	642		1	16																14	500																														0
-item_elemskillcold_cap	643		1	16																14	500																														0
-item_elemskilllight_cap	644		1	16																14	500																														0
-item_elemskillpoison_cap	645		1	16																14	500																														0
-item_elemskillmagic_cap	646		1	16																14	500																														0
-item_elemskillfire_cap	647		1	16																14	500																														0
-lifeonstriking_cap	648		1	16																14	500																														0
-manaonstriking_cap	649		1	16																14	500																														0
-maple_leaf_cap	650		1	16																14	500																														0
-unusable_item	651			4																2	0																331	20		unusableitem	unusableitem										0
-kill_ledger_tier_1	652			4																2	0																														0
-kill_ledger_tier_2	653			4																2	0																														0
-kill_ledger_tier_3	654			4																2	0																														0
-kill_ledger_tier_4	655			4																2	0																														0
-kill_ledger_tier_5	656			4																2	0																														0
-kill_ledger_tier_6	657			4																2	0																														0
-kill_ledger_tier_7	658			4																2	0																														0
-kill_ledger_lucion_whisper	659			4																2	0																														0
-kill_ledger_diablo_hellhound	660			4																2	0																														0
-kill_ledger_fallen_ancient_angel	661			4																2	0																														0
-kill_ledger_terror_in_the_shadows	662			4																2	0																														0
-kill_ledger_avatar_of_the_night	663			4																2	0																														0
-kill_ledger_herald_of_doom	664			4																2	0																														0
-kill_ledger_glacial_behemoth	665			4																2	0																														0
-kill_ledger_the_taskmaster	666			4																2	0																														0
-kill_ledger_harbinger	667			4																2	0																														0
-kill_ledger_arbiter_of_souls	668			4																2	0																														0
-kill_ledger_mephisto_the_invincible	669			4																2	0																														0
-kill_ledger_diablo_the_invincible	670			4																2	0																														0
-kill_ledger_baal_the_invincible	671			4																2	0																														0
-kill_ledger_eternal_ancients	672			4																2	0																														0
-kill_ledger_the_lich_king	673			4																2	0																														0
-kill_ledger_rathma	674			4																2	0																														0
-kill_ledger_lucion	675			4																2	0																														0
-ascendancy_tier_2	676			4																2	0																														0
-ascendancy_tier_3	677			4																2	0																														0
-ascendancy_tier_4	678			4																2	0																														0
-ascendancy_tier_4_count	679			4																2	0																														0
-ascendancy_tier_5	680			4																2	0																														0
-item_addclassskills_ama	681		1	16																14	500																														0
-item_addclassskills_ass	682		1	16																14	500																														0
-item_addclassskills_bar	683		1	16																14	500																														0
-item_addclassskills_dru	684		1	16																14	500																														0
-item_addclassskills_nec	685		1	16																14	500																														0
-item_addclassskills_pal	686		1	16																14	500																														0
-item_addclassskills_sor	687		1	16																14	500																														0
-item_addclassskills_war	688		1	16																14	500																														0
-stancedancecontrol	689		1	3																3	0																														0
-opalveined	690		1	3																3	0																														0
-opalveinspell	691		1	3																3	0																														0
-gemmaster	692		1	16																16	1000																														0
-randomgeneratorbig	693		1	16																																															0
-passive_fire_crit	694		1	14																16	1000			11			firemindam	firemaxdam																							0
-passive_cold_crit	695		1	14																16	1000			11			coldmindam	coldmaxdam																							0
-passive_ltng_crit	696		1	14																16	1000			11			lightmindam	lightmaxdam																							0
-passive_pois_crit	697		1	14																16	1000			11			poisonmindam	poisonmaxdam																							0
-amazonjavelin	698		1	10																																															0
-cutthroat	699		1	14																																															0
-deathbit	700		1	14																																															0
-gutsiphon	701		1	14																																															0
-thorgrimsavior	702		1	14																																															0
-focusofunlife	703		1	14																																															0
-deadlyhunter	704		1	14																																															0
-cavemanfury	705		1	14																																															0
-butchertenderizer	706		1	14																																															0
-redemptionitem	707		1	14																																															0
-judgementitem	708		1	14																																															0
-instrumentofpurification	709		1	14																																															0
-rottingsplinter	710		1	14																																															0
-vizjerisknowledge	711		1	14																																															0
-terminusest	712		1	14																																															0
-slavewarrior	713		1	14																																															0
-twinkle	714		1	14																																															0
-incrementcounter	715		1	24																																															0
-romevictory	716		1	14																																															0
-freedomofprison	717		1	14																																															0
-risingsun	718		1	10																																															0
-lastrites	719		1	14																																															0
-corruptionitem	720		1	14																																															0
-wrathofasmodeus	721		1	14																																															0
-heartofthesuccubi	722		1	14																																															0
-deathcowl	723		1	24																																															0
-genghiskhan	724		1	24																																															0
-ironmaidencounter	725		1	10																																															0
-hellrust	726		1	10																																															0
-seductionofpain	727		1	10																																															0
-handofatlas	728		1	10																																															0
-herculeangrip	729		1	10																																															0
-bootsoftheserpent	730		1	10																																															0
-spartacusdefense	731		1	10																																															0
-adrenalinerush	732		1	24																																															0
-harlequincrest	733		1	24																																															0
-gladiatorbanenova	734		1	10																																															0
-shieldcounter	735		1	10																																															0
-lightsabrefury	736		1	24																																															0
-stormspire	737		1	10																																															0
-horizontornado	738		1	32																																															0
-stonecrusher	739		1	32																																															0
-souldrainer	740		1	10																																															0
-deathcleaver	741		1	10																																															0
-laceratoraxe	742		1	10																																															0
-reapertoll	743		1	10																																															0
-andarielvisage	744		1	24																																															0
-medusagaze	745		1	10																																															0
-draculgrasp	746		1	10																																															0
-nordtenderizer	747		1	32																																															0
-theredeemer	748		1	10																																															0
-thirst	749		1	10																																															0
-doomdualnova	750		1	10																																															0
-famine	751		1	10																																															0
-pride	752		1	10																																															0
-obsession	753		1	10																																															0
-bloodempowerment	754		1	12																																															0
-underworldempowerment	755		1	12																																															0
-lucionrelfan	756		1	12																																															0
-telekinesis	757		1	10																																															0
-permafrost	758		1	10																																															0
-fistoftheheavens	759		1	10																																															0
-imperius	760		1	32																																															0
-incpowerone	761		1	12																																															0
-incpowertwo	762		1	12																																															0
-incdebuffone	763		1	12																																															0
-incdebufftwo	764		1	12																																															0
-incdebuffthree	765		1	12																																															0
-incpowerauramon	766		1	12																																															0
-incdebufffour	767		1	12																																															0
-incdebufffive	768		1	12																																															0
-spikenovamon	769		1	12																																															0
-permafrostmon	770		1	10																																															0
-glacialform	771		1	14																																															0
-reapthunder	772		1	14																																															0
-drainsoul	773		1	10																																															0
-coldfisticystare	774		1	24																																															0
-gerkesanctuary	775		1	10																																															0
-radamentsphere	776		1	10																																															0
-waterwalk	777		1	10																																															0
-silkweave	778		1	10																																															0
-gorerider	779		1	10																																															0
-thundergodvigor	780		1	10																																															0
-veilofsteel	781		1	24																																															0
-eaglehornlod	782		1	10																																															0
-windforcelod	783		1	10																																															0
-stoneraven	784		1	10																																															0
-thereapertoll	785		1	32																																															0
-shadowkiller	786		1	10																																															0
-griffoneye	787		1	24																																															0
-windhammertornadoes	788		1	10																																															0
-windhammer	789		1	10																																															0
-nightwingveil	790		1	24																																															0
-crownofages	791		1	24																																															0
-ravenlore	792		1	24																																															0
-flamebellow	793		1	10																																															0
-wolfhowl	794		1	24																																															0
-templarmight	795		1	10																																															0
-sandstormtrek	796		1	10																																															0
-astreonironward	797		1	10																																															0
-moonlight	798		1	10																																															0
-dragonbreath	799		1	14																																															0
-yoyosanitycyclic	800		1	3																																															0
-secretoftheooze	801		1	12																																															0
-maijamenacecyclic	802		1	3																																															0
-stormshieldcounter	803		1	10																																															0
-thereapertollcyclic	804		1	3																																															0
-thereapertollcap	805		1	12																																															0
-ravenlorecontrol	806		1	3																																															0
-ormusrobes	807		1	16																																															0
-releasepressure	808		1	4																																															0
-etherealedgecap	809		1	6																																															0
-etherealedge	810		1	12																																															0
-cyclopprotector	811		1	12																																															0
-lightsabrefuryprogressive	812		1	4																																															0
-cottonmouthjacket	813		1	12																																															0
-djinnslayer	814		1	12																																															0
-travelunderworld	815		1	8																																															0
-celestialempowerment	816		1	12																																															0
-spectralmaim	817		1	16																																															0
-firecascade	818		1	8																																															0
-gimmershred	819		1	20																																															0
-scosglenresonance	820		1	3																																															0
-unsocketable	821		1	10																8	2																1	20		unsocketable	unsocketable										0
-irisfire	822		1	3																																															0
-iriscold	823		1	3																																															0
-irislightning	824		1	3																																															0
-iriscyclicstat	825		1	3																																															0
-lichkingbonus	826		1	3																2																															0
-passive_ele_mastery_cap	827		1	16																14	500																														0
-passive_ele_mastery_half	828		1	16																14	500																														0
-res_all_cap	829		1	16																14	500																														0
-str_dex_enr_cap	830		1	16																14	500																														0
-icingdeathcrit	831		1	3																																															0
-item_maxdamage_percent3	832		1	11																10	123			11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1																			0
-item_mindamage_percent3	833		1	11																10	123			11			mindamage	secondary_mindamage	item_throw_mindamage			1																			0
-skeletonmasterycontrol	834		1	11																																															0
-delirium	835		1	11																																	88	19		ModitemdamSummsk	ModitemdamSummsk									2	0
-rune_01	836		1	24																24	0																50	3	2	r01	r01										0
-rune_02	837		1	24																24	0																49	3	2	r02	r02										0
-rune_03	838		1	24																24	0																48	3	2	r03	r03										0
-rune_04	839		1	24																24	0																47	3	2	r04	r04										0
-rune_05	840		1	24																24	0																46	3	2	r05	r05										0
-rune_06	841		1	24																24	0																45	3	2	r06	r06										0
-rune_07	842		1	24																24	0																44	3	2	r07	r07										0
-rune_08	843		1	24																24	0																43	3	2	r08	r08										0
-rune_09	844		1	24																24	0																42	3	2	r09	r09										0
-rune_10	845		1	24																24	0																41	3	2	r10	r10										0
-rune_11	846		1	24																24	0																40	3	2	r11	r11										0
-rune_12	847		1	24																24	0																39	3	2	r12	r12										0
-rune_13	848		1	24																24	0																38	3	2	r13	r13										0
-rune_14	849		1	24																24	0																37	3	2	r14	r14										0
-rune_15	850		1	24																24	0																36	3	2	r15	r15										0
-rune_16	851		1	24																24	0																35	3	2	r16	r16										0
-rune_17	852		1	24																24	0																34	3	2	r17	r17										0
-rune_18	853		1	24																24	0																33	3	2	r18	r18										0
-rune_19	854		1	24																24	0																32	3	2	r19	r19										0
-rune_20	855		1	24																24	0																31	3	2	r20	r20										0
-rune_21	856		1	24																24	0																30	3	2	r21	r21										0
-rune_22	857		1	24																24	0																29	3	2	r22	r22										0
-rune_23	858		1	24																24	0																28	3	2	r23	r23										0
-rune_24	859		1	24																24	0																27	3	2	r24	r24										0
-rune_25	860		1	24																24	0																26	3	2	r25	r25										0
-rune_26	861		1	24																24	0																25	3	2	r26	r26										0
-rune_27	862		1	24																24	0																24	3	2	r27	r27										0
-rune_28	863		1	24																24	0																23	3	2	r28	r28										0
-rune_29	864		1	24																24	0																22	3	2	r29	r29										0
-rune_30	865		1	24																24	0																21	3	2	r30	r30										0
-rune_31	866		1	24																24	0																20	3	2	r31	r31										0
-rune_32	867		1	24																24	0																19	3	2	r32	r32										0
-rune_33	868		1	24																24	0																18	3	2	r33	r33										0
-rune_34	869		1	24																24	0																17	3	2	r34	r34										0
-rune_35	870		1	24																24	0																16	3	2	r35	r35										0
-rune_36	871		1	24																24	0																15	3	2	r36	r36										0
-rune_37	872		1	24																24	0																14	3	2	r37	r37										0
-rune_38	873		1	24																24	0																13	3	2	r38	r38										0
-rune_39	874		1	24																24	0																12	3	2	r39	r39										0
-rune_40	875		1	24																24	0																11	3	2	r40	r40										0
-rune_41	876		1	24																24	0																10	3	2	r41	r41										0
-rune_42	877		1	24																24	0																9	3	2	r42	r42										0
-rune_43	878		1	24																24	0																8	3	2	r43	r43										0
-rune_44	879		1	24																24	0																7	3	2	r44	r44										0
-rune_45	880		1	24																24	0																6	3	2	r45	r45										0
-rune_46	881		1	24																24	0																5	3	2	r46	r46										0
-rune_50	882		1	24																24	0																1	3	2	r50	r50										0
-rune_51	883		1	24																24	0																33	3	2	r51	r51										0
-rune_52	884		1	24																24	0																32	3	2	r52	r52										0
-rune_53	885		1	24																24	0																31	3	2	r53	r53										0
-rune_54	886		1	24																24	0																30	3	2	r54	r54										0
-rune_55	887		1	24																24	0																29	3	2	r55	r55										0
-rune_56	888		1	24																24	0																28	3	2	r56	r56										0
-rune_57	889		1	24																24	0																27	3	2	r57	r57										0
-rune_58	890		1	24																24	0																26	3	2	r58	r58										0
-rune_59	891		1	24																24	0																25	3	2	r59	r59										0
-rune_60	892		1	24																24	0																24	3	2	r60	r60										0
-rune_61	893		1	24																24	0																23	3	2	r61	r61										0
-rune_62	894		1	24																24	0																22	3	2	r62	r62										0
-rune_63	895		1	24																24	0																21	3	2	r63	r63										0
-rune_64	896		1	24																24	0																20	3	2	r64	r64										0
-rune_65	897		1	24																24	0																19	3	2	r65	r65										0
-rune_66	898		1	24																24	0																18	3	2	r66	r66										0
-rune_67	899		1	24																24	0																17	3	2	r67	r67										0
-rune_68	900		1	24																24	0																16	3	2	r68	r68										0
-rune_69	901		1	24																24	0																15	3	2	r69	r69										0
-rune_70	902		1	24																24	0																14	3	2	r70	r70										0
-rune_71	903		1	24																24	0																13	3	2	r71	r71										0
-rune_72	904		1	24																24	0																12	3	2	r72	r72										0
-rune_73	905		1	24																24	0																11	3	2	r73	r73										0
-rune_74	906		1	24																24	0																10	3	2	r74	r74										0
-rune_75	907		1	24																24	0																9	3	2	r75	r75										0
-rune_76	908		1	24																24	0																8	3	2	r76	r76										0
-rune_77	909		1	24																24	0																7	3	2	r77	r77										0
-rune_78	910		1	24																24	0																6	3	2	r78	r78										0
-rune_79	911		1	24																24	0																5	3	2	r79	r79										0
-rune_80	912		1	24																24	0																4	3	2	r80	r80										0
-rune_81	913		1	24																24	0																3	3	2	r81	r81										0
-rune_82	914		1	24																24	0																2	3	2	r82	r82										0
-rune_83	915		1	24																24	0																1	3	2	r83	r83										0
-wolverinelevel	916		1	12																																															0
-total_fire_damage	917		1	12							1									10	200			11			firemindam	firemaxdam																							0
-total_cold_damage	918		1	12							1									10	200			11			coldmindam	coldmaxdam																							0
-ascendancy_tier_4_count_new	919			10																10	20																														0
-frenzy_fpa	920			10																																															0
-firewhirlwindcontrol	921			10																																															0
-moonstormcontrol	922			10																																															0
-blood_magic	923			4																																															0
-tyraelvitlife	924			32																																															0
-utilitypotionmultiplier	925		1	20																16	1000																50	19		utilitypotioneffectiveness	utilitypotioneffectiveness										0
+Stat	*ID	*Notes	Send Other	Signed	Send Bits	Send Param Bits	UpdateAnimRate	Saved	CSvSigned	CSvBits	CSvParam	fCallback	fMin	MinAccr	Encode	Add	Multiply	ValShift	1.09-Save Bits	1.09-Save Add	Save Bits	Save Add	Save Param Bits	keepzero	op	op param	op base	op stat1	op stat2	op stat3	direct	maxstat	damagerelated	itemevent1	itemeventfunc1	itemevent2	itemeventfunc2	descpriority	descfunc	descval	descstrpos	descstrneg	descstr2	dgrp	dgrpfunc	dgrpval	dgrpstrpos	dgrpstrneg	dgrpstr2	stuff	advdisplay	*eol
+strength	0		1		16			1	0	24			1	1		31	13		10	150	14	1000																67	19		ModStr1a	ModStr1a		1	19		Moditem2allattrib	Moditem2allattrib		6		0
+energy	1				16			1	0	24			1	1		25	13		10	150	14	1000			8			maxmana										61	19		ModStr1d	ModStr1d		1	19		Moditem2allattrib	Moditem2allattrib				0
+dexterity	2		1		16			1	0	24			1	1		31	13		10	150	14	1000																65	19		ModStr1b	ModStr1b		1	19		Moditem2allattrib	Moditem2allattrib				0
+vitality	3				16			1	0	24			1	1		25	13		10	150	14	1000			9			maxhp	maxstamina									63	19		ModStr1c	ModStr1c		1	19		Moditem2allattrib	Moditem2allattrib				0
+statpts	4				9			1	0	16																																										0
+newskills	5				9			1	0	12																																										0
+hitpoints	6				32			1	0	32								8													1	maxhp																				0
+maxhp	7				32			1	0	32		1	1	1		14	5	8	8	32	14	1000																59	19		ModStr1u	ModStr1u										0
+mana	8				32			1	0	32								8						1							1	maxmana																				0
+maxmana	9				32			1	0	32		1	1	0		20	5	8	8	32	14	1000																55	19		ModStr1e	ModStr1e										0
+stamina	10				32			1	0	32								8						1							1	maxstamina																				0
+maxstamina	11				32			1	0	32		1	1	0		18	5	8	8	32	14	1000																51	19		ModStr5d	ModStr5d										0
+level	12				9			1	0	7																																										0
+experience	13				32			1	0	32																																										0
+gold	14				32			1	0	32																																										0
+goldbank	15				32			1	0	32																																										0
+item_armor_percent	16			1	11											11	5		9	11	9	11			13			armorclass	item_armorpercent_perlevel	item_armor_perlevel								74	19		Modstr2v	Modstr2v										0
+item_maxdamage_percent	17			1	12											11	5		9	11	9	11			13			maxdamage	secondary_maxdamage	item_throw_maxdamage			1					129	19		ModStr2j	ModStr2j										0
+item_mindamage_percent	18			1	12											11	5		9	11	9	11			13			mindamage	secondary_mindamage	item_throw_mindamage			1					130	19		ModStr2k	ModStr2k										0
+tohit	19			1	32											3	2		10		14	1000											1					115	19		ModStr1h	ModStr1h										0
+toblock	20			1	10											22	51		8	50	10	200																134	19		ModStr3g	ModStr3g										0
+mindamage	21			1	16											30	6		8	0	12	0											1					127	19		ModStr1g	ModStr1g										0
+maxdamage	22			1	16											23	4		9	0	12	0											1					126	19		ModStr1f	ModStr1f										0
+secondary_mindamage	23			1	16											24	3		8	0	12	0											1					124	19		ModStr1g	ModStr1g										0
+secondary_maxdamage	24			1	16											21	2		9	0	12	0											1					123	19		ModStr1f	ModStr1f										0
+damagepercent	25			1	24											11	10		8	0	12	0											1					123	19		strModEnhancedDamage	strModEnhancedDamage										0
+manarecovery	26				32														8	0	12	0																														0
+manarecoverybonus	27			1	16														10	250	20	10000																52	19		ModStr4g	ModStr4g									2	0
+staminarecoverybonus	28			1	16														8	0	14	1000																48	19		ModStr3v	ModStr3v									2	0
+lastexp	29				32																																															0
+nextexp	30				32																																															0
+armorclass	31			1	32											4	2		10	10	12	1000																71	19		ModStr1i	ModStr1i										0
+armorclass_vs_missile	32			1	16											2	1		8	0	10	0																69	19		ModStr6a	ModStr6a										0
+armorclass_vs_hth	33			1	16											3	1		8	0	10	0																70	19		ModStr6b	ModStr6b										0
+normal_damage_reduction	34			1	32											47	50		6	0	16	1000																22	19		ModStr2u	ModStr2u									2	0
+magic_damage_reduction	35			1	32											99	85		6	0	16	1000																21	19		ModStr2t	ModStr2t									2	0
+damageresist	36			1	12											38	17		8	0	10	100																22	19		bonusphysicalresist	bonusphysicalresist										0
+magicresist	37			1	12											41	17		8	0	10	100																41	19		ModStr1m	ModStr1m										0
+maxmagicresist	38			1	9											2500	250		5	0	8	100																46	19		ModStr5x	ModStr5x									2	0
+fireresist	39			1	12											10	5		8	50	12	500																36	19		ModStr1j	ModStr1j		2	19		strModAllResistances	strModAllResistances				0
+maxfireresist	40			1	9											2500	250		5	0	8	100																42	19		ModStr5u	ModStr5u		7	19		allmaximumresistances	allmaximumresistances			2	0
+lightresist	41			1	12											10	5		8	50	12	500																38	19		ModStr1l	ModStr1l		2	19		strModAllResistances	strModAllResistances				0
+maxlightresist	42			1	9											2500	250		5	0	8	100																43	19		ModStr5w	ModStr5w		7	19		allmaximumresistances	allmaximumresistances			2	0
+coldresist	43			1	12											10	5		8	50	12	500																40	19		ModStr1k	ModStr1k		2	19		strModAllResistances	strModAllResistances				0
+maxcoldresist	44			1	9											2500	250		5	0	8	100																44	19		ModStr5v	ModStr5v		7	19		allmaximumresistances	allmaximumresistances			2	0
+poisonresist	45			1	12											10	5		8	50	12	500																34	19		ModStr1n	ModStr1n		2	19		strModAllResistances	strModAllResistances				0
+maxpoisonresist	46			1	9											2500	250		5	0	8	100																45	19		ModStr5y	ModStr5y		7	19		allmaximumresistances	allmaximumresistances			2	0
+damageaura	47			1	16																																															0
+firemindam	48			1	32											300	1		11	0	16	0											1					102	19		ModStr1p	ModStr1p		6	19		minelementaldamage	minelementaldamage			2	0
+firemaxdam	49			1	32											300	1		12	0	16	0											1					101	19		ModStr1o	ModStr1o		6	19		maxelementaldamage	maxelementaldamage			2	0
+lightmindam	50			1	32											300	1		11	0	16	0											1					99	19		ModStr1r	ModStr1r		6	19		minelementaldamage	minelementaldamage			2	0
+lightmaxdam	51			1	32											300	1		12	0	20	0											1					98	19		ModStr1q	ModStr1q		6	19		maxelementaldamage	maxelementaldamage			2	0
+magicmindam	52			1	32											300	1		11	0	16	0											1					104	19		strModMagicDamageMin	strModMagicDamageMin		15	19		strModMagicDamage	strModMagicDamage			2	0
+magicmaxdam	53			1	32											300	1		12	0	16	0											1					103	19		strModMagicDamageMax	strModMagicDamageMax		15	19		strModMagicDamage	strModMagicDamage			2	0
+coldmindam	54			1	32											300	1		11	0	16	0											1					96	19		ModStr1t	ModStr1t		6	19		minelementaldamage	minelementaldamage			2	0
+coldmaxdam	55			1	32											300	1		12	0	16	0											1					95	19		ModStr1s	ModStr1s		6	19		maxelementaldamage	maxelementaldamage			2	0
+coldlength	56			1	32											300	1		8	0	10	0											1																			0
+poisonmindam	57			1	32											300	1		9	0	20	0											1					92	19		ModStr4i	ModStr4i									2	0
+poisonmaxdam	58			1	32											300	1		9	0	22	0											1					91	19		ModStr4h	ModStr4h									2	0
+poisonlength	59			1	16														8	0	10	0											1																			0
+lifedrainmindam	60			1	16											261	85		7	0	10	100											1					88	19		ModStr2z	ModStr2z									2	0
+lifedrainmaxdam	61			1	16																												1																			0
+manadrainmindam	62			1	16											294	85		7	0	10	100											1					89	19		ModStr2y	ModStr2y									2	0
+manadrainmaxdam	63			1	16																												1																			0
+stamdrainmindam	64			1	16																												1																			0
+stamdrainmaxdam	65			1	16																												1																			0
+stunlength	66				16																												1																			0
+velocitypercent	67		1	1	16		1												8	50	10	200																293	19		basemovementspeed	basemovementspeed									2	0
+attackrate	68		1	1	16		1												8	50	10	200											1					293	19		baseattackspeed	baseattackspeed									2	0
+other_animrate	69		1	1	16		1																																													0
+quantity	70			1	16																												1																			0
+value	71			1	9														8	100	8	100																														0
+durability	72			1	9														8	0	9	0									1	maxdurability																				0
+maxdurability	73			1	9											2	1		8	0	8	0																														0
+hpregen	74				32							1				2	2		12	1000	20	10000																56	19		ModStr2l	ModStr2w									2	0
+item_maxdurability_percent	75			1	7											29	2		7	20	7	20			13			maxdurability										3	19		ModStr2i	ModStr2i										0
+item_maxhp_percent	76			1	16											1000	100		8	100	16	1000			11			maxhp	item_hp_perlevel									58	19		ModStr2g	ModStr2g									2	0
+item_maxmana_percent	77			1	16											1000	100		8	100	16	1000			11			maxmana	item_mana_perlevel									54	19		ModStr2h	ModStr2h									2	0
+item_attackertakesdamage	78			1	16							1				125			11	0	20	0												attackedinmelee	6	damagedbymissile	6	13	19		ModStr1v	ModStr1v									2	0
+item_goldbonus	79			1	16											144	25		10	100	16	1000																10	19		ModStr1w	ModStr1w									2	0
+item_magicbonus	80			1	16											144	25		10	100	16	1000																8	19		ModStr1x	ModStr1x									2	0
+item_knockback	81			1	8							1				26			7	0	7	0											1	domeleedamage	7	domissiledamage	7	76	19		ModStr1y	ModStr1y									2	0
+item_timeduration	82			1	10														9	20	9	20																														0
+item_addclassskills	83			1	14	3						1				2500	250		5	0	10	50	3															150	13		ModStr3a	ModStr3a										0
+unsentparam1	84				32														3	0																																0
+item_addexperience	85			1	9											2000	100		3	0	16	1000																11	19		Moditem2ExpG	Moditem2ExpG									2	0
+item_healafterkill	86			1	16							1				7	25		3	0	10	0												kill	28			16	19		ModitemHPaK	ModitemHPaK									2	0
+item_reducedprices	87				8											5000	250		3	0	7	0																8	19		ModitemRedVendP	ModitemRedVendP									2	0
+item_doubleherbduration	88			1	2														1	0	1	0																														0
+item_lightradius	89			1	11							1				3	12		6	20	16	1000																6	19		ModStr3f	ModStr3f									2	0
+item_lightcolor	90			1	24							1				38			5	0	24	0																														0
+item_req_percent	91			1	11											6	-8		10	100	10	100																0	19		ModStr3h	ModStr3h										0
+item_levelreq	92			1	32														10	100	10	100																0	19		moditemreqflat	moditemreqflat										0
+item_fasterattackrate	93		1	1	10											260	39		9	150	16	1000											1					145	19		ModStr4m	ModStr4m		11	19		allspeeds	allspeeds			2	0
+placeholder94	94				32														7	20	8	64																														0
+lastblockframe	95				32														6	20																																0
+item_fastermovevelocity	96		1	1	16											1020	39		9	100	16	1000																148	19		ModStr4s	ModStr4s		11	19		allspeeds	allspeeds			2	0
+item_nonclassskill	97			1	16	14						1			1				8	20	8	20	14																													0
+state	98		1		1	12						1				103	16		6	20	1		14																													0
+item_fastergethitrate	99		1	1	16											266	18		8	100	16	1000																139	19		ModStr4p	ModStr4p		11	19		allspeeds	allspeeds			2	0
+monster_playercount	100				32														7	20																																0
+skill_poison_override_length	101				8														6	20																																0
+item_fasterblockrate	102		1	1	16											371	18		8	100	16	1000																136	19		ModStr4y	ModStr4y		11	19		allspeeds	allspeeds			2	0
+skill_bypass_undead	103				1														7	20	1	0																298	19		ignoreundeadphysicalresist	ignoreundeadphysicalresist									2	0
+skill_bypass_demons	104				1														6	20	1	0																298	19		ignoredemonphysicalresist	ignoredemonphysicalresist									2	0
+item_fastercastrate	105		1	1	16											969	39		9	100	16	1000																142	19		ModStr4v	ModStr4v		11	19		allspeeds	allspeeds			2	0
+skill_bypass_beasts	106				1														7	20	1	0																298	19		ignorebeastphysicalresist	ignorebeastphysicalresist									2	0
+item_singleskill	107			1	16	11						1			1				14	0	7	0	14															81	27		ItemModifierClassSkill	ItemModifierClassSkill										0
+item_restinpeace	108				1							1				5000			14	0	1	0											1	kill	29			81	19		ModitemSMRIP	ModitemSMRIP									2	0
+curse_resistance	109				9											1000	20		14	0	10	500																18	19		StrSkill184	StrSkill184									2	0
+item_poisonlengthresist	110			1	9											6	2		8	20	16	1000																18	19		ModStr3r	ModStr3r									2	0
+item_normaldamage	111			1	16											23	25		11	100	16	1000											1					122	19		ModStr5b	ModStr5b										0
+item_howl	112			1	8							1				13	2		7	-1	7	-1											1	domeleedamage	8	domissiledamage	8	79	5		ModStr3u	ModStr3u									2	0
+item_stupidity	113			1	8							1				83	256		7	0	7	0											1	domeleedamage	9	domissiledamage	9	80	12	2	ModStr6d	ModStr6d									2	0
+item_damagetomana	114			1	7							1				10	5		10	100	10	100												damagedinmelee	13	damagedbymissile	13	11	19		ModStr3w	ModStr3w									2	0
+item_ignoretargetac	115			1	2											272	100		1	0	1	0											1					119	19		ModStr3y	ModStr3y									2	0
+item_fractionaltargetac	116			1	10											16	5		9	100	16	1000											1					118	19		ModStr5o	ModStr5o									2	0
+item_preventheal	117			1	8											48	50		7	0	7	0											1					81	19		ModStr4a	ModStr4a									2	0
+item_halffreezeduration	118			1	2											1274	100		1	0	1	0																19	19		ModStr4b	ModStr4b									2	0
+item_tohit_percent	119			1	12											245	10		10	500	16	1000											1					117	19		ModStr4c	ModStr4c									2	0
+item_damagetargetac	120			1	10											6	-5		9	200	16	1000											1					75	19		ModStr4d	ModStr4d									2	0
+item_demondamage_percent	121			1	12											4	3		11	1000	16	1000											1					112	19		ModStr4e	ModStr4e									2	0
+item_undeaddamage_percent	122			1	12											3	3		11	1000	16	1000											1					108	19		ModStr4f	ModStr4f									2	0
+item_demon_tohit	123			1	13											3	1		11	1000	16	1000											1					110	19		ModStr4j	ModStr4j									2	0
+item_undead_tohit	124			1	13											2	1		11	1000	16	1000											1					106	19		ModStr4k	ModStr4k									2	0
+item_throwable	125			1	2											20	256		1	0	1	0																5	19		ModStr5a	ModStr5a										0
+item_elemskill	126			1	8	4						1				19	256		6	20	7	20	4																													0
+item_allskills	127			1	8							1				10000	250		6	20	16	1000																158	19		ModStr3k	ModStr3k									2	0
+item_attackertakeslightdamage	128			1	16							1				1	25		11	0	11	0												attackedinmelee	10	damagedbymissile	10	14	19		ModStr3j	ModStr3j									2	0
+ironmaiden_level	129			1	10																																															0
+lifetap_level	130			1	10																																															0
+thorns_percent	131				12																																															0
+bonearmor	132			1	32																																															0
+bonearmormax	133			1	32																																															0
+item_freeze	134			1	10							1				166	3		5	0	12	100											1	domeleedamage	14	domissiledamage	14	78	12	2	ModStr3l	ModStr3l									2	0
+item_openwounds	135			1	10							1				5	2		9	100	16	1000																83	19		ModStr3m	ModStr3m									2	0
+item_crushingblow	136			1	10							1				24	10		9	100	16	1000											1	domeleedamage	16	domissiledamage	16	87	19		ModStr5c	ModStr5c									2	0
+item_kickdamage	137			1	10											19	12		10	100	10	100																121	19		ModStr5e	ModStr5e										0
+item_manaafterkill	138			1	16							1				4	25		10	500	16	1000												kill	17			16	19		ModStr5f	ModStr5f									2	0
+item_healafterdemonkill	139			1	10							1				4	25		10	500	16	1000												kill	18			15	19		ModStr6c	ModStr6c									2	0
+item_extrablood	140			1	7											3	2		9	100	9	100											1																			0
+item_deadlystrike	141			1	12											7	6		9	100	16	1000											1					85	19		ModStr5q	ModStr5q									2	0
+item_absorbfire_percent	142			1	7											1000	100		7	0	7	0																23	19		ModStr5g	ModStr5g		5	19		strModAbsorbElemental	strModAbsorbElemental			2	0
+item_absorbfire	143			1	12											200	50		7	0	16	0																27	19		ModStr5h	ModStr5h									2	0
+item_absorblight_percent	144			1	7											1000	100		7	0	7	0																24	19		ModStr5i	ModStr5i		5	19		strModAbsorbElemental	strModAbsorbElemental			2	0
+item_absorblight	145			1	12											200	50		7	0	16	0																29	19		ModStr5j	ModStr5j									2	0
+item_absorbmagic_percent	146			1	7											1000	100		7	0	7	0																26	19		ModStr5k	ModStr5k									2	0
+item_absorbmagic	147			1	12											200	50		7	0	16	0																33	19		ModStr5l	ModStr5l									2	0
+item_absorbcold_percent	148			1	7											1000	100		7	0	7	0																25	19		ModStr5m	ModStr5m		5	19		strModAbsorbElemental	strModAbsorbElemental			2	0
+item_absorbcold	149			1	12											200	50		7	0	16	0																31	19		ModStr5n	ModStr5n									2	0
+item_slow	150			1	7							1				25	10		7	0	7	0											1	domeleedamage	19	domissiledamage	19	77	19		ModStr5r	ModStr5r									2	0
+item_aura	151			1	32							1							8	0	8	0	14																													0
+item_indesctructible	152			1	1														7	0	1																	160	19		ModStre9s	ModStre9s										0
+item_cannotbefrozen	153			1	2											3752	512		1		4																	20	19		ModStr5z	ModStr5z									2	0
+item_staminadrainpct	154			1	7											25	5		7	20	7	20											1					49	19		ModStr6e	ModStr6e									2	0
+item_reanimate	155				7	11						1							7	0	7	0	11										1	kill	31			17	23		Moditemreanimas	Moditemreanimas									2	0
+item_pierce	156			1	12											481	100		9	100	16	1000											1					132	19		ModStr6g	ModStr6g									2	0
+item_magicarrow	157			1	7											127	256		7	0	7	0																131	19		ModStr6h	ModStr6h										0
+item_explosivearrow	158			1	7											123	384		7	0	7	0																133	19		ModStr6i	ModStr6i										0
+item_throw_mindamage	159			1	10											19	32		8	0	16	1000											1																			0
+item_throw_maxdamage	160			1	10											22	32		8	0	16	1000											1																			0
+skill_handofathena	161			1	12																																															0
+skill_staminapercent	162			1	13																				11			maxstamina	item_stamina_perlevel																							0
+kill_base	163				32			1	0	32																					1																					0
+skill_concentration	164			1	12																8	100																														0
+skill_enchant	165			1	12																																															0
+skill_pierce	166			1	12	16																																132	19		skillpiercingattack	skillpiercingattack									2	0
+skill_conviction	167			1	12																																															0
+skill_chillingarmor	168			1	12																																															0
+skill_frenzy	169			1	12																																															0
+skill_decrepify	170			1	12																																															0
+skill_armor_percent	171			1	16																																															0
+alignment	172		1		2																																															0
+target0	173				32																																															0
+target1	174				32																																															0
+goldlost	175				24																																															0
+conversion_level	176				8																																															0
+conversion_maxhp	177				16																																															0
+unit_dooverlay	178				16																																															0
+attack_vs_montype	179				9	10										4	3		3	0	9		10										1					108	22		ModitemAttratvsM	ModitemAttratvsM									2	0
+damage_vs_montype	180				9	10										6	4		3	0	9		10										1					106	22		Moditemdamvsm	Moditemdamvsm									2	0
+fade	181		1		7														14	0	3																															0
+armor_override_percent	182		1	1	10														14	0	16	1000																162	19		totalarmor	totalarmor									2	0
+lasthitreactframe	183																		14	0																																0
+create_season	184																		14	0																																0
+junk_03	185			1	16																16	0																97	3	2	jr3	jr3										0
+junk_04	186			1	16																16	0																96	3	2	jr4	jr4										0
+item_pierce_cold_immunity	187			1	16																12	0																														0
+item_addskill_tab	188			1	16	16						1				2760	192		10	0	7	0	16															151	14		StrSklTabItem1	StrSklTabItem1										0
+item_pierce_fire_immunity	189			1	16																16	0																														0
+item_pierce_light_immunity	190				16											358	128				16																															0
+item_pierce_poison_immunity	191			1	16											269	42				16	0																														0
+item_pierce_damage_immunity	192				16											358	128				16																															0
+item_pierce_magic_immunity	193			1	16																16	0																														0
+item_numsockets	194			1	10											9	42		4	0	4	0																														0
+item_skillonattack	195			1	10	20						1			2				21	0	8	0	18										1	domeleeattack	20	domissileattack	20	160	15		ItemExpansiveChancX	ItemExpansiveChancX									2	0
+item_skillonkill	196			1	10	20						1			2				21	0	8	0	18										1	kill	30			160	15		ModitemskonKill	ModitemskonKill									2	0
+item_skillondeath	197			1	10	20						1			2				21	0	8	0	18											killed	30			160	15		Moditemskondeath	Moditemskondeath									2	0
+item_skillonhit	198			1	10	20						1			2				21	0	8	0	18										1	domeleedamage	20	domissiledamage	20	160	15		ItemExpansiveChanc1	ItemExpansiveChanc1									2	0
+item_skillonlevelup	199			1	10	20						1			2				21	0	8	0	18											levelup	30			160	15		ModitemskonLevel	ModitemskonLevel									2	0
+item_charge_noconsume	200				7											106	256				10	100																159	19		ModStr6k	ModStr6k									2	0
+item_skillongethit	201			1	10	20						1			2				21	0	8	0	18											damagedinmelee	21	damagedbymissile	21	160	15		ItemExpansiveChanc2	ItemExpansiveChanc2									2	0
+modifierlist_castid	202																																																			0
+passive_mastery_item_req_percent	203			1	8	16						1																																								0
+item_charged_skill	204			1	30							1			3				30	0	16	0	18															1	24		ModStre10d	ModStre10d										0
+item_noconsume	205			1	8											26	64				8	0											1																			0
+passive_mastery_noconsume	206			1	9	16															8	0																														0
+passive_mastery_replenish_oncrit	207			1	9	16															8	0																														0
+missile_thorns_percent	208				12																																															0
+passive_mastery_item_level_req_percent	209			1	8	16						1																																								0
+ua_escalation	210				8														8	0																																0
+ua_defeated	211				8														8	0																																0
+gem_k	212			1	16																16	0																1	3	2	gsk	gsk										0
+item_fear	213			1	8							1				18	1				7	-1												damagedinmelee	8			79	5	2	ModStr3u2	ModStr3u2										0
+item_armor_perlevel	214			1	16											10	10		6	0	12	100			4	3	level	armorclass										72	19		ModStr1i	ModStr1i	increaseswithplaylevelX									0
+item_armorpercent_perlevel	215			1	16											21	25		6	0	12	100			5	3	level	armorclass										73	19		Modstr2v	Modstr2v	increaseswithplaylevelX									0
+item_hp_perlevel	216			1	16											23	16	8	6	0	12	100			2	3	level	maxhp										57	19		ModStr1u	ModStr1u	increaseswithplaylevelX									0
+item_mana_perlevel	217			1	16											22	32	8	6	0	12	100			2	3	level	maxmana										53	19		ModStr1e	ModStr1e	increaseswithplaylevelX									0
+item_maxdamage_perlevel	218			1	16							1				13	51		9	0	12	100			4	3	level	maxdamage	secondary_maxdamage	item_throw_maxdamage			1					125	19		ModStr1f	ModStr1f	increaseswithplaylevelX									0
+item_maxdamage_percent_perlevel	219			1	16											21	25		9	0	12	100			5	3	level	maxdamage	secondary_maxdamage	item_throw_maxdamage			1					128	19		ModStr2j	ModStr2j	increaseswithplaylevelX									0
+item_strength_perlevel	220			1	16											33	32		9	0	12	100			2	3	level	strength										66	19		ModStr1a	ModStr1a	increaseswithplaylevelX									0
+item_dexterity_perlevel	221			1	16											33	32		9	0	12	100			2	3	level	dexterity										64	19		ModStr1b	ModStr1b	increaseswithplaylevelX									0
+item_energy_perlevel	222			1	16											26	32		9	0	12	100			2	3	level	energy										60	19		ModStr1d	ModStr1d	increaseswithplaylevelX									0
+item_vitality_perlevel	223			1	16											26	32		9	0	12	100			2	3	level	vitality										62	19		ModStr1c	ModStr1c	increaseswithplaylevelX									0
+item_tohit_perlevel	224			1	16											13	5		10	0	12	100			2	3	level	tohit					1					114	19		ModStr1h	ModStr1h	increaseswithplaylevelX									0
+item_tohitpercent_perlevel	225			1	16											2	64		10	0	12	100			2	3	level	item_tohit_percent					1					116	19		ModStr4c	ModStr4c	increaseswithplaylevelX									0
+item_cold_damagemax_perlevel	226			1	16											264	85		12	0	12	100			2	3	level	coldmaxdam					1					94	19		ModStr1s	ModStr1s	increaseswithplaylevelX									0
+item_fire_damagemax_perlevel	227			1	16											12	32		12	0	12	100			2	3	level	firemaxdam					1					100	19		ModStr1o	ModStr1o	increaseswithplaylevelX									0
+item_ltng_damagemax_perlevel	228			1	16											12	32		12	0	12	100			2	3	level	lightmaxdam					1					97	19		ModStr1q	ModStr1q	increaseswithplaylevelX									0
+item_pois_damagemax_perlevel	229			1	16											12	32		12	0	12	100			2	3	level	poisonmaxdam					1					90	19		ModStr4h	ModStr4h	increaseswithplaylevelX									0
+item_resist_cold_perlevel	230			1	6											25	32		6	0	12	100			2	3	level	coldresist										39	19		ModStr1k	ModStr1k	increaseswithplaylevelX									0
+item_resist_fire_perlevel	231			1	6											25	32		6	0	12	100			2	3	level	fireresist										35	19		ModStr1j	ModStr1j	increaseswithplaylevelX									0
+item_resist_ltng_perlevel	232			1	6											25	32		6	0	12	100			2	3	level	lightresist										37	19		ModStr1l	ModStr1l	increaseswithplaylevelX									0
+item_resist_pois_perlevel	233			1	6											25	32		6	0	12	100			2	3	level	poisonresist										33	19		ModStr1n	ModStr1n	increaseswithplaylevelX									0
+item_sanctification	234			1	12														8	0	12	100																300	20		Sanctified	Sanctified										0
+relic_of_knowledge	235			1	10			1	0	32		1																										28	19		reliclearned	reliclearned									2	0
+item_sanctification_dummy	236			1	12														8	0	12	100																299	20		SanctifyIt	SanctifyIt										0
+respecpoints	237			1	32			1	0	32		1																																								0
+item_thorns_perlevel	238			1	16											13	64		6	0	12	100			2	3	level	item_attackertakesdamage										12	19		ModStr1v	ModStr1v	increaseswithplaylevelX									0
+item_find_gold_perlevel	239			1	16											10	64		6	0	12	100			2	3	level	item_goldbonus										9	19		ModStr1w	ModStr1w	increaseswithplaylevelX								2	0
+item_find_magic_perlevel	240			1	16											203	256		6	0	12	100			2	3	level	item_magicbonus										7	19		ModStr1x	ModStr1x	increaseswithplaylevelX								2	0
+unused241	241			1	16											19	64		6	0	12	100			2	3	level	staminarecoverybonus										47	19		ModStr3v	ModStr3v	increaseswithplaylevelX								2	0
+item_stamina_perlevel	242			1	16											26	16	8	6	0	12	100			2	3	level	maxstamina										50	19		ModStr5d	ModStr5d	increaseswithplaylevelX									0
+unused243	243			1	16											14	2		6	0	12	100			2	3	level	item_demondamage_percent					1					111	19		ModStr4e	ModStr4e	increaseswithplaylevelX								2	0
+item_damage_undead_perlevel	244			1	16											22	2		6	0	12	100			2	3	level	item_undeaddamage_percent					1					107	19		ModStr4f	ModStr4f	increaseswithplaylevelX								2	0
+unused245	245			1	16																																															0
+item_tohit_undead_perlevel_TOREMOVE	246			1	16																12																															0
+item_crushingblow_perlevel	247			1	16											53	256		6	0	12	100			2	3	level	item_crushingblow					1					86	19		ModStr5c	ModStr5c	increaseswithplaylevelX								2	0
+unused248	248			1	16											45	32		6	0	6	0			2	3	level	item_openwounds					1					82	19		ModStr3m	ModStr3m	increaseswithplaylevelX								2	0
+unused249	249			1	16											26	32		6	0	8	0			2	3	level	item_kickdamage					1					120	19		ModStr5e	ModStr5e	increaseswithplaylevelX									0
+item_deadlystrike_perlevel	250			1	16											29	128		6	0	12	100			2	3	level	item_deadlystrike					1					84	19		ModStr5q	ModStr5q	increaseswithplaylevelX								2	0
+item_meldflag	251			1	4																12	100																														0
+item_replenish_durability	252			1	5											26	64		5	0	6	0																1	11		ModStre9t	ModStre9t										0
+item_replenish_quantity	253			1	5											26	64		5	0	6	0																2	19		ModStre9v	ModStre9v										0
+item_extra_stack	254			1	32											24	2		8	0	8	0																4	19		ModStre9i	ModStre9i										0
+strengthpercent	255			1	16											312	75				16	1000			11			strength	item_strength_perlevel									61	19		strModStrengthPercent	strModStrengthPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
+dexteritypercent	256			1	16											250	75				16	1000			11			dexterity	item_dexterity_perlevel									61	19		strModDexterityPercent	strModDexterityPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
+vitalitypercent	257			1	16											312	75				16	1000			11			vitality	item_vitality_perlevel									61	19		strModVitalityPercent	strModVitalityPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
+energypercent	258			1	16											250	75				16	1000			11			energy	item_energy_perlevel									61	19		strModEnergyPercent	strModEnergyPercent		3	19		strModAllAttributesPercent	strModAllAttributesPercent			2	0
+progressive_execute	259			1	4																																															0
+randomgenerator	260			1	12																																															0
+gem_v	261			1	16																16	0																8	3	2	gsv2	gsv2										0
+gem_y	262			1	16																16	0																7	3	2	gsy2	gsy2										0
+gem_b	263			1	16																16	0																6	3	2	gsb2	gsb2										0
+item_aura_display	264			1	32							1							8	0	8	0	14															159	16	0	ModitemAura	ModitemAura									2	0
+passive_summ_elemental_resist	265			1	10											250	75		8	0	16	1000																89	19		summoningskillelementalresist	summoningskillelementalresist									2	0
+passive_summ_life	266			1	10											250	75		8	0	16	1000																89	19		summoningskilllife	summoningskilllife									2	0
+passive_summ_phys_resist	267			1	10											250	75		8	0	16	1000																89	19		summoningskillphysicalresist	summoningskillphysicalresist									2	0
+gem_g	268			1	16																16	0																5	3	2	gsg2	gsg2										0
+gem_r	269			1	16																16	0																4	3	2	gsr2	gsr2										0
+gem_w	270			1	16																16	0																3	3	2	gsw2	gsw2										0
+gem_s	271			1	16																16	0																2	3	2	sku	sku										0
+sigilrancorskillcontrol	272			1	14																																															0
+sigillethargyskillcontrol	273			1	8																																															0
+sigildeathskillcontrol	274			1	8							1				250	75		6	0	8	0												domeleedamage	17	domissiledamage	17	53	1	1	manaonstriking	manaonstriking										0
+deathmarksummonlevel	275				7	12						1							7	0	7	0	12																													0
+placeholder276	276																																																			0
+placeholder277	277			1	8											12	12		7	0	7	0											1					81	19		ModStr4a	ModStr4a									2	0
+junk_05	278			1	16																16	0																95	3	2	jr5	jr5										0
+junk_06	279			1	16																16	0																94	3	2	jr6	jr6										0
+item_craftflag	280			1	10																16	1000																163	3	0	Forged Equ	Forged Equ										0
+vitality_hidden2	281			1	16																16	1000			9			hpregen																								0
+maxhpflag	282			1	32																16	1000																														0
+maxmanaflag	283			1	32																16	1000																														0
+item_upgraded	284			1	12																16	0																299	20		torchupgraded	torchupgraded										0
+item_anointed	285			1	12																4	0																300	20		Anointed	Anointed										0
+item_anointed_dummy	286			1	12																8	0																299	20		AnointIt	AnointIt										0
+item_skeleton_trade	287				12																9	0																298	19	2	moreskeletalmages	moreskeletalmages									2	0
+item_max_skeleton_king	288				12																4	0																298	19	2	moreskeletonkings	moreskeletonkings									2	0
+placeholder289	289				12																1	0																298	20		aegisofcorruptiondesc	aegisofcorruptiondesc									2	0
+placeholder290	290				12																1	0																298	20		hydracapincrease	hydracapincrease									2	0
+placeholder291	291				12																1	0																298	20		holyauratickrate	holyauratickrate									2	0
+placeholder292	292				12																1	0																298	20		chargeupduration	chargeupduration										0
+placeholder293	293				12																1	0																298	20		necrosummonsextraskills	necrosummonsextraskills									2	0
+placeholder294	294				12																1	0																298	20		druidsummonspounce	druidsummonspounce									2	0
+placeholder295	295				12																1	0																298	20		teleportimmo	teleportimmo									2	0
+item_crossbowpassive	296			1	12																1	0																														0
+placeholder297	297			1	12											310	62				9	100											1																			0
+placeholder298	298			1	12											310	62				9	100											1																			0
+crossbowreloadspeed	299			1	16																16	1000																51	19		fastercrossbowreload	fastercrossbowreload										0
+skillcontrol2	300			1	12																																															0
+kill_dummy	301				32																																															0
+kill_display	302				32																1				2	0	kill_base	kill_dummy										305	3	2	killtracker	killtracker									2	0
+passive_summ_mastery_total	303			1	10											125	250				16	1000			1			passive_summ_mastery										297	19		ModitemdamSummskTotal	ModitemdamSummskTotal									2	0
+stancedance	304			1	3																																															0
+hexsiphoncontrol	305			1	9											358	100				16	1000																88	19		Moditemenrescoldsk	Moditemenrescoldsk									2	0
+gluttonycontrol	306			1	9											310	100				16	1000																88	19		Moditemenresfiresk	Moditemenresfiresk									2	0
+irongolemthornscontrol	307			1	5																																															0
+irongolemthornscontrolvalue	308			1	20																																															0
+junk_11	309			1	16																16	0																89	3	2	jr11	jr11										0
+junk_12	310			1	16																16	0																88	3	2	jr12	jr12										0
+junk_13	311			1	16																16	0																87	3	2	jr13	jr13										0
+junk_14	312			1	16																16	0																86	3	2	jr14	jr14										0
+junk_15	313			1	16																16	0																85	3	2	jr15	jr15										0
+junk_16	314			1	16																16	0																84	3	2	jr16	jr16										0
+firelength	315			1	16																																															0
+burningmin	316			1	16																																															0
+burningmax	317			1	16																																															0
+progressive_damage	318			1	3																																															0
+progressive_steal	319			1	3																																															0
+progressive_other	320			1	3																																															0
+progressive_fire	321			1	3																																															0
+progressive_cold	322			1	3																																															0
+progressive_lightning	323			1	3																																															0
+item_extra_charges	324			1	6														6	0	6	0											1																			0
+progressive_tohit	325			1	16																																															0
+poison_count	326			1	5																												1																			0
+damage_framerate	327			1	8																																															0
+pierce_idx	328			1	6																																															0
+passive_fire_mastery	329			1	20											279	50		8	0	16	1000																88	19		ModitemdamFiresk	ModitemdamFiresk		4	19		strModSpellDamage	strModSpellDamage			2	0
+passive_ltng_mastery	330			1	20											263	50		8	0	16	1000																88	19		ModitemdamLtngsk	ModitemdamLtngsk		4	19		strModSpellDamage	strModSpellDamage			2	0
+passive_cold_mastery	331			1	20											323	50		8	0	16	1000																88	19		ModitemdamColdsk	ModitemdamColdsk		4	19		strModSpellDamage	strModSpellDamage			2	0
+passive_pois_mastery	332			1	20											244	50		8	0	16	1000																88	19		ModitemdamPoissk	ModitemdamPoissk		4	19		strModSpellDamage	strModSpellDamage			2	0
+passive_fire_pierce	333			1	9												100		8	0	16	1000																88	19		Moditemenresfiresk	Moditemenresfiresk		16	19		strModPierceResAll	strModPierceResAll			2	0
+passive_ltng_pierce	334			1	9												100		8	0	16	1000																88	19		Moditemenresltngsk	Moditemenresltngsk		16	19		strModPierceResAll	strModPierceResAll			2	0
+passive_cold_pierce	335			1	9												100		8	0	16	1000																88	19		Moditemenrescoldsk	Moditemenrescoldsk		16	19		strModPierceResAll	strModPierceResAll			2	0
+passive_pois_pierce	336			1	9												100		8	0	16	1000																88	19		Moditemenrespoissk	Moditemenrespoissk		16	19		strModPierceResAll	strModPierceResAll			2	0
+item_attackertakesfiredamage	337			1	16							1				1	25		11	0	16	1000												attackedinmelee	11	damagedbymissile	11	13	19		attackertakesfire	attackertakesfire									2	0
+passive_dodge	338			1	9														7	0	16	1000																88	19		passivedodgedesc	passivedodgedesc		12	19		passivedodgedesc	passivedodgedesc			2	0
+passive_avoid	339			1	9														7	0	16	1000																88	19		passiveavoiddesc	passiveavoiddesc		12	19		passivedodgedesc	passivedodgedesc			2	0
+passive_evade	340			1	9														7	0	16	1000																88	19		passiveevadedesc	passiveevadedesc		12	19		passivedodgedesc	passivedodgedesc			2	0
+passive_warmth	341			1	9														8	0	16	1000																														0
+passive_mastery_melee_th	342			1	11	16													8	0	16	1000																														0
+passive_mastery_melee_dmg	343			1	11	16													8	0	16	1000																														0
+passive_mastery_melee_crit	344			1	9	16													8	0	16	1000																														0
+passive_mastery_throw_th	345			1	11	16													8	0	16	1000																														0
+passive_mastery_throw_dmg	346			1	11	16													8	0	16	1000																														0
+passive_mastery_throw_crit	347			1	9	16													8	0	16	1000																														0
+passive_weaponblock	348			1	9	16													8	0	16	1000																														0
+passive_summon_resist	349			1	9														8	0	16	1000																														0
+modifierlist_skill	350				16																																															0
+modifierlist_level	351				16																																															0
+last_sent_hp_pct	352			1	8																																															0
+source_unit_type	353				5																																															0
+source_unit_id	354				32																																															0
+shortparam1	355				16																																															0
+questitemdifficulty	356				32																2	0																														0
+passive_mag_mastery	357			1	12											1211	431		8	0	16	1000																88	19		ModStrMagMastery	ModStrMagMastery									2	0
+passive_mag_pierce	358			1	14												2812		8	0	16	1000																88	19		ModStrMagPierce	ModStrMagPierce									2	0
+skill_cooldown	359				32	16																																														0
+skill_missile_damage_scale	360				32	16																																														0
+psychicward	361			1	32																																															0
+psychicwardmax	362			1	32																																															0
+skill_channeling_tick	363																																																			0
+customization_index	364				32																																															0
+item_magic_damagemax_perlevel	365			1	6											49	128		6	0	16	1000			2	3	level	magicmaxdam					1					100	19		strModMagicDamageMax	strModMagicDamageMax	increaseswithplaylevelX									0
+passive_dmg_pierce	366			1	14												2812		8	0	16	1000																88	19		ModStrDamPierce	ModStrDamPierce									2	0
+heraldtier	367			1	32							1																																								0
+rune_lod_medium	368			1	32																32	0																41	3	2	runelodmedium	runelodmedium										0
+rune_lod_high	369			1	32																32	0																40	3	2	runelodhigh	runelodhigh										0
+item_nonclassskill_display	370			1	16	11						1			1				8	20	8	20	14															81	28		ItemModifierNonClassSkill	ItemModifierNonClassSkill										0
+item_skill_cooldown	371			1	10											250	75		8	0	16	1000																88	19		skillcooldownreduction	skillcooldownreduction									2	0
+trap_limit	372			1	6											250	75		6	0	16	1000																298	19		traplimitpositive	traplimitpositive									2	0
+twister_limit	373			1	12											250	75		10	200	16	1000																298	19		twisterlimit	twisterlimit									2	0
+blade_nova_max_res	374			1	10							1				250	75		6	0	16	1000																298	19		bladenovamaxres	bladenovamaxres									2	0
+item_mythicaldesc	375				7	12						1							7	0	3	0	12															330	23		mythicalitemdesc	mythicalitemdesc									2	0
+item_skillontakedmg	376			1	10	20						1			2				21	0	8	0	18											absorbdamage	21			160	15		ItemExpansiveChanc3	ItemExpansiveChanc3									2	0
+item_skillontakedmg_hidden	377			1	10	20						1			2				21	0	8	0	18											absorbdamage	21																	0
+item_skillonkill_hidden	378			1	10	20						1			2				21	0	8	0	18										1	kill	30																	0
+passive_summ_limit	379			1	10											250	75		6	0	16	1000																297	19		maxsummons	maxsummons									2	0
+summon_ele_mastery_base	380			1	14																12	0																														0
+mosaic_repeat_chance	381			1	14																4	0																298	20		mosaicrepeatchance	mosaicrepeatchance										0
+summon_ac_ar_base	382			1	24																12	0																														0
+has_shuriken	383			1	1																1	0																														0
+blackmagiccontrol	384			1	24																12	0																														0
+skillcontrolcold1	385			1	10																																															0
+exclusiveskill	386			1	3																																															0
+exclusiveskillcontrol	387			1	8																																															0
+skillcontrollightning1	388			1	10																																															0
+skillcontrolfire1	389			1	10																																															0
+firecontrolprogressive	390			1	10																																															0
+total_fire_resist	391			1	8											312	300				16	1000			11			fireresist	item_resist_fire_perlevel									293	19		modtotalfireresist	modtotalfireresist		13	19		modtotalallresist	modtotalallresist			2	0
+total_cold_resist	392			1	8											250	300				16	1000			11			coldresist	item_resist_cold_perlevel									293	19		modtotalcoldresist	modtotalcoldresist		13	19		modtotalallresist	modtotalallresist			2	0
+total_lightning_resist	393			1	8											312	300				16	1000			11			lightresist	item_resist_ltng_perlevel									293	19		modtotallightningresist	modtotallightningresist		13	19		modtotalallresist	modtotalallresist			2	0
+total_poison_resist	394			1	8											250	300				16	1000			11			poisonresist	item_resist_pois_perlevel									293	19		modtotalpoisonresist	modtotalpoisonresist		13	19		modtotalallresist	modtotalallresist			2	0
+elemental_resists_mask	395			1	32																																															0
+aether_resists_mask	396			1	32																																															0
+lifepactactive	397			1	4																																															0
+generictotalmultiplier	398			1	10																16	1000																293	19		totalspelldamage	totalspelldamage									2	0
+weaponmastery	399			1	8																16	1000																301	3		weaponmastery	weaponmastery										0
+total_magic_resist	400			1	8											250	300				16	1000			11			magicresist																								0
+item_attackertakescolddamage	401			1	16							1				1	25		11	0	11	0												attackedinmelee	12	damagedbymissile	12	13	19		attackertakescold	attackertakescold									2	0
+skillcontrol5	402			1	14																																															0
+goldexplosioncontrol	403			1	2																																															0
+item_skillonattack_hidden	404			1	10	20						1			2				21	0	8	0	18										1	domeleeattack	20	domissileattack	20															0
+item_skillonhit_hidden	405			1	10	20						1			2				21	0	8	0	18										1	domeleedamage	20	domissiledamage	20															0
+whirlwindcontrol	406			1	24																																	293	19		modtotalpoisonresist	modtotalpoisonresist									2	0
+cyclicstate	407			1	3																																															0
+skillcontrolcounter	408			1	24																																															0
+totalattackspeed	409			1	10																16	1000			11			item_fasterattackrate																								0
+playermode	410			1	10																																															0
+skillcontrol6	411			1	10																																															0
+skillcontrolhelm	412			1	24																																															0
+potionmultiplier	413			1	20																16	1000																50	19		potioneffectiveness	potioneffectiveness										0
+skillcontrolbodyarmor	414			1	10																																															0
+item_skillongethit_hidden	415			1	10	20						1			2				21	0	8	0	18											damagedinmelee	21	damagedbymissile	21															0
+skillcontrolshield	416			1	10																																															0
+skillcontrolgloves	417			1	10																																															0
+skillcontrolboots	418			1	10																																															0
+skillcontrolbelt	419			1	10																																															0
+skillcontrolamulet	420			1	10																																															0
+runemaster	421			1	14							1									10																															0
+item_skilloncast	422			1	10	20						1			2				21	0	8	0	18											doactive	20			160	15		Moditemskoncast	Moditemskoncast									2	0
+item_skilloncast_hidden	423			1	10	20						1			2				21	0	8	0	18											doactive	20																	0
+branded	424			1	3																16	1000																1	19		branded	branded										0
+totalmaxhp	425			1	16																16	1000			11			maxhp																								0
+extra_items	426			1	14																16	1000																15	19		itemquantity	itemquantity									2	0
+total_physical_resist	427			1	8											250	300				16	1000			11			damageresist										293	19		modtotalphysicalresist	modtotalphysicalresist		13	19		modtotalallresist	modtotalallresist			2	0
+skillcontrolstrafe	428			1	14																																															0
+junk_01	429			1	16																16	0																99	3	2	jr1	jr1										0
+junk_02	430			1	16																16	0																98	3	2	jr2	jr2										0
+item_randomize	431			1	16																16	0																														0
+junk_17	432			1	16																16	0																83	3	2	jr17	jr17										0
+junk_18	433			1	16																16	0																82	3	2	jr18	jr18										0
+criticaldamage	434			1	14																16	1000																85	19		critdamage	critdamage									2	0
+bleedmindam	435			1	20																13	0																92	19		bleedmindam	bleedmindam									2	0
+bleedmaxdam	436			1	20																14	0																91	19		bleedmaxdam	bleedmaxdam									2	0
+bleedlength	437			1	20																10	0																														0
+item_01	438			1	16																16	0																24	3	2	map	map										0
+item_02	439			1	16																16	0																23	3	2	ddd	ddd										0
+item_03	440			1	16																16	0																22	3	2	yyy	yyy										0
+item_04	441			1	16																16	0																20	3	2	zzz	zzz										0
+item_05	442			1	16																16	0																19	3	2	brz	brz										0
+item_06	443			1	16																16	0																18	3	2	eyz	eyz										0
+item_07	444			1	16																16	0																17	3	2	qll	qll										0
+item_08	445			1	16																16	0																16	3	2	spe	spe										0
+item_09	446			1	16																16	0																15	3	2	tal	tal										0
+item_10	447			1	16																16	0																14	3	2	jaw	jaw										0
+item_11	448			1	16																16	0																13	3	2	fng	fng										0
+item_12	449			1	16																16	0																12	3	2	hrn	hrn										0
+item_13	450			1	16																16	0																11	3	2	scz	scz										0
+item_14	451			1	16																16	0																10	3	2	hrt	hrt										0
+item_15	452			1	16																16	0																9	3	2	sol	sol										0
+item_16	453			1	16																16	0																8	3	2	wss2	wss2										0
+item_17	454			1	16																16	0																7	3	2	flg	flg										0
+item_18	455			1	16																16	0																6	3	2	sdo	sdo										0
+item_19	456			1	16																16	0																2	3	2	99j2	99j2										0
+item_20	457			1	16																16	0																1	3	2	rvs2	rvs2										0
+item_21	458			1	16																16	0																5	3	2	bcpn1	bcpn1										0
+item_22	459			1	16																16	0																4	3	2	bcpn2	bcpn2										0
+item_23	460			1	16																16	0																3	3	2	bcpn3	bcpn3										0
+junk_07	461			1	16																16	0																93	3	2	jr7	jr7										0
+junk_08	462			1	16																16	0																92	3	2	jr8	jr8										0
+item_craftflag2	463			1	10																11	0																162	3	0	Forged Jew	Forged Jew										0
+item_tinkerflag2	464			1	12																11	0																1	19		tinkeringpoints	tinkeringpoints										0
+item_24	465			1	16																16	0																21	3	2	qqq	qqq										0
+item_maxdamage_percent2	466			1	11											16	2				10	123			11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1					293	19		totalmaxdamage	totalmaxdamage		14	19		totalphysicaldamage	totalphysicaldamage			2	0
+item_mindamage_percent2	467			1	11											16	2				10	123			11			mindamage	secondary_mindamage	item_throw_mindamage			1					293	19		totalmindamage	totalmindamage		14	19		totalphysicaldamage	totalphysicaldamage			2	0
+junk_09	468			1	16																16	0																70	3	2	jr9	jr9										0
+hexbanecontrol	469			1	6																																															0
+xtal_00	470			1	18																12	8																12	3	2	xt0	xt0										0
+xtal_01	471			1	18																12	8																11	3	2	xt1	xt1										0
+xtal_02	472			1	18																12	8																10	3	2	xt2	xt2										0
+xtal_03	473			1	18																12	8																9	3	2	xt3	xt3										0
+xtal_04	474			1	18																12	8																8	3	2	xt4	xt4										0
+xtal_05	475			1	18																12	8																7	3	2	xt5	xt5										0
+xtal_06	476			1	18																12	8																6	3	2	xt6	xt6										0
+xtal_07	477			1	18																12	8																5	3	2	xt7	xt7										0
+xtal_08	478			1	18																12	8																4	3	2	xt8	xt8										0
+xtal_09	479			1	18																12	8																3	3	2	xt9	xt9										0
+xtal_10	480			1	18																12	8																2	3	2	xtx	xtx										0
+xtal_11	481			1	18																12	8																1	3	2	xty	xty										0
+passive_mag2_mastery	482			1	20											307	53				16	200			11			magicmindam	magicmaxdam									88	19		ModitemdamMagsk	ModitemdamMagsk		4	19		strModSpellDamage	strModSpellDamage			2	0
+passive_wind_mastery	483			1	20											307	53				16	200																88	19		ModitemdamWindsk	ModitemdamWindsk		4	19		strModSpellDamage	strModSpellDamage			2	0
+item_jewelflag	484			1	4																16	1000																														0
+item_mercflag	485			1	4																16	1000																161	3	0	Merc Forged	Merc Forged										0
+passive_summ_mastery	486			1	20											307	53				16	1000																88	19		ModitemdamSummsk	ModitemdamSummsk									2	0
+item_summskills	487			1	10							1				1895	256				16	1000																158	1	1	ModStr3kSum	ModStr3kSum										0
+item_bigcraftflag	488			1	4																32	0																														0
+total_elemental_min_damage	489			1	12							1				16	12				10	100			11			firemindam	coldmindam	lightmindam																						0
+spelldamagesummons	490				14																																															0
+skillcontrol	491			1	12																32																															0
+skillcontrol3	492			1	32																32																															0
+total_elemental_max_damage	493			1	12							1				16	12				16	1000			11			firemaxdam	lightmaxdam	coldmaxdam																						0
+progressive_physical	494			1	3																																															0
+total_poison_magic_min_damage	495			1	12							1				16	12				16	1000			11			poisonmindam	magicmindam																							0
+total_poison_magic_max_damage	496			1	12							1				16	12				16	1000			11			poisonmaxdam	magicmaxdam																							0
+skillcontrol4	497			1	32																32																															0
+item_elemskillcold	498			1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrcoldskill	ModStrcoldskill									2	0
+item_elemskilllight	499			1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrlightningskill	ModStrlightningskill									2	0
+item_elemskillpoison	500			1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrpoisonskill	ModStrpoisonskill									2	0
+item_elemskillmagic	501			1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrmagicskill	ModStrmagicskill									2	0
+item_elemskillfire	502			1	7	4						1				19	256		4	0	7	0	4															157	1	1	ModStrfireskill	ModStrfireskill									2	0
+item_corrupted	503			1	12									0					8	0	8	0																300	20		Corrupted	Corrupted										0
+item_corrupted_dummy	504			1	12									0					8	0	8	0																299	20		SlamIt	SlamIt										0
+lifeonstriking	505			1	12							1				250	75		6	0	8	0												domeleedamage	28	domissiledamage	28	52	1	1	lifeonstriking	lifeonstriking									2	0
+manaonstriking	506			1	12							1				250	75		6	0	8	0												domeleedamage	17	domissiledamage	17	53	1	1	manaonstriking	manaonstriking									2	0
+soul_counter	507				32																32																	290	19	2	soulcounter	soulcounter										0
+kill_check	508			1	12																32																															0
+ascendancy_upgrade	509				12							1									10	0																														0
+headofthecerberuscontrol	510				4							1																																								0
+summonexceedcap	511				4							1									12	0																														0
+maxlifeone	512				2							1									2																	297	20		maxlifeone	maxlifeone									2	0
+totalcrossbowbolts	513				14							1									16	1000																199	19		maxcrossbowbolts	maxcrossbowbolts									2	0
+currentcrossbowbolts	514				14							1									10																															0
+totalcrossbowdamage	515				14							1									16	1000																250	19		totalcrossbowdamage	totalcrossbowdamage									2	0
+projectilespeed	516				14							1									16	1000																133	19		projectilespeed	projectilespeed									2	0
+crossbowfpa	517				14							1									10																															0
+crossbowreloadspeedlimit	518			1	12																16	1000																51	19		maximumcrossbowreloadspeed	maximumcrossbowreloadspeed									2	0
+consumeeffect	519				12							1									16	1000																125	19		consumeeffect	consumeeffect									2	0
+sigillimit	520				12							1									7	10																126	19		sigillimit	sigillimit									2	0
+passive_mag_crit	521			1	14																16	1000			11			magicmindam	magicmaxdam																							0
+miasmachainslimit	522				12							1									7	10																125	19		miasmachainslimit	miasmachainslimit									2	0
+arsdulmephistoscontrol	523				4							1									2	0																														0
+arsdulmephistosaura	524				4							1																																								0
+arsaldiaboloscontrol	525				4							1									2	0																														0
+arsaldiaboloseffect	526				4							1																																								0
+arstorbaaloscontrol	527				4							1									2	0																														0
+arstorbaaloseffect	528				4							1																																								0
+lethalsacrifice	529				4							1									2	0																														0
+phasing	530				4							1									2	0																330	20		phasing	phasing									2	0
+strength_cap	531		1		16																14	500																														0
+energy_cap	532				16																14	500																														0
+dexterity_cap	533		1		16																14	500																														0
+vitality_cap	534				16																14	500																														0
+maxhp_cap	535				32																14	500																														0
+maxmana_cap	536				32																14	500																														0
+maxstamina_cap	537				32																14	500																														0
+item_armor_percent_cap	538			1	16																14	500																														0
+tohit_cap	539			1	16																14	500																														0
+toblock_cap	540			1	16																14	500																														0
+mindamage_cap	541			1	16																14	500																														0
+maxdamage_cap	542			1	16																14	500																														0
+damagepercent_cap	543			1	16																14	500																														0
+manarecoverybonus_cap	544			1	16																14	500																														0
+armorclass_cap	545			1	16																14	500																														0
+normal_damage_reduction_cap	546			1	16																14	500																														0
+magic_damage_reduction_cap	547			1	16																14	500																														0
+damageresist_cap	548			1	16																14	500																														0
+magicresist_cap	549			1	16																14	500																														0
+maxmagicresist_cap	550			1	16																14	500																														0
+fireresist_cap	551			1	16																14	500																														0
+maxfireresist_cap	552			1	16																14	500																														0
+lightresist_cap	553			1	16																14	500																														0
+maxlightresist_cap	554			1	16																14	500																														0
+coldresist_cap	555			1	16																14	500																														0
+maxcoldresist_cap	556			1	16																14	500																														0
+poisonresist_cap	557			1	16																14	500																														0
+maxpoisonresist_cap	558			1	16																14	500																														0
+firemindam_cap	559			1	16																14	500																														0
+firemaxdam_cap	560			1	16																14	500																														0
+lightmindam_cap	561			1	16																14	500																														0
+lightmaxdam_cap	562			1	16																14	500																														0
+magicmindam_cap	563			1	16																14	500																														0
+magicmaxdam_cap	564			1	16																14	500																														0
+coldmindam_cap	565			1	16																14	500																														0
+coldmaxdam_cap	566			1	16																14	500																														0
+poisonmindam_cap	567			1	16																14	500																														0
+poisonmaxdam_cap	568			1	16																14	500																														0
+lifedrain_cap	569			1	16																14	500																														0
+manadrain_cap	570			1	16																14	500																														0
+velocitypercent_cap	571		1	1	16																14	500																														0
+attackrate_cap	572		1	1	16																14	500																														0
+hpregen_cap	573				16																14	500																														0
+item_maxhp_percent_cap	574			1	16																14	500																														0
+item_maxmana_percent_cap	575			1	16																14	500																														0
+item_attackertakesdamage_cap	576			1	16																14	500																														0
+item_goldbonus_cap	577			1	16																14	500																														0
+item_magicbonus_cap	578			1	16																14	500																														0
+item_addclassskills_cap_defunct	579			1	16																14	500																														0
+item_addexperience_cap	580			1	16																14	500																														0
+item_healafterkill_cap	581			1	16																14	500																														0
+item_reducedprices_cap	582				16																14	500																														0
+item_lightradius_cap	583			1	16																14	500																														0
+item_fasterattackrate_cap	584		1	1	16																14	500																														0
+item_fastermovevelocity_cap	585		1	1	16																14	500																														0
+item_nonclassskill_cap	586			1	16																14	500																														0
+item_fastergethitrate_cap	587		1	1	16																14	500																														0
+item_fasterblockrate_cap	588		1	1	16																14	500																														0
+item_fastercastrate_cap	589		1	1	16																14	500																														0
+item_singleskill_cap	590			1	16																14	500																														0
+curse_resistance_cap	591				16																14	500																														0
+item_poisonlengthresist_cap	592			1	16																14	500																														0
+item_fractionaltargetac_cap	593			1	16																14	500																														0
+item_tohit_percent_cap	594			1	16																14	500																														0
+item_damagetargetac_cap	595			1	16																14	500																														0
+item_demondamage_percent_cap	596			1	16																14	500																														0
+item_undeaddamage_percent_cap	597			1	16																14	500																														0
+item_demon_tohit_cap	598			1	16																14	500																														0
+item_undead_tohit_cap	599			1	16																14	500																														0
+item_allskills_cap	600			1	16																14	500																														0
+item_attackertakeslightdamage_cap	601			1	16																14	500																														0
+item_freeze_cap	602			1	16																14	500																														0
+item_crushingblow_cap	603			1	16																14	500																														0
+item_manaafterkill_cap	604			1	16																14	500																														0
+item_deadlystrike_cap	605			1	16																14	500																														0
+item_absorbfire_percent_cap	606			1	16																14	500																														0
+item_absorbfire_cap	607			1	16																14	500																														0
+item_absorblight_percent_cap	608			1	16																14	500																														0
+item_absorblight_cap	609			1	16																14	500																														0
+item_absorbmagic_percent_cap	610			1	16																14	500																														0
+item_absorbmagic_cap	611			1	16																14	500																														0
+item_absorbcold_percent_cap	612			1	16																14	500																														0
+item_absorbcold_cap	613			1	16																14	500																														0
+item_slow_cap	614			1	16																14	500																														0
+item_pierce_cap	615			1	16																14	500																														0
+armor_override_percent_cap	616		1	1	16																14	500																														0
+item_addskill_tab_cap	617			1	16																14	500																														0
+item_charge_noconsume_cap	618				16																14	500																														0
+strengthpercent_cap	619			1	16																14	500																														0
+dexteritypercent_cap	620			1	16																14	500																														0
+vitalitypercent_cap	621			1	16																14	500																														0
+energypercent_cap	622			1	16																14	500																														0
+passive_summ_elemental_resist_cap	623			1	16																14	500																														0
+passive_summ_life_cap	624			1	16																14	500																														0
+passive_summ_phys_resist_cap	625			1	16																14	500																														0
+passive_fire_mastery_cap	626			1	16																14	500																														0
+passive_ltng_mastery_cap	627			1	16																14	500																														0
+passive_cold_mastery_cap	628			1	16																14	500																														0
+passive_pois_mastery_cap	629			1	16																14	500																														0
+passive_fire_pierce_cap	630			1	16																14	500																														0
+passive_ltng_pierce_cap	631			1	16																14	500																														0
+passive_cold_pierce_cap	632			1	16																14	500																														0
+passive_pois_pierce_cap	633			1	16																14	500																														0
+item_attackertakesfiredamage_cap	634			1	16																14	500																														0
+passive_dodge_cap	635			1	16																14	500																														0
+passive_mag_pierce_cap	636			1	16																14	500																														0
+passive_dmg_pierce_cap	637			1	16																14	500																														0
+item_skill_cooldown_cap	638			1	16																14	500																														0
+item_attackertakescolddamage_cap	639			1	16																14	500																														0
+passive_mag2_mastery_cap	640			1	16																14	500																														0
+passive_wind_mastery_cap	641			1	16																14	500																														0
+passive_summ_mastery_cap	642			1	16																14	500																														0
+item_elemskillcold_cap	643			1	16																14	500																														0
+item_elemskilllight_cap	644			1	16																14	500																														0
+item_elemskillpoison_cap	645			1	16																14	500																														0
+item_elemskillmagic_cap	646			1	16																14	500																														0
+item_elemskillfire_cap	647			1	16																14	500																														0
+lifeonstriking_cap	648			1	16																14	500																														0
+manaonstriking_cap	649			1	16																14	500																														0
+maple_leaf_cap	650			1	16																14	500																														0
+unusable_item	651				4																2	0																331	20		unusableitem	unusableitem										0
+kill_ledger_tier_1	652				4																2	0																														0
+kill_ledger_tier_2	653				4																2	0																														0
+kill_ledger_tier_3	654				4																2	0																														0
+kill_ledger_tier_4	655				4																2	0																														0
+kill_ledger_tier_5	656				4																2	0																														0
+kill_ledger_tier_6	657				4																2	0																														0
+kill_ledger_tier_7	658				4																2	0																														0
+kill_ledger_lucion_whisper	659				4																2	0																														0
+kill_ledger_diablo_hellhound	660				4																2	0																														0
+kill_ledger_fallen_ancient_angel	661				4																2	0																														0
+kill_ledger_terror_in_the_shadows	662				4																2	0																														0
+kill_ledger_avatar_of_the_night	663				4																2	0																														0
+kill_ledger_herald_of_doom	664				4																2	0																														0
+kill_ledger_glacial_behemoth	665				4																2	0																														0
+kill_ledger_the_taskmaster	666				4																2	0																														0
+kill_ledger_harbinger	667				4																2	0																														0
+kill_ledger_arbiter_of_souls	668				4																2	0																														0
+kill_ledger_mephisto_the_invincible	669				4																2	0																														0
+kill_ledger_diablo_the_invincible	670				4																2	0																														0
+kill_ledger_baal_the_invincible	671				4																2	0																														0
+kill_ledger_eternal_ancients	672				4																2	0																														0
+kill_ledger_the_lich_king	673				4																2	0																														0
+kill_ledger_rathma	674				4																2	0																														0
+kill_ledger_lucion	675				4																2	0																														0
+ascendancy_tier_2	676				4																2	0																														0
+ascendancy_tier_3	677				4																2	0																														0
+ascendancy_tier_4	678				4																2	0																														0
+ascendancy_tier_4_count	679				4																2	0																														0
+ascendancy_tier_5	680				4																2	0																														0
+item_addclassskills_ama	681			1	16																14	500																														0
+item_addclassskills_ass	682			1	16																14	500																														0
+item_addclassskills_bar	683			1	16																14	500																														0
+item_addclassskills_dru	684			1	16																14	500																														0
+item_addclassskills_nec	685			1	16																14	500																														0
+item_addclassskills_pal	686			1	16																14	500																														0
+item_addclassskills_sor	687			1	16																14	500																														0
+item_addclassskills_war	688			1	16																14	500																														0
+stancedancecontrol	689			1	3																3	0																														0
+opalveined	690			1	3																3	0																														0
+opalveinspell	691			1	3																3	0																														0
+gemmaster	692			1	16																16	1000																														0
+randomgeneratorbig	693			1	16																																															0
+passive_fire_crit	694			1	14																16	1000			11			firemindam	firemaxdam																							0
+passive_cold_crit	695			1	14																16	1000			11			coldmindam	coldmaxdam																							0
+passive_ltng_crit	696			1	14																16	1000			11			lightmindam	lightmaxdam																							0
+passive_pois_crit	697			1	14																16	1000			11			poisonmindam	poisonmaxdam																							0
+amazonjavelin	698			1	10																																															0
+cutthroat	699			1	14																																															0
+deathbit	700			1	14																																															0
+gutsiphon	701			1	14																																															0
+thorgrimsavior	702			1	14																																															0
+focusofunlife	703			1	14																																															0
+deadlyhunter	704			1	14																																															0
+cavemanfury	705			1	14																																															0
+butchertenderizer	706			1	14																																															0
+redemptionitem	707			1	14																																															0
+judgementitem	708			1	14																																															0
+instrumentofpurification	709			1	14																																															0
+rottingsplinter	710			1	14																																															0
+vizjerisknowledge	711			1	14																																															0
+terminusest	712			1	14																																															0
+slavewarrior	713			1	14																																															0
+twinkle	714			1	14																																															0
+incrementcounter	715			1	24																																															0
+romevictory	716			1	14																																															0
+freedomofprison	717			1	14																																															0
+risingsun	718			1	10																																															0
+lastrites	719			1	14																																															0
+corruptionitem	720			1	14																																															0
+wrathofasmodeus	721			1	14																																															0
+heartofthesuccubi	722			1	14																																															0
+deathcowl	723			1	24																																															0
+genghiskhan	724			1	24																																															0
+ironmaidencounter	725			1	10																																															0
+hellrust	726			1	10																																															0
+seductionofpain	727			1	10																																															0
+handofatlas	728			1	10																																															0
+herculeangrip	729			1	10																																															0
+bootsoftheserpent	730			1	10																																															0
+spartacusdefense	731			1	10																																															0
+adrenalinerush	732			1	24																																															0
+harlequincrest	733			1	24																																															0
+gladiatorbanenova	734			1	10																																															0
+shieldcounter	735			1	10																																															0
+lightsabrefury	736			1	24																																															0
+stormspire	737			1	10																																															0
+horizontornado	738			1	32																																															0
+stonecrusher	739			1	32																																															0
+souldrainer	740			1	10																																															0
+deathcleaver	741			1	10																																															0
+laceratoraxe	742			1	10																																															0
+reapertoll	743			1	10																																															0
+andarielvisage	744			1	24																																															0
+medusagaze	745			1	10																																															0
+draculgrasp	746			1	10																																															0
+nordtenderizer	747			1	32																																															0
+theredeemer	748			1	10																																															0
+thirst	749			1	10																																															0
+doomdualnova	750			1	10																																															0
+famine	751			1	10																																															0
+pride	752			1	10																																															0
+obsession	753			1	10																																															0
+bloodempowerment	754			1	12																																															0
+underworldempowerment	755			1	12																																															0
+lucionrelfan	756			1	12																																															0
+telekinesis	757			1	10																																															0
+permafrost	758			1	10																																															0
+fistoftheheavens	759			1	10																																															0
+imperius	760			1	32																																															0
+incpowerone	761			1	12																																															0
+incpowertwo	762			1	12																																															0
+incdebuffone	763			1	12																																															0
+incdebufftwo	764			1	12																																															0
+incdebuffthree	765			1	12																																															0
+incpowerauramon	766			1	12																																															0
+incdebufffour	767			1	12																																															0
+incdebufffive	768			1	12																																															0
+spikenovamon	769			1	12																																															0
+permafrostmon	770			1	10																																															0
+glacialform	771			1	14																																															0
+reapthunder	772			1	14																																															0
+drainsoul	773			1	10																																															0
+coldfisticystare	774			1	24																																															0
+gerkesanctuary	775			1	10																																															0
+radamentsphere	776			1	10																																															0
+waterwalk	777			1	10																																															0
+silkweave	778			1	10																																															0
+gorerider	779			1	10																																															0
+thundergodvigor	780			1	10																																															0
+veilofsteel	781			1	24																																															0
+eaglehornlod	782			1	10																																															0
+windforcelod	783			1	10																																															0
+stoneraven	784			1	10																																															0
+thereapertoll	785			1	32																																															0
+shadowkiller	786			1	10																																															0
+griffoneye	787			1	24																																															0
+windhammertornadoes	788			1	10																																															0
+windhammer	789			1	10																																															0
+nightwingveil	790			1	24																																															0
+crownofages	791			1	24																																															0
+ravenlore	792			1	24																																															0
+flamebellow	793			1	10																																															0
+wolfhowl	794			1	24																																															0
+templarmight	795			1	10																																															0
+sandstormtrek	796			1	10																																															0
+astreonironward	797			1	10																																															0
+moonlight	798			1	10																																															0
+dragonbreath	799			1	14																																															0
+yoyosanitycyclic	800			1	3																																															0
+secretoftheooze	801			1	12																																															0
+maijamenacecyclic	802			1	3																																															0
+stormshieldcounter	803			1	10																																															0
+thereapertollcyclic	804			1	3																																															0
+thereapertollcap	805			1	12																																															0
+ravenlorecontrol	806			1	3																																															0
+ormusrobes	807			1	16																																															0
+releasepressure	808			1	4																																															0
+etherealedgecap	809			1	6																																															0
+etherealedge	810			1	12																																															0
+cyclopprotector	811			1	12																																															0
+lightsabrefuryprogressive	812			1	4																																															0
+cottonmouthjacket	813			1	12																																															0
+djinnslayer	814			1	12																																															0
+travelunderworld	815			1	8																																															0
+celestialempowerment	816			1	12																																															0
+spectralmaim	817			1	16																																															0
+firecascade	818			1	8																																															0
+gimmershred	819			1	20																																															0
+scosglenresonance	820			1	3																																															0
+unsocketable	821			1	10																8	2																1	20		unsocketable	unsocketable										0
+irisfire	822			1	3																																															0
+iriscold	823			1	3																																															0
+irislightning	824			1	3																																															0
+iriscyclicstat	825			1	3																																															0
+lichkingbonus	826			1	3																2																															0
+passive_ele_mastery_cap	827			1	16																14	500																														0
+passive_ele_mastery_half	828			1	16																14	500																														0
+res_all_cap	829			1	16																14	500																														0
+str_dex_enr_cap	830			1	16																14	500																														0
+icingdeathcrit	831			1	3																																															0
+item_maxdamage_percent3	832			1	11																10	123			11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1																			0
+item_mindamage_percent3	833			1	11																10	123			11			mindamage	secondary_mindamage	item_throw_mindamage			1																			0
+skeletonmasterycontrol	834			1	11																																															0
+delirium	835			1	11																																															0
+rune_01	836			1	24																24	0																50	3	2	r01	r01										0
+rune_02	837			1	24																24	0																49	3	2	r02	r02										0
+rune_03	838			1	24																24	0																48	3	2	r03	r03										0
+rune_04	839			1	24																24	0																47	3	2	r04	r04										0
+rune_05	840			1	24																24	0																46	3	2	r05	r05										0
+rune_06	841			1	24																24	0																45	3	2	r06	r06										0
+rune_07	842			1	24																24	0																44	3	2	r07	r07										0
+rune_08	843			1	24																24	0																43	3	2	r08	r08										0
+rune_09	844			1	24																24	0																42	3	2	r09	r09										0
+rune_10	845			1	24																24	0																41	3	2	r10	r10										0
+rune_11	846			1	24																24	0																40	3	2	r11	r11										0
+rune_12	847			1	24																24	0																39	3	2	r12	r12										0
+rune_13	848			1	24																24	0																38	3	2	r13	r13										0
+rune_14	849			1	24																24	0																37	3	2	r14	r14										0
+rune_15	850			1	24																24	0																36	3	2	r15	r15										0
+rune_16	851			1	24																24	0																35	3	2	r16	r16										0
+rune_17	852			1	24																24	0																34	3	2	r17	r17										0
+rune_18	853			1	24																24	0																33	3	2	r18	r18										0
+rune_19	854			1	24																24	0																32	3	2	r19	r19										0
+rune_20	855			1	24																24	0																31	3	2	r20	r20										0
+rune_21	856			1	24																24	0																30	3	2	r21	r21										0
+rune_22	857			1	24																24	0																29	3	2	r22	r22										0
+rune_23	858			1	24																24	0																28	3	2	r23	r23										0
+rune_24	859			1	24																24	0																27	3	2	r24	r24										0
+rune_25	860			1	24																24	0																26	3	2	r25	r25										0
+rune_26	861			1	24																24	0																25	3	2	r26	r26										0
+rune_27	862			1	24																24	0																24	3	2	r27	r27										0
+rune_28	863			1	24																24	0																23	3	2	r28	r28										0
+rune_29	864			1	24																24	0																22	3	2	r29	r29										0
+rune_30	865			1	24																24	0																21	3	2	r30	r30										0
+rune_31	866			1	24																24	0																20	3	2	r31	r31										0
+rune_32	867			1	24																24	0																19	3	2	r32	r32										0
+rune_33	868			1	24																24	0																18	3	2	r33	r33										0
+rune_34	869			1	24																24	0																17	3	2	r34	r34										0
+rune_35	870			1	24																24	0																16	3	2	r35	r35										0
+rune_36	871			1	24																24	0																15	3	2	r36	r36										0
+rune_37	872			1	24																24	0																14	3	2	r37	r37										0
+rune_38	873			1	24																24	0																13	3	2	r38	r38										0
+rune_39	874			1	24																24	0																12	3	2	r39	r39										0
+rune_40	875			1	24																24	0																11	3	2	r40	r40										0
+rune_41	876			1	24																24	0																10	3	2	r41	r41										0
+rune_42	877			1	24																24	0																9	3	2	r42	r42										0
+rune_43	878			1	24																24	0																8	3	2	r43	r43										0
+rune_44	879			1	24																24	0																7	3	2	r44	r44										0
+rune_45	880			1	24																24	0																6	3	2	r45	r45										0
+rune_46	881			1	24																24	0																5	3	2	r46	r46										0
+rune_50	882			1	24																24	0																1	3	2	r50	r50										0
+rune_51	883			1	24																24	0																33	3	2	r51	r51										0
+rune_52	884			1	24																24	0																32	3	2	r52	r52										0
+rune_53	885			1	24																24	0																31	3	2	r53	r53										0
+rune_54	886			1	24																24	0																30	3	2	r54	r54										0
+rune_55	887			1	24																24	0																29	3	2	r55	r55										0
+rune_56	888			1	24																24	0																28	3	2	r56	r56										0
+rune_57	889			1	24																24	0																27	3	2	r57	r57										0
+rune_58	890			1	24																24	0																26	3	2	r58	r58										0
+rune_59	891			1	24																24	0																25	3	2	r59	r59										0
+rune_60	892			1	24																24	0																24	3	2	r60	r60										0
+rune_61	893			1	24																24	0																23	3	2	r61	r61										0
+rune_62	894			1	24																24	0																22	3	2	r62	r62										0
+rune_63	895			1	24																24	0																21	3	2	r63	r63										0
+rune_64	896			1	24																24	0																20	3	2	r64	r64										0
+rune_65	897			1	24																24	0																19	3	2	r65	r65										0
+rune_66	898			1	24																24	0																18	3	2	r66	r66										0
+rune_67	899			1	24																24	0																17	3	2	r67	r67										0
+rune_68	900			1	24																24	0																16	3	2	r68	r68										0
+rune_69	901			1	24																24	0																15	3	2	r69	r69										0
+rune_70	902			1	24																24	0																14	3	2	r70	r70										0
+rune_71	903			1	24																24	0																13	3	2	r71	r71										0
+rune_72	904			1	24																24	0																12	3	2	r72	r72										0
+rune_73	905			1	24																24	0																11	3	2	r73	r73										0
+rune_74	906			1	24																24	0																10	3	2	r74	r74										0
+rune_75	907			1	24																24	0																9	3	2	r75	r75										0
+rune_76	908			1	24																24	0																8	3	2	r76	r76										0
+rune_77	909			1	24																24	0																7	3	2	r77	r77										0
+rune_78	910			1	24																24	0																6	3	2	r78	r78										0
+rune_79	911			1	24																24	0																5	3	2	r79	r79										0
+rune_80	912			1	24																24	0																4	3	2	r80	r80										0
+rune_81	913			1	24																24	0																3	3	2	r81	r81										0
+rune_82	914			1	24																24	0																2	3	2	r82	r82										0
+rune_83	915			1	24																24	0																1	3	2	r83	r83										0
+wolverinelevel	916			1	12																																															0
+total_fire_damage	917			1	12							1									10	200			11			firemindam	firemaxdam																							0
+total_cold_damage	918			1	12							1									10	200			11			coldmindam	coldmaxdam																							0
+ascendancy_tier_4_count_new	919				10																10	20																														0
+frenzy_fpa	920				10																																															0
+firewhirlwindcontrol	921				10																																															0
+moonstormcontrol	922				10																																															0
+blood_magic	923				4																																															0
+tyraelvitlife	924				32																																															0
+utilitypotionmultiplier	925			1	20																16	1000																50	19		utilitypotioneffectiveness	utilitypotioneffectiveness										0
+specializationpoints	926				12			1	0	12																																										0
+alchemy_1	927				8			1	0	8																																										0
+alchemy_2	928				8			1	0	8																																										0
+alchemy_3	929				8			1	0	8																																										0
+alchemy_4	930				8			1	0	8																																										0
+alchemy_5	931				8			1	0	8																																										0
+alchemy_6	932				8			1	0	8																																										0
+alchemy_7	933				8			1	0	8																																										0
+alchemy_8	934				8			1	0	8																																										0
+alchemy_9	935				8			1	0	8																																										0
+alchemy_10	936				8			1	0	8																																										0
+alchemy_11	937				8			1	0	8																																										0
+alchemy_12	938				8			1	0	8																																										0
+alchemy_13	939				8			1	0	8																																										0
+alchemy_14	940				8			1	0	8																																										0
+alchemy_15	941				8			1	0	8																																										0
+specializationtokencap	942				4			1	0	4																																										0
+compounded_synergy	943				8																																															0
+elixir_of_reincarnation	944				8																																															0
+elixir_of_reincarnation_cooldown	945				14							1																																								0
+blacksmithing_1	946				8			1	0	8																																										0
+blacksmithing_2	947				8			1	0	8																																										0
+blacksmithing_3	948				8			1	0	8																																										0
+blacksmithing_4	949				8			1	0	8																																										0
+blacksmithing_5	950				8			1	0	8																																										0
+blacksmithing_6	951				8			1	0	8																																										0
+blacksmithing_7	952				8			1	0	8																																										0
+blacksmithing_8	953				8			1	0	8																																										0
+blacksmithing_9	954				8			1	0	8																																										0
+blacksmithing_10	955				8			1	0	8																																										0
+blacksmithing_11	956				8			1	0	8																																										0
+blacksmithing_12	957				8			1	0	8																																										0
+blacksmithing_13	958				8			1	0	8																																										0
+blacksmithing_14	959				8			1	0	8																																										0
+blacksmithing_15	960				8			1	0	8																																										0
+jeweler_1	961				8			1	0	8																																										0
+jeweler_2	962				8			1	0	8																																										0
+jeweler_3	963				8			1	0	8																																										0
+jeweler_4	964				8			1	0	8																																										0
+jeweler_5	965				8			1	0	8																																										0
+jeweler_6	966				8			1	0	8																																										0
+jeweler_7	967				8			1	0	8																																										0
+jeweler_8	968				8			1	0	8																																										0
+jeweler_9	969				8			1	0	8																																										0
+jeweler_10	970				8			1	0	8																																										0
+jeweler_11	971				8			1	0	8																																										0
+jeweler_12	972				8			1	0	8																																										0
+jeweler_13	973				8			1	0	8																																										0
+jeweler_14	974				8			1	0	8																																										0
+jeweler_15	975				8			1	0	8																																										0
+archaeology_1	976				8			1	0	8																																										0
+archaeology_2	977				8			1	0	8																																										0
+archaeology_3	978				8			1	0	8																																										0
+archaeology_4	979				8			1	0	8																																										0
+archaeology_5	980				8			1	0	8																																										0
+archaeology_6	981				8			1	0	8																																										0
+archaeology_7	982				8			1	0	8																																										0
+archaeology_8	983				8			1	0	8																																										0
+archaeology_9	984				8			1	0	8																																										0
+archaeology_10	985				8			1	0	8																																										0
+archaeology_11	986				8			1	0	8																																										0
+archaeology_12	987				8			1	0	8																																										0
+archaeology_13	988				8			1	0	8																																										0
+archaeology_14	989				8			1	0	8																																										0
+archaeology_15	990				8			1	0	8																																										0
+weapon_mastery_stag_bow	991			1	8																10	100																301	3		weaponmasterystagbow	weaponmasterystagbow										0
+weapon_mastery_reflex_bow	992			1	8																10	100																301	3		weaponmasteryreflexbow	weaponmasteryreflexbow										0
+weapon_mastery_precision_bow	993			1	8																10	100																301	3		weaponmasteryprecisionbow	weaponmasteryprecisionbow										0
+weapon_mastery_maiden_spear	994			1	8																10	100																301	3		weaponmasterymaidenspear	weaponmasterymaidenspear										0
+weapon_mastery_maiden_pike	995			1	8																10	100																301	3		weaponmasterymaidenpike	weaponmasterymaidenpike										0
+weapon_mastery_maiden_javelin	996			1	8																10	100																301	3		weaponmasterymaidenjavelin	weaponmasterymaidenjavelin										0
+weapon_mastery_ninja_to	997			1	8																10	100																301	3		weaponmasteryninjato	weaponmasteryninjato										0
+weapon_mastery_tribal_hatchet	998			1	8																10	100																301	3		weaponmasterytribalhatchet	weaponmasterytribalhatchet										0
+weapon_mastery_oak_branch	999			1	8																10	100																301	3		weaponmasteryoakbranch	weaponmasteryoakbranch										0
+weapon_mastery_soul_hunter	1000			1	8																10	100																301	3		weaponmasterysoulhunter	weaponmasterysoulhunter										0
+weapon_mastery_ritualistic_dagger	1001			1	8																10	100																301	3		weaponmasteryritualisticdagger	weaponmasteryritualisticdagger										0
+weapon_mastery_wretched_scythe	1002			1	8																10	100																301	3		weaponmasterywretchedscythe	weaponmasterywretchedscythe										0
+weapon_mastery_blessed_edge	1003			1	8																10	100																301	3		weaponmasteryblessededge	weaponmasteryblessededge										0
+weapon_mastery_mana_blade	1004			1	8																10	100																301	3		weaponmasterymanablade	weaponmasterymanablade										0
+weapon_mastery_orb_1	1005			1	8																10	100																301	3		weaponmasteryorb1	weaponmasteryorb1										0
+weapon_mastery_orb_2	1006			1	8																10	100																301	3		weaponmasteryorb2	weaponmasteryorb2										0
+weapon_mastery_claws_1	1007			1	8																10	100																301	3		weaponmasteryclaws1	weaponmasteryclaws1										0
+weapon_mastery_claws_2	1008			1	8																10	100																301	3		weaponmasteryclaws2	weaponmasteryclaws2										0
+weapon_mastery_void_blade_1	1009			1	8																10	100																301	3		weaponmasteryvoidblade1	weaponmasteryvoidblade1										0
+weapon_mastery_void_blade_2	1010			1	8																10	100																301	3		weaponmasteryvoidblade2	weaponmasteryvoidblade2										0
+weapon_mastery_flag	1011			1	8																10	100																														0
+item_maxdamage_percent4	1012			1	11																10	123			11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1																			0
+item_mindamage_percent4	1013			1	11																10	123			11			mindamage	secondary_mindamage	item_throw_mindamage			1																			0
+craftflag_crucible	1014			1	10																16	1000																163	3	0	Crucible Forged Equ	Crucible Forged Equ										0
+no_cooldown	1015			1	10																																															0
+extra_curse	1016			1	10																10	100																250	19		extracurse	extracurse									2	0
+item_maxdamage_percent5	1017			1	11																				11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1																			0
+item_mindamage_percent5	1018			1	11																				11			mindamage	secondary_mindamage	item_throw_mindamage			1																			0
+utilitypotionduration	1019			1	16																16	1000																50	19		utilitypotionduration	utilitypotionduration									2	0
+steelclash	1020			1	10																																															0
+guardianangelcooldown	1021			1	10																																															0
+gem_effect	1022			1	16																16	1000																55	19		gemeffect	gemeffect									2	0
+rune_effect	1023			1	16																16	1000																55	19		runeeffect	runeeffect									2	0
+binddemonspelldamage	1024			1	24																																															0
+total_gold_found	1025			1	16																16	1000																70	19		totalgoldfound	totalgoldfound									2	0
+raven_limit	1026			1	16																16	1000																150	19		ravenlimit	ravenlimit									2	0
+spirit_wolf_limit	1027			1	16																16	1000																150	19		spiritwolflimit	spiritwolflimit									2	0
+dire_wolf_limit	1028			1	16																16	1000																150	19		direwolflimit	direwolflimit									2	0
+fast_frames_stat	1029		1	1	10		1																																													0
+item_criticaldamage_perlevel	1030			1	16											400	100				12	100			2	3	level	criticaldamage										85	19		critdamage	critdamage	increaseswithplaylevelX									0
+item_summmastery_perlevel	1031			1	16											300	75				12	100			2	3	level	passive_summ_mastery										88	19		ModitemdamSummsk	ModitemdamSummsk	increaseswithplaylevelX									0
+item_summlife_perlevel	1032			1	16											300	75				12	100			2	3	level	passive_summ_life										89	19		summoningskilllife	summoningskilllife	increaseswithplaylevelX									0
+item_acvsmissiles_perlevel	1033			1	16											50	37				12	100			2	3	level	armorclass_vs_missile										69	19		ModStr6a	ModStr6a	increaseswithplaylevelX									0
+item_magpierce_perlevel	1034			1	16											400	100				12	100			2	3	level	passive_mag_pierce										88	19		ModStrMagPierce	ModStrMagPierce	increaseswithplaylevelX									0
+wallofthecrusader	1035			1	11																																															0
+item_extramag_perlevel	1036			1	16											200	50				12	100			2	3	level	passive_mag2_mastery										88	19		ModitemdamMagsk	ModitemdamMagsk	increaseswithplaylevelX									0
+item_piercefire_perlevel	1037			1	16											400	100				12	100			2	3	level	passive_fire_pierce										88	19		Moditemenresfiresk	Moditemenresfiresk	increaseswithplaylevelX									0
+item_piercecold_perlevel	1038			1	16											400	100				12	100			2	3	level	passive_cold_pierce										88	19		Moditemenresltngsk	Moditemenresltngsk	increaseswithplaylevelX									0
+item_pierceltng_perlevel	1039			1	16											400	100				12	100			2	3	level	passive_ltng_pierce										88	19		Moditemenrescoldsk	Moditemenrescoldsk	increaseswithplaylevelX									0
+arthurcrown	1040			1	10																																															0
+jewel_effect	1041			1	16																16	1000																55	19		jeweleffect	jeweleffect									2	0
+item_fasterattackrate_perlevel	1042			1	16											33	17				12	100			2	3	level	item_fasterattackrate										145	19		ModStr4m	ModStr4m	increaseswithplaylevelX									0
+item_absorb_ltng_perlevel	1043			1	16											84	33				12	100			2	3	level	item_absorblight										145	19		ModStr5j	ModStr5j	increaseswithplaylevelX									0
+jewel_effect_current_item	1044			1	16																16	1000																55	19		jeweleffectcurrentitem	jeweleffectcurrentitem										0
+crushingblow_damage	1045			1	10																16	1000																87	19		crushingblowdamage	crushingblowdamage									2	0
+rune_effect_current_item	1046			1	16																16	1000																55	19		runeeffectcurrentitem	runeeffectcurrentitem										0
+gem_effect_current_item	1047			1	16																16	1000																55	19		gemeffectcurrentitem	gemeffectcurrentitem										0
+item_damage_demon_perlevel	1048			1	12																16	1000			2	3	level	item_demondamage_percent										111	19		ModStr4e	ModStr4e	increaseswithplaylevelX								2	0
+item_maxmana_percent_perlevel	1049			1	12																16	1000			2	3	level	item_maxmana_percent										54	19		ModStr2h	ModStr2h	increaseswithplaylevelX								2	0
+sequence_skill_id	1050			1	14																																															0
+agentofthelight	1051			1	10																																															0
+item_piercedmg_perlevel	1052			1	16											400	100				12	100			2	3	level	passive_dmg_pierce										88	19		ModStrDamPierce	ModStrDamPierce	increaseswithplaylevelX									0
+item_maxdamage_percent6	1053	Use this for penalties only		1	11																10	123			11			maxdamage	secondary_maxdamage	item_throw_maxdamage			1																			0
+item_mindamage_percent6	1054	Use this for penalties only		1	11																10	123			11			mindamage	secondary_mindamage	item_throw_mindamage			1																			0
+rune_effect_current_item_perlevel	1055			1	16											400	100				12	100			4	3	level	rune_effect_current_item										55	19		runeeffectcurrentitem	runeeffectcurrentitem	increaseswithplaylevelX									0
+item_maxhp_percent_perlevel	1056			1	16											100	12				12	100			2	3	level	item_maxhp_percent										58	19		ModStr2g	ModStr2g	increaseswithplaylevelX									0

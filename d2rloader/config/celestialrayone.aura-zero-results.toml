@@ -1,0 +1,118 @@
+# celestialrayone.aura-zero-results
+#
+# Aura Zero Results
+#   An aura formula that returns 0 now removes its stat. Without this plugin a
+#   0 is never written, so the stat keeps the last nonzero value it had for as
+#   long as the aura runs.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+#
+# Console command "aurazeroresults" shows what is installed and counts what
+# the plugin did.
+#
+# Compatibility
+#   Another plugin or memory patch that changes the aura callback (RVA
+#   0x5616F0) or the srvdofunc 65 passive stat loop makes the byte checks for
+#   that part fail. That part then stays off, and the plugin log and the
+#   console command name the byte and who changed it.
+#   ESR's passivestat-zero-mana-gate.json memory patch changes srvdofunc 65
+#   bytes this plugin does not check, so the two work together.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# aura_stats
+#
+# The problem
+#   An aura keeps one stat list per state on each unit and reuses it every
+#   tick. The game writes a result into that list only when the result is not
+#   0. With
+#       aurastatcalc1 = (stat('somestat'.accr)>0)?100:0
+#   the stat gets 100 the first time the condition holds, then stays at 100
+#   until the aura ends, even after the condition stops holding. A result that
+#   the immune-monster resistance rule (negative resist divided by 5) rounds
+#   down to 0 sticks the same way.
+#
+# What changes
+#   A 0 result is written the way the game writes any other change: the stat
+#   is removed from the state's list, the unit's totals update right away and
+#   the client is told about the state. A slot that is already 0 costs one
+#   lookup and writes nothing.
+#
+# Skills covered
+#   Everything the game applies through its shared aura callback:
+#     srvdofunc 65         aurastat/aurastatcalc, on the caster and on targets
+#     srvdofunc 66 and 81  passivestat/passivecalc on the caster,
+#                          aurastat/aurastatcalc on targets
+#     srvdofunc 82         passivestat/passivecalc on the caster
+#
+# Left as they are
+#   item_poisonlengthresist (Cleansing style). A 0 still does nothing there.
+#     Passing it on would end every poison and curse on the unit at once.
+#   Stats with "direct" set in itemstatcost.txt (life, mana and stamina style
+#     heals). They are added to the unit each tick rather than kept on the
+#     state, so a 0 has nothing to remove.
+#   Mana. A 0 result does not count as the aura doing something, so an aura
+#     whose results are all 0 still costs no mana that tick.
+#   srvdofunc 65 when a player cannot pay the aura's mana cost: the game skips
+#     the whole stat block then, and the last values stay, as before.
+#
+# Behavior notes
+#   A 0 now removes the stat instead of holding the last value. A formula that
+#     relied on holding, on purpose or through integer division reaching 0,
+#     behaves differently.
+#   srvdofunc 66, 81 and 82 fill their caster stat ids even when a player
+#     cannot pay the mana cost, and leave the results at 0. Those caster stats
+#     are now removed while the player is out of mana instead of keeping their
+#     old values. Only matters for such rows with a mana cost.
+#   Two casters of the same aura at the same level share one stat list on a
+#     target, and whichever ticks last sets the value. A caster whose formula
+#     gives 0 now sets 0 there, like any other value.
+# -----------------------------------------------------------------------------
+aura_stats = true
+
+# -----------------------------------------------------------------------------
+# strength_aura_stats
+#
+# The problem
+#   The aura callback skips every stat id of 0 or below, so strength
+#   (itemstatcost id 0) never applies as an aurastat, even though the skill
+#   row collects it.
+#
+# What changes
+#   Only ids below 0 (an empty column) are skipped, so strength applies like
+#   any other aura stat. Same 1 byte change as the 2.4 patch at 383FB2.
+#
+# Notes
+#   Replaces the basic-aura-stat-id-0.json memory patch: delete that file.
+#   While it is still in the patches folder the plugin finds the byte already
+#   changed and leaves it to that patch.
+#   Works with or without aura_stats.
+# -----------------------------------------------------------------------------
+strength_aura_stats = true
+
+# -----------------------------------------------------------------------------
+# passive_stats
+#
+# The problem
+#   srvdofunc 65 writes passivestat/passivecalc results onto the caster's aura
+#   state with the same rule: a 0 is never written, so the stat keeps its last
+#   nonzero value.
+#
+# What changes
+#   A 0 result removes the stat from the caster's aura state. A stat that is
+#   not on the state is left alone.
+#
+# Left as they are
+#   The game runs this block only while the caster has more mana than the
+#   aura costs and the skill has no passivestate. Outside that nothing is
+#   written at all, and the last values stay, as before.
+# -----------------------------------------------------------------------------
+passive_stats = true
+
+# Writes the first 64 changes (stat, old and new value, state, unit) to the
+# plugin log. Off for normal play.
+diagnostics = false

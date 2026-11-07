@@ -31,7 +31,7 @@ monster = 50
 champion = 50
 
 # Random yellow-name pack leaders. Vanilla treats them as ordinary monsters.
-# 50 -> 12.5 % of current life.
+# 25 -> 6.25 % of current life.
 unique = 25
 
 # Named boss monsters such as Rakanishu, Pindleskin or The Countess.
@@ -59,6 +59,22 @@ player = 50
 # melee result against the same target. Vanilla halves it, which is 50. Set
 # 100 to make ranged Crushing Blow as strong as melee.
 ranged = 100
+
+[effectiveness]
+# An itemstatcost.txt stat that makes Crushing Blow stronger against every
+# target class at once. Its value is a percent increase on top of [targets]
+# and [attack]: at 25, every share above is multiplied by 1.25, so a monster
+# at 50 goes from 12.5 % to 15.6 % of current life, and an act boss at 16
+# goes from 2 % to 2.5 %. Negative values weaken it the same way, and at -100
+# or lower the attacker's Crushing Blow does nothing.
+#
+# The value is read from the unit that landed the Crushing Blow, the way
+# stat('...'.accr) reads it: gear, charms, skills and states all count. A
+# summon or a hireling uses its own value, not its owner's. Ranged Crushing
+# Blow counts too, because the game credits a missile's hit to its shooter.
+#
+# The itemstatcost.txt row of the stat, 0 to 32767. -1 leaves it off.
+stat_id = 1045
 
 # Behaviour that is deliberately left native:
 #   - The /players setting still divides Crushing Blow further against

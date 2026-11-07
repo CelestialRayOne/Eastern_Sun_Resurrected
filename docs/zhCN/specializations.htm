@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh">
+    <head>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4320295333912588"
+     		crossorigin="anonymous"></script>
+		<meta name="google-adsense-account" content="ca-pub-4320295333912588">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YFKD8ZR9BX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YFKD8ZR9BX');
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://d2esrdb.github.io">
+        <meta property="og:title" content="Eastern Sun Resurrected Database">
+        <meta property="og:description" content="Database for Eastern Sun Resurrected with tons of info, like uniques, sets, runewords, runes, gems, maps, etc...">
+        <title>
+            Eastern Sun Resurrected 资料库
+        </title>
+	<link href="../styles.css" rel="stylesheet" type="text/css">
+	<link rel="icon" href="../esricon.png" type="image/png">
+        <style>
+            /* Global cell padding for the whole documentation. Overrides the
+               per-table cellpadding attribute for every <td>. */
+            td { padding: 15px; }
+        </style>
+    </head>
+    <body vlink="#706850" text="#D6D6D6" link="#928A70" bgcolor="#000000"
+        style="padding: 0; padding-left: 170px; padding-right: 170px;">
+        <nav style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-right: 1px solid #5a2000;
+            box-shadow: inset -2px 0 8px rgba(0,0,0,0.8), 2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="padding: 10px 8px 0 8px;"><div class="esr-lang" style="font-family:'Palatino Linotype',Palatino,serif" title="&#35821;&#35328;"><select id="esr-lang-zhCN" aria-label="&#35821;&#35328;" style="background:#1a0a00;color:#c8860a;border:1px solid #5a2000;border-radius:2px;padding:4px 6px;font-size:12px;width:100%;max-width:220px"><option value="enUS">English</option><option value="zhTW">&#32321;&#39636;&#20013;&#25991;</option><option value="deDE">Deutsch</option><option value="esES">Espa&#241;ol (Espa&#241;a)</option><option value="frFR">Fran&#231;ais</option><option value="itIT">Italiano</option><option value="koKR">&#54620;&#44397;&#50612;</option><option value="plPL">Polski</option><option value="esMX">Espa&#241;ol (Latinoam&#233;rica)</option><option value="jaJP">&#26085;&#26412;&#35486;</option><option value="ptBR">Portugu&#234;s (Brasil)</option><option value="ruRU">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</option><option value="zhCN" selected>&#31616;&#20307;&#20013;&#25991;</option></select></div><script>(function(){var cur="zhCN",key="esr-doc-lang",langs=["enUS", "zhTW", "deDE", "esES", "frFR", "itIT", "koKR", "plPL", "esMX", "jaJP", "ptBR", "ruRU", "zhCN"],sel=document.getElementById('esr-lang-zhCN');var file=decodeURIComponent(location.pathname.split('/').pop())||'index.html';function url(l){return (cur==='enUS'?'':'../')+(l==='enUS'?'':l+'/')+encodeURIComponent(file)+location.search+location.hash;}try{var want=localStorage.getItem(key);if(want&&want!==cur&&langs.indexOf(want)>=0){location.replace(url(want));return;}}catch(e){}sel.onchange=function(){try{localStorage.setItem(key,sel.value);}catch(e){}location.href=url(sel.value);};})();</script></div>
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">基本信息</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">护甲</a>
+                <a href="./weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">武器</a>
+                <a href="./prefixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">前缀</a>
+                <a href="./suffixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">后缀</a>
+                <a href="./quality_affixes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">品质词缀</a>
+                <a href="./unique_armors.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">暗金护甲</a>
+                <a href="./unique_weapons.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">暗金武器</a>
+                <a href="./unique_others.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">其他暗金</a>
+                <a href="./unique_mythicals.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">神话暗金</a>
+                <a href="./sets.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">套装</a>
+                <a href="./gems.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">宝石/符文</a>
+                <a href="./gemwords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">宝石之语</a>
+                <a href="./runewords.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">符文之语</a>
+                <a href="./Eastern Sun Resurrected Cube Recipes.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">魔盒配方</a>
+                <a href="./Eastern Sun Resurrected Maps.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">地图</a>
+                <a href="./ias-calculator.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">攻速计算器</a>
+                <a href="./drop-finder.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">掉落查询</a>
+            </div>
+        </nav>
+        <nav style="
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 160px;
+            height: 100vh;
+            background: linear-gradient(180deg, #1a0a00 0%, #0d0500 40%, #0a0300 100%);
+            border-left: 1px solid #5a2000;
+            box-shadow: inset 2px 0 8px rgba(0,0,0,0.8), -2px 0 12px rgba(0,0,0,0.6);
+            z-index: 1000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #5a2000 #0d0500;
+            font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+        ">
+            <div style="
+                padding: 14px 8px 6px 8px;
+                text-align: center;
+                border-bottom: 1px solid #5a2000;
+                margin-bottom: 6px;
+                background: linear-gradient(180deg, #2a0e00 0%, #1a0800 100%);
+            ">
+                <span style="
+                    display: block;
+                    color: #c8860a;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    text-shadow: 0 0 8px rgba(200,134,10,0.5), 0 1px 2px #000;
+                ">特色系统</span>
+            </div>
+            <div style="display: flex; flex-direction: column; padding: 4px 6px 12px 6px; gap: 1px;">
+                <a href="./special_crafting_outcomes.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">特殊制作结果</a>
+                <a href="./endgame_maps.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">终局地图</a>
+                <a href="./vessel_of_souls.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">灵魂容器</a>
+                <a href="./ascendancies.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">进阶职业</a>
+                <a href="./kill_ledger.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">击杀账簿</a>
+                <a href="./skill_information.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">佣兵与外部技能信息</a>
+                <a href="./weapon_mastery.html" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">武器专精</a>
+                <a href="./specializations.htm" style="color:#a07040;text-decoration:none;font-size:12px;padding:4px 6px;display:block;border-radius:2px;text-align:center;" onmouseover="this.style.color='#e8a040';this.style.background='rgba(90,32,0,0.4)'" onmouseout="this.style.color='#a07040';this.style.background='transparent'">专精</a>
+            </div>
+        </nav>
+
+        <center>
+            <div style="text-align:center; padding:10px 0 9px 0; position:relative; overflow:hidden; margin:0 -170px 6px -170px; background:radial-gradient(ellipse 60% 110% at 50% 118%, rgba(255,120,20,0.26) 0%, rgba(0,0,0,0) 70%), linear-gradient(180deg, #0a0603 0%, #170c05 100%); border-top:1px solid #3a1e0a; border-bottom:1px solid #3a1e0a; box-shadow:inset 0 0 40px rgba(120,40,0,0.25);">
+                <h1 style="margin:0; font-family:'Palatino Linotype',Palatino,'Book Antiqua',serif; font-size:30px; font-weight:700; letter-spacing:4px; line-height:1.05; background:linear-gradient(180deg, #ffd9a0 0%, #ff9836 42%, #cf5714 78%, #862b06 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">Eastern Sun Resurrected</h1>
+                <div style="margin-top:5px; font-size:10px; letter-spacing:6px; text-transform:uppercase; color:#94531f; font-family:arial,helvetica; padding-top:5px; border-top:1px solid rgba(150,70,20,0.3); display:inline-block; padding-left:40px; padding-right:40px;">暗黑破坏神 II：狱火重生 全面转换模组</div>
+            </div>                
+                                <div style="width:100%;">
+
+<style>
+    .spw-wrap { margin: 24px 0 250px 0; }
+    .spw { position: relative; width: 639.5px; height: 720px; margin: 0 auto; text-align: center;
+        font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif; color: #ebebeb;
+        background-color: #121110; background-image: url(".././images/specializations/background.jpg");
+        background-size: 639.5px 720px; background-repeat: no-repeat; }
+    .spw-radio { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
+    .spw-title { position: absolute; left: 47.5px; top: 28px; width: 544.5px;
+        height: 35.5px; line-height: 35.5px; font-size: 23px; letter-spacing: 2px;
+        text-transform: uppercase; color: #e2ba68; text-shadow: 1px 1px 2px #000; }
+    .spw-tab { position: absolute; top: 75px; width: 140px; height: 42px;
+        line-height: 39px; box-sizing: border-box; cursor: pointer; white-space: nowrap; overflow: hidden;
+        font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; color: #dec896; text-shadow: 1px 1px 1px #000;
+        border: 1.5px solid rgb(118, 92, 56); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.78);
+        background-color: rgb(39, 37, 35); background-image: linear-gradient(to bottom, rgb(52, 50, 47), rgb(26, 25, 23)); }
+    .spw-tab:hover { border-color: rgb(152, 120, 74); background-image: linear-gradient(to bottom, rgb(70, 66, 60), rgb(34, 32, 29)); }
+    .spw-points { position: absolute; left: 170px; top: 654.5px; width: 300px;
+        height: 29px; box-sizing: border-box; padding: 0 6px; overflow: hidden;
+        color: #dec896; text-shadow: 1px 1px 1px #000; }
+    .spw-page { display: none; }
+    #spw-tab1:checked ~ .spw-page1 { display: block; }
+    #spw-tab1:checked ~ .spw-tab1 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-alchemist { background-image: url(".././images/specializations/alchemist.png"); }
+    #spw-tab2:checked ~ .spw-page2 { display: block; }
+    #spw-tab2:checked ~ .spw-tab2 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-blacksmith { background-image: url(".././images/specializations/blacksmith.png"); }
+    #spw-tab3:checked ~ .spw-page3 { display: block; }
+    #spw-tab3:checked ~ .spw-tab3 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-jeweler { background-image: url(".././images/specializations/jeweler.png"); }
+    #spw-tab4:checked ~ .spw-page4 { display: block; }
+    #spw-tab4:checked ~ .spw-tab4 { border-color: rgb(236, 196, 112);
+        box-shadow: inset 0 0 0 1px rgba(236, 196, 112, 0.45), inset 0 0 6px rgba(236, 196, 112, 0.3); }
+    .spw-icon-archaeologist { background-image: url(".././images/specializations/archaeologist.png"); }
+    .spw-perk { position: absolute; width: 66px; height: 65px; }
+    .spw-perk:hover { z-index: 20; }
+    .spw-socket { position: absolute; left: -11px; top: -11.5px; width: 88px; height: 88px;
+        background-image: url(".././images/specializations/socket.png"); background-size: 88px 88px;
+        background-repeat: no-repeat; pointer-events: none; }
+    .spw-icon { position: absolute; left: 0; top: 0; width: 66px; height: 65px;
+        background-repeat: no-repeat; background-size: 990px 65px; }
+    .spw-tip { display: none; position: absolute; width: 360px; box-sizing: border-box; padding: 0 12px 11px 12px;
+        background: rgba(10, 9, 8, 0.93); border: 1px solid rgb(118, 92, 56); z-index: 30; pointer-events: none; }
+    .spw-tip:before { content: ""; position: absolute; left: 1.5px; top: 1.5px; right: 1.5px; bottom: 1.5px;
+        border: 1px solid rgba(0, 0, 0, 0.86); }
+    .spw-perk:hover .spw-tip { display: block; }
+    .spw-tip-title { position: relative; min-height: 28px; margin-top: 6px; padding-bottom: 3px; margin-bottom: 6px;
+        border-bottom: 1px solid rgba(118, 92, 56, 0.6); font-size: 22px; line-height: 28px; color: #e8c470;
+        text-shadow: 1px 1px 1px #000; }
+    .spw-tip-text { position: relative; font-size: 19px; line-height: 21px; color: #ebebeb; }
+    .spw-tip-hint { position: relative; margin-top: 21px; font-size: 19px; line-height: 21px; color: #8c8c8c; }
+    .spw-tip-text:lang(zh), .spw-tip-hint:lang(zh), .spw-tip-text:lang(ja), .spw-tip-hint:lang(ja),
+    .spw-tip-text:lang(ko), .spw-tip-hint:lang(ko) { font-size: 16px; }
+</style>
+<table width="100%" style="max-width:1200px;" cellpadding="5" border="0">
+    <tbody>
+        <tr>
+            <td colspan="2" align="center" bgcolor="#300000">
+                <font face="arial,helvetica" size="-1">
+                    神秘碎片会从终局区域中的强大怪物身上掉落。<br>
+                    将10个神秘碎片转化，即可制作神秘超立方体，它会解锁专精并给予一点专精点数。<br>
+                    在等级 45、60、75 和 90 时会自动解锁更多点数。<br>
+                    若你的角色已超过这些等级，神秘超立方体会按你的等级给予点数（例如在等级 63 使用时会获得 3 点）。<br>
+                    <br>
+                    共有 4 种专精：<br>
+                    <font color="orange">炼金术士</font> - 专精于药水。<br>
+                    <font color="orange">铁匠</font> - 专精于武器与护甲。<br>
+                    <font color="orange">珠宝匠</font> - 专精于饰品、宝石与珠宝。<br>
+                    <font color="orange">考古学家</font> - 专精于掉落、兑换券、符文与特殊神器。<br>
+                    <br>
+                    每个专精有 15 个天赋，每排 3 个。每排可从 3 个天赋中选择 1 个。<br>
+                    你最多可拥有 5 点。<br>
+                    按住 Shift 点击天赋即可单独重置该天赋。这需要 5 点重置点数（相当于 20 块龙石）。<br>
+                    若想更换专精，需要先重置旧专精中的所有天赋，之后就能选择新的专精。<br>
+                </font>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="spw-wrap">
+    <div class="spw">
+        <input type="radio" name="spw-tab" id="spw-tab1" class="spw-radio" checked>
+        <input type="radio" name="spw-tab" id="spw-tab2" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab3" class="spw-radio">
+        <input type="radio" name="spw-tab" id="spw-tab4" class="spw-radio">
+        <div class="spw-title">专精</div>
+        <label for="spw-tab1" class="spw-tab spw-tab1" style="left:32px;">炼金术士</label>
+        <label for="spw-tab2" class="spw-tab spw-tab2" style="left:177px;">铁匠</label>
+        <label for="spw-tab3" class="spw-tab spw-tab3" style="left:322px;">珠宝匠</label>
+        <label for="spw-tab4" class="spw-tab spw-tab4" style="left:467px;">考古学家</label>
+        <div class="spw-points" style="font-size:15px;line-height:29px;white-space:nowrap;">将鼠标悬停在天赋上以查看其效果。</div>
+        <div class="spw-page spw-page1">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">高效药剂</div>
+                    <div class="spw-tip-text">治疗和法力药水的效果提高20%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">易挥发调剂</div>
+                    <div class="spw-tip-text">辅助药水的效果提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">嬗变</div>
+                    <div class="spw-tip-text">治疗和法力药水有50%的几率改为以回复药水的形式掉落。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">隐藏的灵药</div>
+                    <div class="spw-tip-text">你可以找到通常不会掉落的辅助药水。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">不稳定的混合物</div>
+                    <div class="spw-tip-text">回复药水有15%的几率改为以随机辅助药水的形式掉落。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">丰盛佳酿</div>
+                    <div class="spw-tip-text">掉落的药水数量提高50%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">祝福药瓶</div>
+                    <div class="spw-tip-text">治疗药水为你提供5%的总伤害减免，法力药水使你免疫法力燃烧效果。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">宝石灌注</div>
+                    <div class="spw-tip-text">将一颗完美宝石与一块随机石合成，即可制作一瓶随机辅助药水。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">复合协同</div>
+                    <div class="spw-tip-text">你身上每有一种不同的药水效果生效，所有药水的效果提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">精明灵药</div>
+                    <div class="spw-tip-text">你有25%的几率获得辅助药水的效果而不消耗它。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">无尽药瓶</div>
+                    <div class="spw-tip-text">生命或法力已满时，治疗和法力药水的效果不再结束。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">炼金卓越</div>
+                    <div class="spw-tip-text">掉落或你制作的辅助药水有25%的几率改为成为更高级的变体。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">转生灵药</div>
+                    <div class="spw-tip-text">将5块龙石合成，即可制作转生灵药。受到致命伤害时，它会使你的生命和法力完全恢复，并使你获得1秒无敌。冷却时间：300秒。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">无底药瓶</div>
+                    <div class="spw-tip-text">治疗和法力药水的效果提高50%。治疗和法力药水在使用时不再被消耗。所有回复药水都会完全治愈你。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-alchemist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">机缘巧合</div>
+                    <div class="spw-tip-text">你的辅助药水有15%的几率为你提供一个随机神殿的效果。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page2">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">淬火钢</div>
+                    <div class="spw-tip-text">使你的武器的物理、元素与法术伤害属性提高10%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">秘银编织</div>
+                    <div class="spw-tip-text">你的装备的基础防御提高10%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">轻若无物</div>
+                    <div class="spw-tip-text">武器和护甲的总属性需求降低25%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">幽灵军械库</div>
+                    <div class="spw-tip-text">武器以无形状态掉落的几率翻倍。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">祝福装备</div>
+                    <div class="spw-tip-text">武器和护甲有10%的几率以高一阶的形式掉落。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">遗物猎人</div>
+                    <div class="spw-tip-text">找到暗金武器和护甲的总几率提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">抄写员的祝福</div>
+                    <div class="spw-tip-text">魔法、稀有与锻造武器和护甲有25%的几率获得一条额外属性。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">无视痛苦</div>
+                    <div class="spw-tip-text">每件已装备的护甲每有一点耐久度，获得1%的额外基础防御。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">心头之好</div>
+                    <div class="spw-tip-text">你已装备武器上所有属性的数值提高10%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">无形精通</div>
+                    <div class="spw-tip-text">已装备的无形武器获得25%的额外基础物理伤害，并且在你装备无形武器时，你获得10%的额外总法术伤害。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">坚不可摧</div>
+                    <div class="spw-tip-text">已装备的装备不再损失耐久度，并且你的所有装备每有25点耐久度，你获得1%的总伤害。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">完美平衡</div>
+                    <div class="spw-tip-text">近战武器的攻击距离增加3，投射物速度提高25%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">真正的大师</div>
+                    <div class="spw-tip-text">你可以对任何武器类型使用武器精通代币。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">秘密坩埚</div>
+                    <div class="spw-tip-text">你可以再锻造一次你的武器和护甲。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-blacksmith" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">道貌岸然</div>
+                    <div class="spw-tip-text">你可以再祝福一次你的武器和护甲。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page3">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">奥术灌注</div>
+                    <div class="spw-tip-text">你的护身符属性的效果提高10%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">力量之戒</div>
+                    <div class="spw-tip-text">你的戒指属性的效果提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">增幅</div>
+                    <div class="spw-tip-text">镶嵌的珠宝和宝石的效果提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">丰盛珠宝</div>
+                    <div class="spw-tip-text">掉落的戒指、护身符和珠宝数量提高15%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">钻石之雨</div>
+                    <div class="spw-tip-text">掉落的宝石数量提高25%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">秘密口袋</div>
+                    <div class="spw-tip-text">找到暗金戒指、护身符和珠宝的总几率提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">潜藏之力</div>
+                    <div class="spw-tip-text">魔法、稀有与手工戒指和护身符有25%的几率获得一条额外属性。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">璀璨品质</div>
+                    <div class="spw-tip-text">掉落或打造的珠宝有15%的几率使其中一条属性的数值翻倍。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">棱镜共鸣</div>
+                    <div class="spw-tip-text">你每镶嵌一颗不同颜色的宝石，宝石的效果提高6%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">共鸣指环</div>
+                    <div class="spw-tip-text">你的魔法戒指和护身符的属性效果提高25%，稀有戒指和护身符的属性效果提高15%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">传家宝抛光</div>
+                    <div class="spw-tip-text">暗金戒指和护身符的属性效果提高10%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">宝石匠的精准</div>
+                    <div class="spw-tip-text">同一装备上每镶嵌一颗相同的宝石，宝石效果提高6%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">原初宝石</div>
+                    <div class="spw-tip-text">每个珠宝在镶嵌时都会获得其显示的完美宝石的随机属性。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">完美形态</div>
+                    <div class="spw-tip-text">你可以通过秘密配方镶嵌暗金小型咒符和特大咒符，而不会使它们变成更大的版本。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-jeweler" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">稳固钳子</div>
+                    <div class="spw-tip-text">你可以拆下宝石之语而不会摧毁其中的宝石。宝石之语的效果提高20%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+        </div>
+        <div class="spw-page spw-page4">
+            <div class="spw-perk" style="left:136.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:0px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">掠夺者之速</div>
+                    <div class="spw-tip-text">你在过去15秒内每打开一个容器，获得5%的总伤害加成。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-66px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">敏锐鉴定</div>
+                    <div class="spw-tip-text">低质量和普通质量的物品有25%的几率改为以优越品质掉落。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:153.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-132px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">符文洞察</div>
+                    <div class="spw-tip-text">镶嵌的符文的效果提高5%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-198px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">深口袋</div>
+                    <div class="spw-tip-text">掉落的物品数量提高10%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-264px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">淘金者</div>
+                    <div class="spw-tip-text">你找到的金币总量提高20%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:256px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-330px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">第三只眼</div>
+                    <div class="spw-tip-text">所有物品掉落时都已鉴定。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-396px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">隐藏凹槽</div>
+                    <div class="spw-tip-text">所有可装备物品有50%的几率掉落时至少带有1个凹槽。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-462px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">一人之废</div>
+                    <div class="spw-tip-text">魔法护甲和武器会以其出售价值的金币形式掉落。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:358.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-528px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">无形交换</div>
+                    <div class="spw-tip-text">通过优惠券创造的物品有5%的几率变为无形。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-594px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">远古发现</div>
+                    <div class="spw-tip-text">神话暗金物品的掉落几率提高25%。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-660px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">收藏家版</div>
+                    <div class="spw-tip-text">普通优惠券有25%的几率升级为扩展，扩展优惠券有15%的几率升级为精华。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:461px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-726px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">纯净成形</div>
+                    <div class="spw-tip-text">碎裂与瑕疵的水晶有2%的几率升级为普通等级。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:136.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-792px 0;"></div>
+                <div class="spw-tip" style="left:-111.5px;top:79.5px;">
+                    <div class="spw-tip-title">压倒性力量</div>
+                    <div class="spw-tip-text">你可以在魔法物品中制作符文之语。你可以像普通稀有度的物品一样为魔法武器和防具打孔。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:286.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-858px 0;"></div>
+                <div class="spw-tip" style="left:-147px;top:79.5px;">
+                    <div class="spw-tip-title">大规模挖掘</div>
+                    <div class="spw-tip-text">你获得大规模挖掘技能，可以搜索附近的尸体以获得额外的物品。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+            <div class="spw-perk" style="left:436.5px;top:563.5px;">
+                <div class="spw-socket"></div>
+                <div class="spw-icon spw-icon-archaeologist" style="background-position:-924px 0;"></div>
+                <div class="spw-tip" style="left:-182px;top:79.5px;">
+                    <div class="spw-tip-title">异界神器</div>
+                    <div class="spw-tip-text">你杀死的每个稀有怪物与首领有2%的几率掉落一件非常强大的远古神器。</div>
+                    <div class="spw-tip-hint">Shift + 点击以遗忘。消耗5点重置点数。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+            </a>
+        </center>
+    </body>
+</html>

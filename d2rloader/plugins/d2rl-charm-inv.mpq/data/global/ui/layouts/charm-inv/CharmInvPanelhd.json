@@ -3,37 +3,37 @@
     "name": "charm-inv/CharmInvPanel",
     "fields": {
         "priority": 10,
-        "rect": "$LeftPanelRect",
+        "rect": {
+            "x": 0,
+            "y": -856,
+            "width": 1162,
+            "height": 1737
+        },
         "anchor": "$LeftPanelAnchor"
     },
     "children": [
         {
             "type": "ClickCatcherWidget",
-            "name": "charm-inv/LeftClickCatcher",
-            "fields": {
-                "rect": { "x": -236, "y": -205, "width": 740, "height": 2160 }
-            }
-        },
-        {
-            "type": "ImageWidget",
-            "name": "charm-inv/LeftBorderImage",
-            "fields": {
-                "rect": "$LeftSideRectImbuePanel",
-                "filename": "$LeftSideSprite"
-            }
-        },
-        {
-            "type": "ClickCatcherWidget",
             "name": "charm-inv/PanelClickCatcher",
             "fields": {
-                "rect": "$PanelClickCatcherRect"
+                "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1162,
+                    "height": 1737
+                }
             }
         },
         {
             "type": "ImageWidget",
             "name": "charm-inv/Background",
             "fields": {
-                "rect": { "x": 0, "y": 0, "width": 1162, "height": 1507 },
+                "rect": {
+                    "x": 0,
+                    "y": 0,
+                    "width": 1162,
+                    "height": 1737
+                },
                 "filename": "d2rloader/charm-inv/charminv_bg"
             }
         },
@@ -42,22 +42,19 @@
             "name": "charm-inv/LeftHinge",
             "fields": {
                 "rect": "$LeftHingeRect",
-                "filename": "$LeftHingeSprite"
+                "filename": "$LeftHingeSprite_Blank"
             }
         },
-                        {
-            "type": "ImageWidget", "name": "background",
-            "fields": {
-                        "rect": { "x": -235, "y": -205 },
-                        "filename": "PANEL\\docking_bar\\sidepanelleftorg"
-                    }
-
-            },
         {
             "type": "TextBoxWidget",
             "name": "charm-inv/Title",
             "fields": {
-                "rect": "$InGamePanelTitleRect",
+                "rect": {
+                    "x": 93,
+                    "y": 84,
+                    "width": 972,
+                    "height": 71
+                },
                 "style": "$StyleTitleBlock",
                 "text": "@charm-inv:CharmInvPanelTitle"
             }
@@ -66,7 +63,10 @@
             "type": "ButtonWidget",
             "name": "charm-inv/CloseButton",
             "fields": {
-                "rect": { "x": 1075, "y": 9 },
+                "rect": {
+                    "x": 1080,
+                    "y": 1
+                },
                 "filename": "PANEL\\closebtn_4x",
                 "hoveredFrame": 3,
                 "tooltipString": "@d2r:strClose",
@@ -78,8 +78,14 @@
             "type": "InventoryGridWidget",
             "name": "charm-inv/InventoryGrid",
             "fields": {
-                "rect": { "x": 189, "y": 643 },
-                "cellCount": { "x": 8, "y": 8 },
+                "rect": {
+                    "x": 189,
+                    "y": 778
+                },
+                "cellCount": {
+                    "x": 8,
+                    "y": 8
+                },
                 "cellSize": "$ItemCellSize",
                 "gemSocketFilename": "PANEL\\gemsocket"
             }

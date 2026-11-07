@@ -1,0 +1,74 @@
+# celestialrayone.move-only-skill
+#
+# Move Only Skill
+#   A skill that makes the mouse button it sits on move only. With it on the
+#   left button, a left click never casts anything: it walks or runs, talks to
+#   NPCs, picks up items and uses objects, portals and waypoints, the same way
+#   a click with no skill does.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+#
+# What a click does with the skill on the button
+#   ground                     walk or run there; holding the button keeps
+#                              moving toward the cursor
+#   monster                    walk or run toward it
+#   NPC                        talk
+#   item                       pick up
+#   object, portal, waypoint   use
+#   Shift + click              nothing
+#   Walk or run follows the game's run setting, as for any move. Clicks with
+#   any other skill are unchanged.
+#
+# Data the skill needs
+#   skills.txt     a row of its own with no charclass:
+#                    leftskill 1, rightskill 0   left mouse button only. On the
+#                                                right button a ground click
+#                                                would do nothing.
+#                    InGame 1                    otherwise the game treats the
+#                                                skill as unusable
+#                    InTown 1                    otherwise Shift + click in town
+#                                                is refused, with the refusal
+#                                                sound, before the plugin sees it
+#                    aura 0, passive 0
+#                    no srvstfunc, srvdofunc, cltstfunc, cltdofunc, missiles or
+#                    mana, anim SC. The plugin keeps every mouse click from
+#                    casting the skill; if anything else ever performs it, it
+#                    only plays the animation.
+#   skilldesc.txt  a row for its name and icon, as Kick and Throw have.
+#   charstats.txt  the skill's name in a free Skill 1 to Skill 10 column of
+#                  every class row.
+#
+#   Each time a character enters a game, the game gives it every charstats
+#   Skill 1 to Skill 10 skill; the save file does not store them. Existing
+#   characters therefore get the skill the next time they enter a game, new
+#   characters when they are created.
+#
+#   When the skill is found, the log names its skill id and warns about any of
+#   the skills.txt values above that would get in the way.
+#
+# Multiplayer
+#   Client plugin. Every player needs it for their own clicks. The host needs
+#   nothing, and it is not recorded with saved characters.
+#
+# Compatibility
+#   Works alongside Left Click Auras and Whirlwind Follow Cursor; none of them
+#   change the game code this plugin changes.
+#   Mouse clicks only. Controller presses were not examined.
+#
+# Console command
+#   moveonlyskill   what is installed, the skill id the name resolved to, and
+#                   how many clicks were handled.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# The skills.txt "skill" column of the move only skill, the same name that goes
+# into charstats.txt. Case does not matter. The name is looked up after the
+# data tables load, so moving the row needs no change here.
+skill = "Move Only"
+
+# Writes a log line for the first 32 clicks handled as move only. Keep false
+# for normal play.
+diagnostics = false

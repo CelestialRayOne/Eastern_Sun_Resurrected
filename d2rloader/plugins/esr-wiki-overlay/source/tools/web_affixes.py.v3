@@ -1,0 +1,185 @@
+#!/usr/bin/env python3
+"""Item Affixes page built from the prefixes, suffixes and quality pages of the ESR website.
+
+    python web_affixes.py <prefixes.htm> <suffixes.htm> <quality_affixes.htm> <wiki-data.txt>
+
+Reads https://easternsunresurrected.com/prefixes.htm, suffixes.htm and quality_affixes.htm and replaces the
+"item-affixes" page of wiki-data.txt (added after "item-bases" when the file has none) with a page built from them.
+Standard library only. Anything that goes wrong leaves wiki-data.txt untouched and exits 1.
+
+How the pages are read (the C++ twin is src/web_affixes_live.cpp; change both together):
+  * each page is a run of tables; a table starts with a one-cell row holding the item type's name (Amazon Bow, Helm,
+    General, ...) and a row of column labels. Name and Stats are shown in blue, as on the website.
+  * the "Keys" tables list "code = Name" for the item type codes used in the General tables; together they become the
+    page's last entry, "Item Type Keys"
+  * a type that appears twice on a page (the charms and the jewel are listed twice) is taken once
+  * the page has three entries, Armor, Weapons and Other (General, jewelry, charms, quivers, anything not listed in
+    ARMOR or WEAPONS); each holds one block per item type and kind, the types in alphabetical order (General first). A
+    block's item type is its Type filter and its kind (Prefix, Suffix, Superior - the quality page) its "Affix" filter
+"""
+import re
+import sys
+from pathlib import Path
+
+from web_uniques import clean
+
+PAGE_ID = "item-affixes"
+PAGE_TITLE = "Item Affixes"
+HEADER_COLOR = "#402040"
+SEPARATOR = "\x1f"
+BREAK = "\x1e"
+BLUE = "ÿc3"
+GOLD = "ÿc4"
+KINDS = (("Prefixes", "prefixes"), ("Suffixes", "suffixes"), ("Superior", "quality"))
+MIN_ROWS = {"prefixes": 3000, "suffixes": 6000, "quality": 600}
+BLUE_COLUMNS = ("Name", "Stats")
+KEYS_TITLE = "Item Type Keys"
+KIND_WORD = {"prefixes": "Prefix", "suffixes": "Suffix", "quality": "Superior"}
+ARMOR = ['Any Shield', 'Auric Shields', 'Belt', 'Body Armor', 'Boots', 'Circlet', 'Cloak', 'Gloves', 'Grimoire', 'Helm', 'Pelt', 'Primal Helm', 'Robe', 'Shield', 'Spirit Crown', 'Voodoo Heads']
+WEAPONS = ['Amazon Bow', 'Amazon Javelin', 'Amazon Spear', 'Assassin 1H Katana', 'Assassin 2H Katana', 'Axe', 'Barbarian Javs', 'Blunt', 'Bow', 'Claw', 'Club', 'Crossbow', 'Druid Club', 'Hammer', 'Hand to Hand', 'Hand to Hand 1', 'Hand to Hand 2', 'Javelin', 'Knife', 'Knuckle', 'Mace', 'Necromancer Dagger', 'Necromancer Polearm', 'Orb', 'Paladin Sword', 'Polearm', 'Scepter', 'Shuriken', 'Sorceress Mana Blade', 'Spear', 'Staff', 'Sword', 'Throwing Axe', 'Throwing Knife', 'Voidblade', 'Wand']
+MAX_TITLE = 60
+
+
+def text_of(cell):
+    cell = re.sub(r"<br\s*/?>", " ", cell, flags=re.I)
+    return clean(re.sub(r"<[^>]+>", " ", cell))
+
+
+def lines_of(cell):
+    """The cell's text, one string per line (<br> separates lines; empty lines are dropped)."""
+    pieces = re.split(r"<br\s*/?>", cell, flags=re.I)
+    return [t for t in (clean(re.sub(r"<[^>]+>", " ", p)) for p in pieces) if t.strip()]
+
+
+def parse_tables(html):
+    """([{title, headers, rows: [[cell html]]}], [key text]) for the tables of one page, in page order."""
+    tables, keys, current = [], [], None
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S | re.I):
+        cells = re.findall(r"<td([^>]*)>(.*?)</td>", tr, re.S | re.I)
+        if not cells:
+            continue
+        if len(cells) == 1 and HEADER_COLOR in cells[0][0] and len(text_of(cells[0][1])) <= MAX_TITLE:
+            current = {"title": text_of(cells[0][1]), "headers": [], "rows": []}
+            tables.append(current)
+            continue
+        if current is None:
+            continue
+        if HEADER_COLOR in cells[0][0]:
+            current["headers"] = [text_of(c) for _, c in cells]
+            continue
+        if current["title"] == "Keys":
+            keys += [text_of(c) for _, c in cells if "=" in text_of(c)]
+            continue
+        if current["headers"] and len(cells) >= 2:
+            current["rows"].append([c for _, c in cells])
+    return [t for t in tables if t["title"] != "Keys" and t["headers"] and t["rows"]], keys
+
+
+def row_text(headers, row):
+    out = []
+    for i in range(len(headers)):
+        cell = row[i] if i < len(row) else ""
+        if headers[i] in BLUE_COLUMNS:
+            out.append(BREAK.join(BLUE + t for t in lines_of(cell)))
+        else:
+            out.append(text_of(cell))
+    return SEPARATOR.join(out)
+
+
+def type_order(title):
+    return (0 if title == "General" else 1, title.lower(), title)
+
+
+def category_of(title):
+    if title in ARMOR:
+        return "Armor"
+    return "Weapons" if title in WEAPONS else "Other"
+
+
+def build_page(pages, keys):
+    """pages: {kind key: tables}; keys: key texts in page order."""
+    pairs, seen = [], set()
+    for text in keys:
+        code, _, name = text.partition("=")
+        pair = (code.strip(), name.strip())
+        if pair[0] and pair not in seen:
+            seen.add(pair)
+            pairs.append(pair)
+    pairs.sort(key=lambda p: (p[1].lower(), p[1], p[0]))
+    found = {}  # (item type, kind key) -> table, the first of a title that appears twice on a page
+    for _, key in KINDS:
+        for table in pages[key]:
+            found.setdefault((table["title"], key), table)
+    out = ["PAGE\t%s\t%s\tWiki" % (PAGE_ID, PAGE_TITLE)]
+    for category in ("Armor", "Weapons", "Other"):
+        types = sorted({title for title, _ in found if category_of(title) == category}, key=type_order)
+        count = sum(len(table["rows"]) for (title, _), table in found.items() if category_of(title) == category)
+        out.append("ENTRY\t%s\t%d affixes, %d item types\twide" % (category, count, len(types)))
+        for title in types:
+            for label, key in KINDS:
+                table = found.get((title, key))
+                if table is None:
+                    continue
+                name = "%s %s" % (title, label)
+                out.append("BLOCK\t0\t%s\t\t\t%s\t%s\t0" % (name, KIND_WORD[key], title))
+                out.append("LINE\tH\t%s%s (%d)" % (GOLD, name, len(table["rows"])))
+                out.append("LINE\tC\t" + SEPARATOR.join(table["headers"]))
+                for row in table["rows"]:
+                    out.append("LINE\tR\t" + row_text(table["headers"], row))
+        if category == "Other" and pairs:
+            out.append("BLOCK\t0\t%s\t\t\t\t%s\t0" % (KEYS_TITLE, KEYS_TITLE))
+            out.append("LINE\tH\t%s%s (%d)" % (GOLD, KEYS_TITLE, len(pairs)))
+            out.append("LINE\tC\tCode" + SEPARATOR + "Item Type")
+            for code, name in pairs:
+                out.append("LINE\tR\t" + code + SEPARATOR + BLUE + name)
+    return out
+
+
+def splice(lines, page_lines):
+    """lines with the page whose id is PAGE_ID replaced; a file without one gets it after 'item-bases' (else last)."""
+    starts = [i for i, l in enumerate(lines) if l.startswith("PAGE\t")]
+    spans = {}
+    for n, i in enumerate(starts):
+        spans[lines[i].split("\t")[1]] = (i, starts[n + 1] if n + 1 < len(starts) else len(lines))
+    if PAGE_ID in spans:
+        a, b = spans[PAGE_ID]
+        return lines[:a] + page_lines + lines[b:]
+    at = spans["item-bases"][1] if "item-bases" in spans else len(lines)
+    return lines[:at] + page_lines + lines[at:]
+
+
+def main(argv):
+    if len(argv) != 5:
+        print(__doc__)
+        return 2
+    paths, target = [Path(a) for a in argv[1:4]], Path(argv[4])
+    try:
+        pages, keys = {}, []
+        for (label, key), path in zip(KINDS, paths):
+            html = path.read_text(encoding="utf-8", errors="replace")
+            if "</html" not in html.lower():
+                raise SystemExit("%s is incomplete" % path.name)
+            tables, found = parse_tables(html)
+            count = sum(len(t["rows"]) for t in tables)
+            if count < MIN_ROWS[key]:
+                raise SystemExit("only %d %s found; the website page looks broken" % (count, label.lower()))
+            pages[key] = tables
+            keys += found
+        lines = target.read_text(encoding="utf-8").split("\n")
+        trailing = bool(lines) and lines[-1] == ""
+        if trailing:
+            lines = lines[:-1]
+        merged = splice(lines, build_page(pages, keys))
+    except SystemExit as stop:
+        print("Website item affixes: %s" % stop)
+        return 1
+    tmp = target.with_suffix(target.suffix + ".new")
+    tmp.write_text("\n".join(merged) + ("\n" if trailing else ""), encoding="utf-8", newline="\n")
+    tmp.replace(target)
+    print("Website item affixes: %s" % ", ".join(
+        "%d %s" % (sum(len(t["rows"]) for t in pages[key]), label.lower()) for label, key in KINDS))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

@@ -1,0 +1,213 @@
+#include "web_affixes_live.hpp"
+
+#include <algorithm>
+#include <cstddef>
+#include <map>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "web_html.hpp"
+
+namespace esrwiki {
+namespace {
+
+using namespace web;
+
+constexpr std::size_t kMinRows[3] = {3000, 6000, 600};
+constexpr std::size_t kMaxTitle = 60;
+const char kHeaderColor[] = "#402040";
+const char kSeparator[] = "\x1f";
+const char kBreak[] = "\x1e";
+const char kBlue[] = "\xc3\xbf" "c3";  // U+00FF "c3"
+const char kGold[] = "\xc3\xbf" "c4";  // U+00FF "c4"
+const char* const kLabels[3] = {"Prefixes", "Suffixes", "Quality"};
+
+struct Table {
+    std::string title;
+    std::vector<std::string> headers;
+    std::vector<std::vector<std::string>> rows;  // cell html
+};
+
+struct Cell {
+    std::string attrs, content;
+};
+
+std::vector<Cell> CellsOf(const std::string& tr) {
+    std::vector<Cell> cells;
+    std::size_t at = 0;
+    for (;;) {
+        const std::size_t open = FindCI(tr, "<td", at);
+        if (open == std::string::npos) break;
+        const std::size_t gt = tr.find('>', open);
+        if (gt == std::string::npos) break;
+        const std::size_t close = FindCI(tr, "</td>", gt + 1);
+        if (close == std::string::npos) break;
+        cells.push_back({tr.substr(open + 3, gt - open - 3), tr.substr(gt + 1, close - gt - 1)});
+        at = close + 5;
+    }
+    return cells;
+}
+
+bool IsHeaderCell(const Cell& cell) { return cell.attrs.find(kHeaderColor) != std::string::npos; }
+
+void ParseTables(const std::string& html, std::vector<Table>& tables, std::vector<std::string>& keys) {
+    std::vector<Table> all;
+    Table* current = nullptr;
+    std::size_t at = 0;
+    for (;;) {
+        const std::size_t open = FindCI(html, "<tr", at);
+        if (open == std::string::npos) break;
+        const std::size_t gt = html.find('>', open);
+        if (gt == std::string::npos) break;
+        const std::size_t close = FindCI(html, "</tr>", gt + 1);
+        if (close == std::string::npos) break;
+        at = close + 5;
+        const std::vector<Cell> cells = CellsOf(html.substr(gt + 1, close - gt - 1));
+        if (cells.empty()) continue;
+        if (cells.size() == 1 && IsHeaderCell(cells[0]) && TextOf(cells[0].content).size() <= kMaxTitle) {
+            all.push_back(Table{TextOf(cells[0].content), {}, {}});
+            current = &all.back();
+            continue;
+        }
+        if (current == nullptr) continue;
+        if (IsHeaderCell(cells[0])) {
+            current->headers.clear();
+            for (const Cell& cell : cells) current->headers.push_back(TextOf(cell.content));
+            continue;
+        }
+        if (current->title == "Keys") {
+            for (const Cell& cell : cells) {
+                const std::string text = TextOf(cell.content);
+                if (text.find('=') != std::string::npos) keys.push_back(text);
+            }
+            continue;
+        }
+        if (!current->headers.empty() && cells.size() >= 2) {
+            std::vector<std::string> row;
+            for (const Cell& cell : cells) row.push_back(cell.content);
+            current->rows.push_back(std::move(row));
+        }
+    }
+    for (Table& table : all)
+        if (table.title != "Keys" && !table.headers.empty() && !table.rows.empty()) tables.push_back(std::move(table));
+}
+
+std::string RowText(const std::vector<std::string>& headers, const std::vector<std::string>& row) {
+    std::string out;
+    for (std::size_t i = 0; i < headers.size(); ++i) {
+        if (i > 0) out += kSeparator;
+        const std::string cell = i < row.size() ? row[i] : std::string();
+        if (headers[i] == "Name" || headers[i] == "Stats") {
+            bool first = true;
+            for (const std::string& piece : SplitBr(cell)) {
+                const std::string text = TextOf(piece);
+                if (Trim(text).empty()) continue;
+                if (!first) out += kBreak;
+                first = false;
+                out += kBlue;
+                out += text;
+            }
+        } else {
+            out += TextOf(cell);
+        }
+    }
+    return out;
+}
+
+bool TypeBefore(const std::string& a, const std::string& b) {
+    const bool ag = a == "General", bg = b == "General";
+    if (ag != bg) return ag;
+    const std::string la = Lower(a), lb = Lower(b);
+    if (la != lb) return la < lb;
+    return a < b;
+}
+
+std::vector<std::string> BuildPage(const std::vector<Table> (&pages)[3], const std::vector<std::string>& keys) {
+    std::map<std::string, std::map<int, const Table*>> types;
+    for (int kind = 0; kind < 3; ++kind) {
+        std::set<std::string> seen;
+        for (const Table& table : pages[kind]) {
+            if (!seen.insert(table.title).second) continue;
+            types[table.title][kind] = &table;
+        }
+    }
+    std::vector<std::string> titles;
+    for (const auto& entry : types) titles.push_back(entry.first);
+    std::sort(titles.begin(), titles.end(), TypeBefore);
+
+    std::vector<std::string> out;
+    out.push_back("PAGE\titem-affixes\tItem Affixes\tWiki");
+    for (const std::string& title : titles) {
+        const auto& found = types[title];
+        std::string counts;
+        for (int kind = 0; kind < 3; ++kind) {
+            const auto it = found.find(kind);
+            if (it == found.end()) continue;
+            if (!counts.empty()) counts += ", ";
+            counts += std::to_string(it->second->rows.size()) + " " + Lower(kLabels[kind]);
+        }
+        out.push_back("ENTRY\t" + title + "\t" + counts + "\twide");
+        out.push_back("BLOCK\t0\t\t\t\t\t\t0");
+        for (int kind = 0; kind < 3; ++kind) {
+            const auto it = found.find(kind);
+            if (it == found.end()) continue;
+            const Table& table = *it->second;
+            out.push_back(std::string("LINE\tT\t") + kGold + kLabels[kind] + " (" + std::to_string(table.rows.size()) + ")");
+            out.push_back("LINE\tC\t" + Join(table.headers, kSeparator));
+            for (const auto& row : table.rows) out.push_back("LINE\tR\t" + RowText(table.headers, row));
+        }
+    }
+    std::vector<std::pair<std::string, std::string>> pairs;
+    std::set<std::pair<std::string, std::string>> seen;
+    for (const std::string& text : keys) {
+        const std::size_t eq = text.find('=');
+        std::pair<std::string, std::string> pair{Trim(text.substr(0, eq)), Trim(text.substr(eq + 1))};
+        if (!pair.first.empty() && seen.insert(pair).second) pairs.push_back(pair);
+    }
+    if (!pairs.empty()) {
+        std::sort(pairs.begin(), pairs.end(), [](const auto& a, const auto& b) {
+            const std::string la = Lower(a.second), lb = Lower(b.second);
+            if (la != lb) return la < lb;
+            if (a.second != b.second) return a.second < b.second;
+            return a.first < b.first;
+        });
+        out.push_back("ENTRY\tItem Type Keys\t" + std::to_string(pairs.size()) + " codes\twide");
+        out.push_back("BLOCK\t0\t\t\t\t\t\t0");
+        out.push_back(std::string("LINE\tC\tCode") + kSeparator + "Item Type");
+        for (const auto& pair : pairs) out.push_back("LINE\tR\t" + pair.first + kSeparator + kBlue + pair.second);
+    }
+    return out;
+}
+
+std::size_t CountRows(const std::vector<Table>& tables) {
+    std::size_t count = 0;
+    for (const Table& table : tables) count += table.rows.size();
+    return count;
+}
+
+}  // namespace
+
+bool BuildWebAffixesWikiData(const std::string& current, const std::string& prefixesPage, const std::string& suffixesPage,
+                             const std::string& qualityPage, std::string& out, std::string& error) {
+    const std::string* html[3] = {&prefixesPage, &suffixesPage, &qualityPage};
+    std::vector<Table> pages[3];
+    std::vector<std::string> keys;
+    for (int kind = 0; kind < 3; ++kind) {
+        if (FindCI(*html[kind], "</html") == std::string::npos) {
+            error = std::string(kWebAffixesPageNames[kind]) + " is incomplete";
+            return false;
+        }
+        ParseTables(*html[kind], pages[kind], keys);
+        if (CountRows(pages[kind]) < kMinRows[kind]) {
+            error = "only " + std::to_string(CountRows(pages[kind])) + " " + Lower(kLabels[kind]) +
+                    " found; the website page looks broken";
+            return false;
+        }
+    }
+    out = Splice(current, BuildPage(pages, keys), "item-affixes", "item-bases");
+    return true;
+}
+
+}  // namespace esrwiki
