@@ -1,0 +1,42 @@
+# Weapon Swap Queue
+# Plugin id: celestialrayone.weapon-swap-queue
+#
+# WHAT IT DOES
+#   Stock D2R ignores the Swap Weapons key while your character is busy, so
+#   the press is lost and you end up pressing it several times, which risks
+#   swapping back and forth. With this plugin one press made while busy is
+#   remembered, and the swap happens as soon as the game allows it, normally
+#   right when the current animation ends.
+#
+#   "Busy" means exactly the cases where the stock game drops the press:
+#   - player mode A1, A2 (attacks), SC (cast), TH (throw), KK (kick),
+#     S1, S2, S3, S4 (skill animations) or SQ (sequences such as Whirlwind)
+#   - an attack or skill button is being held
+#
+# RULES
+#   - One swap at most. Extra presses while a swap is waiting do nothing.
+#   - The queued swap remembers the weapon set you were on when you pressed
+#     the key. If the set changes before it fires (any other swap), it is
+#     dropped, so it can never swap you back.
+#   - If the server turns the request down (its copy of your animation can
+#     end a little later than yours), the same request is sent again every
+#     150 ms until the server confirms, for at most 1.5 seconds. The request
+#     carries the weapon set it starts from and the server rejects stale
+#     ones, so a repeat can never cause a second swap.
+#   - A queued swap is dropped if it still cannot be sent 3 seconds after the
+#     press, if you die, or if you leave the game.
+#   - Server rules are untouched.
+#   - Any key bound to Swap Weapons works: the plugin hooks the game's Swap
+#     Weapons action, not a specific key. The controller swap button keeps
+#     stock behaviour.
+
+[weapon-swap-queue]
+
+# true  = queue presses made while busy.
+# false = stock behaviour; the plugin loads but installs nothing.
+enabled = true
+
+# true = write each queue event (queued, sent, confirmed, dropped) to this
+# plugin's log in d2rloader/logs. It only writes when you press Swap Weapons
+# while busy, so it is cheap to leave on.
+debug_log = true

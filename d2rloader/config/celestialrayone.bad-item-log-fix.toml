@@ -1,0 +1,24 @@
+# Bad Item Log Fix
+#
+# While a character is loaded into a game, the game checks every saved item
+# and deletes the ones it considers bad: an item with no id, an item whose id
+# was already loaded (a duplicate), or one of four hard-coded vanilla checks
+# on uniqueitems.txt / setitems.txt rows 122, 242 and 205.
+#
+# For every deleted item it writes a line into
+#   Documents\Diablo II\GameLogs\D2TEMP<date>.txt
+# with the item and the player's name. When the item belonged to the
+# HIRELING, the game read the hireling as if it were a player and crashed
+# while writing that line. This plugin makes it find the hireling's player
+# instead, so the line is written and the character loads.
+#
+# What it does not change: which items the game deletes. A deleted item is
+# still deleted; this only stops the crash. The plugin log gets one line
+# for every hireling item the game deletes, naming the player.
+#
+# Console command: baditemlogfix (install state and counters)
+
+[bad_item_log_fix]
+
+# Master switch.
+enabled = true
