@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "name": "Shadow Warrior and Shadow Master monster panel",
+  "description": "Hovering a Shadow Warrior or Shadow Master shows the monster health panel like every other summon, so Monster Display shows their life, level and resistances. The game's hover code had a hardcoded exception for monstats.txt rows 417 and 418 that drew only a name label over their head.",
+  "patches": [
+    {
+      "description": "Hover code: remove the jump that sends monstats.txt row 417 (Shadow Warrior) to the name-label-only branch. The id compare is kept as the byte check; only the jump becomes NOPs.",
+      "op": "bytes",
+      "rva": "0x0C093A",
+      "expected": "3D A1 01 00 00 0F 84 A9 03 00 00",
+      "bytes": "3D A1 01 00 00 90 90 90 90 90 90"
+    },
+    {
+      "description": "Hover code: the same for monstats.txt row 418 (Shadow Master).",
+      "op": "bytes",
+      "rva": "0x0C095A",
+      "expected": "3D A2 01 00 00 0F 84 89 03 00 00",
+      "bytes": "3D A2 01 00 00 90 90 90 90 90 90"
+    }
+  ]
+}

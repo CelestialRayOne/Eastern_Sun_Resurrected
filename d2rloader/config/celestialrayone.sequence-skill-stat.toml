@@ -1,0 +1,60 @@
+# Sequence Skill Stat - which skill is running the current sequence, for softcode
+#
+# Adds one virtual stat that any .txt formula can read with stat(). While the
+# unit the formula is evaluated for is in a sequence, the stat reads as the
+# skills.txt id of the skill running that sequence. Otherwise it reads 0.
+#
+# "In a sequence" means player mode 18 or monster mode 14: Whirlwind, Charge,
+# Mirrored Blades and every other skill that puts the unit into a sequence.
+# The skill reported is the one the game itself uses to pick the sequence's
+# animation, so two skills that share a seqnum are still told apart.
+# Monsters count too (hirelings, summons, bound demons), through mode 14.
+# Every other kind of unit always reads 0.
+#
+# Setup:
+#   1. Add a row to itemstatcost.txt whose Stat name is the name your formulas
+#      will use, for example sequenceskill. The row only gives formulas a name
+#      for the id: this plugin answers every formula read of it and never
+#      stores a value on any unit, so the row needs nothing else.
+#   2. Put that row's id in stat_id below, then restart the game.
+#
+# Examples (151 = Whirlwind and 107 = Charge in vanilla skills.txt):
+#   (stat('sequenceskill'.accr)==151)?50:0
+#       50 while whirlwinding, 0 otherwise
+#   (stat('sequenceskill'.accr)==151)?50:((stat('sequenceskill'.accr)==107)?30:0)
+#       50 while whirlwinding, 30 while charging, 0 otherwise
+#   (stat('sequenceskill'.accr)>0)?1:0
+#       1 during any sequence
+#
+# Notes:
+#   - .accr, .base and .mod all return the same value.
+#   - The value is worked out at the moment a formula reads it, so a formula
+#     sees it only when that formula is evaluated.
+#   - Runs alongside playermode-exposing: each plugin answers only its own id.
+#
+# This file lives at <scope>\d2rloader\config\celestialrayone.sequence-skill-stat.toml
+# and is created with these defaults on first run. Delete it to get them back.
+# It is read once at plugin load, so restart the game after editing.
+#
+# Type `sequence-skill-stat` in the console to see whether the stat is live,
+# how often formulas read it and what it last answered during a sequence.
+
+
+[sequence-skill-stat]
+
+# Master switch.
+#   true  - the stat answers as described above.
+#   false - nothing is installed. The console command still reports.
+# Default: true
+enabled = true
+
+# The itemstatcost.txt row id the stat answers on.
+#
+# -1 means not set, and nothing is installed until you set it. There is no
+# guessed default on purpose: if this pointed at a row that carries a real
+# stat, every formula read of that stat would get this plugin's answer
+# instead, and the plugin has no way to notice.
+#
+# Must be between 0 and 32767, or -1.
+# Default: -1
+stat_id = 1050
