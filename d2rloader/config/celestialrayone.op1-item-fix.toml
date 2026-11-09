@@ -1,0 +1,53 @@
+# Op 1 Item Fix (celestialrayone.op1-item-fix)
+#
+# Fixes itemstatcost.txt op 1 stats on items. An op 1 stat raises the stats in
+# its op stat1..3 by its own value in percent; passive_summ_mastery_total
+# ("Total Multiplier to Summon Damage") raises passive_summ_mastery this way.
+# On a character, op 1 multiplies the character's total of the raised stat. On
+# an item it only multiplies the item's own BASE value of it, and items have no
+# base value of stats like passive_summ_mastery, so there it multiplies nothing.
+#
+# What went wrong:
+#   When an op 1 stat changes on an item that also carries the stat it raises,
+#   the stat engine decides whether the change may go on to the character. It
+#   asked "does this item have any of the raised stat at all?", affixes
+#   included, instead of "did op 1 multiply this item's base value?". So the
+#   change was held back and the item kept handing the character the value it
+#   had before. Players saw it as:
+#     - a bonus a plugin puts on such a stat (the Jeweler perks) shown on the
+#       item but never reaching the character
+#     - an item carrying the op 1 stat socketed into an item that has the
+#       raised stat: its part never reached the character
+#   An item's own value usually survived loading only by luck: item stats are
+#   read in id order, and passive_summ_mastery_total (303) comes before
+#   passive_summ_mastery (486).
+#
+# What the plugin changes:
+#   That one decision, for op 1 only, now asks op 1's own question: the change
+#   stays on the item only when the item has a base value of the raised stat.
+#   Otherwise it reaches the character, where op 1 applies it once, to the
+#   character's total. Nothing counts twice: op 1 multiplied nothing on the
+#   item. Characters, monsters and every other op keep the game's decision.
+#   The Enhanced Damage Fix plugin makes the same kind of correction for op 13
+#   damage stats; the two work side by side, in either load order.
+#
+# Existing characters are fixed when they load: item stats are rebuilt from the
+# save and pass through the corrected decision.
+#
+# Technical: under D2RLoader 1.3.1 the stat engine runs in D2RCore.dll. The
+# plugin points op 1's entry of the engine's op switch (D2RCore RVA 0x630430)
+# at its own decision, after checking D2RCore's bytes, that entry included. On
+# any other D2RCore build it installs nothing and says so in the log and the
+# console.
+#
+# Console command: op1fix (install state and counters)
+
+[op1_item_fix]
+
+# Master switch. false leaves the game completely vanilla.
+enabled = true
+
+# Write the first 16 repaired decisions to the plugin log: the items.txt row of
+# the item, the op 1 stat and the stat it raises. The first repair is always
+# logged once. Leave false unless you are checking a specific item.
+log_repairs = false

@@ -1,0 +1,43 @@
+# celestialrayone.larzuk-restrictions
+#
+# Larzuk Restrictions
+#   Larzuk refuses to socket items of the item types listed below. The default
+#   list refuses every charm: Small, Large and Grand Charms and every charm
+#   type built on them (in ESR the Square, Odd and Extra charms too).
+#
+#   A refused item is treated like any other item Larzuk cannot socket:
+#     - his socket panel does not take it (the usual refusal);
+#     - the server refuses the request as well, should one reach it;
+#     - his socket reward is not used up, so it can still go to an item he
+#       accepts.
+#   Items of every other type are socketed exactly as before.
+#
+# Changes are read when the plugin loads. Restart the game after editing.
+# This is a Shared plugin: TCP/IP clients need it too.
+# Built for D2RLoader 1.3.1 (Diablo II: Resurrected 3.3). On any other build
+# the byte checks fail and the plugin loads without changing the game.
+
+# Master switch. false loads the plugin without touching the game.
+enabled = true
+
+# -----------------------------------------------------------------------------
+# refused_item_types
+#
+# Codes from the Code column of itemtypes.txt, written exactly as there (1 to
+# 4 characters), for example ["char"] or ["scha", "lcha"]. An item is refused
+# when its type or type2 is one of these codes, or reaches one of them
+# through the Equiv1/Equiv2 columns. So "char" covers every charm type, while
+# "scha" alone would refuse Small Charms only.
+#
+# A code that is not in your itemtypes.txt refuses nothing and is reported
+# once in the plugin log. An empty list [] refuses nothing.
+refused_item_types = ["char"]
+
+# -----------------------------------------------------------------------------
+# diagnostics
+#
+# Writes one line to the plugin log for each of the first 64 different items
+# (by item code) that Larzuk refuses because of this plugin. Keep false for
+# normal play. The console command "larzukrestrictions" always shows the
+# settings and the counters.
+diagnostics = false

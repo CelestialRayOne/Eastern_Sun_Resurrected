@@ -1,0 +1,14 @@
+﻿{
+  "version": 1,
+  "name": "Character sheet XP bar past 2^31 experience",
+  "description": "Fixes the character sheet experience bar showing full once the next-level experience total reaches 2,147,483,648 or more. The max-level check used a signed comparison.",
+  "patches": [
+    {
+      "description": "Full bar only when there is no next level (max level). test edi,edi / jle becomes test edi,edi / je, same jump target 0x14E7ADE.",
+      "op": "bytes",
+      "rva": "0x14E7AB0",
+      "expected": "85 FF 7E 2A",
+      "bytes": "85 FF 74 2A"
+    }
+  ]
+}
