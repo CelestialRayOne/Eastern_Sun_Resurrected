@@ -1,0 +1,577 @@
+# Ascendancies
+#
+# The ascendancy system: an "Ascendancy" entry on the character sheet opens the
+# Ascendancy window, one page per ascendancy (portrait, the five tiers, how to
+# reach the next tier). After the Orb of Creation is consumed (orb_stat at 1 or
+# more, set by the mod's softcode), Ascend picks the ascendancy on screen and
+# grants tier 1. The other tiers come by themselves (see [[trigger]]), in any
+# order. Renounce Ascendancy (with an "are you sure" step) takes the ascendancy,
+# its tiers and bonuses away and sets orb_stat back to 0.
+# A "New ascension tier unlocked" notice shows on the HUD for a few seconds after
+# a new tier; its button opens the window.
+#
+# Needs D2RLoader 1.3.1, on the host and every client, the same version.
+# Mouse and keyboard.
+#
+# How the bonuses work
+#   The saved stats only say which ascendancy and which tiers. On the host the
+#   plugin applies every unlocked tier's properties (below) to the character
+#   with the game's own property code, the way monprop.txt applies monster
+#   properties, into the stat list of bonus_state. Auras (aura-hidden) and
+#   procs (hit-skill, gethit-skill, att-skill) work as they do from an item.
+#   The list is rebuilt when a tier changes and after a resurrect. Nothing of it
+#   is saved: it is built again in every game.
+#
+# itemstatcost.txt rows (ascendancy_stat, progress_stat, soulstone_stat, orb_stat)
+#   - Saved = 1 and CSvBits above 0, CSvParam blank. Add new rows at the end of
+#     the file. The plugin log reports this check every time the tables load.
+#   - progress_stat: bit 0-4 = tiers 1-5, bit 5 = the Lich King bonus, bit 6 =
+#     the character has ascended at least once (the sheet entry stays a -).
+#
+# Property format (tier1 to tier5, lich_king)
+#   "code=value", "code[param]=value", "code=min..max", "code[param]=min..max":
+#   code is a properties.txt code (or a propertygroups.txt code), param, min and
+#   max are the cube row's mod param / mod min / mod max. "class-skills" is the
+#   class skill property of the character's own class (class_skill_properties).
+#
+# Text format (text1 to text5, and every text setting)
+#   "@d2r:Key" shows a string of the mod (any string file), plain text shows as
+#   written. A leading ^ ("^@d2r:Key") marks an item tooltip string: its lines
+#   are stored bottom-up, the window shows them top-down. Trailing note
+#   markers (*, **) are dropped.
+#
+# Window layout (data/global/ui/layouts/celestialrayone.ascendancies/AscendancyPanelhd.json)
+#   Built into the plugin; a mod can replace it. Every text in it must be a full
+#   reference such as @d2r:Key. Widgets the plugin uses: Name, Portraits
+#   (Portrait1 to PortraitN, one per [[ascendancy]], in order), the text columns
+#   L and R (slots L1, L2, ... and R1, R2, ..., each with the text boxes HeadOn,
+#   HeadOff, LineOn and LineOff), Footer, Action and ActionLabel, Confirm
+#   (ConfirmLine1-3, ConfirmYes, ConfirmNo). The text column is the side
+#   opposite image_side. A page's lines sit in the middle slots of its column.
+#   Click messages, PanelManager:OpenPanel:<text>: AscendanciesOpen,
+#   AscendanciesClose, AscendanciesPrevious, AscendanciesNext, AscendanciesAction,
+#   AscendanciesYes, AscendanciesNo, AscendanciesNotice.
+#
+# Character sheet (characterstatspanelhd.json): AscendancyButton, a ButtonWidget
+#   with the six frames of the Specialization button (+ then -), and
+#   AscendancyTitle. Hidden until the orb is consumed.
+# HUD (hudpanelhd.json): AscendancyNotice, with the button AscendancyNoticeButton.
+#
+# Old Ascendancy Stones
+#   When a character with no ascendancy enters a game holding an Ascendancy
+#   Stone (legacy_stone_item), the stone becomes the saved stats (the stone's
+#   uniqueitems row picks the ascendancy, legacy_tier_stats the tiers) and is
+#   removed. Once, by itself.
+#
+# Console command
+#   ascendancies   status, the row check, your ascendancy and tiers, counters.
+
+[ascendancies]
+
+# Master switch.
+enabled = true
+
+# itemstatcost.txt rows of the saved stats.
+ascendancy_stat = 1064
+progress_stat = 1065
+soulstone_stat = 1066
+orb_stat = 1067
+
+# states.txt row of the hidden state that holds the bonus list.
+bonus_state = 697
+
+# Primordial Soulstones: every one the character holds (inventory, cube,
+# stash, cursor) goes into soulstone_stat, up to soulstone_cap. At the cap the
+# character gets soulstone_tier, with no other tier needed (0: none).
+soulstone_item = "u19"
+soulstone_cap = 10
+soulstone_tier = 4
+
+# Renouncing always takes the ascendancy, its tiers and orb_stat. These take the
+# soulstone count and the Lich King bonus too.
+renounce_clears_soulstones = true
+renounce_clears_lich_king = true
+
+# The class skill property of each class, in charstats.txt class order.
+class_skill_properties = ["ama", "sor", "nec", "pal", "bar", "dru", "ass", "war"]
+
+# The Lich King bonus: these properties join the list once the character has
+# earned it (see the lich_king trigger).
+lich_king = ["lich-king-bonus=1"]
+
+# Kill credit ([[kill_credit]]): kill_check_stat on a timed state, for this many
+# frames (1500 = 60 seconds), as the Just Killed curses gave it.
+kill_check_stat = 508
+kill_credit_frames = 1500
+
+# Old Ascendancy Stones: the item, and the stone's stats for tiers 2, 3, 4, 5,
+# its soulstone count and the Lich King bonus.
+legacy_stone_item = "ast"
+legacy_tier_stats = [676, 677, 678, 680]
+legacy_soulstone_stat = 919
+legacy_lich_king_stat = 826
+
+# Window texts. %d in tier_header is the tier; %d in a next_tier text is the
+# soulstone count. next_tier is shown on the character's own page for the
+# first tier not unlocked yet (tier 1 comes with Ascend).
+tier_header = "@d2r:AscendancyTier"
+next_tier = ["", "@d2r:AscendancyNextTier2", "@d2r:AscendancyNextTier3", "@d2r:AscendancyNextTier4", "@d2r:AscendancyNextTier5"]
+# Shown in the same place once every tier is earned, until the Lich King bonus
+# is earned too. "" shows nothing.
+lich_king_tip = "@d2r:AscendancyLichKingTip"
+ascend_label = "@d2r:AscendancyAscend"
+renounce_label = "@d2r:AscendancyRenounce"
+confirm_text = "@d2r:AscendancyConfirm"
+
+# Seconds the "New ascension tier unlocked" notice stays (0: off).
+notice_seconds = 5
+
+# sounds.txt rows played on Ascend and on Renounce (the level-up sound).
+ascend_sound = "cursor_stat_point_one_hd"
+renounce_sound = "cursor_level_up"
+
+# ---------------------------------------------------------------------------
+# Ascendancies, in window order. The order is saved with every character
+# (ascendancy_stat): never reorder or remove a block, add new ones at the end.
+#   title         window title of the page
+#   image_side    the portrait's side; the text takes the other one
+#   legacy_unique uniqueitems.txt row of its old Ascendancy Stone
+#   tier1..tier5  the properties of each tier
+#   text1..text5  the lines of each tier in the window
+# ---------------------------------------------------------------------------
+
+[[ascendancy]]
+name = "Battlemage"
+title = "@d2r:AscendancyNameBattlemage"
+image_side = "right"
+legacy_unique = 1100
+tier1 = ["class-skills=1", "str=60", "enr=60"]
+tier2 = ["class-skills=1", "strpercent=25", "enepercent=25", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[787]=1", "deadly=25", "crush=25", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "life-on-striking=10", "manasteal=15", "aura-hidden[1508]=1"]
+tier5 = ["class-skills=3", "all-speeds=50", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyBattlemageTier1"]
+text2 = ["@d2r:AscendancyBattlemageTier2"]
+text3 = ["^@d2r:battlemagetierone", "@d2r:AscendancyBattlemageTier3"]
+text4 = ["^@d2r:battlemagetiertwo", "@d2r:AscendancyBattlemageTier4"]
+text5 = ["@d2r:AscendancyBattlemageTier5"]
+
+[[ascendancy]]
+name = "Blademaster"
+title = "@d2r:AscendancyNameBlademaster"
+image_side = "left"
+legacy_unique = 1102
+tier1 = ["class-skills=1", "str=60", "dex=60"]
+tier2 = ["class-skills=1", "strpercent=25", "dexpercent=25", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[789]=1", "red-dmg%=20", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "dmg-norm=40..50", "aura-hidden[1510]=1"]
+tier5 = ["class-skills=3", "hit-skill[127]=15..20", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyBlademasterTier1"]
+text2 = ["@d2r:AscendancyBlademasterTier2"]
+text3 = ["^@d2r:blademastertierone", "@d2r:AscendancyBlademasterTier3"]
+text4 = ["^@d2r:blademastertiertwo", "@d2r:AscendancyBlademasterTier4"]
+text5 = ["@d2r:AscendancyBlademasterTier5"]
+
+[[ascendancy]]
+name = "Arcanist"
+title = "@d2r:AscendancyNameArcanist"
+image_side = "right"
+legacy_unique = 1105
+tier1 = ["class-skills=1", "dex=60", "enr=60"]
+tier2 = ["class-skills=1", "dexpercent=25", "enepercent=25", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[792]=1", "all-speeds=30", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "oskill[487]=3", "skill[487]=17", "res-all-max=5", "aura-hidden[1513]=1"]
+tier5 = ["class-skills=3", "hit-skill[129]=5..20", "hit-skill[130]=5..20", "hit-skill[131]=5..20", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyArcanistTier1"]
+text2 = ["@d2r:AscendancyArcanistTier2"]
+text3 = ["^@d2r:arcanisttierone", "@d2r:AscendancyArcanistTier3"]
+text4 = ["^@d2r:arcanisttiertwo", "@d2r:AscendancyArcanistTier4"]
+text5 = ["@d2r:AscendancyArcanistTier5"]
+
+[[ascendancy]]
+name = "Bloodmage"
+title = "@d2r:AscendancyNameBloodmage"
+image_side = "left"
+legacy_unique = 1109
+tier1 = ["class-skills=1", "str=45", "vit=45", "enr=45"]
+tier2 = ["class-skills=1", "strpercent=20", "vitpercent=20", "enepercent=20", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[796]=1", "hp=200", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "red-dmg%=25", "balance2=50", "aura-hidden[1517]=1"]
+tier5 = ["class-skills=3", "hp%=50", "passive-summ-life=25", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyBloodmageTier1"]
+text2 = ["@d2r:AscendancyBloodmageTier2"]
+text3 = ["^@d2r:bloodmagetierone", "@d2r:AscendancyBloodmageTier3"]
+text4 = ["^@d2r:bloodmagetiertwo", "@d2r:AscendancyBloodmageTier4"]
+text5 = ["@d2r:AscendancyBloodmageTier5"]
+
+[[ascendancy]]
+name = "Awakened"
+title = "@d2r:AscendancyNameAwakened"
+image_side = "right"
+legacy_unique = 1101
+tier1 = ["class-skills=1", "all-stats=30"]
+tier2 = ["class-skills=1", "all-stats-percent=15", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[788]=1", "all-stats=30", "all-speeds=20", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "oskill[480]=3", "skill[480]=17", "res-pois-len=75", "aura-hidden[1509]=1"]
+tier5 = ["class-skills=3", "gethit-skill[815]=10..60", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyAwakenedTier1"]
+text2 = ["@d2r:AscendancyAwakenedTier2"]
+text3 = ["^@d2r:awakenedtierone", "@d2r:AscendancyAwakenedTier3"]
+text4 = ["^@d2r:awakenedtiertwo", "@d2r:AscendancyAwakenedTier4"]
+text5 = ["@d2r:AscendancyAwakenedTier5"]
+
+[[ascendancy]]
+name = "Ironbolt"
+title = "@d2r:AscendancyNameIronbolt"
+image_side = "left"
+legacy_unique = 1104
+tier1 = ["class-skills=1", "str=60", "vit=60"]
+tier2 = ["class-skills=1", "strpercent=25", "vitpercent=25", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[791]=1", "str=150", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "crossbow-reload-speed=20", "crossbow-reload-speed-limit=20", "att=500", "aura-hidden[1512]=1"]
+tier5 = ["class-skills=3", "hit-skill[426]=2..40", "oskill[433]=3", "skill[433]=22", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyIronboltTier1"]
+text2 = ["@d2r:AscendancyIronboltTier2"]
+text3 = ["^@d2r:ironbolttierone", "@d2r:AscendancyIronboltTier3"]
+text4 = ["^@d2r:ironbolttiertwo", "@d2r:AscendancyIronboltTier4"]
+text5 = ["@d2r:AscendancyIronboltTier5"]
+
+[[ascendancy]]
+name = "Starborn"
+title = "@d2r:AscendancyNameStarborn"
+image_side = "right"
+legacy_unique = 1108
+tier1 = ["class-skills=1", "enr=75"]
+tier2 = ["class-skills=1", "enepercent=30", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[795]=1", "mana=400", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "oskill[482]=3", "skill[482]=17", "all-speeds=25", "aura-hidden[1516]=1"]
+tier5 = ["class-skills=3", "oskill[479]=1", "allskills=1", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyStarbornTier1"]
+text2 = ["@d2r:AscendancyStarbornTier2"]
+text3 = ["^@d2r:starborntierone", "@d2r:AscendancyStarbornTier3"]
+text4 = ["^@d2r:starborntiertwo", "@d2r:AscendancyStarbornTier4"]
+text5 = ["@d2r:AscendancyStarbornTier5"]
+
+[[ascendancy]]
+name = "Lifebreaker"
+title = "@d2r:AscendancyNameLifebreaker"
+image_side = "left"
+legacy_unique = 1110
+tier1 = ["class-skills=1", "vit=75"]
+tier2 = ["class-skills=1", "vitpercent=30", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[797]=1", "hp%=30", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "red-dmg=50", "red-mag=50", "trap-limit=1", "aura-hidden[1518]=1"]
+tier5 = ["class-skills=3", "oskill[823]=10", "red-dmg%=15", "res-mag=15", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyLifebreakerTier1"]
+text2 = ["@d2r:AscendancyLifebreakerTier2"]
+text3 = ["^@d2r:lifebreakertierone", "@d2r:AscendancyLifebreakerTier3"]
+text4 = ["^@d2r:lifebreakertiertwo", "@d2r:AscendancyLifebreakerTier4"]
+text5 = ["@d2r:AscendancyLifebreakerTier5"]
+
+[[ascendancy]]
+name = "Worldshaper"
+title = "@d2r:AscendancyNameWorldshaper"
+image_side = "right"
+legacy_unique = 1111
+tier1 = ["class-skills=1", "str=45", "dex=45", "vit=45"]
+tier2 = ["class-skills=1", "strpercent=20", "dexpercent=20", "vitpercent=20", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[798]=1", "res-elem=50", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "spell-damage=50", "aura-hidden[1519]=1"]
+tier5 = ["class-skills=3", "hit-skill[824]=2..1", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyWorldshaperTier1"]
+text2 = ["@d2r:AscendancyWorldshaperTier2"]
+text3 = ["^@d2r:worldshapertierone", "@d2r:AscendancyWorldshaperTier3"]
+text4 = ["^@d2r:worldshapertiertwo", "@d2r:AscendancyWorldshaperTier4"]
+text5 = ["@d2r:AscendancyWorldshaperTier5"]
+
+[[ascendancy]]
+name = "Soul Warden"
+title = "@d2r:AscendancyNameSoulWarden"
+image_side = "left"
+legacy_unique = 1106
+tier1 = ["class-skills=1", "vit=60", "enr=60"]
+tier2 = ["class-skills=1", "vitpercent=25", "enepercent=25", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[793]=1", "enr=150", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "nofreeze=1", "abs-mag%=10", "aura-hidden[1514]=1"]
+tier5 = ["class-skills=3", "passive-summ-limit=1", "red-dmg=50", "red-mag=50", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancySoulWardenTier1"]
+text2 = ["@d2r:AscendancySoulWardenTier2"]
+text3 = ["^@d2r:soulwardentierone", "@d2r:AscendancySoulWardenTier3"]
+text4 = ["^@d2r:soulwardentiertwo", "@d2r:AscendancySoulWardenTier4"]
+text5 = ["@d2r:AscendancySoulWardenTier5"]
+
+[[ascendancy]]
+name = "Stance Dancer"
+title = "@d2r:AscendancyNameStanceDancer"
+image_side = "right"
+legacy_unique = 1112
+tier1 = ["class-skills=1", "str=45", "dex=45", "enr=45"]
+tier2 = ["class-skills=1", "strpercent=20", "dexpercent=20", "enepercent=20", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[799]=1", "str-dex-enr=90", "ascendancy-tier-3=1", "stance-dance-control=1"]
+tier4 = ["ascendancy-tier-4=1", "strpercent=30", "dexpercent=30", "enepercent=30"]
+tier5 = ["class-skills=3", "swing2=50", "cast2=50", "heal-kill=100", "mana-kill=50", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyStanceDancerTier1"]
+text2 = ["@d2r:AscendancyStanceDancerTier2"]
+text3 = ["^@d2r:stancedancertierone", "^@d2r:stancedancertieronetwo", "@d2r:AscendancyStanceDancerTier3"]
+text4 = ["^@d2r:stancedancertiertwo", "@d2r:AscendancyStanceDancerTier4"]
+text5 = ["@d2r:AscendancyStanceDancerTier5"]
+
+[[ascendancy]]
+name = "Nomad"
+title = "@d2r:AscendancyNameNomad"
+image_side = "left"
+legacy_unique = 1103
+tier1 = ["class-skills=1", "dex=60", "vit=60"]
+tier2 = ["class-skills=1", "dexpercent=25", "vitpercent=25", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[790]=1", "move2=75", "dmg-bleed[25]=150..250", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "hp=300", "aura-hidden[1511]=1"]
+tier5 = ["class-skills=3", "gethit-skill[822]=20..1", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyNomadTier1"]
+text2 = ["@d2r:AscendancyNomadTier2"]
+text3 = ["^@d2r:nomadtierone", "@d2r:AscendancyNomadTier3"]
+text4 = ["^@d2r:nomadtiertwo", "@d2r:AscendancyNomadTier4"]
+text5 = ["@d2r:AscendancyNomadTier5"]
+
+[[ascendancy]]
+name = "Sharpshooter"
+title = "@d2r:AscendancyNameSharpshooter"
+image_side = "right"
+legacy_unique = 1107
+tier1 = ["class-skills=1", "dex=75"]
+tier2 = ["class-skills=1", "dexpercent=30", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[794]=1", "oskill[450]=3", "skill[450]=17", "dmg-min=30", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "move2=75", "oskill[431]=3", "skill[431]=17", "aura-hidden[1515]=1"]
+tier5 = ["class-skills=3", "hit-skill[373]=15..20", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancySharpshooterTier1"]
+text2 = ["@d2r:AscendancySharpshooterTier2"]
+text3 = ["^@d2r:sharpshootertierone", "@d2r:AscendancySharpshooterTier3"]
+text4 = ["^@d2r:sharpshootertiertwo", "@d2r:AscendancySharpshooterTier4"]
+text5 = ["@d2r:AscendancySharpshooterTier5"]
+
+[[ascendancy]]
+name = "Mana Warden"
+title = "@d2r:AscendancyNameManaWarden"
+image_side = "left"
+legacy_unique = 1113
+tier1 = ["class-skills=1", "dex=45", "vit=45", "enr=45"]
+tier2 = ["class-skills=1", "dexpercent=20", "vitpercent=20", "enepercent=20", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[800]=1", "mana-on-striking=5", "regen-mana=100", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "oskill[469]=3", "skill[469]=17", "res-pois-max=10", "aura-hidden[1521]=1"]
+tier5 = ["class-skills=3", "gethit-skill[481]=20..50", "light=20", "res-pois=75", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyManaWardenTier1"]
+text2 = ["@d2r:AscendancyManaWardenTier2"]
+text3 = ["^@d2r:manawardentierone", "@d2r:AscendancyManaWardenTier3"]
+text4 = ["^@d2r:manawardentiertwo", "@d2r:AscendancyManaWardenTier4"]
+text5 = ["@d2r:AscendancyManaWardenTier5"]
+
+[[ascendancy]]
+name = "Berserker"
+title = "@d2r:AscendancyNameBerserker"
+image_side = "right"
+legacy_unique = 1114
+tier1 = ["class-skills=1", "str=75"]
+tier2 = ["class-skills=1", "strpercent=30", "ascendancy-tier-2=1"]
+tier3 = ["aura-hidden[801]=1", "lifesteal=25", "dmg-max=30", "ascendancy-tier-3=1"]
+tier4 = ["ascendancy-tier-4=1", "curse-res=100", "aura-hidden[1522]=1"]
+tier5 = ["class-skills=3", "att-skill[825]=25..1", "ascendancy-tier-5=1"]
+text1 = ["@d2r:AscendancyBerserkerTier1"]
+text2 = ["@d2r:AscendancyBerserkerTier2"]
+text3 = ["^@d2r:berserkertierone", "@d2r:AscendancyBerserkerTier3"]
+text4 = ["^@d2r:berserkertiertwo", "@d2r:AscendancyBerserkerTier4"]
+text5 = ["@d2r:AscendancyBerserkerTier5"]
+
+# ---------------------------------------------------------------------------
+# Triggers: tiers that come from boss kills, checked for every living player
+# in the level when the boss dies.
+#   monsters           monstats.txt ids (hcIdx)
+#   difficulty         -1 any, 0 Normal, 1 Nightmare, 2 Hell
+#   all_within_frames  every listed monster must die within this many frames,
+#                      the player in the level each time and not dying between
+#   lich_king = true   grants the Lich King bonus instead of a tier, when the
+#                      monster's maxhp (256ths) is above min_maxhp
+# ---------------------------------------------------------------------------
+
+[[trigger]]
+name = "Nihlathak, Hell"
+tier = 2
+monsters = [526]  # nihlathakboss
+difficulty = 2
+
+[[trigger]]
+name = "Uber Tristram"
+tier = 3
+monsters = [705, 704, 709]  # uberdiablo, ubermephisto, uberbaal
+difficulty = 2
+all_within_frames = 1500
+
+[[trigger]]
+name = "Tier 5 map bosses"
+tier = 5
+# mephistotheinvincible, diablotheinvincible, baaltheinvincible, thelichking,
+# korlictheeternal, talictheeternal, madawctheeternal, lucion, rathma
+monsters = [973, 974, 972, 980, 978, 976, 977, 1085, 1068]
+
+[[trigger]]
+name = "The Lich King, players 8"
+lich_king = true
+monsters = [980]  # thelichking
+min_maxhp = 2000000000
+
+# ---------------------------------------------------------------------------
+# Kill credit: what the Just Killed curses gave, for the Kill Ledger and
+# Rathma's Eternal Skull (the ascendancy tiers use the triggers above, not
+# this). Every living player in the level of the dead monster
+# gets state with kill_check_stat = value (value_above when the monster's
+# maxhp, in 256ths, is above maxhp_above) for kill_credit_frames. skill and
+# level are the old curse's.
+# ---------------------------------------------------------------------------
+
+[[kill_credit]]
+name = "Lucion's Whisper"
+monsters = [958]
+skill = 811
+level = 50
+state = 292
+value = 50
+
+[[kill_credit]]
+name = "Diablo's Hellhound"
+monsters = [956]
+skill = 811
+level = 51
+state = 292
+value = 51
+
+[[kill_credit]]
+name = "Ancient Fallen Angel"
+monsters = [957]
+skill = 811
+level = 52
+state = 292
+value = 52
+
+[[kill_credit]]
+name = "Terror in the Shadows"
+monsters = [959]
+skill = 811
+level = 53
+state = 292
+value = 53
+
+[[kill_credit]]
+name = "Avatar of the Night"
+monsters = [961]
+skill = 811
+level = 54
+state = 292
+value = 54
+
+[[kill_credit]]
+name = "Herald of Doom"
+monsters = [962]
+skill = 811
+level = 55
+state = 292
+value = 55
+
+[[kill_credit]]
+name = "Glacial Behemoth"
+monsters = [964]
+skill = 811
+level = 56
+state = 292
+value = 56
+
+[[kill_credit]]
+name = "The Taskmaster"
+monsters = [965]
+skill = 811
+level = 57
+state = 292
+value = 57
+
+[[kill_credit]]
+name = "Baal, Disfigured Harbinger"
+monsters = [968]
+skill = 811
+level = 58
+state = 292
+value = 58
+
+[[kill_credit]]
+name = "Arbiter of Souls"
+monsters = [970]
+skill = 811
+level = 59
+state = 292
+value = 59
+
+[[kill_credit]]
+name = "Mephisto the Invincible"
+monsters = [973]
+skill = 811
+level = 20
+state = 292
+value = 20
+
+[[kill_credit]]
+name = "Diablo the Invincible"
+monsters = [974]
+skill = 811
+level = 21
+state = 292
+value = 21
+
+[[kill_credit]]
+name = "Baal the Invincible"
+monsters = [972]
+skill = 811
+level = 22
+state = 292
+value = 22
+
+[[kill_credit]]
+name = "Eternal Ancients"
+monsters = [978, 976, 977]
+skill = 811
+level = 60
+state = 292
+value = 60
+
+[[kill_credit]]
+name = "Lucion"
+monsters = [1085]
+skill = 811
+level = 61
+state = 292
+value = 61
+
+[[kill_credit]]
+name = "The Lich King"
+monsters = [980]
+skill = 814
+level = 1
+state = 292
+value = 40
+value_above = 48
+maxhp_above = 2000000000
+
+[[kill_credit]]
+name = "Rathma"
+monsters = [1068]
+skill = 381
+level = 1
+state = 292
+value = 99
+value_above = 100
+maxhp_above = 2000000000
+
+[[kill_credit]]
+name = "Kor'nac the Hollow Apostle"
+monsters = [1079]
+skill = 382
+level = 1
+state = 294
+value = 109
+value_above = 110
+maxhp_above = 2000000000

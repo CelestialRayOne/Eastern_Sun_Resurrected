@@ -129,6 +129,45 @@ move_only_clicks = true
 # Needs left_slot_auras.
 live_level = true
 
+# item_refresh_keeps_auras
+#
+# The problem
+#   The game re-checks your equipment by taking every equipped item off and
+#   putting back the ones whose requirements you meet. It does that when an
+#   item is moved, put on or taken off, on a level up, and whenever an item
+#   requirement modifier changes, such as passive_mastery_item_req_percent
+#   from a mastery. Items you can use always go back, but for that instant a
+#   skill an item grants (an oskill) has no level, so the game puts Attack on
+#   its mouse button and puts the skill back at the end of the check.
+#   An aura granted that way, on either button, was switched off and started
+#   again: its state blinked, its bonuses were gone until its next tick, and
+#   your summon limits were counted without them, which can kill summons.
+#   An aura that changes skill levels (Divinity) together with an item that
+#   grants a mastery whose requirement modifier follows its own level
+#   (Levitation Mastery) turned this into a loop: each restart changed the
+#   mastery's level on the aura's next tick, that changed the modifier, the
+#   game re-checked the equipment and restarted the aura again. The aura's
+#   visual effect replayed on every tick and its bonuses were missing.
+#
+# What changes
+#   While the game re-checks the equipment, an aura running on a mouse button
+#   keeps running when the check puts Attack on that button. When the check
+#   puts the aura back, it carries on without a blink and with all its
+#   bonuses. If the check does not put it back (its item no longer meets the
+#   requirements), the aura stops when the check ends, before the summon
+#   limits are counted, as it would have before. The game already handles
+#   item auras (item_aura) this way; this gives auras on the mouse buttons the
+#   same rule.
+#
+# Where
+#   left button     the left select relay at 0x438AEF
+#   right button    calls at 0x438B09 (select), 0x438C02, 0x438C33 and
+#                   0x438C52 (removal) and 0x438C80 (start) in 0x438A70
+#   end of check    call at 0x4711C3 in the equipment re-check 0x470CA0
+#
+# Needs left_slot_auras.
+item_refresh_keeps_auras = true
+
 # -----------------------------------------------------------------------------
 # level_up_in_place
 #

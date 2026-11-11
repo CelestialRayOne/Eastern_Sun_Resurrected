@@ -508,5 +508,58 @@
                 }
             ]
         },
+        {
+            "type": "Widget", "name": "AscendancyNotice",
+            "fields": {
+                "rect": { "x": 1056, "y": -420, "width": 840, "height": 226 },
+            },
+            "children": [
+                {
+                    "type": "ImageWidget", "name": "Background",
+                    "fields": {
+                        "rect": { "x": 0, "y": 0 },
+                        "filename": "PANEL\\Ascendancies\\Notice",
+                    }
+                },
+                {
+                    "type": "TextBoxWidget", "name": "Text",
+                    "fields": {
+                        "rect": { "x": 40, "y": 22, "width": 760, "height": 70 },
+                        "text": "@AscendancyNoticeText",
+                        "style": {
+                            "fontColor": { "r": 255, "g": 165, "b": 0, "a": 255 },
+                            "pointSize": "$XMediumLargeFontSize",
+                            "alignment": { "h": "center", "v": "center" },
+                            "dropShadow": "$DefaultDropShadow",
+                        }
+                    }
+                },
+                {
+                    "type": "ButtonWidget", "name": "AscendancyNoticeButton",
+                    "fields": {
+                        "rect": { "x": 280, "y": 112 },
+                        "filename": "PANEL\\Ascendancies\\Button",
+                        "hoveredFrame": 1,
+                        "pressedFrame": 2,
+                        "onClickMessage": "PanelManager:OpenPanel:AscendanciesNotice",
+                    },
+                    "children": [
+                        {
+                            "type": "TextBoxWidget", "name": "Label",
+                            "fields": {
+                                "rect": { "x": 0, "y": 0, "width": 280, "height": 84 },
+                                "text": "@AscendancyNoticeView",
+                                "style": {
+                                    "fontColor": { "r": 214, "g": 180, "b": 128, "a": 255 },
+                                    "pointSize": "$SmallMediumFontSize",
+                                    "alignment": { "h": "center", "v": "center" },
+                                    "dropShadow": "$DefaultDropShadow",
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
     ]
 }

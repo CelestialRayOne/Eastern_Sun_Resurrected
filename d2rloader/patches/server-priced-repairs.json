@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "Server-priced NPC repairs",
+  "description": "NPC repairs are charged at the server's own price instead of being refused with \"I cannot complete that request\" when the client's quote differs. The repair cost the client shows can be off; the gold taken is always the server's price.",
+  "patches": [
+    {
+      "description": "Repair All: edi takes the server's total (eax from ReadWideEquippedRepairCost at 0x53FF0E) instead of the client's quote [rbp+68h]. The quote check right after always passes, and the gold test and the debit at 0x53FF7B use the server's total.",
+      "op": "bytes",
+      "rva": "0x53FF13",
+      "expected": "8B 7D 68 3B F8 0F 85 34 01 00 00",
+      "bytes": "89 C7 90 3B F8 0F 85 34 01 00 00"
+    },
+    {
+      "description": "One item, gold enough for the full repair: edi takes the server's price (eax from ITEMS_GetTransactionCost at 0x540277) instead of the client's quote. The check at 0x540290 always passes and the debit at 0x5402A6 takes the server's price.",
+      "op": "bytes",
+      "rva": "0x540281",
+      "expected": "8B 7D 68 89 45 F0",
+      "bytes": "89 C7 90 89 45 F0"
+    },
+    {
+      "description": "One item, not enough gold for the full repair: edi takes the carried gold as the server reads it (eax = [rbp-1Ch]) and the check that the client offered exactly that is removed. The partial repair and its debit at 0x54039B spend the carried gold, as vanilla does.",
+      "op": "bytes",
+      "rva": "0x54030D",
+      "expected": "3B F8 0F 85 3D 01 00 00",
+      "bytes": "89 C7 66 0F 1F 44 00 00"
+    }
+  ]
+}
