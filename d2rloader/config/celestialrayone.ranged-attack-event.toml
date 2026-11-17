@@ -1,0 +1,88 @@
+# ============================================================================
+# Ranged Attack Event
+# ============================================================================
+#
+# WHAT IT DOES
+# Fires a new item event every time a monster makes a ranged attack, so a
+# chance-to-cast stat can proc on ranged attacks the way "on attack" procs
+# fire on melee attacks.
+#
+# The game itself never does this. Melee attacks fire domeleeattack, but
+# domissileattack is only a name in events.txt: nothing in the game fires it.
+# That is why "on attack" procs never worked on ranged attacks.
+#
+# Nothing that exists changes. The plugin fires only its own new event, so
+# item_skillonattack and every other stat keep exactly the triggers they
+# have today.
+#
+# WHO FIRES IT
+# A monster (hirelings included) whose attack shoots the missile set in
+# monstats.txt for that animation: MissA1, MissA2, MissS1 to MissS4, MissC,
+# MissSQ. A Quill Rat's spike is MissA2.
+#   - Once per attack, right after the missile is created.
+#   - The other unit is the monster's current target. There is no hit packet,
+#     so the proc rolls on every attack, hit or miss, like "on attack".
+#   - A monster casting a skill does not fire it, and neither do players.
+#
+# TXT SETUP
+# 1. events.txt: the stock rows unchanged, plus one row at the very END:
+#      dorangedattack    Unit used a ranged attack
+#    The row number is the event id, counting the first row after the header
+#    as 0. The stock D2R 3.3 file has 17 rows (0 to 16), so the new row is 17.
+#    Never insert it in the middle: that renumbers install, hextrigger and
+#    absorbresisteddamage and breaks the Warlock skills that use them.
+# 2. itemstatcost.txt: a stat that listens to it, for example
+#    item_skillonrangedattack with itemevent1 = dorangedattack and
+#    itemeventfunc1 = 20 (the chance-to-cast handler item_skillonattack uses).
+# 3. properties.txt: a property for that stat with func1 = 11, used like
+#    att-skill: par = skill, min = % chance, max = skill level.
+# 4. Give the property to monsters through monprop.txt (or to items).
+#
+# One stat can also listen to both kinds of attack:
+#   itemevent1 = domeleeattack, itemevent2 = dorangedattack
+# makes a single "on any attack" proc.
+#
+# CONSOLE
+#   rangedattack   settings, the state of the patched call, and counters:
+#                  ranged attacks seen, attacks without a target, and how
+#                  many attacks cast a proc
+#
+# If quill rats shoot but "cast a proc" stays at 0, the txt side is not wired:
+# check that dorangedattack is the last row of events.txt and that event_id
+# below is its row number.
+#
+# LOG (<scope>\d2rloader\logs\celestialrayone.ranged-attack-event.log)
+#   - At load: the settings and the state of the patched call.
+#   - A key this plugin does not know is named with its section.
+#   - The first 8 ranged attacks that cast a proc, with the monster row.
+#
+# HOW IT WORKS
+# The monster attack routine (0x446000) shoots the mode's missile and then
+# calls a small post-missile helper (0x4480E0) from exactly one place
+# (0x4462E4). The plugin changes only the target of that call: it runs the
+# helper exactly as before and then fires the event through the game's own
+# event function (0x44D570), with the monster as the unit and its current
+# target (0x48FE20) as the other unit.
+#
+# Changes take effect the next time the game starts.
+#
+# ============================================================================
+
+# File format version. Leave this value unchanged.
+config_version = 1
+
+# Master switch. false loads without patching anything.
+enabled = true
+
+
+[event]
+# The row of the new event in events.txt, counting the first row after the
+# header as 0. 17 when it is appended to the stock D2R 3.3 file.
+# Must be 17 to 255: 0 to 16 are the stock events, and firing one of those
+# would set off every existing proc that listens to it.
+event_id = 17
+
+
+# Lets D2RLoader verify that multiplayer peers use matching settings.
+[d2rl]
+match = true

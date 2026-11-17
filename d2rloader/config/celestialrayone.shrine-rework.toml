@@ -42,13 +42,13 @@
 #
 # Healing and mana wells are shrine objects too: they draw only from
 # effectclass 2 (Health) and 3 (Mana). When every shrine an object could draw
-# is removed, it draws from fallback_effectclass instead (1 = Refilling, which
-# restores both life and mana). Each level's guaranteed healing well is
-# forced to row 2 (Health) by the game; when that shrine is removed, the well
-# draws from effectclass 2 with the same fallback.
+# is removed, it draws from every remaining shrine instead, each with the
+# same odds (a well keeps its look but works as that shrine). Each level's
+# guaranteed healing well is forced to row 2 (Health) by the game; when that
+# shrine is removed, the well draws the same way.
 #
-# If nothing is left in the fallback either, that object draws from the full
-# list exactly as the game does, and the plugin log reports it.
+# If every shrine is removed, objects draw from the full list exactly as the
+# game does, and the plugin log reports it.
 
 [removal]
 
@@ -75,10 +75,6 @@ removed_shrine_codes = [
     22,   # Poison Shrine
 ]
 
-# The effectclass an object draws from when removal leaves its own
-# effectclass empty, 1 to 7. 0 turns the fallback off.
-fallback_effectclass = 1
-
 # true writes one plugin log line per shrine object: level id, objects.txt
 # Parm0, the pool it drew from, the row and its Code. For checking the result
 # in game; leave it false otherwise.
@@ -104,6 +100,19 @@ enabled = true
 # reduced too. The shrine no longer gives defense, so its shrines.txt Arg0 is
 # not used. 0 turns this off.
 armor_damage_reduction = 33
+
+# Total damage reduction stat: the Armor Shrine's reduction as an
+# itemstatcost.txt row. Any unit with this stat, player, hireling, summon or
+# monster, takes its value in percent less damage, applied exactly like the
+# Armor Shrine above: every hit type, poison, burning and the life, mana and
+# stamina drains, before absorbs and resistances. The unit's total from every
+# source (items, skills, states, auras) counts, held to 0..100: 100 takes no
+# damage, and a total below 0 does nothing. It works with
+# armor_damage_reduction at 0 too. With both on they multiply: 33% from the
+# shrine and 20% from the stat leave 67% x 80% = 53.6% of the hit. The row
+# needs ValShift 0, so its value reads in whole percent. -1 turns this off,
+# otherwise a row id from 0 to 32767.
+damage_reduction_stat = 1075
 
 # Combat Shrine (Code 7). The stats it gives instead of attack rating and
 # damage, as itemstatcost.txt row ids, each with the value below. Its

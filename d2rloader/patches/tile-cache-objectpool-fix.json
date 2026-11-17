@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"name": "Tile cache ObjectPool fix",
+	"description": "D2R's classic tile caches (D2CMP LRUCache: tile blocks, 6 MiB and 4096 entries; whole DT1 files, 10 MiB and 96 entries; created at 0x145D220) take their buffers from the fixed 50 MiB ObjectPool (allocator object 0x27D7848, TLSF, never grows) that level generation and server objects also use. The classic renderer runs in HD mode too, so the caches sit in that pool in every session. When the pool has no contiguous block left for a tileset file, Allocate returns null and 0x1463730 zero-fills it before its own null check: a write to address 0 inside memset at 0x12D3CF9. This moves the caches' entry buffers to the game's general heap (0x12063C0, the allocator the same cache code already uses for its lookup nodes). Cache budgets are unchanged.",
+	"patches": [
+		{
+			"description": "One edit, so allocate and free can never change separately (a buffer taken from one allocator and returned to the other corrupts memory). Window 0x14636DA..0x14637A5, 204 bytes, only two call displacements change. Offset 0: call 0xA20C80 (ObjectPool object) -> call 0x12063C0 (general heap object) in the LRUCache release 0x1463650, right before Free(buffer) through vtable +0x20. Offset 199: the same change in the LRUCache allocate 0x1463730, right before Alloc(size, 1) through vtable +8 and the memset. Both objects use that vtable layout. All other bytes are written back unchanged.",
+			"op": "bytes",
+			"rva": "0x014636DA",
+			"expected": "E8 A1 D5 5B FF 48 8B D6 48 8B C8 4C 8B 00 41 FF 50 20 48 8B 74 24 38 48 89 2B 89 6B 08 48 89 6B 10 48 8B 47 38 48 85 C0 75 06 48 89 5F 30 EB 0C 48 89 58 18 48 8B 47 38 48 89 43 20 48 89 5F 38 FF 4F 08 48 8B 6C 24 30 48 8B 5C 24 40 48 83 C4 20 5F C3 CC CC CC 48 89 5C 24 08 48 89 6C 24 18 56 57 41 56 48 83 EC 20 4D 8B F0 8B EA 48 8B D9 3B 11 72 14 48 8D 4C 24 48 C6 44 24 48 00 E8 93 FE FF FF 84 C0 74 01 CC FF 43 48 8B D5 FF 43 4C 48 8B CB E8 CE 02 00 00 48 8B F0 48 85 C0 75 22 66 0F 1F 44 00 00 33 D2 48 8B CB E8 C6 FE FF FF 8B D5 48 8B CB E8 AC 02 00 00 48 8B F0 48 85 C0 74 E4 E8 0F D4 5B FF E8 DA D4 5B FF",
+			"bytes": "E8 E1 2C DA FF 48 8B D6 48 8B C8 4C 8B 00 41 FF 50 20 48 8B 74 24 38 48 89 2B 89 6B 08 48 89 6B 10 48 8B 47 38 48 85 C0 75 06 48 89 5F 30 EB 0C 48 89 58 18 48 8B 47 38 48 89 43 20 48 89 5F 38 FF 4F 08 48 8B 6C 24 30 48 8B 5C 24 40 48 83 C4 20 5F C3 CC CC CC 48 89 5C 24 08 48 89 6C 24 18 56 57 41 56 48 83 EC 20 4D 8B F0 8B EA 48 8B D9 3B 11 72 14 48 8D 4C 24 48 C6 44 24 48 00 E8 93 FE FF FF 84 C0 74 01 CC FF 43 48 8B D5 FF 43 4C 48 8B CB E8 CE 02 00 00 48 8B F0 48 85 C0 75 22 66 0F 1F 44 00 00 33 D2 48 8B CB E8 C6 FE FF FF 8B D5 48 8B CB E8 AC 02 00 00 48 8B F0 48 85 C0 74 E4 E8 0F D4 5B FF E8 1A 2C DA FF"
+		}
+	]
+}

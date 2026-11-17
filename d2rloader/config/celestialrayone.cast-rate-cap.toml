@@ -1,9 +1,14 @@
-# Cast Rate Cap - move the point where faster cast rate stops paying
+# Cast Rate Cap - where faster cast rate stops paying, and how far a negative
+# faster cast rate can slow casting down
 #
 # Vanilla stops the cast animation rate at 175 percent. The engine's own
 # diminishing-return curve reaches 175 at exactly 200 faster cast rate, so
 # every point of FCR past 200 does nothing at all. That ceiling is a single
 # number in the executable, and this plugin sets it from the cap you want.
+#
+# Vanilla also runs a negative faster cast rate through that same bonus curve,
+# which falls apart below -50. This plugin slows casting down gradually
+# instead and stops at a floor you choose. See fcr_floor below.
 #
 # Safety: the plugin verifies the original bytes at the patch site before it
 # writes anything. On a game build it does not recognise it writes nothing no
@@ -18,7 +23,7 @@
 [cast-rate-cap]
 
 # Master switch.
-#   true  - the cap below is applied.
+#   true  - the cap and the floor below are applied.
 #   false - the DLL stays loaded and the console command still answers, but
 #           nothing is written. Vanilla behaviour.
 # Default: true
@@ -36,7 +41,7 @@ enabled = true
 #     effective = 120 * FCR / (FCR + 120)
 #     rate      = 100 + effective, stopped at a ceiling
 #
-# and the ceiling is what this plugin writes. It is set to the rate the curve
+# and the ceiling is what this plugin controls. It is set to the rate the curve
 # itself produces at your cap, so the cap lands exactly where you asked:
 #
 #     cap     20    50   100   150   200   300   400   500   600  1000  2000
@@ -65,3 +70,41 @@ enabled = true
 # through the same code, so a monster carrying FCR gets the same cap.
 # Default: 200
 fcr_cap = 500
+
+# How far a negative faster cast rate can slow casting down.
+#
+# Vanilla pushes a penalty through the same curve as a bonus,
+# 120 * value / (value + 120), and that curve was never built for a negative
+# number. A 14 frame cast takes 13 frames at 0, 23 at -30, 94 at -50 and 716
+# at -54. From -55 to -119 the arithmetic wraps around: the engine raises an
+# assertion and, if the game carries on, the cast plays in a single tick. At
+# exactly -120 it divides by zero and the game crashes. From -121 down the
+# curve flips sign and the cast runs at the ceiling.
+#
+# This plugin gives a penalty the mirror image of the bonus curve instead:
+#
+#     effective = 120 * value / (120 - value)     for a value below 0
+#     rate      = 100 + effective
+#
+# Each further point of penalty costs a little less than the one before it,
+# the same way each further point of bonus pays a little less. The divisor is
+# never smaller than 121, so nothing can divide by zero or wrap around. Any
+# value below fcr_floor counts as fcr_floor, which is where the slowdown stops.
+#
+# With the default of -100, for a 14 frame cast at AnimationSpeed 256:
+#
+#     value      0   -10   -20   -30   -40   -50   -60   -70   -80   -90  -100
+#     rate     100    91    83    76    70    65    60    56    52    49    46
+#     frames    13    15    16    18    20    21    23    25    26    28    30
+#
+# A lower floor lets the slowdown go further. The slowest rate is 46 at -100,
+# 34 at -150, 25 at -200, 19 at -250 and 15 at -300. 15 is the slowest rate the
+# engine ever lets an attack animation play at, so -300 is the lowest accepted
+# value. 0 makes a negative faster cast rate do nothing at all. A value outside
+# -300 to 0 is ignored and -100 is used instead.
+#
+# Faster cast rate of 0 and above never reaches this setting: it goes through
+# the stock code exactly as before. Monsters cast through the same code, so the
+# floor applies to them too.
+# Default: -100
+fcr_floor = -500

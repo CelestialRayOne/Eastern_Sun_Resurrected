@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Homing missiles outlive their owner",
+  "description": "missiles.txt pSrvDoFunc 7 (homing) no longer deletes the missile when its owner dies. The missile keeps homing and deals its damage. A missile whose owner unit no longer exists is still removed.",
+  "patches": [
+    {
+      "description": "pSrvDoFunc 7 (sub_140458560): NOP the jnz after SUNIT_IsDead(owner) at 0x4585BC that jumped to the remove-missile exit at 0x4586AF.",
+      "op": "nop",
+      "rva": "0x4585C3",
+      "expected": "0F 85 E6 00 00 00",
+      "size": 6
+    }
+  ]
+}

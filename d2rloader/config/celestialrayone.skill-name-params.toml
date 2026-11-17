@@ -1,0 +1,36 @@
+# Skill Name Params (celestialrayone.skill-name-params)
+#
+# The param columns below take names, exactly the way the par1 .. par12
+# columns of uniqueitems.txt do:
+#   cubemain.txt  mod 1 param .. mod 5 param
+#                 b mod 1 param .. b mod 5 param
+#                 c mod 1 param .. c mod 5 param
+#   monprop.txt   par1 .. par6, par1 (N) .. par6 (N), par1 (H) .. par6 (H)
+#
+# What a cell means. The game's own uniqueitems.txt par code reads these
+# cells, so the rules are the same, for every property:
+#   - a cell starting with a digit or "-" is a number, the same as before
+#   - anything else is a name: a skills.txt "skill", else a name from the one
+#     other table uniqueitems.txt par checks, else a states.txt "state"; the
+#     first one found wins (a state name works for the "state" property)
+#   - a name none of them knows, an empty cell and a missing column give 0
+# cubemain.txt keeps its 16-bit param and monprop.txt its 32-bit param.
+#
+# The log (d2rloader\logs\celestialrayone.skill-name-params.log) gets one
+# line per file and table bank (LoD = data\global\excel\base, RotW =
+# data\global\excel) counting the names it found and what they matched, and a
+# warning for each name that matched nothing, with its line (the header is
+# line 1) and column. The console command "skillnameparams" shows the counts.
+#
+# A table D2RLoader loads from a packaged BIN (d2rl compile) is not read from
+# its .txt at load. Build such BINs with this plugin installed.
+#
+# enabled    false turns the plugin off; both files then load as without it
+# cubemain   names in cubemain.txt
+# monprop    names in monprop.txt
+# log_names  also log every name and the value it became (for checking)
+
+enabled = true
+cubemain = true
+monprop = true
+log_names = false

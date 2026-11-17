@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Srvmissile no-target fallback",
+  "description": "Server side of skills.txt srvmissile (SKILLS_CreateMissileAtOffset, 0x1404333F0). When the caster has no target unit and no target coordinates (monster AI casts such as SiegeBeast using Skill1 at 0,0), the server used to return without creating the missile, while the client fell back to one step in front of the caster and showed the whole chain. This makes the server use the exact same fallback as the client (caster position plus the client's 8-direction step table at 0x141CE2220, indexed by facing direction >> 3), so the server missile and its damage exist. Casts with a real target are unchanged.",
+  "patches": [
+    {
+      "description": "Rewrite the target check block 0x1404335ED..0x140433639: keep both entry points (0x1404335ED and 0x140433604), on a missing target x or y compute target = missile start (nX,nY) + client facing step instead of jumping to the return-0 exit at 0x1404336E1, then continue to missile creation at 0x14043363A.",
+      "op": "bytes",
+      "rva": "0x4335ED",
+      "expected": "83 7C 24 6C 00 89 44 24 70 0F 84 E5 00 00 00 85 C0 0F 84 DD 00 00 00 83 7C 24 6C 00 74 04 85 C0 75 18 48 8D 4C 24 30 C6 44 24 30 00 E8 32 ED FF FF 84 C0 74 01 CC 8B 44 24 70 83 7C 24 6C 00 0F 84 AF 00 00 00 85 C0 0F 84 A7 00 00 00",
+      "bytes": "89 44 24 70 EB 11 8B 44 82 F0 03 44 24 68 89 44 24 70 EB 39 CC CC CC 83 7C 24 6C 00 74 04 85 C0 75 2B 48 89 F9 E8 09 65 F1 FF 0F B6 C0 C1 E8 03 48 8D 15 FC EB 8A 01 83 F8 04 72 04 48 83 EA 30 8B 0C 82 03 4C 24 64 89 4C 24 6C EB B9"
+    }
+  ]
+}

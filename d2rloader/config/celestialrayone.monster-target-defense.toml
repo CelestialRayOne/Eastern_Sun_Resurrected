@@ -1,0 +1,43 @@
+# ============================================================================
+# Monster Target Defense
+# ============================================================================
+#
+# WHAT IT DOES
+# item_fractionaltargetac (stat 116, "-X% Target Defense") lowers the
+# defender's defense on the hit roll. The game only ever applies it when a
+# player attacks. With this plugin every other attacker uses it the same way:
+# monsters, hirelings and summons, in melee and with missiles.
+#
+# The hit roll uses it exactly as the game does for players:
+#   - the attacker's value is capped at 100
+#   - the defender's defense goes down by that percent, before the attack
+#     rating versus defense chance is worked out
+#   - with vanilla_halving, the value is halved against players, monsters
+#     with the boss flag in monstats.txt, superuniques and hirelings
+#
+# The other stats the game applies for players only are left alone:
+# item_ignoretargetac, item_demon_tohit and item_undead_tohit.
+#
+# GIVING IT TO A MONSTER
+# The property is reduce-ac (properties.txt), for example in monprop.txt.
+# Anything else that puts the stat on the attacker works too: items on a
+# hireling, auras, states.
+#
+# CHARACTER SCREEN
+# "Average chance to hit you" is worked out for a typical monster of the
+# type, not a live one, so it does not show a monster's -% target defense.
+#
+# CONSOLE
+# monster-target-defense   state, roll counters and the last reduction
+# ============================================================================
+
+[monster_target_defense]
+
+# Master switch.
+enabled = true
+
+# true:  halve the value against players, bosses, superuniques and
+#        hirelings, as the game does for players. A monster attacking you
+#        gets half its value.
+# false: the full value against every target.
+vanilla_halving = true

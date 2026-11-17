@@ -1,0 +1,51 @@
+# Proc Cooldowns
+#
+# Gives chance-to-cast procs a cooldown per skill, from a new skills.txt
+# column: ItemEffectCooldown. After a proc casts a skill, the unit that cast
+# it cannot proc that skill again until the skill's ItemEffectCooldown has
+# run out.
+#
+# THE COLUMN
+#   Add a column named ItemEffectCooldown anywhere in skills.txt.
+#   - Frames: 25 = 1 second.
+#   - A number or a formula, with the same syntax as localdelay (lvl, clc1,
+#     stat(), skill() and the rest).
+#   - Blank, 0, or a formula that comes out at 0 or below: that skill's procs
+#     have no cooldown.
+#   - Worked out for the unit that casts the proc, at the proc's skill level.
+#   The plugin reads the column from the skills.txt the game loaded, when the
+#   game loads its tables, and checks that file against the game's table row
+#   by row. The log names the file it used, or says why it used none, and
+#   lists every cell that does not compile (those skills get no cooldown).
+#
+# WHICH PROCS
+#   Every skill cast by an item event, itemstatcost.txt itemeventfunc 20, 21
+#   or 30: chance to cast on attack, on striking, on cast, when struck, on
+#   taking damage, on kill, on death and on level up, hidden variants
+#   included, from gear, charms, monprop or any other source of those stats.
+#   Nothing else changes: normal casts, charges, auras, skill event functions
+#   (Sigil Death's auraeventfunc 33) and Monster Affixes' casts are not
+#   touched.
+#
+# HOW THE COOLDOWN WORKS
+#   - One cooldown per unit and skill. Every proc of that skill on that unit
+#     shares it, whichever item or event it comes from.
+#   - It applies to every unit: players, mercenaries, summons and monsters.
+#   - It starts only when the cast goes through. While it runs, the proc still
+#     rolls its chance but casts nothing.
+#   - It is separate from the skill's own cooldown: a proc never puts the
+#     skill's button on cooldown, and casting the skill yourself never blocks
+#     its procs. localdelay and globaldelay do not apply to procs.
+#   - An ItemTgtDo skill is cast by the target on itself, so its cooldown is
+#     the target's.
+#   - Cooldowns live in memory only: a new game starts with none. Cooldown
+#     Reset does not end them.
+#
+# Console command: proccooldowns (state, checks, the column, counters).
+
+enabled = true
+
+# true: every proc that starts a cooldown or is blocked by one is written to
+# the plugin log (d2rloader/logs/celestialrayone.proc-cooldowns.log), and so
+# is every skill's ItemEffectCooldown when the game loads its tables.
+debug = false

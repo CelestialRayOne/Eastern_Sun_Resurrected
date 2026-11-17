@@ -1,0 +1,57 @@
+# SandRaider AI
+#
+# Fixes the SandRaider AI (monai.txt row 8, used by every monster whose
+# monstats.txt AI column is SandRaider).
+#
+# What goes wrong without it: a raider whose life drops below aip1 % walks
+# to the nearest monster of its side on every AI tick and never stops, and
+# once it stands next to that monster the game refuses the walk and books no
+# new AI tick, so the raider freezes. Its Skill1 is only ever cast on its
+# target while charged and in melee range, so a hurt raider never casts it.
+#
+# With this plugin a hurt raider regroups once:
+#   1. It walks to the nearest monster of its side until it is within
+#      gather_distance of it, it cannot get any closer, gather_ticks AI
+#      ticks have passed, or there is nobody to walk to.
+#   2. It casts Skill1 (in its Sk1mode) on ITSELF. With windup it first shows
+#      its charge overlay (aip6 colour) and waits aidel+1 frames. A refused
+#      cast is retried on the next two AI ticks.
+#   3. It goes back to its normal routine and never regroups again. A raider
+#      with no Skill1 just goes back to its routine.
+# The normal routine is the vanilla one: charge-up (aip5, aip6), circle walk
+# (aip2), attack 1 or 2 in melee range (aip3, aip7), approach (aip4). Moves
+# or attacks the game refuses now end in the routine's normal 15-frame wait
+# instead of leaving the raider without a next AI tick.
+#
+# monstats.txt columns read: aip1 regroup life %, aip2 circle walk %, aip3
+# attack %, aip4 approach %, aip5 charge time (AI ticks), aip6 charge colour
+# (1 = blue, else red), aip7 attack 2 % (else attack 1), aidel, Skill1, Sk1mode.
+#
+# Server side only. In single player the game hosts its own server, so it
+# applies there too.
+#
+# Console command: sandraider (status and counters)
+
+[sandraider_ai]
+
+# Master switch. false installs nothing; the vanilla routine runs.
+enabled = true
+
+# How close, in subtiles, the raider must get to the monster it regroups
+# with before it casts. 1 to 30.
+gather_distance = 1
+
+# How many AI ticks the raider may spend walking to that monster before it
+# casts where it stands. 1 to 100.
+gather_ticks = 5
+
+# true: show the charge overlay and wait aidel+1 frames before the cast.
+# false: cast as soon as the raider has gathered.
+windup = false
+
+# What a CHARGED raider in melee range does with Skill1 during its normal
+# routine:
+#   "none"    nothing, it attacks normally; Skill1 is only the regroup cast
+#   "self"    casts Skill1 on itself after every charge
+#   "target"  casts Skill1 on its target after every charge (vanilla)
+charge_skill = "self"

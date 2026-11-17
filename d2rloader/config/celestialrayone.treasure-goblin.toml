@@ -3,7 +3,7 @@
 # Treasure Goblin
 #   A new monster AI for treasure goblins, selected through its own row in
 #   monai.txt, and a timed escape: after despawn_seconds the goblin stops, a
-#   town portal opens next to it, and 3 seconds later the goblin and the
+#   portal opens next to it, and portal_wait_seconds later the goblin and the
 #   portal are gone. The goblin does not die, so it drops no loot and gives
 #   no experience. Killing it before then works as usual.
 #
@@ -39,11 +39,13 @@
 #   - The clock starts the first time the goblin's AI runs, which is when a
 #     player first comes near it. It is counted in game time and keeps running
 #     while players are away.
-#   - When it runs out the goblin stops and a town portal opens beside it, with
-#     the same opening and open animations as a player's town portal. The
-#     portal cannot be clicked or used.
-#   - 3 seconds later both disappear. If the goblin is killed during those 3
-#     seconds it dies normally and the portal still closes on time.
+#   - When it runs out the goblin stops and a portal opens beside it: the
+#     portal Cain and the freed Act 5 prisoners leave through (objects.txt row
+#     189). Like theirs it cannot be hovered, clicked or used.
+#   - The goblin waits beside the portal for portal_wait_seconds, then both
+#     disappear. If the goblin is killed during the wait it dies normally and
+#     the portal still closes on time. A wait shorter than the portal's
+#     opening animation removes the portal before it has fully opened.
 #
 # Console
 #   treasuregoblin   shows whether the plugin is active, the monai.txt row it
@@ -61,4 +63,8 @@ enabled = true
 ai_name = "TreasureGoblin"
 
 # Seconds before a goblin escapes through its portal. 0 means never.
-despawn_seconds = 30
+despawn_seconds = 25
+
+# Seconds the goblin waits beside its open portal before the goblin and the
+# portal disappear. Whole number from 1 to 99999.
+portal_wait_seconds = 5

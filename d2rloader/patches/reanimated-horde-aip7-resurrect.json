@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "name": "ReanimatedHorde: aip7 is the self-resurrect delay",
+  "description": "Self-resurrect (umod 34) waits 1 + aip7 frames instead of 1 + 10 x aip1, both after a successful aip8 roll and between checks while the corpse spot is occupied. The ReanimatedHorde AI no longer reads aip7: when the par5 and par6 rolls fail it thinks again on the next frame.",
+  "patches": [
+    {
+      "description": "Self-resurrect death hook: read aip7 instead of aip1 for the delay",
+      "op": "bytes",
+      "rva": "0x4A18FA",
+      "expected": "0F BF 84 4D 90 00 00 00",
+      "bytes": "0F BF 84 4D B4 00 00 00"
+    },
+    {
+      "description": "Self-resurrect death hook: remove the x5 on the delay",
+      "op": "bytes",
+      "rva": "0x4A190F",
+      "expected": "8D 0C 80",
+      "bytes": "8B C8 90"
+    },
+    {
+      "description": "Self-resurrect death hook: remove the x2 on the delay (delay = 1 + aip7 frames)",
+      "op": "bytes",
+      "rva": "0x4A1918",
+      "expected": "45 8D 0C 49",
+      "bytes": "45 8D 0C 09"
+    },
+    {
+      "description": "Self-resurrect retry while the corpse spot is occupied: read aip7 instead of aip1",
+      "op": "bytes",
+      "rva": "0x4A1AEC",
+      "expected": "41 0F BF 8C 47 90 00 00 00",
+      "bytes": "41 0F BF 8C 47 B4 00 00 00"
+    },
+    {
+      "description": "Self-resurrect retry: remove the x5 on the delay",
+      "op": "bytes",
+      "rva": "0x4A1AF5",
+      "expected": "8D 14 89",
+      "bytes": "8B D1 90"
+    },
+    {
+      "description": "Self-resurrect retry: remove the x2 on the delay (retry = 1 + aip7 frames)",
+      "op": "bytes",
+      "rva": "0x4A1AF8",
+      "expected": "45 8D 0C 51",
+      "bytes": "45 8D 0C 11"
+    },
+    {
+      "description": "ReanimatedHorde AI: idle after failed par5 and par6 rolls is a hardcoded 0 instead of aip7 (the AI sleep turns 0 into 1 frame)",
+      "op": "bytes",
+      "rva": "0x5C3171",
+      "expected": "44 0F BF 84 5D B4 00 00 00",
+      "bytes": "41 B8 00 00 00 00 0F 1F 00"
+    }
+  ]
+}
